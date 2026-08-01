@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Amusements",
+    "slug": "amusements"
+  },
+  {
+    "name": "Areas",
+    "slug": "areas"
+  },
+  {
+    "name": "Bars",
+    "slug": "bars"
+  },
+  {
+    "name": "Buildings",
+    "slug": "buildings"
+  },
+  {
+    "name": "Cafes",
+    "slug": "cafes"
+  },
+  {
+    "name": "Cinema",
+    "slug": "cinema"
+  },
+  {
+    "name": "Culture",
+    "slug": "culture"
+  },
+  {
+    "name": "Dessert Shops",
+    "slug": "dessert-shops"
+  },
+  {
+    "name": "Drink",
+    "slug": "drink"
+  },
+  {
+    "name": "Eat",
+    "slug": "eat"
+  },
+  {
+    "name": "Events",
+    "slug": "events"
+  },
+  {
+    "name": "Festivals",
+    "slug": "festivals"
+  },
+  {
+    "name": "Hostels",
+    "slug": "hostels"
+  },
+  {
+    "name": "Hotels",
+    "slug": "hotels"
+  },
+  {
+    "name": "Markets",
+    "slug": "markets"
+  },
+  {
+    "name": "Memorial Halls",
+    "slug": "memorial-halls"
+  },
+  {
+    "name": "Music Venues",
+    "slug": "music-venues"
+  },
+  {
+    "name": "Parks",
+    "slug": "parks"
+  },
+  {
+    "name": "Restaurants",
+    "slug": "restaurants"
+  },
+  {
+    "name": "Routes",
+    "slug": "routes"
+  },
+  {
+    "name": "Shop",
+    "slug": "shop"
+  },
+  {
+    "name": "Stalls",
+    "slug": "stalls"
+  },
+  {
+    "name": "Visit",
+    "slug": "visit"
+  }
+]
