@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ArticleSidebar } from "@/components/ArticleSidebar";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
-import { enhanceChoiceGuideImages, enhanceRecommendedReading, formatDate, getPost, posts } from "@/lib/content";
+import { enhanceChoiceGuideImages, enhanceRecommendedReading, enhanceYoutubeEmbeds, formatDate, getPost, posts } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
 
@@ -34,7 +34,7 @@ export default async function ArticlePage({ params }: PageProperties) {
   const post = getPost((await params).slug);
   if (!post) notFound();
   const heroImage = post.type === "post" ? post.featuredImage : null;
-  const articleContent = enhanceRecommendedReading(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage), post.slug), heroImage);
+  const articleContent = enhanceYoutubeEmbeds(enhanceRecommendedReading(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage), post.slug), heroImage));
 
   return (
     <div className="article-shell">

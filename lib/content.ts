@@ -58,6 +58,14 @@ export function enhanceRecommendedReading(content: string, fallbackImage?: strin
   });
 }
 
+export function enhanceYoutubeEmbeds(content: string) {
+  const youtubeEmbed = /<figure\b[^>]*class=["'][^"']*wp-block-embed-youtube[^"']*["'][^>]*>[\s\S]*?https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})[^\s<]*[\s\S]*?<\/figure>/gi;
+
+  return content.replace(youtubeEmbed, (_match, videoId: string) => (
+    `<figure class="article-video"><div class="article-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${videoId}" title="Taiwan tourist tax refund guide" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></figure>`
+  ));
+}
+
 function relatedGuideForSection(section: string, sourceSlug: string) {
   const links = [...section.matchAll(/href=["']\/([^\/#"']+?)\/?["']/gi)];
   for (const link of links) {

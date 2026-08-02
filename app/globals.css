@@ -229,6 +229,9 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .article-content figure.size-full > img { width: 100%; height: auto; }
 .article-content figure img { width: 100%; height: auto; }
 .article-content figcaption { margin-top: 8px; color: var(--muted); font-size: 12px; }
+.article-content .article-video { margin: 38px 0; }
+.article-content .article-video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
+.article-content .article-video iframe { position: absolute; width: 100%; height: 100%; inset: 0; border: 0; }
 .article-content .wp-block-table { width: 100%; margin: 32px 0; overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 8px 24px rgba(21, 24, 26, .06); }
 .article-content table { width: 100%; min-width: 560px; margin: 32px 0; border-collapse: separate; border-spacing: 0; font-size: 14px; line-height: 1.45; background: #fff; }
 .article-content .wp-block-table table { margin: 0; border: 0; }
