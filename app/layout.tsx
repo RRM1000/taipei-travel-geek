@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   },
   description: "First-hand guides to Taipei’s food, sights, culture and neighbourhoods.",
   icons: {
-    icon: "/images/ttg-mark.png",
-    shortcut: "/images/ttg-mark.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
   openGraph: {
     type: "website",
