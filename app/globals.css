@@ -28,20 +28,23 @@ img { display: block; max-width: 100%; }
 .header-search .search-trigger { height: 38px; border: 1px solid var(--line); padding: 0 14px; background: white; color: var(--ink); box-shadow: 3px 3px 0 rgba(23,24,23,.11); }
 .header-search .search-trigger:hover { background: var(--ink); color: white; }
 .header-search .search-trigger span { color: var(--red-dark); }
-.desktop-nav { display: flex; align-items: stretch; justify-content: center; width: 100%; min-height: 54px; gap: 0; overflow: visible; background: var(--ink); box-shadow: 0 5px 14px rgba(23,24,23,.13); color: #fff; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; }
-.desktop-nav > a:not(.nav-cta), .information-menu summary, .explore-menu summary { display: flex; align-items: center; height: 54px; padding: 0 16px; border-right: 1px solid rgba(255,255,255,.13); }
+.desktop-nav { display: flex; align-items: stretch; justify-content: center; width: 100%; min-height: 48px; gap: 0; overflow: visible; background: var(--ink); box-shadow: 0 5px 14px rgba(23,24,23,.13); color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .7px; }
+.desktop-nav > a:not(.nav-cta), .information-menu summary, .explore-menu summary { display: flex; align-items: center; height: 48px; padding: 0 23px; border-right: 1px solid rgba(255,255,255,.13); }
 .desktop-nav > a:not(.nav-cta) { color: #fff; }
 .desktop-nav a:hover { color: #fff; }
 .information-menu, .explore-menu { position: relative; display: flex; align-items: stretch; color: #fff; }
 .information-menu summary, .explore-menu summary { cursor: pointer; list-style: none; }
 .information-menu summary::-webkit-details-marker, .explore-menu summary::-webkit-details-marker { display: none; }
-.information-menu summary span, .explore-menu summary span { color: #ff8d87; margin-left: 6px; font-size: 17px; }
+.information-menu summary span, .explore-menu summary span { display: inline-grid; width: 8px; height: 8px; margin: -4px 0 0 10px; color: transparent; font-size: 0; border-right: 1.5px solid #ff9e99; border-bottom: 1.5px solid #ff9e99; transform: rotate(45deg); transition: transform .18s ease, border-color .18s ease; }
+.information-menu[open] summary span, .explore-menu[open] summary span { margin-top: 4px; transform: rotate(225deg); }
 .information-menu[open] summary, .explore-menu[open] summary, .desktop-nav > a:not(.nav-cta):hover { background: #2a2c2a; }
-.information-panel, .explore-panel { position: absolute; top: 54px; right: 0; z-index: 30; width: 286px; padding: 8px; background: #202220; border: 1px solid #353835; border-top: 3px solid var(--red); box-shadow: 0 18px 35px rgba(0, 0, 0, .28); }
-.explore-panel { width: 180px; left: 0; right: auto; }
-.desktop-nav .information-panel a, .desktop-nav .explore-panel a { display: block; padding: 13px 14px; color: #fff; font-size: 13px; line-height: 1.35; }
-.desktop-nav .information-panel a:hover, .desktop-nav .explore-panel a:hover { color: #fff; background: var(--red-dark); }
-.desktop-nav .nav-cta { display: flex; align-items: center; color: white; background: var(--red); padding: 0 24px; }
+.information-panel, .explore-panel { position: absolute; top: 48px; right: 0; z-index: 30; width: 298px; padding: 9px; background: #1e201f; border: 1px solid #373a37; border-top: 3px solid var(--red); border-radius: 0 0 8px 8px; box-shadow: 0 18px 38px rgba(0, 0, 0, .32); }
+.explore-panel { width: 205px; left: 0; right: auto; }
+.desktop-nav .information-panel a, .desktop-nav .explore-panel a { display: flex; align-items: center; min-height: 42px; padding: 10px 13px; color: #f6f4ee; font-size: 12px; line-height: 1.35; letter-spacing: .35px; }
+.desktop-nav .information-panel a::before, .desktop-nav .explore-panel a::before { width: 5px; height: 5px; margin-right: 10px; background: #ff8d87; border-radius: 50%; content: ""; opacity: .72; transition: transform .18s ease, opacity .18s ease; }
+.desktop-nav .information-panel a:hover, .desktop-nav .explore-panel a:hover { color: #fff; background: #303330; }
+.desktop-nav .information-panel a:hover::before, .desktop-nav .explore-panel a:hover::before { opacity: 1; transform: scale(1.5); }
+.desktop-nav .nav-cta { display: flex; align-items: center; color: white; background: var(--red); padding: 0 28px; }
 .desktop-nav .nav-cta:hover { background: var(--red-dark); color: white; }
 .search-trigger { align-self: stretch; border: 0; border-right: 1px solid rgba(255,255,255,.13); padding: 0 16px; background: transparent; color: #fff; cursor: pointer; font: inherit; font-size: 13px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
 .search-trigger:hover { color: #fff; background: #2a2c2a; }
