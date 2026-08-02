@@ -296,11 +296,12 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .pagination > div a[aria-current="page"] { border-color: var(--ink); background: var(--ink); color: white; }
 
 @media (max-width: 900px) {
+  .site-header { backdrop-filter: none; }
   .desktop-nav { display: none; }
   .header-brand-row { min-height: 82px; }
   .header-search { display: none; }
   .mobile-menu { display: block; margin-left: auto; }
-  .mobile-menu > summary { position: relative; z-index: 62; display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; gap: 8px; border: 1px solid var(--ink); background: var(--ink); color: white; cursor: pointer; font-size: 10px; font-weight: 800; letter-spacing: 1px; list-style: none; text-transform: uppercase; transition: background .2s, border-color .2s; }
+  .mobile-menu > summary { position: relative; z-index: 62; display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border: 1px solid var(--ink); background: var(--ink); color: white; cursor: pointer; list-style: none; transition: background .2s, border-color .2s; }
   .mobile-menu > summary::-webkit-details-marker, .mobile-menu summary::-webkit-details-marker { display: none; }
   .mobile-menu-icon { display: grid; gap: 4px; width: 16px; }
   .mobile-menu-icon i { display: block; width: 16px; height: 2px; background: currentColor; transition: transform .22s ease, opacity .2s ease; }

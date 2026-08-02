@@ -44,7 +44,7 @@ export function SiteHeader() {
       <a className="brand" href="/" aria-label="Taipei Travel Geek home"><img src="/images/ttg-mark.png" alt="" /><span><b>Taipei</b> Travel Geek</span></a>
       <div className="header-search"><SiteSearch /></div>
       <details className="mobile-menu">
-        <summary aria-label="Open navigation"><span className="mobile-menu-label">Menu</span><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
+        <summary aria-label="Open navigation"><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
         <nav aria-label="Mobile navigation">
           <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p></div>
           <div className="mobile-menu-utility"><SiteSearch /></div>
