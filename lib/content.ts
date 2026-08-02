@@ -21,9 +21,16 @@ export type ContentPost = {
 
 export const posts = importedPosts as ContentPost[];
 export const categories = importedCategories as TaxonomyTerm[];
+export const tags = Array.from(
+  new Map(posts.flatMap((post) => post.tags).map((tag) => [tag.slug, tag])).values(),
+);
 
 export function getPost(slug: string) {
   return posts.find((post) => post.slug === slug);
+}
+
+export function getTag(slug: string) {
+  return tags.find((tag) => tag.slug === slug);
 }
 
 function escapeHtml(value: string) {

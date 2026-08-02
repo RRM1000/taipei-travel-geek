@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ArticleSidebar } from "@/components/ArticleSidebar";
@@ -7,6 +7,16 @@ import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { enhanceChoiceGuideImages, enhanceRecommendedReading, enhanceYoutubeEmbeds, formatDate, getPost, posts } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
+
+const legacySlugRedirects: Record<string, string> = {
+  "danshui": "best-day-trips-from-taipei",
+  "best-taipei-shopping-malls": "best-shopping-malls-in-taipei",
+  "best-brunches-in-taipei": "best-brunch-in-taipei",
+  "legacy": "legacy-taipei",
+  "da-an-forest-park": "daan-forest-park",
+  "taipei-botanical-gardens": "taipei-botanical-garden",
+  "taipei-events": "taipei-annual-events",
+};
 
 function withoutDuplicateLeadImage(content: string, image: string | null) {
   if (!image) return content;
@@ -31,7 +41,11 @@ export async function generateMetadata({ params }: PageProperties): Promise<Meta
 }
 
 export default async function ArticlePage({ params }: PageProperties) {
-  const post = getPost((await params).slug);
+  const { slug } = await params;
+  const replacement = legacySlugRedirects[slug];
+  if (replacement) permanentRedirect(`/${replacement}`);
+
+  const post = getPost(slug);
   if (!post) notFound();
   const heroImage = post.type === "post" ? post.featuredImage : null;
   const articleContent = enhanceYoutubeEmbeds(enhanceRecommendedReading(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage), post.slug), heroImage));
