@@ -43,6 +43,17 @@ export function SiteHeader() {
     <div className="header-brand-row">
       <a className="brand" href="/" aria-label="Taipei Travel Geek home"><img src="/images/ttg-mark.png" alt="" /><span><b>Taipei</b> Travel Geek</span></a>
       <div className="header-search"><SiteSearch /></div>
+      <details className="mobile-menu">
+        <summary aria-label="Open navigation"><span className="mobile-menu-label">Menu</span><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
+        <nav aria-label="Mobile navigation">
+          <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p></div>
+          <div className="mobile-menu-utility"><SiteSearch /></div>
+          <a className="mobile-plan-link" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
+          {primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}<span aria-hidden="true">→</span></a>)}
+          <details className="mobile-explore-menu"><summary>Explore <span aria-hidden="true"></span></summary>{exploreLinks.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}</details>
+          <details className="mobile-information-menu"><summary>Information <span aria-hidden="true"></span></summary>{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</details>
+        </nav>
+      </details>
     </div>
     <nav className="desktop-nav" aria-label="Main navigation">
       {primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}
@@ -50,6 +61,5 @@ export function SiteHeader() {
       <details className="information-menu" onToggle={(event) => closeOtherMenus(event.currentTarget)}><summary>Information <span aria-hidden="true">⌄</span></summary><div className="information-panel">{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</div></details>
       <a className="nav-cta" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
     </nav>
-    <details className="mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="/taipei-guide">Plan your trip</a><SiteSearch />{primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}<details className="mobile-explore-menu"><summary>Explore</summary>{exploreLinks.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}</details><details className="mobile-information-menu"><summary>Information</summary>{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</details></nav></details>
   </header>;
 }
