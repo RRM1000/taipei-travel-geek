@@ -40,12 +40,14 @@ export function SiteHeader() {
   };
 
   return <header className="site-header">
-    <a className="brand" href="/" aria-label="Taipei Travel Geek home"><img src="/images/ttg-mark.png" alt="" /><span><b>Taipei</b> Travel Geek</span></a>
+    <div className="header-brand-row">
+      <a className="brand" href="/" aria-label="Taipei Travel Geek home"><img src="/images/ttg-mark.png" alt="" /><span><b>Taipei</b> Travel Geek</span></a>
+      <div className="header-search"><SiteSearch /></div>
+    </div>
     <nav className="desktop-nav" aria-label="Main navigation">
       {primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}
       <details className="explore-menu" onToggle={(event) => closeOtherMenus(event.currentTarget)}><summary>Explore <span aria-hidden="true">⌄</span></summary><div className="explore-panel">{exploreLinks.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}</div></details>
       <details className="information-menu" onToggle={(event) => closeOtherMenus(event.currentTarget)}><summary>Information <span aria-hidden="true">⌄</span></summary><div className="information-panel">{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</div></details>
-      <SiteSearch />
       <a className="nav-cta" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
     </nav>
     <details className="mobile-menu"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="/taipei-guide">Plan your trip</a><SiteSearch />{primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}<details className="mobile-explore-menu"><summary>Explore</summary>{exploreLinks.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}</a>)}</details><details className="mobile-information-menu"><summary>Information</summary>{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</details></nav></details>
