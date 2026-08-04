@@ -1,0 +1,58 @@
+import Link from "next/link";
+import type { TaxonomyTerm } from "@/lib/content";
+import { RightSidebarContentsWidget, type HeadingItem } from "@/components/StickyContentsGuide";
+
+type RightSidebarProps = {
+  headings: HeadingItem[];
+  categories: TaxonomyTerm[];
+};
+
+const usefulLinks = [
+  { href: "/first-time-in-taipei", label: "First time in Taipei" },
+  { href: "/taipei-1-day-itineraries", label: "One-day itineraries" },
+  { href: "/taiwan-easycard", label: "Getting around with EasyCard" },
+  { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
+];
+
+const topicPills = [
+  { href: "/category/eat", label: "EAT" },
+  { href: "/category/visit", label: "VISIT" },
+  { href: "/category/culture", label: "CULTURE" },
+  { href: "/category/events", label: "EVENTS" },
+  { href: "/category/areas", label: "AREAS" },
+];
+
+export function RightSidebar({ headings }: RightSidebarProps) {
+  return (
+    <aside className="article-right-sidebar" aria-label="Article navigation and topics">
+      <RightSidebarContentsWidget headings={headings} />
+
+      {/* Useful Guides (Desktop Sidebar) */}
+      <section className="sidebar-section sidebar-useful desktop-sidebar-useful">
+        <h3 className="sidebar-kicker">USEFUL GUIDES</h3>
+        <ul className="sidebar-useful-list">
+          {usefulLinks.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href}>
+                <span>{item.label}</span>
+                <span className="sidebar-arrow" aria-hidden="true">→</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Explore More (Desktop Sidebar) */}
+      <section className="sidebar-section sidebar-topics desktop-sidebar-topics">
+        <h3 className="sidebar-kicker">EXPLORE MORE</h3>
+        <div className="sidebar-pill-wrap">
+          {topicPills.map((pill) => (
+            <Link key={pill.href} href={pill.href} className="sidebar-pill">
+              {pill.label}
+            </Link>
+          ))}
+        </div>
+      </section>
+    </aside>
+  );
+}

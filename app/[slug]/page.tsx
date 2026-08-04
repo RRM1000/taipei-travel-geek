@@ -2,9 +2,26 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { ArticleSidebar } from "@/components/ArticleSidebar";
+import { LeftSidebar } from "@/components/LeftSidebar";
+import { RightSidebar } from "@/components/RightSidebar";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
-import { enhanceChoiceGuideImages, enhanceRecommendedReading, enhanceYoutubeEmbeds, formatDate, getPost, posts } from "@/lib/content";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { AuthorBio } from "@/components/AuthorBio";
+import { PostFooterNav } from "@/components/PostFooterNav";
+import {
+  calculateReadingTime,
+  enhanceChoiceGuideImages,
+  enhanceContentHeadings,
+  enhanceRecommendedReading,
+  enhanceTables,
+  enhanceThreeImageGalleries,
+  enhanceYoutubeEmbeds,
+  formatDate,
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+  getPost,
+  posts,
+} from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
 
@@ -18,8 +35,8 @@ const legacySlugRedirects: Record<string, string> = {
   "taipei-events": "taipei-annual-events",
 };
 
-function withoutDuplicateLeadImage(content: string, image: string | null) {
-  if (!image) return content;
+function withoutDuplicateLeadImage(content: string, image: string | null, isPage: boolean) {
+  if (!image || isPage) return content;
 
   const escapedImage = image.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const leadFigure = new RegExp(`<figure\\b[^>]*>[\\s\\S]*?<img\\b[^>]*src=["']${escapedImage}["'][^>]*>[\\s\\S]*?<\\/figure>`, "i");
@@ -34,9 +51,35 @@ export async function generateMetadata({ params }: PageProperties): Promise<Meta
   const post = getPost((await params).slug);
   if (!post) return {};
 
+  const title = post.title;
+  const description = post.excerpt || `A Taipei Travel Geek guide to ${post.title}.`;
+  const url = `https://www.taipeitravelgeek.com/${post.slug}`;
+  const ogImage = post.featuredImage
+    ? `https://www.taipeitravelgeek.com${post.featuredImage}`
+    : "https://www.taipeitravelgeek.com/og.png";
+
   return {
-    title: post.title,
-    description: post.excerpt || `A Taipei Travel Geek guide to ${post.title}.`,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url,
+      siteName: "Taipei Travel Geek",
+      images: [{ url: ogImage, alt: title }],
+      publishedTime: post.date,
+      modifiedTime: post.modified || post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -47,21 +90,67 @@ export default async function ArticlePage({ params }: PageProperties) {
 
   const post = getPost(slug);
   if (!post) notFound();
-  const heroImage = post.type === "post" ? post.featuredImage : null;
-  const articleContent = enhanceYoutubeEmbeds(enhanceRecommendedReading(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage), post.slug), heroImage));
+
+  const heroImage = post.featuredImage || null;
+  const isPage = post.type === "page";
+  const rawContent = enhanceThreeImageGalleries(
+    enhanceTables(
+      enhanceYoutubeEmbeds(
+        enhanceRecommendedReading(
+          enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug),
+          heroImage
+        )
+      )
+    )
+  );
+
+  const { enhancedContent, headings } = enhanceContentHeadings(rawContent);
+
+  const readingTime = calculateReadingTime(post.content);
+  const primaryCategory = post.categories[0];
+
+  const breadcrumbItems = [
+    ...(primaryCategory
+      ? [{ label: primaryCategory.name, href: `/category/${primaryCategory.slug}` }]
+      : []),
+    { label: post.title },
+  ];
+
+  const articleJsonLd = generateArticleSchema(post);
+  const breadcrumbJsonLd = generateBreadcrumbSchema([
+    { name: "Home", item: "https://www.taipeitravelgeek.com" },
+    ...(primaryCategory
+      ? [{ name: primaryCategory.name, item: `https://www.taipeitravelgeek.com/category/${primaryCategory.slug}` }]
+      : []),
+    { name: post.title, item: `https://www.taipeitravelgeek.com/${post.slug}` },
+  ]);
 
   return (
     <div className="article-shell">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <SiteHeader />
 
       <main>
         <section className={`article-hero${heroImage ? " article-hero-with-image" : ""}`}>
-          {heroImage && <img className="article-hero-image" src={heroImage} alt="" />}
+          {heroImage && <img className="article-hero-image" src={heroImage} alt={post.title} />}
           {heroImage && <div className="article-hero-scrim" />}
           <div className="wrap article-hero-content">
+            <Breadcrumbs items={breadcrumbItems} />
             <div className="article-heading-meta">
-              {post.categories[0] && <a className="eyebrow article-category" href={`/category/${post.categories[0].slug}`}>{post.categories[0].name}</a>}
+              {primaryCategory && (
+                <a className="eyebrow article-category" href={`/category/${primaryCategory.slug}`}>
+                  {primaryCategory.name}
+                </a>
+              )}
               <span>Travel guide</span>
+              <span className="reading-time-badge">⏱️ {readingTime} min read</span>
             </div>
             <h1 className="article-title">{post.title}</h1>
             {post.excerpt && <p className="article-dek">{post.excerpt}</p>}
@@ -69,9 +158,14 @@ export default async function ArticlePage({ params }: PageProperties) {
           </div>
         </section>
 
-        <div className="wrap article-layout">
-          <article className="article-content" dangerouslySetInnerHTML={{ __html: articleContent }} />
-          <ArticleSidebar categories={post.categories} />
+        <div className="wrap article-3col-layout">
+          <LeftSidebar categories={post.categories} />
+          <div className="article-main-column">
+            <article className="article-content" dangerouslySetInnerHTML={{ __html: enhancedContent }} />
+            <AuthorBio />
+            <PostFooterNav categories={post.categories} />
+          </div>
+          <RightSidebar headings={headings} categories={post.categories} />
         </div>
         <KlookAffiliate />
       </main>
@@ -79,3 +173,7 @@ export default async function ArticlePage({ params }: PageProperties) {
     </div>
   );
 }
+
+
+
+

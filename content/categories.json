@@ -88,6 +88,10 @@
     "slug": "stalls"
   },
   {
+    "name": "Transport",
+    "slug": "transport"
+  },
+  {
     "name": "Visit",
     "slug": "visit"
   }

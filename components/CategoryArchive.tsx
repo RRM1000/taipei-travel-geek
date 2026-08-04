@@ -1,7 +1,8 @@
 import type { ContentPost, TaxonomyTerm } from "@/lib/content";
-import { formatDate, getPostsByCategory } from "@/lib/content";
+import { formatDate, generateBreadcrumbSchema, getPostsByCategory } from "@/lib/content";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const pageSize = 10;
 
@@ -23,7 +24,7 @@ function ArticleCard({ article }: { article: ContentPost }) {
   return (
     <article className="archive-card">
       <a className="archive-card-image" href={`/${article.slug}`}>
-        <img src={article.featuredImage || "/images/taipei-skyline.jpg"} alt="" />
+        <img src={article.featuredImage || "/images/taipei-skyline.jpg"} alt={article.title} />
         {article.categories[0] && <span>{article.categories[0].name}</span>}
       </a>
       <div className="archive-card-copy">
@@ -55,34 +56,44 @@ export function CategoryArchive({
   const start = (currentPage - 1) * pageSize;
   const pageArticles = articles.slice(start, start + pageSize);
 
+  const breadcrumbJsonLd = generateBreadcrumbSchema([
+    { name: "Home", item: "https://www.taipeitravelgeek.com" },
+    { name: category.name, item: `https://www.taipeitravelgeek.com/category/${category.slug}` },
+  ]);
+
   return (
     <>
-    <main className="category-page">
-      <SiteHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <main className="category-page">
+        <SiteHeader />
 
-      <section className="category-heading wrap">
-        <p className="eyebrow">Taipei guides</p>
-        <h1>{category.name}</h1>
-        <p>{description || "Local recommendations, practical tips and places worth your time in Taipei."}</p>
-      </section>
+        <section className="category-heading wrap">
+          <Breadcrumbs items={[{ label: category.name }]} />
+          <p className="eyebrow">Taipei guides</p>
+          <h1>{category.name}</h1>
+          <p>{description || "Local recommendations, practical tips and places worth your time in Taipei."}</p>
+        </section>
 
-      <section className="wrap archive-grid" aria-label={`${category.name} guides`}>
-        {pageArticles.map((article) => <ArticleCard article={article} key={article.id} />)}
-      </section>
+        <section className="wrap archive-grid" aria-label={`${category.name} guides`}>
+          {pageArticles.map((article) => <ArticleCard article={article} key={article.id} />)}
+        </section>
 
-      {totalPages > 1 && (
-        <nav className="wrap pagination" aria-label="Category pages">
-          {currentPage > 1 && <a href={pageHref(archivePath, currentPage - 1)}>← Previous</a>}
-          <div>
-            {pageNumbers(currentPage, totalPages).map((page) => (
-              <a href={pageHref(archivePath, page)} aria-current={page === currentPage ? "page" : undefined} key={page}>{page}</a>
-            ))}
-          </div>
-          {currentPage < totalPages && <a href={pageHref(archivePath, currentPage + 1)}>Next →</a>}
-        </nav>
-      )}
-    </main>
-    <SiteFooter />
+        {totalPages > 1 && (
+          <nav className="wrap pagination" aria-label="Category pages">
+            {currentPage > 1 && <a href={pageHref(archivePath, currentPage - 1)}>← Previous</a>}
+            <div>
+              {pageNumbers(currentPage, totalPages).map((page) => (
+                <a href={pageHref(archivePath, page)} aria-current={page === currentPage ? "page" : undefined} key={page}>{page}</a>
+              ))}
+            </div>
+            {currentPage < totalPages && <a href={pageHref(archivePath, currentPage + 1)}>Next →</a>}
+          </nav>
+        )}
+      </main>
+      <SiteFooter />
     </>
   );
 }

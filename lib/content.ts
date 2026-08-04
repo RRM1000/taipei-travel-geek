@@ -111,3 +111,229 @@ export function formatDate(date: string) {
     new Date(`${date.replace(" ", "T")}Z`),
   );
 }
+
+export type HeadingItem = {
+  id: string;
+  text: string;
+  level: number;
+};
+
+function decodeHtmlEntities(text: string): string {
+  return text
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#039;/gi, "'")
+    .replace(/&nbsp;/gi, " ");
+}
+
+export function enhanceContentHeadings(content: string): {
+  enhancedContent: string;
+  headings: HeadingItem[];
+} {
+  const cleanContent = content.replace(/<details\b[^>]*class=["'][^"']*article-toc-block[^"']*["'][^>]*>[\s\S]*?<\/details>/gi, "");
+
+  const headings: HeadingItem[] = [];
+  let index = 0;
+
+  const enhancedContent = cleanContent.replace(/<h([23])\b([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, levelStr, attrs, innerHtml) => {
+    const level = parseInt(levelStr, 10);
+    const plainText = decodeHtmlEntities(innerHtml.replace(/<[^>]*>/g, "").trim());
+    if (!plainText) return match;
+
+    const idMatch = attrs.match(/id=["']([^"']+)["']/i);
+    let id = idMatch ? idMatch[1] : "";
+
+    if (!id) {
+      id = plainText
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+      if (!id) id = `section-${++index}`;
+      attrs = `${attrs} id="${id}"`;
+    }
+
+    headings.push({ level, id, text: plainText });
+    return `<h${level}${attrs}>${innerHtml}</h${level}>`;
+  });
+
+  return { enhancedContent, headings };
+}
+
+export function enhanceTables(content: string): string {
+  return content.replace(/<table\b([\s\S]*?)<\/table>/gi, (match) => {
+    return `<div class="table-responsive">${match}</div>`;
+  });
+}
+
+export function enhanceThreeImageGalleries(content: string): string {
+  let result = content;
+  let searchIdx = 0;
+
+  while (true) {
+    const match = result.slice(searchIdx).match(/<(figure|ul)\b[^>]*class=["'][^"']*wp-block-gallery[^"']/i);
+    if (!match) {
+      break;
+    }
+
+    const matchedTag = match[1]; // "figure" or "ul"
+    const startOffset = searchIdx + match.index!;
+    
+    // Find the end of the opening tag >
+    let afterOpenTagIdx = startOffset + match[0].length;
+    while (afterOpenTagIdx < result.length && result[afterOpenTagIdx - 1] !== '>') {
+      afterOpenTagIdx++;
+    }
+
+    let depth = 1;
+    let endIdx = afterOpenTagIdx;
+    const openTagPattern = new RegExp(`<${matchedTag}\\b`, 'i');
+    const closeTagPattern = new RegExp(`</${matchedTag}>`, 'i');
+
+    while (depth > 0 && endIdx < result.length) {
+      const remaining = result.slice(endIdx);
+      const nextOpen = remaining.match(openTagPattern);
+      const nextClose = remaining.match(closeTagPattern);
+
+      const openIdx = nextOpen && nextOpen.index !== undefined ? nextOpen.index : -1;
+      const closeIdx = nextClose && nextClose.index !== undefined ? nextClose.index : -1;
+
+      if (closeIdx === -1) {
+        break;
+      }
+
+      if (openIdx !== -1 && openIdx < closeIdx) {
+        depth++;
+        endIdx += openIdx + nextOpen[0].length;
+      } else {
+        depth--;
+        endIdx += closeIdx + nextClose[0].length;
+      }
+    }
+
+    if (depth > 0) {
+      searchIdx = afterOpenTagIdx;
+      continue;
+    }
+
+    const fullBlock = result.substring(startOffset, endIdx);
+    const innerHtml = result.substring(afterOpenTagIdx, endIdx - `</${matchedTag}>`.length);
+
+    const imgRegex = /<img\b[^>]+>/gi;
+    const imgs = innerHtml.match(imgRegex);
+
+    if (imgs && (imgs.length === 2 || imgs.length === 3 || imgs.length === 4)) {
+      const imgCount = imgs.length;
+      const maxItemWidth = imgCount === 4 ? "100%" : (imgCount === 3 ? "32%" : "48%");
+      const aspect = imgCount === 3 ? "1" : "4/3";
+
+      const items = imgs.map(imgHtml => {
+        const srcMatch = imgHtml.match(/src=["']([^"']+)["']/i);
+        const altMatch = imgHtml.match(/alt=["']([^"']*)["']/i);
+        const classMatch = imgHtml.match(/class=["']([^"']+)["']/i);
+
+        const src = srcMatch ? srcMatch[1] : "";
+        const alt = altMatch ? altMatch[1] : "";
+        const cls = classMatch ? classMatch[1] : "";
+
+        // Check if this image has an associated link inside the gallery block
+        const escapedImgHtml = imgHtml.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const aWrapRegex = new RegExp(`<a\\b([^>]*?)>\\s*${escapedImgHtml}\\s*<\\/a>|<a\\b([^>]*?)>\\s*<figure[^>]*>\\s*${escapedImgHtml}\\s*<\\/figure>\\s*<\\/a>`, "i");
+        const aMatch = innerHtml.match(aWrapRegex);
+
+        let wrapperStart = "";
+        let wrapperEnd = "";
+        if (aMatch) {
+          const aAttrs = aMatch[1] || aMatch[2] || "";
+          wrapperStart = `<a ${aAttrs} style="display: block; width: 100%; text-align: center;">`;
+          wrapperEnd = `</a>`;
+        }
+
+        // Avoid cropping maps or plans
+        const isMap = src.toLowerCase().includes("map") || alt.toLowerCase().includes("map") || src.toLowerCase().includes("kiln");
+        const fitMode = isMap ? "contain" : "cover";
+        const bgStyle = isMap ? "background-color: #fafafa; border: 1px solid #eee;" : "";
+
+        const imgStyle = `width: 100%; height: auto; aspect-ratio: ${aspect}; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: block; object-fit: ${fitMode}; ${bgStyle} margin: 0 auto;`;
+
+        return `<div style="flex: 1; max-width: ${maxItemWidth}; min-width: 0; display: flex; justify-content: center; align-items: center;">${wrapperStart}<img src="${src}" alt="${alt}" class="${cls}" style="${imgStyle}" loading="lazy" />${wrapperEnd}</div>`;
+      }).join("");
+
+      let replacedBlock = "";
+      if (imgCount === 4) {
+        replacedBlock = `<div class="custom-grid-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 2em auto; width: 100%; box-sizing: border-box;">${items}</div>`;
+      } else {
+        const gap = imgCount === 3 ? "12px" : "16px";
+        replacedBlock = `<div class="custom-multi-image-gallery" style="display: flex; gap: ${gap}; justify-content: center; align-items: center; margin: 2em auto; width: 100%; flex-wrap: nowrap; box-sizing: border-box;">${items}</div>`;
+      }
+      
+      result = result.substring(0, startOffset) + replacedBlock + result.substring(endIdx);
+      searchIdx = startOffset + replacedBlock.length;
+    } else {
+      searchIdx = endIdx;
+    }
+  }
+
+  return result;
+}
+
+
+
+
+
+export function calculateReadingTime(content: string): number {
+
+  const words = plainText(content).split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
+
+
+
+
+
+export function generateArticleSchema(post: ContentPost) {
+  const primaryCat = post.categories[0]?.name || "Travel";
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt || `A Taipei Travel Geek guide to ${post.title}.`,
+    "image": post.featuredImage ? [`https://www.taipeitravelgeek.com${post.featuredImage}`] : ["https://www.taipeitravelgeek.com/og.png"],
+    "datePublished": post.date,
+    "dateModified": post.modified || post.date,
+    "articleSection": primaryCat,
+    "author": {
+      "@type": "Organization",
+      "name": "Taipei Travel Geek",
+      "url": "https://www.taipeitravelgeek.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Taipei Travel Geek",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.taipeitravelgeek.com/images/ttg-mark.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.taipeitravelgeek.com/${post.slug}`
+    }
+  };
+}
+
+export function generateBreadcrumbSchema(items: { name: string; item?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((crumb, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": crumb.name,
+      ...(crumb.item ? { "item": crumb.item } : {})
+    }))
+  };
+}
+
