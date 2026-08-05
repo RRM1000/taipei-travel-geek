@@ -8,8 +8,8 @@ type RightSidebarProps = {
 };
 
 const usefulLinks = [
-  { href: "/first-time-in-taipei", label: "First time in Taipei" },
-  { href: "/taipei-1-day-itineraries", label: "One-day itineraries" },
+  { href: "/taipei-essentials-guide", label: "First time in Taipei" },
+  { href: "/one-day-itineraries", label: "One-day itineraries" },
   { href: "/taiwan-easycard", label: "Getting around with EasyCard" },
   { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
 ];

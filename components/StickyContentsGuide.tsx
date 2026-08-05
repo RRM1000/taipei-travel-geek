@@ -95,8 +95,7 @@ export function RightSidebarContentsWidget({ headings }: ContentsProps) {
                       e.preventDefault();
                       const target = document.getElementById(h.id);
                       if (target) {
-                        const top = target.getBoundingClientRect().top + window.scrollY - 140;
-                        window.scrollTo({ top, behavior: "smooth" });
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
                         history.pushState(null, "", `#${h.id}`);
                       }
                     }}

@@ -509,11 +509,20 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .article-content .article-klook-cta a { display: inline-flex; align-items: center; gap: 12px; padding: 15px 20px; background: var(--red); color: #fff; font-family: Arial, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: .35px; text-decoration: none; text-transform: uppercase; box-shadow: 5px 5px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
 .article-content .article-klook-cta a:hover { background: var(--red-dark); color: #fff; box-shadow: 2px 2px 0 var(--ink); transform: translate(3px, 3px); }
 .article-content .article-klook-cta span { font-size: 19px; line-height: 1; }
+.article-content .article-inline-cta { clear: both; }
+.article-content .article-wise-cta a { display: inline-flex; align-items: center; gap: 12px; padding: 15px 20px; background: var(--ink); color: #fff; font-family: Arial, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: .35px; text-decoration: none; text-transform: uppercase; box-shadow: 5px 5px 0 var(--red); transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
+.article-content .article-wise-cta a:hover { background: #000; color: #fff; box-shadow: 2px 2px 0 var(--red); transform: translate(3px, 3px); }
+.article-content .article-wise-cta span { font-size: 19px; line-height: 1; }
 .sidebar-trip { padding: 20px; background: var(--ink); color: #fff; }
 .sidebar-trip .sidebar-kicker { color: #ffaaa4; }
 .sidebar-trip p:not(.sidebar-kicker) { margin: 0; color: rgba(255, 255, 255, .78); font: 16px/1.45 Georgia, serif; }
 .sidebar-trip a { display: inline-block; margin-top: 18px; color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .65px; text-transform: uppercase; }
 .sidebar-trip a span { color: #ffaaa4; margin-left: 4px; }
+.sidebar-wise-card { border: 1px solid var(--line); padding: 16px; }
+.sidebar-wise-card p { margin: 0 0 14px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.sidebar-wise-card p strong { color: var(--ink); }
+.sidebar-wise-card a { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #fff; padding: 11px 14px; font-size: 12px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; box-shadow: 4px 4px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
+.sidebar-wise-card a:hover { background: var(--red-dark); box-shadow: 2px 2px 0 var(--ink); transform: translate(2px, 2px); }
 
 .article-toc { align-self: start; position: sticky; top: 25px; border-top: 3px solid var(--red); padding-top: 18px; }
 .article-toc b { display: block; margin-bottom: 13px; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; }
@@ -522,6 +531,15 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .article-content { min-width: 0; }
 .article-content > p:first-child { font: 23px/1.55 var(--font-serif); color: #272927; font-weight: 400; margin-bottom: 28px; }
 .article-content p { font-size: 17px; line-height: 1.75; color: #2d312e; margin-bottom: 22px; }
+
+/* Anchor scroll offset — keeps jump-to-heading links clear of the sticky header */
+.article-content h2[id],
+.article-content h3[id],
+.article-content h4[id],
+.article-content h5[id],
+.article-content h6[id] {
+  scroll-margin-top: 140px;
+}
 
 /* Editorial Headings */
 .article-content h2 {
@@ -799,12 +817,13 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .recommended-reading-heading > span { color: var(--red-dark); font: 800 11px/1 Arial, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; }
 .recommended-reading-heading h1, .recommended-reading-heading h2, .recommended-reading-heading h3, .recommended-reading-heading h4, .recommended-reading-heading h5, .recommended-reading-heading h6 { margin: 0; color: var(--ink); font: 34px/1 Georgia, serif; letter-spacing: -1px; }
 .recommended-reading-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.recommended-card { display: grid; grid-template-columns: 122px minmax(0, 1fr); min-height: 128px; overflow: hidden; background: #fff; box-shadow: 0 1px 0 rgba(13,17,18,.08); color: var(--ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
-.recommended-card:hover { color: var(--ink); box-shadow: 5px 5px 0 var(--ink); transform: translate(-3px, -3px); }
+.article-content .recommended-card { display: grid; grid-template-columns: 122px minmax(0, 1fr); min-height: 128px; overflow: hidden; background: #fff; box-shadow: 0 1px 0 rgba(13,17,18,.08); color: var(--ink); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+.article-content .recommended-card:hover { color: var(--ink); box-shadow: 5px 5px 0 var(--ink); transform: translate(-3px, -3px); }
 .recommended-card > img, .recommended-card-placeholder { width: 100%; height: 100%; min-height: 128px; object-fit: cover; background: linear-gradient(135deg, #d94943, #1f292c); }
 .recommended-card-body { position: relative; display: flex; flex-direction: column; align-items: start; justify-content: center; padding: 16px 35px 16px 17px; }
 .recommended-card-label { margin-bottom: 8px; color: var(--red-dark); font: 800 10px/1 Arial, sans-serif; letter-spacing: .9px; text-transform: uppercase; }
-.recommended-card strong { font: 20px/1.12 Georgia, serif; }
+.article-content .recommended-card strong { text-decoration: none; color: #3a3532; font: 600 17px/1.25 Georgia, serif; }
+.article-content .recommended-card:hover strong { color: var(--red-dark); }
 .recommended-card-arrow { position: absolute; right: 15px; bottom: 13px; color: var(--red-dark); font: 700 21px/1 Arial, sans-serif; }
 .article-date { margin: 25px 0 0; color: var(--muted); font-size: 13px; }
 .article-category { display: inline-block; }
@@ -895,6 +914,13 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   .guide-card:last-child { display: none; }
   .article-layout { grid-template-columns: 1fr; gap: 35px; }
   .article-toc { position: static; }
+  .article-content h2[id],
+  .article-content h3[id],
+  .article-content h4[id],
+  .article-content h5[id],
+  .article-content h6[id] {
+    scroll-margin-top: 96px;
+  }
   .recommended-reading-grid { grid-template-columns: 1fr; }
 }
 
@@ -951,3 +977,105 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* Klook Deals Widget Grid */
+.klook-deals-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 35px 0;
+}
+
+@media (max-width: 768px) {
+  .klook-deals-widget-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.klook-deal-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.klook-deal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+.klook-deal-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: #f7fafc;
+}
+
+.klook-deal-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.klook-deal-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.klook-deal-title {
+  margin: 0 0 8px 0 !important;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.3;
+}
+
+.klook-deal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.klook-deal-rating {
+  font-size: 13px;
+  color: #718096;
+}
+
+.klook-deal-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ff5b00; /* Klook orange */
+}
+
+.klook-deal-button {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  background: #ff5b00; /* Klook orange */
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+  margin-top: auto;
+}
+
+.klook-deal-button:hover {
+  background: #e05000;
+  color: #ffffff !important;
+}
+

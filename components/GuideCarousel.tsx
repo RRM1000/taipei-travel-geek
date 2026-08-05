@@ -4,9 +4,9 @@ import { useRef } from "react";
 
 const slides = [
   { category: "Sightseeing", title: "Is the Taipei Fun Pass worth it?", href: "/taipei-fun-pass", image: "/media/2019/12/taiwan-fun-pass.jpg" },
-  { category: "Shopping", title: "A simple guide to Taiwan's tourist tax refund", href: "/taiwan-tourist-tax-refund", image: "/media/2019/12/taiwan-tax-refund.png" },
-  { category: "Everyday Taipei", title: "Using a public sports centre gym", href: "/sports-centre-gym", image: "/media/2019/10/Sports-Centre-Gym-11-1024x724.jpg" },
-  { category: "Practical", title: "How to use a Taipei launderette", href: "/taipei-laundrettes", image: "/media/2019/05/Laundrette-7-686x1024.jpg" },
+  { category: "Transport", title: "Your first purchase: the EasyCard", href: "/taiwan-easycard", image: "/media/2019/04/easy-card.jpg" },
+  { category: "Connectivity", title: "Which Taiwan SIM card should you get?", href: "/taiwan-sim-cards", image: "/media/2019/08/SIM-Cards-Taiwan-3-1024x654.jpg" },
+  { category: "Transport", title: "Getting around Taipei, every option explained", href: "/taipei-public-transport", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg" },
 ];
 
 export function GuideCarousel() {

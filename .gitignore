@@ -44,3 +44,6 @@ next-env.d.ts
 # local preview and generated deployment output
 /build/
 /dev-server*.log
+
+# Claude Code local config
+.claude/

@@ -1,4 +1,5 @@
 import type { TaxonomyTerm } from "@/lib/content";
+import { WiseAffiliate } from "@/components/WiseAffiliate";
 
 type LeftSidebarProps = {
   categories: TaxonomyTerm[];
@@ -26,6 +27,8 @@ export function LeftSidebar({ categories }: LeftSidebarProps) {
           <a href="https://www.klook.com/?aid=8733">Browse Taipei experiences</a>
         </ins>
       </section>
+
+      <WiseAffiliate />
 
       {categories.length > 0 && (
         <section className="sidebar-section">

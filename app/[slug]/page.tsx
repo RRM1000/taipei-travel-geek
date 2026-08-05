@@ -12,6 +12,8 @@ import {
   calculateReadingTime,
   enhanceChoiceGuideImages,
   enhanceContentHeadings,
+  enhanceInlineAffiliateCTAs,
+  enhanceKlookDealsWidget,
   enhanceRecommendedReading,
   enhanceTables,
   enhanceThreeImageGalleries,
@@ -20,10 +22,26 @@ import {
   generateArticleSchema,
   generateBreadcrumbSchema,
   getPost,
+  getRelatedPosts,
+  hasManualRecommendedReading,
+  nonEditorialSlugs,
   posts,
+  renderRecommendedReadingSection,
 } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
+
+// Every post carried over from the WordPress migration has a `modified` date
+// no later than this. Anything modified after it reflects a genuine,
+// post-migration content review - not just a leftover import timestamp. Used
+// to decide whether the "Updated" date is honest to show a reader.
+const CONTENT_REVIEW_CUTOFF = new Date("2023-05-01T00:00:00Z");
+
+function isGenuinelyReviewed(modified: string | undefined) {
+  if (!modified) return false;
+  const parsed = new Date(`${modified.replace(" ", "T")}Z`);
+  return !Number.isNaN(parsed.getTime()) && parsed >= CONTENT_REVIEW_CUTOFF;
+}
 
 const legacySlugRedirects: Record<string, string> = {
   "danshui": "best-day-trips-from-taipei",
@@ -93,18 +111,29 @@ export default async function ArticlePage({ params }: PageProperties) {
 
   const heroImage = post.featuredImage || null;
   const isPage = post.type === "page";
-  const rawContent = enhanceThreeImageGalleries(
-    enhanceTables(
-      enhanceYoutubeEmbeds(
-        enhanceRecommendedReading(
-          enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug),
-          heroImage
+  const rawContent = enhanceKlookDealsWidget(
+    enhanceThreeImageGalleries(
+      enhanceTables(
+        enhanceYoutubeEmbeds(
+          enhanceRecommendedReading(
+            enhanceInlineAffiliateCTAs(
+              enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug)
+            ),
+            heroImage
+          )
         )
       )
     )
   );
 
   const { enhancedContent, headings } = enhanceContentHeadings(rawContent);
+
+  // If this post doesn't already hand-author a "Recommended Reading:" block,
+  // auto-append one based on shared categories/tags - replicates the old
+  // WordPress related-posts widget without needing per-post curation.
+  const finalContent = (nonEditorialSlugs.has(post.slug) || hasManualRecommendedReading(post.content))
+    ? enhancedContent
+    : enhancedContent + renderRecommendedReadingSection(getRelatedPosts(post, 3));
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];
@@ -154,14 +183,16 @@ export default async function ArticlePage({ params }: PageProperties) {
             </div>
             <h1 className="article-title">{post.title}</h1>
             {post.excerpt && <p className="article-dek">{post.excerpt}</p>}
-            <p className="article-date">Updated {formatDate(post.modified || post.date)}</p>
+            {isGenuinelyReviewed(post.modified) && (
+              <p className="article-date">Updated {formatDate(post.modified || post.date)}</p>
+            )}
           </div>
         </section>
 
         <div className="wrap article-3col-layout">
           <LeftSidebar categories={post.categories} />
           <div className="article-main-column">
-            <article className="article-content" dangerouslySetInnerHTML={{ __html: enhancedContent }} />
+            <article className="article-content" dangerouslySetInnerHTML={{ __html: finalContent }} />
             <AuthorBio />
             <PostFooterNav categories={post.categories} />
           </div>

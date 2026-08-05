@@ -17,37 +17,23 @@ const categoryImages = [
   "/images/huashan-creative-park.jpg",
 ];
 
-const guides = [
-  {
-    category: "Eat",
-    title: "Where to Find Every Michelin Food Stand at Taipei’s Night Markets",
-    description: "A practical guide to the city’s celebrated street food, market by market.",
-    image: "/images/raohe-night-market.jpg",
-    href: "/michelin-food-stands-at-night-markets",
-  },
-  {
-    category: "Visit",
-    title: "18 Quirky, Cool or Fun Things to Try in Taipei",
-    description: "Creative parks, curious museums and experiences beyond the usual checklist.",
-    image: "/images/huashan-creative-park.jpg",
-    href: "/quirky-cool-fun-things",
-  },
-  {
-    category: "Shop",
-    title: "The Best Shopping Areas for Wandering and Browsing",
-    description: "From polished Xinyi malls to characterful streets and local markets.",
-    image: "/images/xinyi-shopping.jpg",
-    href: "/where-to-shop-in-taipei",
-  },
+const firstTimerSlugs = [
+  "best-areas-and-hotels-to-stay",
+  "best-districts-and-areas",
+  "taipei-essentials-guide",
+  "best-day-trips-from-taipei",
+  "best-places-to-keep-kids-amused",
+  "where-to-shop-in-taipei",
 ];
+const firstTimerGuides = firstTimerSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
 const moreGuideSlugs = [
-  "where-to-have-lunch",
-  "best-vegetarian-restaurants-in-taipei",
-  "one-day-itineraries",
+  "michelin-food-stands-at-night-markets",
   "best-brunch-in-taipei",
-  "healthy-restaurants-that-taste-great",
-  "taipei-annual-events",
+  "best-bars-in-taipei",
+  "best-famous-restaurants",
+  "where-to-have-lunch",
+  "cheap-coffee",
 ];
 const moreGuides = moreGuideSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
@@ -92,22 +78,19 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">Good places to begin</p>
-              <h2>Essential Taipei guides</h2>
+              <h2>First Timers</h2>
             </div>
-            <a href="/category/visit">View all guides <span aria-hidden="true">→</span></a>
+            <a href="/taipei-guide">View the full guide <span aria-hidden="true">→</span></a>
           </div>
-          <div className="guide-grid">
-            {guides.map((guide) => (
-              <article className="guide-card" key={guide.title}>
-                <a className="guide-image" href={guide.href}>
-                  <img src={guide.image} alt="" />
-                  <span>{guide.category}</span>
-                </a>
-                <div>
-                  <h3><a href={guide.href}>{guide.title}</a></h3>
-                  <p>{guide.description}</p>
-                  <a className="text-link" href={guide.href}>Read the guide <span aria-hidden="true">→</span></a>
+          <div className="more-guides-grid">
+            {firstTimerGuides.map((guide) => (
+              <article className="more-guide-card" key={guide.slug}>
+                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.jpg"} alt="" /></a>
+                <div className="more-guide-copy">
+                  <p>{guide.categories[0]?.name || "Taipei guide"}</p>
+                  <h3><a href={`/${guide.slug}`}>{guide.title}</a></h3>
                 </div>
+                <a className="more-guide-arrow" href={`/${guide.slug}`} aria-label={`Read ${guide.title}`}>&rarr;</a>
               </article>
             ))}
           </div>
@@ -119,7 +102,7 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">More to discover</p>
-              <h2>Fresh ideas for Taipei</h2>
+              <h2>Food &amp; Drink</h2>
             </div>
             <a href="/category/eat">Explore all guides <span aria-hidden="true">&rarr;</span></a>
           </div>
@@ -134,21 +117,6 @@ export default function Home() {
                 <a className="more-guide-arrow" href={`/${guide.slug}`} aria-label={`Read ${guide.title}`}>&rarr;</a>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="planning">
-          <div className="wrap planning-grid">
-            <div>
-              <p className="eyebrow light">The practical stuff</p>
-              <h2>Plan the details.<br />Enjoy the city.</h2>
-            </div>
-            <div className="planning-links">
-              <a href="/taipei-public-transport"><span>Getting around Taipei</span><b>→</b></a>
-              <a href="/taiwan-easycard"><span>Using an EasyCard</span><b>→</b></a>
-              <a href="/taiwan-sim-cards"><span>SIM cards and connectivity</span><b>→</b></a>
-              <a href="/best-areas-and-hotels-to-stay"><span>Where to stay</span><b>→</b></a>
-            </div>
           </div>
         </section>
       </main>
