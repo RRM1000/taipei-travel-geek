@@ -39,11 +39,15 @@ img { display: block; max-width: 100%; }
   background: #ffffff;
 }
 
-.brand { display: inline-flex; align-items: center; gap: 14px; font-size: 26px; font-family: var(--font-serif); font-weight: 800; letter-spacing: -0.4px; }
-.brand img { width: 48px; height: 48px; object-fit: contain; background: #ffffff; }
+.brand { display: inline-flex; align-items: center; gap: 14px; font-size: 32px; font-family: var(--font-serif); font-weight: 800; letter-spacing: -0.4px; }
+.brand img { width: 56px; height: 56px; object-fit: contain; background: #ffffff; }
 .brand-text { display: flex; align-items: center; gap: 7px; }
 .brand-navy { color: var(--navy); font-weight: 800; }
 .brand-red { color: var(--red); font-weight: 800; }
+
+.header-weather { display: flex; align-items: center; flex: 1; justify-content: center; }
+.header-weather-strip { margin: 0; color: var(--muted); font: 600 15px/1 Arial, sans-serif; letter-spacing: .2px; white-space: nowrap; }
+.mobile-menu-heading .header-weather-strip { margin-top: 12px; color: rgba(255,255,255,.76); font-size: 14px; }
 
 .header-search { display: flex; align-items: center; }
 .header-search .search-trigger {
@@ -742,15 +746,22 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .article-content blockquote {
   position: relative;
   margin: 36px 0;
-  padding: 22px 26px 22px 30px;
-  border: 1px solid #e2e8f0;
-  border-left: 5px solid var(--red);
-  border-radius: 10px;
-  background: #f8fafc;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  padding: 22px 28px 22px 32px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  border-radius: 6px;
+  background: linear-gradient(135deg, #fffaf9 0%, #f7f8fa 100%);
+  box-shadow: 0 2px 12px rgba(19, 34, 48, 0.05);
   color: #1e293b;
   font-family: var(--font-sans);
   font-style: normal;
+  transition: box-shadow .2s ease, transform .2s ease, border-left-color .2s ease;
+}
+
+.article-content blockquote:has(p > a:only-child):hover {
+  box-shadow: 0 10px 26px rgba(19, 34, 48, 0.09);
+  transform: translateY(-1px);
+  border-left-color: var(--red-dark);
 }
 
 .article-content blockquote p {
@@ -770,6 +781,29 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   color: var(--navy);
   font-weight: 700;
 }
+
+/* Link-only blockquotes (the site's "click here to read more" CTAs) get a
+   distinct treatment - no default underline, a trailing arrow, and a subtle
+   hover shift - so they read as a designed pointer rather than a raw link. */
+.article-content blockquote p > a:only-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -.1px;
+  text-decoration: none;
+}
+.article-content blockquote p > a:only-child::after {
+  content: "\2192";
+  display: inline-block;
+  color: var(--red);
+  font-weight: 800;
+  transition: transform .2s ease;
+}
+.article-content blockquote p > a:only-child:hover { color: var(--red-dark); }
+.article-content blockquote p > a:only-child:hover::after { transform: translateX(3px); }
 
 /* Professional Responsive Tables */
 .article-content .table-responsive,
@@ -887,15 +921,37 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   border: 1px solid #e2e8f0;
   background: #ffffff;
 }
+/* Leftover single-image WordPress galleries nest a wp-block-image figure
+   inside the wp-block-gallery figure - without this, both figures apply
+   their own margin/border/shadow, double-boxing the image and leaving a
+   visible gap of whitespace around it. The inner figure is stripped back to
+   flush so only the outer box shows. */
+.article-content figure.wp-block-gallery figure {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
 .article-content .choice-guide-image { margin: 22px 0 27px; }
 .article-content .choice-guide-image a { display: block; width: 100%; }
-.article-content .choice-guide-image img { display: block; width: 100%; height: auto; }
+.article-content .choice-guide-image img { display: block; width: 100%; height: auto; max-height: 640px; object-fit: cover; }
 .article-content figure.size-full { width: 100%; height: auto; }
 .article-content figure.size-full > img { width: 100%; height: auto; }
 .article-content figure img,
 .article-content img {
   width: 100%;
   height: auto;
+  /* Caps how tall a single full-width image can get - without this, a
+     portrait-oriented photo scaled to the full ~700-820px column width
+     can render taller than the viewport itself. object-fit: cover only
+     engages once max-height actually clamps the box (i.e. only portrait
+     shots get cropped); a landscape photo well under 640px tall at full
+     width is untouched. Side-by-side gallery images are unaffected - they
+     set their own width/aspect-ratio/object-fit inline, which wins over
+     this rule, and are narrow enough to sit under the cap regardless. */
+  max-height: 640px;
+  object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
@@ -1023,6 +1079,7 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   .desktop-nav { display: none; }
   .header-brand-row { min-height: 82px; }
   .header-search { display: none; }
+  .header-weather { display: none; }
   .mobile-menu { display: block; margin-left: auto; }
   .mobile-menu > summary { position: relative; z-index: 62; display: flex; align-items: center; justify-content: center; width: 54px; height: 54px; border: 1px solid var(--ink); background: var(--ink); color: white; cursor: pointer; list-style: none; transition: background .2s, border-color .2s; }
   .mobile-menu > summary::-webkit-details-marker, .mobile-menu summary::-webkit-details-marker { display: none; }
@@ -1070,8 +1127,8 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 @media (max-width: 620px) {
   .wrap, .hero-content { width: min(100% - 30px, 1180px); }
   .header-brand-row { width: min(100% - 30px, 1180px); min-height: 82px; }
-  .brand { gap: 10px; font-size: 20px; letter-spacing: -1px; }
-  .brand img { width: 50px; height: 50px; }
+  .brand { gap: 10px; font-size: 24px; letter-spacing: -0.6px; }
+  .brand img { width: 44px; height: 44px; }
   .mobile-menu > summary { width: 52px; height: 52px; }
   .hero { min-height: 620px; }
   .hero-shade { background: linear-gradient(90deg, rgba(7,15,23,.85), rgba(7,15,23,.42)); }

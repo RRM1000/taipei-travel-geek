@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { SiteSearch } from "@/components/SiteSearch";
+import { WeatherStrip } from "@/components/WeatherStrip";
 
 type MegaCard = { slug: string; title: string; image: string; excerpt: string };
 type PrimaryKey = "Eat" | "Drink" | "Visit" | "Transport" | "TopPicks" | "Lists";
@@ -87,6 +88,7 @@ const informationPromo = { title: "The Taipei Guide", desc: "New here? Start wit
 export function SiteHeader() {
   const [activeMenu, setActiveMenu] = useState<MenuKey | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const clearCloseTimer = () => {
     if (closeTimer.current) {
@@ -95,12 +97,35 @@ export function SiteHeader() {
     }
   };
 
+  const clearOpenTimer = () => {
+    if (openTimer.current) {
+      clearTimeout(openTimer.current);
+      openTimer.current = null;
+    }
+  };
+
   const openMenu = (key: MenuKey) => {
     clearCloseTimer();
+    clearOpenTimer();
     setActiveMenu(key);
   };
 
+  // Hovering briefly while passing the mouse across the nav shouldn't pop a menu open -
+  // only commit to opening after a short pause. Once a menu is already open, switching
+  // between items stays instant so the flow between panels still feels smooth.
+  const openMenuOnHover = (key: MenuKey) => {
+    clearCloseTimer();
+    if (activeMenu !== null) {
+      clearOpenTimer();
+      setActiveMenu(key);
+      return;
+    }
+    clearOpenTimer();
+    openTimer.current = setTimeout(() => setActiveMenu(key), 150);
+  };
+
   const scheduleClose = () => {
+    clearOpenTimer();
     clearCloseTimer();
     closeTimer.current = setTimeout(() => setActiveMenu(null), 200);
   };
@@ -126,11 +151,12 @@ export function SiteHeader() {
       document.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
       clearCloseTimer();
+      clearOpenTimer();
     };
   }, []);
 
   const triggerProps = (key: MenuKey) => ({
-    onMouseEnter: () => openMenu(key),
+    onMouseEnter: () => openMenuOnHover(key),
     onMouseLeave: scheduleClose,
     onFocus: () => openMenu(key),
     "aria-expanded": activeMenu === key,
@@ -145,11 +171,12 @@ export function SiteHeader() {
           <b className="brand-navy">TAIPEI</b> <b className="brand-red">TRAVEL</b> <b className="brand-navy">GEEK</b>
         </span>
       </a>
+      <div className="header-weather"><WeatherStrip /></div>
       <div className="header-search"><SiteSearch /></div>
       <details className="mobile-menu">
         <summary aria-label="Open navigation"><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
         <nav aria-label="Mobile navigation">
-          <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p></div>
+          <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p><WeatherStrip /></div>
           <div className="mobile-menu-utility"><SiteSearch /></div>
           <a className="mobile-plan-link" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
           {primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}<span aria-hidden="true">→</span></a>)}
