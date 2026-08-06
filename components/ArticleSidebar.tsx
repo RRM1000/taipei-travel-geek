@@ -1,5 +1,6 @@
 import type { TaxonomyTerm } from "@/lib/content";
 import { WiseAffiliate } from "@/components/WiseAffiliate";
+import { KlookSidebarWidget } from "@/components/KlookSidebarWidget";
 
 type ArticleSidebarProps = {
   categories: TaxonomyTerm[];
@@ -37,9 +38,7 @@ export function ArticleSidebar({ categories }: ArticleSidebarProps) {
 
       <section className="sidebar-section sidebar-klook">
         <p className="sidebar-kicker">Klook deals</p>
-        <ins className="klk-aff-widget" data-adid="625035" data-lang="" data-currency="" data-cardh="126" data-padding="92" data-lgh="470" data-edgevalue="655" data-cid="19" data-tid="-1" data-amount="6" data-prod="dynamic_widget">
-          <a href="https://www.klook.com/?aid=8733">Browse Taipei experiences</a>
-        </ins>
+        <KlookSidebarWidget amount="6" />
       </section>
 
       <WiseAffiliate />

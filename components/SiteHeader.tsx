@@ -7,6 +7,7 @@ const primaryNavigation = ["Eat", "Drink", "Visit", "Transport"];
 const exploreLinks = ["Shop", "Culture", "Events", "Areas"];
 const informationLinks = [
   { href: "/taipei-guide", label: "Guide to Taipei" },
+  { href: "/taiwan-visa-entry-requirements", label: "Visa & entry requirements" },
   { href: "/taipei-public-transport", label: "Public transport" },
   { href: "/taiwan-easycard", label: "EasyCards" },
   { href: "/taiwan-lucky-land-giveaway", label: "NT$5,000 Lucky Land" },

@@ -83,15 +83,36 @@ function relatedGuideForSection(section: string, sourceSlug: string) {
 }
 
 export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
-  const sectionPattern = /(<h([2-5])\b[^>]*>[\s\S]*?<\/h\2>)([\s\S]*?)(?=<h[2-5]\b|$)/gi;
+  // h2/h3 only: these are genuine "which option" comparison sections (e.g. a
+  // district or hotel pick). Small h4/h5 utility subheadings like "Best Time
+  // to Visit:" also end in a "read more" link back to the linked post, which
+  // used to make this match them too and insert a redundant image between a
+  // one-line heading and its one-line answer.
+  const sectionPattern = /(<h([23])\b[^>]*>[\s\S]*?<\/h\2>)([\s\S]*?)(?=<h[2-5]\b|$)/gi;
   const sections = [...content.matchAll(sectionPattern)];
   const linkedChoices = sections.filter((section) => relatedGuideForSection(section[3], sourceSlug));
 
   if (linkedChoices.length < 2) return content;
 
+  // A single "card" (e.g. a district writeup) commonly has its own <h3>
+  // sub-heading further down (e.g. "Best For") that ends in the same
+  // "read more" link back to the related post, purely because the lookahead
+  // above stops at the next h2-h5. That subheading has no image of its own,
+  // so without deduping it would independently qualify and get a second,
+  // redundant image inserted right under it. Only insert once per related
+  // post per document - mark a slug "covered" as soon as ANY section
+  // resolves to it, whether that section already had its own hand-placed
+  // image (the common case) or we're about to insert one for it, not only
+  // when this function is the one adding the image.
+  const alreadyCovered = new Set<string>();
+
   return content.replace(sectionPattern, (match, heading: string, _level: string, section: string) => {
     const related = relatedGuideForSection(section, sourceSlug);
-    if (!related || /choice-guide-image|<figure\b|<img\b/i.test(section)) return match;
+    if (!related || alreadyCovered.has(related.slug)) return match;
+
+    const sectionAlreadyHasImage = /choice-guide-image|<figure\b|<img\b/i.test(section);
+    alreadyCovered.add(related.slug);
+    if (sectionAlreadyHasImage) return match;
 
     // Deliberately not wrapped in a link to the related post - the section
     // text right below always already contains that link (it's the trigger
@@ -121,6 +142,18 @@ export const nonEditorialSlugs = new Set([
 ]);
 
 /**
+ * Editorial posts that are known to be significantly out of date and are
+ * pending a content refresh. Unlike `nonEditorialSlugs`, these ARE real
+ * guides - just temporarily hidden from every on-site discovery path
+ * (category/tag archives, search, related-post suggestions, the sitemap)
+ * until updated, without touching the page itself. It stays live at its own
+ * URL for anyone with a direct link.
+ */
+export const unlistedSlugs = new Set([
+  "taipei-annual-events",
+]);
+
+/**
  * Replicates the old WordPress "related posts" widget: scores every other
  * post by shared categories (weighted higher) and shared tags, and returns
  * the top matches. Used to auto-append a Recommended Reading block to any
@@ -129,7 +162,7 @@ export const nonEditorialSlugs = new Set([
  */
 export function getRelatedPosts(post: ContentPost, limit = 3): ContentPost[] {
   const scored = posts
-    .filter((candidate) => candidate.slug !== post.slug && !nonEditorialSlugs.has(candidate.slug))
+    .filter((candidate) => candidate.slug !== post.slug && !nonEditorialSlugs.has(candidate.slug) && !unlistedSlugs.has(candidate.slug))
     .map((candidate) => {
       const sharedCategories = candidate.categories.filter((c) =>
         post.categories.some((pc) => pc.slug === c.slug),
@@ -165,12 +198,28 @@ export function renderRecommendedReadingSection(related: ContentPost[], heading 
   return `<section class="recommended-reading"><div class="recommended-reading-heading"><span>Keep exploring</span><h2>${escapeHtml(heading)}</h2></div><div class="recommended-reading-grid">${cards}</div></section>`;
 }
 
+/**
+ * Slugs that shouldn't get the end-of-post hotel deals widget: the hotel
+ * guide itself (already has one placed manually near the top) plus the same
+ * non-editorial utility pages excluded from Recommended Reading.
+ */
+const hotelWidgetExcludedSlugs = new Set(["best-areas-and-hotels-to-stay", ...nonEditorialSlugs]);
+
+export function shouldShowHotelDealsWidget(post: ContentPost): boolean {
+  return !hotelWidgetExcludedSlugs.has(post.slug);
+}
+
+/** Auto-appended at the end of every eligible post, right after Recommended Reading. */
+export function renderHotelDealsWidget(): string {
+  return `<section class="end-of-post-hotel-deals"><div class="recommended-reading-heading"><span>Ready to book?</span><h2>Great Taipei hotel deals right now</h2></div><div class="hotel-deals-widget"><ins class="klk-aff-widget" data-aid="8733" data-city_id="19" data-country_id="1014" data-tag_id="0" data-currency="" data-lang="" data-label1="" data-label2="" data-label3="" data-prod="deals_widget" data-total="2"><a href="//www.klook.com/">Klook.com</a></ins></div></section>`;
+}
+
 export function getPostsByCategory(category: string) {
-  return posts.filter((post) => post.categories.some((item) => item.slug === category));
+  return posts.filter((post) => !unlistedSlugs.has(post.slug) && post.categories.some((item) => item.slug === category));
 }
 
 export function getPostsByTag(tag: string) {
-  return posts.filter((post) => post.tags.some((item) => item.slug === tag));
+  return posts.filter((post) => !unlistedSlugs.has(post.slug) && post.tags.some((item) => item.slug === tag));
 }
 
 export function formatDate(date: string) {

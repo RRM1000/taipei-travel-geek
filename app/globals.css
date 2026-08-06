@@ -218,6 +218,10 @@ img { display: block; max-width: 100%; }
 .guide-card h3 a:hover { color: var(--red-dark); }
 .guide-card p { min-height: 68px; margin: 17px 0 24px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 
+.hotel-deals { padding: 60px 0 90px; }
+.hotel-deals-widget { margin-top: 28px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: #fff; }
+.hotel-deals-widget .klk-aff-widget { display: block; min-height: 260px; }
+
 .more-guides { padding: 30px 0 115px; }
 .more-guides-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 44px; border-top: 1px solid var(--line); }
 .more-guide-card { display: grid; grid-template-columns: 108px minmax(0, 1fr) 28px; align-items: center; gap: 18px; min-height: 132px; padding: 16px 0; border-bottom: 1px solid var(--line); }
@@ -370,7 +374,15 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 }
 
 .sidebar-toc-container {
-  max-height: 280px;
+  /* Reserves exactly the fixed space everything else in the sticky sidebar
+     needs (145px sticky offset + this card's own header/padding + the gap
+     to the next section + the Klook search widget's fixed height below it -
+     see .sidebar-klook-search), so whatever's left goes to the scrollable
+     list. That's what keeps the search widget from being clipped: the TOC
+     list shrinks first, down to a 60px floor, rather than the widget losing
+     space it can't spare. A plain vh-percentage doesn't work here because
+     the amount to reserve is fixed pixels, not proportional to viewport height. */
+  max-height: clamp(60px, calc(100vh - 627px), 280px);
   overflow-y: auto;
   padding-right: 6px;
   margin-top: 14px;
@@ -505,11 +517,33 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .sidebar-klook { overflow: hidden; }
 .sidebar-klook .klk-aff-widget { display: block; min-height: 126px; overflow: hidden; border-radius: 4px; background: #fff; }
 .sidebar-klook .klk-aff-widget > a { display: block; padding: 14px; color: var(--red-dark); font-size: 11px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+.sidebar-klook-search { overflow: hidden; }
+.sidebar-klook-search .klk-aff-widget { display: block; min-height: 340px; overflow: hidden; border-radius: 4px; background: #fff; }
+.sidebar-klook-search .klk-aff-widget > a { display: block; padding: 14px; color: var(--red-dark); font-size: 11px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+
+@media (max-width: 880px) {
+  /* The Klook search widget's own internal layout doesn't adapt well to
+     narrow containers and clips its right edge (its content is a fixed
+     design, not something we can restyle inside their iframe). Letting just
+     this widget bleed past the page's normal edge padding - which every
+     other section keeps - gives it the extra width it needs without
+     affecting anything else on the page. The negative margin exactly
+     cancels .wrap's own clamp(16px, 4vw, 32px) padding at any width in this
+     range, so it's edge-to-edge rather than under- or over-correcting. */
+  .sidebar-klook-search {
+    margin-inline: clamp(-32px, -4vw, -16px);
+  }
+  .sidebar-klook-search .klk-aff-widget {
+    border-radius: 0;
+  }
+}
 .article-content .article-klook-cta { margin: 28px 0; }
 .article-content .article-klook-cta a { display: inline-flex; align-items: center; gap: 12px; padding: 15px 20px; background: var(--red); color: #fff; font-family: Arial, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: .35px; text-decoration: none; text-transform: uppercase; box-shadow: 5px 5px 0 var(--ink); transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
 .article-content .article-klook-cta a:hover { background: var(--red-dark); color: #fff; box-shadow: 2px 2px 0 var(--ink); transform: translate(3px, 3px); }
 .article-content .article-klook-cta span { font-size: 19px; line-height: 1; }
 .article-content .article-inline-cta { clear: both; }
+.article-content .hotel-deals-widget { margin: 28px 0; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: #fff; }
+.article-content .hotel-deals-widget .klk-aff-widget { display: block; min-height: 200px; }
 .article-content .article-wise-cta a { display: inline-flex; align-items: center; gap: 12px; padding: 15px 20px; background: var(--ink); color: #fff; font-family: Arial, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: .35px; text-decoration: none; text-transform: uppercase; box-shadow: 5px 5px 0 var(--red); transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
 .article-content .article-wise-cta a:hover { background: #000; color: #fff; box-shadow: 2px 2px 0 var(--red); transform: translate(3px, 3px); }
 .article-content .article-wise-cta span { font-size: 19px; line-height: 1; }
@@ -812,6 +846,9 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .article-content hr.wp-block-separator + .wp-block-spacer { display: none; }
 .article-content ins.klk-aff-widget { display: block; min-height: 126px; margin: 34px 0; overflow: hidden; border-radius: 8px; background: #fff; }
 .article-content ins.klk-aff-widget > a { display: inline-block; padding: 14px 18px; color: var(--red-dark); font-size: 12px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+.end-of-post-hotel-deals { margin: 24px 0 12px; padding: 30px; border-top: 4px solid var(--navy); background: #f2eee6; }
+.end-of-post-hotel-deals .hotel-deals-widget { margin: 0; }
+
 .recommended-reading { margin: 68px 0 12px; padding: 30px; border-top: 4px solid var(--red); background: #f2eee6; }
 .recommended-reading-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 23px; }
 .recommended-reading-heading > span { color: var(--red-dark); font: 800 11px/1 Arial, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; }

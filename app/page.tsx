@@ -1,4 +1,5 @@
 import { GuideCarousel } from "@/components/GuideCarousel";
+import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { posts } from "@/lib/content";
@@ -22,7 +23,7 @@ const firstTimerSlugs = [
   "best-districts-and-areas",
   "taipei-essentials-guide",
   "best-day-trips-from-taipei",
-  "best-places-to-keep-kids-amused",
+  "taipei-itinerary-3-5-days",
   "where-to-shop-in-taipei",
 ];
 const firstTimerGuides = firstTimerSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
@@ -119,8 +120,37 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <section className="hotel-deals wrap">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Where to stay</p>
+              <h2>Taipei hotel deals</h2>
+            </div>
+            <a href="/best-areas-and-hotels-to-stay">Read the full hotel guide <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div className="hotel-deals-widget">
+            <ins
+              className="klk-aff-widget"
+              data-aid="8733"
+              data-city_id="19"
+              data-country_id="1014"
+              data-tag_id="0"
+              data-currency=""
+              data-lang=""
+              data-label1=""
+              data-label2=""
+              data-label3=""
+              data-prod="deals_widget"
+              data-total="5"
+            >
+              <a href="//www.klook.com/">Klook.com</a>
+            </ins>
+          </div>
+        </section>
       </main>
 
+      <KlookAffiliate />
       <SiteFooter />
     </>
   );

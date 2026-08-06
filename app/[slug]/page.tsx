@@ -26,7 +26,9 @@ import {
   hasManualRecommendedReading,
   nonEditorialSlugs,
   posts,
+  renderHotelDealsWidget,
   renderRecommendedReadingSection,
+  shouldShowHotelDealsWidget,
 } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
@@ -57,8 +59,26 @@ function withoutDuplicateLeadImage(content: string, image: string | null, isPage
   if (!image || isPage) return content;
 
   const escapedImage = image.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const leadFigure = new RegExp(`<figure\\b[^>]*>[\\s\\S]*?<img\\b[^>]*src=["']${escapedImage}["'][^>]*>[\\s\\S]*?<\\/figure>`, "i");
-  return content.replace(leadFigure, "");
+  // The gap between <figure> and <img> must be whitespace-only (optionally
+  // with a leading <figcaption>) - NOT `[\s\S]*?`. An unbounded gap lets this
+  // match start at any earlier, unrelated <figure> in the post (e.g. a price
+  // table) and swallow everything up to the real duplicate image, deleting
+  // whole sections in between. Requiring the image to be the figure's own
+  // near-immediate child scopes the match to the one figure that's actually
+  // a duplicate of the hero image.
+  const leadFigure = new RegExp(`<figure\\b[^>]*>\\s*<img\\b[^>]*src=["']${escapedImage}["'][^>]*>[\\s\\S]*?<\\/figure>`, "i");
+  const match = leadFigure.exec(content);
+  if (!match) return content;
+
+  // Only strip it if the match is actually in the lead-in area, before the
+  // article's first real section heading. Otherwise this is a legitimate
+  // inline image deep in the body that just happens to reuse the featured
+  // image (e.g. a specific night market's photo also being the post's hero
+  // image) - removing that would silently delete real content.
+  const firstH2Index = content.search(/<h2\b/i);
+  if (firstH2Index !== -1 && match.index >= firstH2Index) return content;
+
+  return content.slice(0, match.index) + content.slice(match.index + match[0].length);
 }
 
 export function generateStaticParams() {
@@ -131,9 +151,15 @@ export default async function ArticlePage({ params }: PageProperties) {
   // If this post doesn't already hand-author a "Recommended Reading:" block,
   // auto-append one based on shared categories/tags - replicates the old
   // WordPress related-posts widget without needing per-post curation.
-  const finalContent = (nonEditorialSlugs.has(post.slug) || hasManualRecommendedReading(post.content))
+  const withRecommendedReading = (nonEditorialSlugs.has(post.slug) || hasManualRecommendedReading(post.content))
     ? enhancedContent
     : enhancedContent + renderRecommendedReadingSection(getRelatedPosts(post, 3));
+
+  // Auto-append a small hotel deals widget after Recommended Reading on every
+  // eligible post, so it isn't limited to a single hand-placed page.
+  const finalContent = shouldShowHotelDealsWidget(post)
+    ? withRecommendedReading + renderHotelDealsWidget()
+    : withRecommendedReading;
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];

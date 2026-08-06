@@ -4,6 +4,11 @@ import { categories, posts } from "@/lib/content";
 const BASE_URL = "https://www.taipeitravelgeek.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Note: unlisted posts (see `unlistedSlugs` in lib/content.ts) are
+  // deliberately still included here. Sitemap presence doesn't promote a
+  // page to visitors - it's just a crawl hint - so keeping it in preserves
+  // whatever search ranking it already has while it's hidden from on-site
+  // navigation, pending a content refresh.
   const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${BASE_URL}/${post.slug}`,
     lastModified: new Date(post.modified || post.date),
