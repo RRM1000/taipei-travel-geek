@@ -3,6 +3,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LeftSidebar } from "@/components/LeftSidebar";
+import { KlookSidebarWidget } from "@/components/KlookSidebarWidget";
 import { RightSidebar } from "@/components/RightSidebar";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -218,6 +219,10 @@ export default async function ArticlePage({ params }: PageProperties) {
         <div className="wrap article-3col-layout">
           <LeftSidebar categories={post.categories} />
           <div className="article-main-column">
+            <section className="sidebar-section sidebar-klook mobile-klook-widget" aria-label="Klook travel deals">
+              <p className="sidebar-kicker">Klook deals</p>
+              <KlookSidebarWidget amount="5" />
+            </section>
             <article className="article-content" dangerouslySetInnerHTML={{ __html: finalContent }} />
             <AuthorBio />
             <PostFooterNav categories={post.categories} />

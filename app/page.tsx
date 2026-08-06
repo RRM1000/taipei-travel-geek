@@ -2,6 +2,7 @@ import { GuideCarousel } from "@/components/GuideCarousel";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { LatestArticlesCarousel } from "@/components/LatestArticlesCarousel";
 import { posts } from "@/lib/content";
 
 const categories = [
@@ -18,23 +19,26 @@ const categoryImages = [
   "/images/huashan-creative-park.jpg",
 ];
 
+// Kept distinct from the navbar's mega menus (Eat/Drink/Visit/Transport/Best of Taipei) so the
+// same guide isn't featured in both places. taipei-essentials-guide is a deliberate exception -
+// it stays here and was removed from the Best of Taipei navbar menu instead.
 const firstTimerSlugs = [
   "best-areas-and-hotels-to-stay",
-  "best-districts-and-areas",
+  "the-best-guided-tours-in-taipei",
   "taipei-essentials-guide",
-  "best-day-trips-from-taipei",
+  "best-museums-in-taipei",
   "taipei-itinerary-3-5-days",
   "where-to-shop-in-taipei",
 ];
 const firstTimerGuides = firstTimerSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
 const moreGuideSlugs = [
-  "michelin-food-stands-at-night-markets",
-  "best-brunch-in-taipei",
-  "best-bars-in-taipei",
-  "best-famous-restaurants",
   "where-to-have-lunch",
-  "cheap-coffee",
+  "cheap-breakfast-taipei",
+  "best-cocktail-bars-in-taipei",
+  "best-vegetarian-restaurants-in-taipei",
+  "best-outdoor-drinking",
+  "best-sandwiches-taipei",
 ];
 const moreGuides = moreGuideSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
@@ -74,6 +78,8 @@ export default function Home() {
             </a>
           ))}
         </section>
+
+        <LatestArticlesCarousel />
 
         <section className="featured wrap">
           <div className="section-heading">

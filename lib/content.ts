@@ -19,7 +19,7 @@ export type ContentPost = {
   tags: TaxonomyTerm[];
 };
 
-export const posts = importedPosts as ContentPost[];
+export const posts = (importedPosts as ContentPost[]).sort((a, b) => b.date.localeCompare(a.date));
 export const categories = importedCategories as TaxonomyTerm[];
 export const tags = Array.from(
   new Map(posts.flatMap((post) => post.tags).map((tag) => [tag.slug, tag])).values(),
@@ -219,7 +219,18 @@ export function getPostsByCategory(category: string) {
 }
 
 export function getPostsByTag(tag: string) {
-  return posts.filter((post) => !unlistedSlugs.has(post.slug) && post.tags.some((item) => item.slug === tag));
+  const matches = posts.filter((post) => !unlistedSlugs.has(post.slug) && post.tags.some((item) => item.slug === tag));
+  // Top Picks combines the broader top-pick pool with the smaller, more curated
+  // Essential pool - Essential posts are weighted to the front so the list leads
+  // with the must-see guides rather than burying them among the wider picks.
+  if (tag === "top-pick") {
+    return [...matches].sort((a, b) => {
+      const aWeight = a.tags.some((item) => item.slug === "essential") ? 0 : 1;
+      const bWeight = b.tags.some((item) => item.slug === "essential") ? 0 : 1;
+      return aWeight - bWeight;
+    });
+  }
+  return matches;
 }
 
 export function formatDate(date: string) {

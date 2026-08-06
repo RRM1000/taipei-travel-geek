@@ -45,7 +45,7 @@ export function KlookSidebarWidget({ amount }: KlookSidebarWidgetProps) {
       data-amount={amount}
       data-prod="static_widget"
     >
-      <a href="https://www.klook.com/?aid=8733">Browse Taipei experiences</a>
+      <a href="//www.klook.com/">Klook.com</a>
     </ins>
   );
 }
