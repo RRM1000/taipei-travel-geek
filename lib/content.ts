@@ -377,8 +377,14 @@ export function enhanceThreeImageGalleries(content: string): string {
           wrapperEnd = `</a>`;
         }
 
-        // Avoid cropping maps or plans
-        const isMap = src.toLowerCase().includes("map") || alt.toLowerCase().includes("map") || src.toLowerCase().includes("kiln");
+        // Avoid cropping maps, plans, or chart/graph images - a hard aspect-ratio
+        // crop clips titles and axis labels that sit close to the image edges.
+        const isMap =
+          src.toLowerCase().includes("map") ||
+          alt.toLowerCase().includes("map") ||
+          src.toLowerCase().includes("kiln") ||
+          /rainfall|temperature|chart|graph/i.test(src) ||
+          /rainfall|temperature|chart|graph/i.test(alt);
         const fitMode = isMap ? "contain" : "cover";
         const bgStyle = isMap ? "background-color: #fafafa; border: 1px solid #eee;" : "";
 
