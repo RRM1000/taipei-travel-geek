@@ -28,7 +28,7 @@ const firstTimerSlugs = [
   "taipei-essentials-guide",
   "best-museums-in-taipei",
   "taipei-itinerary-3-5-days",
-  "where-to-shop-in-taipei",
+  "best-districts-and-areas",
 ];
 const firstTimerGuides = firstTimerSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 

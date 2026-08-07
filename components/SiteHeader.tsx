@@ -28,9 +28,9 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
   ],
   Drink: [
     { slug: "best-bars-in-taipei", title: "The Best Expat Bars in Taipei", image: "/media/2019/06/On-Tap-2-1024x692.jpg", excerpt: "Happy hour times included." },
-    { slug: "best-cafes-to-work", title: "10 Cafes Ideal for Taking Your Laptop", image: "/media/2019/12/Out-of-Office-1024x658.jpg", excerpt: "WiFi, plugs and seating, rated." },
+    { slug: "best-cafes-to-work", title: "Cafes Ideal for Taking Your Laptop", image: "/media/2019/12/Out-of-Office-1024x658.jpg", excerpt: "WiFi, plugs and seating, rated." },
     { slug: "best-cocktail-bars-in-taipei", title: "Taipei's Best Cocktail Bars", image: "/media/2026/08/Cocktail-Bar-Bartender-Pouring-6-1024x1365.jpg", excerpt: "Asia's 50 Best winners, speakeasies and rooftops." },
-    { slug: "tap-bistro-zhangmen", title: "Rooftop View of Taipei 101 at Tap Bistro Zhangmen", image: "/media/2020/01/Tap-Bistro-Zhangmen-2-1024x703.jpg", excerpt: "A drink with one of the best views in the city." },
+    { slug: "ximen-outdoor-drinking", title: "Ximending Outdoor Drinking Area", image: "/media/2020/01/Ximending-Outdoor-Drinking-3-1024x716.jpg", excerpt: "The largest and best area in Taipei for drinking outside." },
   ],
   Visit: [
     { slug: "best-districts-and-areas", title: "A Guide to Every District in Taipei", image: "/media/2023/01/Taipei-1024x678.jpg", excerpt: "All 12 districts, and where to base yourself." },
