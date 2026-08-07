@@ -1,13 +1,16 @@
 "use client";
 
 import { useRef } from "react";
-import { posts } from "@/lib/content";
 
-export function LatestArticlesCarousel() {
+export type CarouselItem = {
+  slug: string;
+  title: string;
+  featuredImage?: string | null;
+  category: string;
+};
+
+export function LatestArticlesCarousel({ items }: { items: CarouselItem[] }) {
   const track = useRef<HTMLDivElement>(null);
-  
-  // Filter for actual blog posts and select the 6 most recent
-  const latest = posts.filter((p) => p.type === "post").slice(0, 6);
 
   const move = (direction: number) => {
     if (track.current) {
@@ -35,16 +38,18 @@ export function LatestArticlesCarousel() {
         </div>
       </div>
       <div className="latest-carousel-track wrap" ref={track}>
-        {latest.map((post) => (
+        {items.map((post) => (
           <a className="latest-carousel-card" href={`/${post.slug}`} key={post.slug}>
             <div className="latest-card-bg-wrap">
               <img src={post.featuredImage || "/images/taipei-skyline.jpg"} alt="" />
             </div>
             <div className="latest-card-overlay" />
             <div className="latest-card-content">
-              <p className="latest-card-category">{post.categories[0]?.name || "Taipei guide"}</p>
+              <p className="latest-card-category">{post.category}</p>
               <h3>{post.title}</h3>
-              <span className="latest-card-cta">Read Article <span aria-hidden="true">→</span></span>
+              <span className="latest-card-cta">
+                Read Article <span aria-hidden="true">→</span>
+              </span>
             </div>
           </a>
         ))}

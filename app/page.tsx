@@ -42,6 +42,16 @@ const moreGuideSlugs = [
 ];
 const moreGuides = moreGuideSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
+const latestArticles = posts
+  .filter((p) => p.type === "post" || !p.type)
+  .slice(0, 6)
+  .map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    featuredImage: p.featuredImage,
+    category: p.categories[0]?.name || "Taipei Guide",
+  }));
+
 export default function Home() {
   return (
     <>
@@ -79,9 +89,9 @@ export default function Home() {
           ))}
         </section>
 
-        <LatestArticlesCarousel />
+        <LatestArticlesCarousel items={latestArticles} />
 
-        <section className="featured wrap">
+        <section className="featured wrap first-timers-section">
           <div className="section-heading">
             <div>
               <p className="eyebrow">Good places to begin</p>
@@ -89,16 +99,21 @@ export default function Home() {
             </div>
             <a href="/taipei-guide">View the full guide <span aria-hidden="true">→</span></a>
           </div>
-          <div className="more-guides-grid">
+          <div className="first-timers-grid">
             {firstTimerGuides.map((guide) => (
-              <article className="more-guide-card" key={guide.slug}>
-                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.jpg"} alt="" /></a>
-                <div className="more-guide-copy">
-                  <p>{guide.categories[0]?.name || "Taipei guide"}</p>
-                  <h3><a href={`/${guide.slug}`}>{guide.title}</a></h3>
+              <a className="first-timer-card" href={`/${guide.slug}`} key={guide.slug}>
+                <div className="first-timer-image-wrap">
+                  <img src={guide.featuredImage || "/images/taipei-skyline.jpg"} alt="" />
                 </div>
-                <a className="more-guide-arrow" href={`/${guide.slug}`} aria-label={`Read ${guide.title}`}>&rarr;</a>
-              </article>
+                <div className="first-timer-body">
+                  <span className="first-timer-tag">{guide.categories[0]?.name || "Taipei Guide"}</span>
+                  <h3>{guide.title}</h3>
+                  <div className="first-timer-footer">
+                    <span>Read Starter Guide</span>
+                    <span className="first-timer-arrow">→</span>
+                  </div>
+                </div>
+              </a>
             ))}
           </div>
         </section>

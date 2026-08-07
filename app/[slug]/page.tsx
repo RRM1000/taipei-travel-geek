@@ -40,9 +40,10 @@ type PageProperties = { params: Promise<{ slug: string }> };
 // to decide whether the "Updated" date is honest to show a reader.
 const CONTENT_REVIEW_CUTOFF = new Date("2023-05-01T00:00:00Z");
 
-function isGenuinelyReviewed(modified: string | undefined) {
-  if (!modified) return false;
-  const parsed = new Date(`${modified.replace(" ", "T")}Z`);
+function isGenuinelyReviewed(modified: string | undefined, date?: string) {
+  const target = modified || date;
+  if (!target) return false;
+  const parsed = new Date(`${target.replace(" ", "T")}Z`);
   return !Number.isNaN(parsed.getTime()) && parsed >= CONTENT_REVIEW_CUTOFF;
 }
 
@@ -210,7 +211,7 @@ export default async function ArticlePage({ params }: PageProperties) {
             </div>
             <h1 className="article-title">{post.title}</h1>
             {post.excerpt && <p className="article-dek">{post.excerpt}</p>}
-            {isGenuinelyReviewed(post.modified) && (
+            {isGenuinelyReviewed(post.modified, post.date) && (
               <p className="article-date">Updated {formatDate(post.modified || post.date)}</p>
             )}
           </div>
@@ -219,6 +220,15 @@ export default async function ArticlePage({ params }: PageProperties) {
         <div className="wrap article-3col-layout">
           <LeftSidebar categories={post.categories} />
           <div className="article-main-column">
+            {post.tags.length > 0 && (
+              <div className="article-tags" aria-label="Tags for this article">
+                {post.tags.map((tag) => (
+                  <a key={tag.slug} className="article-tag" href={`/tag/${tag.slug}`}>
+                    {tag.name}
+                  </a>
+                ))}
+              </div>
+            )}
             <section className="sidebar-section sidebar-klook mobile-klook-widget" aria-label="Klook travel deals">
               <p className="sidebar-kicker">Klook deals</p>
               <KlookSidebarWidget amount="5" />

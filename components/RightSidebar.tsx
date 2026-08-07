@@ -27,19 +27,14 @@ export function RightSidebar({ headings }: RightSidebarProps) {
     <aside className="article-right-sidebar" aria-label="Article navigation and topics">
       <RightSidebarContentsWidget headings={headings} />
 
-      <section className="sidebar-section sidebar-klook-search">
-        <p className="sidebar-kicker">Search Klook</p>
-        <ins
-          className="klk-aff-widget"
-          data-wid="8733"
-          data-height="340px"
-          data-adid="1371574"
-          data-lang=""
-          data-prod="search_vertical"
-          data-currency=""
-        >
-          <a href="//www.klook.com/?aid=8733">Klook.com</a>
-        </ins>
+      <section className="sidebar-section sidebar-contribute-card">
+        <p className="sidebar-kicker">WRITE FOR US</p>
+        <p className="contribute-title">
+          Love exploring the restaurant and bar scene in Taipei? We’d love your help writing articles for our blog!
+        </p>
+        <p className="contribute-action">
+          Please <a href="mailto:taipeitravelgeek@gmail.com" className="contribute-email-link">contact me</a>.
+        </p>
       </section>
 
       {/* Useful Guides (Desktop Sidebar) */}

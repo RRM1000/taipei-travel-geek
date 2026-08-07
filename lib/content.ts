@@ -19,7 +19,7 @@ export type ContentPost = {
   tags: TaxonomyTerm[];
 };
 
-export const posts = (importedPosts as ContentPost[]).sort((a, b) => b.date.localeCompare(a.date));
+export const posts = [...(importedPosts as ContentPost[])].sort((a, b) => b.date.localeCompare(a.date));
 export const categories = importedCategories as TaxonomyTerm[];
 export const tags = Array.from(
   new Map(posts.flatMap((post) => post.tags).map((tag) => [tag.slug, tag])).values(),
@@ -82,6 +82,32 @@ function relatedGuideForSection(section: string, sourceSlug: string) {
   return undefined;
 }
 
+// How many *distinct* related posts a section links to. relatedGuideForSection
+// only ever returns the first one - fine for a section about one specific
+// place, arbitrary and misleading for a section that's really a grab-bag
+// covering several (e.g. "Traveller Tips" mentioning three unrelated
+// posts in passing). 3+ is the signal used below to skip those.
+function distinctRelatedGuideCount(section: string, sourceSlug: string) {
+  const links = [...section.matchAll(/href=["']\/([^\/#"']+?)\/?["']/gi)];
+  const found = new Set<string>();
+  for (const link of links) {
+    const related = getPost(link[1]);
+    if (related && related.slug !== sourceSlug && related.featuredImage) found.add(related.slug);
+  }
+  return found.size;
+}
+
+// Generic, catch-all heading names used across many posts for exactly the
+// kind of multi-topic wrap-up section where picking "the first link
+// mentioned" as the illustrative photo reads as arbitrary rather than
+// representative (e.g. Taipei 101's "Traveller Tips" surfacing a photo from
+// its unrelated NYE fireworks post, ahead of anything about Taipei 101).
+const GENERIC_SECTION_HEADINGS = new Set([
+  "traveller tips", "tips", "best deals", "deals", "general tips", "price", "prices",
+  "location", "locations", "places of interest", "faq", "overview", "general information",
+  "useful information", "useful tips", "how to get there",
+]);
+
 export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
   // h2/h3 only: these are genuine "which option" comparison sections (e.g. a
   // district or hotel pick). Small h4/h5 utility subheadings like "Best Time
@@ -113,6 +139,16 @@ export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
     const sectionAlreadyHasImage = /choice-guide-image|<figure\b|<img\b/i.test(section);
     alreadyCovered.add(related.slug);
     if (sectionAlreadyHasImage) return match;
+
+    // Skip sections that are really a grab-bag rather than a profile of one
+    // specific place: a generic heading name, or 3+ distinct related posts
+    // mentioned in passing. relatedGuideForSection would still arbitrarily
+    // pick "the first one" as the illustrative photo, which reads as
+    // unrelated/wrong rather than representative in these cases.
+    const headingText = heading.replace(/<[^>]+>/g, "").trim().toLowerCase();
+    if (GENERIC_SECTION_HEADINGS.has(headingText) || distinctRelatedGuideCount(section, sourceSlug) >= 3) {
+      return match;
+    }
 
     // Deliberately not wrapped in a link to the related post - the section
     // text right below always already contains that link (it's the trigger
@@ -149,9 +185,7 @@ export const nonEditorialSlugs = new Set([
  * until updated, without touching the page itself. It stays live at its own
  * URL for anyone with a direct link.
  */
-export const unlistedSlugs = new Set([
-  "taipei-annual-events",
-]);
+export const unlistedSlugs = new Set<string>([]);
 
 /**
  * Replicates the old WordPress "related posts" widget: scores every other

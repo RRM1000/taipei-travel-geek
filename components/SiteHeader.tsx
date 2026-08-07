@@ -24,7 +24,7 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
     { slug: "michelin-food-stands-at-night-markets", title: "Every Michelin Food Stand at Every Night Market", image: "/media/2022/12/Raohe-Night-Market-6-edited.jpg", excerpt: "Every Bib Gourmand stall, mapped by market." },
     { slug: "best-famous-restaurants", title: "Famous Local Restaurants Worth Queuing For", image: "/media/2019/08/Jin-Feng-Braised-Pork-Rice-12-1024x768.jpg", excerpt: "The best-known local spots, and when to beat the queue." },
     { slug: "best-brunch-in-taipei", title: "The 8 Hippest Brunch Places in Taipei", image: "/media/2019/05/The-Antipodean-Specialty-Coffee-6-e1569909545917-1024x724.jpg", excerpt: "Where Taipei goes for a lazy weekend brunch." },
-    { slug: "yong-kang-beef-noodles", title: "Yong Kang Beef Noodles - Still the Best?", image: "/media/2020/03/Yong-Kang-Beef-Noodles-1-1024x716.jpg", excerpt: "The bowl every guidebook points you to." },
+    { slug: "din-tai-fung", title: "How to Avoid the Queues at Din Tai Fung", image: "/media/2019/10/Din-Tai-Fung-7-1024x712.jpg", excerpt: "The world-famous xiaolongbao, without the wait." },
   ],
   Drink: [
     { slug: "best-bars-in-taipei", title: "The Best Expat Bars in Taipei", image: "/media/2019/06/On-Tap-2-1024x692.jpg", excerpt: "Happy hour times included." },
@@ -33,10 +33,10 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
     { slug: "tap-bistro-zhangmen", title: "Rooftop View of Taipei 101 at Tap Bistro Zhangmen", image: "/media/2020/01/Tap-Bistro-Zhangmen-2-1024x703.jpg", excerpt: "A drink with one of the best views in the city." },
   ],
   Visit: [
-    { slug: "taipei-101", title: "Taipei 101 - Cheap Tickets & Best Times to Visit", image: "/media/2020/12/Taipei-101-Fireworks-Mountain-1-1024x619.jpg", excerpt: "How to skip the queue and the crowds." },
+    { slug: "best-districts-and-areas", title: "A Guide to Every District in Taipei", image: "/media/2023/01/Taipei-1024x678.jpg", excerpt: "All 12 districts, and where to base yourself." },
     { slug: "best-day-trips-from-taipei", title: "The Best Day Trips Within 90 Minutes of Taipei", image: "/media/2022/11/Jiufen2-1024x691.jpg", excerpt: "Jiufen, Shifen and the rest of the North Coast." },
     { slug: "one-day-itineraries", title: "24 Hours in Taipei: Itineraries", image: "/media/2019/12/Chiang-Kai-Shek-Memorial-Hall-Flag-Ceremony3-1024x699.jpg", excerpt: "The best of Taipei, planned out for you." },
-    { slug: "best-districts-and-areas", title: "A Guide to Every District in Taipei", image: "/media/2023/01/Taipei-1024x678.jpg", excerpt: "All 12 districts, and where to base yourself." },
+    { slug: "huashan-1914-creative-park", title: "Huashan 1914 Creative Park", image: "/media/2019/07/Huashan-1914-Creative-Park-18-e1562031248271-1024x768.jpg", excerpt: "Converted warehouses full of galleries, shops and cafes." },
   ],
   Transport: [
     { slug: "taipei-public-transport", title: "Public Transport - A Guide to Every Type in Taipei", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg", excerpt: "MRT, buses, YouBikes and everything between." },
@@ -44,8 +44,6 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
     { slug: "taipei-youbike", title: "Full Guide for Hiring and Riding a YouBike", image: "/media/2019/09/YouBike-Taipei-6-1024x726.jpg", excerpt: "How to unlock, ride and return the city's bikes." },
     { slug: "mrt", title: "Taipei MRT - Full Guide & Tips", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
   ],
-  // Essentials lead (matching getPostsByTag's essential-first weighting on the
-  // /tag/top-pick archive), followed by the more personality-driven picks.
   TopPicks: [
     { slug: "national-palace-museum", title: "National Palace Museum", image: "/media/2019/07/National-Palace-Museum-8-1024x694.jpg", excerpt: "The world's largest collection of Chinese artefacts." },
     { slug: "chiang-kai-shek-memorial-hall", title: "Chiang Kai-Shek Memorial Hall", image: "/media/2019/08/Chiang-Kai-Shek-7-1024x700.jpg", excerpt: "One of Taipei's most iconic landmarks." },
@@ -68,13 +66,11 @@ const exploreLinks = [
 ];
 
 const informationLinks = [
-  { href: "/taipei-guide", label: "Guide to Taipei" },
-  { href: "/taiwan-visa-entry-requirements", label: "Visa & entry requirements" },
-  { href: "/taipei-public-transport", label: "Public transport" },
-  { href: "/taiwan-easycard", label: "EasyCards" },
-  { href: "/taiwan-lucky-land-giveaway", label: "NT$5,000 Lucky Land" },
-  { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
   { href: "/taiwan-sim-cards", label: "Taiwan SIM cards" },
+  { href: "/taiwan-easycard", label: "EasyCard" },
+  { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
+  { href: "/taiwan-visa-entry-requirements", label: "Visa & entry requirements" },
+  { href: "/taiwan-lucky-land-giveaway", label: "NT$5,000 Lucky Land" },
   { href: "/taiwan-tourist-tax-refund", label: "Tourist tax refund" },
   { href: "/sports-centre-gym", label: "Sports centre gyms" },
   { href: "/taipei-laundrettes", label: "Launderettes" },
@@ -110,9 +106,6 @@ export function SiteHeader() {
     setActiveMenu(key);
   };
 
-  // Hovering briefly while passing the mouse across the nav shouldn't pop a menu open -
-  // only commit to opening after a short pause. Once a menu is already open, switching
-  // between items stays instant so the flow between panels still feels smooth.
   const openMenuOnHover = (key: MenuKey) => {
     clearCloseTimer();
     if (activeMenu !== null) {
@@ -163,100 +156,102 @@ export function SiteHeader() {
     "aria-haspopup": "true" as const,
   });
 
-  return <header className="site-header">
-    <div className="header-brand-row">
-      <a className="brand" href="/" aria-label="Taipei Travel Geek home">
-        <img src="/images/ttg-mark.png" alt="Taipei Travel Geek Logo" />
-        <span className="brand-text">
-          <b className="brand-navy">TAIPEI</b> <b className="brand-red">TRAVEL</b> <b className="brand-navy">GEEK</b>
-        </span>
-      </a>
-      <div className="header-weather"><WeatherStrip /></div>
-      <div className="header-search"><SiteSearch /></div>
-      <details className="mobile-menu">
-        <summary aria-label="Open navigation"><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
-        <nav aria-label="Mobile navigation">
-          <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p><WeatherStrip /></div>
-          <div className="mobile-menu-utility"><SiteSearch /></div>
-          <a className="mobile-plan-link" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
-          {primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}<span aria-hidden="true">→</span></a>)}
-          <a href="/tag/top-pick">Top Picks<span aria-hidden="true">→</span></a>
-          <a href="/tag/lists">Lists<span aria-hidden="true">→</span></a>
-          <details className="mobile-explore-menu"><summary>Explore <span aria-hidden="true"></span></summary>{exploreLinks.map((item) => <a key={item.label} href={item.href}>{item.label}</a>)}</details>
-          <details className="mobile-information-menu"><summary>Information <span aria-hidden="true"></span></summary>{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</details>
-        </nav>
-      </details>
-    </div>
-    <nav className="desktop-nav" aria-label="Main navigation" onMouseLeave={scheduleClose}>
-      <div className="nav-links-wrap">
-        {primaryNavigation.map((item) => (
-          <a key={item} href={`/category/${item.toLowerCase()}`} {...triggerProps(item)}>{item} <span className="nav-caret" aria-hidden="true" /></a>
-        ))}
-        <a href="/tag/top-pick" {...triggerProps("TopPicks")}>Top Picks <span className="nav-caret" aria-hidden="true" /></a>
-        <a href="/tag/lists" {...triggerProps("Lists")}>Lists <span className="nav-caret" aria-hidden="true" /></a>
-        <button type="button" {...triggerProps("Explore")}>Explore <span className="nav-caret" aria-hidden="true" /></button>
-        <button type="button" {...triggerProps("Information")}>Information <span className="nav-caret" aria-hidden="true" /></button>
+  return (
+    <header className="site-header">
+      <div className="header-brand-row">
+        <a className="brand" href="/" aria-label="Taipei Travel Geek home">
+          <img src="/images/ttg-mark.png" alt="Taipei Travel Geek Logo" />
+          <span className="brand-text">
+            <b className="brand-navy">TAIPEI</b> <b className="brand-red">TRAVEL</b> <b className="brand-navy">GEEK</b>
+          </span>
+        </a>
+        <div className="header-weather"><WeatherStrip /></div>
+        <div className="header-search"><SiteSearch /></div>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation"><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
+          <nav aria-label="Mobile navigation">
+            <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p><WeatherStrip /></div>
+            <div className="mobile-menu-utility"><SiteSearch /></div>
+            <a className="mobile-plan-link" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
+            {primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}<span aria-hidden="true">→</span></a>)}
+            <a href="/tag/top-pick">Top Picks<span aria-hidden="true">→</span></a>
+            <a href="/tag/lists">Lists<span aria-hidden="true">→</span></a>
+            <details className="mobile-explore-menu"><summary>Explore <span aria-hidden="true"></span></summary>{exploreLinks.map((item) => <a key={item.label} href={item.href}>{item.label}</a>)}</details>
+            <details className="mobile-information-menu"><summary>Information <span aria-hidden="true"></span></summary>{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</details>
+          </nav>
+        </details>
       </div>
-      <a className="nav-cta" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
-
-      <div
-        className={`mega-menu-panel${activeMenu ? " is-open" : ""}`}
-        onMouseEnter={clearCloseTimer}
-        onMouseLeave={scheduleClose}
-      >
-        <div className="mega-menu-inner">
-          {(["Eat", "Drink", "Visit", "Transport", "TopPicks", "Lists"] as PrimaryKey[]).map((key) => (
-            <div key={key} className="mega-menu-content" hidden={activeMenu !== key}>
-              <div className="mega-menu-header">
-                <p className="mega-menu-blurb">{megaMenuMeta[key].blurb}</p>
-                <a className="mega-menu-viewall" href={megaMenuMeta[key].viewAllHref}>{megaMenuMeta[key].viewAllLabel} <span aria-hidden="true">→</span></a>
-              </div>
-              <div className="mega-menu-cards">
-                {megaMenuCards[key].map((card) => (
-                  <a key={card.slug} className="mega-menu-card" href={`/${card.slug}`}>
-                    <span className="mega-menu-card-image"><img src={card.image} alt="" loading="lazy" /></span>
-                    <span className="mega-menu-card-title">{card.title}</span>
-                    <span className="mega-menu-card-excerpt">{card.excerpt}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
+      <nav className="desktop-nav" aria-label="Main navigation" onMouseLeave={scheduleClose}>
+        <div className="nav-links-wrap">
+          {primaryNavigation.map((item) => (
+            <a key={item} href={`/category/${item.toLowerCase()}`} {...triggerProps(item)}>{item} <span className="nav-caret" aria-hidden="true" /></a>
           ))}
+          <a href="/tag/top-pick" {...triggerProps("TopPicks")}>Top Picks <span className="nav-caret" aria-hidden="true" /></a>
+          <a href="/tag/lists" {...triggerProps("Lists")}>Lists <span className="nav-caret" aria-hidden="true" /></a>
+          <button type="button" {...triggerProps("Explore")}>Explore <span className="nav-caret" aria-hidden="true" /></button>
+          <button type="button" {...triggerProps("Information")}>Information <span className="nav-caret" aria-hidden="true" /></button>
+        </div>
+        <a className="nav-cta" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
 
-          <div className="mega-menu-content" hidden={activeMenu !== "Explore"}>
-            <div className="mega-menu-links-layout">
-              <div className="mega-menu-link-grid">
-                {exploreLinks.map((item) => (
-                  <a key={item.label} className="mega-menu-link-card" href={item.href}>
-                    <span className="mega-menu-link-title">{item.label}</span>
-                    <span className="mega-menu-link-desc">{item.desc}</span>
-                  </a>
-                ))}
+        <div
+          className={`mega-menu-panel${activeMenu ? " is-open" : ""}`}
+          onMouseEnter={clearCloseTimer}
+          onMouseLeave={scheduleClose}
+        >
+          <div className="mega-menu-inner">
+            {(["Eat", "Drink", "Visit", "Transport", "TopPicks", "Lists"] as PrimaryKey[]).map((key) => (
+              <div key={key} className="mega-menu-content" hidden={activeMenu !== key}>
+                <div className="mega-menu-header">
+                  <p className="mega-menu-blurb">{megaMenuMeta[key].blurb}</p>
+                  <a className="mega-menu-viewall" href={megaMenuMeta[key].viewAllHref}>{megaMenuMeta[key].viewAllLabel} <span aria-hidden="true">→</span></a>
+                </div>
+                <div className="mega-menu-cards">
+                  {megaMenuCards[key].map((card) => (
+                    <a key={card.slug} className="mega-menu-card" href={`/${card.slug}`}>
+                      <span className="mega-menu-card-image"><img src={card.image} alt="" loading="lazy" /></span>
+                      <span className="mega-menu-card-title">{card.title}</span>
+                      <span className="mega-menu-card-excerpt">{card.excerpt}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
-              <a className="mega-menu-promo" href={explorePromo.href}>
-                <span className="mega-menu-promo-image"><img src={explorePromo.image} alt="" loading="lazy" /></span>
-                <span className="mega-menu-promo-title">{explorePromo.title}</span>
-                <span className="mega-menu-promo-desc">{explorePromo.desc}</span>
-              </a>
+            ))}
+
+            <div className="mega-menu-content" hidden={activeMenu !== "Explore"}>
+              <div className="mega-menu-links-layout">
+                <div className="mega-menu-link-grid">
+                  {exploreLinks.map((item) => (
+                    <a key={item.label} className="mega-menu-link-card" href={item.href}>
+                      <span className="mega-menu-link-title">{item.label}</span>
+                      <span className="mega-menu-link-desc">{item.desc}</span>
+                    </a>
+                  ))}
+                </div>
+                <a className="mega-menu-promo" href={explorePromo.href}>
+                  <span className="mega-menu-promo-image"><img src={explorePromo.image} alt="" loading="lazy" /></span>
+                  <span className="mega-menu-promo-title">{explorePromo.title}</span>
+                  <span className="mega-menu-promo-desc">{explorePromo.desc}</span>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div className="mega-menu-content" hidden={activeMenu !== "Information"}>
-            <div className="mega-menu-links-layout">
-              <div className="mega-menu-link-list">
-                {informationLinks.map((item) => (
-                  <a key={item.href} href={item.href}>{item.label}</a>
-                ))}
+            <div className="mega-menu-content" hidden={activeMenu !== "Information"}>
+              <div className="mega-menu-links-layout">
+                <div className="mega-menu-link-list">
+                  {informationLinks.map((item) => (
+                    <a key={item.href} href={item.href}>{item.label}</a>
+                  ))}
+                </div>
+                <a className="mega-menu-promo" href={informationPromo.href}>
+                  <span className="mega-menu-promo-image"><img src={informationPromo.image} alt="" loading="lazy" /></span>
+                  <span className="mega-menu-promo-title">{informationPromo.title}</span>
+                  <span className="mega-menu-promo-desc">{informationPromo.desc}</span>
+                </a>
               </div>
-              <a className="mega-menu-promo" href={informationPromo.href}>
-                <span className="mega-menu-promo-image"><img src={informationPromo.image} alt="" loading="lazy" /></span>
-                <span className="mega-menu-promo-title">{informationPromo.title}</span>
-                <span className="mega-menu-promo-desc">{informationPromo.desc}</span>
-              </a>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>;
+      </nav>
+    </header>
+  );
 }
