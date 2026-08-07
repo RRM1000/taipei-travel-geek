@@ -35,10 +35,10 @@ const firstTimerGuides = firstTimerSlugs.map((slug) => posts.find((post) => post
 const moreGuideSlugs = [
   "where-to-have-lunch",
   "cheap-breakfast-taipei",
-  "best-cocktail-bars-in-taipei",
+  "cheap-coffee",
   "best-vegetarian-restaurants-in-taipei",
   "best-outdoor-drinking",
-  "best-sandwiches-taipei",
+  "addiction-aquatic-development",
 ];
 const moreGuides = moreGuideSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
