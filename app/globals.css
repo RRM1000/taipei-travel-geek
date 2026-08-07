@@ -997,6 +997,23 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 
 /* Enhanced Editorial Images & Figures */
 .article-content .wide-image { margin: 42px 0; width: 100%; height: 380px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+/* WordPress's side-by-side "columns" block - used across 200+ posts to place
+   two images/blocks next to each other, but had no layout rules at all here,
+   so every instance was just rendering stacked. */
+.article-content .wp-block-columns {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 36px 0;
+}
+.article-content .wp-block-column {
+  flex: 1;
+  min-width: 240px;
+}
+.article-content .wp-block-columns .wp-block-image,
+.article-content .wp-block-columns figure {
+  margin: 0;
+}
 .article-content figure {
   margin: 36px 0;
   border-radius: 12px;

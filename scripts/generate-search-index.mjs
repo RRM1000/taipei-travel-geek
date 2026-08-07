@@ -12,6 +12,7 @@ const plainText = (html) => html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " "
 const index = posts.filter((post) => !unlistedSlugs.has(post.slug)).map((post) => ({
   slug: post.slug, title: post.title, excerpt: post.excerpt || plainText(post.content).slice(0, 220), image: post.featuredImage,
   categories: post.categories.map((category) => category.name),
+  tags: post.tags.map((tag) => tag.name),
   searchText: `${post.title} ${post.excerpt} ${post.categories.map((category) => category.name).join(" ")} ${post.tags.map((tag) => tag.name).join(" ")} ${plainText(post.content).slice(0, 1400)}`.toLowerCase(),
 }));
 fs.writeFileSync(path.join(root, "public", "search-index.json"), `${JSON.stringify(index)}\n`);
