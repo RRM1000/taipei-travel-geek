@@ -26,7 +26,15 @@ export const tags = Array.from(
 );
 
 export function getPost(slug: string) {
-  return posts.find((post) => post.slug === slug);
+  const decodedSlug = decodeURIComponent(slug);
+  return posts.find((post) => {
+    if (post.slug === slug || post.slug === decodedSlug) return true;
+    try {
+      return decodeURIComponent(post.slug) === decodedSlug;
+    } catch {
+      return false;
+    }
+  });
 }
 
 export function getTag(slug: string) {
@@ -249,11 +257,11 @@ export function renderHotelDealsWidget(): string {
 }
 
 export function getPostsByCategory(category: string) {
-  return posts.filter((post) => !unlistedSlugs.has(post.slug) && post.categories.some((item) => item.slug === category));
+  return posts.filter((post) => !unlistedSlugs.has(post.slug) && !post.content.includes("closure-notice") && post.categories.some((item) => item.slug === category));
 }
 
 export function getPostsByTag(tag: string) {
-  const matches = posts.filter((post) => !unlistedSlugs.has(post.slug) && post.tags.some((item) => item.slug === tag));
+  const matches = posts.filter((post) => !unlistedSlugs.has(post.slug) && !post.content.includes("closure-notice") && post.tags.some((item) => item.slug === tag));
   // Top Picks combines the broader top-pick pool with the smaller, more curated
   // Essential pool - Essential posts are weighted to the front so the list leads
   // with the must-see guides rather than burying them among the wider picks.

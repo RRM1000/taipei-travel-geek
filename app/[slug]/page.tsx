@@ -55,6 +55,10 @@ const legacySlugRedirects: Record<string, string> = {
   "da-an-forest-park": "daan-forest-park",
   "taipei-botanical-gardens": "taipei-botanical-garden",
   "taipei-events": "taipei-annual-events",
+  "thai-elephant-%e8%b1%a1%e5%bb%9a%e6%b3%b0%e5%bc%8f%e6%96%99%e7%90%86": "thai-elephant",
+  "thai-elephant-象廚泰式料理": "thai-elephant",
+  "home-izakaya-%e9%a5%9e%e9%a3%9f%e5%9d%8a": "home-izakaya",
+  "home-izakaya-饞食坊": "home-izakaya",
 };
 
 function withoutDuplicateLeadImage(content: string, image: string | null, isPage: boolean) {
