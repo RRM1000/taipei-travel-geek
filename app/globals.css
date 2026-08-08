@@ -928,9 +928,13 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 }
 .article-content .quick-verdict li strong { color: var(--navy); font-weight: 700; }
 
-/* Professional Responsive Tables */
+/* Professional Responsive Tables.
+   enhanceTables() wraps every <table> in .table-responsive at render time, so
+   the scroll container is the wrapper alone. Do NOT include .wp-block-table
+   here: that class sits on the <table> itself, and giving it overflow-x too
+   produced two nested scrollbars, forcing readers to scroll both to reach the
+   last column. */
 .article-content .table-responsive,
-.article-content .wp-block-table,
 .article-content figure.wp-block-table {
   display: block;
   width: 100%;
