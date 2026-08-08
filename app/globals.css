@@ -928,6 +928,19 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 }
 .article-content .quick-verdict li strong { color: var(--navy); font-weight: 700; }
 
+/* FTC/ASA affiliate disclosure. Sits above the article body on monetised
+   posts - quiet enough not to shout, prominent enough to be read first. */
+.affiliate-disclosure {
+  margin: 0 0 26px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--line);
+  background: var(--surface-alt, #f4f1ea);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 /* Professional Responsive Tables.
    enhanceTables() wraps every <table> in .table-responsive at render time, so
    the scroll container is the wrapper alone. Do NOT include .wp-block-table

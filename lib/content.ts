@@ -336,6 +336,45 @@ export function enhanceTables(content: string): string {
   });
 }
 
+/** Hosts we earn commission from. Links to these must carry rel="sponsored". */
+const AFFILIATE_HOSTS = ["klook.com", "kkday.com", "wise.com", "agoda.com", "booking.com", "trip.com", "getyourguide.com"];
+
+export function hasAffiliateLinks(content: string): boolean {
+  return AFFILIATE_HOSTS.some((host) => content.includes(`//${host}`) || content.includes(`//www.${host}`));
+}
+
+/**
+ * Tag monetised outbound links server-side.
+ *
+ * KlookAffiliate.tsx does this in a useEffect, which means the attribute only
+ * exists after hydration - crawlers reading raw HTML see an untagged link, and
+ * it only ever covered klook.com. Doing it here puts rel="sponsored" in the
+ * markup for every affiliate host, and leaves the client script to handle the
+ * `aid` parameter.
+ */
+export function enhanceAffiliateLinks(content: string): string {
+  return content.replace(/<a\b([^>]*?)href="(https?:\/\/[^"]+)"([^>]*?)>/gi, (whole, pre, href, post) => {
+    const host = href.replace(/^https?:\/\//, "").split("/")[0].replace(/^www\./, "");
+    if (!AFFILIATE_HOSTS.includes(host)) return whole;
+
+    const attrs = `${pre} ${post}`;
+    const relMatch = attrs.match(/rel="([^"]*)"/i);
+    const existing = relMatch ? relMatch[1].split(/\s+/).filter(Boolean) : [];
+    for (const token of ["sponsored", "noopener", "noreferrer"]) {
+      if (!existing.includes(token)) existing.push(token);
+    }
+    const rel = existing.join(" ");
+
+    let out = whole
+      .replace(/\s*rel="[^"]*"/i, "")
+      .replace(/\s*target="[^"]*"/i, "")
+      .replace(/>$/, ` target="_blank" rel="${rel}">`);
+    // collapse any double spaces introduced by the strips above
+    out = out.replace(/<a\s+/, "<a ").replace(/\s{2,}/g, " ");
+    return out;
+  });
+}
+
 export function enhanceThreeImageGalleries(content: string): string {
   let result = content;
   let searchIdx = 0;

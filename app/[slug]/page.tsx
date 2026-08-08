@@ -7,10 +7,12 @@ import { KlookSidebarWidget } from "@/components/KlookSidebarWidget";
 import { RightSidebar } from "@/components/RightSidebar";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { AuthorBio } from "@/components/AuthorBio";
 import { PostFooterNav } from "@/components/PostFooterNav";
 import {
   calculateReadingTime,
+  enhanceAffiliateLinks,
   enhanceChoiceGuideImages,
   enhanceContentHeadings,
   enhanceInlineAffiliateCTAs,
@@ -24,6 +26,7 @@ import {
   generateBreadcrumbSchema,
   getPost,
   getRelatedPosts,
+  hasAffiliateLinks,
   hasManualRecommendedReading,
   nonEditorialSlugs,
   posts,
@@ -163,9 +166,13 @@ export default async function ArticlePage({ params }: PageProperties) {
 
   // Auto-append a small hotel deals widget after Recommended Reading on every
   // eligible post, so it isn't limited to a single hand-placed page.
-  const finalContent = shouldShowHotelDealsWidget(post)
-    ? withRecommendedReading + renderHotelDealsWidget()
-    : withRecommendedReading;
+  // Tag monetised outbound links last, so the auto-appended widgets and inline
+  // CTAs are covered as well as links written into the post body.
+  const finalContent = enhanceAffiliateLinks(
+    shouldShowHotelDealsWidget(post)
+      ? withRecommendedReading + renderHotelDealsWidget()
+      : withRecommendedReading
+  );
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];
@@ -237,6 +244,7 @@ export default async function ArticlePage({ params }: PageProperties) {
               <p className="sidebar-kicker">Klook deals</p>
               <KlookSidebarWidget amount="5" />
             </section>
+            {hasAffiliateLinks(finalContent) && <AffiliateDisclosure />}
             <article className="article-content" dangerouslySetInnerHTML={{ __html: finalContent }} />
             <AuthorBio />
             <PostFooterNav categories={post.categories} />
