@@ -612,8 +612,27 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 
 
 
-.mobile-klook-widget {
+/* Klook deals widget injected into the article body (see
+   enhanceMobileKlookWidget). Desktop already shows it in the left sidebar, so
+   this copy only appears once that sidebar is gone. */
+.article-content .in-post-klook {
   display: none;
+}
+.article-content .in-post-klook .klk-aff-widget {
+  display: block;
+  min-height: 126px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;
+}
+.article-content .in-post-klook .klk-aff-widget > a {
+  display: block;
+  padding: 14px;
+  color: var(--red-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1200px) {
@@ -649,10 +668,10 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   .article-left-sidebar {
     display: none !important;
   }
-  .mobile-klook-widget {
+  .article-content .in-post-klook {
     display: block;
     width: 100%;
-    margin-bottom: 8px;
+    margin: 32px 0;
   }
 }
 

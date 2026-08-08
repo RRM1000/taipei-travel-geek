@@ -560,6 +560,32 @@ export function enhanceInlineAffiliateCTAs(content: string): string {
   return result;
 }
 
+/**
+ * The Klook deals widget that lives in the left sidebar on desktop, injected
+ * into the article body for mobile.
+ *
+ * Below 880px the left sidebar is hidden outright, so mobile readers never saw
+ * it. Stacking it above the article instead just pushed the actual writing
+ * ~2,000px down the page. Dropping it at a section break puts it where someone
+ * is already reading, and the wrapper is display:none on desktop so the
+ * sidebar copy remains the only one shown there.
+ *
+ * Placed at a later heading than enhanceInlineAffiliateCTAs uses (h2 index 1)
+ * so the two don't land on top of each other.
+ */
+const IN_POST_KLOOK_WIDGET = `<div class="in-post-klook" aria-label="Klook travel deals"><p class="sidebar-kicker">Klook deals</p><ins class="klk-aff-widget" data-adid="1371607" data-lang="" data-currency="" data-cardh="126" data-padding="92" data-lgh="470" data-edgevalue="655" data-amount="3" data-prod="static_widget"><a href="//www.klook.com/">Klook.com</a></ins></div>`;
+
+export function enhanceMobileKlookWidget(content: string): string {
+  if (content.includes("in-post-klook")) return content;
+
+  const h2Positions = [...content.matchAll(/<h2\b[^>]*>/gi)].map((match) => match.index!);
+  if (h2Positions.length < 3) return content;
+
+  // Roughly a third of the way in, but never the first two headings.
+  const target = h2Positions[Math.max(2, Math.floor(h2Positions.length / 3))];
+  return content.slice(0, target) + IN_POST_KLOOK_WIDGET + content.slice(target);
+}
+
 export function enhanceKlookDealsWidget(content: string): string {
   const placeholder = /\[KlookDealsWidget\]/g;
   if (!placeholder.test(content)) return content;

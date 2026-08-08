@@ -3,7 +3,6 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LeftSidebar } from "@/components/LeftSidebar";
-import { KlookSidebarWidget } from "@/components/KlookSidebarWidget";
 import { RightSidebar } from "@/components/RightSidebar";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -18,6 +17,7 @@ import {
   enhanceContentImages,
   enhanceInlineAffiliateCTAs,
   enhanceKlookDealsWidget,
+  enhanceMobileKlookWidget,
   enhanceRecommendedReading,
   enhanceTables,
   enhanceThreeImageGalleries,
@@ -169,11 +169,11 @@ export default async function ArticlePage({ params }: PageProperties) {
   // eligible post, so it isn't limited to a single hand-placed page.
   // Tag monetised outbound links last, so the auto-appended widgets and inline
   // CTAs are covered as well as links written into the post body.
-  const finalContent = enhanceContentImages(enhanceAffiliateLinks(
+  const finalContent = enhanceContentImages(enhanceAffiliateLinks(enhanceMobileKlookWidget(
     shouldShowHotelDealsWidget(post)
       ? withRecommendedReading + renderHotelDealsWidget()
       : withRecommendedReading
-  ));
+  )));
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];
@@ -241,10 +241,6 @@ export default async function ArticlePage({ params }: PageProperties) {
                 ))}
               </div>
             )}
-            <section className="sidebar-section sidebar-klook mobile-klook-widget" aria-label="Klook travel deals">
-              <p className="sidebar-kicker">Klook deals</p>
-              <KlookSidebarWidget amount="5" />
-            </section>
             {hasAffiliateLinks(finalContent) && <AffiliateDisclosure />}
             <article className="article-content" dangerouslySetInnerHTML={{ __html: finalContent }} />
             <AuthorBio />
