@@ -336,6 +336,25 @@ export function enhanceTables(content: string): string {
   });
 }
 
+/**
+ * Defer offscreen images.
+ *
+ * Content images were all loading eagerly, so a post like shilin-night-market
+ * fired 68 requests before first paint. The first content image is left eager
+ * because it can be the LCP element on posts without a hero; everything after
+ * it is deferred.
+ */
+export function enhanceContentImages(content: string): string {
+  let seen = 0;
+  return content.replace(/<img\b[^>]*>/gi, (tag) => {
+    seen++;
+    let out = tag;
+    if (!/\bdecoding=/i.test(out)) out = out.replace(/\s*\/?>$/, ' decoding="async"$&');
+    if (seen > 1 && !/\bloading=/i.test(out)) out = out.replace(/\s*\/?>$/, ' loading="lazy"$&');
+    return out;
+  });
+}
+
 /** Hosts we earn commission from. Links to these must carry rel="sponsored". */
 const AFFILIATE_HOSTS = ["klook.com", "kkday.com", "wise.com", "agoda.com", "booking.com", "trip.com", "getyourguide.com"];
 

@@ -15,6 +15,7 @@ import {
   enhanceAffiliateLinks,
   enhanceChoiceGuideImages,
   enhanceContentHeadings,
+  enhanceContentImages,
   enhanceInlineAffiliateCTAs,
   enhanceKlookDealsWidget,
   enhanceRecommendedReading,
@@ -168,11 +169,11 @@ export default async function ArticlePage({ params }: PageProperties) {
   // eligible post, so it isn't limited to a single hand-placed page.
   // Tag monetised outbound links last, so the auto-appended widgets and inline
   // CTAs are covered as well as links written into the post body.
-  const finalContent = enhanceAffiliateLinks(
+  const finalContent = enhanceContentImages(enhanceAffiliateLinks(
     shouldShowHotelDealsWidget(post)
       ? withRecommendedReading + renderHotelDealsWidget()
       : withRecommendedReading
-  );
+  ));
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];
