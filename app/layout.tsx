@@ -9,9 +9,17 @@ export const metadata: Metadata = {
     template: "%s | Taipei Travel Geek",
   },
   description: "First-hand guides to Taipei’s food, sights, culture and neighbourhoods.",
+  // Google reads the favicon from the home page and prefers a square icon
+  // whose size is a multiple of 48px. The .ico is listed first and also sits
+  // at the site root, which is where crawlers look when they ignore the tag.
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48 96x96", type: "image/x-icon" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon-192.png",
   },
   openGraph: {
     type: "website",
