@@ -877,14 +877,6 @@
    {
     "name": "Areas",
     "slug": "areas"
-   },
-   {
-    "name": "Hotels",
-    "slug": "hotels"
-   },
-   {
-    "name": "Hostels",
-    "slug": "hostels"
    }
   ],
   "tags": [
@@ -992,10 +984,6 @@
    {
     "name": "Visit",
     "slug": "visit"
-   },
-   {
-    "name": "Memorial Halls",
-    "slug": "memorial-halls"
    },
    {
     "name": "Markets",
@@ -3508,10 +3496,6 @@
    {
     "name": "Visit",
     "slug": "visit"
-   },
-   {
-    "name": "Amusements",
-    "slug": "amusements"
    }
   ],
   "tags": [
@@ -3906,8 +3890,8 @@
   "content": "\n<p>Located on the <strong>6th floor</strong> within the newest Breeze Centre in the <a href=\"/xinyi-shopping-district\">Xinyi Shopping District</a>, the <a href=\"http://www.iridetaipei.com/\" target=\"_blank\" rel=\"noreferrer noopener\" aria-label=\"i-Ride Taipei\">i-Ride Taipei</a> is a 5D motion experience that takes you on a journey over either the USA or Taiwan.</p>\n\n\n\n<figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\">\n<figure class=\"wp-block-image\"><img width=\"951\" height=\"1024\" src=\"/media/2019/08/iRide-Taipei-6-951x1024.jpg\" alt=\"iRide Taipei\"/></figure>\n</figure>\n\n\n\n<p>You can choose between the two countries, or alternatively purchase a combo ticket where you can enjoy both. See <strong>Prices</strong> section for details.</p>\n\n\n\n<figure class=\"wp-block-image\"><img width=\"890\" height=\"1024\" src=\"/media/2019/08/iRide-Taipei-3-890x1024.jpg\" alt=\"iRide Taipei\"/></figure>\n\n\n\n<p>The rides last for approximately 20 minutes. You'll sit on seats designed to move and sway to the movements of the large curved screen that takes up your full vision, with wind, mist and even scent effects bombarding your senses as you journey through the mountains and valleys. The music has been specifically composed to match the landscapes in each scene.</p>\n\n\n\n<figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\">\n<figure class=\"wp-block-image\"><img width=\"825\" height=\"1024\" src=\"/media/2019/08/iRide-Taipei-1-825x1024.jpg\" alt=\"iRide Taipei\"/></figure>\n</figure>\n\n\n\n<p>We only tried the Taiwan ride but it was as thrilling as it was intriguing to see this beautiful country from the air. You'll fly over the mountains in the centre, Taroko gorge, Taipei and many other beautiful parts of Taiwan that will give you a unique viewpoint of this beautiful island.</p>\n\n\n\n<ins class=\"klk-aff-widget\" data-adid=\"670493\" data-lang=\"\" data-currency=\"\" data-cardH=\"126\" data-padding=\"92\" data-lgH=\"470\" data-edgeValue=\"655\" data-prod=\"static_widget\" data-amount=\"2\"><a href=\"//www.klook.com/\">Klook.com</a></ins>\n\n\n\n\n\n<p>It's certainly something different from anything else we've experienced in Taipei, and will no doubt return for the USA experience too.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img width=\"1024\" height=\"691\" src=\"/media/2019/08/iRide-Taipei-2-1024x691.jpg\" alt=\"iRide Taipei\"/></figure>\n\n\n\n<div class=\"wp-block-columns has-2-columns\">\n<div class=\"wp-block-column\">\n<h3>Pros</h3>\n\n\n\n<ul><li>Great for kids and adults alike</li></ul>\n</div>\n\n\n\n<div class=\"wp-block-column\">\n<h3>Cons</h3>\n\n\n\n<ul><li>Quite difficult to find</li></ul>\n\n\n\n<p></p>\n</div>\n</div>\n\n\n\n<h3>Opening Hours</h3>\n\n\n\n<p>Sun - Wed: 11:00 - 21:30<br>Thurs - Sat: 11:00 - 22:00</p>\n\n\n\n<h3 id=\"mce_0\">Price</h3>\n\n\n\n<figure class=\"wp-block-table\"><table><thead><tr><th>Type</th><th>Price (NT$)</th><th>Comments</th></tr></thead><tbody><tr><td>Normal</td><td>480</td><td></td></tr><tr><td>Student<br></td><td>350</td><td>Taiwan students only</td></tr><tr><td>Consession</td><td>240</td><td>Children between 4-6, senior citizens or people with disability card</td></tr><tr><td>Combo</td><td>699</td><td>Try both the Taiwan and USA rides</td></tr></tbody></table></figure>\n\n\n\n<p>You can also purchase tickets from <strong>Klook </strong>for only NT$400. </p>\n\n\n\n<p><strong><a aria-label=\"Click to take advantage of this offer\" href=\"http://klook.com/en-GB/activity/21048-i-ride-flying-cinema-experience-center-taipei/?aid=8733\" target=\"_blank\" rel=\"noreferrer noopener\">Click to take advantage of this offer</a></strong>.</p>\n\n\n\n<h3>Traveller Tips</h3>\n\n\n\n<p>Purchase the combo ticket for a good saving</p>\n\n\n\n<h3 id=\"mce_1\">Location</h3>\n\n\n\n<p>Closest MRT: Taipei 101 Station (red line - exit 4) </p>\n\n\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.003666303469!2d121.56465879496766!3d25.033949645028866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab735df866a7%3A0x9950861b37221336!2zaS1SaWRlIFRBSVBFSSDnhKHpmZDpo5vooYzkuovli5nlsYA!5e0!3m2!1sen!2stw!4v1565065385333!5m2!1sen!2stw\" width=\"100%\" height=\"350\" frameborder=\"0\" style=\"border:0\" allowfullscreen=\"\"></iframe>\n\n\n",
   "categories": [
    {
-    "name": "Amusements",
-    "slug": "amusements"
+    "name": "Visit",
+    "slug": "visit"
    }
   ],
   "tags": [
