@@ -241,11 +241,16 @@ export function renderRecommendedReadingSection(related: ContentPost[], heading 
 }
 
 /**
- * Slugs that shouldn't get the end-of-post hotel deals widget: the hotel
- * guide itself (already has one placed manually near the top) plus the same
+ * Slugs that shouldn't get the end-of-post hotel deals widget: the same
  * non-editorial utility pages excluded from Recommended Reading.
+ *
+ * best-areas-and-hotels-to-stay used to be excluded here because it carried a
+ * hand-placed widget near the top of the article. Those hand-placed widgets
+ * have been removed - they interrupted the read, and two posts ended up
+ * showing the widget twice - so every eligible post now gets exactly one, at
+ * the end.
  */
-const hotelWidgetExcludedSlugs = new Set(["best-areas-and-hotels-to-stay", ...nonEditorialSlugs]);
+const hotelWidgetExcludedSlugs = new Set([...nonEditorialSlugs]);
 
 export function shouldShowHotelDealsWidget(post: ContentPost): boolean {
   return !hotelWidgetExcludedSlugs.has(post.slug);
