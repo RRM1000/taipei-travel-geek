@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Taipei Travel Geek",
     title: "Taipei Travel Geek | Independent Taipei Travel Guides",
     description: "First-hand guides to Taipei’s food, sights, culture and neighbourhoods.",
-    images: [{ url: "/og.png", width: 1536, height: 864, alt: "Taipei Travel Geek" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Taipei Travel Geek" }],
   },
   twitter: {
     card: "summary_large_image",
