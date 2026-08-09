@@ -114,7 +114,7 @@ const GENERIC_SECTION_HEADINGS = new Set([
   "traveller tips", "tips", "best deals", "deals", "general tips", "price", "prices",
   "location", "locations", "places of interest", "faq", "overview", "general information",
   "useful information", "useful tips", "how to get there", "cost & timetables", "cost &amp; timetables", "cost and timetables",
-  "boats & ferries", "boats &amp; ferries", "boats and ferries",
+  "boats & ferries", "boats &amp; ferries", "boats and ferries", "songshan airport",
 ]);
 
 export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
