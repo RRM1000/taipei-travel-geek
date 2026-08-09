@@ -63,6 +63,20 @@ const legacySlugRedirects: Record<string, string> = {
   "thai-elephant-象廚泰式料理": "thai-elephant",
   "home-izakaya-%e9%a5%9e%e9%a3%9f%e5%9d%8a": "home-izakaya",
   "home-izakaya-饞食坊": "home-izakaya",
+  // Folded into the Xinbeitou district guide as sections - three ~300-word
+  // stubs covering one small area competed with each other rather than
+  // ranking. The fragment survives the redirect, so old links land on the
+  // right section.
+  "beitou-hot-spring-museum": "xinbeitou#hot-spring-museum",
+  "thermal-valley": "xinbeitou#thermal-valley",
+};
+
+/**
+ * Retired in favour of an existing archive that does the same job and stays
+ * current on its own.
+ */
+const retiredToArchive: Record<string, string> = {
+  "taipei-suggested-routes": "/category/routes",
 };
 
 function withoutDuplicateLeadImage(content: string, image: string | null, isPage: boolean) {
@@ -92,7 +106,12 @@ function withoutDuplicateLeadImage(content: string, image: string | null, isPage
 }
 
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }));
+  return [
+    ...posts.map((post) => ({ slug: post.slug })),
+    // Retired slugs still need a built route, or the redirect never runs.
+    ...Object.keys(legacySlugRedirects).map((slug) => ({ slug })),
+    ...Object.keys(retiredToArchive).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: PageProperties): Promise<Metadata> {
@@ -135,6 +154,9 @@ export default async function ArticlePage({ params }: PageProperties) {
   const { slug } = await params;
   const replacement = legacySlugRedirects[slug];
   if (replacement) permanentRedirect(`/${replacement}`);
+
+  const archive = retiredToArchive[slug];
+  if (archive) permanentRedirect(archive);
 
   const post = getPost(slug);
   if (!post) notFound();
