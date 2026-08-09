@@ -533,7 +533,7 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
      list shrinks first, down to a 60px floor, rather than the widget losing
      space it can't spare. A plain vh-percentage doesn't work here because
      the amount to reserve is fixed pixels, not proportional to viewport height. */
-  max-height: clamp(60px, calc(100vh - 627px), 280px);
+  max-height: clamp(220px, calc(100vh - 520px), 380px);
   overflow-y: auto;
   padding-right: 6px;
   margin-top: 14px;
@@ -808,7 +808,19 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
    Taoyuan/Songshan) without competing with them in the h2/h3 hierarchy or the sidebar
    "In this guide" widget, which only picks up real headings. */
 .article-content p.eyebrow {
-  margin: 48px 0 2px;
+  display: flex;
+  align-items: center;
+  margin: 56px 0 2px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-soft);
+}
+.article-content p.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  margin: 0 12px 2px 0;
+  background: var(--red);
 }
 
 .article-content a { color: var(--red-dark); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; font-weight: 600; transition: color .18s ease; }

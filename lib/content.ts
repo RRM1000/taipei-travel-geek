@@ -113,12 +113,19 @@ function distinctRelatedGuideCount(section: string, sourceSlug: string) {
 const GENERIC_SECTION_HEADINGS = new Set([
   "traveller tips", "tips", "best deals", "deals", "general tips", "price", "prices",
   "location", "locations", "places of interest", "faq", "overview", "general information",
-  "useful information", "useful tips", "how to get there", "cost & timetables", "cost &amp; timetables", "cost and timetables",
-  "boats & ferries", "boats &amp; ferries", "boats and ferries", "songshan airport",
-  "tpass 1200 regional monthly pass", "transport passes",
+  "useful information", "useful tips", "how to get there",
 ]);
 
+// Hub/index pages that link out to dozens of unrelated single-topic posts in
+// short sections, rather than genuinely profiling one place per section like
+// a "which district should I stay in" round-up does. Every match found on
+// these so far has been a mismatch (heading text alone can't keep up with
+// how often new subheadings get added during a restructure), so skip the
+// whole feature here rather than blacklisting headings one at a time.
+const CHOICE_GUIDE_EXCLUDED_SLUGS = new Set(["taipei-public-transport"]);
+
 export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
+  if (CHOICE_GUIDE_EXCLUDED_SLUGS.has(sourceSlug)) return content;
   // h2/h3 only: these are genuine "which option" comparison sections (e.g. a
   // district or hotel pick). Small h4/h5 utility subheadings like "Best Time
   // to Visit:" also end in a "read more" link back to the linked post, which
