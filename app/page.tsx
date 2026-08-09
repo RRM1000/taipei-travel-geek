@@ -36,7 +36,7 @@ const moreGuideSlugs = [
   "where-to-have-lunch",
   "cheap-breakfast-taipei",
   "cheap-coffee",
-  "best-vegetarian-restaurants-in-taipei",
+  "michelin-bib-gourmand-taiwanese-small-eats-taipei",
   "best-outdoor-drinking",
   "addiction-aquatic-development",
 ];
