@@ -342,6 +342,26 @@ export function enhanceTables(content: string): string {
 }
 
 /**
+ * Turn a "Perfect For" heading + plain bullet list into a row of tag pills.
+ *
+ * The old WordPress markup was inconsistent (some posts used <h2>, some <h4>)
+ * and rendered as a bare bulleted list. Running this before
+ * enhanceContentHeadings also means it stops showing up as a spurious entry
+ * in the table-of-contents sidebar on the posts that used <h2>.
+ */
+export function enhancePerfectForSection(content: string): string {
+  return content.replace(
+    /<h[234]\b[^>]*>\s*Perfect For\s*<\/h[234]>\s*<ul>([\s\S]*?)<\/ul>/gi,
+    (match, listInner: string) => {
+      const items = [...(listInner as string).matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => m[1].trim());
+      if (items.length === 0) return match;
+      const tags = items.map((item) => `<li>${item}</li>`).join("");
+      return `<div class="perfect-for"><span class="perfect-for-label">Perfect For</span><ul class="perfect-for-tags">${tags}</ul></div>`;
+    }
+  );
+}
+
+/**
  * Defer offscreen images.
  *
  * Content images were all loading eagerly, so a post like shilin-night-market

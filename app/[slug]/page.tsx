@@ -18,6 +18,7 @@ import {
   enhanceInlineAffiliateCTAs,
   enhanceKlookDealsWidget,
   enhanceMobileKlookWidget,
+  enhancePerfectForSection,
   enhanceRecommendedReading,
   enhanceTables,
   enhanceThreeImageGalleries,
@@ -169,7 +170,7 @@ export default async function ArticlePage({ params }: PageProperties) {
         enhanceYoutubeEmbeds(
           enhanceRecommendedReading(
             enhanceInlineAffiliateCTAs(
-              enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug)
+              enhancePerfectForSection(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug))
             ),
             heroImage
           )

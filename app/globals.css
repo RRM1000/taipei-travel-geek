@@ -1159,6 +1159,60 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   font-size: 1.1em;
 }
 
+/* "Perfect For" tag strip - built from enhancePerfectForSection() in lib/content.ts */
+.article-content .perfect-for {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin: 8px 0 32px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #fff9f8 0%, #fdf3f1 100%);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  border-radius: 8px;
+}
+.article-content .perfect-for-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--red-dark);
+  white-space: nowrap;
+}
+.article-content ul.perfect-for-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+}
+.article-content ul.perfect-for-tags li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 6px 14px 6px 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.article-content ul.perfect-for-tags li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.article-content ul.perfect-for-tags li::marker { content: none; }
+
 .article-content ol {
   padding-left: 26px;
   margin: 22px 0;
