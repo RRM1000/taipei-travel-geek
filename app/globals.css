@@ -804,6 +804,13 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   letter-spacing: 0.8px;
 }
 
+/* Non-heading section dividers - used to group a run of h2s (e.g. "Airports" grouping
+   Taoyuan/Songshan) without competing with them in the h2/h3 hierarchy or the sidebar
+   "In this guide" widget, which only picks up real headings. */
+.article-content p.eyebrow {
+  margin: 48px 0 2px;
+}
+
 .article-content a { color: var(--red-dark); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; font-weight: 600; transition: color .18s ease; }
 .article-content a:hover { color: var(--red); }
 
