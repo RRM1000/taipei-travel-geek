@@ -351,7 +351,7 @@ export function enhanceTables(content: string): string {
  */
 export function enhancePerfectForSection(content: string): string {
   return content.replace(
-    /<h[234]\b[^>]*>\s*Perfect For\s*<\/h[234]>\s*<ul>([\s\S]*?)<\/ul>/gi,
+    /<h[234]\b[^>]*>\s*Perfect For\s*<\/h[234]>\s*<ul>([\s\S]*?)<\/ul>(?:\s*<div[^>]*class="wp-block-spacer"[^>]*>\s*<\/div>|\s*<hr[^>]*class="wp-block-separator[^"]*"[^>]*\/?>|\s*<br\s*\/?>)*/gi,
     (match, listInner: string) => {
       const items = [...(listInner as string).matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => m[1].trim());
       if (items.length === 0) return match;
