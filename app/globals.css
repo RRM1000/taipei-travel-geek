@@ -335,7 +335,9 @@ img { display: block; max-width: 100%; }
 .guide-image { display: block; height: 240px; position: relative; overflow: hidden; }
 .guide-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s; }
 .guide-image:hover img { transform: scale(1.04); }
-.guide-image span { position: absolute; left: 0; bottom: 0; padding: 10px 13px; background: var(--red); color: white; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+/* Category chip on a card image - see the shared rule further down, next to
+   .archive-card-image span. */
+.guide-image span { letter-spacing: 1px; }
 .guide-card > div { padding: 27px 27px 30px; }
 .guide-card h3 { margin: 0; font: 27px/1.15 var(--font-serif); letter-spacing: -0.026em; }
 .guide-card h3 a:hover { color: var(--red-dark); }
@@ -1517,7 +1519,45 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .archive-card-image { display: block; position: relative; height: 280px; overflow: hidden; background: #d8d5cd; }
 .archive-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .archive-card-image:hover img { transform: scale(1.04); }
-.archive-card-image span { position: absolute; left: 0; bottom: 0; padding: 10px 13px; background: var(--red); color: white; font-size: 11px; font-weight: 800; letter-spacing: .9px; text-transform: uppercase; }
+/* Category chip on a card image.
+   These were solid red rectangles butted flush into the bottom-left corner,
+   which reads as a sticker rather than part of the design and clashes outright
+   over a warm photo - red on the pink cherry blossom shot being the worst case.
+   Now an inset, rounded, frosted chip: dark and quiet at rest so the photograph
+   carries the card, turning red on hover so the brand colour signals the click
+   instead of shouting all the time. */
+.guide-image span,
+.archive-card-image span {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(19, 34, 48, .62);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+  backdrop-filter: blur(6px) saturate(140%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .22);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.guide-image:hover span,
+.archive-card:hover .archive-card-image span,
+.archive-card-image:hover span {
+  background: var(--red);
+  border-color: rgba(255, 255, 255, .3);
+}
+
+/* No blur support: fall back to a solid dark chip rather than a see-through one. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .guide-image span,
+  .archive-card-image span { background: rgba(19, 34, 48, .88); }
+}
 .archive-card-copy { padding: 25px 26px 30px; }
 .archive-card-copy > p:first-child { margin: 0 0 12px; color: var(--red-dark); font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
 .archive-card h2 { margin: 0; font: 31px/1.08 var(--font-serif); letter-spacing: -0.032em; }
