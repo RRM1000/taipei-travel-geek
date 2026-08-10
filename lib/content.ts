@@ -162,6 +162,10 @@ function distinctRelatedGuideCount(section: string, sourceSlug: string) {
 // mentioned" as the illustrative photo reads as arbitrary rather than
 // representative (e.g. Taipei 101's "Traveller Tips" surfacing a photo from
 // its unrelated NYE fireworks post, ahead of anything about Taipei 101).
+//
+// Since the feature became opt-in (see CHOICE_GUIDE_SLUGS) this only applies
+// to those few posts, but it still earns its place there - they all carry
+// planning and wrap-up sections of exactly this kind.
 const GENERIC_SECTION_HEADINGS = new Set([
   "traveller tips", "tips", "best deals", "deals", "general tips", "price", "prices",
   "location", "locations", "places of interest", "faq", "overview", "general information",
@@ -169,23 +173,39 @@ const GENERIC_SECTION_HEADINGS = new Set([
   // Trip-planning framing sections rather than a profile of one place: these
   // mention several posts in passing while being about the decision itself.
   "how many days do you need?", "how many days do you need", "how long to stay",
+  "when to go and how long to spend", "when to go", "how long to spend",
+  "best time to visit", "getting there", "getting around",
   // Leftovers sections at the end of a round-up: a bullet list of odds and ends
   // that happens to link one post, so the photo picked is whatever that post
   // uses - e.g. Ximending's "Also Worth a Look" pulling a Xinyi photo in via a
   // passing nightlife link.
   "also worth a look", "also worth a mention", "honourable mentions",
+  // Closing advice sections. These link out to whichever practical guide is
+  // relevant to one bullet, so the photo chosen illustrates that guide rather
+  // than this post - e.g. Yongkang Street's tips pulling in a banknote photo
+  // via a passing link to the money guide.
+  "practical tips", "practical information", "good to know", "before you go",
 ]);
 
-// Hub/index pages that link out to dozens of unrelated single-topic posts in
-// short sections, rather than genuinely profiling one place per section like
-// a "which district should I stay in" round-up does. Every match found on
-// these so far has been a mismatch (heading text alone can't keep up with
-// how often new subheadings get added during a restructure), so skip the
-// whole feature here rather than blacklisting headings one at a time.
-const CHOICE_GUIDE_EXCLUDED_SLUGS = new Set(["taipei-public-transport", "taipei-money-guide"]);
+// Opt-in, not opt-out. This used to run on every post with a blacklist of
+// slugs and headings to hold it back, which meant a wrong photo could appear
+// on any of ~300 posts and stay there until somebody happened to notice. The
+// blacklist reached 33 headings and was still growing.
+//
+// An audit found the value was concentrated in a handful of posts anyway: of
+// 44 injected images across 15 posts, the four below accounted for 28, while
+// ten posts got only one or two - each an unreviewed guess. So the feature now
+// runs only where it has been checked and is wanted. Adding a post here is a
+// deliberate act; everywhere else, images are hand-placed.
+const CHOICE_GUIDE_SLUGS = new Set([
+  "taipei-itinerary-3-5-days",
+  "taipei-guide",
+  "best-districts-and-areas",
+  "best-time-to-visit-taipei",
+]);
 
 export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
-  if (CHOICE_GUIDE_EXCLUDED_SLUGS.has(sourceSlug)) return content;
+  if (!CHOICE_GUIDE_SLUGS.has(sourceSlug)) return content;
   // h2/h3 only: these are genuine "which option" comparison sections (e.g. a
   // district or hotel pick). Small h4/h5 utility subheadings like "Best Time
   // to Visit:" also end in a "read more" link back to the linked post, which
@@ -336,12 +356,117 @@ export function renderHotelDealsWidget(): string {
   return `<section class="end-of-post-hotel-deals"><div class="recommended-reading-heading"><span>Ready to book?</span><h2>Great Taipei hotel deals right now</h2></div><div class="hotel-deals-widget"><ins class="klk-aff-widget" data-aid="8733" data-city_id="19" data-country_id="1014" data-tag_id="0" data-currency="" data-lang="" data-label1="" data-label2="" data-label3="" data-prod="deals_widget" data-total="2"><a href="//www.klook.com/">Klook.com</a></ins></div></section>`;
 }
 
+/**
+ * Ranking for category and tag archives.
+ *
+ * These pages used to inherit the global sort, which is purely newest-published
+ * first. That buried the substantial guides behind whichever 200-word venue
+ * write-up happened to be posted most recently.
+ *
+ * The weights below are deliberately uneven, and one signal is deliberately
+ * weak: `modified` is a poor freshness measure on this site, because 129 of the
+ * 264 listable posts carry an August 2026 date from site-wide maintenance
+ * passes (mojibake repairs, image dimensions, link rewrites) rather than from
+ * anyone reviewing the content. Leaning on it would rank posts by "was this
+ * touched by a script", so it only breaks ties.
+ *
+ * Substance leads instead, capped at 1,500 words - roughly the 90th percentile,
+ * so a 4,000-word outlier gets no more credit than a thorough 1,500-word guide.
+ */
+const RANK_WEIGHTS = { substance: 0.4, published: 0.3, editorial: 0.15, updated: 0.15 };
+const SUBSTANCE_CAP = 1500;
+const PUBLISHED_HALF_LIFE_DAYS = 365 * 3;
+const UPDATED_HALF_LIFE_DAYS = 365 * 2;
+
+const wordCounts = new Map<string, number>(
+  posts.map((post) => [post.slug, post.content.replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length]),
+);
+
+function ageInDays(value: string | undefined, now: number) {
+  if (!value) return Number.POSITIVE_INFINITY;
+  const parsed = new Date(`${value.replace(" ", "T")}Z`).getTime();
+  if (Number.isNaN(parsed)) return Number.POSITIVE_INFINITY;
+  return Math.max(0, (now - parsed) / 86_400_000);
+}
+
+const decay = (days: number, halfLife: number) => (Number.isFinite(days) ? 2 ** (-days / halfLife) : 0);
+
+/**
+ * Posts that should sit near the back of every archive on editorial grounds,
+ * regardless of how they score. Kept as an explicit list rather than by
+ * backdating `modified`, because that field is shown to readers as the
+ * "Updated" date and is only worth 0.15 of the score anyway - it could never
+ * push something reliably to the back, and it would lie to the reader to try.
+ */
+const DEMOTED_SLUGS = new Set<string>([
+  "tgi-fridays",
+]);
+
+/**
+ * Posts that are only useful in certain months, keyed to the months (1-12)
+ * they belong in. Out of season they sink; in season they surface again, which
+ * is the part a permanent demotion could never do - nobody wants the Christmas
+ * lights guide buried in December.
+ */
+const SEASONAL_MONTHS: Record<string, number[]> = {
+  "christmas-lights-2019": [11, 12, 1],
+  "christmas-dinners": [11, 12],
+  "taipei-101-fireworks-new-years-eve": [12, 1],
+};
+
+const DEMOTION_FACTOR = 0.15;
+const OUT_OF_SEASON_FACTOR = 0.3;
+const IN_SEASON_BOOST = 1.25;
+
+function editorialFactor(slug: string, month: number) {
+  if (DEMOTED_SLUGS.has(slug)) return DEMOTION_FACTOR;
+  const months = SEASONAL_MONTHS[slug];
+  if (!months) return 1;
+  return months.includes(month) ? IN_SEASON_BOOST : OUT_OF_SEASON_FACTOR;
+}
+
+function archiveScore(post: ContentPost, now: number) {
+  const substance = Math.min(wordCounts.get(post.slug) ?? 0, SUBSTANCE_CAP) / SUBSTANCE_CAP;
+  const published = decay(ageInDays(post.date, now), PUBLISHED_HALF_LIFE_DAYS);
+  const updated = decay(ageInDays(post.modified || post.date, now), UPDATED_HALF_LIFE_DAYS);
+  // Clamped to 1 so the editorial component never spends more than its 0.15
+  // share of the score, however many of these a post carries. "lists" is the
+  // smallest of the three: a round-up answers a broader question than a single
+  // venue, so it earns a nudge rather than a promotion.
+  const tagSlugs = new Set(post.tags.map((t) => t.slug));
+  const editorial = Math.min(
+    1,
+    (tagSlugs.has("essential") ? 0.6 : 0) +
+      (tagSlugs.has("top-pick") ? 0.4 : 0) +
+      (tagSlugs.has("lists") ? 0.25 : 0),
+  );
+
+  const base =
+    RANK_WEIGHTS.substance * substance +
+    RANK_WEIGHTS.published * published +
+    RANK_WEIGHTS.editorial * editorial +
+    RANK_WEIGHTS.updated * updated;
+
+  return base * editorialFactor(post.slug, new Date(now).getUTCMonth() + 1);
+}
+
+function byArchiveRank(a: ContentPost, b: ContentPost) {
+  const now = Date.now();
+  const diff = archiveScore(b, now) - archiveScore(a, now);
+  // Stable, explicable fallback so equal scores never order arbitrarily.
+  return diff !== 0 ? diff : b.date.localeCompare(a.date);
+}
+
 export function getPostsByCategory(category: string) {
-  return posts.filter((post) => !unlistedSlugs.has(post.slug) && !post.content.includes("closure-notice") && post.categories.some((item) => item.slug === category));
+  return posts
+    .filter((post) => isListable(post) && post.categories.some((item) => item.slug === category))
+    .sort(byArchiveRank);
 }
 
 export function getPostsByTag(tag: string) {
-  const matches = posts.filter((post) => !unlistedSlugs.has(post.slug) && !post.content.includes("closure-notice") && post.tags.some((item) => item.slug === tag));
+  const matches = posts
+    .filter((post) => isListable(post) && post.tags.some((item) => item.slug === tag))
+    .sort(byArchiveRank);
   // Top Picks combines the broader top-pick pool with the smaller, more curated
   // Essential pool - Essential posts are weighted to the front so the list leads
   // with the must-see guides rather than burying them among the wider picks.
@@ -353,6 +478,58 @@ export function getPostsByTag(tag: string) {
     });
   }
   return matches;
+}
+
+/** A post is browsable if it isn't unlisted and isn't a closed venue. */
+function isListable(post: ContentPost) {
+  return !unlistedSlugs.has(post.slug) && !post.content.includes("closure-notice");
+}
+
+/**
+ * Tags with the number of browsable posts behind each, for the sidebar index.
+ *
+ * Tags had no browsing surface at all before this - no index page, and no way
+ * to find one except spotting a chip at the foot of a post. Categories already
+ * have the navbar and the Explore section, so this covers the other axis:
+ * categories say what kind of place something is, tags say what it's like.
+ *
+ * minPosts exists because a tag with one or two posts is a dead end once
+ * clicked. At 3 it drops a dozen one-offs (Moroccan, Teppanyaki, LGBT and so
+ * on) that are still perfectly valid tags on the posts themselves.
+ */
+export function getTagsWithCounts(minPosts = 3) {
+  const counts = new Map<string, { term: TaxonomyTerm; count: number }>();
+  for (const post of posts) {
+    if (!isListable(post)) continue;
+    for (const term of post.tags) {
+      const entry = counts.get(term.slug);
+      if (entry) entry.count += 1;
+      else counts.set(term.slug, { term, count: 1 });
+    }
+  }
+  return [...counts.values()]
+    .filter((entry) => entry.count >= minPosts)
+    .sort((a, b) => a.term.name.localeCompare(b.term.name));
+}
+
+/**
+ * Categories with browsable post counts, biggest first. Generated rather than
+ * hand-listed so a new category can't quietly go missing from the sidebar the
+ * way Restaurants (62 posts) and Buildings (33) previously did.
+ */
+export function getCategoriesWithCounts(minPosts = 1) {
+  const counts = new Map<string, { term: TaxonomyTerm; count: number }>();
+  for (const post of posts) {
+    if (!isListable(post)) continue;
+    for (const term of post.categories) {
+      const entry = counts.get(term.slug);
+      if (entry) entry.count += 1;
+      else counts.set(term.slug, { term, count: 1 });
+    }
+  }
+  return [...counts.values()]
+    .filter((entry) => entry.count >= minPosts)
+    .sort((a, b) => b.count - a.count || a.term.name.localeCompare(b.term.name));
 }
 
 export function formatDate(date: string) {

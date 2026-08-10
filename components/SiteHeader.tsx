@@ -58,8 +58,18 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
   ],
 };
 
+// Every category with a meaningful number of guides behind it. Eat, Drink,
+// Visit and Transport are already in the main nav, so they are deliberately
+// absent here; the small tails (Music Venues, Routes, Cinema, Stalls,
+// Festivals, Dessert Shops) are reachable from the tag list in the sidebar.
 const exploreLinks = [
-  { label: "Shop", href: "/category/shop", desc: "Souvenirs, markets & where to shop" },
+  { label: "Restaurants", href: "/category/restaurants", desc: "Every sit-down meal we recommend" },
+  { label: "Bars", href: "/category/bars", desc: "Craft beer, cocktails & pubs" },
+  { label: "Cafes", href: "/category/cafes", desc: "Coffee, tea & somewhere to work" },
+  { label: "Buildings", href: "/category/buildings", desc: "Landmarks, temples & museums" },
+  { label: "Parks", href: "/category/parks", desc: "Green space, gardens & riverside" },
+  { label: "Markets", href: "/category/markets", desc: "Night markets & day markets" },
+  { label: "Shop", href: "/category/shop", desc: "Souvenirs, malls & where to shop" },
   { label: "Culture", href: "/category/culture", desc: "Temples, museums & local traditions" },
   { label: "Events", href: "/category/events", desc: "Festivals and what's on in the city" },
   { label: "Areas", href: "/category/areas", desc: "Browse every guide by district" },

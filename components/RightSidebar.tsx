@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { TaxonomyTerm } from "@/lib/content";
+import { getCategoriesWithCounts, getTagsWithCounts, type TaxonomyTerm } from "@/lib/content";
 import { RightSidebarContentsWidget, type HeadingItem } from "@/components/StickyContentsGuide";
 
 type RightSidebarProps = {
@@ -14,13 +14,12 @@ const usefulLinks = [
   { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
 ];
 
-const topicPills = [
-  { href: "/category/eat", label: "EAT" },
-  { href: "/category/visit", label: "VISIT" },
-  { href: "/category/culture", label: "CULTURE" },
-  { href: "/category/events", label: "EVENTS" },
-  { href: "/category/areas", label: "AREAS" },
-];
+// Both lists are derived from the content rather than hand-written, so nothing
+// can silently go missing. This section previously listed five categories out
+// of twenty, omitting Restaurants and Buildings - the second and fourth
+// largest on the site.
+const categoryPills = getCategoriesWithCounts();
+const tagIndex = getTagsWithCounts(3);
 
 export function RightSidebar({ headings }: RightSidebarProps) {
   return (
@@ -56,9 +55,34 @@ export function RightSidebar({ headings }: RightSidebarProps) {
       <section className="sidebar-section sidebar-topics desktop-sidebar-topics">
         <h3 className="sidebar-kicker">EXPLORE MORE</h3>
         <div className="sidebar-pill-wrap">
-          {topicPills.map((pill) => (
-            <Link key={pill.href} href={pill.href} className="sidebar-pill">
-              {pill.label}
+          {categoryPills.map((entry) => (
+            <Link
+              key={entry.term.slug}
+              href={`/category/${entry.term.slug}`}
+              className="sidebar-pill"
+              aria-label={`${entry.term.name}, ${entry.count} guides`}
+            >
+              {entry.term.name}
+              <span className="sidebar-pill-count" aria-hidden="true">{entry.count}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Browse by tag. Last in the sidebar deliberately - it's the deepest
+          level of browsing, and only reached by readers who scroll for it. */}
+      <section className="sidebar-section sidebar-tags desktop-sidebar-tags">
+        <h3 className="sidebar-kicker">BROWSE BY TAG</h3>
+        <div className="sidebar-tag-wrap">
+          {tagIndex.map((entry) => (
+            <Link
+              key={entry.term.slug}
+              href={`/tag/${entry.term.slug}`}
+              className="sidebar-tag"
+              aria-label={`${entry.term.name}, ${entry.count} guides`}
+            >
+              {entry.term.name}
+              <span className="sidebar-tag-count" aria-hidden="true">{entry.count}</span>
             </Link>
           ))}
         </div>

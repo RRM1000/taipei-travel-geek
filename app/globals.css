@@ -619,7 +619,8 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 
 @media (max-width: 880px) {
   .desktop-sidebar-useful,
-  .desktop-sidebar-topics {
+  .desktop-sidebar-topics,
+  .desktop-sidebar-tags {
     display: none !important;
   }
 }
@@ -700,9 +701,56 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .sidebar-guide-list a { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; color: var(--ink); font-size: 14px; font-weight: 700; line-height: 1.25; }
 .sidebar-guide-list a:hover { color: var(--red-dark); }
 .sidebar-guide-list span { color: var(--red); }
-.sidebar-topics { display: flex; flex-wrap: wrap; gap: 7px; }
-.sidebar-topics a { border: 1px solid var(--line); padding: 7px 9px; color: var(--ink); font-size: 11px; font-weight: 800; letter-spacing: .35px; text-transform: uppercase; }
-.sidebar-topics a:hover { border-color: var(--red); color: var(--red-dark); }
+/* The flex used to sit on .sidebar-topics itself, which made the section's
+   heading a flex sibling of the pills rather than a heading above them, and
+   left the pills as inline boxes whose borders split across line wraps. The
+   wrapper is the flex container, and each pill is inline-flex. */
+.sidebar-topics .sidebar-pill-wrap,
+.sidebar-tags .sidebar-tag-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
+
+/* Rounded, filled pills rather than square outlines. The square bordered
+   boxes read as a form control next to the rest of the sidebar; a soft fill on
+   the warm paper sits better and lets the count ride inside the pill. */
+.sidebar-topics a,
+.sidebar-tags a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 6px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  color: var(--ink-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1px;
+  line-height: 1.35;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.sidebar-topics a:hover,
+.sidebar-tags a:hover {
+  background: var(--white);
+  border-color: var(--red);
+  color: var(--red-dark);
+}
+
+/* Categories are the shorter, higher-level list, so they carry the small-caps
+   treatment; tags stay in sentence case so 43 of them don't shout. */
+.sidebar-topics a { font-size: 11px; font-weight: 800; letter-spacing: .4px; text-transform: uppercase; }
+
+/* The count is supporting detail, so it is smaller, lighter and tabular so
+   the numbers line up rather than jittering between one and two digits. */
+.sidebar-pill-count,
+.sidebar-tag-count {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+.sidebar-topics a:hover .sidebar-pill-count,
+.sidebar-tags a:hover .sidebar-tag-count { color: var(--red); }
 .sidebar-klook { overflow: hidden; }
 .sidebar-klook .klk-aff-widget { display: block; min-height: 126px; overflow: hidden; border-radius: 4px; background: #fff; }
 .sidebar-klook .klk-aff-widget > a { display: block; padding: 14px; color: var(--red-dark); font-size: 11px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
