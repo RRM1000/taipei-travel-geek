@@ -54,7 +54,7 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
     { slug: "best-museums-in-taipei", title: "7 Very Different Museums to Visit", image: "/media/2019/07/Miniatures-Museum-of-Taiwan-13-1024x725.jpg", excerpt: "Something for everyone, adults and kids alike." },
     { slug: "best-markets-in-taipei", title: "The 5 Best Night (and Day) Markets in Taipei", image: "/media/2019/08/Shilin-Night-Market-1024x725.jpg", excerpt: "Taipei's best markets, day and night." },
     { slug: "quirky-cool-fun-things", title: "14 Quirky, Cool or Fun Things to Try", image: "/media/2023/04/Lin-Family-Mansion-9-edited-scaled.jpg", excerpt: "Unusual things worth making time for." },
-    { slug: "taipei-on-a-budget", title: "Taipei on a Budget: 14 Free or Cheap Things", image: "/media/2019/08/Chiang-Kai-Shek-8-1024x689.jpg", excerpt: "Great days out that won't dent your wallet." },
+    { slug: "where-to-go-when-raining", title: "Where to Go When the Rain is Pouring", image: "/media/2019/10/Xinyi-Shopping-District-3-1024x684.jpg", excerpt: "Indoor escapes for Taipei's wettest days." },
   ],
 };
 
