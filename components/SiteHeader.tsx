@@ -70,7 +70,6 @@ const informationLinks = [
   { href: "/taiwan-easycard", label: "EasyCard" },
   { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
   { href: "/taiwan-visa-entry-requirements", label: "Visa & entry requirements" },
-  { href: "/taiwan-lucky-land-giveaway", label: "NT$5,000 Lucky Land" },
   { href: "/taiwan-tourist-tax-refund", label: "Tourist tax refund" },
   { href: "/sports-centre-gym", label: "Sports centre gyms" },
   { href: "/taipei-laundrettes", label: "Launderettes" },
