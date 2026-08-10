@@ -70,6 +70,10 @@ const legacySlugRedirects: Record<string, string> = {
   // right section.
   "beitou-hot-spring-museum": "xinbeitou#hot-spring-museum",
   "thermal-valley": "xinbeitou#thermal-valley",
+  // Published as a trip-cost guide, then broadened the same week into a
+  // general money guide (cash vs card, ATMs, banks, carrying cash safely),
+  // which the old slug only described a third of.
+  "taipei-trip-cost": "taipei-money-guide",
 };
 
 /**

@@ -48,12 +48,12 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
     { slug: "national-palace-museum", title: "National Palace Museum", image: "/media/2019/07/National-Palace-Museum-8-1024x694.jpg", excerpt: "The world's largest collection of Chinese artefacts." },
     { slug: "chiang-kai-shek-memorial-hall", title: "Chiang Kai-Shek Memorial Hall", image: "/media/2019/08/Chiang-Kai-Shek-7-1024x700.jpg", excerpt: "One of Taipei's most iconic landmarks." },
     { slug: "taipei-101", title: "Taipei 101 - Cheap Tickets & Best Times to Visit", image: "/media/2020/12/Taipei-101-Fireworks-Mountain-1-1024x619.jpg", excerpt: "How to skip the queue and the crowds." },
-    { slug: "ximending", title: "Ximending - Full Guide and Map", image: "/media/2019/05/Ximen-10-1024x738.jpg", excerpt: "Taipei's pedestrian-only youth culture hub." },
+    { slug: "ximending", title: "30 Best Things to Do in Ximending", image: "/media/2019/05/Ximen-10-1024x738.jpg", excerpt: "Taipei's pedestrian-only youth culture hub." },
   ],
   Lists: [
     { slug: "best-museums-in-taipei", title: "7 Very Different Museums to Visit", image: "/media/2019/07/Miniatures-Museum-of-Taiwan-13-1024x725.jpg", excerpt: "Something for everyone, adults and kids alike." },
     { slug: "best-markets-in-taipei", title: "The 5 Best Night (and Day) Markets in Taipei", image: "/media/2019/08/Shilin-Night-Market-1024x725.jpg", excerpt: "Taipei's best markets, day and night." },
-    { slug: "quirky-cool-fun-things", title: "14 Quirky, Cool or Fun Things to Try", image: "/media/2023/04/Lin-Family-Mansion-9-edited-scaled.jpg", excerpt: "Unusual things worth making time for." },
+    { slug: "quirky-cool-fun-things", title: "15 Quirky, Cool or Fun Things to Try", image: "/media/2023/04/Lin-Family-Mansion-9-edited-scaled.jpg", excerpt: "Unusual things worth making time for." },
     { slug: "where-to-go-when-raining", title: "Where to Go When the Rain is Pouring", image: "/media/2019/10/Xinyi-Shopping-District-3-1024x684.jpg", excerpt: "Indoor escapes for Taipei's wettest days." },
   ],
 };
@@ -68,7 +68,7 @@ const exploreLinks = [
 const informationLinks = [
   { href: "/taiwan-easycard", label: "EasyCard" },
   { href: "/taiwan-sim-cards", label: "Taiwan SIM cards" },
-  { href: "/taipei-trip-cost", label: "Trip costs & money" },
+  { href: "/taipei-money-guide", label: "Money & costs" },
   { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
   { href: "/taiwan-visa-entry-requirements", label: "Visa & entry requirements" },
   { href: "/taiwan-tourist-tax-refund", label: "Tourist tax refund" },

@@ -169,6 +169,11 @@ const GENERIC_SECTION_HEADINGS = new Set([
   // Trip-planning framing sections rather than a profile of one place: these
   // mention several posts in passing while being about the decision itself.
   "how many days do you need?", "how many days do you need", "how long to stay",
+  // Leftovers sections at the end of a round-up: a bullet list of odds and ends
+  // that happens to link one post, so the photo picked is whatever that post
+  // uses - e.g. Ximending's "Also Worth a Look" pulling a Xinyi photo in via a
+  // passing nightlife link.
+  "also worth a look", "also worth a mention", "honourable mentions",
 ]);
 
 // Hub/index pages that link out to dozens of unrelated single-topic posts in
@@ -177,7 +182,7 @@ const GENERIC_SECTION_HEADINGS = new Set([
 // these so far has been a mismatch (heading text alone can't keep up with
 // how often new subheadings get added during a restructure), so skip the
 // whole feature here rather than blacklisting headings one at a time.
-const CHOICE_GUIDE_EXCLUDED_SLUGS = new Set(["taipei-public-transport", "taipei-trip-cost"]);
+const CHOICE_GUIDE_EXCLUDED_SLUGS = new Set(["taipei-public-transport", "taipei-money-guide"]);
 
 export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
   if (CHOICE_GUIDE_EXCLUDED_SLUGS.has(sourceSlug)) return content;
