@@ -22,13 +22,18 @@ const categoryImages = [
 // Kept distinct from the navbar's mega menus (Eat/Drink/Visit/Transport/Best of Taipei) so the
 // same guide isn't featured in both places. taipei-essentials-guide is a deliberate exception -
 // it stays here and was removed from the Best of Taipei navbar menu instead.
+// Ordered to follow the decisions a first-timer actually makes, in sequence:
+// when to come, which part of the city, where to sleep, what to see, how to
+// string it together, and how to do it cheaply. Practical logistics (EasyCard,
+// SIM, transport, Fun Pass) deliberately live in the "Before you go" carousel
+// instead, so nothing appears twice on the homepage.
 const firstTimerSlugs = [
-  "best-areas-and-hotels-to-stay",
-  "the-best-guided-tours-in-taipei",
-  "taipei-essentials-guide",
-  "best-museums-in-taipei",
-  "taipei-itinerary-3-5-days",
+  "best-time-to-visit-taipei",
   "best-districts-and-areas",
+  "best-areas-and-hotels-to-stay",
+  "taipei-essentials-guide",
+  "taipei-itinerary-3-5-days",
+  "taipei-on-a-budget",
 ];
 const firstTimerGuides = firstTimerSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
