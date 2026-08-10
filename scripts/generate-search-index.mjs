@@ -5,8 +5,10 @@ const root = process.cwd();
 const posts = JSON.parse(fs.readFileSync(path.join(root, "content", "posts.json"), "utf8"));
 
 // Keep in sync with `unlistedSlugs` in lib/content.ts - posts hidden from
-// every on-site discovery path while pending a content refresh.
-const unlistedSlugs = new Set(["taipei-annual-events"]);
+// every on-site discovery path while pending a content refresh. Currently
+// empty there, so nothing is excluded here either: this list had drifted and
+// was hiding taipei-annual-events from search only, which was unintended.
+const unlistedSlugs = new Set([]);
 
 const plainText = (html) => html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 const index = posts.filter((post) => !unlistedSlugs.has(post.slug)).map((post) => ({
