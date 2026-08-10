@@ -62,17 +62,20 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
 // Visit and Transport are already in the main nav, so they are deliberately
 // absent here; the small tails (Music Venues, Routes, Cinema, Stalls,
 // Festivals, Dessert Shops) are reachable from the tag list in the sidebar.
+// Nine, in a three-column grid: three tidy rows. Every category is still
+// reachable from the sidebar's Explore More pills, which lists all twenty, so
+// what gets left out here is only left out of the menu. Descriptions are kept
+// short because the cards are a third of the panel wide, not a half.
 const exploreLinks = [
-  { label: "Restaurants", href: "/category/restaurants", desc: "Every sit-down meal we recommend" },
+  { label: "Restaurants", href: "/category/restaurants", desc: "Sit-down meals worth booking" },
   { label: "Bars", href: "/category/bars", desc: "Craft beer, cocktails & pubs" },
-  { label: "Cafes", href: "/category/cafes", desc: "Coffee, tea & somewhere to work" },
-  { label: "Buildings", href: "/category/buildings", desc: "Landmarks, temples & museums" },
-  { label: "Parks", href: "/category/parks", desc: "Green space, gardens & riverside" },
-  { label: "Markets", href: "/category/markets", desc: "Night markets & day markets" },
-  { label: "Shop", href: "/category/shop", desc: "Souvenirs, malls & where to shop" },
-  { label: "Culture", href: "/category/culture", desc: "Temples, museums & local traditions" },
-  { label: "Events", href: "/category/events", desc: "Festivals and what's on in the city" },
-  { label: "Areas", href: "/category/areas", desc: "Browse every guide by district" },
+  { label: "Cafes", href: "/category/cafes", desc: "Coffee, tea & laptop spots" },
+  { label: "Markets", href: "/category/markets", desc: "Night and day markets" },
+  { label: "Shop", href: "/category/shop", desc: "Souvenirs, malls & gifts" },
+  { label: "Parks", href: "/category/parks", desc: "Green space & riverside" },
+  { label: "Culture", href: "/category/culture", desc: "Temples & local traditions" },
+  { label: "Events", href: "/category/events", desc: "Festivals and what's on" },
+  { label: "Areas", href: "/category/areas", desc: "Every guide by district" },
 ];
 
 const informationLinks = [

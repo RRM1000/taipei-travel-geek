@@ -373,7 +373,12 @@ export function renderHotelDealsWidget(): string {
  * Substance leads instead, capped at 1,500 words - roughly the 90th percentile,
  * so a 4,000-word outlier gets no more credit than a thorough 1,500-word guide.
  */
-const RANK_WEIGHTS = { substance: 0.4, published: 0.3, editorial: 0.15, updated: 0.15 };
+// Editorial outweighs raw length deliberately. Word count is a proxy for
+// substance and a poor one at the margin - a long mediocre round-up would beat
+// a sharp 400-word venue review - whereas the Essential and Top Pick tags are
+// hand-applied quality judgements. So substance dropped from 0.40 to 0.30 and
+// editorial rose from 0.15 to 0.25.
+const RANK_WEIGHTS = { substance: 0.3, published: 0.3, editorial: 0.25, updated: 0.15 };
 const SUBSTANCE_CAP = 1500;
 const PUBLISHED_HALF_LIFE_DAYS = 365 * 3;
 const UPDATED_HALF_LIFE_DAYS = 365 * 2;
@@ -727,7 +732,26 @@ export function enhanceThreeImageGalleries(content: string): string {
     const imgRegex = /<img\b[^>]+>/gi;
     const imgs = innerHtml.match(imgRegex);
 
-    if (imgs && (imgs.length === 2 || imgs.length === 3 || imgs.length === 4)) {
+    // A gallery can arrive here with fewer images than it was written with,
+    // because withoutDuplicateLeadImage removes whichever figure duplicates the
+    // hero image before this runs. Left alone, a two-image gallery reduced to
+    // one rendered as a half-empty row with a hole where the hero used to be
+    // (9 posts), and a one-image gallery reduced to none rendered as an empty
+    // bordered box (2 posts). Unwrap those rather than leaving the wrapper.
+    if (!imgs || imgs.length === 0) {
+      result = result.slice(0, startOffset) + result.slice(endIdx);
+      searchIdx = startOffset;
+      continue;
+    }
+
+    if (imgs.length === 1) {
+      const single = `<figure class="wp-block-image">${imgs[0]}</figure>`;
+      result = result.slice(0, startOffset) + single + result.slice(endIdx);
+      searchIdx = startOffset + single.length;
+      continue;
+    }
+
+    if (imgs.length === 2 || imgs.length === 3 || imgs.length === 4) {
       const imgCount = imgs.length;
       const maxItemWidth = imgCount === 4 ? "100%" : (imgCount === 3 ? "32%" : "48%");
       const aspect = imgCount === 3 ? "1" : "4/3";
