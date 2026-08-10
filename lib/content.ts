@@ -462,6 +462,21 @@ function byArchiveRank(a: ContentPost, b: ContentPost) {
   return diff !== 0 ? diff : b.date.localeCompare(a.date);
 }
 
+/**
+ * Posts per page on category and tag archives.
+ *
+ * Twelve rather than ten because the grid is three columns on desktop, and ten
+ * leaves the last row as 3+3+3+1. Twelve divides cleanly by three, by two at
+ * the 1100px breakpoint, and by one on a phone.
+ *
+ * This lives here because it was previously declared in three places -
+ * CategoryArchive, the Lists pagination route, and the tag pagination route,
+ * the last two hardcoding the number inline. generateStaticParams and the
+ * render path both derive page counts from it, so any disagreement produced
+ * paginated URLs that either 404 or render empty.
+ */
+export const ARCHIVE_PAGE_SIZE = 12;
+
 export function getPostsByCategory(category: string) {
   return posts
     .filter((post) => isListable(post) && post.categories.some((item) => item.slug === category))

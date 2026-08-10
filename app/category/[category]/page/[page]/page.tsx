@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { CategoryArchive, categoryPageCount } from "@/components/CategoryArchive";
 import { categories } from "@/lib/content";
 
@@ -21,7 +21,11 @@ export default async function PaginatedCategoryPage({ params }: PageProperties) 
   const { category: categorySlug, page } = await params;
   const category = categories.find((item) => item.slug === categorySlug);
   const currentPage = Number(page);
-  if (!category || !Number.isInteger(currentPage) || currentPage < 1 || currentPage > categoryPageCount(category)) notFound();
+  if (!category || !Number.isInteger(currentPage) || currentPage < 1) notFound();
+  // Raising the page size from 10 to 12 retired 19 previously-indexed /page/N
+  // URLs. A 301 to page one preserves their link equity and is a better answer
+  // for a reader than a 404, and it covers any future shrinkage of a category.
+  if (currentPage > categoryPageCount(category)) permanentRedirect(`/category/${category.slug}`);
 
   return <CategoryArchive category={category} currentPage={currentPage} />;
 }

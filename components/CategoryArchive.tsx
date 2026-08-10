@@ -1,10 +1,10 @@
 import type { ContentPost, TaxonomyTerm } from "@/lib/content";
-import { formatDate, generateBreadcrumbSchema, getPostsByCategory } from "@/lib/content";
+import { ARCHIVE_PAGE_SIZE, formatDate, generateBreadcrumbSchema, getPostsByCategory } from "@/lib/content";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
-const pageSize = 10;
+const pageSize = ARCHIVE_PAGE_SIZE;
 
 function pageHref(basePath: string, page: number) {
   return page === 1 ? basePath : `${basePath}/page/${page}`;
