@@ -1586,7 +1586,13 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 }
 .archive-card h2 a:hover { color: var(--red-dark); }
 .archive-card-excerpt { min-height: 46px; margin: 16px 0 21px; color: var(--muted); font-size: 14px; line-height: 1.6; }
-.pagination { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 0 0 100px; font-size: 12px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
+/* A three-column grid, not space-between flex. The middle column holds the page
+   numbers and is always dead centre; the outer columns are equal, so it does not
+   matter whether one, both or neither arrow is present. See the empty spacer
+   spans in CategoryArchive. */
+.pagination { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 22px; padding: 0 0 100px; font-size: 12px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
+.pagination > :first-child { justify-self: start; }
+.pagination > :last-child { justify-self: end; }
 .pagination > a { color: var(--red-dark); }
 .pagination > div { display: flex; gap: 6px; }
 .pagination > div a { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid var(--line); }
@@ -1693,7 +1699,10 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   .more-guide-copy h3 { font-size: 18px; }
   /* The 3:2 aspect ratio handles this now - at a single column on a phone it
      works out around 230px tall anyway, which is what this used to force. */
-  .pagination { align-items: flex-start; flex-wrap: wrap; padding-bottom: 75px; }
+  /* Two rows on a phone: numbers centred on top, arrows beneath. Three columns
+     plus five number boxes does not fit at 375px. */
+  .pagination { grid-template-columns: 1fr 1fr; row-gap: 18px; padding-bottom: 75px; }
+  .pagination > div { grid-column: 1 / -1; order: -1; justify-self: center; }
   .guide-card:last-child { display: block; }
   .planning { padding-block: 75px; }
   .footer-grid { grid-template-columns: 1fr; }

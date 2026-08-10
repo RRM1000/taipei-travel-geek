@@ -88,13 +88,22 @@ export function CategoryArchive({
 
         {totalPages > 1 && (
           <nav className="wrap pagination" aria-label="Category pages">
-            {currentPage > 1 && <a href={pageHref(archivePath, currentPage - 1)}>← Previous</a>}
+            {/* Both arrow slots are always rendered, empty when there is no
+                link. Previously they were omitted entirely, and with
+                justify-content: space-between that moved the page numbers
+                depending on which arrows existed - left on page one, centred in
+                the middle, right on the last page. */}
+            {currentPage > 1
+              ? <a href={pageHref(archivePath, currentPage - 1)}>← Previous</a>
+              : <span className="pagination-spacer" aria-hidden="true" />}
             <div>
               {pageNumbers(currentPage, totalPages).map((page) => (
                 <a href={pageHref(archivePath, page)} aria-current={page === currentPage ? "page" : undefined} key={page}>{page}</a>
               ))}
             </div>
-            {currentPage < totalPages && <a href={pageHref(archivePath, currentPage + 1)}>Next →</a>}
+            {currentPage < totalPages
+              ? <a href={pageHref(archivePath, currentPage + 1)}>Next →</a>
+              : <span className="pagination-spacer" aria-hidden="true" />}
           </nav>
         )}
       </main>
