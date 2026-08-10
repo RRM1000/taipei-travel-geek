@@ -1514,9 +1514,25 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .category-heading .eyebrow { display: flex; align-items: baseline; gap: 10px; }
 .category-heading .category-count { color: var(--muted); }
 .category-heading .category-count::before { margin-right: 10px; color: var(--line); content: "\00B7"; }
-.archive-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 28px; padding-block: 48px 64px; }
+/* Three columns on desktop, because it fits the photographs.
+   At two columns the image frame was 585x280, an aspect of 2.09:1, while the
+   source photos average 1.52:1 - so object-fit: cover was throwing away about
+   31% of every image. Three columns puts the frame at roughly 403x280, or
+   1.44:1, which is within a few percent of the source aspect and crops
+   almost nothing. */
+.archive-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 42px 28px; padding-block: 48px 64px; }
+
+/* Below this the third column squeezes the 31px serif title too hard, so drop
+   to two. The 900px block further down takes it to one. */
+@media (max-width: 1100px) {
+  .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 .archive-card { background: white; border: 1px solid #e8e5df; }
-.archive-card-image { display: block; position: relative; height: 280px; overflow: hidden; background: #d8d5cd; }
+/* An aspect ratio rather than a fixed height. The photos average 1.52:1, so a
+   3:2 frame matches them at any column width and crops almost nothing. A fixed
+   280px height could not: it made the frame 2.09:1 at two columns and 1.36:1 at
+   three, cropping 27% and 11% respectively. */
+.archive-card-image { display: block; position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: #d8d5cd; }
 .archive-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .archive-card-image:hover img { transform: scale(1.04); }
 /* Category chip on a card image.
@@ -1560,7 +1576,14 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 }
 .archive-card-copy { padding: 25px 26px 30px; }
 .archive-card-copy > p:first-child { margin: 0 0 12px; color: var(--red-dark); font-size: 11px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase; }
-.archive-card h2 { margin: 0; font: 31px/1.08 var(--font-serif); letter-spacing: -0.032em; }
+/* Sized for the three-column card. Restored to 31px below 1100px, where the
+   grid drops to two columns and each card is half the row wide. That override
+   has to sit after this rule, not in the earlier media block, because the
+   `font` shorthand here would otherwise win on source order. */
+.archive-card h2 { margin: 0; font: 26px/1.12 var(--font-serif); letter-spacing: -0.028em; }
+@media (max-width: 1100px) {
+  .archive-card h2 { font-size: 31px; line-height: 1.08; letter-spacing: -0.032em; }
+}
 .archive-card h2 a:hover { color: var(--red-dark); }
 .archive-card-excerpt { min-height: 46px; margin: 16px 0 21px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .pagination { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 0 0 100px; font-size: 12px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
@@ -1668,7 +1691,8 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   .more-guide-card { grid-template-columns: 92px minmax(0, 1fr) 30px; gap: 14px; min-height: 108px; padding: 12px 14px 12px 12px; }
   .more-guide-image { width: 92px; height: 76px; }
   .more-guide-copy h3 { font-size: 18px; }
-  .archive-card-image { height: 235px; }
+  /* The 3:2 aspect ratio handles this now - at a single column on a phone it
+     works out around 230px tall anyway, which is what this used to force. */
   .pagination { align-items: flex-start; flex-wrap: wrap; padding-bottom: 75px; }
   .guide-card:last-child { display: block; }
   .planning { padding-block: 75px; }
