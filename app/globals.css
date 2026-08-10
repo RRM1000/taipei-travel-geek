@@ -481,7 +481,11 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .guide-card-box {
   border-top: none !important;
   background: #ffffff;
-  border: 1px solid var(--line-soft);
+  /* --line rather than --line-soft: the white fill is only 1.10:1 against the
+     paper background, so the edge is doing nearly all the work of making this
+     read as a card. A tint can't help - every warm surface token is closer to
+     the paper than white is - so the border carries it instead. */
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 14px 20px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
@@ -537,8 +541,13 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   overflow-y: auto;
   padding-right: 6px;
   margin-top: 14px;
-  padding-top: 10px;
-  border-top: 1px solid var(--surface-alt);
+  /* Accent rule under the card's title. This was a 1px --surface-alt hairline,
+     which sits at 1.03:1 against the paper and so read as nothing at all; red
+     is 3.5:1 and is already the accent used by the toggle icon and the active
+     entry. Kept to the same total height as before (was 1px border + 10px
+     padding) so the fixed reservation in the max-height above still holds. */
+  padding-top: 9px;
+  border-top: 2px solid var(--red);
 }
 
 
@@ -577,10 +586,15 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   transition: color 0.15s ease, transform 0.15s ease;
 }
 
+/* The emphasis here must not change how wide the text is. font-weight: 700
+   widened it enough that a near-full-width entry wrapped onto a second line,
+   so the whole list shifted as the pointer moved down it - and shifted again
+   as the active entry changed during scrolling. A faux-bold text-shadow reads
+   the same at 13px while occupying exactly the same space. */
 .sidebar-toc-list a:hover,
 .sidebar-toc-list .active a {
   color: var(--red-dark);
-  font-weight: 700;
+  text-shadow: 0.35px 0 0 currentColor;
   transform: translateX(2px);
 }
 
