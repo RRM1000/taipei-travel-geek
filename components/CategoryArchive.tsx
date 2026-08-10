@@ -72,7 +72,12 @@ export function CategoryArchive({
 
         <section className="category-heading wrap">
           <Breadcrumbs items={[{ label: category.name }]} />
-          <p className="eyebrow">Taipei guides</p>
+          {/* How big the section is, which is the first thing a reader landing
+              here wants to know and the page never said. */}
+          <p className="eyebrow">
+            Taipei guides
+            <span className="category-count">{articles.length} {articles.length === 1 ? "guide" : "guides"}</span>
+          </p>
           <h1>{category.name}</h1>
           <p>{description || "Local recommendations, practical tips and places worth your time in Taipei."}</p>
         </section>

@@ -1312,6 +1312,122 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 }
 .article-content ul.perfect-for-tags li::marker { content: none; }
 
+/* Pros and cons, as a pair of cards.
+   The two columns used to be indistinguishable from body text, so the reader
+   had to read the headings to tell them apart. A tick and a cross carry that
+   now, and the accent stays inside the existing palette - ink for pros, the
+   site red for cons - rather than introducing a green. */
+.article-content .pros-cons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 2em 0;
+}
+@media (max-width: 600px) {
+  .article-content .pros-cons { grid-template-columns: 1fr; }
+}
+
+.article-content .pros-cons-card {
+  padding: 18px 20px 20px;
+  border: 1px solid var(--line-soft);
+  border-top: 3px solid var(--ink);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.article-content .pros-cons-cons { border-top-color: var(--red); }
+
+.article-content .pros-cons-heading {
+  margin: 0 0 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.article-content .pros-cons-cons .pros-cons-heading { color: var(--red-dark); }
+
+/* !important to match `.article-content ul { list-style: disc !important }`,
+   which the existing perfect-for tags override the same way. */
+.article-content .pros-cons ul { margin: 0; padding: 0; list-style: none !important; }
+.article-content .pros-cons li {
+  position: relative;
+  margin: 0 0 8px;
+  padding-left: 26px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink-body);
+}
+.article-content .pros-cons li:last-child { margin-bottom: 0; }
+.article-content .pros-cons li::marker { content: none; }
+
+/* Glyphs drawn in CSS so they inherit colour and need no icon font. */
+.article-content .pros-cons li::before {
+  position: absolute;
+  top: .1em;
+  left: 0;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+}
+.article-content .pros-cons-pros li::before {
+  content: "\2713";
+  background: var(--ink);
+  color: var(--white);
+}
+.article-content .pros-cons-cons li::before {
+  content: "\2715";
+  background: var(--red);
+  color: var(--white);
+}
+
+/* Price and level of English, as one panel rather than two shouty uppercase
+   headings. Two equal cells divided down the middle, so it echoes the pair of
+   pros/cons cards directly above instead of bunching both facts on the left
+   and leaving half the width empty. */
+.article-content .venue-facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2em 0;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.article-content .venue-fact { padding: 14px 20px 16px; }
+.article-content .venue-fact + .venue-fact { border-left: 1px solid var(--line-soft); }
+
+.article-content .venue-facts dt {
+  margin-bottom: 5px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.article-content .venue-facts dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  color: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .article-content .venue-facts { grid-template-columns: 1fr; }
+  .article-content .venue-fact + .venue-fact {
+    border-left: 0;
+    border-top: 1px solid var(--line-soft);
+  }
+}
+
 .article-content ol {
   padding-left: 26px;
   margin: 22px 0;
@@ -1376,9 +1492,26 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 
 .category-page { min-height: 100vh; background: var(--paper); }
 .back-home { color: var(--red-dark); font-size: 12px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
-.category-heading { padding: clamp(70px, 10vw, 115px) 0 70px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, #f7f4ed 0%, #f7f4ed 65%, #f1e4db 100%); }
-.category-heading h1 { margin: 0; font: clamp(60px, 9vw, 120px)/.9 var(--font-serif); letter-spacing: -0.025em; }
-.category-heading > p:last-child { margin: 26px 0 0; color: var(--muted); font: 19px var(--font-serif); }
+/* The shorthand `padding: … 0 …` here used to wipe out the horizontal padding
+   .wrap provides, so the breadcrumbs, title and description sat at x=0 while
+   every card below them sat at x=32. Only the block padding is set now, so the
+   inline padding is inherited and the header lines up with the grid.
+
+   The vertical rhythm was also costing the whole first screen: 410px of header
+   on top of a 126px nav put the first card at 584px, so a 720px-tall laptop
+   showed about a fifth of one card. Roughly 150px comes back here. */
+.category-heading {
+  padding-block: clamp(40px, 5vw, 56px) 40px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(135deg, #f7f4ed 0%, #f7f4ed 65%, #f1e4db 100%);
+}
+.category-heading h1 { margin: 0; font: clamp(46px, 6vw, 72px)/1 var(--font-serif); letter-spacing: -0.025em; }
+.category-heading > p:last-child { margin: 16px 0 0; color: var(--muted); font: 19px var(--font-serif); }
+
+/* Count sits alongside the eyebrow, separated by a dot rather than a new line. */
+.category-heading .eyebrow { display: flex; align-items: baseline; gap: 10px; }
+.category-heading .category-count { color: var(--muted); }
+.category-heading .category-count::before { margin-right: 10px; color: var(--line); content: "\00B7"; }
 .archive-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 28px; padding-block: 48px 64px; }
 .archive-card { background: white; border: 1px solid #e8e5df; }
 .archive-card-image { display: block; position: relative; height: 280px; overflow: hidden; background: #d8d5cd; }

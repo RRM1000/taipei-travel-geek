@@ -19,8 +19,10 @@ import {
   enhanceKlookDealsWidget,
   enhanceMobileKlookWidget,
   enhancePerfectForSection,
+  enhanceProsCons,
   enhanceRecommendedReading,
   enhanceTables,
+  enhanceVenueFacts,
   enhanceThreeImageGalleries,
   enhanceYoutubeEmbeds,
   formatDate,
@@ -174,7 +176,11 @@ export default async function ArticlePage({ params }: PageProperties) {
         enhanceYoutubeEmbeds(
           enhanceRecommendedReading(
             enhanceInlineAffiliateCTAs(
-              enhancePerfectForSection(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug))
+              enhanceVenueFacts(
+                enhanceProsCons(
+                  enhancePerfectForSection(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug))
+                )
+              )
             ),
             heroImage
           )

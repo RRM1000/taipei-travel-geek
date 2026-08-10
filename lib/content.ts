@@ -619,6 +619,62 @@ export function enhancePerfectForSection(content: string): string {
 }
 
 /**
+ * Rebuild the Pros/Cons block as a pair of cards.
+ *
+ * WordPress left these as a bare two-column layout: two h3s and two bullet
+ * lists, visually identical to the rest of the article, so the reader has to
+ * read the headings to work out which column is which. The markup is uniform
+ * across all 161 posts that carry one - always `<h3>Pros</h3>` - so this can be
+ * a render-time transform rather than an edit to every post.
+ *
+ * Only the columns block that actually contains a Pros heading is touched; a
+ * dozen posts use wp-block-columns for other things.
+ */
+export function enhanceProsCons(content: string): string {
+  const columnsBlock = /<div\b[^>]*class="[^"]*wp-block-columns[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/gi;
+
+  return content.replace(columnsBlock, (match, inner: string) => {
+    if (!/<h3\b[^>]*>\s*Pros\s*<\/h3>/i.test(inner)) return match;
+
+    const column = /<h3\b[^>]*>\s*(Pros|Cons)\s*<\/h3>\s*((?:<ul>[\s\S]*?<\/ul>)?)/gi;
+    const found = new Map<string, string>();
+    for (const m of inner.matchAll(column)) {
+      const label = m[1].toLowerCase();
+      const items = [...m[2].matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((li) => `<li>${li[1].trim()}</li>`);
+      if (items.length) found.set(label, items.join(""));
+    }
+    if (!found.size) return match;
+
+    const card = (key: "pros" | "cons") => {
+      const items = found.get(key);
+      if (!items) return "";
+      return `<div class="pros-cons-card pros-cons-${key}"><h3 class="pros-cons-heading">${key === "pros" ? "Pros" : "Cons"}</h3><ul>${items}</ul></div>`;
+    };
+    return `<div class="pros-cons">${card("pros")}${card("cons")}</div>`;
+  });
+}
+
+/**
+ * Turn the Price and Level of English headings into one facts strip.
+ *
+ * These are two `<h4>`s carrying a label and a value, which is neither a
+ * heading nor a readable pair - they render as two shouty uppercase lines. 100
+ * posts have both, adjacent, with Price first in 99 of them. Other h4 labels
+ * (Best For, Best Time to Visit, Location) are deliberately not matched.
+ */
+export function enhanceVenueFacts(content: string): string {
+  const pair = /<h4\b[^>]*>\s*(Price|Level of English)\s*:\s*([\s\S]*?)<\/h4>(\s*)<h4\b[^>]*>\s*(Price|Level of English)\s*:\s*([\s\S]*?)<\/h4>/gi;
+
+  return content.replace(pair, (match, labelA: string, valueA: string, _gap, labelB: string, valueB: string) => {
+    if (labelA.toLowerCase() === labelB.toLowerCase()) return match;
+    const clean = (s: string) => s.replace(/<\/?strong>/gi, "").trim();
+    const row = (label: string, value: string) =>
+      `<div class="venue-fact"><dt>${label}</dt><dd>${clean(value)}</dd></div>`;
+    return `<dl class="venue-facts">${row(labelA, valueA)}${row(labelB, valueB)}</dl>`;
+  });
+}
+
+/**
  * Defer offscreen images.
  *
  * Content images were all loading eagerly, so a post like shilin-night-market
