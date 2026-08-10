@@ -1089,6 +1089,20 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 .article-content .article-toc-block a { display: inline-block; padding: 5px 0; color: var(--ink); font-weight: 500; text-decoration: none; }
 .article-content .article-toc-block a:hover { color: var(--red-dark); text-decoration: underline; }
 
+/* Collapsible data block - same visual language as .article-toc-block, but for
+   long reference tables (e.g. a full stop-by-stop bus timetable) rather than a
+   jump-link nav. NOT named article-toc-block: that class is stripped out of
+   content entirely by enhanceContentHeadings(). */
+.article-content .data-details { margin: 28px 0; border: 1px solid var(--line-soft); border-radius: 8px; background: #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.03); overflow: hidden; }
+.article-content .data-details summary { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; color: var(--ink); cursor: pointer; font-size: 13px; font-weight: 800; letter-spacing: 1px; list-style: none; text-transform: uppercase; }
+.article-content .data-details summary::-webkit-details-marker { display: none; }
+.article-content .data-details summary::after { content: "+"; display: grid; width: 24px; height: 24px; place-items: center; background: var(--red); color: white; border-radius: 50%; font-size: 18px; font-weight: 400; line-height: 1; flex-shrink: 0; }
+.article-content .data-details[open] summary { border-bottom: 1px solid var(--line-soft); background: var(--surface); }
+.article-content .data-details[open] summary::after { content: "−"; }
+.article-content .data-details-body { padding: 4px 20px 20px; }
+.article-content .data-details-body h4 { margin-top: 20px; }
+.article-content .data-details-body h4:first-child { margin-top: 4px; }
+
 /* Enhanced Editorial Images & Figures */
 .article-content .wide-image { margin: 42px 0; width: 100%; height: 380px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
 /* WordPress's side-by-side "columns" block - used across 200+ posts to place
