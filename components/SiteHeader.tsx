@@ -66,8 +66,9 @@ const exploreLinks = [
 ];
 
 const informationLinks = [
-  { href: "/taiwan-sim-cards", label: "Taiwan SIM cards" },
   { href: "/taiwan-easycard", label: "EasyCard" },
+  { href: "/taiwan-sim-cards", label: "Taiwan SIM cards" },
+  { href: "/taipei-trip-cost", label: "Trip costs & money" },
   { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
   { href: "/taiwan-visa-entry-requirements", label: "Visa & entry requirements" },
   { href: "/taiwan-tourist-tax-refund", label: "Tourist tax refund" },

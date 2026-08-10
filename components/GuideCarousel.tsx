@@ -7,6 +7,7 @@ const slides = [
   { category: "Transport", title: "Your first purchase: the EasyCard", href: "/taiwan-easycard", image: "/media/2019/04/easy-card.jpg" },
   { category: "Connectivity", title: "Which Taiwan SIM card should you get?", href: "/taiwan-sim-cards", image: "/media/2019/08/SIM-Cards-Taiwan-3-1024x654.jpg" },
   { category: "Transport", title: "Getting around Taipei, every option explained", href: "/taipei-public-transport", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg" },
+  { category: "Money", title: "What will Taipei actually cost?", href: "/taipei-trip-cost", image: "/media/2026/08/nt100-note-sun-yat-sen-memorial-hall-1024x768.jpg" },
 ];
 
 export function GuideCarousel() {
