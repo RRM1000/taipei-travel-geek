@@ -49,6 +49,58 @@ function plainText(value: string) {
   return value.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").trim();
 }
 
+/**
+ * Builds a lazy-loaded <img> for generated markup, carrying intrinsic
+ * dimensions wherever they can be recovered.
+ *
+ * These matter for more than layout shift. Because the images are lazy, one
+ * with no dimensions reserves 0px until it loads. A smooth-scrolled jump from
+ * the contents list animates *through* those placeholders, they expand
+ * mid-flight, and every heading below shifts down - which is why the first
+ * jump on a freshly loaded page used to land short while later ones were fine.
+ *
+ * The media library follows WordPress's "-WIDTHxHEIGHT" filename convention,
+ * so most numbers can be read straight off the src. The originals that predate
+ * that convention are listed in IMAGE_SIZES below, measured off the files in
+ * public/. Only images used as a featuredImage need to be there; anything
+ * unlisted falls back to rendering without dimensions, as before.
+ */
+const IMAGE_SIZES: Record<string, [number, number]> = {
+  "/images/taipei-skyline.jpg": [2400, 1414],
+  "/media/2019/04/Taipei101.jpg": [1600, 1085],
+  "/media/2019/04/easy-card.jpg": [410, 307],
+  "/media/2019/05/Profile.jpg": [2417, 2351],
+  "/media/2019/05/Taipei-Map.jpg": [817, 587],
+  "/media/2019/05/Traditional-Theatre-Centre-3.jpg": [973, 647],
+  "/media/2019/05/Yong-He-Soy-Milk-King-1-e1557286055443.jpg": [1600, 1200],
+  "/media/2019/12/taiwan-fun-pass.jpg": [800, 502],
+  "/media/2019/12/taiwan-tax-refund.png": [776, 494],
+  "/media/2020/02/Golden-Horse-Film-Festival.png": [750, 400],
+  "/media/2022/12/Raohe-Night-Market-6-edited.jpg": [1608, 1071],
+  "/media/2023/02/Xinyi-Shopping-District-2-edited.jpg": [1920, 1279],
+  "/media/2023/04/Lin-Family-Mansion-9-edited-scaled.jpg": [1600, 1067],
+  "/media/2023/04/tourist_shuttle_bus.jpg": [871, 554],
+  "/media/2026/08/dihua/20200116_152209.jpg": [1600, 1200],
+  "/media/2026/08/sinchao-rice-shoppe-pork-belly-cucumber.jpg": [1024, 662],
+  "/media/2026/08/taipei-cherry-blossoms.jpg": [860, 571],
+  "/media/2026/08/taipei-districts-view-hero.jpg": [1024, 636],
+  "/media/2026/08/taipei-fireworks.jpg": [683, 911],
+  "/media/2026/08/taiwan-lucky-land-banner.png": [514, 234],
+};
+
+function imgTag(src: string | undefined, alt: string) {
+  if (!src) return "";
+  const path = src.split("?")[0];
+  const dims = /-(\d{2,5})x(\d{2,5})\.(?:jpe?g|png|webp|gif)$/i.exec(path);
+  const known = IMAGE_SIZES[path];
+  const sizeAttrs = dims
+    ? ` width="${dims[1]}" height="${dims[2]}"`
+    : known
+      ? ` width="${known[0]}" height="${known[1]}"`
+      : "";
+  return `<img src="${escapeHtml(src)}"${sizeAttrs} alt="${escapeHtml(alt)}" loading="lazy"/>`;
+}
+
 export function enhanceRecommendedReading(content: string, fallbackImage?: string | null) {
   const sectionPattern = /<h([1-6])\b[^>]*>\s*(?:<[^>]+>\s*)*Recommended Reading:\s*(?:<\/[^>]+>\s*)*<\/h\1>((?:\s*<h[4-6]\b[^>]*>[\s\S]*?<\/h[4-6]>)+)/gi;
 
@@ -63,7 +115,7 @@ export function enhanceRecommendedReading(content: string, fallbackImage?: strin
       const title = related?.title || plainText(link[2]);
       const image = related?.featuredImage || fallbackImage;
       const imageMarkup = image
-        ? `<img src="${escapeHtml(image)}" alt="" loading="lazy"/>`
+        ? imgTag(image, title)
         : `<span class="recommended-card-placeholder" aria-hidden="true"></span>`;
 
       return `<a class="recommended-card" href="${escapeHtml(href)}">${imageMarkup}<span class="recommended-card-body"><span class="recommended-card-label">Recommended guide</span><strong>${escapeHtml(title)}</strong><span class="recommended-card-arrow" aria-hidden="true">→</span></span></a>`;
@@ -114,6 +166,9 @@ const GENERIC_SECTION_HEADINGS = new Set([
   "traveller tips", "tips", "best deals", "deals", "general tips", "price", "prices",
   "location", "locations", "places of interest", "faq", "overview", "general information",
   "useful information", "useful tips", "how to get there",
+  // Trip-planning framing sections rather than a profile of one place: these
+  // mention several posts in passing while being about the decision itself.
+  "how many days do you need?", "how many days do you need", "how long to stay",
 ]);
 
 // Hub/index pages that link out to dozens of unrelated single-topic posts in
@@ -122,7 +177,7 @@ const GENERIC_SECTION_HEADINGS = new Set([
 // these so far has been a mismatch (heading text alone can't keep up with
 // how often new subheadings get added during a restructure), so skip the
 // whole feature here rather than blacklisting headings one at a time.
-const CHOICE_GUIDE_EXCLUDED_SLUGS = new Set(["taipei-public-transport"]);
+const CHOICE_GUIDE_EXCLUDED_SLUGS = new Set(["taipei-public-transport", "taipei-trip-cost"]);
 
 export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
   if (CHOICE_GUIDE_EXCLUDED_SLUGS.has(sourceSlug)) return content;
@@ -171,7 +226,13 @@ export function enhanceChoiceGuideImages(content: string, sourceSlug: string) {
     // text right below always already contains that link (it's the trigger
     // condition above), so a second link on the photo would just be a
     // redundant, visually unmarked click target.
-    const image = `<figure class="choice-guide-image"><img src="${escapeHtml(related.featuredImage || "")}" alt="" loading="lazy"/></figure>`;
+    //
+    // Dimensions matter here, not just for CLS: these are lazy-loaded, so
+    // without them each one reserves 0px until it loads. A smooth-scrolled
+    // jump from the contents list animates *through* them, they expand
+    // mid-flight, and every heading below shifts down - so the first jump on
+    // a fresh page lands short while later ones are fine.
+    const image = `<figure class="choice-guide-image">${imgTag(related.featuredImage, "")}</figure>`;
     return `${heading}${image}${section}`;
   });
 }
@@ -240,7 +301,7 @@ export function renderRecommendedReadingSection(related: ContentPost[], heading 
 
   const cards = related.map((related_) => {
     const imageMarkup = related_.featuredImage
-      ? `<img src="${escapeHtml(related_.featuredImage)}" alt="" loading="lazy"/>`
+      ? imgTag(related_.featuredImage, related_.title)
       : `<span class="recommended-card-placeholder" aria-hidden="true"></span>`;
 
     return `<a class="recommended-card" href="/${escapeHtml(related_.slug)}">${imageMarkup}<span class="recommended-card-body"><span class="recommended-card-label">Recommended guide</span><strong>${escapeHtml(related_.title)}</strong><span class="recommended-card-arrow" aria-hidden="true">→</span></span></a>`;
