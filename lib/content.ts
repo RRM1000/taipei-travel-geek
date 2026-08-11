@@ -663,7 +663,10 @@ export function enhanceProsCons(content: string): string {
     const card = (key: "pros" | "cons") => {
       const items = found.get(key);
       if (!items) return "";
-      return `<div class="pros-cons-card pros-cons-${key}"><h3 class="pros-cons-heading">${key === "pros" ? "Pros" : "Cons"}</h3><ul>${items}</ul></div>`;
+      // A label on a card, not a document section - emitting an h3 here put
+      // "Pros" and "Cons" into the contents sidebar of every post using the
+      // pattern, as if they were places you could navigate to.
+      return `<div class="pros-cons-card pros-cons-${key}"><p class="pros-cons-heading">${key === "pros" ? "Pros" : "Cons"}</p><ul>${items}</ul></div>`;
     };
     return `<div class="pros-cons">${card("pros")}${card("cons")}</div>`;
   });
