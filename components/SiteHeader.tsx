@@ -39,10 +39,10 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
     { slug: "huashan-1914-creative-park", title: "Huashan 1914 Creative Park", image: "/media/2019/07/Huashan-1914-Creative-Park-18-e1562031248271-1024x768.jpg", excerpt: "Converted warehouses full of galleries, shops and cafes." },
   ],
   Transport: [
-    { slug: "taipei-public-transport", title: "Public Transport - A Guide to Every Type in Taipei", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg", excerpt: "MRT, buses, YouBikes and everything between." },
+    { slug: "taipei-public-transport", title: "Taipei Transport Guide: Airports, Passes & Getting Around", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg", excerpt: "MRT, buses, YouBikes and everything between." },
     { slug: "taiwan-easycard", title: "EasyCard - Make it Your First Purchase in Taiwan", image: "/media/2019/04/easy-card.jpg", excerpt: "The single most useful card you'll own here." },
     { slug: "taipei-youbike", title: "Full Guide for Hiring and Riding a YouBike", image: "/media/2019/09/YouBike-Taipei-6-1024x726.jpg", excerpt: "How to unlock, ride and return the city's bikes." },
-    { slug: "mrt", title: "Taipei MRT - Full Guide & Tips", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
+    { slug: "mrt", title: "Taipei MRT Guide: Fares, Lines & How to Ride", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
   ],
   TopPicks: [
     { slug: "national-palace-museum", title: "National Palace Museum", image: "/media/2019/07/National-Palace-Museum-8-1024x694.jpg", excerpt: "The world's largest collection of Chinese artefacts." },
