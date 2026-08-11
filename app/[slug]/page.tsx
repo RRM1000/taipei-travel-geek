@@ -252,7 +252,7 @@ export default async function ArticlePage({ params }: PageProperties) {
                 </a>
               )}
               <span>Travel guide</span>
-              <span className="reading-time-badge">⏱️ {readingTime} min read</span>
+              <span className="reading-time-badge">{readingTime} min read</span>
             </div>
             <h1 className="article-title">{post.title}</h1>
             {post.excerpt && <p className="article-dek">{post.excerpt}</p>}

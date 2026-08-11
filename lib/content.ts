@@ -887,9 +887,9 @@ export function enhanceThreeImageGalleries(content: string): string {
 
 
 
-const INLINE_KLOOK_CTA = `<div class="article-inline-cta article-klook-cta" data-auto-cta="klook"><a href="https://www.klook.com/en-GB/search/result/?query=Taipei&amp;aid=8733" target="_blank" rel="sponsored noopener noreferrer"><span>🎟️</span> Browse Taipei Tours &amp; Activities on Klook</a></div>`;
+const INLINE_KLOOK_CTA = `<div class="article-inline-cta article-klook-cta" data-auto-cta="klook"><a href="https://www.klook.com/en-GB/search/result/?query=Taipei&amp;aid=8733" target="_blank" rel="sponsored noopener noreferrer">Browse Taipei Tours &amp; Activities on Klook</a></div>`;
 
-const INLINE_WISE_CTA = `<div class="article-inline-cta article-wise-cta" data-auto-cta="wise"><a href="https://wise.com/invite/ecac/robertrichardm17" target="_blank" rel="sponsored noopener noreferrer"><span>💱</span> Get the Real Exchange Rate with Wise</a></div>`;
+const INLINE_WISE_CTA = `<div class="article-inline-cta article-wise-cta" data-auto-cta="wise"><a href="https://wise.com/invite/ecac/robertrichardm17" target="_blank" rel="sponsored noopener noreferrer">Get the Real Exchange Rate with Wise</a></div>`;
 
 /**
  * Injects the same generic Klook + Wise CTAs into the article body itself,
@@ -966,7 +966,7 @@ export function enhanceKlookDealsWidget(content: string): string {
     <div class="klook-deal-info">
       <h4 class="klook-deal-title">Taipei 101 Observatory Ticket</h4>
       <div class="klook-deal-meta">
-        <span class="klook-deal-rating">⭐ 4.8 (20,000+ reviews)</span>
+        <span class="klook-deal-rating">4.8/5 (20,000+ reviews)</span>
         <span class="klook-deal-price">From NT$ 600</span>
       </div>
       <a href="https://www.klook.com/en-US/activity/1659-taipei-101-taipei/?aid=8733" target="_blank" rel="noopener noreferrer" class="klook-deal-button">Book on Klook</a>
@@ -980,7 +980,7 @@ export function enhanceKlookDealsWidget(content: string): string {
     <div class="klook-deal-info">
       <h4 class="klook-deal-title">Taipei Metro Day Pass & EasyCard</h4>
       <div class="klook-deal-meta">
-        <span class="klook-deal-rating">⭐ 4.7 (10,000+ reviews)</span>
+        <span class="klook-deal-rating">4.7/5 (10,000+ reviews)</span>
         <span class="klook-deal-price">From NT$ 190</span>
       </div>
       <a href="https://www.klook.com/en-US/activity/91567-taipei-metro-day-pass/?aid=8733" target="_blank" rel="noopener noreferrer" class="klook-deal-button">Book on Klook</a>
@@ -994,7 +994,7 @@ export function enhanceKlookDealsWidget(content: string): string {
     <div class="klook-deal-info">
       <h4 class="klook-deal-title">National Palace Museum Ticket</h4>
       <div class="klook-deal-meta">
-        <span class="klook-deal-rating">⭐ 4.6 (5,000+ reviews)</span>
+        <span class="klook-deal-rating">4.6/5 (5,000+ reviews)</span>
         <span class="klook-deal-price">From NT$ 350</span>
       </div>
       <a href="https://www.klook.com/en-US/activity/10136-national-palace-museum-ticket-package-taipei/?aid=8733" target="_blank" rel="noopener noreferrer" class="klook-deal-button">Book on Klook</a>
