@@ -31,6 +31,7 @@ import {
   getPost,
   getRelatedPosts,
   hasAffiliateLinks,
+  isGenuinelyReviewed,
   hasManualRecommendedReading,
   nonEditorialSlugs,
   posts,
@@ -40,19 +41,6 @@ import {
 } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
-
-// Every post carried over from the WordPress migration has a `modified` date
-// no later than this. Anything modified after it reflects a genuine,
-// post-migration content review - not just a leftover import timestamp. Used
-// to decide whether the "Updated" date is honest to show a reader.
-const CONTENT_REVIEW_CUTOFF = new Date("2023-05-01T00:00:00Z");
-
-function isGenuinelyReviewed(modified: string | undefined, date?: string) {
-  const target = modified || date;
-  if (!target) return false;
-  const parsed = new Date(`${target.replace(" ", "T")}Z`);
-  return !Number.isNaN(parsed.getTime()) && parsed >= CONTENT_REVIEW_CUTOFF;
-}
 
 const legacySlugRedirects: Record<string, string> = {
   "danshui": "best-day-trips-from-taipei",

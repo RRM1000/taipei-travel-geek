@@ -558,6 +558,35 @@ export function formatDate(date: string) {
   );
 }
 
+// Every post carried over from the WordPress migration has a `modified` date no
+// later than this. Anything modified after it reflects a genuine,
+// post-migration content review - not just a leftover import timestamp. Used to
+// decide whether the "Updated" date is honest to show a reader.
+const CONTENT_REVIEW_CUTOFF = new Date("2023-05-01T00:00:00Z");
+
+export function isGenuinelyReviewed(modified: string | undefined, date?: string) {
+  const target = modified || date;
+  if (!target) return false;
+  const parsed = new Date(`${target.replace(" ", "T")}Z`);
+  return !Number.isNaN(parsed.getTime()) && parsed >= CONTENT_REVIEW_CUTOFF;
+}
+
+/**
+ * What to print on a card or byline.
+ *
+ * A 2019 publish date on a guide that was rewritten last week reads as
+ * abandoned, which costs clicks on travel content. But silently swapping in
+ * `modified` would be worse: for most of the library that field is a WordPress
+ * import timestamp, not a review. So show "Updated <date>" only where the
+ * modification post-dates the migration, and otherwise fall back to the
+ * publication date.
+ */
+export function displayDate(post: Pick<ContentPost, "date" | "modified">) {
+  return isGenuinelyReviewed(post.modified, post.date)
+    ? { label: "Updated", date: formatDate(post.modified || post.date) }
+    : { label: "", date: formatDate(post.date) };
+}
+
 export type HeadingItem = {
   id: string;
   text: string;

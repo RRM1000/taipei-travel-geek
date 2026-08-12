@@ -1,5 +1,5 @@
 import type { ContentPost, TaxonomyTerm } from "@/lib/content";
-import { ARCHIVE_PAGE_SIZE, formatDate, generateBreadcrumbSchema, getPostsByCategory } from "@/lib/content";
+import { ARCHIVE_PAGE_SIZE, displayDate, generateBreadcrumbSchema, getPostsByCategory } from "@/lib/content";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -21,6 +21,9 @@ export function categoryPageCount(category: TaxonomyTerm) {
 }
 
 function ArticleCard({ article }: { article: ContentPost }) {
+  // A 2019 publish date made rewritten guides look abandoned. Show the review
+  // date where there genuinely was one.
+  const shown = displayDate(article);
   return (
     <article className="archive-card">
       <a className="archive-card-image" href={`/${article.slug}`}>
@@ -28,7 +31,7 @@ function ArticleCard({ article }: { article: ContentPost }) {
         {article.categories[0] && <span>{article.categories[0].name}</span>}
       </a>
       <div className="archive-card-copy">
-        <p>{formatDate(article.date)}</p>
+        <p>{shown.label ? `${shown.label} ${shown.date}` : shown.date}</p>
         <h2><a href={`/${article.slug}`}>{article.title}</a></h2>
         {article.excerpt && <p className="archive-card-excerpt">{article.excerpt}</p>}
         <a className="text-link" href={`/${article.slug}`}>Read guide <span aria-hidden="true">→</span></a>
