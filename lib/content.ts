@@ -779,6 +779,16 @@ export function enhanceAffiliateLinks(content: string): string {
   });
 }
 
+// Name is legacy - this now handles every WordPress gallery size, not just
+// three-image ones. Galleries of 5+ images used to fall through untouched,
+// leaving the raw <ul class="wp-block-gallery columns-3"> markup in the page.
+// That collided with two things: Tailwind ships a real `columns-3` utility
+// (CSS multi-column layout), which scattered the images into a newspaper-style
+// flow instead of a grid, and the site's generic `.article-content ul` rule
+// puts a red bullet marker on every <li>, since nothing told it these <li>s
+// were gallery items rather than a normal bullet list. Routing every gallery
+// through this same custom-markup path (as 2/3/4-image galleries already were)
+// sidesteps both issues at once - see national-taiwan-university and friends.
 export function enhanceThreeImageGalleries(content: string): string {
   let result = content;
   let searchIdx = 0;
@@ -854,9 +864,12 @@ export function enhanceThreeImageGalleries(content: string): string {
       continue;
     }
 
-    if (imgs.length === 2 || imgs.length === 3 || imgs.length === 4) {
+    if (imgs.length >= 2) {
       const imgCount = imgs.length;
-      const maxItemWidth = imgCount === 4 ? "100%" : (imgCount === 3 ? "32%" : "48%");
+      // 4-and-up galleries render as a CSS grid (maxItemWidth 100% fills the
+      // grid cell); 2 and 3 render as a non-wrapping flex row instead.
+      const isGrid = imgCount >= 4;
+      const maxItemWidth = isGrid ? "100%" : (imgCount === 3 ? "32%" : "48%");
       const aspect = imgCount === 3 ? "1" : "4/3";
 
       const items = imgs.map(imgHtml => {
@@ -898,8 +911,12 @@ export function enhanceThreeImageGalleries(content: string): string {
       }).join("");
 
       let replacedBlock = "";
-      if (imgCount === 4) {
-        replacedBlock = `<div class="custom-grid-gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 2em auto; width: 100%; box-sizing: border-box;">${items}</div>`;
+      if (isGrid) {
+        // 4 images reads best as 2x2; 5+ (WordPress originally tagged these
+        // "columns-3") wraps into a 3-wide grid instead of a fixed 2x2 that
+        // would leave an oddly proportioned last row.
+        const gridColumns = imgCount === 4 ? 2 : 3;
+        replacedBlock = `<div class="custom-grid-gallery" style="display: grid; grid-template-columns: repeat(${gridColumns}, 1fr); gap: 16px; margin: 2em auto; width: 100%; box-sizing: border-box;">${items}</div>`;
       } else {
         const gap = imgCount === 3 ? "12px" : "16px";
         replacedBlock = `<div class="custom-multi-image-gallery" style="display: flex; gap: ${gap}; justify-content: center; align-items: center; margin: 2em auto; width: 100%; flex-wrap: nowrap; box-sizing: border-box;">${items}</div>`;
