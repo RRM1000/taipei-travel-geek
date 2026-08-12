@@ -1126,6 +1126,39 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   }
 }
 
+/* WordPress color-highlighted <mark> text, carried over from the old CMS
+   export (used to colour-code food stand names against the pins on a
+   matching Google My Maps embed, e.g. michelin-food-stands-at-night-markets).
+   The site never shipped WordPress's core block-library CSS, so these
+   has-*-color classes were rendering as plain text with no colour at all -
+   reset the default yellow <mark> background first, since some marks carry
+   no inline background style of their own, then restore each of the 5
+   colours from the WP default palette that the content actually uses. */
+.article-content mark {
+  background: none;
+  color: inherit;
+}
+
+.article-content mark.has-vivid-cyan-blue-color {
+  color: #0693e3;
+}
+
+.article-content mark.has-vivid-green-cyan-color {
+  color: #00d084;
+}
+
+.article-content mark.has-vivid-red-color {
+  color: #cf2e2e;
+}
+
+.article-content mark.has-luminous-vivid-amber-color {
+  color: #b8860b;
+}
+
+.article-content mark.has-black-color {
+  color: #000000;
+}
+
 
 .article-content tr:last-child td {
   border-bottom: 0;
