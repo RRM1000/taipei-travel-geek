@@ -1314,6 +1314,32 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   font-size: 13px;
 }
 
+/* WordPress video embed (taiwan-tourist-tax-refund's YouTube guide). The
+   source content just had the bare watch URL as text inside the wrapper div
+   - WordPress normally expands that into an iframe itself at save time, but
+   that never happened here, so the video was silently missing from the page
+   entirely (no broken box, just absent). Content fixed to a real <iframe>;
+   this makes it size responsively at 16:9 instead of the iframe's fixed
+   560x315 attributes. */
+.article-content .wp-block-embed {
+  margin: 24px 0;
+}
+
+.article-content .wp-block-embed__wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.article-content .wp-block-embed__wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 0;
+}
+
 
 .article-content tr:last-child td {
   border-bottom: 0;
