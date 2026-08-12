@@ -1159,6 +1159,104 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   color: #000000;
 }
 
+/* Food-stand list, replacing the old 3-column Bib/Name/Description table
+   (michelin-food-stands-at-night-markets and the standalone Raohe/Ningxia/
+   Tonghua posts). The table forced a horizontal scroll on mobile just to
+   read the description column - this stacks instead, so there's nothing to
+   scroll. The dot colour does the same job the coloured <mark> text used to:
+   matching each stand to its pin on the map below. */
+.article-content .stand-list {
+  list-style: none;
+  margin: 22px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.article-content .stand-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.article-content .stand-dot {
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.article-content .stand-dot-none {
+  background: transparent;
+  border: 1.5px solid var(--line);
+  box-shadow: none;
+}
+
+.article-content .stand-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.article-content .stand-name {
+  margin: 0 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--navy);
+}
+
+.article-content .stand-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-body);
+}
+
+.article-content .bib-badge {
+  flex: 0 0 auto;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.article-content .stand-hours {
+  display: inline-block;
+  margin: 4px 0 20px;
+  padding: 7px 14px;
+  background: var(--surface-alt);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.article-content .stand-hint {
+  margin: -6px 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
 
 .article-content tr:last-child td {
   border-bottom: 0;
