@@ -1289,6 +1289,31 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   border-bottom-color: var(--red-dark);
 }
 
+/* WordPress text-align/font-size utility classes - like has-*-color and
+   has-text-align-center on the old Closest MRT line, these never had CSS
+   behind them either. Used across 12 posts: table cells that should be
+   centred or left-aligned (comparison tables, a happy-hour schedule), right-
+   aligned/small footnote paragraphs (taipei-fun-pass, taiwan-sim-cards), and
+   small italic "click an image for more" captions under a few image-link
+   grids (gongguan and others). Deliberately not touching alignleft/alignright
+   (float) - the one alignleft use is on a <table>, and floating a data table
+   is a different, riskier fix than these plain alignment/size utilities. */
+.article-content .has-text-align-center {
+  text-align: center;
+}
+
+.article-content .has-text-align-left {
+  text-align: left;
+}
+
+.article-content .has-text-align-right {
+  text-align: right;
+}
+
+.article-content .has-small-font-size {
+  font-size: 13px;
+}
+
 
 .article-content tr:last-child td {
   border-bottom: 0;
