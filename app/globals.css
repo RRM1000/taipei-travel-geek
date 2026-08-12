@@ -1257,6 +1257,38 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   font-style: italic;
 }
 
+/* "Closest MRT" line, usually sitting right after (sometimes right before)
+   a Google Maps iframe. It used to carry has-text-align-center - a class
+   this site never styled, so it wasn't even centred - and sat flush against
+   the map with no breathing room. Restyled as a small left-accented card,
+   which also copes better than a pill shape with the two-station variant
+   (Ningxia) that wraps onto multiple lines. */
+.article-content .location-line {
+  display: inline-block;
+  margin: 22px 0 6px;
+  padding: 12px 18px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red-dark);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.7;
+  color: var(--navy);
+}
+
+.article-content .location-line a {
+  color: var(--red-dark);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(217, 46, 42, 0.35);
+}
+
+.article-content .location-line a:hover {
+  border-bottom-color: var(--red-dark);
+}
+
 
 .article-content tr:last-child td {
   border-bottom: 0;
