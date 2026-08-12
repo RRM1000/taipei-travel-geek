@@ -612,6 +612,28 @@ export function enhanceContentHeadings(content: string): {
   const headings: HeadingItem[] = [];
   let index = 0;
 
+  // Guards against two headings landing on the same id - either because the
+  // WordPress export carried a duplicate id over (leftover TinyMCE ids like
+  // mce_0 were only ever unique within one editing session, not across a
+  // whole document), or because two headings share the same plain text (a
+  // "Best For" or "Website" sub-heading repeated once per venue in a
+  // round-up post, each auto-slugified to the same fallback id). Either way
+  // React's sidebar TOC list breaks on the resulting duplicate key, so every
+  // id assigned here - explicit or generated - is forced unique by suffixing
+  // -2, -3, etc. on a repeat.
+  const seenIds = new Set<string>();
+  const dedupeId = (candidate: string): string => {
+    if (!seenIds.has(candidate)) {
+      seenIds.add(candidate);
+      return candidate;
+    }
+    let n = 2;
+    while (seenIds.has(`${candidate}-${n}`)) n++;
+    const unique = `${candidate}-${n}`;
+    seenIds.add(unique);
+    return unique;
+  };
+
   const enhancedContent = cleanContent.replace(/<h([23])\b([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, levelStr, attrs, innerHtml) => {
     const level = parseInt(levelStr, 10);
     const plainText = decodeHtmlEntities(innerHtml.replace(/<[^>]*>/g, "").trim());
@@ -626,7 +648,14 @@ export function enhanceContentHeadings(content: string): {
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
       if (!id) id = `section-${++index}`;
+      id = dedupeId(id);
       attrs = `${attrs} id="${id}"`;
+    } else {
+      const deduped = dedupeId(id);
+      if (deduped !== id) {
+        attrs = attrs.replace(/id=["'][^"']+["']/i, `id="${deduped}"`);
+        id = deduped;
+      }
     }
 
     headings.push({ level, id, text: plainText });
