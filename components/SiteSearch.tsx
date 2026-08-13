@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-type SearchEntry = { slug: string; title: string; excerpt: string; image: string | null; categories: string[]; tags: string[]; searchText: string };
+type SearchEntry = { slug: string; title: string; excerpt: string; image: string | null; categories: string[]; tags: string[]; closed?: boolean; searchText: string };
 
 export function SiteSearch() {
   const [open, setOpen] = useState(false), [query, setQuery] = useState(""), [index, setIndex] = useState<SearchEntry[]>([]), [ready, setReady] = useState(false);
@@ -28,10 +28,20 @@ export function SiteSearch() {
         else if (cats.includes(term) || excerpt.includes(term)) score += 20;
         else score += 1;
       }
+      // When the title STARTS with the query, this is almost always the
+      // canonical page for that thing rather than a post that merely mentions
+      // it. Without this, "taipei 101" tied three posts on 1200 - the
+      // observatory guide, a rooftop bar with the view, and a closed venue -
+      // and the winner came down to posts.json source order.
+      if (title.startsWith(fullQuery)) score += 400;
       // A "best of X" roundup (tagged Lists) is the definitive guide for a
       // bare topic word - it should outrank single-venue posts that only
-      // happen to share a title word, not tie with them.
+      // happen to share a title word, not tie with them. Deliberately small,
+      // so it breaks ties without beating a canonical title match.
       if (isRoundup) score += 5;
+      // Closed venues stay findable by name - learning a place has shut is a
+      // useful result - but should never sit above somewhere still open.
+      if (entry.closed) score -= 800;
       return { entry, score };
     })
     .sort((a, b) => b.score - a.score)
