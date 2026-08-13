@@ -79,14 +79,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="intro wrap">
-          <p className="eyebrow">Find your Taipei</p>
-          <div className="intro-grid">
-            <h2>We do the research so you don&apos;t have to.</h2>
-            <p>Taipei Travel Geek guides you through all the main sights and hidden gems, with practical advice and local insight to make your trip smoother and more memorable.</p>
-          </div>
-        </section>
-
         <section className="sights-guides wrap">
           <div className="section-heading">
             <div>

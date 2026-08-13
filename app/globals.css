@@ -316,8 +316,12 @@ img { display: block; max-width: 100%; }
 
 /* Replaces the old category-strip tiles - see the comment above sightsSlugs
    in app/page.tsx for why. Reuses the more-guide-card grid styling below
-   rather than introducing a new visual pattern. */
-.sights-guides { padding-block: 50px 30px; }
+   rather than introducing a new visual pattern. Top padding is generous
+   (110px, matching the old .intro section's own top padding) because this
+   is now the first section directly below the hero, which carries no
+   bottom spacing of its own - without it the grid would butt straight up
+   against the hero image. */
+.sights-guides { padding-block: 110px 30px; }
 
 .featured { padding-block: 120px; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 45px; }
