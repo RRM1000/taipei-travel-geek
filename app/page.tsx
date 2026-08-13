@@ -5,19 +5,24 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { LatestArticlesCarousel } from "@/components/LatestArticlesCarousel";
 import { posts } from "@/lib/content";
 
-const categories = [
-  ["Eat", "Night markets, local favourites and the city’s best tables"],
-  ["Visit", "Landmarks, hidden corners and memorable day trips"],
-  ["Areas", "Neighbourhood guides for exploring Taipei properly"],
-  ["Culture", "Museums, temples, festivals and creative spaces"],
+// Replaces the old "category-strip" (Eat/Visit/Areas/Culture tiles). Those
+// four cards were a pure link menu - no titles, no images of actual guides -
+// and every one of them already exists one hover away in the header's mega
+// menu, which shows real curated previews instead of a one-line blurb. This
+// section does the header's job worse while adding nothing of its own, so
+// it's replaced rather than kept: real guide cards for the one homepage gap
+// that opens up once it's gone (sightseeing/culture - Eat is covered by
+// "Food & Drink" below, orientation by "First Timers", logistics by
+// "Before you go").
+const sightsSlugs = [
+  "taipei-101",
+  "jiufen",
+  "taroko-national-park",
+  "best-hikes-in-taipei",
+  "dihua-street-dadaocheng-guide",
+  "ningxia-night-market",
 ];
-
-const categoryImages = [
-  "/images/raohe-night-market.jpg",
-  "/media/2023/01/Taipei-1024x678.jpg",
-  "/images/xinyi-shopping.jpg",
-  "/images/huashan-creative-park.jpg",
-];
+const sightsGuides = sightsSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 
 // Kept distinct from the navbar's mega menus (Eat/Drink/Visit/Transport/Best of Taipei) so the
 // same guide isn't featured in both places. taipei-essentials-guide is a deliberate exception -
@@ -82,16 +87,26 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="category-strip wrap" aria-label="Browse by interest">
-          {categories.map(([name, description], index) => (
-            <a className="category-card" href={`/category/${name.toLowerCase()}`} key={name}>
-              <img src={categoryImages[index]} alt="" />
-              <span>0{index + 1}</span>
-              <h3>{name}</h3>
-              <p>{description}</p>
-              <b aria-hidden="true">↗</b>
-            </a>
-          ))}
+        <section className="sights-guides wrap">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Worth the trip</p>
+              <h2>Sights &amp; Culture</h2>
+            </div>
+            <a href="/category/visit">Explore all guides <span aria-hidden="true">→</span></a>
+          </div>
+          <div className="more-guides-grid">
+            {sightsGuides.map((guide) => (
+              <article className="more-guide-card" key={guide.slug}>
+                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.jpg"} alt="" /></a>
+                <div className="more-guide-copy">
+                  <p>{guide.categories[0]?.name || "Taipei guide"}</p>
+                  <h3><a href={`/${guide.slug}`}>{guide.title}</a></h3>
+                </div>
+                <a className="more-guide-arrow" href={`/${guide.slug}`} aria-label={`Read ${guide.title}`}>&rarr;</a>
+              </article>
+            ))}
+          </div>
         </section>
 
         <LatestArticlesCarousel items={latestArticles} />
