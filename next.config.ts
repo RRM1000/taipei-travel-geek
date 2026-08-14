@@ -17,6 +17,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  // "nice-convenience-stores" was merged into "taipei-convenience-stores" (its
+  // five stores now live in that post's "Themed" section) - redirect the old
+  // URL rather than let indexed links and backlinks 404.
+  async redirects() {
+    return [
+      {
+        source: "/nice-convenience-stores",
+        destination: "/taipei-convenience-stores#Themed",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -16,11 +16,11 @@ import { posts } from "@/lib/content";
 // "Before you go").
 const sightsSlugs = [
   "taipei-101",
-  "jiufen",
+  "taipei-zoo",
   "taroko-national-park",
   "best-hikes-in-taipei",
   "dihua-street-dadaocheng-guide",
-  "ningxia-night-market",
+  "shilin-night-market",
 ];
 const sightsGuides = sightsSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
 

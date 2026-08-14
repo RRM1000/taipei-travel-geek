@@ -21,7 +21,7 @@ const newPost = {
   date: "2023-07-08 00:00:00",
   modified: today,
   slug,
-  title: "Taipei on a Budget: 14 Free or Cheap Things to Try",
+  title: "Taipei on a Budget: 16 Free or Cheap Things to Try",
   excerpt:
     "Some ideas for visitors with a limited budget, including cheap museums, free costume hire and cheap coffee.",
   type: "post",
