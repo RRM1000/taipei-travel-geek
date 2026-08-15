@@ -34,15 +34,15 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
   ],
   Visit: [
     { slug: "best-districts-and-areas", title: "A Guide to Every District in Taipei", image: "/media/2023/01/Taipei-1024x678.jpg", excerpt: "All 12 districts, and where to base yourself." },
-    { slug: "best-day-trips-from-taipei", title: "The Best Day Trips Within 90 Minutes of Taipei", image: "/media/2022/11/Jiufen2-1024x691.jpg", excerpt: "Jiufen, Shifen and the rest of the North Coast." },
+    { slug: "best-day-trips-from-taipei", title: "The Best Day (and Half Day) Trips from Taipei", image: "/media/2022/11/Jiufen2-1024x691.jpg", excerpt: "Jiufen, Shifen and the rest of the North Coast." },
     { slug: "one-day-itineraries", title: "24 Hours in Taipei: Itineraries", image: "/media/2019/12/Chiang-Kai-Shek-Memorial-Hall-Flag-Ceremony3-1024x699.jpg", excerpt: "The best of Taipei, planned out for you." },
     { slug: "huashan-1914-creative-park", title: "Huashan 1914 Creative Park", image: "/media/2019/07/Huashan-1914-Creative-Park-18-e1562031248271-1024x768.jpg", excerpt: "Converted warehouses full of galleries, shops and cafes." },
   ],
   Transport: [
     { slug: "taipei-public-transport", title: "Taipei Transport Guide: Airports, Passes & Getting Around", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg", excerpt: "MRT, buses, YouBikes and everything between." },
-    { slug: "taiwan-easycard", title: "EasyCard - Make it Your First Purchase in Taiwan", image: "/media/2019/04/easy-card.jpg", excerpt: "The single most useful card you'll own here." },
-    { slug: "taipei-youbike", title: "Full Guide for Hiring and Riding a YouBike", image: "/media/2019/09/YouBike-Taipei-6-1024x726.jpg", excerpt: "How to unlock, ride and return the city's bikes." },
+    { slug: "taiwan-high-speed-rail-hsr-discounts-klook", title: "Full Guide & Deals for Taiwan High Speed Rail (THSR)", image: "/media/2019/08/HSR-Taiwan-14-1024x718.jpg", excerpt: "Travel to other parts of Taiwan in no time." },
     { slug: "mrt", title: "Taipei MRT Guide: Fares, Lines & How to Ride", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
+    { slug: "taiwan-easycard", title: "Taiwan EasyCard: How to Buy, Top Up & Use It", image: "/media/2019/04/easy-card.jpg", excerpt: "The single most useful card you'll own here." },
   ],
   TopPicks: [
     { slug: "national-palace-museum", title: "National Palace Museum", image: "/media/2019/07/National-Palace-Museum-8-1024x694.jpg", excerpt: "The world's largest collection of Chinese artefacts." },
