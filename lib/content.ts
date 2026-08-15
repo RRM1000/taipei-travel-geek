@@ -66,7 +66,7 @@ function plainText(value: string) {
  * unlisted falls back to rendering without dimensions, as before.
  */
 const IMAGE_SIZES: Record<string, [number, number]> = {
-  "/images/taipei-skyline.jpg": [2400, 1414],
+  "/images/taipei-skyline.webp": [2400, 1414],
   "/media/2019/04/Taipei101.jpg": [1600, 1085],
   "/media/2019/04/easy-card.jpg": [410, 307],
   "/media/2019/05/Profile.jpg": [2417, 2351],
@@ -80,10 +80,10 @@ const IMAGE_SIZES: Record<string, [number, number]> = {
   "/media/2023/02/Xinyi-Shopping-District-2-edited.jpg": [1920, 1279],
   "/media/2023/04/Lin-Family-Mansion-9-edited-scaled.jpg": [1600, 1067],
   "/media/2023/04/tourist_shuttle_bus.jpg": [871, 554],
-  "/media/2026/08/dihua/20200116_152209.jpg": [1600, 1200],
+  "/media/2026/08/dihua/20200116_152209.webp": [1600, 1200],
   "/media/2026/08/sinchao-rice-shoppe-pork-belly-cucumber.jpg": [1024, 662],
-  "/media/2026/08/taipei-cherry-blossoms.jpg": [860, 571],
-  "/media/2026/08/taipei-districts-view-hero.jpg": [1024, 636],
+  "/media/2026/08/taipei-cherry-blossoms.webp": [860, 571],
+  "/media/2026/08/taipei-districts-view-hero.webp": [1024, 636],
   "/media/2026/08/taipei-fireworks.jpg": [683, 911],
   "/media/2026/08/taiwan-lucky-land-banner.png": [514, 234],
 };

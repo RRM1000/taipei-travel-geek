@@ -91,7 +91,7 @@ const informationLinks = [
   { href: "/taipei-suggested-routes", label: "Routes" },
 ];
 
-const explorePromo = { title: "Lists", desc: "Every ‘best of’ list on the site, gathered in one place.", image: "/images/taipei-skyline.jpg", href: "/tag/lists" };
+const explorePromo = { title: "Lists", desc: "Every ‘best of’ list on the site, gathered in one place.", image: "/images/taipei-skyline.webp", href: "/tag/lists" };
 const informationPromo = { title: "The Taipei Guide", desc: "New here? Start with the essentials before anything else.", image: "/media/2023/01/Taipei-1024x678.jpg", href: "/taipei-guide" };
 
 export function SiteHeader() {

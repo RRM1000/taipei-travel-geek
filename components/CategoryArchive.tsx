@@ -27,7 +27,7 @@ function ArticleCard({ article }: { article: ContentPost }) {
   return (
     <article className="archive-card">
       <a className="archive-card-image" href={`/${article.slug}`}>
-        <img src={article.featuredImage || "/images/taipei-skyline.jpg"} alt={article.title} />
+        <img src={article.featuredImage || "/images/taipei-skyline.webp"} alt={article.title} />
         {article.categories[0] && <span>{article.categories[0].name}</span>}
       </a>
       <div className="archive-card-copy">

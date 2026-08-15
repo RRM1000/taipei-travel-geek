@@ -69,7 +69,7 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <img src="/images/taipei-skyline.jpg" alt="Taipei skyline with Taipei 101 at dusk" />
+          <img src="/images/taipei-skyline.webp" alt="Taipei skyline with Taipei 101 at dusk" fetchPriority="high" />
           <div className="hero-shade" />
           <div className="hero-content">
             <p className="eyebrow light">An independent guide to Taiwan’s capital</p>
@@ -90,7 +90,7 @@ export default function Home() {
           <div className="more-guides-grid">
             {sightsGuides.map((guide) => (
               <article className="more-guide-card" key={guide.slug}>
-                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.jpg"} alt="" /></a>
+                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.webp"} alt="" /></a>
                 <div className="more-guide-copy">
                   <p>{guide.categories[0]?.name || "Taipei guide"}</p>
                   <h3><a href={`/${guide.slug}`}>{guide.title}</a></h3>
@@ -115,7 +115,7 @@ export default function Home() {
             {firstTimerGuides.map((guide) => (
               <a className="first-timer-card" href={`/${guide.slug}`} key={guide.slug}>
                 <div className="first-timer-image-wrap">
-                  <img src={guide.featuredImage || "/images/taipei-skyline.jpg"} alt="" />
+                  <img src={guide.featuredImage || "/images/taipei-skyline.webp"} alt="" />
                 </div>
                 <div className="first-timer-body">
                   <span className="first-timer-tag">{guide.categories[0]?.name || "Taipei Guide"}</span>
@@ -143,7 +143,7 @@ export default function Home() {
           <div className="more-guides-grid">
             {moreGuides.map((guide) => (
               <article className="more-guide-card" key={guide.slug}>
-                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.jpg"} alt="" /></a>
+                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.webp"} alt="" /></a>
                 <div className="more-guide-copy">
                   <p>{guide.categories[0]?.name || "Taipei guide"}</p>
                   <h3><a href={`/${guide.slug}`}>{guide.title}</a></h3>

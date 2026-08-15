@@ -41,7 +41,7 @@ export function LatestArticlesCarousel({ items }: { items: CarouselItem[] }) {
         {items.map((post) => (
           <a className="latest-carousel-card" href={`/${post.slug}`} key={post.slug}>
             <div className="latest-card-bg-wrap">
-              <img src={post.featuredImage || "/images/taipei-skyline.jpg"} alt="" />
+              <img src={post.featuredImage || "/images/taipei-skyline.webp"} alt="" />
             </div>
             <div className="latest-card-overlay" />
             <div className="latest-card-content">
