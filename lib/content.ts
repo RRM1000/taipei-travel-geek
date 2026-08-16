@@ -636,9 +636,21 @@ export function getPostsByTag(tag: string) {
   return matches;
 }
 
-/** A post is browsable if it isn't unlisted and isn't a closed venue. */
+/**
+ * A post is browsable if it isn't unlisted and isn't a closed venue.
+ *
+ * Keyed off the "(Permanently Closed)" title suffix rather than the
+ * `closure-notice` CSS class. That class carries any standing warning, not
+ * just a closure - the Sun Yat-Sen Memorial Hall renovation, the Taroko
+ * earthquake access notice, an expired giveaway - so testing for it hid two
+ * of the site's biggest attractions from every category page, tag page and
+ * related-posts block while they were merely under repair.
+ *
+ * generate-search-index.mjs already draws the line this way; this keeps the
+ * two in step.
+ */
 function isListable(post: ContentPost) {
-  return !unlistedSlugs.has(post.slug) && !post.content.includes("closure-notice");
+  return !unlistedSlugs.has(post.slug) && !/\(permanently closed\)/i.test(post.title || "");
 }
 
 /**

@@ -2773,3 +2773,24 @@ a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
 /* Pushes the date rule to the bottom so cards with shorter blurbs still
    line up with their neighbours. */
 .upcoming-events-blurb { flex: 1 1 auto; }
+
+/* Loading state for the live queue board. Keeps the same shell and row
+   count as the loaded version so nothing shifts when the data arrives. */
+.dtf-queue-item.tone-loading { background: rgba(0,0,0,.03); }
+.dtf-queue-item.tone-loading .dtf-queue-branch { color: var(--muted); }
+.dtf-queue-skeleton {
+  width: 58px;
+  height: 13px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(0,0,0,.07) 25%, rgba(0,0,0,.13) 37%, rgba(0,0,0,.07) 63%);
+  background-size: 400% 100%;
+  animation: dtf-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes dtf-shimmer {
+  0%   { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dtf-queue-skeleton { animation: none; }
+}
+.dtf-queue.is-loading .dtf-queue-foot { font-style: italic; }

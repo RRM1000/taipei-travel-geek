@@ -48,13 +48,34 @@ function formatClock(iso: string): string {
   }
 }
 
+/**
+ * Branch names for the loading skeleton. The real list comes from the API,
+ * but showing the names immediately means the block lands at its final size
+ * and only the times have to arrive - the first fetch fans out to eight
+ * branches upstream and can take several seconds, which is a long time to
+ * stare at nothing.
+ */
+const SKELETON_BRANCHES = [
+  "Taipei 101",
+  "Xinsheng",
+  "A4",
+  "A13",
+  "Nanxi",
+  "Fuxing",
+  "Tienmu",
+  "Banqiao",
+];
+
 export function DinTaiFungQueue() {
   const [data, setData] = useState<Payload | null>(null);
   const [failed, setFailed] = useState(false);
 
   const load = useCallback(async () => {
     try {
-      const response = await fetch("/api/dtf-queue");
+      // The route already caches for two minutes (and Cloudflare caches at
+      // the edge), so an extra browser-level cache only means a reader who
+      // reloads sees the board they were already looking at.
+      const response = await fetch("/api/dtf-queue", { cache: "no-store" });
       if (!response.ok) throw new Error(`queue ${response.status}`);
       const json = (await response.json()) as Payload;
       if (!json.ok) throw new Error("no live branches");
@@ -71,7 +92,34 @@ export function DinTaiFungQueue() {
     return () => clearInterval(timer);
   }, [load]);
 
-  if (failed || !data) return null;
+  if (failed) return null;
+
+  // Skeleton while the first fetch is in flight. Same shell and row count as
+  // the real thing, so nothing jumps when the data lands.
+  if (!data) {
+    return (
+      <aside className="dtf-queue is-loading" aria-busy="true" aria-label="Loading live Din Tai Fung queue times">
+        <div className="dtf-queue-head">
+          <p className="dtf-queue-label">
+            <span className="dtf-queue-dot" aria-hidden="true" />
+            Live queue times
+          </p>
+          <p className="dtf-queue-updated">Checking all branches&hellip;</p>
+        </div>
+
+        <ul className="dtf-queue-list">
+          {SKELETON_BRANCHES.map((name) => (
+            <li key={name} className="dtf-queue-item tone-loading">
+              <span className="dtf-queue-branch">{name}</span>
+              <span className="dtf-queue-skeleton" aria-hidden="true" />
+            </li>
+          ))}
+        </ul>
+
+        <p className="dtf-queue-foot">Reading Din Tai Fung&rsquo;s live queue&hellip;</p>
+      </aside>
+    );
+  }
 
   // Closed branches are shown too - "half the city has stopped queuing" is
   // more useful than silently dropping them, and it stops the board from
