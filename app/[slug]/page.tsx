@@ -9,6 +9,9 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { AuthorBio } from "@/components/AuthorBio";
 import { PostFooterNav } from "@/components/PostFooterNav";
+import { SunsetTimes } from "@/components/SunsetTimes";
+import { DinTaiFungQueue } from "@/components/DinTaiFungQueue";
+import { NextTrainBoards } from "@/components/NextTrain";
 import {
   calculateReadingTime,
   enhanceAffiliateLinks,
@@ -33,14 +36,41 @@ import {
   hasAffiliateLinks,
   isGenuinelyReviewed,
   hasManualRecommendedReading,
+  insertNearbyGuides,
   nonEditorialSlugs,
   posts,
   renderHotelDealsWidget,
+  renderNearbyGuidesSection,
   renderRecommendedReadingSection,
   shouldShowHotelDealsWidget,
 } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
+
+/**
+ * Posts where people are specifically going to watch the sunset, and so want
+ * tonight's actual time rather than "around 6pm". Keyed by slug because it's
+ * a handful of pages, not a per-post content field worth adding.
+ */
+const SUNSET_SPOTS: Record<
+  string,
+  { latitude: number; longitude: number; place: string; advice?: string }
+> = {
+  "taipei-101": {
+    latitude: 25.0339,
+    longitude: 121.5645,
+    place: "Taipei 101",
+    advice:
+      "Arrive about an hour before this to get daylight, golden hour and the lit-up city on one ticket. It's the busiest slot of the day, and booking online only skips the ticket queue - you'll still queue for the lift unless you've paid for Fast-Track, so allow at least 30 minutes for that on top.",
+  },
+  tamsui: {
+    latitude: 25.1677,
+    longitude: 121.4406,
+    place: "the Tamsui waterfront",
+    advice:
+      "The waterfront and Fisherman's Wharf both face west down the river mouth. Aim to be in place 20 minutes early, and note the last ferries back fill up quickly afterwards.",
+  },
+};
 
 const legacySlugRedirects: Record<string, string> = {
   "danshui": "best-day-trips-from-taipei",
@@ -177,14 +207,21 @@ export default async function ArticlePage({ params }: PageProperties) {
     )
   );
 
+  const sunsetSpot = SUNSET_SPOTS[post.slug];
+
   const { enhancedContent, headings } = enhanceContentHeadings(rawContent);
+
+  // "Also near this station" sits under the location map, so it has to go
+  // into the body HTML rather than render as a sibling - and it must be
+  // placed before Recommended Reading is appended, so it lands above it.
+  const withNearbyGuides = insertNearbyGuides(enhancedContent, renderNearbyGuidesSection(post));
 
   // If this post doesn't already hand-author a "Recommended Reading:" block,
   // auto-append one based on shared categories/tags - replicates the old
   // WordPress related-posts widget without needing per-post curation.
   const withRecommendedReading = (nonEditorialSlugs.has(post.slug) || hasManualRecommendedReading(post.content))
-    ? enhancedContent
-    : enhancedContent + renderRecommendedReadingSection(getRelatedPosts(post, 3));
+    ? withNearbyGuides
+    : withNearbyGuides + renderRecommendedReadingSection(getRelatedPosts(post, 3));
 
   // Auto-append a small hotel deals widget after Recommended Reading on every
   // eligible post, so it isn't limited to a single hand-placed page.
@@ -263,7 +300,19 @@ export default async function ArticlePage({ params }: PageProperties) {
               </div>
             )}
             {hasAffiliateLinks(finalContent) && <AffiliateDisclosure />}
+            {sunsetSpot && (
+              <SunsetTimes
+                latitude={sunsetSpot.latitude}
+                longitude={sunsetSpot.longitude}
+                place={sunsetSpot.place}
+                advice={sunsetSpot.advice}
+              />
+            )}
+            {post.slug === "din-tai-fung" && <DinTaiFungQueue />}
             <article className="article-content" dangerouslySetInnerHTML={{ __html: finalContent }} />
+            {/* Portals live departure boards into the [data-next-train]
+                markers inside the body above - see NextTrain.tsx. */}
+            {finalContent.includes("data-next-train") && <NextTrainBoards />}
             <AuthorBio />
             <PostFooterNav categories={post.categories} />
           </div>

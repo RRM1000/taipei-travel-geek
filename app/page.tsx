@@ -3,6 +3,7 @@ import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LatestArticlesCarousel } from "@/components/LatestArticlesCarousel";
+import { UpcomingEvents } from "@/components/UpcomingEvents";
 import { posts } from "@/lib/content";
 
 // Replaces the old "category-strip" (Eat/Visit/Areas/Culture tiles). Those
@@ -102,6 +103,8 @@ export default function Home() {
         </section>
 
         <LatestArticlesCarousel items={latestArticles} />
+
+        <UpcomingEvents />
 
         <section className="featured wrap first-timers-section">
           <div className="section-heading">

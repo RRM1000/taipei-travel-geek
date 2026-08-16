@@ -315,6 +315,142 @@ export function getRelatedPosts(post: ContentPost, limit = 3): ContentPost[] {
   return scored.slice(0, limit).map((entry) => entry.candidate);
 }
 
+/**
+ * Station names as written across 186 hand-authored `location-line` blocks,
+ * mapped to one canonical label each. The same station turns up as "City
+ * Hall" and "Taipei City Hall", with and without a trailing "Station", and
+ * occasionally under its full signage name ("Taipei 101 / World Trade
+ * Center") - without folding those together the nearby-guides list splits
+ * one station into three near-empty ones.
+ */
+const stationAliases = new Map<string, string>([
+  ["city hall", "Taipei City Hall"],
+  ["taipei city hall", "Taipei City Hall"],
+  ["taipei 101 / world trade center", "Taipei 101"],
+  ["taipei 101/world trade center", "Taipei 101"],
+  ["da-an", "Daan"],
+  ["da'an", "Daan"],
+  ["daan park", "Daan Park"],
+  ["ntu hospital", "NTU Hospital"],
+  ["taipei main", "Taipei Main Station"],
+  ["xinbeitou", "Xinbeitou"],
+  ["tamsui", "Tamsui"],
+  ["danshui", "Tamsui"],
+]);
+
+/**
+ * Pulls the MRT station(s) out of a post's `location-line`. Posts covering a
+ * chain list one "Closest MRT:" per branch, so this returns every match
+ * rather than the first - a four-branch post genuinely sits near four
+ * stations and should surface at each of them.
+ */
+export function parseStations(content: string): string[] {
+  const line = content.match(/<p class="location-line">([\s\S]*?)<\/p>/);
+  if (!line) return [];
+
+  const plain = line[1]
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&ndash;|&mdash;/g, "-")
+    .replace(/\s+/g, " ");
+
+  const found = new Set<string>();
+  // Both spellings appear; the lookahead stops at the line/exit detail.
+  for (const match of plain.matchAll(/(?:Closest|Nearest)\s+MRT:?\s*([^(,\n]+)/gi)) {
+    let name = (match[1] || "").trim();
+    name = name.replace(/\s+Station\b.*$/i, "").replace(/\s*-\s*exit.*$/i, "").trim();
+    // "Between X (red line) and Y" - too ambiguous to attribute, skip.
+    if (!name || /^between\b/i.test(name) || name.length > 40) continue;
+    found.add(stationAliases.get(name.toLowerCase()) ?? name);
+  }
+  return [...found];
+}
+
+/**
+ * Other guides sitting at the same MRT station. This is the one navigation
+ * axis the site can offer that isn't derivable from categories or tags:
+ * "what else is near where I'm standing" is how people actually use a
+ * travel guide once they're in the city.
+ */
+export function getNearbyPosts(post: ContentPost, limit = 6): { station: string; posts: ContentPost[] }[] {
+  const stations = parseStations(post.content);
+  if (!stations.length) return [];
+
+  return stations
+    .map((station) => ({
+      station,
+      posts: posts
+        .filter(
+          (candidate) =>
+            candidate.slug !== post.slug &&
+            isListable(candidate) &&
+            !nonEditorialSlugs.has(candidate.slug) &&
+            // Round-ups cite one station in their location-line but cover the
+            // whole city, so they'd otherwise surface as "nearby" at every
+            // station they happen to name - crowding out the actual
+            // single-venue neighbours this block exists to show.
+            !candidate.tags.some((tag) => tag.slug === "lists") &&
+            parseStations(candidate.content).includes(station),
+        )
+        .sort(byArchiveRank)
+        .slice(0, limit),
+    }))
+    .filter((group) => group.posts.length > 0);
+}
+
+/**
+ * Server-rendered markup for the nearby-guides block.
+ *
+ * Returned as an HTML string rather than a React component so it can be
+ * spliced into the article body - it belongs directly under the location map
+ * (where a reader is already thinking about where they are), which sits
+ * inside the content HTML and can't be reached from a sibling component.
+ */
+export function renderNearbyGuidesSection(post: ContentPost): string {
+  const groups = getNearbyPosts(post, 6);
+  if (!groups.length) return "";
+
+  const blocks = groups
+    .map((group) => {
+      const items = group.posts
+        .map((nearby) => `<li><a href="/${nearby.slug}">${nearby.title}</a></li>`)
+        .join("");
+      return (
+        `<div class="nearby-guides-group">` +
+        `<p class="nearby-guides-title"><span class="nearby-guides-pin" aria-hidden="true">🚇</span>Also near ${group.station}</p>` +
+        `<ul class="nearby-guides-list">${items}</ul>` +
+        `</div>`
+      );
+    })
+    .join("");
+
+  return `\n\n<section class="nearby-guides" aria-label="Other guides near this station">${blocks}</section>\n\n`;
+}
+
+/**
+ * Places the nearby-guides block directly after the last location map, which
+ * is where the "what else is around here" question naturally arises. Posts
+ * without a map fall back to the end of the body, so it still lands above
+ * the auto-appended Recommended Reading block either way.
+ */
+export function insertNearbyGuides(content: string, section: string): string {
+  if (!section) return content;
+
+  // Only location maps count - the page also carries Klook widget iframes.
+  const maps = [...content.matchAll(/<iframe[^>]*src="[^"]*google\.com\/maps[^"]*"[^>]*><\/iframe>/gi)];
+  if (!maps.length) return content + section;
+
+  const last = maps[maps.length - 1];
+  let cut = (last.index ?? 0) + last[0].length;
+
+  // The map is usually wrapped in a <p> or <figure>; step past the closing
+  // tag so the block lands after the whole figure rather than inside it.
+  const after = content.slice(cut, cut + 40);
+  const closer = after.match(/^\s*<\/(p|figure)>/i);
+  if (closer) cut += closer[0].length;
+
+  return content.slice(0, cut) + section + content.slice(cut);
+}
+
 /** Checks whether a post already has a hand-authored "Recommended Reading:" block. */
 export function hasManualRecommendedReading(content: string): boolean {
   return /<h[1-6]\b[^>]*>\s*(?:<[^>]+>\s*)*Recommended Reading:?\s*(?:<\/[^>]+>\s*)*<\/h[1-6]>/i.test(content);

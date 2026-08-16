@@ -1,0 +1,457 @@
+[
+ {
+  "name": "Beitou & Wulai Winter Hot Spring Season",
+  "start": "2026-01-01",
+  "end": "2026-01-31",
+  "when": "All January 2026",
+  "blurb": "Peak season for the sulphur and sodium bicarbonate baths.",
+  "url": "/xinbeitou"
+ },
+ {
+  "name": "Pingjing Street 42 Cherry Blossoms",
+  "start": "2026-01-20",
+  "end": "2026-02-15",
+  "when": "Late January to mid-February 2026",
+  "blurb": "The earliest cherry blossom bloom in the Taipei area, up on Yangmingshan."
+ },
+ {
+  "name": "Tianyuan Temple Tri-Colour Cherry Blossoms",
+  "start": "2026-01-29",
+  "end": "2026-02-11",
+  "when": "29 January – 11 February 2026",
+  "blurb": "Hundreds of cherry trees behind Wuji Tianyuan Temple, lit in the evenings.",
+  "url": "/tamsui"
+ },
+ {
+  "name": "Taipei Lunar New Year Festival",
+  "start": "2026-01-31",
+  "end": "2026-02-15",
+  "when": "31 January – 15 February 2026",
+  "blurb": "Festive market of snacks, dried fruit, teas and red decorations along historic Dihua Street.",
+  "url": "/dihua-street-dadaocheng-guide"
+ },
+ {
+  "name": "LOHAS Park Night Cherry Blossom Festival",
+  "start": "2026-02-01",
+  "end": "2026-02-28",
+  "when": "February 2026",
+  "blurb": "Illuminated pink cherry trees along the Neihu River trail, open into the evening."
+ },
+ {
+  "name": "Yangmingshan Flower Festival",
+  "start": "2026-02-15",
+  "end": "2026-03-15",
+  "when": "Mid-February to mid-March 2026",
+  "blurb": "Cherry blossoms, azaleas and camellias across Yangmingshan National Park."
+ },
+ {
+  "name": "Lunar New Year (Year of the Horse)",
+  "start": "2026-02-16",
+  "end": "2026-02-22",
+  "when": "17 February 2026 (festivities 16–22 Feb)",
+  "blurb": "Taiwan's biggest annual holiday — family reunions, temple offerings and quiet streets."
+ },
+ {
+  "name": "Pingxi Sky Lantern Festival",
+  "start": "2026-02-21",
+  "end": "2026-03-03",
+  "when": "21 February & 3 March 2026",
+  "blurb": "Thousands of glowing sky lanterns released over Pingxi."
+ },
+ {
+  "name": "Taipei Lantern Festival",
+  "start": "2026-02-21",
+  "end": "2026-03-08",
+  "when": "Late February to 8 March 2026",
+  "blurb": "Giant themed lanterns and light installations around Ximending and the North Gate."
+ },
+ {
+  "name": "Taiwan Lantern Festival",
+  "start": "2026-02-21",
+  "end": "2026-03-08",
+  "when": "Late February to 8 March 2026 (main day 3 March)",
+  "blurb": "The nationwide Lantern Festival peak, on the 15th day of the first lunar month."
+ },
+ {
+  "name": "CPBL Baseball Season",
+  "start": "2026-03-01",
+  "end": "2026-09-30",
+  "when": "March to late September 2026",
+  "blurb": "Taiwan's professional baseball league, at grounds across the city and in Taoyuan.",
+  "url": "/lamigos-at-taoyuan-baseball-stadium"
+ },
+ {
+  "name": "Taipei Azalea Festival",
+  "start": "2026-03-01",
+  "end": "2026-03-31",
+  "when": "March 2026",
+  "blurb": "The city flower celebrated with concerts and markets around Daan Forest Park and NTU."
+ },
+ {
+  "name": "Taipei International Book Exhibition",
+  "start": "2026-03-03",
+  "end": "2026-03-08",
+  "when": "Early March 2026",
+  "blurb": "Major international publishing fair at the Taipei World Trade Center."
+ },
+ {
+  "name": "Taiwan LPGA Championship",
+  "start": "2026-03-12",
+  "end": "2026-03-15",
+  "when": "12–15 March 2026",
+  "blurb": "One of the best women's golf events in the world, about 90 minutes from Taipei.",
+  "url": "/taiwan-lpga-golf-championship"
+ },
+ {
+  "name": "Tianyuan Temple Yoshino Cherry Blossoms",
+  "start": "2026-03-15",
+  "end": "2026-04-15",
+  "when": "Mid-March to mid-April 2026",
+  "blurb": "The later, second bloom, with Yoshino cherries ringing the round Tiantan hall.",
+  "url": "/tamsui"
+ },
+ {
+  "name": "Zhuzihu Calla Lily Festival",
+  "start": "2026-03-15",
+  "end": "2026-04-30",
+  "when": "Mid-March to late April 2026",
+  "blurb": "Fields of white calla lilies in the volcanic bowl of Zhuzihu, with hand-picking."
+ },
+ {
+  "name": "Dalongdong Baoan Temple Cultural Festival",
+  "start": "2026-03-25",
+  "end": "2026-04-30",
+  "when": "Late March to April 2026",
+  "blurb": "Temple rituals, folk opera and lion dances at one of Taipei's finest temples.",
+  "url": "/dalongdong-baoan-temple-and-gardens"
+ },
+ {
+  "name": "Qingming Festival",
+  "start": "2026-04-04",
+  "end": "2026-04-05",
+  "when": "4–5 April 2026",
+  "blurb": "Tomb Sweeping Day — a spring public holiday of family outings and hikes."
+ },
+ {
+  "name": "Wulai & Muzha Firefly Festival",
+  "start": "2026-04-15",
+  "end": "2026-05-31",
+  "when": "Mid-April to May 2026",
+  "blurb": "Guided evening walks to see thousands of fireflies along mountain trails."
+ },
+ {
+  "name": "Baosheng Emperor Cultural Festival",
+  "start": "2026-05-01",
+  "end": "2026-05-31",
+  "when": "May 2026",
+  "blurb": "Temple procession, fire-walking and performing arts at Dalongdong Baoan Temple.",
+  "url": "/dalongdong-baoan-temple-and-gardens"
+ },
+ {
+  "name": "Zhuzihu Hydrangea Festival",
+  "start": "2026-05-01",
+  "end": "2026-06-30",
+  "when": "May to June 2026",
+  "blurb": "Blue, purple and pink hydrangeas across Yangmingshan's mountain terraces."
+ },
+ {
+  "name": "Mango Season",
+  "start": "2026-06-01",
+  "end": "2026-08-31",
+  "when": "June to August 2026",
+  "blurb": "Peak Irwin mango harvest — piled onto shaved ice all over Yongkang Street.",
+  "url": "/yongkang-street"
+ },
+ {
+  "name": "COMPUTEX Taipei",
+  "start": "2026-06-02",
+  "end": "2026-06-06",
+  "when": "Early June 2026",
+  "blurb": "One of the world's leading technology and hardware expos, at Nangang."
+ },
+ {
+  "name": "Dragon Boat Festival",
+  "start": "2026-06-19",
+  "end": "2026-06-19",
+  "when": "19 June 2026",
+  "blurb": "International dragon boat races on the Keelung River at Dajia Riverside Park."
+ },
+ {
+  "name": "Taipei Film Festival",
+  "start": "2026-06-25",
+  "end": "2026-07-15",
+  "when": "Late June to mid-July 2026",
+  "blurb": "The city's main summer film festival, strong on independent and Taiwanese cinema."
+ },
+ {
+  "name": "Summer Water Park Season",
+  "start": "2026-07-01",
+  "end": "2026-08-31",
+  "when": "July to August 2026",
+  "blurb": "Water slides and splash pools at Taipei Water Park in Gongguan.",
+  "url": "/see-the-drinking-water-museum-at-taipei-water-park"
+ },
+ {
+  "name": "Dadaocheng Summer Festival",
+  "start": "2026-07-15",
+  "end": "2026-08-30",
+  "when": "Mid-July to 30 August 2026",
+  "blurb": "Wednesday-night fireworks over the Tamsui River, food trucks and live music.",
+  "url": "/dihua-street-dadaocheng-guide"
+ },
+ {
+  "name": "New Taipei River & Ocean Music Festival",
+  "start": "2026-08-01",
+  "end": "2026-08-16",
+  "when": "Early to mid-August 2026",
+  "blurb": "Free outdoor indie, reggae and beach concerts at Tamsui Fisherman's Wharf.",
+  "url": "/tamsui"
+ },
+ {
+  "name": "Taipei Burger Carnival",
+  "start": "2026-08-01",
+  "end": "2026-08-31",
+  "when": "All August 2026",
+  "blurb": "City-wide burger festival, with participating restaurants competing for the title."
+ },
+ {
+  "name": "Ghost Month",
+  "start": "2026-08-13",
+  "end": "2026-09-11",
+  "when": "13 August – 11 September 2026 (main day 27 August)",
+  "blurb": "Month-long folk festival of temple offerings and spirit rituals."
+ },
+ {
+  "name": "Creative Expo Taiwan",
+  "start": "2026-08-14",
+  "end": "2026-08-31",
+  "when": "Mid to late August 2026",
+  "blurb": "Taiwan's premier design, illustration and character IP exhibition, at Nangang."
+ },
+ {
+  "name": "NTCH Summer Jazz Outdoor Party",
+  "start": "2026-08-15",
+  "end": "2026-08-15",
+  "when": "15 August 2026",
+  "blurb": "Free open-air jazz on the plaza at the National Theater & Concert Hall."
+ },
+ {
+  "name": "Qixi Festival",
+  "start": "2026-08-19",
+  "end": "2026-08-19",
+  "when": "19 August 2026",
+  "blurb": "Chinese Valentine's Day — evening celebrations and romantic events."
+ },
+ {
+  "name": "Trendy Taipei",
+  "start": "2026-08-22",
+  "end": "2026-09-06",
+  "when": "22 August – 6 September 2026",
+  "blurb": "City-wide shopping and design event, with pop-ups and promotions across the city."
+ },
+ {
+  "name": "Taipei Fringe Festival",
+  "start": "2026-08-23",
+  "end": "2026-10-07",
+  "when": "23 August – 7 October 2026",
+  "blurb": "Indie theatre, music, dance and comedy in non-traditional venues across the city."
+ },
+ {
+  "name": "Kodaline: Farewell Tour",
+  "start": "2026-08-24",
+  "end": "2026-08-24",
+  "when": "24 August 2026",
+  "blurb": "The Irish band's farewell tour stops in Taipei — one night only."
+ },
+ {
+  "name": "Taipei Children's Arts Festival",
+  "start": "2026-08-24",
+  "end": "2026-09-06",
+  "when": "24 August – 6 September 2026",
+  "blurb": "Theatre, puppetry and workshops aimed squarely at families, much of it free."
+ },
+ {
+  "name": "Herbal Party",
+  "start": "2026-08-29",
+  "end": "2026-08-30",
+  "when": "29–30 August 2026",
+  "blurb": "Herbal medicine, tea and craft market through the old streets of Dadaocheng.",
+  "url": "/dihua-street-dadaocheng-guide"
+ },
+ {
+  "name": "Jam Jam Asia Music Festival",
+  "start": "2026-08-29",
+  "end": "2026-08-30",
+  "when": "29–30 August 2026",
+  "blurb": "Asian pop, indie and electronic acts from across the region, at Taipei Music Center."
+ },
+ {
+  "name": "Taipei Night Market Festival",
+  "start": "2026-09-01",
+  "end": "2026-10-31",
+  "when": "September to October 2026",
+  "blurb": "City-wide street food celebration with voting and vouchers across the big markets.",
+  "url": "/shilin-night-market"
+ },
+ {
+  "name": "Taipei Arts Festival",
+  "start": "2026-09-11",
+  "end": "2026-09-28",
+  "when": "11–28 September 2026",
+  "blurb": "The city's flagship contemporary performing arts festival, theatre to dance."
+ },
+ {
+  "name": "Mid-Autumn Moon Festival",
+  "start": "2026-09-25",
+  "end": "2026-09-27",
+  "when": "25 September 2026 (long weekend 25–27)",
+  "blurb": "Street barbecues, mooncakes and pomelos — one of the year's big holidays."
+ },
+ {
+  "name": "Confucius Birthday & Teachers' Day",
+  "start": "2026-09-28",
+  "end": "2026-09-28",
+  "when": "28 September 2026",
+  "blurb": "A 6am dawn ceremony with eight-row dance at the Taipei Confucius Temple.",
+  "url": "/confucius-temple"
+ },
+ {
+  "name": "Taipei Autumn Running Season",
+  "start": "2026-10-04",
+  "end": "2026-10-18",
+  "when": "October 2026",
+  "blurb": "Northernmost Point Trail (4th), Maokong Night Trail (9–10th) and Pocari Sweat Run (18th)."
+ },
+ {
+  "name": "Taipei International Beef Noodle Festival",
+  "start": "2026-10-09",
+  "end": "2026-10-11",
+  "when": "9–11 October 2026",
+  "blurb": "Chefs compete for the city's best braised beef noodles, with public tasting stalls."
+ },
+ {
+  "name": "Double Tenth National Day",
+  "start": "2026-10-10",
+  "end": "2026-10-10",
+  "when": "10 October 2026",
+  "blurb": "Flag ceremony, performances and parades at the Presidential Office Building.",
+  "url": "/presidential-office-building"
+ },
+ {
+  "name": "Art Taipei",
+  "start": "2026-10-23",
+  "end": "2026-10-26",
+  "when": "23–26 October 2026",
+  "blurb": "Asia's premier international art fair, at the World Trade Center."
+ },
+ {
+  "name": "Taipei Jazz Festival",
+  "start": "2026-10-23",
+  "end": "2026-10-25",
+  "when": "23–25 October 2026",
+  "blurb": "Free open-air jazz on the main stage at Daan Forest Park.",
+  "url": "/taipei-jazz-festival"
+ },
+ {
+  "name": "Taipei Hakka Yimin Festival",
+  "start": "2026-10-24",
+  "end": "2026-10-26",
+  "when": "24–26 October 2026",
+  "blurb": "Hakka culture, food and the striking neon-lit sacrificial pig parade."
+ },
+ {
+  "name": "Taipei Hot Spring Season",
+  "start": "2026-10-25",
+  "end": "2026-11-08",
+  "when": "Late October to early November 2026",
+  "blurb": "Beitou's bath culture celebrated with Mikoshi shrine parades and pass discounts.",
+  "url": "/xinbeitou"
+ },
+ {
+  "name": "Taiwan LGBT+ Pride Parade",
+  "start": "2026-10-31",
+  "end": "2026-10-31",
+  "when": "31 October 2026",
+  "blurb": "The largest Pride celebration in Asia, marching through the city to Ximending."
+ },
+ {
+  "name": "Golden Horse Film Festival & Awards",
+  "start": "2026-11-05",
+  "end": "2026-11-22",
+  "when": "5–22 November 2026 (awards 21 November)",
+  "blurb": "Asia's most prestigious Chinese-language film festival."
+ },
+ {
+  "name": "Nuit Blanche Taipei",
+  "start": "2026-11-07",
+  "end": "2026-11-08",
+  "when": "7–8 November 2026",
+  "blurb": "A 12-hour all-night arts festival, 6pm to 6am, across one chosen district."
+ },
+ {
+  "name": "Standard Chartered Taipei Marathon",
+  "start": "2026-11-08",
+  "end": "2026-11-08",
+  "when": "8 November 2026",
+  "blurb": "Charity road race through the city streets."
+ },
+ {
+  "name": "Christmasland in New Taipei City",
+  "start": "2026-11-13",
+  "end": "2027-01-03",
+  "when": "13 November 2026 – 3 January 2027",
+  "blurb": "Enormous 3D projection show and holiday markets at Banqiao Station Plaza."
+ },
+ {
+  "name": "Taipei Wine & Spirits Festival",
+  "start": "2026-11-13",
+  "end": "2026-11-16",
+  "when": "13–16 November 2026",
+  "blurb": "Taiwan's largest drinks expo — wine, craft beer and sake tastings at Nangang."
+ },
+ {
+  "name": "Ultra Taiwan",
+  "start": "2026-11-14",
+  "end": "2026-11-15",
+  "when": "Mid-November 2026",
+  "blurb": "Huge international EDM festival at Dajia Riverside Park."
+ },
+ {
+  "name": "Shrek the Musical",
+  "start": "2026-11-20",
+  "end": "2026-11-29",
+  "when": "20–29 November 2026",
+  "blurb": "The touring West End production, with a limited Taipei run."
+ },
+ {
+  "name": "Shilin Residence Chrysanthemum Show",
+  "start": "2026-11-27",
+  "end": "2026-12-13",
+  "when": "27 November – 13 December 2026",
+  "blurb": "Floral topiary and outdoor music at the Chiang Kai-shek Shilin Residence.",
+  "url": "/chiang-kai-shek-shilin-residence"
+ },
+ {
+  "name": "Taipei Illustration Fair",
+  "start": "2026-12-11",
+  "end": "2026-12-13",
+  "when": "Mid-December 2026",
+  "blurb": "Independent prints and zines at Songshan Cultural and Creative Park.",
+  "url": "/songshan-cultural-and-creative-park"
+ },
+ {
+  "name": "Taipei Marathon",
+  "start": "2026-12-20",
+  "end": "2026-12-20",
+  "when": "20 December 2026",
+  "blurb": "Taiwan's flagship international marathon."
+ },
+ {
+  "name": "Taipei 101 New Year's Eve Fireworks",
+  "start": "2026-12-31",
+  "end": "2026-12-31",
+  "when": "31 December 2026",
+  "blurb": "The countdown concert at City Hall and midnight fireworks off the tower itself.",
+  "url": "/taipei-101"
+ }
+]

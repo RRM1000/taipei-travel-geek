@@ -1,0 +1,141 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+
+/**
+ * Live queue times at every Taipei-area Din Tai Fung, read from the
+ * restaurant's own queue system via /api/dtf-queue.
+ *
+ * This is the single most useful thing this page can tell someone: the post
+ * is built around the fact that there are no reservations, so the only
+ * lever a reader has is choosing when and which branch. A static "expect
+ * 60+ minutes" is a guess; this is the actual number right now.
+ *
+ * Renders nothing at all if the upstream is unreachable - the article
+ * already stands on its own, and a dead widget on a page about queues would
+ * undermine the rest of it.
+ */
+
+type BranchStatus = "open" | "closed" | "unknown";
+type Branch = {
+  id: string;
+  name: string;
+  note?: string;
+  mapUrl: string;
+  status: BranchStatus;
+  waitMinutes: number | null;
+};
+type Payload = { branches: Branch[]; fetchedAt: string; ok: boolean };
+
+const REFRESH_MS = 3 * 60 * 1000;
+
+function describeWait(minutes: number): { label: string; tone: "low" | "medium" | "high" } {
+  if (minutes <= 0) return { label: "No wait", tone: "low" };
+  if (minutes < 30) return { label: `${minutes} min`, tone: "low" };
+  if (minutes < 75) return { label: `${minutes} min`, tone: "medium" };
+  return { label: `${minutes} min`, tone: "high" };
+}
+
+function formatClock(iso: string): string {
+  try {
+    return new Date(iso).toLocaleTimeString("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "Asia/Taipei",
+    });
+  } catch {
+    return "";
+  }
+}
+
+export function DinTaiFungQueue() {
+  const [data, setData] = useState<Payload | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  const load = useCallback(async () => {
+    try {
+      const response = await fetch("/api/dtf-queue");
+      if (!response.ok) throw new Error(`queue ${response.status}`);
+      const json = (await response.json()) as Payload;
+      if (!json.ok) throw new Error("no live branches");
+      setData(json);
+      setFailed(false);
+    } catch {
+      setFailed(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    void load();
+    const timer = setInterval(() => void load(), REFRESH_MS);
+    return () => clearInterval(timer);
+  }, [load]);
+
+  if (failed || !data) return null;
+
+  // Closed branches are shown too - "half the city has stopped queuing" is
+  // more useful than silently dropping them, and it stops the board from
+  // vanishing entirely late in the evening. Only branches we genuinely
+  // couldn't read are omitted.
+  const shown = data.branches.filter((branch) => branch.status !== "unknown");
+  if (!shown.length) return null;
+
+  const open = shown.filter((branch) => branch.status === "open");
+  const quietest = open.length
+    ? open.reduce((best, branch) =>
+        (branch.waitMinutes ?? Infinity) < (best.waitMinutes ?? Infinity) ? branch : best,
+      )
+    : null;
+
+  return (
+    <aside className="dtf-queue" aria-label="Live Din Tai Fung queue times">
+      <div className="dtf-queue-head">
+        <p className="dtf-queue-label">
+          <span className="dtf-queue-dot" aria-hidden="true" />
+          Live queue times
+        </p>
+        <p className="dtf-queue-updated">Taipei time {formatClock(data.fetchedAt)}</p>
+      </div>
+
+      <ul className="dtf-queue-list">
+        {shown.map((branch) => {
+          const wait =
+            branch.status === "open"
+              ? describeWait(branch.waitMinutes as number)
+              : { label: "Not accepting", tone: "closed" as const };
+          return (
+            <li key={branch.id} className={`dtf-queue-item tone-${wait.tone}`}>
+              {/* Straight to Maps: someone reading a wait time is deciding
+                  where to go, so the branch name is the natural thing to
+                  make actionable. */}
+              <a
+                className="dtf-queue-branch"
+                href={branch.mapUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                {branch.name}
+                {branch.note && <em> {branch.note}</em>}
+              </a>
+              <span className="dtf-queue-wait">{wait.label}</span>
+            </li>
+          );
+        })}
+      </ul>
+
+      <p className="dtf-queue-foot">
+        {quietest ? (
+          <>
+            Shortest wait right now: <strong>{quietest.name}</strong>
+            {quietest.waitMinutes !== null && quietest.waitMinutes > 0
+              ? ` at ${quietest.waitMinutes} minutes.`
+              : ", with no queue at all."}
+          </>
+        ) : (
+          <>Every branch has stopped taking dine-in queue numbers for today.</>
+        )}{" "}
+        Select a branch name to see it on the map.
+      </p>
+    </aside>
+  );
+}

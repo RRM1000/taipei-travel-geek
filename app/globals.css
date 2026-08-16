@@ -2494,3 +2494,282 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
 
 
 
+
+/* Nearby guides - "also near this MRT station". Sits between the article and
+   the author bio, styled as a quieter sibling of the recommended-reading
+   block so it reads as navigation rather than more article. */
+.nearby-guides { margin: 40px 0 8px; }
+.nearby-guides-group + .nearby-guides-group { margin-top: 26px; }
+.nearby-guides-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.nearby-guides-pin { font-size: 15px; }
+.nearby-guides-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nearby-guides-list li { margin: 0; }
+.nearby-guides-list a {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid var(--rule, rgba(0,0,0,.12));
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink, #1a1a1a);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.nearby-guides-list a:hover { background: var(--red); border-color: var(--red); color: #fff; }
+
+/* Live sunset readout, used on the pages where people go specifically to
+   watch it (Taipei 101 observatory, Tamsui waterfront). */
+.sunset-widget {
+  margin: 28px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--rule, rgba(0,0,0,.12));
+  border-left: 4px solid #e8862a;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(232,134,42,.07), rgba(232,134,42,.02));
+}
+.sunset-widget-label {
+  margin: 0 0 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sunset-widget-main { display: flex; align-items: baseline; gap: 8px; margin: 0; }
+.sunset-widget-time {
+  font-family: var(--font-sans);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink, #1a1a1a);
+  font-variant-numeric: tabular-nums;
+}
+.sunset-widget-today {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.sunset-widget-advice {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Live Din Tai Fung queue board. Colour-coded by wait length so the useful
+   comparison (which branch is quietest) reads at a glance. */
+.dtf-queue {
+  margin: 28px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--rule, rgba(0,0,0,.12));
+  border-radius: 10px;
+  background: #fff;
+}
+.dtf-queue-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.dtf-queue-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--ink, #1a1a1a);
+}
+.dtf-queue-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #2e9e5b;
+  box-shadow: 0 0 0 0 rgba(46,158,91,.6);
+  animation: dtf-pulse 2.2s infinite;
+}
+@keyframes dtf-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(46,158,91,.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(46,158,91,0); }
+  100% { box-shadow: 0 0 0 0 rgba(46,158,91,0); }
+}
+@media (prefers-reduced-motion: reduce) { .dtf-queue-dot { animation: none; } }
+.dtf-queue-updated { margin: 0; font-family: var(--font-sans); font-size: 12px; color: var(--muted); }
+.dtf-queue-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.dtf-queue-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: rgba(0,0,0,.03);
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+.dtf-queue-branch { font-weight: 700; color: var(--ink, #1a1a1a); }
+.dtf-queue-branch em { font-style: normal; font-weight: 500; font-size: 12px; color: var(--muted); }
+.dtf-queue-wait { font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dtf-queue-item.tone-low    { background: rgba(46,158,91,.10); }
+.dtf-queue-item.tone-low    .dtf-queue-wait { color: #1d7a44; }
+.dtf-queue-item.tone-medium { background: rgba(214,143,26,.12); }
+.dtf-queue-item.tone-medium .dtf-queue-wait { color: #8a5a05; }
+.dtf-queue-item.tone-high   { background: rgba(214,58,52,.10); }
+.dtf-queue-item.tone-high   .dtf-queue-wait { color: #a32b26; }
+.dtf-queue-foot { margin: 14px 0 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+
+/* Airport Express next-departure board. Computed from the fixed timetable
+   rather than fetched, so it renders instantly and never fails. */
+.next-train {
+  margin: 22px 0 28px;
+  padding: 16px 18px;
+  border: 1px solid var(--rule, rgba(0,0,0,.12));
+  border-left: 4px solid #2f6fb5;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(47,111,181,.06), rgba(47,111,181,.02));
+}
+.next-train-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--ink, #1a1a1a);
+}
+.next-train-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #2f6fb5;
+  animation: next-train-pulse 2.2s infinite;
+}
+@keyframes next-train-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(47,111,181,.55); }
+  70%  { box-shadow: 0 0 0 7px rgba(47,111,181,0); }
+  100% { box-shadow: 0 0 0 0 rgba(47,111,181,0); }
+}
+@media (prefers-reduced-motion: reduce) { .next-train-dot { animation: none; } }
+.next-train-now { margin-left: auto; font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--muted); }
+.next-train-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+.next-train-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #fff;
+  font-family: var(--font-sans);
+}
+.next-train-line { font-size: 14px; font-weight: 700; color: var(--ink, #1a1a1a); }
+.next-train-when { display: flex; align-items: baseline; gap: 9px; }
+.next-train-when strong { font-size: 19px; font-weight: 800; font-variant-numeric: tabular-nums; color: #24548c; }
+.next-train-when em { font-style: normal; font-size: 13px; font-weight: 600; color: var(--muted); }
+.next-train-closed strong { color: var(--muted); }
+.next-train-foot { margin: 12px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+.dtf-queue-item.tone-closed { background: rgba(0,0,0,.04); }
+.dtf-queue-item.tone-closed .dtf-queue-branch { color: var(--muted); }
+.dtf-queue-item.tone-closed .dtf-queue-wait { color: var(--muted); font-weight: 600; font-size: 13px; }
+a.dtf-queue-branch { text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s ease; }
+a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
+
+/* "On in Taipei" - rolling four-week events strip on the homepage.
+   Uses the site's standard .section-heading/.eyebrow pair so it reads as
+   part of the page rather than a bolted-on widget. */
+.upcoming-events { padding-block: 90px 0; }
+.upcoming-events .section-heading { margin-bottom: 34px; }
+
+.upcoming-events-list {
+  display: grid;
+  /* Four across at most - five made the last row a ragged orphan, and the
+     cards were too narrow for a two-line title. */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 1180px) { .upcoming-events-list { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 860px)  { .upcoming-events-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .upcoming-events-list { grid-template-columns: 1fr; } }
+
+.upcoming-events-item { margin: 0; }
+.upcoming-events-item > a,
+.upcoming-events-static {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px 24px 22px;
+  background: #fff;
+  border: 1px solid var(--line, rgba(0,0,0,.10));
+  border-top: 3px solid var(--line, rgba(0,0,0,.10));
+  text-decoration: none;
+  transition: border-top-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.upcoming-events-item > a:hover {
+  border-top-color: var(--red);
+  box-shadow: 0 10px 26px rgba(0,0,0,.07);
+  transform: translateY(-2px);
+}
+
+.upcoming-events-when {
+  margin-bottom: 14px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.upcoming-events-when.is-soon { color: var(--red-dark); }
+.upcoming-events-when.is-now  { color: #1d7a44; }
+
+.upcoming-events-name {
+  font: 22px/1.2 var(--font-serif);
+  letter-spacing: -.02em;
+  color: var(--ink, #1a1a1a);
+}
+.upcoming-events-item > a:hover .upcoming-events-name { color: var(--red-dark); }
+
+.upcoming-events-blurb {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.upcoming-events-dates {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line, rgba(0,0,0,.08));
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  color: var(--muted);
+}
+/* Pushes the date rule to the bottom so cards with shorter blurbs still
+   line up with their neighbours. */
+.upcoming-events-blurb { flex: 1 1 auto; }
