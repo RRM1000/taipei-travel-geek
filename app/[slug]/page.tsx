@@ -308,10 +308,11 @@ export default async function ArticlePage({ params }: PageProperties) {
                 advice={sunsetSpot.advice}
               />
             )}
-            {post.slug === "din-tai-fung" && <DinTaiFungQueue />}
             <article className="article-content" dangerouslySetInnerHTML={{ __html: finalContent }} />
-            {/* Portals live departure boards into the [data-next-train]
-                markers inside the body above - see NextTrain.tsx. */}
+            {/* These two portal into markers inside the body above, so they
+                must be rendered after it - see NextTrain.tsx and
+                DinTaiFungQueue.tsx. */}
+            {finalContent.includes("data-dtf-queue") && <DinTaiFungQueue />}
             {finalContent.includes("data-next-train") && <NextTrainBoards />}
             <AuthorBio />
             <PostFooterNav categories={post.categories} />

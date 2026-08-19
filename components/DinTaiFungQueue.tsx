@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 /**
  * Live queue times at every Taipei-area Din Tai Fung, read from the
@@ -66,7 +67,27 @@ const SKELETON_BRANCHES = [
   "Banqiao",
 ];
 
+/**
+ * Portals the board into `<div data-dtf-queue></div>` in the article body, so
+ * it sits inside the "Which Branch to Choose" section where the reader is
+ * actually deciding - rather than floating above the article with no context.
+ * Falls back to rendering in place if the marker is missing.
+ */
 export function DinTaiFungQueue() {
+  const [target, setTarget] = useState<Element | null>(null);
+  const [searched, setSearched] = useState(false);
+
+  useEffect(() => {
+    setTarget(document.querySelector("[data-dtf-queue]"));
+    setSearched(true);
+  }, []);
+
+  if (!searched) return null;
+  const board = <QueueBoard />;
+  return target ? createPortal(board, target) : board;
+}
+
+function QueueBoard() {
   const [data, setData] = useState<Payload | null>(null);
   const [failed, setFailed] = useState(false);
 
@@ -79,10 +100,32 @@ export function DinTaiFungQueue() {
       if (!response.ok) throw new Error(`queue ${response.status}`);
       const json = (await response.json()) as Payload;
       if (!json.ok) throw new Error("no live branches");
-      setData(json);
+
+      // Individual branches fail intermittently upstream and come back as
+      // "unknown", which would drop that row from the board. Carry the last
+      // known reading forward instead, so branches don't flicker in and out
+      // between refreshes.
+      setData((previous) => {
+        if (!previous) return json;
+        return {
+          ...json,
+          branches: json.branches.map((branch) => {
+            if (branch.status !== "unknown") return branch;
+            const last = previous.branches.find((b) => b.id === branch.id);
+            return last && last.status !== "unknown" ? last : branch;
+          }),
+        };
+      });
       setFailed(false);
     } catch {
-      setFailed(true);
+      // A failed refresh must not throw away a board that is already on
+      // screen - the times go slightly stale, which is far better than the
+      // widget vanishing mid-read. Only a failure with nothing to fall back
+      // on counts as failed.
+      setData((current) => {
+        if (!current) setFailed(true);
+        return current;
+      });
     }
   }, []);
 
@@ -92,7 +135,9 @@ export function DinTaiFungQueue() {
     return () => clearInterval(timer);
   }, [load]);
 
-  if (failed) return null;
+  // Only hide when the first load failed outright - once there is data on
+  // screen it stays, even if a later refresh fails.
+  if (failed && !data) return null;
 
   // Skeleton while the first fetch is in flight. Same shell and row count as
   // the real thing, so nothing jumps when the data lands.

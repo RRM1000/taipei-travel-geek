@@ -372,6 +372,12 @@ export function parseStations(content: string): string[] {
  * travel guide once they're in the city.
  */
 export function getNearbyPosts(post: ContentPost, limit = 6): { station: string; posts: ContentPost[] }[] {
+  // A round-up has no single location of its own. It cites whatever stations
+  // its entries happen to sit at, so the block would anchor to an arbitrary
+  // one of them and claim a neighbourhood the post doesn't actually have.
+  // Same reasoning that keeps round-ups out of the candidate list below.
+  if (post.tags.some((tag) => tag.slug === "lists")) return [];
+
   const stations = parseStations(post.content);
   if (!stations.length) return [];
 

@@ -48,7 +48,10 @@ const mapsUrl = (address: string): string =>
 type BranchStatus = "open" | "closed" | "unknown";
 type Branch = { id: string; name: string; note?: string; mapUrl: string; status: BranchStatus; waitMinutes: number | null };
 
-async function fetchBranch(input: { id: string; name: string; note?: string; address: string }): Promise<Branch> {
+async function fetchBranch(
+  input: { id: string; name: string; note?: string; address: string },
+  attempt = 0,
+): Promise<Branch> {
   const { address, ...rest } = input;
   const branch = { ...rest, mapUrl: mapsUrl(address) };
   try {
@@ -79,13 +82,36 @@ async function fetchBranch(input: { id: string; name: string; note?: string; add
     const stopped = typeof raw === "string" && raw.length > 0 && Boolean(row?.last_time);
     return { ...branch, status: stopped ? "closed" : "unknown", waitMinutes: null };
   } catch {
+    // Upstream drops requests intermittently under load, so give each
+    // branch one more go before writing it off.
+    if (attempt === 0) {
+      await new Promise((r) => setTimeout(r, 250));
+      return fetchBranch(input, 1);
+    }
     // One slow branch shouldn't take the whole widget down.
     return { ...branch, status: "unknown", waitMinutes: null };
   }
 }
 
+/**
+ * Firing all eight requests at once gets throttled - upstream starts
+ * returning nothing for every branch, which empties the whole board. Running
+ * them in small batches with a breath in between keeps it consistently
+ * healthy, and the route still answers well inside a second or two.
+ */
+async function fetchAll(): Promise<Branch[]> {
+  const BATCH = 3;
+  const out: Branch[] = [];
+  for (let i = 0; i < BRANCHES.length; i += BATCH) {
+    const slice = BRANCHES.slice(i, i + BATCH);
+    out.push(...(await Promise.all(slice.map(fetchBranch))));
+    if (i + BATCH < BRANCHES.length) await new Promise((r) => setTimeout(r, 120));
+  }
+  return out;
+}
+
 export async function GET() {
-  const branches = await Promise.all(BRANCHES.map(fetchBranch));
+  const branches = await fetchAll();
   // "Everything is closed" is a useful answer, so a board of closed branches
   // still counts as a live response - only a total failure to reach upstream
   // should suppress the widget.
