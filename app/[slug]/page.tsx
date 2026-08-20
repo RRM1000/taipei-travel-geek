@@ -36,6 +36,7 @@ import {
   hasAffiliateLinks,
   isGenuinelyReviewed,
   hasManualRecommendedReading,
+  fillQueueMarker,
   insertNearbyGuides,
   nonEditorialSlugs,
   posts,
@@ -227,11 +228,11 @@ export default async function ArticlePage({ params }: PageProperties) {
   // eligible post, so it isn't limited to a single hand-placed page.
   // Tag monetised outbound links last, so the auto-appended widgets and inline
   // CTAs are covered as well as links written into the post body.
-  const finalContent = enhanceContentImages(enhanceAffiliateLinks(enhanceMobileKlookWidget(
+  const finalContent = fillQueueMarker(enhanceContentImages(enhanceAffiliateLinks(enhanceMobileKlookWidget(
     shouldShowHotelDealsWidget(post)
       ? withRecommendedReading + renderHotelDealsWidget()
       : withRecommendedReading
-  )));
+  ))));
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];

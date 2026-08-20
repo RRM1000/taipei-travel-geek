@@ -2601,6 +2601,30 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   text-transform: uppercase;
   color: var(--ink, #1a1a1a);
 }
+
+/* Jump link to the live queue board, used at the top of the article. */
+.article-content .live-jump {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0;
+  padding: 15px 20px;
+  background: #eaf6ee;
+  border: 1px solid #bfe3cc;
+  border-left: 6px solid #2e9e5b;
+  border-radius: 6px;
+}
+.article-content .live-jump p { margin: 0; font-family: var(--font-sans); font-size: 16px; line-height: 1.45; }
+.article-content .live-jump a { font-weight: 700; }
+@media (max-width: 600px) { .article-content .live-jump { padding: 13px 16px; gap: 10px; } }
+
+/* Upstream unreachable: muted rather than alarming - it is a routine state. */
+.dtf-queue.is-failed {
+  background: #f4f5f7;
+  border-color: var(--line);
+}
+.dtf-queue.is-failed .dtf-queue-label { color: var(--muted); }
+.dtf-queue.is-failed .dtf-queue-foot { margin-top: 4px; }
 .dtf-queue-dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: #2e9e5b;

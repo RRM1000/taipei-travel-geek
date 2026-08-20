@@ -404,6 +404,48 @@ export function getNearbyPosts(post: ContentPost, limit = 6): { station: string;
 }
 
 /**
+ * Server-rendered placeholder for the live Din Tai Fung queue board.
+ *
+ * The board is a client component that portals into the marker in the
+ * article body, so from server render until hydration completes the marker
+ * is an empty div - a blank gap sitting under a heading that promises a
+ * board. Filling it server-side means the section is never empty, and the
+ * component clears this placeholder out when it takes over.
+ *
+ * Classes match the component's own skeleton so both share one set of CSS.
+ */
+const QUEUE_SKELETON_BRANCHES = [
+  "Taipei 101",
+  "Xinsheng",
+  "A4",
+  "A13",
+  "Nanxi",
+  "Fuxing",
+  "Tienmu",
+  "Banqiao",
+];
+
+export function fillQueueMarker(content: string): string {
+  if (!content.includes("<div data-dtf-queue></div>")) return content;
+
+  const rows = QUEUE_SKELETON_BRANCHES.map(
+    (name) =>
+      `<li class="dtf-queue-item tone-loading"><span class="dtf-queue-branch">${name}</span>` +
+      `<span class="dtf-queue-skeleton" aria-hidden="true"></span></li>`,
+  ).join("");
+
+  const skeleton =
+    `<aside class="dtf-queue is-loading" aria-busy="true" aria-label="Loading live Din Tai Fung queue times">` +
+    `<div class="dtf-queue-head"><p class="dtf-queue-label">` +
+    `<span class="dtf-queue-dot" aria-hidden="true"></span>Live queue times</p>` +
+    `<p class="dtf-queue-updated">Checking all branches&hellip;</p></div>` +
+    `<ul class="dtf-queue-list">${rows}</ul>` +
+    `<p class="dtf-queue-foot">Reading Din Tai Fung&rsquo;s live queue&hellip;</p></aside>`;
+
+  return content.replace("<div data-dtf-queue></div>", `<div data-dtf-queue>${skeleton}</div>`);
+}
+
+/**
  * Server-rendered markup for the nearby-guides block.
  *
  * Returned as an HTML string rather than a React component so it can be

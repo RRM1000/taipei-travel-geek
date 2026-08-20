@@ -78,7 +78,12 @@ export function DinTaiFungQueue() {
   const [searched, setSearched] = useState(false);
 
   useEffect(() => {
-    setTarget(document.querySelector("[data-dtf-queue]"));
+    const el = document.querySelector("[data-dtf-queue]");
+    // The server fills the marker with a static skeleton so the section is
+    // never blank before hydration. createPortal appends rather than
+    // replaces, so drop that placeholder before taking over.
+    el?.replaceChildren();
+    setTarget(el);
     setSearched(true);
   }, []);
 
@@ -135,9 +140,9 @@ function QueueBoard() {
     return () => clearInterval(timer);
   }, [load]);
 
-  // Only hide when the first load failed outright - once there is data on
-  // screen it stays, even if a later refresh fails.
-  if (failed && !data) return null;
+  // The article introduces this board by name directly above it, so every
+  // dead end has to render something - an empty space reads as broken.
+  if (failed && !data) return <QueueUnavailable />;
 
   // Skeleton while the first fetch is in flight. Same shell and row count as
   // the real thing, so nothing jumps when the data lands.
@@ -171,7 +176,7 @@ function QueueBoard() {
   // vanishing entirely late in the evening. Only branches we genuinely
   // couldn't read are omitted.
   const shown = data.branches.filter((branch) => branch.status !== "unknown");
-  if (!shown.length) return null;
+  if (!shown.length) return <QueueUnavailable />;
 
   const open = shown.filter((branch) => branch.status === "open");
   const quietest = open.length
@@ -228,6 +233,27 @@ function QueueBoard() {
           <>Every branch has stopped taking dine-in queue numbers for today.</>
         )}{" "}
         Select a branch name to see it on the map.
+      </p>
+    </aside>
+  );
+}
+
+/**
+ * Shown when there is nothing live to display - either the first fetch
+ * failed, or every branch came back unreadable. Din Tai Fung's site drops
+ * offline for spells at a time, so this is a normal state rather than an
+ * exceptional one, and saying so is more use than a blank gap.
+ */
+function QueueUnavailable() {
+  return (
+    <aside className="dtf-queue is-failed" aria-label="Live Din Tai Fung queue times unavailable">
+      <div className="dtf-queue-head">
+        <p className="dtf-queue-label">Live queue times</p>
+      </div>
+      <p className="dtf-queue-foot">
+        Din Tai Fung&rsquo;s queue system isn&rsquo;t responding at the moment, so there are no live
+        numbers to show. It is usually back within the hour &ndash; in the meantime, the{" "}
+        <a href="#Avoid">advice on avoiding the queue</a> below still applies.
       </p>
     </aside>
   );
