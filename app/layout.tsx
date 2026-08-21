@@ -36,6 +36,20 @@ export const metadata: Metadata = {
   },
 };
 
+const GA_MEASUREMENT_ID = "G-79MKLEGNPH";
+
+/**
+ * Analytics is production-only. Without this gate the dev server loads
+ * gtag.js and fires a page_view against the live property on every local
+ * page load, so a day's development shows up in the reports as real
+ * traffic from http://localhost/.
+ *
+ * NODE_ENV is "development" under `next dev` and "production" in a build,
+ * so this evaluates at render time in the server component and the tags
+ * simply never reach the HTML in development.
+ */
+const analyticsEnabled = process.env.NODE_ENV === "production";
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
@@ -47,13 +61,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap"
           rel="stylesheet"
         />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-79MKLEGNPH" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
+        {analyticsEnabled && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-79MKLEGNPH');`}
-        </Script>
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+            </Script>
+          </>
+        )}
       </head>
       <body>{children}</body>
     </html>
