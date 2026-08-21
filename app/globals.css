@@ -2818,3 +2818,34 @@ a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
   .dtf-queue-skeleton { animation: none; }
 }
 .dtf-queue.is-loading .dtf-queue-foot { font-style: italic; }
+
+/* Taiwan Icon Font ("twicon") pilot - self-hosted, SIL OFL licensed set of
+   100 Taiwan-specific icons (see public/fonts/twicon-LICENSE.txt). Trialling
+   it on the transport guide's h3 headings only; codepoints are the font's
+   own Private Use Area assignments (from the project's Dart source), not
+   something we get to choose. Add new .twicon-<name> rules here as the
+   pilot expands to more icons/pages. */
+@font-face {
+  font-family: "Taiwan Icon Font";
+  src: url("/fonts/twicon.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.twicon {
+  font-family: "Taiwan Icon Font";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: -0.15em;
+  margin-right: 0.4em;
+  font-size: 1.2em;
+  color: var(--red);
+}
+.twicon-easy-card::before { content: "\a05c"; }
+.twicon-mrt::before { content: "\a039"; }
+.twicon-youbike::before { content: "\a03d"; }
+.twicon-maokong-gondola::before { content: "\a03c"; }
+.twicon-hsr::before { content: "\a03b"; }
+.twicon-tra::before { content: "\a038"; }

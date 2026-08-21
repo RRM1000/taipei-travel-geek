@@ -1,0 +1,11 @@
+Taiwan Icon Font ("twicon")
+Source: https://github.com/zonble/twicon (Dart/Flutter wrapper) and https://www.twicon.page/
+Design: a Japanese designer and an English programmer based in Taiwan (STAND by Taiwan project)
+Wrapper package license (MIT): Copyright (c) 2020 Weizhong Yang
+Font itself: SIL Open Font License 1.1 - free for private and commercial use,
+reproduction and modification, per the project's own licensing info.
+
+twicon.woff2 in this directory was converted from the wrapper repo's bundled
+lib/fonts/twicon.otf (unmodified glyphs) for use as a self-hosted web font.
+Codepoints start at U+A000 (Private Use Area) - see app/globals.css for the
+icon-name-to-codepoint mapping used on this site.

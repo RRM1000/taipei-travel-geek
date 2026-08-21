@@ -95,6 +95,10 @@ const legacySlugRedirects: Record<string, string> = {
   // general money guide (cash vs card, ATMs, banks, carrying cash safely),
   // which the old slug only described a third of.
   "taipei-trip-cost": "taipei-money-guide",
+  // Syntrend is one of the two buildings in the Technology District, and the
+  // two posts overlapped almost entirely (same location, same map). Folded
+  // into the district guide as a section rather than kept as a sibling post.
+  "syntrend-creative-park": "taipei-technology-district#syntrend",
 };
 
 /**
