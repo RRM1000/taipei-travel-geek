@@ -99,6 +99,10 @@ const legacySlugRedirects: Record<string, string> = {
   // two posts overlapped almost entirely (same location, same map). Folded
   // into the district guide as a section rather than kept as a sibling post.
   "syntrend-creative-park": "taipei-technology-district#syntrend",
+  // A ~275-word listicle covering four houses that the rewritten buildings
+  // guide now covers properly, alongside everything else. The two competed
+  // for the same search rather than complementing each other.
+  "ancestral-houses-with-charm-in-abundance": "best-buildings-in-taipei#qing",
 };
 
 /**

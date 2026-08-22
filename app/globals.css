@@ -2872,3 +2872,10 @@ a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
 .twicon-grand-hotel::before { content: "\a015"; }
 .twicon-president-office::before { content: "\a00c"; }
 .twicon-sys-hall::before { content: "\a011"; }
+.twicon-longshan-temple::before { content: "\a010"; }
+.twicon-martyrs-shrine::before { content: "\a00f"; }
+.twicon-npm::before { content: "\a00e"; }
+.twicon-ntm::before { content: "\a014"; }
+.twicon-red-house::before { content: "\a019"; }
+.twicon-fort-san-domingo::before { content: "\a017"; }
+.twicon-beitou-museum::before { content: "\a028"; }
