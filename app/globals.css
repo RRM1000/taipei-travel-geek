@@ -2830,7 +2830,12 @@ a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
   src: url("/fonts/twicon.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  /* "block", not "swap". These are Private Use Area codepoints, so every
+     fallback font renders them as a tofu box - "swap" guarantees a flash of
+     tofu in the heading before the font arrives. "block" keeps the glyph
+     invisible for the short block period instead, which reads as the icon
+     simply fading in. */
+  font-display: block;
 }
 .twicon {
   font-family: "Taiwan Icon Font";
@@ -2842,6 +2847,14 @@ a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
   margin-right: 0.4em;
   font-size: 1.2em;
   color: var(--red);
+  /* These glyphs are illustrations rather than a uniform UI icon set, and
+     their advance widths run from 0.43em (taipei101) to 1.36em (youbike) -
+     a threefold spread. Left to size themselves, the gap between icon and
+     heading text visibly jumps from one heading to the next. Fixing the box
+     and centring the glyph in it keeps every icon optically aligned whatever
+     its natural width. */
+  width: 1.5em;
+  text-align: center;
 }
 .twicon-easy-card::before { content: "\a05c"; }
 .twicon-mrt::before { content: "\a039"; }
