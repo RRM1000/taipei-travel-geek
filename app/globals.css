@@ -2856,9 +2856,19 @@ a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
   width: 1.5em;
   text-align: center;
 }
+/* Transport guide */
 .twicon-easy-card::before { content: "\a05c"; }
 .twicon-mrt::before { content: "\a039"; }
 .twicon-youbike::before { content: "\a03d"; }
 .twicon-maokong-gondola::before { content: "\a03c"; }
 .twicon-hsr::before { content: "\a03b"; }
 .twicon-tra::before { content: "\a038"; }
+/* Landmarks - used on best-buildings-in-taipei, where every section heading
+   is a single named building. The set only reads as a system on pages like
+   that; scattering one or two through a long guide looks like a mistake. */
+.twicon-taipei101::before { content: "\a00d"; }
+.twicon-cks-hall::before { content: "\a00a"; }
+.twicon-confucius-temple::before { content: "\a012"; }
+.twicon-grand-hotel::before { content: "\a015"; }
+.twicon-president-office::before { content: "\a00c"; }
+.twicon-sys-hall::before { content: "\a011"; }
