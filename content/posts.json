@@ -18,10 +18,6 @@
   ],
   "tags": [
    {
-    "name": "Essential",
-    "slug": "essential"
-   },
-   {
     "name": "Local",
     "slug": "local"
    },
