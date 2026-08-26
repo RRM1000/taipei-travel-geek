@@ -24,6 +24,10 @@
    {
     "name": "Local",
     "slug": "local"
+   },
+   {
+    "name": "Taiwanese",
+    "slug": "taiwanese"
    }
   ],
   "featuredImage": "/media/2026/08/raohe-night-market-entrance.jpg"
