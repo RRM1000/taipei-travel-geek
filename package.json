@@ -13,7 +13,10 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "search:index": "node scripts/generate-search-index.mjs",
-    "content:update-sim": "node scripts/update-sim-guide.mjs"
+    "content:update-sim": "node scripts/update-sim-guide.mjs",
+    "analytics:pull": "node scripts/pull-analytics.mjs",
+    "analytics:report": "node scripts/pull-analytics.mjs --report",
+    "analytics:discover": "node scripts/pull-analytics.mjs --discover"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
@@ -32,6 +35,7 @@
     "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
+    "googleapis": "^174.0.1",
     "react-server-dom-webpack": "19.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
