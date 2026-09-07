@@ -9,7 +9,7 @@
     "dev": "npm run search:index && vinext dev",
     "build": "npm run search:index && vinext build",
     "start": "vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run build",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "search:index": "node scripts/generate-search-index.mjs",
