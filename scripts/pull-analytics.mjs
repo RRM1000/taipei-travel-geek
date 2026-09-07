@@ -50,8 +50,8 @@ const KEY_PATH =
   "C:/Users/rober/Projects/london-theatre-geek/google-service-account.json";
 
 // Not a secret - the numeric property id is an address, not a credential - so
-// it can live here once known. Until then --discover prints it.
-const GA4_PROPERTY_ID = process.env.GA4_PROPERTY_ID ?? "";
+// it lives here the same way London's does. --discover reprints it.
+const GA4_PROPERTY_ID = process.env.GA4_PROPERTY_ID ?? "337606279";
 
 // Renamed guides. A 308-redirected post keeps earning views under its new
 // slug, but GA4 and GSC report the two URLs separately, so the old one looks
