@@ -1458,6 +1458,86 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   text-align: center;
 }
 
+/* Schematic images - the MRT network map, and anything else that is a diagram
+   rather than a photograph. The max-height/object-fit cap above exists to stop
+   a portrait photo running taller than the viewport, which is right for photos
+   and ruinous for a map: it slices the middle out and drops both termini. These
+   opt out of the cap and are tappable to expand (see DiagramLightbox.tsx). */
+.article-content figure.article-diagram img {
+  max-height: none;
+  object-fit: contain;
+  background: #ffffff;
+  cursor: zoom-in;
+}
+.article-content figure.article-diagram a {
+  display: block;
+}
+
+.diagram-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* margin:auto on the image rather than flex centring on the container - a
+   centred flex child that overflows its scroll container cannot be scrolled
+   back to its top-left corner in most browsers, which is exactly the state a
+   zoomed map is in. */
+.diagram-lightbox-scroll {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.diagram-lightbox-image {
+  display: block;
+  margin: auto;
+  max-width: 96vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  background: #ffffff;
+  border-radius: 4px;
+  cursor: zoom-in;
+}
+.diagram-lightbox-image.is-zoomed {
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
+}
+.diagram-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.diagram-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+.diagram-lightbox-hint {
+  position: absolute;
+  bottom: 14px;
+  margin: 0;
+  padding: 0 12px;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-align: center;
+  pointer-events: none;
+}
+
 /* Clear Bullet & Numbered Lists */
 .article-content ul {
   padding-left: 26px;

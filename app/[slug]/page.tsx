@@ -12,6 +12,7 @@ import { PostFooterNav } from "@/components/PostFooterNav";
 import { SunsetTimes } from "@/components/SunsetTimes";
 import { DinTaiFungQueue } from "@/components/DinTaiFungQueue";
 import { NextTrainBoards } from "@/components/NextTrain";
+import { DiagramLightbox } from "@/components/DiagramLightbox";
 import {
   calculateReadingTime,
   enhanceAffiliateLinks,
@@ -323,6 +324,7 @@ export default async function ArticlePage({ params }: PageProperties) {
                 DinTaiFungQueue.tsx. */}
             {finalContent.includes("data-dtf-queue") && <DinTaiFungQueue />}
             {finalContent.includes("data-next-train") && <NextTrainBoards />}
+            {finalContent.includes("article-diagram") && <DiagramLightbox />}
             <AuthorBio />
             <PostFooterNav categories={post.categories} />
           </div>
