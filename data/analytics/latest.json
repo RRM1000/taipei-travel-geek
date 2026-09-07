@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-09-07T08:40:37.631Z",
+  "pulledAt": "2026-09-07T08:49:23.936Z",
   "window": {
     "days": 28,
     "current": {
@@ -12,17 +12,8 @@
     }
   },
   "reports": {
-    "decay": [
-      {
-        "path": "/maokong-gondola/",
-        "views": 79,
-        "viewsBefore": 142,
-        "change": -44,
-        "lost": 63,
-        "position": 10.7,
-        "positionBefore": 7.4
-      }
-    ],
+    "decay": [],
+    "decayComparable": false,
     "quickWins": [
       {
         "path": "/ximending/",
@@ -31,46 +22,6 @@
         "impressions": 5928,
         "ctr": 0.0022,
         "position": 10.4
-      },
-      {
-        "path": "/best-cafes-to-work/",
-        "query": "best cafes with wifi near me",
-        "clicks": 0,
-        "impressions": 4001,
-        "ctr": 0,
-        "position": 7.5
-      },
-      {
-        "path": "/best-cafes-to-work/",
-        "query": "best places to study near me",
-        "clicks": 0,
-        "impressions": 2482,
-        "ctr": 0,
-        "position": 9.5
-      },
-      {
-        "path": "/best-brunch-in-taipei/",
-        "query": "best brunch spots near me",
-        "clicks": 0,
-        "impressions": 2308,
-        "ctr": 0,
-        "position": 6.1
-      },
-      {
-        "path": "/cheap-breakfast-taipei/",
-        "query": "best breakfast spots near me",
-        "clicks": 0,
-        "impressions": 2119,
-        "ctr": 0,
-        "position": 8.2
-      },
-      {
-        "path": "/chinitas-cubano/",
-        "query": "best cubano sandwich near me",
-        "clicks": 0,
-        "impressions": 1836,
-        "ctr": 0,
-        "position": 6.9
       },
       {
         "path": "/best-cafes-to-work/",
@@ -113,28 +64,12 @@
         "position": 11.2
       },
       {
-        "path": "/best-salads-in-taipei/",
-        "query": "best ensalada de arroz near me",
-        "clicks": 0,
-        "impressions": 1378,
-        "ctr": 0,
-        "position": 8.2
-      },
-      {
         "path": "/taiwan-lucky-land-giveaway/",
         "query": "taiwan lucky land",
         "clicks": 143,
         "impressions": 1298,
         "ctr": 0.1102,
         "position": 5.6
-      },
-      {
-        "path": "/best-places-to-drink-craft-beer-taipei/",
-        "query": "best craft beers near me",
-        "clicks": 0,
-        "impressions": 1268,
-        "ctr": 0,
-        "position": 10.1
       },
       {
         "path": "/yongkang-street/",
@@ -145,30 +80,6 @@
         "position": 5.4
       },
       {
-        "path": "/best-salads-in-taipei/",
-        "query": "best ensalada primavera near me",
-        "clicks": 0,
-        "impressions": 1140,
-        "ctr": 0,
-        "position": 8.9
-      },
-      {
-        "path": "/chinitas-cubano/",
-        "query": "best cafe cubano near me",
-        "clicks": 0,
-        "impressions": 1112,
-        "ctr": 0,
-        "position": 6
-      },
-      {
-        "path": "/best-salads-in-taipei/",
-        "query": "best ensalada de garbanzos near me",
-        "clicks": 0,
-        "impressions": 1110,
-        "ctr": 0,
-        "position": 8.5
-      },
-      {
         "path": "/ximending/",
         "query": "ximending walking district",
         "clicks": 8,
@@ -177,52 +88,12 @@
         "position": 6.7
       },
       {
-        "path": "/best-salads-in-taipei/",
-        "query": "best ensalada mixta near me",
-        "clicks": 0,
-        "impressions": 943,
-        "ctr": 0,
-        "position": 9
-      },
-      {
-        "path": "/chinitas-cubano/",
-        "query": "best medianoche sandwich near me",
-        "clicks": 0,
-        "impressions": 934,
-        "ctr": 0,
-        "position": 7.6
-      },
-      {
         "path": "/cheap-breakfast-taipei/",
         "query": "where to eat breakfast",
         "clicks": 0,
         "impressions": 897,
         "ctr": 0,
         "position": 8.2
-      },
-      {
-        "path": "/best-salads-in-taipei/",
-        "query": "best ensalada de quinoa near me",
-        "clicks": 0,
-        "impressions": 877,
-        "ctr": 0,
-        "position": 8.3
-      },
-      {
-        "path": "/best-cocktail-bars-in-taipei/",
-        "query": "best rooftop bars near me",
-        "clicks": 0,
-        "impressions": 873,
-        "ctr": 0,
-        "position": 9.4
-      },
-      {
-        "path": "/cheap-breakfast-taipei/",
-        "query": "breakfast near me",
-        "clicks": 3,
-        "impressions": 828,
-        "ctr": 0.0036,
-        "position": 7.3
       },
       {
         "path": "/yong-he-soy-milk-king/",
@@ -265,14 +136,6 @@
         "position": 10.3
       },
       {
-        "path": "/chinitas-cubano/",
-        "query": "best caldosa cubana near me",
-        "clicks": 0,
-        "impressions": 699,
-        "ctr": 0,
-        "position": 7.7
-      },
-      {
         "path": "/fuhang-soy-milk/",
         "query": "fuhang soy milk menu",
         "clicks": 3,
@@ -297,38 +160,6 @@
         "position": 8.9
       },
       {
-        "path": "/best-salads-in-taipei/",
-        "query": "best ensalada con palta near me",
-        "clicks": 0,
-        "impressions": 534,
-        "ctr": 0,
-        "position": 5.6
-      },
-      {
-        "path": "/best-indian-restaurants/",
-        "query": "best peshwari naan near me",
-        "clicks": 0,
-        "impressions": 507,
-        "ctr": 0,
-        "position": 8.8
-      },
-      {
-        "path": "/best-indian-restaurants/",
-        "query": "best keema naan near me",
-        "clicks": 0,
-        "impressions": 501,
-        "ctr": 0,
-        "position": 8.6
-      },
-      {
-        "path": "/amavie/",
-        "query": "smoothie bowl near me",
-        "clicks": 0,
-        "impressions": 488,
-        "ctr": 0,
-        "position": 9
-      },
-      {
         "path": "/taiwan-lucky-land-giveaway/",
         "query": "taiwan lucky draw",
         "clicks": 18,
@@ -343,6 +174,166 @@
         "impressions": 470,
         "ctr": 0.0064,
         "position": 11.4
+      },
+      {
+        "path": "/taiwan-lucky-land-giveaway/",
+        "query": "taiwan the lucky land",
+        "clicks": 45,
+        "impressions": 469,
+        "ctr": 0.0959,
+        "position": 6.5
+      },
+      {
+        "path": "/yongkang-street/",
+        "query": "yongkang street taipei",
+        "clicks": 2,
+        "impressions": 412,
+        "ctr": 0.0049,
+        "position": 7.1
+      },
+      {
+        "path": "/yong-kang-beef-noodles/",
+        "query": "yongkang beef noodles",
+        "clicks": 2,
+        "impressions": 402,
+        "ctr": 0.005,
+        "position": 7.3
+      },
+      {
+        "path": "/taipei-zoo/",
+        "query": "taipei zoo opening hours",
+        "clicks": 1,
+        "impressions": 376,
+        "ctr": 0.0027,
+        "position": 7.6
+      },
+      {
+        "path": "/ximending/",
+        "query": "ximending taiwan",
+        "clicks": 2,
+        "impressions": 368,
+        "ctr": 0.0054,
+        "position": 10.8
+      },
+      {
+        "path": "/taiwan-lucky-land-giveaway/",
+        "query": "lucky land taiwan",
+        "clicks": 31,
+        "impressions": 362,
+        "ctr": 0.0856,
+        "position": 6.2
+      },
+      {
+        "path": "/fuhang-soy-milk/",
+        "query": "fuhang soy milk",
+        "clicks": 2,
+        "impressions": 324,
+        "ctr": 0.0062,
+        "position": 10.4
+      },
+      {
+        "path": "/kaikai-dessert/",
+        "query": "kai kai dessert",
+        "clicks": 1,
+        "impressions": 324,
+        "ctr": 0.0031,
+        "position": 9.6
+      },
+      {
+        "path": "/addiction-aquatic-development/",
+        "query": "addiction aquatic development",
+        "clicks": 0,
+        "impressions": 309,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "path": "/din-tai-fung/",
+        "query": "din tai fung taipei",
+        "clicks": 0,
+        "impressions": 289,
+        "ctr": 0,
+        "position": 14.1
+      },
+      {
+        "path": "/taiwan-lucky-land-giveaway/",
+        "query": "luckyland taiwan",
+        "clicks": 19,
+        "impressions": 284,
+        "ctr": 0.0669,
+        "position": 7.4
+      },
+      {
+        "path": "/ximending/",
+        "query": "ximending shopping district",
+        "clicks": 2,
+        "impressions": 282,
+        "ctr": 0.0071,
+        "position": 8.3
+      },
+      {
+        "path": "/ay-chung-flour-rice-noodles/",
+        "query": "ay chung flour rice noodle",
+        "clicks": 0,
+        "impressions": 275,
+        "ctr": 0,
+        "position": 9.4
+      },
+      {
+        "path": "/yongkang-street/",
+        "query": "yongkang",
+        "clicks": 1,
+        "impressions": 268,
+        "ctr": 0.0037,
+        "position": 7.1
+      },
+      {
+        "path": "/texas-roadhouse/",
+        "query": "texas roadhouse",
+        "clicks": 1,
+        "impressions": 250,
+        "ctr": 0.004,
+        "position": 7.9
+      },
+      {
+        "path": "/sun-yat-sen-memorial-hall/",
+        "query": "sun yat sen memorial hall",
+        "clicks": 2,
+        "impressions": 247,
+        "ctr": 0.0081,
+        "position": 12.9
+      },
+      {
+        "path": "/xinyi-shopping-district/",
+        "query": "xinyi shopping district",
+        "clicks": 7,
+        "impressions": 240,
+        "ctr": 0.0292,
+        "position": 8.1
+      },
+      {
+        "path": "/best-cafes-to-work/",
+        "query": "best places to study",
+        "clicks": 0,
+        "impressions": 235,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "path": "/taoyuan-airport-mrt/",
+        "query": "airport line express taipei",
+        "clicks": 3,
+        "impressions": 223,
+        "ctr": 0.0135,
+        "position": 5.4
+      },
+      {
+        "path": "/ay-chung-flour-rice-noodles/",
+        "query": "ay-chung flour-rice noodle",
+        "clicks": 0,
+        "impressions": 221,
+        "ctr": 0,
+        "position": 9
       }
     ],
     "unmetQueries": [
@@ -401,13 +392,6 @@
         "impressions": 256,
         "ctr": 0.0078,
         "position": 12.9
-      },
-      {
-        "query": "laundry near me",
-        "clicks": 1,
-        "impressions": 219,
-        "ctr": 0.0046,
-        "position": 10.2
       },
       {
         "query": "fu hang soy milk",
@@ -721,7 +705,74 @@
         "views": 96,
         "engagedSecondsPerSession": 42.5
       }
-    ]
+    ],
+    "noiseFiltered": {
+      "queries": 71,
+      "impressions": 36117,
+      "clicks": 7,
+      "top": [
+        {
+          "query": "best cafes with wifi near me",
+          "impressions": 4001,
+          "clicks": 0,
+          "position": 7.5
+        },
+        {
+          "query": "best places to study near me",
+          "impressions": 2482,
+          "clicks": 0,
+          "position": 9.5
+        },
+        {
+          "query": "best brunch spots near me",
+          "impressions": 2308,
+          "clicks": 0,
+          "position": 6.1
+        },
+        {
+          "query": "best breakfast spots near me",
+          "impressions": 2119,
+          "clicks": 0,
+          "position": 8.2
+        },
+        {
+          "query": "best cubano sandwich near me",
+          "impressions": 1836,
+          "clicks": 0,
+          "position": 6.9
+        },
+        {
+          "query": "best ensalada de arroz near me",
+          "impressions": 1378,
+          "clicks": 0,
+          "position": 8.2
+        },
+        {
+          "query": "best craft beers near me",
+          "impressions": 1268,
+          "clicks": 0,
+          "position": 10.1
+        },
+        {
+          "query": "best ensalada primavera near me",
+          "impressions": 1140,
+          "clicks": 0,
+          "position": 8.9
+        },
+        {
+          "query": "best cafe cubano near me",
+          "impressions": 1112,
+          "clicks": 0,
+          "position": 6
+        },
+        {
+          "query": "best ensalada de garbanzos near me",
+          "impressions": 1110,
+          "clicks": 0,
+          "position": 8.5
+        }
+      ]
+    }
   },
   "ga4": {
     "property": "337606279",

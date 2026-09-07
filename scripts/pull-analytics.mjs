@@ -77,6 +77,25 @@ function isArticlePath(p) {
   return p.replace(/^\/|\/$/g, "").split("/").length === 1;
 }
 
+// Queries that rank well, collect thousands of impressions and never get
+// clicked, because the searcher is not in Taipei. "best cafes with wifi near
+// me" sat at position 7.5 with 4,001 impressions and zero clicks - Google
+// briefly shows a Taipei guide to someone in Ohio, and no edit we make will
+// ever win that click. Left in, they crowd out every real opportunity in the
+// quick-wins list. The excluded volume is counted and printed rather than
+// silently dropped, so the filter can be checked against what it removes.
+const NOISE_QUERY = /\bnear\s?(?:me|by)\b/i;
+
+// The gtag snippet went live on 2026-08-03 (commit a9767ce), two days after
+// the site moved off WordPress. GA4 therefore has nothing before that date -
+// not zero traffic, no measurement at all - so any window reaching back past
+// it is comparing a full 28 days against a handful. The first pull duly
+// reported /maokong-gondola/ down 44% when nothing had happened to it. Decay
+// is suppressed rather than printed with a caveat, because a ranked list of
+// wrong numbers gets acted on regardless of the note above it. Search Console
+// is a domain property and does span the migration; use it for before/after.
+const GA4_START = "2026-08-03";
+
 // ----------------------------------------------------------- dates -------
 const iso = (d) => d.toISOString().slice(0, 10);
 const daysAgo = (n) => {
@@ -286,33 +305,54 @@ function buildReports(ga4, gsc) {
 
   // 1. Decay: guides losing readers. Ordered by views lost, not by
   //    percentage, so a big guide down 30% outranks a tiny one down 80%.
-  const decay = ga4.pages
-    .filter((p) => isArticlePath(p.path) && p.previous && p.previous.views >= 50)
-    .map((p) => ({
-      path: p.path,
-      views: p.current?.views ?? 0,
-      viewsBefore: p.previous.views,
-      change: pct(p.current?.views ?? 0, p.previous.views),
-      lost: p.previous.views - (p.current?.views ?? 0),
-      position: gsc.pages[p.path]?.position ?? null,
-      positionBefore: gsc.pagesPrevious[p.path]?.position ?? null,
-    }))
-    .filter((p) => p.change !== null && p.change <= -25)
-    .sort((a, b) => b.lost - a.lost)
-    .slice(0, 25);
+  //    Only meaningful once the comparison window is entirely inside the
+  //    period GA4 was actually recording - see GA4_START.
+  const decayComparable = previous.start >= GA4_START;
+  const decay = !decayComparable
+    ? []
+    : ga4.pages
+        .filter((p) => isArticlePath(p.path) && p.previous && p.previous.views >= 50)
+        .map((p) => ({
+          path: p.path,
+          views: p.current?.views ?? 0,
+          viewsBefore: p.previous.views,
+          change: pct(p.current?.views ?? 0, p.previous.views),
+          lost: p.previous.views - (p.current?.views ?? 0),
+          position: gsc.pages[p.path]?.position ?? null,
+          positionBefore: gsc.pagesPrevious[p.path]?.position ?? null,
+        }))
+        .filter((p) => p.change !== null && p.change <= -25)
+        .sort((a, b) => b.lost - a.lost)
+        .slice(0, 25);
 
   // 2. Quick wins: ranking just off the first page with real demand. A small
   //    edit to a page at position 8 moves more traffic than a new article.
-  const quickWins = gsc.pageQueries
-    .filter((r) => r.position >= 5 && r.position <= 15 && r.impressions >= 50)
+  const quickWinsAll = gsc.pageQueries.filter(
+    (r) => r.position >= 5 && r.position <= 15 && r.impressions >= 50,
+  );
+  const quickWins = quickWinsAll
+    .filter((r) => !NOISE_QUERY.test(r.query))
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 40);
 
   // 3. Unmet demand: Google queries we are shown for but sit past page one.
-  const unmetQueries = gsc.queries
-    .filter((r) => r.impressions >= 30 && r.position > 10)
+  const unmetAll = gsc.queries.filter((r) => r.impressions >= 30 && r.position > 10);
+  const unmetQueries = unmetAll
+    .filter((r) => !NOISE_QUERY.test(r.query))
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 40);
+
+  // What the noise filter took out, so it can be audited rather than trusted.
+  const excluded = [...quickWinsAll, ...unmetAll].filter((r) => NOISE_QUERY.test(r.query));
+  const noiseFiltered = {
+    queries: excluded.length,
+    impressions: excluded.reduce((a, b) => a + b.impressions, 0),
+    clicks: excluded.reduce((a, b) => a + b.clicks, 0),
+    top: [...excluded]
+      .sort((a, b) => b.impressions - a.impressions)
+      .slice(0, 10)
+      .map((r) => ({ query: r.query, impressions: r.impressions, clicks: r.clicks, position: r.position })),
+  };
 
   // 4. Most read, for anything that wants to bake a popular list in at build.
   const topPages = ga4.pages
@@ -325,7 +365,7 @@ function buildReports(ga4, gsc) {
       engagedSecondsPerSession: p.current.engagedSecondsPerSession,
     }));
 
-  return { decay, quickWins, unmetQueries, topPages };
+  return { decay, decayComparable, quickWins, unmetQueries, topPages, noiseFiltered };
 }
 
 // --------------------------------------------------------- helpers -------
@@ -358,14 +398,23 @@ function printSummary(out) {
     console.log(`  ${n(p.views).padStart(7)}  ${p.path}  (${p.engagedSecondsPerSession}s engaged/session)`);
   }
 
-  console.log(`\nDecay - guides down 25%+ on the previous window (${r.decay.length}):`);
-  for (const p of r.decay.slice(0, 10)) {
-    const pos = p.position != null ? `  pos ${p.positionBefore ?? "?"} -> ${p.position}` : "";
+  if (r.decayComparable === false) {
     console.log(
-      `  ${String(p.change).padStart(4)}%  ${n(p.viewsBefore).padStart(6)} -> ${n(p.views).padEnd(6)} ${p.path}${pos}`,
+      `\nDecay - not available. The comparison window starts ${w.previous.start}, before GA4 began\n` +
+        `  recording on ${GA4_START}, so any change against it would be measurement, not traffic.\n` +
+        `  Available from a pull on or after ${iso(new Date(Date.parse(GA4_START) + (WINDOW_DAYS * 2 + LAG_DAYS - 1) * 86400000))}. ` +
+        `Use Search Console for anything spanning the migration.`,
     );
+  } else {
+    console.log(`\nDecay - guides down 25%+ on the previous window (${r.decay.length}):`);
+    for (const p of r.decay.slice(0, 10)) {
+      const pos = p.position != null ? `  pos ${p.positionBefore ?? "?"} -> ${p.position}` : "";
+      console.log(
+        `  ${String(p.change).padStart(4)}%  ${n(p.viewsBefore).padStart(6)} -> ${n(p.views).padEnd(6)} ${p.path}${pos}`,
+      );
+    }
+    if (!r.decay.length) console.log("  none");
   }
-  if (!r.decay.length) console.log("  none");
 
   console.log(`\nQuick wins - position 5-15 with 50+ impressions (${r.quickWins.length}):`);
   for (const q of r.quickWins.slice(0, 10)) {
@@ -377,6 +426,17 @@ function printSummary(out) {
   console.log(`\nUnmet demand - Google queries we show for past page one (${r.unmetQueries.length}):`);
   for (const q of r.unmetQueries.slice(0, 10)) {
     console.log(`  pos ${String(q.position).padStart(4)}  ${n(q.impressions).padStart(6)} imp  "${q.query}"`);
+  }
+
+  const nf = r.noiseFiltered;
+  if (nf?.queries) {
+    console.log(
+      `\nFiltered out as location noise: ${nf.queries} "near me" rows, ` +
+        `${n(nf.impressions)} impressions, ${n(nf.clicks)} clicks. Largest:`,
+    );
+    for (const q of nf.top.slice(0, 5)) {
+      console.log(`  pos ${String(q.position).padStart(4)}  ${n(q.impressions).padStart(6)} imp  ${n(q.clicks).padStart(4)} clicks  "${q.query}"`);
+    }
   }
 
   console.log(`\nWritten to ${OUT_FILE}\n`);
