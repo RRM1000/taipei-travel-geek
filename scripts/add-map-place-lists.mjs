@@ -32,6 +32,27 @@ const posts = JSON.parse(fs.readFileSync(POSTS, "utf8"));
 const index = JSON.parse(fs.readFileSync(path.join(MAPS_DIR, "index.json"), "utf8"));
 const links = JSON.parse(fs.readFileSync(path.join(MAPS_DIR, "links.json"), "utf8"));
 
+// Venues the site has already marked as gone. Posts carry a "Permanent
+// Closure Notice" block, so the closure list is derived from that rather than
+// kept separately - mark one closed in the usual way and rerunning this drops
+// it from the maps too. Matched by the slug a pin links to and by name, since
+// a pin is often named slightly differently to its post ("Crush Brunch" for
+// Crush, "Tulip TimeOut" for TimeOut Danish Hot Dogs).
+const closedBySlug = new Map();
+const closedByName = new Map();
+for (const post of posts) {
+  const text = (post.content || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+  const m = text.match(/Please note:\s*(.+?)\s+has permanently closed/i);
+  if (!m) continue;
+  closedBySlug.set(post.slug, m[1]);
+  closedByName.set(m[1].toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(), m[1]);
+}
+const closureOf = (place) => {
+  const slug = place.url && place.url.replace(/^\//, "").split(/[#?]/)[0].replace(/\/$/, "");
+  if (slug && closedBySlug.has(slug)) return closedBySlug.get(slug);
+  return closedByName.get((place.name || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()) ?? null;
+};
+
 const esc = (s) =>
   String(s ?? "")
     .replace(/&/g, "&amp;")
@@ -55,13 +76,19 @@ if (remove) {
 }
 
 // ---------------------------------------------------------------- build ---
+const dropped = [];
+
 function renderList(map, resolved) {
   const bySlug = new Map(resolved.links.map((l) => [l.name, l.slug]));
   const parts = [`<div class="${MARKER}" data-mid="${map.mid}">`, `<h3>Every place on this map</h3>`];
   const multi = map.layers.filter((l) => l.places.some((p) => p.type === "point")).length > 1;
 
   for (const layer of map.layers) {
-    const points = layer.places.filter((p) => p.type === "point" && p.name);
+    const points = layer.places.filter((p) => p.type === "point" && p.name).filter((p) => {
+      const closed = closureOf(p);
+      if (closed) dropped.push({ map: map.name, mid: map.mid, pin: p.name, closed });
+      return !closed;
+    });
     if (!points.length) continue;
     if (multi) parts.push(`<h4>${esc(layer.name)}</h4>`);
     parts.push("<ul>");
@@ -99,7 +126,9 @@ const skipped = [];
 for (const entry of index.maps) {
   const map = JSON.parse(fs.readFileSync(path.join(MAPS_DIR, `${entry.mid}.json`), "utf8"));
   const resolved = links.maps[entry.mid];
-  const points = map.layers.flatMap((l) => l.places.filter((p) => p.type === "point" && p.name));
+  const points = map.layers
+    .flatMap((l) => l.places.filter((p) => p.type === "point" && p.name))
+    .filter((p) => !closureOf(p));
   if (!points.length) {
     skipped.push({ map: map.name, why: "no named pins" });
     continue;
@@ -151,6 +180,15 @@ for (const a of applied.sort((x, y) => y.places - x.places)) {
 }
 const totalPlaces = applied.reduce((a, b) => a + b.places, 0);
 console.log(`\n  ${totalPlaces} places written into the pages.`);
+
+if (dropped.length) {
+  const seen = new Map();
+  for (const d of dropped) if (!seen.has(d.pin)) seen.set(d.pin, d);
+  console.log(`
+Left out ${seen.size} pins for venues the site marks permanently closed:`);
+  for (const d of seen.values()) console.log(`  ${d.pin.padEnd(34)} [${d.map}]`);
+  console.log("  Delete these in Google My Maps too - the pins are not in this repo.");
+}
 
 const byReason = skipped.reduce((acc, s) => ((acc[s.why.replace(/^\d+%/, "N%")] ??= 0), acc[s.why.replace(/^\d+%/, "N%")]++, acc), {});
 console.log(`\nSkipped ${skipped.length}:`);
