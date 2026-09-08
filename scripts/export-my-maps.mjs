@@ -188,20 +188,43 @@ for (const [mid, slugs] of targets) {
   if (targets.length > 1) await new Promise((r) => setTimeout(r, DELAY_MS));
 }
 
-// Pins whose description links to a page that no longer exists. These cannot
-// be fixed from here - the pin lives in Google My Maps, not the repo - so the
-// export reports them and someone edits the map. Worth having: a reader who
-// taps one of these lands on a 404 with no way back.
+// Pins whose description links to a page that is actually gone.
+//
+// Checking the slug against content/posts.json is not enough on its own:
+// plenty of retired slugs are 308-redirected to their replacement, and those
+// redirects are configured at Cloudflare rather than in this repo, so nothing
+// here can see them. Doing it locally reported eleven dead links when five of
+// them redirect perfectly well. So: filter cheaply against posts.json, then
+// ask the live site about whatever is left. Only a real 404 is a dead link.
 const siteSlugs = new Set(JSON.parse(fs.readFileSync(POSTS, "utf8")).map((p) => p.slug));
-const deadLinks = [];
+const suspects = [];
 for (const entry of index) {
   const map = JSON.parse(fs.readFileSync(path.join(OUT_DIR, `${entry.mid}.json`), "utf8"));
   for (const layer of map.layers) {
     for (const place of layer.places) {
       if (!place.url) continue;
       const slug = place.url.replace(/^\//, "").split(/[#?]/)[0].replace(/\/$/, "");
-      if (!siteSlugs.has(slug)) deadLinks.push({ map: map.name, mid: map.mid, place: place.name, url: place.url });
+      if (!siteSlugs.has(slug)) suspects.push({ map: map.name, mid: map.mid, place: place.name, url: place.url, slug });
     }
+  }
+}
+
+const deadLinks = [];
+if (suspects.length) {
+  console.log(`\nChecking ${suspects.length} link${suspects.length === 1 ? "" : "s"} against the live site...`);
+  const checked = new Map();
+  for (const s of suspects) {
+    if (!checked.has(s.slug)) {
+      try {
+        const res = await fetch(`${SITE}/${s.slug}`, { redirect: "manual" });
+        checked.set(s.slug, { status: res.status, to: res.headers.get("location") });
+      } catch (e) {
+        checked.set(s.slug, { status: 0, to: null, error: e.message });
+      }
+      await new Promise((r) => setTimeout(r, 200));
+    }
+    const result = checked.get(s.slug);
+    if (result.status >= 400 || result.status === 0) deadLinks.push({ ...s, status: result.status });
   }
 }
 
@@ -219,9 +242,11 @@ console.log(
 );
 
 if (deadLinks.length) {
-  console.log(`\n${deadLinks.length} pins link to a page that no longer exists:`);
+  console.log(`\n${deadLinks.length} pin${deadLinks.length === 1 ? "" : "s"} link to a page that returns 404:`);
   for (const d of deadLinks) console.log(`  ${d.url.padEnd(36)} ${d.place}  [${d.map}]`);
   console.log("  Fix these in Google My Maps - the pin data is not in this repo.");
+} else if (suspects.length) {
+  console.log(`  All ${suspects.length} resolve (redirects, not breakage).`);
 }
 
 console.log(`\nWritten to ${OUT_DIR}\n`);

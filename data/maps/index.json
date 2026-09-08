@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T06:37:45.517Z",
+  "generatedAt": "2026-09-08T06:43:59.992Z",
   "maps": [
     {
       "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
@@ -519,68 +519,50 @@
     {
       "map": "Taipei Traveller",
       "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Tamsui District",
-      "url": "/danshui"
-    },
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Daan Forest Park",
-      "url": "/da-an-forest-park"
-    },
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Thermal Valley",
-      "url": "/thermal-valley"
-    },
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Taipei Botanical Garden",
-      "url": "/taipei-botanical-gardens"
-    },
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
       "place": "A Train Leads The Way To Jazz",
-      "url": "/a-train-leads-the-way-to-jazz"
+      "url": "/a-train-leads-the-way-to-jazz",
+      "slug": "a-train-leads-the-way-to-jazz",
+      "status": 404
     },
     {
       "map": "Taipei Traveller",
       "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
       "place": "Indulge Experimental Bistro",
-      "url": "/indulge-experimental-bistro"
+      "url": "/indulge-experimental-bistro",
+      "slug": "indulge-experimental-bistro",
+      "status": 404
     },
     {
       "map": "Taipei Traveller",
       "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
       "place": "B Line by A train",
-      "url": "/b-line-by-a-train"
+      "url": "/b-line-by-a-train",
+      "slug": "b-line-by-a-train",
+      "status": 404
     },
     {
       "map": "Taipei Traveller",
       "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
       "place": "C Park by A Train",
-      "url": "/c-park-by-a-train"
-    },
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Beitou Hot Spring Museum",
-      "url": "/beitou-hot-spring-museum"
+      "url": "/c-park-by-a-train",
+      "slug": "c-park-by-a-train",
+      "status": 404
     },
     {
       "map": "Taipei Traveller",
       "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
       "place": "National Theatre",
-      "url": "/national-concert-hall-and-theatre"
+      "url": "/national-concert-hall-and-theatre",
+      "slug": "national-concert-hall-and-theatre",
+      "status": 404
     },
     {
       "map": "Taipei Traveller",
       "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
       "place": "National Concert Hall",
-      "url": "/national-concert-hall-and-theatre"
+      "url": "/national-concert-hall-and-theatre",
+      "slug": "national-concert-hall-and-theatre",
+      "status": 404
     }
   ],
   "failures": []

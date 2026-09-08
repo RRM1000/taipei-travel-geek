@@ -1,0 +1,2470 @@
+{
+  "generatedAt": "2026-09-08T06:44:28.644Z",
+  "tally": {
+    "fromKml": 178,
+    "exact": 95,
+    "strong": 22,
+    "weak": 37,
+    "none": 349
+  },
+  "maps": {
+    "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr": {
+      "name": "Taipei Traveller",
+      "usedOn": [
+        "maps"
+      ],
+      "links": [
+        {
+          "name": "Taipei 101",
+          "layer": "Visit",
+          "slug": "taipei-101",
+          "via": "kml"
+        },
+        {
+          "name": "Chiang Kai-shek Memorial Hall",
+          "layer": "Visit",
+          "slug": "chiang-kai-shek-memorial-hall",
+          "via": "kml"
+        },
+        {
+          "name": "Ximending Shopping District",
+          "layer": "Visit",
+          "slug": "ximending",
+          "via": "kml"
+        },
+        {
+          "name": "National Taiwan University",
+          "layer": "Visit",
+          "slug": "national-taiwan-university",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Zoo",
+          "layer": "Visit",
+          "slug": "taipei-zoo",
+          "via": "kml"
+        },
+        {
+          "name": "Daan Forest Park",
+          "layer": "Visit",
+          "slug": "daan-forest-park",
+          "via": "exact"
+        },
+        {
+          "name": "2/28 Peace Park",
+          "layer": "Visit",
+          "slug": "peace-park",
+          "via": "kml"
+        },
+        {
+          "name": "Shuangxi Park",
+          "layer": "Visit",
+          "slug": "shuangxi-park-and-chinese-garden",
+          "via": "kml"
+        },
+        {
+          "name": "Xinsheng Park",
+          "layer": "Visit",
+          "slug": "xinsheng-park",
+          "via": "kml"
+        },
+        {
+          "name": "Zhishan Garden",
+          "layer": "Visit",
+          "slug": "zhishan-garden",
+          "via": "kml"
+        },
+        {
+          "name": "Guandu Nature Park",
+          "layer": "Visit",
+          "slug": "guandu-nature-park",
+          "via": "kml"
+        },
+        {
+          "name": "Huashan 1914 Creative Park",
+          "layer": "Visit",
+          "slug": "huashan-1914-creative-park",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Botanical Garden",
+          "layer": "Visit",
+          "slug": "taipei-botanical-garden",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Collective Botanical Garden",
+          "layer": "Visit",
+          "slug": "collective-botanical-garden",
+          "via": "kml"
+        },
+        {
+          "name": "Maokong Gondola",
+          "layer": "Visit",
+          "slug": "maokong-gondola",
+          "via": "kml"
+        },
+        {
+          "name": "The Red House",
+          "layer": "Visit",
+          "slug": "the-red-house-ximending",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Story House",
+          "layer": "Visit",
+          "slug": "taipei-story-house",
+          "via": "kml"
+        },
+        {
+          "name": "Lin Family Mansion and Garden",
+          "layer": "Visit",
+          "slug": "lin-family-mansion",
+          "via": "kml"
+        },
+        {
+          "name": "Lin An Tai Ancestral House",
+          "layer": "Visit",
+          "slug": "lin-an-tai-ancestral-house",
+          "via": "kml"
+        },
+        {
+          "name": "National Revolutionary Martyrs' Shrine",
+          "layer": "Visit",
+          "slug": "martyrs-shrine",
+          "via": "kml"
+        },
+        {
+          "name": "National Dr. Sun Yat-Sen Memorial Hall",
+          "layer": "Visit",
+          "slug": "sun-yat-sen-memorial-hall",
+          "via": "kml"
+        },
+        {
+          "name": "Shilin Night Market",
+          "layer": "Visit",
+          "slug": "shilin-night-market",
+          "via": "kml"
+        },
+        {
+          "name": "Jian Guo Jade Market",
+          "layer": "Visit",
+          "slug": "jianguo-flower-market",
+          "via": "kml"
+        },
+        {
+          "name": "Linjiang Street Night Market",
+          "layer": "Visit",
+          "slug": "tonghua-night-market",
+          "via": "kml"
+        },
+        {
+          "name": "Expo Farmer's Market",
+          "layer": "Visit",
+          "slug": "expo-farmers-market",
+          "via": "kml"
+        },
+        {
+          "name": "Longshan Temple",
+          "layer": "Visit",
+          "slug": "longshan-temple",
+          "via": "kml"
+        },
+        {
+          "name": "Baoan Temple and Gardens",
+          "layer": "Visit",
+          "slug": "dalongdong-baoan-temple-and-gardens",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Confucius Temple",
+          "layer": "Visit",
+          "slug": "confucius-temple",
+          "via": "kml"
+        },
+        {
+          "name": "Yongkang Street",
+          "layer": "Visit",
+          "slug": "yongkang-street",
+          "via": "kml"
+        },
+        {
+          "name": "Tiger Mountain",
+          "layer": "Visit",
+          "slug": "tiger-mountain-ramble",
+          "via": "strong"
+        },
+        {
+          "name": "Raohe Night Market",
+          "layer": "Visit",
+          "slug": "raohe-night-market-foody-heaven",
+          "via": "kml"
+        },
+        {
+          "name": "Huaxi Street Night Market",
+          "layer": "Visit",
+          "slug": "huaxi-street-night-market",
+          "via": "kml"
+        },
+        {
+          "name": "Ningxia Night Market",
+          "layer": "Visit",
+          "slug": "ningxia-night-market",
+          "via": "kml"
+        },
+        {
+          "name": "Gongguan Night Market",
+          "layer": "Visit",
+          "slug": "gongguan-night-market",
+          "via": "kml"
+        },
+        {
+          "name": "Xingtian Temple",
+          "layer": "Visit",
+          "slug": "hsing-tian-kong-temple",
+          "via": "kml"
+        },
+        {
+          "name": "Chiang Kai-Shek Shilin Residence",
+          "layer": "Visit",
+          "slug": "chiang-kai-shek-shilin-residence",
+          "via": "kml"
+        },
+        {
+          "name": "Addiction Aquatic Development",
+          "layer": "Eat",
+          "slug": "addiction-aquatic-development",
+          "via": "kml"
+        },
+        {
+          "name": "Yongkang Beef Noodles",
+          "layer": "Eat",
+          "slug": "yong-kang-beef-noodles",
+          "via": "kml"
+        },
+        {
+          "name": "Din Tai Fung",
+          "layer": "Eat",
+          "slug": "din-tai-fung",
+          "via": "kml"
+        },
+        {
+          "name": "Din Tai Fung",
+          "layer": "Eat",
+          "slug": "din-tai-fung",
+          "via": "kml"
+        },
+        {
+          "name": "Din Tai Fung",
+          "layer": "Eat",
+          "slug": "din-tai-fung",
+          "via": "kml"
+        },
+        {
+          "name": "Din Tai Fung",
+          "layer": "Eat",
+          "slug": "din-tai-fung",
+          "via": "kml"
+        },
+        {
+          "name": "Din Tai Fung",
+          "layer": "Eat",
+          "slug": "din-tai-fung",
+          "via": "kml"
+        },
+        {
+          "name": "Din Tai Fung",
+          "layer": "Eat",
+          "slug": "din-tai-fung",
+          "via": "kml"
+        },
+        {
+          "name": "Din Tai Fung",
+          "layer": "Eat",
+          "slug": "din-tai-fung",
+          "via": "kml"
+        },
+        {
+          "name": "Sister's Kitchen",
+          "layer": "Eat",
+          "slug": "sisters-kitchen",
+          "via": "kml"
+        },
+        {
+          "name": "Flourish",
+          "layer": "Eat",
+          "slug": "flourish",
+          "via": "kml"
+        },
+        {
+          "name": "Big table",
+          "layer": "Eat",
+          "slug": "big-table-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Plants",
+          "layer": "Eat",
+          "slug": "plants",
+          "via": "kml"
+        },
+        {
+          "name": "Kuang's Bistro",
+          "layer": "Eat",
+          "slug": "kuangs-bistro",
+          "via": "kml"
+        },
+        {
+          "name": "Eiles Bistro",
+          "layer": "Eat",
+          "slug": "eiles-bistro",
+          "via": "kml"
+        },
+        {
+          "name": "IKEA Food Hall",
+          "layer": "Eat",
+          "slug": "ikea-food-hall",
+          "via": "kml"
+        },
+        {
+          "name": "Tajin Moroccan",
+          "layer": "Eat",
+          "slug": "tajine-moroccan",
+          "via": "kml"
+        },
+        {
+          "name": "Saffron Fine Indian Cuisine",
+          "layer": "Eat",
+          "slug": "saffron-fine-indian-cuisine",
+          "via": "kml"
+        },
+        {
+          "name": "Joseph Bistro",
+          "layer": "Eat",
+          "slug": "joseph-bistro",
+          "via": "kml"
+        },
+        {
+          "name": "Kooks",
+          "layer": "Eat",
+          "slug": "kooks",
+          "via": "kml"
+        },
+        {
+          "name": "Crush Brunch",
+          "layer": "Eat",
+          "slug": "crush",
+          "via": "kml"
+        },
+        {
+          "name": "Herban Kitchen & Bar",
+          "layer": "Eat",
+          "slug": "herban-kitchen-bar",
+          "via": "kml"
+        },
+        {
+          "name": "Kobayashi Noodle Restaurant",
+          "layer": "Eat",
+          "slug": "kobayashi-noodle-restaurant",
+          "via": "kml"
+        },
+        {
+          "name": "Twinkeyz Tacos",
+          "layer": "Eat",
+          "slug": "twinkeyz-tacos",
+          "via": "kml"
+        },
+        {
+          "name": "Ay-Chung Flour-Rice Noodle",
+          "layer": "Eat",
+          "slug": "ay-chung-flour-rice-noodles",
+          "via": "kml"
+        },
+        {
+          "name": "Tulip TimeOut",
+          "layer": "Eat",
+          "slug": "timeout-danish-hot-dogs",
+          "via": "kml"
+        },
+        {
+          "name": "Tian Jin Onion Pancake",
+          "layer": "Eat",
+          "slug": "tian-jin-onion-pancake",
+          "via": "kml"
+        },
+        {
+          "name": "Lan Jia Traditional Taiwanese Snack",
+          "layer": "Eat",
+          "slug": "lan-jia-traditional-taiwanese-snack",
+          "via": "kml"
+        },
+        {
+          "name": "On Tap",
+          "layer": "Eat",
+          "slug": "on-tap",
+          "via": "kml"
+        },
+        {
+          "name": "The Brass Monkey",
+          "layer": "Eat",
+          "slug": "brass-monkey",
+          "via": "kml"
+        },
+        {
+          "name": "Redpoint Brewing Co. Taproom",
+          "layer": "Eat",
+          "slug": "redpoint-brewing-co-taproom",
+          "via": "kml"
+        },
+        {
+          "name": "TOASTERiA",
+          "layer": "Eat",
+          "slug": "toasteria",
+          "via": "kml"
+        },
+        {
+          "name": "Toasteria",
+          "layer": "Eat",
+          "slug": "toasteria",
+          "via": "kml"
+        },
+        {
+          "name": "Yong He Soy Milk King",
+          "layer": "Eat",
+          "slug": "yong-he-soy-milk-king",
+          "via": "kml"
+        },
+        {
+          "name": "Miacucina",
+          "layer": "Eat",
+          "slug": "miacucina",
+          "via": "kml"
+        },
+        {
+          "name": "Miacucina",
+          "layer": "Eat",
+          "slug": "miacucina",
+          "via": "kml"
+        },
+        {
+          "name": "Miacucina",
+          "layer": "Eat",
+          "slug": "miacucina",
+          "via": "kml"
+        },
+        {
+          "name": "Miacucina",
+          "layer": "Eat",
+          "slug": "miacucina",
+          "via": "kml"
+        },
+        {
+          "name": "Miacucina",
+          "layer": "Eat",
+          "slug": "miacucina",
+          "via": "kml"
+        },
+        {
+          "name": "TGI Fridays",
+          "layer": "Eat",
+          "slug": "tgi-fridays",
+          "via": "kml"
+        },
+        {
+          "name": "Ooh Cha Cha",
+          "layer": "Eat",
+          "slug": "ooh-cha-cha",
+          "via": "kml"
+        },
+        {
+          "name": "Ducky Restaurant",
+          "layer": "Eat",
+          "slug": "ducky-restaurant",
+          "via": "kml"
+        },
+        {
+          "name": "La Villa Danshui",
+          "layer": "Eat",
+          "slug": "la-villa-danshui",
+          "via": "kml"
+        },
+        {
+          "name": "Fuhang Soy Milk",
+          "layer": "Eat",
+          "slug": "fuhang-soy-milk",
+          "via": "kml"
+        },
+        {
+          "name": "Jie Genge",
+          "layer": "Eat",
+          "slug": "jie-genge",
+          "via": "kml"
+        },
+        {
+          "name": "The Antipodean Specialty Coffee",
+          "layer": "Eat",
+          "slug": "the-antipodean-specialty-coffee",
+          "via": "kml"
+        },
+        {
+          "name": "The Antipodean Fujin",
+          "layer": "Eat",
+          "slug": "the-antipodean-specialty-coffee",
+          "via": "kml"
+        },
+        {
+          "name": "ACME｜Cafe Bar & Restaurant",
+          "layer": "Eat",
+          "slug": "acme-breakfast-club",
+          "via": "kml"
+        },
+        {
+          "name": "Tamed Fox",
+          "layer": "Eat",
+          "slug": "tamed-fox",
+          "via": "kml"
+        },
+        {
+          "name": "Tamed Fox",
+          "layer": "Eat",
+          "slug": "tamed-fox",
+          "via": "kml"
+        },
+        {
+          "name": "Snow Bro Shaved Ice",
+          "layer": "Eat",
+          "slug": "snow-bro-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Shaved Ice Huaxi",
+          "layer": "Eat",
+          "slug": "shaved-ice-huaxi",
+          "via": "kml"
+        },
+        {
+          "name": "Cronutt",
+          "layer": "Eat",
+          "slug": "cronutt",
+          "via": "kml"
+        },
+        {
+          "name": "Mr Brownies",
+          "layer": "Eat",
+          "slug": "mr-brownie",
+          "via": "kml"
+        },
+        {
+          "name": "Mr. Brownie",
+          "layer": "Eat",
+          "slug": "mr-brownie",
+          "via": "kml"
+        },
+        {
+          "name": "Matcha Saro",
+          "layer": "Eat",
+          "slug": "matcha-saro",
+          "via": "kml"
+        },
+        {
+          "name": "Matcha Saro",
+          "layer": "Eat",
+          "slug": "matcha-saro",
+          "via": "kml"
+        },
+        {
+          "name": "Matcha Saro",
+          "layer": "Eat",
+          "slug": "matcha-saro",
+          "via": "kml"
+        },
+        {
+          "name": "Chun Shui Tang",
+          "layer": "Eat",
+          "slug": "chun-shui-tang",
+          "via": "kml"
+        },
+        {
+          "name": "Chun Shui Tang",
+          "layer": "Eat",
+          "slug": "chun-shui-tang",
+          "via": "kml"
+        },
+        {
+          "name": "Chun Shui Tang",
+          "layer": "Eat",
+          "slug": "chun-shui-tang",
+          "via": "kml"
+        },
+        {
+          "name": "Chun Shui Tang",
+          "layer": "Eat",
+          "slug": "chun-shui-tang",
+          "via": "kml"
+        },
+        {
+          "name": "Chun Shui Tang",
+          "layer": "Eat",
+          "slug": "chun-shui-tang",
+          "via": "kml"
+        },
+        {
+          "name": "Chun Shui Tang",
+          "layer": "Eat",
+          "slug": "chun-shui-tang",
+          "via": "kml"
+        },
+        {
+          "name": "Gordon Biersch",
+          "layer": "Eat",
+          "slug": "gordon-biersch",
+          "via": "kml"
+        },
+        {
+          "name": "Gordon Biersch",
+          "layer": "Eat",
+          "slug": "gordon-biersch",
+          "via": "kml"
+        },
+        {
+          "name": "Gordon Biersch",
+          "layer": "Eat",
+          "slug": "gordon-biersch",
+          "via": "kml"
+        },
+        {
+          "name": "Home’s Thai",
+          "layer": "Eat",
+          "slug": "homes-thai",
+          "via": "kml"
+        },
+        {
+          "name": "Home's Thai",
+          "layer": "Eat",
+          "slug": "homes-thai",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai",
+          "layer": "Eat",
+          "slug": "very-thai",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai",
+          "layer": "Eat",
+          "slug": "very-thai",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai",
+          "layer": "Eat",
+          "slug": "very-thai",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai",
+          "layer": "Eat",
+          "slug": "very-thai",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai",
+          "layer": "Eat",
+          "slug": "very-thai",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai Noodles",
+          "layer": "Eat",
+          "slug": "very-thai-noodles",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai Noodles",
+          "layer": "Eat",
+          "slug": "very-thai-noodles",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai Noodles",
+          "layer": "Eat",
+          "slug": "very-thai-noodles",
+          "via": "kml"
+        },
+        {
+          "name": "Very Thai Noodles",
+          "layer": "Eat",
+          "slug": "very-thai-noodles",
+          "via": "kml"
+        },
+        {
+          "name": "Smith & Hsu",
+          "layer": "Eat",
+          "slug": "smith-and-hsu",
+          "via": "kml"
+        },
+        {
+          "name": "Smith & Hsu",
+          "layer": "Eat",
+          "slug": "smith-and-hsu",
+          "via": "kml"
+        },
+        {
+          "name": "Chamonix Teppanyaki",
+          "layer": "Eat",
+          "slug": "chamonix-teppanyaki",
+          "via": "kml"
+        },
+        {
+          "name": "Chamonix Teppanyaki",
+          "layer": "Eat",
+          "slug": "chamonix-teppanyaki",
+          "via": "kml"
+        },
+        {
+          "name": "Broccoli Beer",
+          "layer": "Eat",
+          "slug": "broccoli-beer",
+          "via": "kml"
+        },
+        {
+          "name": "Texas Roadhouse 德州鮮切牛排 松高店",
+          "layer": "Eat",
+          "slug": "texas-roadhouse",
+          "via": "exact"
+        },
+        {
+          "name": "Eastern Ice Store",
+          "layer": "Eat",
+          "slug": "eastern-ice-store",
+          "via": "kml"
+        },
+        {
+          "name": "TGI Fridays Songgao",
+          "layer": "Eat",
+          "slug": "tgi-fridays",
+          "via": "kml"
+        },
+        {
+          "name": "Pizzeria Oggi",
+          "layer": "Eat",
+          "slug": "pizzeria-oggi",
+          "via": "kml"
+        },
+        {
+          "name": "Liquid Bread Company",
+          "layer": "Eat",
+          "slug": "liquid-bread-company",
+          "via": "kml"
+        },
+        {
+          "name": "Chinita's Cubano",
+          "layer": "Eat",
+          "slug": "chinitas-cubano",
+          "via": "kml"
+        },
+        {
+          "name": "Golden Flower Grilled Toast",
+          "layer": "Eat",
+          "slug": "golden-flower-grilled-toast",
+          "via": "kml"
+        },
+        {
+          "name": "Ray Cafe",
+          "layer": "Drink",
+          "slug": "ray-cafe",
+          "via": "kml"
+        },
+        {
+          "name": "Louisa Coffee",
+          "layer": "Drink",
+          "slug": "louisa",
+          "via": "kml"
+        },
+        {
+          "name": "Louisa Coffee",
+          "layer": "Drink",
+          "slug": "louisa",
+          "via": "kml"
+        },
+        {
+          "name": "YOLO's Cafe",
+          "layer": "Drink",
+          "slug": "yolos-cafe",
+          "via": "kml"
+        },
+        {
+          "name": "YOLO's Cafe",
+          "layer": "Drink",
+          "slug": "yolos-cafe",
+          "via": "kml"
+        },
+        {
+          "name": "YOLO's Cafe",
+          "layer": "Drink",
+          "slug": "yolos-cafe",
+          "via": "kml"
+        },
+        {
+          "name": "YOLO'S Cafe",
+          "layer": "Drink",
+          "slug": "yolos-cafe",
+          "via": "kml"
+        },
+        {
+          "name": "Yolo's Cafe",
+          "layer": "Drink",
+          "slug": "yolos-cafe",
+          "via": "kml"
+        },
+        {
+          "name": "Coffee Alley",
+          "layer": "Drink",
+          "slug": "coffee-alley",
+          "via": "kml"
+        },
+        {
+          "name": "Coffee Alley",
+          "layer": "Drink",
+          "slug": "coffee-alley",
+          "via": "kml"
+        },
+        {
+          "name": "Coffee Alley",
+          "layer": "Drink",
+          "slug": "coffee-alley",
+          "via": "kml"
+        },
+        {
+          "name": "Coffee Alley",
+          "layer": "Drink",
+          "slug": "coffee-alley",
+          "via": "kml"
+        },
+        {
+          "name": "Coffee Alley",
+          "layer": "Drink",
+          "slug": "coffee-alley",
+          "via": "kml"
+        },
+        {
+          "name": "Yaboo Cafe",
+          "layer": "Drink",
+          "slug": "yaboo-cafe",
+          "via": "kml"
+        },
+        {
+          "name": "Chen Sanding Brown Sugar",
+          "layer": "Drink",
+          "slug": "chen-sanding-brown-sugar",
+          "via": "kml"
+        },
+        {
+          "name": "Fourplay",
+          "layer": "Drink",
+          "slug": "fourplay",
+          "via": "kml"
+        },
+        {
+          "name": "Woo Taipei",
+          "layer": "Drink",
+          "slug": "woo-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Triangle",
+          "layer": "Drink",
+          "slug": "triangle",
+          "via": "kml"
+        },
+        {
+          "name": "The Malt",
+          "layer": "Drink",
+          "slug": "the-malt",
+          "via": "kml"
+        },
+        {
+          "name": "Continue? Gaming Bar",
+          "layer": "Drink",
+          "slug": "continue-gaming-bar",
+          "via": "kml"
+        },
+        {
+          "name": "James Joyce Irish Bar",
+          "layer": "Drink",
+          "slug": "james-joyce-irish-bar",
+          "via": "kml"
+        },
+        {
+          "name": "Apple Xinyi A13",
+          "layer": "Shop",
+          "slug": "xinyi-apple-store",
+          "via": "kml"
+        },
+        {
+          "name": "Technology District and Syntrend",
+          "layer": "Shop",
+          "slug": "taipei-technology-district",
+          "via": "kml"
+        },
+        {
+          "name": "National Palace Museum",
+          "layer": "Culture",
+          "slug": "national-palace-museum",
+          "via": "kml"
+        },
+        {
+          "name": "Miniatures Museum of Taiwan",
+          "layer": "Culture",
+          "slug": "miniatures-museum-of-taiwan",
+          "via": "kml"
+        },
+        {
+          "name": "Museum of Drinking Water",
+          "layer": "Culture",
+          "slug": "see-the-drinking-water-museum-at-taipei-water-park",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Astronomical Museum",
+          "layer": "Culture",
+          "slug": "taipei-astronomical-museum",
+          "via": "kml"
+        },
+        {
+          "name": "National Taiwan Museum",
+          "layer": "Culture",
+          "slug": "national-taiwan-museum",
+          "via": "kml"
+        },
+        {
+          "name": "SPOT - Taipei Film House",
+          "layer": "Culture",
+          "slug": "the-spot-cinemas",
+          "via": "kml"
+        },
+        {
+          "name": "SPOT Huashan cinema",
+          "layer": "Culture",
+          "slug": "the-spot-cinemas",
+          "via": "kml"
+        },
+        {
+          "name": "Eslite Art House Cinema",
+          "layer": "Culture",
+          "slug": "eslite-art-house-cinema",
+          "via": "kml"
+        },
+        {
+          "name": "Taiwan Traditional Theatre Center",
+          "layer": "Culture",
+          "slug": "taiwan-traditional-theatre-centre",
+          "via": "kml"
+        },
+        {
+          "name": "Cloud Gate Theater",
+          "layer": "Culture",
+          "slug": "cloud-gate-theatre",
+          "via": "kml"
+        },
+        {
+          "name": "Eslite Performance Hall",
+          "layer": "Culture",
+          "slug": "eslite-performance-hall",
+          "via": "kml"
+        },
+        {
+          "name": "Legacy Taipei",
+          "layer": "Culture",
+          "slug": "legacy-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "The Wall - Live Music",
+          "layer": "Culture",
+          "slug": "the-wall",
+          "via": "kml"
+        },
+        {
+          "name": "Revolver",
+          "layer": "Culture",
+          "slug": "revolver",
+          "via": "kml"
+        },
+        {
+          "name": "Sappho Live Jazz",
+          "layer": "Culture",
+          "slug": "sappho-live-jazz",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Arena",
+          "layer": "Culture",
+          "slug": "taipei-arena",
+          "via": "kml"
+        },
+        {
+          "name": "Museum of Contemporary Art",
+          "layer": "Culture",
+          "slug": "museum-of-contemporary-art",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Fine Arts Museum",
+          "layer": "Culture",
+          "slug": "fine-arts-museum",
+          "via": "kml"
+        },
+        {
+          "name": "Treasure Hill",
+          "layer": "Culture",
+          "slug": "treasure-hill",
+          "via": "kml"
+        },
+        {
+          "name": "National Taiwan Science Education Center",
+          "layer": "Culture",
+          "slug": "national-taiwan-science-education-center",
+          "via": "kml"
+        },
+        {
+          "name": "Taipei Children's Amusement Park",
+          "layer": "Culture",
+          "slug": "taipei-childrens-amusement-park",
+          "via": "kml"
+        }
+      ]
+    },
+    "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET": {
+      "name": "Taipei Sightseeing Bus Route",
+      "usedOn": [
+        "taipei-sightseeing-bus"
+      ],
+      "links": [
+        {
+          "name": "⑥CHIANG KAI-SHEK MEMORIAL HALL",
+          "layer": "RED",
+          "slug": "chiang-kai-shek-memorial-hall",
+          "via": "exact"
+        },
+        {
+          "name": "⑫TAIPEI 101",
+          "layer": "RED",
+          "slug": "taipei-101",
+          "via": "exact"
+        },
+        {
+          "name": "⑲HUASHAN 1914 CREATIVE PARK",
+          "layer": "RED",
+          "slug": "huashan-1914-creative-park",
+          "via": "exact"
+        }
+      ]
+    },
+    "1j82krTNrAh0bxZwIF-Hy6EZsY400HrJr": {
+      "name": "Xinyi Shopping Malls",
+      "usedOn": [
+        "xinyi-shopping-district"
+      ],
+      "links": [
+        {
+          "name": "i-Ride Taipei",
+          "layer": "Untitled layer",
+          "slug": "i-ride-taipei",
+          "via": "exact"
+        }
+      ]
+    },
+    "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i": {
+      "name": "Datong Walk",
+      "usedOn": [
+        "datong-walking-route"
+      ],
+      "links": [
+        {
+          "name": "Taipei Confucius Temple",
+          "layer": "Attractions",
+          "slug": "confucius-temple",
+          "via": "strong"
+        },
+        {
+          "name": "Dalongdong Baoan Temple",
+          "layer": "Attractions",
+          "slug": "dalongdong-baoan-temple-and-gardens",
+          "via": "strong"
+        },
+        {
+          "name": "MAJI Square",
+          "layer": "Attractions",
+          "slug": "maji-square",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Fine Arts Museum",
+          "layer": "Attractions",
+          "slug": "fine-arts-museum",
+          "via": "strong"
+        },
+        {
+          "name": "Taipei Story House",
+          "layer": "Attractions",
+          "slug": "taipei-story-house",
+          "via": "exact"
+        },
+        {
+          "name": "Lin An Tai Ancestral House",
+          "layer": "Attractions",
+          "slug": "lin-an-tai-ancestral-house",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Story House",
+          "layer": "West Walk - Temples and Night Market",
+          "slug": "taipei-story-house",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Fine Arts Museum",
+          "layer": "West Walk - Temples and Night Market",
+          "slug": "fine-arts-museum",
+          "via": "strong"
+        },
+        {
+          "name": "Lin An Tai Ancestral House",
+          "layer": "West Walk - Temples and Night Market",
+          "slug": "lin-an-tai-ancestral-house",
+          "via": "exact"
+        },
+        {
+          "name": "Dalongdong Baoan Temple",
+          "layer": "East Walk - Parks, Museum and Ancestral Houses",
+          "slug": "dalongdong-baoan-temple-and-gardens",
+          "via": "strong"
+        }
+      ]
+    },
+    "1jugziH46_tbI8FXV4qH_4CDWjTmGaI9O": {
+      "name": "Tourist Shuttle Bus Routes",
+      "usedOn": [
+        "taiwan-tourist-shuttle-bus"
+      ],
+      "links": []
+    },
+    "1KmXoi6moJ5U94pyfKe0ujZbFjqH9lZ9K": {
+      "name": "Tamsui",
+      "usedOn": [
+        "tamsui"
+      ],
+      "links": [
+        {
+          "name": "Fort San Domingo",
+          "layer": "Untitled layer",
+          "slug": "fort-san-domingo",
+          "via": "exact"
+        },
+        {
+          "name": "LA VILLA DANSHUI",
+          "layer": "Untitled layer",
+          "slug": "la-villa-danshui",
+          "via": "exact"
+        },
+        {
+          "name": "Night Market",
+          "layer": "Untitled layer",
+          "slug": "michelin-food-stands-at-night-markets",
+          "via": "strong"
+        }
+      ]
+    },
+    "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0": {
+      "name": "Zhongzheng Walk",
+      "usedOn": [
+        "zhongzheng-walking-route"
+      ],
+      "links": [
+        {
+          "name": "National Taiwan Museum",
+          "layer": "Attractions",
+          "slug": "national-taiwan-museum",
+          "via": "exact"
+        },
+        {
+          "name": "Presidential Office Building",
+          "layer": "Attractions",
+          "slug": "presidential-office-building",
+          "via": "exact"
+        },
+        {
+          "name": "Chun Shui Tang",
+          "layer": "Attractions",
+          "slug": "chun-shui-tang",
+          "via": "exact"
+        },
+        {
+          "name": "Jin Feng Braised Pork Rice",
+          "layer": "Attractions",
+          "slug": "jin-feng-braised-pork-rice",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Guest House",
+          "layer": "Attractions",
+          "slug": "taipei-guest-house",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Guest House",
+          "layer": "Walking Directions",
+          "slug": "taipei-guest-house",
+          "via": "exact"
+        },
+        {
+          "name": "National Taiwan Museum",
+          "layer": "Walking Directions",
+          "slug": "national-taiwan-museum",
+          "via": "exact"
+        }
+      ]
+    },
+    "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI": {
+      "name": "Shilin Night Market",
+      "usedOn": [
+        "shilin-night-market"
+      ],
+      "links": [
+        {
+          "name": "Prince Cheese Potato",
+          "layer": "Untitled layer",
+          "slug": "prince-cheese-potatoes",
+          "via": "strong"
+        }
+      ]
+    },
+    "13MSBymYL_OYhuNh0zzW_O66BMchnp8k": {
+      "name": "Gongguan Walking Route",
+      "usedOn": [
+        "gongguan-walking-route"
+      ],
+      "links": [
+        {
+          "name": "Yong He Soy Milk King",
+          "layer": "Untitled layer",
+          "slug": "yong-he-soy-milk-king",
+          "via": "exact"
+        },
+        {
+          "name": "The Diner",
+          "layer": "Untitled layer",
+          "slug": "the-diner",
+          "via": "exact"
+        },
+        {
+          "name": "YU POKÉ",
+          "layer": "Untitled layer",
+          "slug": "yu-poke",
+          "via": "exact"
+        },
+        {
+          "name": "Lan Jia Gua Bao Traditional Taiwanese Snack",
+          "layer": "Untitled layer",
+          "slug": "lan-jia-traditional-taiwanese-snack",
+          "via": "strong"
+        }
+      ]
+    },
+    "10CLuvgEGA10i-fYUH5H4lpbVKc8pzgk7": {
+      "name": "Taipei Sports Centres",
+      "usedOn": [
+        "sports-centre-gym"
+      ],
+      "links": []
+    },
+    "1q4a7zbY3UFIM00aTygpXzjaLzk8rrao0": {
+      "name": "Best Taipei Cinemas",
+      "usedOn": [
+        "best-cinemas-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "Vie Show - Xinyi",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Vieshow - Banciao",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Ambassador - Ximen",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Ambassador - Zhongshan",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "in89 - Ximen",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Miramar - Neihu",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Miramar - Royal Studios",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Showtime - Zhongshan",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "The Spot - Huashan",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "The Spot - Zhongshan",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Eslite Art House - Songshan",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        },
+        {
+          "name": "Vie Show Muvie - Xinyi",
+          "layer": "Untitled layer",
+          "slug": "best-cinemas-in-taipei",
+          "via": "kml"
+        }
+      ]
+    },
+    "1JuDWfr2yts1Wca1kmU0OYI7n0-PgMItt": {
+      "name": "Ximending Street Art",
+      "usedOn": [
+        "ximending"
+      ],
+      "links": []
+    },
+    "1iqUw8ZlUJlIu3wueTxPXZ4CTgEDHrsY": {
+      "name": "Best Salads in Taipei",
+      "usedOn": [
+        "best-salads-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "Miacucina信義店",
+          "layer": "Untitled layer",
+          "slug": "miacucina",
+          "via": "exact"
+        },
+        {
+          "name": "MiaCucina",
+          "layer": "Untitled layer",
+          "slug": "miacucina",
+          "via": "exact"
+        },
+        {
+          "name": "TGI FRIDAYS 星期五美式餐廳 松高餐廳",
+          "layer": "Untitled layer",
+          "slug": "tgi-fridays",
+          "via": "exact"
+        },
+        {
+          "name": "Hungry Pans",
+          "layer": "Untitled layer",
+          "slug": "hungry-pans",
+          "via": "exact"
+        },
+        {
+          "name": "Hungry Pans 夯堡 北醫店",
+          "layer": "Untitled layer",
+          "slug": "hungry-pans",
+          "via": "exact"
+        },
+        {
+          "name": "Hungry Pans 夯堡 公館店",
+          "layer": "Untitled layer",
+          "slug": "hungry-pans",
+          "via": "exact"
+        }
+      ]
+    },
+    "1ANY9nbLlrCbHN5uo5UMJQR2DCvRHF_EZ": {
+      "name": "Best Areas to Walk in Taipei",
+      "usedOn": [
+        "best-areas-for-walking"
+      ],
+      "links": [
+        {
+          "name": "Xinyi Shopping District",
+          "layer": "Areas",
+          "slug": "xinyi-shopping-district",
+          "via": "exact"
+        },
+        {
+          "name": "Daan Forest Park",
+          "layer": "Areas",
+          "slug": "daan-forest-park",
+          "via": "exact"
+        },
+        {
+          "name": "National Taiwan University",
+          "layer": "Areas",
+          "slug": "national-taiwan-university",
+          "via": "exact"
+        },
+        {
+          "name": "Treasure Hill",
+          "layer": "Areas",
+          "slug": "treasure-hill",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Water Park",
+          "layer": "Areas",
+          "slug": "see-the-drinking-water-museum-at-taipei-water-park",
+          "via": "strong"
+        },
+        {
+          "name": "Xinbeitou",
+          "layer": "Areas",
+          "slug": "xinbeitou",
+          "via": "exact"
+        }
+      ]
+    },
+    "1e6ZUVDGBqHHrfM2Ngfnz0xzpK-a8Qho": {
+      "name": "Best Places to keep Kids Amused",
+      "usedOn": [
+        "best-places-to-keep-kids-amused"
+      ],
+      "links": [
+        {
+          "name": "Taipei Astronomical Museum",
+          "layer": "Untitled layer",
+          "slug": "taipei-astronomical-museum",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Zoo",
+          "layer": "Untitled layer",
+          "slug": "taipei-zoo",
+          "via": "exact"
+        },
+        {
+          "name": "National Taiwan Museum",
+          "layer": "Untitled layer",
+          "slug": "national-taiwan-museum",
+          "via": "exact"
+        },
+        {
+          "name": "MAJI Square",
+          "layer": "Untitled layer",
+          "slug": "maji-square",
+          "via": "exact"
+        },
+        {
+          "name": "Miniatures Museum of Taiwan",
+          "layer": "Untitled layer",
+          "slug": "miniatures-museum-of-taiwan",
+          "via": "exact"
+        },
+        {
+          "name": "i-Ride TAIPEI",
+          "layer": "Untitled layer",
+          "slug": "i-ride-taipei",
+          "via": "exact"
+        },
+        {
+          "name": "Shilin Night Market",
+          "layer": "Untitled layer",
+          "slug": "shilin-night-market",
+          "via": "exact"
+        },
+        {
+          "name": "Taipei Children's Amusement Park",
+          "layer": "Untitled layer",
+          "slug": "taipei-childrens-amusement-park",
+          "via": "strong"
+        },
+        {
+          "name": "National Taiwan Science Education Center",
+          "layer": "Untitled layer",
+          "slug": "national-taiwan-science-education-center",
+          "via": "exact"
+        }
+      ]
+    },
+    "1GUxk2x9mObka8wPS-bneD1uygGuGJVEi": {
+      "name": "Taipei 101 NYE Fireworks - Best Locations",
+      "usedOn": [
+        "taipei-101-fireworks-new-years-eve"
+      ],
+      "links": [
+        {
+          "name": "Taipei 101",
+          "layer": "Untitled layer",
+          "slug": "taipei-101",
+          "via": "exact"
+        },
+        {
+          "name": "Sun Yat-Sen Memorial Hall",
+          "layer": "Untitled layer",
+          "slug": "sun-yat-sen-memorial-hall",
+          "via": "exact"
+        },
+        {
+          "name": "Xinyi Shopping District",
+          "layer": "Untitled layer",
+          "slug": "xinyi-shopping-district",
+          "via": "exact"
+        },
+        {
+          "name": "Tiger Mountain",
+          "layer": "Untitled layer",
+          "slug": "tiger-mountain-ramble",
+          "via": "strong"
+        }
+      ]
+    },
+    "1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY": {
+      "name": "Best Brunches in Taipei",
+      "usedOn": [
+        "best-brunch-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "Kuang's Bistro",
+          "layer": "Locations",
+          "slug": "kuangs-bistro",
+          "via": "strong"
+        },
+        {
+          "name": "Sugar Pea Cafe",
+          "layer": "Locations",
+          "slug": "sugar-pea-cafe",
+          "via": "exact"
+        },
+        {
+          "name": "The Antipodean Specialty Coffee",
+          "layer": "Locations",
+          "slug": "the-antipodean-specialty-coffee",
+          "via": "exact"
+        },
+        {
+          "name": "FuMu - Come to Mama",
+          "layer": "Locations",
+          "slug": "fumu-come-to-mama",
+          "via": "exact"
+        }
+      ]
+    },
+    "1SKTRpmkNtx6L-uePbLJxFuXOt0wR2-Sh": {
+      "name": "Where to Shop in Taipei",
+      "usedOn": [
+        "where-to-shop-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "Xinyi Shopping District",
+          "layer": "Areas",
+          "slug": "xinyi-shopping-district",
+          "via": "exact"
+        },
+        {
+          "name": "Technology District",
+          "layer": "Areas",
+          "slug": "taipei-technology-district",
+          "via": "strong"
+        },
+        {
+          "name": "Shilin Night Market",
+          "layer": "Areas",
+          "slug": "shilin-night-market",
+          "via": "exact"
+        }
+      ]
+    },
+    "1AmROqVqlBufN153Jf_ME0clo-p4tgkFW": {
+      "name": "Daan Walk",
+      "usedOn": [
+        "daan-walking-route"
+      ],
+      "links": [
+        {
+          "name": "Daan Forest Park",
+          "layer": "Untitled layer",
+          "slug": "daan-forest-park",
+          "via": "exact"
+        },
+        {
+          "name": "Daan Forest Park",
+          "layer": "Directions from No. 65, Section 3, Ren'ai Road, Da’an District, Taipei City, Taiwan 106 to 100, Taiwan, Taipei City, Zhongzheng District, 台9線31號",
+          "slug": "daan-forest-park",
+          "via": "exact"
+        }
+      ]
+    },
+    "1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk": {
+      "name": "Best Cafes to Work",
+      "usedOn": [
+        "best-cafes-to-work"
+      ],
+      "links": [
+        {
+          "name": "羊毛與花 ‧ 永康 youmoutoohana Coffee",
+          "layer": "Untitled layer",
+          "slug": "youmoutoohana-coffee",
+          "via": "exact"
+        },
+        {
+          "name": "YABOO Cafe",
+          "layer": "Untitled layer",
+          "slug": "yaboo-cafe",
+          "via": "exact"
+        },
+        {
+          "name": "Café Costumice",
+          "layer": "Untitled layer",
+          "slug": "cafe-costumice",
+          "via": "exact"
+        },
+        {
+          "name": "CAMPUS CAFE",
+          "layer": "Untitled layer",
+          "slug": "campus-cafe",
+          "via": "exact"
+        },
+        {
+          "name": "Campus Cafe",
+          "layer": "Untitled layer",
+          "slug": "campus-cafe",
+          "via": "exact"
+        },
+        {
+          "name": "Campus Cafe",
+          "layer": "Untitled layer",
+          "slug": "campus-cafe",
+          "via": "exact"
+        },
+        {
+          "name": "Campus Cafe",
+          "layer": "Untitled layer",
+          "slug": "campus-cafe",
+          "via": "exact"
+        }
+      ]
+    },
+    "14dRoo4muFmstlhi_x4DPKcBh2q5D6WQU": {
+      "name": "Cool Convenience Stores",
+      "usedOn": [
+        "taipei-convenience-stores"
+      ],
+      "links": []
+    },
+    "1HQF8GWP_yR6KEodOuISBRf4DVFxgUBSB": {
+      "name": "Best Places to see Art in Taipei",
+      "usedOn": [
+        "best-places-to-see-art-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "Taipei Fine Arts Museum",
+          "layer": "Art",
+          "slug": "fine-arts-museum",
+          "via": "strong"
+        },
+        {
+          "name": "National Palace Museum",
+          "layer": "Art",
+          "slug": "national-palace-museum",
+          "via": "exact"
+        },
+        {
+          "name": "Treasure Hill",
+          "layer": "Art",
+          "slug": "treasure-hill",
+          "via": "exact"
+        },
+        {
+          "name": "Sun Yat-Sen Memorial Hall",
+          "layer": "Art",
+          "slug": "sun-yat-sen-memorial-hall",
+          "via": "exact"
+        }
+      ]
+    },
+    "1wTVO7wprGD_2TkxKbv5futceOGJhw9wW": {
+      "name": "Din Tai Fung - Taipei Locations",
+      "usedOn": [
+        "din-tai-fung"
+      ],
+      "links": []
+    },
+    "1WlPV7i46p5OIgy6LJ7bs8TPmxn_tDzJL": {
+      "name": "Chunghwa Telecom",
+      "usedOn": [
+        "taiwan-sim-cards"
+      ],
+      "links": []
+    },
+    "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg": {
+      "name": "Night Market Locations",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "links": [
+        {
+          "name": "Ningxia Night Market",
+          "layer": "Untitled layer",
+          "slug": "ningxia-night-market",
+          "via": "exact"
+        },
+        {
+          "name": "Raohe Night Market",
+          "layer": "Untitled layer",
+          "slug": "raohe-night-market-foody-heaven",
+          "via": "strong"
+        },
+        {
+          "name": "Shilin Night Market",
+          "layer": "Untitled layer",
+          "slug": "shilin-night-market",
+          "via": "exact"
+        },
+        {
+          "name": "Gongguan Night Market",
+          "layer": "Untitled layer",
+          "slug": "gongguan-night-market",
+          "via": "exact"
+        },
+        {
+          "name": "Huaxi Street Night Market",
+          "layer": "Untitled layer",
+          "slug": "huaxi-street-night-market",
+          "via": "exact"
+        }
+      ]
+    },
+    "1pexQbmbfxeVUi7X1gM8_jwVZpJFO5jY": {
+      "name": "Taipei Local Restaurants",
+      "usedOn": [
+        "best-famous-restaurants"
+      ],
+      "links": [
+        {
+          "name": "Yong He Soy Milk King",
+          "layer": "Untitled layer",
+          "slug": "yong-he-soy-milk-king",
+          "via": "exact"
+        },
+        {
+          "name": "Fuhang Soy Milk",
+          "layer": "Untitled layer",
+          "slug": "fuhang-soy-milk",
+          "via": "exact"
+        },
+        {
+          "name": "Jin Feng Braised Pork Rice",
+          "layer": "Untitled layer",
+          "slug": "jin-feng-braised-pork-rice",
+          "via": "exact"
+        },
+        {
+          "name": "Ay-Chung Flour-Rice Noodle",
+          "layer": "Untitled layer",
+          "slug": "ay-chung-flour-rice-noodles",
+          "via": "strong"
+        },
+        {
+          "name": "Tian Jin Onion Pancake",
+          "layer": "Untitled layer",
+          "slug": "tian-jin-onion-pancake",
+          "via": "exact"
+        },
+        {
+          "name": "Eastern Ice Store",
+          "layer": "Untitled layer",
+          "slug": "eastern-ice-store",
+          "via": "exact"
+        },
+        {
+          "name": "Lan Jia Traditional Taiwanese Snack",
+          "layer": "Untitled layer",
+          "slug": "lan-jia-traditional-taiwanese-snack",
+          "via": "exact"
+        }
+      ]
+    },
+    "1CKQGjDHlCcX8I8TN1oxy21xUQ2PsFb0": {
+      "name": "Vegetarian/Vegan Restaurants",
+      "usedOn": [
+        "best-vegetarian-restaurants-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "MiaCucina",
+          "layer": "Untitled layer",
+          "slug": "miacucina",
+          "via": "exact"
+        },
+        {
+          "name": "Miacucina信義店",
+          "layer": "Untitled layer",
+          "slug": "miacucina",
+          "via": "exact"
+        },
+        {
+          "name": "Plants",
+          "layer": "Untitled layer",
+          "slug": "plants",
+          "via": "exact"
+        }
+      ]
+    },
+    "1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq": {
+      "name": "Outdoor Drinking Areas",
+      "usedOn": [
+        "best-outdoor-drinking"
+      ],
+      "links": [
+        {
+          "name": "Landmark Taihu",
+          "layer": "Locations",
+          "slug": "landmark-taihu",
+          "via": "exact"
+        },
+        {
+          "name": "On Tap",
+          "layer": "Locations",
+          "slug": "on-tap",
+          "via": "exact"
+        },
+        {
+          "name": "The Three Lions Inn",
+          "layer": "Locations",
+          "slug": "the-three-lions-inn",
+          "via": "exact"
+        }
+      ]
+    },
+    "1dxuwYzOcH9ZnVKiCzDGxdTknnucbaRo": {
+      "name": "Best Shopping Malls in Taipei",
+      "usedOn": [
+        "best-shopping-malls-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "Syntrend",
+          "layer": "Untitled layer",
+          "slug": "taipei-technology-district",
+          "via": "strong"
+        }
+      ]
+    },
+    "1eZIoMiqUs1mUewsJ9x2ZncrPaRnb4UTz": {
+      "name": "Best Bars in Taipei",
+      "usedOn": [
+        "best-bars-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "ON TAP",
+          "layer": "Bars",
+          "slug": "on-tap",
+          "via": "exact"
+        },
+        {
+          "name": "The Brass Monkey",
+          "layer": "Bars",
+          "slug": "brass-monkey",
+          "via": "strong"
+        },
+        {
+          "name": "Revolver",
+          "layer": "Bars",
+          "slug": "revolver",
+          "via": "exact"
+        },
+        {
+          "name": "Beer Geek",
+          "layer": "Bars",
+          "slug": "beer-geek",
+          "via": "exact"
+        },
+        {
+          "name": "The Three Lions Inn",
+          "layer": "Bars",
+          "slug": "the-three-lions-inn",
+          "via": "exact"
+        },
+        {
+          "name": "Driftwood",
+          "layer": "Bars",
+          "slug": "driftwood",
+          "via": "exact"
+        }
+      ]
+    },
+    "1XSUQNCdkE0bIBCPEdATZ8M2b_05oEI4": {
+      "name": "Best Zhongzheng Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "1Qf26AeJpZUD8do8PdZ15eJGReKX6nT2w": {
+      "name": "Songshan/Xinyi Walking Route",
+      "usedOn": [
+        "songshan-xinyi-walking-tour"
+      ],
+      "links": []
+    },
+    "1Z2lrB1sYhfmYkftXSCzEhyjEQEVSlZc": {
+      "name": "Best Daan Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "1jrxNrwZLiwq41or1yS1qhggEaWjPgOQ": {
+      "name": "Best Wanhua Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "1VJjTMTkzrPBy0MGBO2RWzLO_RlpfTsA": {
+      "name": "Cheap Breakfasts Taipei",
+      "usedOn": [
+        "cheap-breakfast-taipei"
+      ],
+      "links": [
+        {
+          "name": "Golden Flower Grilled Toast",
+          "layer": "Untitled layer",
+          "slug": "golden-flower-grilled-toast",
+          "via": "exact"
+        },
+        {
+          "name": "Yong He Soy Milk King",
+          "layer": "Untitled layer",
+          "slug": "yong-he-soy-milk-king",
+          "via": "exact"
+        },
+        {
+          "name": "Fuhang Soy Milk",
+          "layer": "Untitled layer",
+          "slug": "fuhang-soy-milk",
+          "via": "exact"
+        },
+        {
+          "name": "Tian Jin Onion Pancake",
+          "layer": "Untitled layer",
+          "slug": "tian-jin-onion-pancake",
+          "via": "exact"
+        },
+        {
+          "name": "Lin's Chinese Pizza",
+          "layer": "Untitled layer",
+          "slug": "lins-chinese-pizza",
+          "via": "strong"
+        }
+      ]
+    },
+    "1IVJmaeWdGmkE2EHuAwrGdgV53b24Aypv": {
+      "name": "Best Music Venues in Taipei",
+      "usedOn": [
+        "best-places-for-live-music-in-taipei"
+      ],
+      "links": [
+        {
+          "name": "Revolver",
+          "layer": "Music Venues",
+          "slug": "revolver",
+          "via": "exact"
+        },
+        {
+          "name": "Legacy Taipei",
+          "layer": "Music Venues",
+          "slug": "legacy-taipei",
+          "via": "exact"
+        },
+        {
+          "name": "Sappho Live Jazz",
+          "layer": "Music Venues",
+          "slug": "sappho-live-jazz",
+          "via": "exact"
+        }
+      ]
+    },
+    "1F0snpqnQIzdsUwRWtiK_i3Y-sLdekj0": {
+      "name": "Best Songshan Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "1bWK96ALEWeOqteYIUpZ0QhKUnJVKX5I": {
+      "name": "Raohe Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets",
+        "raohe-night-market-foody-heaven"
+      ],
+      "links": []
+    },
+    "1eIF3H6-1POHbm3VYi9dOPxC5p_ckDbE": {
+      "name": "Linjiang Street Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets",
+        "tonghua-night-market"
+      ],
+      "links": []
+    },
+    "1udTSilmMxZJqXLtZDNuwyerXL03i9p8": {
+      "name": "Shilin Night Market Michelin",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "links": [
+        {
+          "name": "Prince Cheese Potato",
+          "layer": "Untitled layer",
+          "slug": "prince-cheese-potatoes",
+          "via": "strong"
+        }
+      ]
+    },
+    "1YfgO1Wzn2N19QIVqrGDYrApWz7k9mk8": {
+      "name": "Ningxia Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets",
+        "ningxia-night-market"
+      ],
+      "links": []
+    },
+    "1kak9h_BaoBk5EYPr2UFvyG8f-iGAx-Y": {
+      "name": "Best Xinyi Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "1t8f-RwJabGRD52HtFpITkYXcUNZ2-c8": {
+      "name": "Best Zhongshan Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "18w3BADsJvP9j9ZSjeFxxGavD4p_TMg0": {
+      "name": "Best Other Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "1aoH6xxH-tthLKafMeO4uxlHo43JTRCY": {
+      "name": "Nanjichang Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "links": []
+    },
+    "17EySLgMzIpgfCZlqCTuXegvhAvveGXdo": {
+      "name": "National Taiwan Museum",
+      "usedOn": [
+        "national-taiwan-museum"
+      ],
+      "links": [
+        {
+          "name": "National Taiwan Museum",
+          "layer": "National Taiwan Museum",
+          "slug": "national-taiwan-museum",
+          "via": "exact"
+        }
+      ]
+    },
+    "1X3twx2z6wbjfNvNoqYXZpGLeq-jllh8e": {
+      "name": "Best Craft Beer in Taipei",
+      "usedOn": [
+        "best-places-to-drink-craft-beer-taipei"
+      ],
+      "links": [
+        {
+          "name": "Taihu Craft Beer Tasting Room",
+          "layer": "Untitled layer",
+          "slug": "taihu-craft-beer-tasting-room",
+          "via": "exact"
+        },
+        {
+          "name": "23 Public",
+          "layer": "Untitled layer",
+          "slug": "23-public",
+          "via": "exact"
+        },
+        {
+          "name": "掌門精釀啤酒Tap Bistro Zhangmen - 微風松高店",
+          "layer": "Untitled layer",
+          "slug": "tap-bistro-zhangmen",
+          "via": "exact"
+        }
+      ]
+    },
+    "1WPVlLDcuie4e8_-Yxms8tGSnlTsa5AI": {
+      "name": "Yansan Night Market Michelin",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "links": []
+    },
+    "1R4l8D26wqbkmQmMEpWLL3lilCZbDuYY": {
+      "name": "Gongguan Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "links": [
+        {
+          "name": "Ho’s Sweet Potato Balls",
+          "layer": "Untitled layer",
+          "slug": "hos-sweet-potato",
+          "via": "strong"
+        }
+      ]
+    },
+    "180W21XXncUobmCIwracQF5a9t3sbK1c": {
+      "name": "Beitou Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "links": []
+    },
+    "1UKpoyUqqa685uQpV7J-D81Po5JEx8Rg": {
+      "name": "Huaxi Street Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "links": []
+    }
+  },
+  "weak": [
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Songshan Cultural and Creative Park No 1. Warehouse",
+      "guess": "songshan-cultural-and-creative-park",
+      "title": "Songshan Cultural and Creative Park: Full Guide",
+      "score": 0.57
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Nanjichang Night Market",
+      "guess": "tonghua-night-market",
+      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
+      "score": 0.4
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Taipei 228 Memorial Museum",
+      "guess": "peace-park",
+      "title": "Visit the 228 Peace Memorial Park & Museum",
+      "score": 0.5
+    },
+    {
+      "map": "Taipei Sightseeing Bus Route",
+      "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
+      "place": "⑤Xiaonanmen(Toward CHIANG KAI-SHEK MEMORIAL HALL)",
+      "guess": "chiang-kai-shek-memorial-hall",
+      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
+      "score": 0.56
+    },
+    {
+      "map": "Taipei Sightseeing Bus Route",
+      "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
+      "place": "⑧MRT DAAN PARK STATION",
+      "guess": "taipei-jazz-festival",
+      "title": "Taipei Jazz Festival - Free Jazz at Daan Park",
+      "score": 0.4
+    },
+    {
+      "map": "Taipei Sightseeing Bus Route",
+      "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
+      "place": "⑮MRT SUN YAT-SEN MEMORIAL HALL STATION",
+      "guess": "sun-yat-sen-memorial-hall",
+      "title": "Sun Yat-Sen Memorial Hall: Closed Until Late 2026",
+      "score": 0.56
+    },
+    {
+      "map": "Datong Walk",
+      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
+      "place": "Dalong Street Night Market",
+      "guess": "tonghua-night-market",
+      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
+      "score": 0.4
+    },
+    {
+      "map": "Datong Walk",
+      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
+      "place": "Taipei Expo Farmer's Market",
+      "guess": "expo-farmers-market",
+      "title": "Home Grown Produce at Expo Farmer's Market",
+      "score": 0.57
+    },
+    {
+      "map": "Datong Walk",
+      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
+      "place": "Taipei Collective Botanical Garden",
+      "guess": "collective-botanical-garden",
+      "title": "Visit the Zones of the Collective Botanical Garden",
+      "score": 0.6
+    },
+    {
+      "map": "Datong Walk",
+      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
+      "place": "Taipei Collective Botanical Garden",
+      "guess": "collective-botanical-garden",
+      "title": "Visit the Zones of the Collective Botanical Garden",
+      "score": 0.6
+    },
+    {
+      "map": "Zhongzheng Walk",
+      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
+      "place": "National Chiang Kai-shek Memorial Hall",
+      "guess": "chiang-kai-shek-memorial-hall",
+      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
+      "score": 0.56
+    },
+    {
+      "map": "Zhongzheng Walk",
+      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
+      "place": "National Taiwan University Hospital",
+      "guess": "national-taiwan-university",
+      "title": "Navigate the Campus at National Taiwan University",
+      "score": 0.5
+    },
+    {
+      "map": "Zhongzheng Walk",
+      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
+      "place": "Taiwan Provincial City God Temple",
+      "guess": "confucius-temple",
+      "title": "Taipei Confucius Temple: The City's Quietest Temple",
+      "score": 0.4
+    },
+    {
+      "map": "Zhongzheng Walk",
+      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
+      "place": "National Taiwan University Hospital",
+      "guess": "national-taiwan-university",
+      "title": "Navigate the Campus at National Taiwan University",
+      "score": 0.5
+    },
+    {
+      "map": "Zhongzheng Walk",
+      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
+      "place": "Taiwan Provincial City God Temple",
+      "guess": "confucius-temple",
+      "title": "Taipei Confucius Temple: The City's Quietest Temple",
+      "score": 0.4
+    },
+    {
+      "map": "Shilin Night Market",
+      "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
+      "place": "Modern Toilet Theme Restaurant",
+      "guess": "modern-toilet",
+      "title": "Enjoy a 'Crap' Meal at Modern Toilet",
+      "score": 0.4
+    },
+    {
+      "map": "Shilin Night Market",
+      "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
+      "place": "Xin Fa Ting Shaved Ice",
+      "guess": "shaved-ice-huaxi",
+      "title": "Traditional Desserts at Shaved Ice Huaxi",
+      "score": 0.4
+    },
+    {
+      "map": "Shilin Night Market",
+      "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
+      "place": "Shaved Ice and Condensed Milk Desserts",
+      "guess": "shaved-ice-huaxi",
+      "title": "Traditional Desserts at Shaved Ice Huaxi",
+      "score": 0.6
+    },
+    {
+      "map": "Gongguan Walking Route",
+      "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
+      "place": "Madame Jill's Vietnamese Cuisine",
+      "guess": "homes-thai",
+      "title": "Authentic Thai Cuisine at Home's Thai",
+      "score": 0.4
+    },
+    {
+      "map": "Gongguan Walking Route",
+      "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
+      "place": "Museum of Drinking Water",
+      "guess": "see-the-drinking-water-museum-at-taipei-water-park",
+      "title": "See the Drinking Water Museum at Taipei Water Park",
+      "score": 0.6
+    },
+    {
+      "map": "Gongguan Walking Route",
+      "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
+      "place": "Treasure Hill Artist Village",
+      "guess": "treasure-hill",
+      "title": "Watch an Artist at Work at Treasure Hill",
+      "score": 0.6
+    },
+    {
+      "map": "Best Places to keep Kids Amused",
+      "mid": "1e6ZUVDGBqHHrfM2Ngfnz0xzpK-a8Qho",
+      "place": "Modern Toilet Theme Restaurant",
+      "guess": "modern-toilet",
+      "title": "Enjoy a 'Crap' Meal at Modern Toilet",
+      "score": 0.4
+    },
+    {
+      "map": "Best Brunches in Taipei",
+      "mid": "1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY",
+      "place": "Tamed Fox (Daan)",
+      "guess": "tamed-fox",
+      "title": "Healthy and Tasty Brunches at Tamed Fox",
+      "score": 0.4
+    },
+    {
+      "map": "Best Brunches in Taipei",
+      "mid": "1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY",
+      "place": "Tamed Fox (Xinyi)",
+      "guess": "tamed-fox",
+      "title": "Healthy and Tasty Brunches at Tamed Fox",
+      "score": 0.4
+    },
+    {
+      "map": "Daan Walk",
+      "mid": "1AmROqVqlBufN153Jf_ME0clo-p4tgkFW",
+      "place": "National Chiang Kai-shek Memorial Hall",
+      "guess": "chiang-kai-shek-memorial-hall",
+      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
+      "score": 0.56
+    },
+    {
+      "map": "Daan Walk",
+      "mid": "1AmROqVqlBufN153Jf_ME0clo-p4tgkFW",
+      "place": "National Chiang Kai-shek Memorial Hall",
+      "guess": "chiang-kai-shek-memorial-hall",
+      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
+      "score": 0.56
+    },
+    {
+      "map": "Best Cafes to Work",
+      "mid": "1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk",
+      "place": "Louisa Coffee Daan Forest Park",
+      "guess": "daan-forest-park",
+      "title": "See the Island of Birds at Daan Forest Park",
+      "score": 0.5
+    },
+    {
+      "map": "Best Cafes to Work",
+      "mid": "1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk",
+      "place": "CAMPUS CAFE Guangfu Branch",
+      "guess": "campus-cafe",
+      "title": "Nice Western Food at Campus Cafe",
+      "score": 0.4
+    },
+    {
+      "map": "Night Market Locations",
+      "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
+      "place": "Nanjichang Night Market",
+      "guess": "tonghua-night-market",
+      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
+      "score": 0.4
+    },
+    {
+      "map": "Night Market Locations",
+      "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
+      "place": "Linjiang St. Night Market",
+      "guess": "tonghua-night-market",
+      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
+      "score": 0.4
+    },
+    {
+      "map": "Night Market Locations",
+      "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
+      "place": "Yansan Night Market",
+      "guess": "tonghua-night-market",
+      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
+      "score": 0.4
+    },
+    {
+      "map": "Taipei Local Restaurants",
+      "mid": "1pexQbmbfxeVUi7X1gM8_jwVZpJFO5jY",
+      "place": "Yongkang Beef Noodles",
+      "guess": "yong-kang-beef-noodles",
+      "title": "Yong Kang Beef Noodles - Still the Best in Taipei?",
+      "score": 0.4
+    },
+    {
+      "map": "Outdoor Drinking Areas",
+      "mid": "1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq",
+      "place": "Ximen Outdoor Drinking Area",
+      "guess": "ximen-outdoor-drinking",
+      "title": "Ximending Outdoor Drinking Area: Bars & Prices",
+      "score": 0.5
+    },
+    {
+      "map": "Outdoor Drinking Areas",
+      "mid": "1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq",
+      "place": "Kahu Craft Beer Garden",
+      "guess": "best-places-to-drink-craft-beer-taipei",
+      "title": "The Best Places to Enjoy a Fine Craft Beer",
+      "score": 0.4
+    },
+    {
+      "map": "Raohe Night Market",
+      "mid": "1bWK96ALEWeOqteYIUpZ0QhKUnJVKX5I",
+      "place": "Hongshao Beef Noodle Restaurant",
+      "guess": "kobayashi-noodle-restaurant",
+      "title": "Kobayashi Noodle Restaurant (小林麵食館), Taipei",
+      "score": 0.5
+    },
+    {
+      "map": "Ningxia Night Market",
+      "mid": "1YfgO1Wzn2N19QIVqrGDYrApWz7k9mk8",
+      "place": "Shaved Peanut Ice Cream",
+      "guess": "shaved-ice-huaxi",
+      "title": "Traditional Desserts at Shaved Ice Huaxi",
+      "score": 0.4
+    },
+    {
+      "map": "National Taiwan Museum",
+      "mid": "17EySLgMzIpgfCZlqCTuXegvhAvveGXdo",
+      "place": "National Taiwan Museum Nanmen Park",
+      "guess": "national-taiwan-museum",
+      "title": "See the Dinosaurs at the National Taiwan Museum",
+      "score": 0.5
+    }
+  ]
+}
