@@ -77,7 +77,63 @@ function match(name) {
   return { grade: "none" };
 }
 
-const tally = { fromKml: 0, exact: 0, strong: 0, weak: 0, none: 0 };
+// Hand-reviewed calls on the weak tier. The score does not separate right
+// from wrong here - "Tamed Fox (Daan)" scores 0.4 and is correct, "Nanjichang
+// Night Market" scores 0.4 and is a different market entirely - so these were
+// read one at a time. A slug accepts the match; null rejects it for good, so
+// a rerun does not put it back in the review pile.
+const OVERRIDES = {
+  // Accepted
+  "Songshan Cultural and Creative Park No 1. Warehouse": "songshan-cultural-and-creative-park",
+  "Taipei 228 Memorial Museum": "peace-park",
+  "Taipei Expo Farmer's Market": "expo-farmers-market",
+  "Taipei Collective Botanical Garden": "collective-botanical-garden",
+  "National Chiang Kai-shek Memorial Hall": "chiang-kai-shek-memorial-hall",
+  "Shaved Ice and Condensed Milk Desserts": "shaved-ice-huaxi",
+  "Museum of Drinking Water": "see-the-drinking-water-museum-at-taipei-water-park",
+  "Treasure Hill Artist Village": "treasure-hill",
+  "Ximen Outdoor Drinking Area": "ximen-outdoor-drinking",
+  "National Taiwan Museum Nanmen Park": "national-taiwan-museum",
+  "Modern Toilet Theme Restaurant": "modern-toilet",
+  "Tamed Fox (Daan)": "tamed-fox",
+  "Tamed Fox (Xinyi)": "tamed-fox",
+  "CAMPUS CAFE Guangfu Branch": "campus-cafe",
+  "Yongkang Beef Noodles": "yong-kang-beef-noodles",
+  // Linjiang Street and Tonghua are two names for the same market - the main
+  // map's own pin for it links to /tonghua-night-market.
+  "Linjiang St. Night Market": "tonghua-night-market",
+  // A stop or station named after the thing it serves: the reader wants the
+  // attraction, not a page about the platform.
+  "⑤Xiaonanmen(Toward CHIANG KAI-SHEK MEMORIAL HALL)": "chiang-kai-shek-memorial-hall",
+  "⑮MRT SUN YAT-SEN MEMORIAL HALL STATION": "sun-yat-sen-memorial-hall",
+  "Louisa Coffee Daan Forest Park": "daan-forest-park",
+  "National Taiwan University Hospital": "national-taiwan-university",
+  "Kahu Craft Beer Garden": "best-places-to-drink-craft-beer-taipei",
+
+  // Pins whose own URL is a retired slug that Cloudflare 308-redirects. The
+  // link works for a reader but is not a slug we hold, so it is resolved here
+  // to the page it actually lands on. Tamsui is the exception: its pin points
+  // at /danshui, which redirects to the day-trips round-up, when the district
+  // has had its own page for a while.
+  "Tamsui District": "tamsui",
+  "Thermal Valley": "xinbeitou",
+  "Beitou Hot Spring Museum": "xinbeitou",
+  "Taipei Botanical Garden": "taipei-botanical-garden",
+  "Daan Forest Park": "daan-forest-park",
+
+  // Rejected - a different place that happens to share words
+  "Nanjichang Night Market": null,
+  "Dalong Street Night Market": null,
+  "Yansan Night Market": null,
+  "Taiwan Provincial City God Temple": null,
+  "⑧MRT DAAN PARK STATION": null,
+  "Madame Jill's Vietnamese Cuisine": null,
+  "Xin Fa Ting Shaved Ice": null,
+  "Shaved Peanut Ice Cream": null,
+  "Hongshao Beef Noodle Restaurant": null,
+};
+
+const tally = { fromKml: 0, exact: 0, strong: 0, weak: 0, none: 0, override: 0, rejected: 0 };
 const weak = [];
 const resolved = {};
 
@@ -98,6 +154,20 @@ for (const entry of index.maps) {
         // Dead URL in the map - fall through and try to match by name instead.
       }
 
+      if (Object.prototype.hasOwnProperty.call(OVERRIDES, place.name)) {
+        const slug = OVERRIDES[place.name];
+        if (slug === null) {
+          tally.rejected++;
+        } else if (bySlug.has(slug)) {
+          tally.override++;
+          links.push({ name: place.name, layer: layer.name, slug, via: "reviewed" });
+        } else {
+          console.error(`Override for "${place.name}" points at /${slug}, which does not exist.`);
+          process.exit(1);
+        }
+        continue;
+      }
+
       const m = match(place.name);
       tally[m.grade]++;
       if (m.grade === "exact" || m.grade === "strong") {
@@ -111,12 +181,14 @@ for (const entry of index.maps) {
 }
 
 const total = Object.values(tally).reduce((a, b) => a + b, 0);
-const linked = tally.fromKml + tally.exact + tally.strong;
+const linked = tally.fromKml + tally.exact + tally.strong + tally.override;
 
 console.log("Matching map pins to pages\n");
 console.log(`  from the map's own link   ${String(tally.fromKml).padStart(4)}`);
 console.log(`  exact name match          ${String(tally.exact).padStart(4)}`);
 console.log(`  strong name match         ${String(tally.strong).padStart(4)}`);
+console.log(`  hand-reviewed, accepted   ${String(tally.override).padStart(4)}`);
+console.log(`  hand-reviewed, rejected   ${String(tally.rejected).padStart(4)}`);
 console.log(`  weak - needs review       ${String(tally.weak).padStart(4)}`);
 console.log(`  no candidate              ${String(tally.none).padStart(4)}`);
 console.log(`  ${"-".repeat(30)}`);

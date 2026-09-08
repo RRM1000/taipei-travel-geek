@@ -1,11 +1,13 @@
 {
-  "generatedAt": "2026-09-08T06:44:28.644Z",
+  "generatedAt": "2026-09-08T07:58:19.540Z",
   "tally": {
     "fromKml": 178,
-    "exact": 95,
+    "exact": 90,
     "strong": 22,
-    "weak": 37,
-    "none": 349
+    "weak": 0,
+    "none": 346,
+    "override": 34,
+    "rejected": 11
   },
   "maps": {
     "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr": {
@@ -25,6 +27,12 @@
           "layer": "Visit",
           "slug": "chiang-kai-shek-memorial-hall",
           "via": "kml"
+        },
+        {
+          "name": "Tamsui District",
+          "layer": "Visit",
+          "slug": "tamsui",
+          "via": "reviewed"
         },
         {
           "name": "Ximending Shopping District",
@@ -48,7 +56,7 @@
           "name": "Daan Forest Park",
           "layer": "Visit",
           "slug": "daan-forest-park",
-          "via": "exact"
+          "via": "reviewed"
         },
         {
           "name": "2/28 Peace Park",
@@ -81,16 +89,28 @@
           "via": "kml"
         },
         {
+          "name": "Thermal Valley",
+          "layer": "Visit",
+          "slug": "xinbeitou",
+          "via": "reviewed"
+        },
+        {
           "name": "Huashan 1914 Creative Park",
           "layer": "Visit",
           "slug": "huashan-1914-creative-park",
           "via": "kml"
         },
         {
+          "name": "Songshan Cultural and Creative Park No 1. Warehouse",
+          "layer": "Visit",
+          "slug": "songshan-cultural-and-creative-park",
+          "via": "reviewed"
+        },
+        {
           "name": "Taipei Botanical Garden",
           "layer": "Visit",
           "slug": "taipei-botanical-garden",
-          "via": "exact"
+          "via": "reviewed"
         },
         {
           "name": "Taipei Collective Botanical Garden",
@@ -915,10 +935,22 @@
           "via": "kml"
         },
         {
+          "name": "Taipei 228 Memorial Museum",
+          "layer": "Culture",
+          "slug": "peace-park",
+          "via": "reviewed"
+        },
+        {
           "name": "Miniatures Museum of Taiwan",
           "layer": "Culture",
           "slug": "miniatures-museum-of-taiwan",
           "via": "kml"
+        },
+        {
+          "name": "Beitou Hot Spring Museum",
+          "layer": "Culture",
+          "slug": "xinbeitou",
+          "via": "reviewed"
         },
         {
           "name": "Museum of Drinking Water",
@@ -1043,6 +1075,12 @@
       ],
       "links": [
         {
+          "name": "⑤Xiaonanmen(Toward CHIANG KAI-SHEK MEMORIAL HALL)",
+          "layer": "RED",
+          "slug": "chiang-kai-shek-memorial-hall",
+          "via": "reviewed"
+        },
+        {
           "name": "⑥CHIANG KAI-SHEK MEMORIAL HALL",
           "layer": "RED",
           "slug": "chiang-kai-shek-memorial-hall",
@@ -1053,6 +1091,12 @@
           "layer": "RED",
           "slug": "taipei-101",
           "via": "exact"
+        },
+        {
+          "name": "⑮MRT SUN YAT-SEN MEMORIAL HALL STATION",
+          "layer": "RED",
+          "slug": "sun-yat-sen-memorial-hall",
+          "via": "reviewed"
         },
         {
           "name": "⑲HUASHAN 1914 CREATIVE PARK",
@@ -1095,6 +1139,12 @@
           "via": "strong"
         },
         {
+          "name": "Taipei Expo Farmer's Market",
+          "layer": "Attractions",
+          "slug": "expo-farmers-market",
+          "via": "reviewed"
+        },
+        {
           "name": "MAJI Square",
           "layer": "Attractions",
           "slug": "maji-square",
@@ -1119,6 +1169,12 @@
           "via": "exact"
         },
         {
+          "name": "Taipei Collective Botanical Garden",
+          "layer": "Attractions",
+          "slug": "collective-botanical-garden",
+          "via": "reviewed"
+        },
+        {
           "name": "Taipei Story House",
           "layer": "West Walk - Temples and Night Market",
           "slug": "taipei-story-house",
@@ -1135,6 +1191,12 @@
           "layer": "West Walk - Temples and Night Market",
           "slug": "lin-an-tai-ancestral-house",
           "via": "exact"
+        },
+        {
+          "name": "Taipei Collective Botanical Garden",
+          "layer": "West Walk - Temples and Night Market",
+          "slug": "collective-botanical-garden",
+          "via": "reviewed"
         },
         {
           "name": "Dalongdong Baoan Temple",
@@ -1184,6 +1246,18 @@
       ],
       "links": [
         {
+          "name": "National Chiang Kai-shek Memorial Hall",
+          "layer": "Attractions",
+          "slug": "chiang-kai-shek-memorial-hall",
+          "via": "reviewed"
+        },
+        {
+          "name": "National Taiwan University Hospital",
+          "layer": "Attractions",
+          "slug": "national-taiwan-university",
+          "via": "reviewed"
+        },
+        {
           "name": "National Taiwan Museum",
           "layer": "Attractions",
           "slug": "national-taiwan-museum",
@@ -1214,6 +1288,12 @@
           "via": "exact"
         },
         {
+          "name": "National Taiwan University Hospital",
+          "layer": "Walking Directions",
+          "slug": "national-taiwan-university",
+          "via": "reviewed"
+        },
+        {
           "name": "Taipei Guest House",
           "layer": "Walking Directions",
           "slug": "taipei-guest-house",
@@ -1238,6 +1318,18 @@
           "layer": "Untitled layer",
           "slug": "prince-cheese-potatoes",
           "via": "strong"
+        },
+        {
+          "name": "Modern Toilet Theme Restaurant",
+          "layer": "Untitled layer",
+          "slug": "modern-toilet",
+          "via": "reviewed"
+        },
+        {
+          "name": "Shaved Ice and Condensed Milk Desserts",
+          "layer": "Untitled layer",
+          "slug": "shaved-ice-huaxi",
+          "via": "reviewed"
         }
       ]
     },
@@ -1270,6 +1362,18 @@
           "layer": "Untitled layer",
           "slug": "lan-jia-traditional-taiwanese-snack",
           "via": "strong"
+        },
+        {
+          "name": "Museum of Drinking Water",
+          "layer": "Untitled layer",
+          "slug": "see-the-drinking-water-museum-at-taipei-water-park",
+          "via": "reviewed"
+        },
+        {
+          "name": "Treasure Hill Artist Village",
+          "layer": "Untitled layer",
+          "slug": "treasure-hill",
+          "via": "reviewed"
         }
       ]
     },
@@ -1427,7 +1531,7 @@
           "name": "Daan Forest Park",
           "layer": "Areas",
           "slug": "daan-forest-park",
-          "via": "exact"
+          "via": "reviewed"
         },
         {
           "name": "National Taiwan University",
@@ -1490,6 +1594,12 @@
           "layer": "Untitled layer",
           "slug": "miniatures-museum-of-taiwan",
           "via": "exact"
+        },
+        {
+          "name": "Modern Toilet Theme Restaurant",
+          "layer": "Untitled layer",
+          "slug": "modern-toilet",
+          "via": "reviewed"
         },
         {
           "name": "i-Ride TAIPEI",
@@ -1568,6 +1678,12 @@
           "via": "exact"
         },
         {
+          "name": "Tamed Fox (Daan)",
+          "layer": "Locations",
+          "slug": "tamed-fox",
+          "via": "reviewed"
+        },
+        {
           "name": "The Antipodean Specialty Coffee",
           "layer": "Locations",
           "slug": "the-antipodean-specialty-coffee",
@@ -1578,6 +1694,12 @@
           "layer": "Locations",
           "slug": "fumu-come-to-mama",
           "via": "exact"
+        },
+        {
+          "name": "Tamed Fox (Xinyi)",
+          "layer": "Locations",
+          "slug": "tamed-fox",
+          "via": "reviewed"
         }
       ]
     },
@@ -1617,13 +1739,25 @@
           "name": "Daan Forest Park",
           "layer": "Untitled layer",
           "slug": "daan-forest-park",
-          "via": "exact"
+          "via": "reviewed"
+        },
+        {
+          "name": "National Chiang Kai-shek Memorial Hall",
+          "layer": "Untitled layer",
+          "slug": "chiang-kai-shek-memorial-hall",
+          "via": "reviewed"
         },
         {
           "name": "Daan Forest Park",
           "layer": "Directions from No. 65, Section 3, Ren'ai Road, Da’an District, Taipei City, Taiwan 106 to 100, Taiwan, Taipei City, Zhongzheng District, 台9線31號",
           "slug": "daan-forest-park",
-          "via": "exact"
+          "via": "reviewed"
+        },
+        {
+          "name": "National Chiang Kai-shek Memorial Hall",
+          "layer": "Directions from No. 65, Section 3, Ren'ai Road, Da’an District, Taipei City, Taiwan 106 to 100, Taiwan, Taipei City, Zhongzheng District, 台9線31號",
+          "slug": "chiang-kai-shek-memorial-hall",
+          "via": "reviewed"
         }
       ]
     },
@@ -1652,6 +1786,12 @@
           "via": "exact"
         },
         {
+          "name": "Louisa Coffee Daan Forest Park",
+          "layer": "Untitled layer",
+          "slug": "daan-forest-park",
+          "via": "reviewed"
+        },
+        {
           "name": "CAMPUS CAFE",
           "layer": "Untitled layer",
           "slug": "campus-cafe",
@@ -1668,6 +1808,12 @@
           "layer": "Untitled layer",
           "slug": "campus-cafe",
           "via": "exact"
+        },
+        {
+          "name": "CAMPUS CAFE Guangfu Branch",
+          "layer": "Untitled layer",
+          "slug": "campus-cafe",
+          "via": "reviewed"
         },
         {
           "name": "Campus Cafe",
@@ -1755,6 +1901,12 @@
           "via": "exact"
         },
         {
+          "name": "Linjiang St. Night Market",
+          "layer": "Untitled layer",
+          "slug": "tonghua-night-market",
+          "via": "reviewed"
+        },
+        {
           "name": "Gongguan Night Market",
           "layer": "Untitled layer",
           "slug": "gongguan-night-market",
@@ -1779,6 +1931,12 @@
           "layer": "Untitled layer",
           "slug": "yong-he-soy-milk-king",
           "via": "exact"
+        },
+        {
+          "name": "Yongkang Beef Noodles",
+          "layer": "Untitled layer",
+          "slug": "yong-kang-beef-noodles",
+          "via": "reviewed"
         },
         {
           "name": "Fuhang Soy Milk",
@@ -1863,10 +2021,22 @@
           "via": "exact"
         },
         {
+          "name": "Ximen Outdoor Drinking Area",
+          "layer": "Locations",
+          "slug": "ximen-outdoor-drinking",
+          "via": "reviewed"
+        },
+        {
           "name": "The Three Lions Inn",
           "layer": "Locations",
           "slug": "the-three-lions-inn",
           "via": "exact"
+        },
+        {
+          "name": "Kahu Craft Beer Garden",
+          "layer": "Locations",
+          "slug": "best-places-to-drink-craft-beer-taipei",
+          "via": "reviewed"
         }
       ]
     },
@@ -2104,6 +2274,12 @@
           "layer": "National Taiwan Museum",
           "slug": "national-taiwan-museum",
           "via": "exact"
+        },
+        {
+          "name": "National Taiwan Museum Nanmen Park",
+          "layer": "National Taiwan Museum",
+          "slug": "national-taiwan-museum",
+          "via": "reviewed"
         }
       ]
     },
@@ -2169,302 +2345,5 @@
       "links": []
     }
   },
-  "weak": [
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Songshan Cultural and Creative Park No 1. Warehouse",
-      "guess": "songshan-cultural-and-creative-park",
-      "title": "Songshan Cultural and Creative Park: Full Guide",
-      "score": 0.57
-    },
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Nanjichang Night Market",
-      "guess": "tonghua-night-market",
-      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
-      "score": 0.4
-    },
-    {
-      "map": "Taipei Traveller",
-      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
-      "place": "Taipei 228 Memorial Museum",
-      "guess": "peace-park",
-      "title": "Visit the 228 Peace Memorial Park & Museum",
-      "score": 0.5
-    },
-    {
-      "map": "Taipei Sightseeing Bus Route",
-      "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
-      "place": "⑤Xiaonanmen(Toward CHIANG KAI-SHEK MEMORIAL HALL)",
-      "guess": "chiang-kai-shek-memorial-hall",
-      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
-      "score": 0.56
-    },
-    {
-      "map": "Taipei Sightseeing Bus Route",
-      "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
-      "place": "⑧MRT DAAN PARK STATION",
-      "guess": "taipei-jazz-festival",
-      "title": "Taipei Jazz Festival - Free Jazz at Daan Park",
-      "score": 0.4
-    },
-    {
-      "map": "Taipei Sightseeing Bus Route",
-      "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
-      "place": "⑮MRT SUN YAT-SEN MEMORIAL HALL STATION",
-      "guess": "sun-yat-sen-memorial-hall",
-      "title": "Sun Yat-Sen Memorial Hall: Closed Until Late 2026",
-      "score": 0.56
-    },
-    {
-      "map": "Datong Walk",
-      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
-      "place": "Dalong Street Night Market",
-      "guess": "tonghua-night-market",
-      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
-      "score": 0.4
-    },
-    {
-      "map": "Datong Walk",
-      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
-      "place": "Taipei Expo Farmer's Market",
-      "guess": "expo-farmers-market",
-      "title": "Home Grown Produce at Expo Farmer's Market",
-      "score": 0.57
-    },
-    {
-      "map": "Datong Walk",
-      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
-      "place": "Taipei Collective Botanical Garden",
-      "guess": "collective-botanical-garden",
-      "title": "Visit the Zones of the Collective Botanical Garden",
-      "score": 0.6
-    },
-    {
-      "map": "Datong Walk",
-      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
-      "place": "Taipei Collective Botanical Garden",
-      "guess": "collective-botanical-garden",
-      "title": "Visit the Zones of the Collective Botanical Garden",
-      "score": 0.6
-    },
-    {
-      "map": "Zhongzheng Walk",
-      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
-      "place": "National Chiang Kai-shek Memorial Hall",
-      "guess": "chiang-kai-shek-memorial-hall",
-      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
-      "score": 0.56
-    },
-    {
-      "map": "Zhongzheng Walk",
-      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
-      "place": "National Taiwan University Hospital",
-      "guess": "national-taiwan-university",
-      "title": "Navigate the Campus at National Taiwan University",
-      "score": 0.5
-    },
-    {
-      "map": "Zhongzheng Walk",
-      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
-      "place": "Taiwan Provincial City God Temple",
-      "guess": "confucius-temple",
-      "title": "Taipei Confucius Temple: The City's Quietest Temple",
-      "score": 0.4
-    },
-    {
-      "map": "Zhongzheng Walk",
-      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
-      "place": "National Taiwan University Hospital",
-      "guess": "national-taiwan-university",
-      "title": "Navigate the Campus at National Taiwan University",
-      "score": 0.5
-    },
-    {
-      "map": "Zhongzheng Walk",
-      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
-      "place": "Taiwan Provincial City God Temple",
-      "guess": "confucius-temple",
-      "title": "Taipei Confucius Temple: The City's Quietest Temple",
-      "score": 0.4
-    },
-    {
-      "map": "Shilin Night Market",
-      "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
-      "place": "Modern Toilet Theme Restaurant",
-      "guess": "modern-toilet",
-      "title": "Enjoy a 'Crap' Meal at Modern Toilet",
-      "score": 0.4
-    },
-    {
-      "map": "Shilin Night Market",
-      "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
-      "place": "Xin Fa Ting Shaved Ice",
-      "guess": "shaved-ice-huaxi",
-      "title": "Traditional Desserts at Shaved Ice Huaxi",
-      "score": 0.4
-    },
-    {
-      "map": "Shilin Night Market",
-      "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
-      "place": "Shaved Ice and Condensed Milk Desserts",
-      "guess": "shaved-ice-huaxi",
-      "title": "Traditional Desserts at Shaved Ice Huaxi",
-      "score": 0.6
-    },
-    {
-      "map": "Gongguan Walking Route",
-      "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
-      "place": "Madame Jill's Vietnamese Cuisine",
-      "guess": "homes-thai",
-      "title": "Authentic Thai Cuisine at Home's Thai",
-      "score": 0.4
-    },
-    {
-      "map": "Gongguan Walking Route",
-      "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
-      "place": "Museum of Drinking Water",
-      "guess": "see-the-drinking-water-museum-at-taipei-water-park",
-      "title": "See the Drinking Water Museum at Taipei Water Park",
-      "score": 0.6
-    },
-    {
-      "map": "Gongguan Walking Route",
-      "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
-      "place": "Treasure Hill Artist Village",
-      "guess": "treasure-hill",
-      "title": "Watch an Artist at Work at Treasure Hill",
-      "score": 0.6
-    },
-    {
-      "map": "Best Places to keep Kids Amused",
-      "mid": "1e6ZUVDGBqHHrfM2Ngfnz0xzpK-a8Qho",
-      "place": "Modern Toilet Theme Restaurant",
-      "guess": "modern-toilet",
-      "title": "Enjoy a 'Crap' Meal at Modern Toilet",
-      "score": 0.4
-    },
-    {
-      "map": "Best Brunches in Taipei",
-      "mid": "1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY",
-      "place": "Tamed Fox (Daan)",
-      "guess": "tamed-fox",
-      "title": "Healthy and Tasty Brunches at Tamed Fox",
-      "score": 0.4
-    },
-    {
-      "map": "Best Brunches in Taipei",
-      "mid": "1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY",
-      "place": "Tamed Fox (Xinyi)",
-      "guess": "tamed-fox",
-      "title": "Healthy and Tasty Brunches at Tamed Fox",
-      "score": 0.4
-    },
-    {
-      "map": "Daan Walk",
-      "mid": "1AmROqVqlBufN153Jf_ME0clo-p4tgkFW",
-      "place": "National Chiang Kai-shek Memorial Hall",
-      "guess": "chiang-kai-shek-memorial-hall",
-      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
-      "score": 0.56
-    },
-    {
-      "map": "Daan Walk",
-      "mid": "1AmROqVqlBufN153Jf_ME0clo-p4tgkFW",
-      "place": "National Chiang Kai-shek Memorial Hall",
-      "guess": "chiang-kai-shek-memorial-hall",
-      "title": "Chiang Kai-Shek Memorial Hall: Guard Times & What to See",
-      "score": 0.56
-    },
-    {
-      "map": "Best Cafes to Work",
-      "mid": "1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk",
-      "place": "Louisa Coffee Daan Forest Park",
-      "guess": "daan-forest-park",
-      "title": "See the Island of Birds at Daan Forest Park",
-      "score": 0.5
-    },
-    {
-      "map": "Best Cafes to Work",
-      "mid": "1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk",
-      "place": "CAMPUS CAFE Guangfu Branch",
-      "guess": "campus-cafe",
-      "title": "Nice Western Food at Campus Cafe",
-      "score": 0.4
-    },
-    {
-      "map": "Night Market Locations",
-      "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
-      "place": "Nanjichang Night Market",
-      "guess": "tonghua-night-market",
-      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
-      "score": 0.4
-    },
-    {
-      "map": "Night Market Locations",
-      "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
-      "place": "Linjiang St. Night Market",
-      "guess": "tonghua-night-market",
-      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
-      "score": 0.4
-    },
-    {
-      "map": "Night Market Locations",
-      "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
-      "place": "Yansan Night Market",
-      "guess": "tonghua-night-market",
-      "title": "Tonghua Night Market - The Locals' Favourite Night Market",
-      "score": 0.4
-    },
-    {
-      "map": "Taipei Local Restaurants",
-      "mid": "1pexQbmbfxeVUi7X1gM8_jwVZpJFO5jY",
-      "place": "Yongkang Beef Noodles",
-      "guess": "yong-kang-beef-noodles",
-      "title": "Yong Kang Beef Noodles - Still the Best in Taipei?",
-      "score": 0.4
-    },
-    {
-      "map": "Outdoor Drinking Areas",
-      "mid": "1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq",
-      "place": "Ximen Outdoor Drinking Area",
-      "guess": "ximen-outdoor-drinking",
-      "title": "Ximending Outdoor Drinking Area: Bars & Prices",
-      "score": 0.5
-    },
-    {
-      "map": "Outdoor Drinking Areas",
-      "mid": "1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq",
-      "place": "Kahu Craft Beer Garden",
-      "guess": "best-places-to-drink-craft-beer-taipei",
-      "title": "The Best Places to Enjoy a Fine Craft Beer",
-      "score": 0.4
-    },
-    {
-      "map": "Raohe Night Market",
-      "mid": "1bWK96ALEWeOqteYIUpZ0QhKUnJVKX5I",
-      "place": "Hongshao Beef Noodle Restaurant",
-      "guess": "kobayashi-noodle-restaurant",
-      "title": "Kobayashi Noodle Restaurant (小林麵食館), Taipei",
-      "score": 0.5
-    },
-    {
-      "map": "Ningxia Night Market",
-      "mid": "1YfgO1Wzn2N19QIVqrGDYrApWz7k9mk8",
-      "place": "Shaved Peanut Ice Cream",
-      "guess": "shaved-ice-huaxi",
-      "title": "Traditional Desserts at Shaved Ice Huaxi",
-      "score": 0.4
-    },
-    {
-      "map": "National Taiwan Museum",
-      "mid": "17EySLgMzIpgfCZlqCTuXegvhAvveGXdo",
-      "place": "National Taiwan Museum Nanmen Park",
-      "guess": "national-taiwan-museum",
-      "title": "See the Dinosaurs at the National Taiwan Museum",
-      "score": 0.5
-    }
-  ]
+  "weak": []
 }

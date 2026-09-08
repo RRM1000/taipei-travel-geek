@@ -1458,6 +1458,43 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   text-align: center;
 }
 
+/* The places on a Google My Maps embed, written into the page as HTML.
+   The embed is a cross-origin iframe, so everything inside it belongs to
+   Google as far as a crawler is concerned - this is the same information as
+   ordinary content. Two columns on wide screens because these run long: the
+   master map on /maps lists 186 places. */
+.article-content .map-places {
+  margin: 28px 0;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+}
+.article-content .map-places h3 {
+  margin: 0 0 4px;
+}
+.article-content .map-places h4 {
+  margin: 18px 0 2px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.article-content .map-places ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+.article-content .map-places li {
+  margin: 3px 0;
+  break-inside: avoid;
+}
+@media (min-width: 720px) {
+  .article-content .map-places ul {
+    columns: 2;
+    column-gap: 32px;
+  }
+}
+
 /* Schematic images - the MRT network map, and anything else that is a diagram
    rather than a photograph. The max-height/object-fit cap above exists to stop
    a portrait photo running taller than the viewport, which is right for photos
