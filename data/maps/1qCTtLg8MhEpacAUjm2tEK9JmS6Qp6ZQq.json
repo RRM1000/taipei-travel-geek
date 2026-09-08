@@ -1,0 +1,93 @@
+{
+  "mid": "1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq",
+  "name": "Outdoor Drinking Areas",
+  "embed": "https://www.google.com/maps/d/embed?mid=1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq",
+  "usedOn": [
+    "best-outdoor-drinking"
+  ],
+  "fetchedAt": "2026-09-08T06:37:26.964Z",
+  "counts": {
+    "layers": 1,
+    "places": 8,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Locations",
+      "places": [
+        {
+          "name": "Landmark Taihu",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.566773,
+          "lat": 25.040247
+        },
+        {
+          "name": "On Tap",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5539034,
+          "lat": 25.0408868
+        },
+        {
+          "name": "Ximen Outdoor Drinking Area",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5065471,
+          "lat": 25.0418486
+        },
+        {
+          "name": "The Three Lions Inn",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5220719,
+          "lat": 25.0689543
+        },
+        {
+          "name": "HOOTERS Xinyi Branch",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5681307,
+          "lat": 25.036672
+        },
+        {
+          "name": "BARCODE Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.56786,
+          "lat": 25.0355031
+        },
+        {
+          "name": "The Terrace",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5673934,
+          "lat": 25.038696
+        },
+        {
+          "name": "Kahu Craft Beer Garden",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5111682,
+          "lat": 25.1365068
+        }
+      ]
+    }
+  ]
+}

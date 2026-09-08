@@ -1,0 +1,84 @@
+{
+  "mid": "1eZIoMiqUs1mUewsJ9x2ZncrPaRnb4UTz",
+  "name": "Best Bars in Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1eZIoMiqUs1mUewsJ9x2ZncrPaRnb4UTz",
+  "usedOn": [
+    "best-bars-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:04.836Z",
+  "counts": {
+    "layers": 1,
+    "places": 7,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Bars",
+      "places": [
+        {
+          "name": "ON TAP",
+          "description": "",
+          "url": null,
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5539034,
+          "lat": 25.0408868
+        },
+        {
+          "name": "The Brass Monkey",
+          "description": "",
+          "url": null,
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5438175,
+          "lat": 25.0536919
+        },
+        {
+          "name": "Revolver",
+          "description": "",
+          "url": null,
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5174093,
+          "lat": 25.034273
+        },
+        {
+          "name": "Beer Geek",
+          "description": "",
+          "url": null,
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.567627,
+          "lat": 25.045499
+        },
+        {
+          "name": "The Three Lions Inn",
+          "description": "",
+          "url": null,
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5220719,
+          "lat": 25.0689543
+        },
+        {
+          "name": "Driftwood",
+          "description": "",
+          "url": null,
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5056563,
+          "lat": 25.0465725
+        },
+        {
+          "name": "Another Brick",
+          "description": "",
+          "url": null,
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5283313,
+          "lat": 25.019409
+        }
+      ]
+    }
+  ]
+}

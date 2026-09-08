@@ -1,0 +1,147 @@
+{
+  "mid": "1JuDWfr2yts1Wca1kmU0OYI7n0-PgMItt",
+  "name": "Ximending Street Art",
+  "embed": "https://www.google.com/maps/d/embed?mid=1JuDWfr2yts1Wca1kmU0OYI7n0-PgMItt",
+  "usedOn": [
+    "ximending"
+  ],
+  "fetchedAt": "2026-09-08T06:37:34.223Z",
+  "counts": {
+    "layers": 1,
+    "places": 14,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Street Art",
+      "places": [
+        {
+          "name": "Large Suicide Squad Mural",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5035289,
+          "lat": 25.0459288
+        },
+        {
+          "name": "Joker",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5040835,
+          "lat": 25.0452055
+        },
+        {
+          "name": "Grand Theft Auto Homage",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5040513,
+          "lat": 25.0450646
+        },
+        {
+          "name": "Hut Graffiti",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5035926,
+          "lat": 25.0450646
+        },
+        {
+          "name": "Large Mural",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5036945,
+          "lat": 25.0451094
+        },
+        {
+          "name": "Clone",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5039547,
+          "lat": 25.0450803
+        },
+        {
+          "name": "Duck Dude",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5039131,
+          "lat": 25.0447219
+        },
+        {
+          "name": "Cat and Crow",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5042337,
+          "lat": 25.0449369
+        },
+        {
+          "name": "Horned Girl",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5032922,
+          "lat": 25.0451289
+        },
+        {
+          "name": "Liza Minnelli",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5032305,
+          "lat": 25.0446429
+        },
+        {
+          "name": "Various",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5034679,
+          "lat": 25.0450864
+        },
+        {
+          "name": "Various",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5035001,
+          "lat": 25.0448677
+        },
+        {
+          "name": "Astro Boy and Duck",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5039078,
+          "lat": 25.0449455
+        },
+        {
+          "name": "Cyclops",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5039297,
+          "lat": 25.0450207
+        }
+      ]
+    }
+  ]
+}

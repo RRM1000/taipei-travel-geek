@@ -1,0 +1,93 @@
+{
+  "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
+  "name": "Night Market Locations",
+  "embed": "https://www.google.com/maps/d/embed?mid=1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets"
+  ],
+  "fetchedAt": "2026-09-08T06:37:21.060Z",
+  "counts": {
+    "layers": 1,
+    "places": 8,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Nanjichang Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5059145,
+          "lat": 25.0291603
+        },
+        {
+          "name": "Ningxia Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5154103,
+          "lat": 25.0563776
+        },
+        {
+          "name": "Raohe Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5775254,
+          "lat": 25.0509541
+        },
+        {
+          "name": "Shilin Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5242024,
+          "lat": 25.0879869
+        },
+        {
+          "name": "Linjiang St. Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5542672,
+          "lat": 25.0301412
+        },
+        {
+          "name": "Gongguan Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5347865,
+          "lat": 25.0137873
+        },
+        {
+          "name": "Yansan Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5111796,
+          "lat": 25.0633642
+        },
+        {
+          "name": "Huaxi Street Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.4984426,
+          "lat": 25.0385988
+        }
+      ]
+    }
+  ]
+}

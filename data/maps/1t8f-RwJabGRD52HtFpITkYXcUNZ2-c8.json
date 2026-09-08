@@ -1,0 +1,57 @@
+{
+  "mid": "1t8f-RwJabGRD52HtFpITkYXcUNZ2-c8",
+  "name": "Best Zhongshan Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=1t8f-RwJabGRD52HtFpITkYXcUNZ2-c8",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:09.608Z",
+  "counts": {
+    "layers": 1,
+    "places": 4,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "The Okura Prestige Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.523274,
+          "lat": 25.0525095
+        },
+        {
+          "name": "Regent Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5241873,
+          "lat": 25.0542133
+        },
+        {
+          "name": "The Tango Taipei ChangAn",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5245388,
+          "lat": 25.0497629
+        },
+        {
+          "name": "Golden Inn",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5257839,
+          "lat": 25.0600171
+        }
+      ]
+    }
+  ]
+}

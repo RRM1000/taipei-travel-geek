@@ -1,0 +1,102 @@
+{
+  "mid": "1HQF8GWP_yR6KEodOuISBRf4DVFxgUBSB",
+  "name": "Best Places to see Art in Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1HQF8GWP_yR6KEodOuISBRf4DVFxgUBSB",
+  "usedOn": [
+    "best-places-to-see-art-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:24.588Z",
+  "counts": {
+    "layers": 1,
+    "places": 9,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Art",
+      "places": [
+        {
+          "name": "Taipei Fine Arts Museum",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.52407,
+          "lat": 25.072225
+        },
+        {
+          "name": "MoCA Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.518611,
+          "lat": 25.050556
+        },
+        {
+          "name": "Ximending Street Art",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5063096,
+          "lat": 25.0446664
+        },
+        {
+          "name": "National Palace Museum",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5484925,
+          "lat": 25.1023554
+        },
+        {
+          "name": "Treasure Hill",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5322536,
+          "lat": 25.0107323
+        },
+        {
+          "name": "Sun Yat-Sen Memorial Hall",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5333404,
+          "lat": 25.0438015
+        },
+        {
+          "name": "Taipei Dangdai (January)",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.618116,
+          "lat": 25.056602
+        },
+        {
+          "name": "Art Taipei (October only)",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.562347,
+          "lat": 25.033155
+        },
+        {
+          "name": "MRT Nangang Station",
+          "description": "Jimmy Liao artwork",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.6070253,
+          "lat": 25.0521366
+        }
+      ]
+    }
+  ]
+}

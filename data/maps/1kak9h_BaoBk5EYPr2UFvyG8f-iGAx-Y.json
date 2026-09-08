@@ -1,0 +1,57 @@
+{
+  "mid": "1kak9h_BaoBk5EYPr2UFvyG8f-iGAx-Y",
+  "name": "Best Xinyi Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=1kak9h_BaoBk5EYPr2UFvyG8f-iGAx-Y",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:08.030Z",
+  "counts": {
+    "layers": 1,
+    "places": 4,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "W Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#880E4F",
+          "type": "point",
+          "lng": 121.5655265,
+          "lat": 25.0408632
+        },
+        {
+          "name": "Grand Hyatt Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#880E4F",
+          "type": "point",
+          "lng": 121.5626133,
+          "lat": 25.0353727
+        },
+        {
+          "name": "HOMEHOTEL",
+          "description": "",
+          "url": null,
+          "colour": "#880E4F",
+          "type": "point",
+          "lng": 121.5678576,
+          "lat": 25.0350752
+        },
+        {
+          "name": "Humble House Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.567342,
+          "lat": 25.0386933
+        }
+      ]
+    }
+  ]
+}

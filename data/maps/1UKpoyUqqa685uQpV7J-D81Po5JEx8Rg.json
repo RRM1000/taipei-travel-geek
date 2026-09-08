@@ -1,0 +1,30 @@
+{
+  "mid": "1UKpoyUqqa685uQpV7J-D81Po5JEx8Rg",
+  "name": "Huaxi Street Night Market",
+  "embed": "https://www.google.com/maps/d/embed?mid=1UKpoyUqqa685uQpV7J-D81Po5JEx8Rg",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets"
+  ],
+  "fetchedAt": "2026-09-08T06:37:20.244Z",
+  "counts": {
+    "layers": 1,
+    "places": 1,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Hsiao Wang Steamed Minced Pork with Pickles in Broth",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.4985973,
+          "lat": 25.0392062
+        }
+      ]
+    }
+  ]
+}

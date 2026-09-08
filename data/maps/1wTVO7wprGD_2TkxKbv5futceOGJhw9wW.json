@@ -1,0 +1,102 @@
+{
+  "mid": "1wTVO7wprGD_2TkxKbv5futceOGJhw9wW",
+  "name": "Din Tai Fung - Taipei Locations",
+  "embed": "https://www.google.com/maps/d/embed?mid=1wTVO7wprGD_2TkxKbv5futceOGJhw9wW",
+  "usedOn": [
+    "din-tai-fung"
+  ],
+  "fetchedAt": "2026-09-08T06:37:44.013Z",
+  "counts": {
+    "layers": 1,
+    "places": 9,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Locations",
+      "places": [
+        {
+          "name": "Din Tai Fung (Xinyi)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.530112,
+          "lat": 25.033483
+        },
+        {
+          "name": "Din Tai Fung (Taipei 101)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5643845,
+          "lat": 25.0333329
+        },
+        {
+          "name": "Din Tai Fung (A4)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5665897,
+          "lat": 25.0395755
+        },
+        {
+          "name": "Din Tai Fung (Fuxing)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5429975,
+          "lat": 25.0409656
+        },
+        {
+          "name": "Din Tai Fung (Nanxi)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5211048,
+          "lat": 25.0523038
+        },
+        {
+          "name": "Din Tai Fung (Banqiao)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4667508,
+          "lat": 25.0135467
+        },
+        {
+          "name": "Din Tai Fung (Tienmu)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5245359,
+          "lat": 25.1047446
+        },
+        {
+          "name": "Din Tai Fung (A13)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5679123,
+          "lat": 25.0368211
+        },
+        {
+          "name": "Din Tai Fung (Xinsheng)",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5321338,
+          "lat": 25.033889
+        }
+      ]
+    }
+  ]
+}

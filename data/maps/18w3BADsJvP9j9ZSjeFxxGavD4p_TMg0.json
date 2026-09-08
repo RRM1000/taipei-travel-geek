@@ -1,0 +1,57 @@
+{
+  "mid": "18w3BADsJvP9j9ZSjeFxxGavD4p_TMg0",
+  "name": "Best Other Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=18w3BADsJvP9j9ZSjeFxxGavD4p_TMg0",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:12.942Z",
+  "counts": {
+    "layers": 1,
+    "places": 4,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Grand Hotel Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5265198,
+          "lat": 25.0789127
+        },
+        {
+          "name": "Hotel Indigo Taipei North",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.559828,
+          "lat": 25.0831889
+        },
+        {
+          "name": "Hotel Cham Cham Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4631657,
+          "lat": 25.011276
+        },
+        {
+          "name": "Volando Urai Spring Spa & Resort",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5475386,
+          "lat": 24.8694941
+        }
+      ]
+    }
+  ]
+}

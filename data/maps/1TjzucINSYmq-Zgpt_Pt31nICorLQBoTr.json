@@ -1,0 +1,1715 @@
+{
+  "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+  "name": "Taipei Traveller",
+  "embed": "https://www.google.com/maps/d/embed?mid=1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+  "usedOn": [
+    "maps"
+  ],
+  "fetchedAt": "2026-09-08T06:37:42.433Z",
+  "counts": {
+    "layers": 5,
+    "places": 186,
+    "linked": 177
+  },
+  "layers": [
+    {
+      "name": "Visit",
+      "places": [
+        {
+          "name": "Taipei 101",
+          "description": "Iconic building with 101 floors and stunning views",
+          "url": "/taipei-101",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5644722,
+          "lat": 25.0339639
+        },
+        {
+          "name": "Chiang Kai-shek Memorial Hall",
+          "description": "Iconic buildings in the huge liberty square",
+          "url": "/chiang-kai-shek-memorial-hall",
+          "colour": "#DB4436",
+          "type": "point",
+          "lng": 121.521781,
+          "lat": 25.0347675
+        },
+        {
+          "name": "Tamsui District",
+          "description": "Nice river walk with many attractions and night market, and a stunning sunset",
+          "url": "/danshui",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.4433706,
+          "lat": 25.1719805
+        },
+        {
+          "name": "Ximending Shopping District",
+          "description": "Also known as the youth shopping district, with many shops, food stands and street performers",
+          "url": "/ximending",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5063096,
+          "lat": 25.0446664
+        },
+        {
+          "name": "National Taiwan University",
+          "description": "Huge campus with many buildings, museums and areas of beauty",
+          "url": "/national-taiwan-university",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5397518,
+          "lat": 25.0173405
+        },
+        {
+          "name": "Taipei Zoo",
+          "description": "Zoo with large variety of animals including pandas",
+          "url": "/taipei-zoo",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5810358,
+          "lat": 24.9983469
+        },
+        {
+          "name": "Daan Forest Park",
+          "description": "The largest park in Taipei.",
+          "url": "/da-an-forest-park",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5349054,
+          "lat": 25.032435
+        },
+        {
+          "name": "2/28 Peace Park",
+          "description": "Park with memorial to Feb 28th massacre",
+          "url": "/peace-park",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5149875,
+          "lat": 25.0418254
+        },
+        {
+          "name": "Shuangxi Park",
+          "description": "Lovely landscaped gardens",
+          "url": "/shuangxi-park-and-chinese-garden",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5350593,
+          "lat": 25.0980247
+        },
+        {
+          "name": "Xinsheng Park",
+          "description": "Park with rose garden, maze and botanical gardens",
+          "url": "/xinsheng-park",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5313889,
+          "lat": 25.0708333
+        },
+        {
+          "name": "Zhishan Garden",
+          "description": "Beautiful Chinese garden",
+          "url": "/zhishan-garden",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5498448,
+          "lat": 25.1013067
+        },
+        {
+          "name": "Guandu Nature Park",
+          "description": "Great for wildlife",
+          "url": "/guandu-nature-park",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.4708333,
+          "lat": 25.1188889
+        },
+        {
+          "name": "Thermal Valley",
+          "description": "See the steamy waters at their best",
+          "url": "/thermal-valley",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5116771,
+          "lat": 25.1379481
+        },
+        {
+          "name": "Huashan 1914 Creative Park",
+          "description": "Exhibitions, cafes, restaurants, cinema, music venue and theatre",
+          "url": "/huashan-1914-creative-park",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5293995,
+          "lat": 25.0441303
+        },
+        {
+          "name": "Songshan Cultural and Creative Park No 1. Warehouse",
+          "description": "Garden, markets, craft, cafes, cinema and performance hall http://3.81.126.37/songshan-cultural-and-creative-park",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5595103,
+          "lat": 25.0443998
+        },
+        {
+          "name": "Taipei Botanical Garden",
+          "description": "Beautiful botanical gardens",
+          "url": "/taipei-botanical-gardens",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.508655,
+          "lat": 25.0310042
+        },
+        {
+          "name": "Taipei Collective Botanical Garden",
+          "description": "Mainly indoor botanical gardens with temporal zones",
+          "url": "/collective-botanical-garden",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.53162,
+          "lat": 25.071367
+        },
+        {
+          "name": "Maokong Gondola",
+          "description": "Cable car ride to Maokong",
+          "url": "/maokong-gondola",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.575865,
+          "lat": 24.995606
+        },
+        {
+          "name": "The Red House",
+          "description": "Octagonal red brick building with craft shops",
+          "url": "/the-red-house-ximending",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5068592,
+          "lat": 25.0420139
+        },
+        {
+          "name": "Taipei Story House",
+          "description": "Faux Tudor house",
+          "url": "/taipei-story-house",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5245946,
+          "lat": 25.0731241
+        },
+        {
+          "name": "Lin Family Mansion and Garden",
+          "description": "Exquisite ancestral home and gardens",
+          "url": "/lin-family-mansion",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.4547685,
+          "lat": 25.0112269
+        },
+        {
+          "name": "Lin An Tai Ancestral House",
+          "description": "Ancestral house and gardens",
+          "url": "/lin-an-tai-ancestral-house",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5303571,
+          "lat": 25.071749
+        },
+        {
+          "name": "National Revolutionary Martyrs' Shrine",
+          "description": "Shrine built to commemorate the loss of almost 400,000 Taiwanese soldiers",
+          "url": "/martyrs-shrine",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5329556,
+          "lat": 25.0794115
+        },
+        {
+          "name": "National Dr. Sun Yat-Sen Memorial Hall",
+          "description": "Memorial hall and small gardens",
+          "url": "/sun-yat-sen-memorial-hall",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5602452,
+          "lat": 25.0400306
+        },
+        {
+          "name": "Shilin Night Market",
+          "description": "The largest and most touristic night market",
+          "url": "/shilin-night-market",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5244037,
+          "lat": 25.0886283
+        },
+        {
+          "name": "Jian Guo Jade Market",
+          "description": "Huge weekend market selling crafts including those made from Jade",
+          "url": "/jianguo-flower-market",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5379054,
+          "lat": 25.0383484
+        },
+        {
+          "name": "Linjiang Street Night Market",
+          "description": "Less touristy night market",
+          "url": "/tonghua-night-market",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5542413,
+          "lat": 25.0301955
+        },
+        {
+          "name": "Expo Farmer's Market",
+          "description": "Busy weekend farmer's market",
+          "url": "/expo-farmers-market",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5212644,
+          "lat": 25.0706551
+        },
+        {
+          "name": "Longshan Temple",
+          "description": "One of the oldest temples in Taiwan",
+          "url": "/longshan-temple",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.4999007,
+          "lat": 25.0371623
+        },
+        {
+          "name": "Baoan Temple and Gardens",
+          "description": "Temple with adjacent gardens",
+          "url": "/dalongdong-baoan-temple-and-gardens",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5155395,
+          "lat": 25.0732069
+        },
+        {
+          "name": "Taipei Confucius Temple",
+          "description": "Peaceful and lovely temple",
+          "url": "/confucius-temple",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5166017,
+          "lat": 25.0729457
+        },
+        {
+          "name": "Xiangshan (Elephant Mountain)",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5731954,
+          "lat": 25.0271493
+        },
+        {
+          "name": "Yongkang Street",
+          "description": "Very cool street with many restaurants and gift shops",
+          "url": "/yongkang-street",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5295298,
+          "lat": 25.0307657
+        },
+        {
+          "name": "Lover's Bridge",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.4108448,
+          "lat": 25.1831101
+        },
+        {
+          "name": "Tiger Mountain",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5855045,
+          "lat": 25.0335999
+        },
+        {
+          "name": "Grand Hotel Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5265198,
+          "lat": 25.0789127
+        },
+        {
+          "name": "Raohe Night Market",
+          "description": "One of the best night markets for food",
+          "url": "/raohe-night-market-foody-heaven",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5775254,
+          "lat": 25.0509541
+        },
+        {
+          "name": "Huaxi Street Night Market",
+          "description": "Small night market with good food stands",
+          "url": "/huaxi-street-night-market",
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.4984426,
+          "lat": 25.0385988
+        },
+        {
+          "name": "Ningxia Night Market",
+          "description": "Local's favourite for food",
+          "url": "/ningxia-night-market",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5154103,
+          "lat": 25.0563776
+        },
+        {
+          "name": "Gongguan Night Market",
+          "description": "The earliest opening night market in Taipei (3pm)",
+          "url": "/gongguan-night-market",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5347865,
+          "lat": 25.0137873
+        },
+        {
+          "name": "Xingtian Temple",
+          "description": "Very sacred temple",
+          "url": "/hsing-tian-kong-temple",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5338733,
+          "lat": 25.0628658
+        },
+        {
+          "name": "Nanjichang Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5059145,
+          "lat": 25.0291603
+        },
+        {
+          "name": "Jianguo Holiday Flower Market",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5378295,
+          "lat": 25.0351878
+        },
+        {
+          "name": "Chiang Kai-Shek Shilin Residence",
+          "description": "Former residence of the former leader of Taiwan with some lovely gardens",
+          "url": "/chiang-kai-shek-shilin-residence",
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5323991,
+          "lat": 25.093071
+        }
+      ]
+    },
+    {
+      "name": "Eat",
+      "places": [
+        {
+          "name": "Addiction Aquatic Development",
+          "description": "The place to go for seafood!",
+          "url": "/addiction-aquatic-development",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5370059,
+          "lat": 25.0667079
+        },
+        {
+          "name": "Yongkang Beef Noodles",
+          "description": "One of the best beef noodle places in Taipei",
+          "url": "/yong-kang-beef-noodles",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5281111,
+          "lat": 25.0329382
+        },
+        {
+          "name": "Din Tai Fung",
+          "description": "Famous Taiwanese restaurant chain",
+          "url": "/din-tai-fung",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5643071,
+          "lat": 25.0333348
+        },
+        {
+          "name": "Din Tai Fung",
+          "description": "Famous Taiwanese restaurant chain",
+          "url": "/din-tai-fung",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5429975,
+          "lat": 25.0409656
+        },
+        {
+          "name": "Din Tai Fung",
+          "description": "Famous Taiwanese restaurant chain",
+          "url": "/din-tai-fung",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4667508,
+          "lat": 25.0135467
+        },
+        {
+          "name": "Din Tai Fung",
+          "description": "Famous Taiwanese restaurant chain (original branch)",
+          "url": "/din-tai-fung",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5321338,
+          "lat": 25.033889
+        },
+        {
+          "name": "Din Tai Fung",
+          "description": "Famous Taiwanese restaurant chain",
+          "url": "/din-tai-fung",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5665897,
+          "lat": 25.0395755
+        },
+        {
+          "name": "Din Tai Fung",
+          "description": "Famous Taiwanese restaurant chain",
+          "url": "/din-tai-fung",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5245359,
+          "lat": 25.1047446
+        },
+        {
+          "name": "Din Tai Fung",
+          "description": "Famous Taiwanese restaurant chain (original branch)",
+          "url": "/din-tai-fung",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.530112,
+          "lat": 25.033483
+        },
+        {
+          "name": "Sister's Kitchen",
+          "description": "Small local Taiwanese restaurant",
+          "url": "/sisters-kitchen",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.542782,
+          "lat": 25.029315
+        },
+        {
+          "name": "Flourish",
+          "description": "Japanese vegan restaurant",
+          "url": "/flourish",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5510684,
+          "lat": 25.0402676
+        },
+        {
+          "name": "Big table",
+          "description": "Toasted sandwiches brunch restaurant",
+          "url": "/big-table-taipei",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5445872,
+          "lat": 25.0321804
+        },
+        {
+          "name": "Plants",
+          "description": "Vegan brunch restaurant",
+          "url": "/plants",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5442543,
+          "lat": 25.0367206
+        },
+        {
+          "name": "Kuang's Bistro",
+          "description": "Great brunch spot",
+          "url": "/kuangs-bistro",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4621868,
+          "lat": 25.017336
+        },
+        {
+          "name": "Eiles Bistro",
+          "description": "Italian restaurant",
+          "url": "/eiles-bistro",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4472599,
+          "lat": 25.1770909
+        },
+        {
+          "name": "IKEA Food Hall",
+          "description": "Ikea with dining options",
+          "url": "/ikea-food-hall",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.548412,
+          "lat": 25.05243
+        },
+        {
+          "name": "Tajin Moroccan",
+          "description": "One of the few Moroccan restaurants in Taipei",
+          "url": "/tajine-moroccan",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5563756,
+          "lat": 25.0283003
+        },
+        {
+          "name": "Saffron Fine Indian Cuisine",
+          "description": "Higher end Indian restaurant",
+          "url": "/saffron-fine-indian-cuisine",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5329147,
+          "lat": 25.1175858
+        },
+        {
+          "name": "Joseph Bistro",
+          "description": "High end Indian dining",
+          "url": "/joseph-bistro",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.534418,
+          "lat": 25.049398
+        },
+        {
+          "name": "Kooks",
+          "description": "Quirky western restaurant",
+          "url": "/kooks",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4469981,
+          "lat": 25.1702966
+        },
+        {
+          "name": "Crush Brunch",
+          "description": "Small local brunch restaurant",
+          "url": "/crush",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.54329,
+          "lat": 25.030658
+        },
+        {
+          "name": "Herban Kitchen & Bar",
+          "description": "Trendy vegan restaurant and bar",
+          "url": "/herban-kitchen-bar",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.548262,
+          "lat": 25.042925
+        },
+        {
+          "name": "Kobayashi Noodle Restaurant",
+          "description": "Local Taiwanese restaurant",
+          "url": "/kobayashi-noodle-restaurant",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5461009,
+          "lat": 25.0436402
+        },
+        {
+          "name": "Twinkeyz Tacos",
+          "description": "Tacos and other Mexican food",
+          "url": "/twinkeyz-tacos",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.554677,
+          "lat": 25.0426933
+        },
+        {
+          "name": "Ay-Chung Flour-Rice Noodle",
+          "description": "Famous noodle stand",
+          "url": "/ay-chung-flour-rice-noodles",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5076263,
+          "lat": 25.0433188
+        },
+        {
+          "name": "Tulip TimeOut",
+          "description": "Danish hot dog stand with seating upstairs",
+          "url": "/timeout-danish-hot-dogs",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5075825,
+          "lat": 25.0419527
+        },
+        {
+          "name": "Tian Jin Onion Pancake",
+          "description": "Popular scallion pancake stall",
+          "url": "/tian-jin-onion-pancake",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5297148,
+          "lat": 25.0326319
+        },
+        {
+          "name": "Lan Jia Traditional Taiwanese Snack",
+          "description": "Popular stall serving Gua bao (pork belly in soft bun)",
+          "url": "/lan-jia-traditional-taiwanese-snack",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5325592,
+          "lat": 25.0157375
+        },
+        {
+          "name": "On Tap",
+          "description": "English style pub with food and live sports",
+          "url": "/on-tap",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5538649,
+          "lat": 25.0408394
+        },
+        {
+          "name": "The Brass Monkey",
+          "description": "American style bar and restaurant with live sports",
+          "url": "/brass-monkey",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5438175,
+          "lat": 25.0536919
+        },
+        {
+          "name": "Redpoint Brewing Co. Taproom",
+          "description": "Craft beer and great western food",
+          "url": "/redpoint-brewing-co-taproom",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5432908,
+          "lat": 25.0290984
+        },
+        {
+          "name": "TOASTERiA",
+          "description": "Restaurant with large variety of western and middle eastern food",
+          "url": "/toasteria",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5495064,
+          "lat": 25.043302
+        },
+        {
+          "name": "Toasteria",
+          "description": "Restaurant with large variety of western and middle eastern food",
+          "url": "/toasteria",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5303542,
+          "lat": 25.0334699
+        },
+        {
+          "name": "Yong He Soy Milk King",
+          "description": "Traditional Taiwanese local breakfast restaurant",
+          "url": "/yong-he-soy-milk-king",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5433359,
+          "lat": 25.0297337
+        },
+        {
+          "name": "Miacucina",
+          "description": "Vegetarian restaurant chain with large choice",
+          "url": "/miacucina",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.567241,
+          "lat": 25.036006
+        },
+        {
+          "name": "Miacucina",
+          "description": "Vegetarian restaurant chain with large choice",
+          "url": "/miacucina",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5671542,
+          "lat": 25.080085
+        },
+        {
+          "name": "Miacucina",
+          "description": "Vegetarian restaurant chain with large choice",
+          "url": "/miacucina",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5447843,
+          "lat": 25.0437316
+        },
+        {
+          "name": "Miacucina",
+          "description": "Vegetarian restaurant chain with large choice",
+          "url": "/miacucina",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5234964,
+          "lat": 25.1048042
+        },
+        {
+          "name": "Miacucina",
+          "description": "Vegetarian restaurant chain with large choice",
+          "url": "/miacucina",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5210462,
+          "lat": 25.0523209
+        },
+        {
+          "name": "TGI Fridays",
+          "description": "Western chain restaurant with nice outdoor seating area",
+          "url": "/tgi-fridays",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5653902,
+          "lat": 25.0408305
+        },
+        {
+          "name": "Ooh Cha Cha",
+          "description": "Vegan cafe/restaurant that's laptop friendly",
+          "url": "/ooh-cha-cha",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.523427,
+          "lat": 25.025076
+        },
+        {
+          "name": "Ducky Restaurant",
+          "description": "Italian restaurant focusing on duck dishes",
+          "url": "/ducky-restaurant",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.528242,
+          "lat": 25.040981
+        },
+        {
+          "name": "La Villa Danshui",
+          "description": "Italian restaurant in great location",
+          "url": "/la-villa-danshui",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.431332,
+          "lat": 25.174821
+        },
+        {
+          "name": "Fuhang Soy Milk",
+          "description": "Taipei's most popular breakfast",
+          "url": "/fuhang-soy-milk",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5247397,
+          "lat": 25.0442451
+        },
+        {
+          "name": "Jie Genge",
+          "description": "Taiwanese brunch restaurant with novel dishes",
+          "url": "/jie-genge",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5405265,
+          "lat": 25.0331194
+        },
+        {
+          "name": "The Antipodean Specialty Coffee",
+          "description": "Very good brunch restaurant",
+          "url": "/the-antipodean-specialty-coffee",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.577807,
+          "lat": 25.082664
+        },
+        {
+          "name": "The Antipodean Fujin",
+          "description": "Very good brunch restaurant",
+          "url": "/the-antipodean-specialty-coffee",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5567471,
+          "lat": 25.0590499
+        },
+        {
+          "name": "ACME｜Cafe Bar & Restaurant",
+          "description": "Excellent brunch spot",
+          "url": "/acme-breakfast-club",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5242938,
+          "lat": 25.0853775
+        },
+        {
+          "name": "Tamed Fox",
+          "description": "Nice brunch restaurant with healthy options",
+          "url": "/tamed-fox",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5501725,
+          "lat": 25.0339485
+        },
+        {
+          "name": "Tamed Fox",
+          "description": "Nice brunch restaurant with healthy options",
+          "url": "/tamed-fox",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5695371,
+          "lat": 25.0371047
+        },
+        {
+          "name": "Snow Bro Shaved Ice",
+          "description": "Dessert place serving only shaved ice",
+          "url": "/snow-bro-taipei",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5459031,
+          "lat": 25.0354959
+        },
+        {
+          "name": "Shaved Ice Huaxi",
+          "description": "Famous local place serving shaved ice (not on google maps but located around here!)",
+          "url": "/shaved-ice-huaxi",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4989374,
+          "lat": 25.036629
+        },
+        {
+          "name": "Cronutt",
+          "description": "Cronuts (a cross between croissants and donuts)",
+          "url": "/cronutt",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.551628,
+          "lat": 25.0425002
+        },
+        {
+          "name": "Mr Brownies",
+          "description": "Delicious brownies is various forms",
+          "url": "/mr-brownie",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5521959,
+          "lat": 25.0431669
+        },
+        {
+          "name": "Mr. Brownie",
+          "description": "Delicious brownies is various forms",
+          "url": "/mr-brownie",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5070423,
+          "lat": 25.0420214
+        },
+        {
+          "name": "Matcha Saro",
+          "description": "Japanese/Taiwanese matcha dessert place",
+          "url": "/matcha-saro",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5174576,
+          "lat": 25.0492452
+        },
+        {
+          "name": "Matcha Saro",
+          "description": "Japanese/Taiwanese matcha dessert place",
+          "url": "/matcha-saro",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5429581,
+          "lat": 25.0408944
+        },
+        {
+          "name": "Matcha Saro",
+          "description": "Japanese/Taiwanese matcha dessert place",
+          "url": "/matcha-saro",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5650152,
+          "lat": 25.039626
+        },
+        {
+          "name": "Chun Shui Tang",
+          "description": "Taiwanese restaurant chain and the inventor of Bubble Tea",
+          "url": "/chun-shui-tang",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5667788,
+          "lat": 25.0370035
+        },
+        {
+          "name": "Chun Shui Tang",
+          "description": "Taiwanese restaurant chain and the inventor of Bubble Tea",
+          "url": "/chun-shui-tang",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.557379,
+          "lat": 25.0513111
+        },
+        {
+          "name": "Chun Shui Tang",
+          "description": "Taiwanese restaurant chain and the inventor of Bubble Tea",
+          "url": "/chun-shui-tang",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.519368,
+          "lat": 25.0373027
+        },
+        {
+          "name": "Chun Shui Tang",
+          "description": "Taiwanese restaurant chain and the inventor of Bubble Tea",
+          "url": "/chun-shui-tang",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5152825,
+          "lat": 25.046245
+        },
+        {
+          "name": "Chun Shui Tang",
+          "description": "Taiwanese restaurant chain and the inventor of Bubble Tea",
+          "url": "/chun-shui-tang",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5211048,
+          "lat": 25.0523038
+        },
+        {
+          "name": "Chun Shui Tang",
+          "description": "Taiwanese restaurant chain and the inventor of Bubble Tea",
+          "url": "/chun-shui-tang",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5677567,
+          "lat": 25.0802843
+        },
+        {
+          "name": "Gordon Biersch",
+          "description": "American style chain with German beers and huge choices of food",
+          "url": "/gordon-biersch",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5671276,
+          "lat": 25.0371952
+        },
+        {
+          "name": "Gordon Biersch",
+          "description": "American style chain with German beers and huge choices of food",
+          "url": "/gordon-biersch",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5484762,
+          "lat": 25.0533355
+        },
+        {
+          "name": "Gordon Biersch",
+          "description": "American style chain with German beers and huge choices of food",
+          "url": "/gordon-biersch",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.520684,
+          "lat": 25.052749
+        },
+        {
+          "name": "Home’s Thai",
+          "description": "Very spicy Thai restaurant",
+          "url": "/homes-thai",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.543863,
+          "lat": 25.054125
+        },
+        {
+          "name": "Home's Thai",
+          "description": "Very spicy Thai restaurant",
+          "url": "/homes-thai",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5556988,
+          "lat": 25.0397244
+        },
+        {
+          "name": "Very Thai",
+          "description": "Very good Thai restaurant chain",
+          "url": "/very-thai",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.544408,
+          "lat": 25.059221
+        },
+        {
+          "name": "Very Thai",
+          "description": "Very good Thai restaurant chain",
+          "url": "/very-thai",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5680528,
+          "lat": 25.0355002
+        },
+        {
+          "name": "Very Thai",
+          "description": "Very good Thai restaurant chain",
+          "url": "/very-thai",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.524433,
+          "lat": 25.104666
+        },
+        {
+          "name": "Very Thai",
+          "description": "Very good Thai restaurant chain",
+          "url": "/very-thai",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.6144852,
+          "lat": 25.0584643
+        },
+        {
+          "name": "Very Thai",
+          "description": "Very good Thai restaurant chain",
+          "url": "/very-thai",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.466765,
+          "lat": 25.013651
+        },
+        {
+          "name": "Very Thai Noodles",
+          "description": "Thai inspired Ramon bowls",
+          "url": "/very-thai-noodles",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5480526,
+          "lat": 25.0519254
+        },
+        {
+          "name": "Very Thai Noodles",
+          "description": "Thai inspired Ramon bowls",
+          "url": "/very-thai-noodles",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5614574,
+          "lat": 25.044545
+        },
+        {
+          "name": "Very Thai Noodles",
+          "description": "Thai inspired Ramon bowls",
+          "url": "/very-thai-noodles",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.515325,
+          "lat": 25.0461278
+        },
+        {
+          "name": "Very Thai Noodles",
+          "description": "Thai inspired Ramon bowls",
+          "url": "/very-thai-noodles",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5169098,
+          "lat": 25.0474768
+        },
+        {
+          "name": "Smith & Hsu",
+          "description": "Probably the best afternoon tea in Taipei",
+          "url": "/smith-and-hsu",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.523946,
+          "lat": 25.052043
+        },
+        {
+          "name": "Smith & Hsu",
+          "description": "Probably the best afternoon tea in Taipei",
+          "url": "/smith-and-hsu",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.565396,
+          "lat": 25.040846
+        },
+        {
+          "name": "Chamonix Teppanyaki",
+          "description": "Very good high end teppanyaki restaurant chain",
+          "url": "/chamonix-teppanyaki",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5570817,
+          "lat": 25.0415388
+        },
+        {
+          "name": "Chamonix Teppanyaki",
+          "description": "Very good high end teppanyaki restaurant chain",
+          "url": "/chamonix-teppanyaki",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.522484,
+          "lat": 25.05515
+        },
+        {
+          "name": "Broccoli Beer",
+          "description": "Korean restaurant in the style of a gastro pub",
+          "url": "/broccoli-beer",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.532782,
+          "lat": 25.047659
+        },
+        {
+          "name": "Texas Roadhouse 德州鮮切牛排 松高店",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5673139,
+          "lat": 25.0381554
+        },
+        {
+          "name": "Eastern Ice Store",
+          "description": "Nice local ice desserts",
+          "url": "/eastern-ice-store",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5528288,
+          "lat": 25.039509
+        },
+        {
+          "name": "TGI Fridays Songgao",
+          "description": "Really nice retro version of the classic chain",
+          "url": "/tgi-fridays",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5673139,
+          "lat": 25.0381554
+        },
+        {
+          "name": "Pizzeria Oggi",
+          "description": "Authentic Neapolitan Pizzas",
+          "url": "/pizzeria-oggi",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5554643,
+          "lat": 25.0810846
+        },
+        {
+          "name": "Liquid Bread Company",
+          "description": "Excellent sandwiches made from the PureBread bakery",
+          "url": "/liquid-bread-company",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.556862,
+          "lat": 25.0337323
+        },
+        {
+          "name": "Chinita's Cubano",
+          "description": "Hearty Cuban Sandwiches",
+          "url": "/chinitas-cubano",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5408592,
+          "lat": 25.0469951
+        },
+        {
+          "name": "Golden Flower Grilled Toast",
+          "description": "Monstrous sandwiches!",
+          "url": "/golden-flower-grilled-toast",
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.506525,
+          "lat": 25.0416688
+        }
+      ]
+    },
+    {
+      "name": "Drink",
+      "places": [
+        {
+          "name": "Ray Cafe",
+          "description": "Small cafe with nice drinks",
+          "url": "/ray-cafe",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5516427,
+          "lat": 25.0406834
+        },
+        {
+          "name": "Louisa Coffee",
+          "description": "Cheap cafe chain with many branches",
+          "url": "/louisa",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5347157,
+          "lat": 25.0332292
+        },
+        {
+          "name": "Louisa Coffee",
+          "description": "Cheap cafe chain with many branches",
+          "url": "/louisa",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.543594,
+          "lat": 25.045247
+        },
+        {
+          "name": "YOLO's Cafe",
+          "description": "Affordable cafe chain",
+          "url": "/yolos-cafe",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.553354,
+          "lat": 25.031458
+        },
+        {
+          "name": "YOLO's Cafe",
+          "description": "Affordable cafe chain",
+          "url": "/yolos-cafe",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5640828,
+          "lat": 25.0422957
+        },
+        {
+          "name": "YOLO's Cafe",
+          "description": "Affordable Cafe chain",
+          "url": "/yolos-cafe",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5360715,
+          "lat": 25.0490329
+        },
+        {
+          "name": "YOLO'S Cafe",
+          "description": "Affordable cafe chain",
+          "url": "/yolos-cafe",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.519786,
+          "lat": 25.0635025
+        },
+        {
+          "name": "Yolo's Cafe",
+          "description": "Affordable cafe chain",
+          "url": "/yolos-cafe",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.539128,
+          "lat": 25.0612215
+        },
+        {
+          "name": "Coffee Alley",
+          "description": "Cafe with nice drinks and waffles",
+          "url": "/coffee-alley",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5148659,
+          "lat": 25.0453593
+        },
+        {
+          "name": "Coffee Alley",
+          "description": "Cafe with nice drinks and waffles",
+          "url": "/coffee-alley",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.551469,
+          "lat": 25.042521
+        },
+        {
+          "name": "Coffee Alley",
+          "description": "Cafe with nice drinks and waffles",
+          "url": "/coffee-alley",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.548162,
+          "lat": 25.043312
+        },
+        {
+          "name": "Coffee Alley",
+          "description": "Cafe with nice drinks and waffles",
+          "url": "/coffee-alley",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.526587,
+          "lat": 25.088581
+        },
+        {
+          "name": "Coffee Alley",
+          "description": "Cafe with nice drinks and waffles",
+          "url": "/coffee-alley",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5250049,
+          "lat": 25.0949519
+        },
+        {
+          "name": "Yaboo Cafe",
+          "description": "Nice cafe with some outdoor seating",
+          "url": "/yaboo-cafe",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.530585,
+          "lat": 25.030422
+        },
+        {
+          "name": "Chen Sanding Brown Sugar",
+          "description": "Popular stall serving warm brown sugar drink with tapioca (similar to bubble tea)",
+          "url": "/chen-sanding-brown-sugar",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5324478,
+          "lat": 25.0156148
+        },
+        {
+          "name": "Fourplay",
+          "description": "Great cocktails and food",
+          "url": "/fourplay",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.546933,
+          "lat": 25.03617
+        },
+        {
+          "name": "Woo Taipei",
+          "description": "Nice cocktails and food",
+          "url": "/woo-taipei",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.552018,
+          "lat": 25.04394
+        },
+        {
+          "name": "A Train Leads The Way To Jazz",
+          "description": "Very nice cocktails and western food",
+          "url": "/a-train-leads-the-way-to-jazz",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5405441,
+          "lat": 25.0469103
+        },
+        {
+          "name": "Indulge Experimental Bistro",
+          "description": "Interesting cocktails and nice food",
+          "url": "/indulge-experimental-bistro",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5447768,
+          "lat": 25.0391324
+        },
+        {
+          "name": "Triangle",
+          "description": "Club with DJs and live bands",
+          "url": "/triangle",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.52264,
+          "lat": 25.0695869
+        },
+        {
+          "name": "The Malt",
+          "description": "Whiskey bar with hundreds of choices",
+          "url": "/the-malt",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.54613,
+          "lat": 25.03143
+        },
+        {
+          "name": "Continue? Gaming Bar",
+          "description": "Quirky cocktail and food place with consoles",
+          "url": "/continue-gaming-bar",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.533161,
+          "lat": 25.046197
+        },
+        {
+          "name": "B Line by A train",
+          "description": "Very cool cocktail joint with nice food",
+          "url": "/b-line-by-a-train",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5307357,
+          "lat": 25.0426711
+        },
+        {
+          "name": "C Park by A Train",
+          "description": "Very cool cocktail place with nice food",
+          "url": "/c-park-by-a-train",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.53327,
+          "lat": 25.046859
+        },
+        {
+          "name": "James Joyce Irish Bar",
+          "description": "Small bar serving only drinks, and a great pint of Guinness",
+          "url": "/james-joyce-irish-bar",
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5320682,
+          "lat": 25.0166109
+        }
+      ]
+    },
+    {
+      "name": "Shop",
+      "places": [
+        {
+          "name": "Apple Xinyi A13",
+          "description": "Flagship Apple store",
+          "url": "/xinyi-apple-store",
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5679318,
+          "lat": 25.0360677
+        },
+        {
+          "name": "Technology District and Syntrend",
+          "description": "District with technology shops",
+          "url": "/taipei-technology-district",
+          "colour": "#795548",
+          "type": "point",
+          "lng": 121.5310319,
+          "lat": 25.045339
+        }
+      ]
+    },
+    {
+      "name": "Culture",
+      "places": [
+        {
+          "name": "National Palace Museum",
+          "description": "Museum with huge collection of Chinese artefacts",
+          "url": "/national-palace-museum",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5484925,
+          "lat": 25.1023554
+        },
+        {
+          "name": "Taipei 228 Memorial Museum",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.515564,
+          "lat": 25.040396
+        },
+        {
+          "name": "Miniatures Museum of Taiwan",
+          "description": "Museum great for kids",
+          "url": "/miniatures-museum-of-taiwan",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5360584,
+          "lat": 25.050422
+        },
+        {
+          "name": "Beitou Hot Spring Museum",
+          "description": "Nice hot spring museum",
+          "url": "/beitou-hot-spring-museum",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.50715,
+          "lat": 25.1365694
+        },
+        {
+          "name": "Museum of Drinking Water",
+          "description": "Museum with some nice walking areas",
+          "url": "/see-the-drinking-water-museum-at-taipei-water-park",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5300223,
+          "lat": 25.0125283
+        },
+        {
+          "name": "Taipei Astronomical Museum",
+          "description": "Astronomical Museum that's great for kids (and adults)",
+          "url": "/taipei-astronomical-museum",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5183633,
+          "lat": 25.0958186
+        },
+        {
+          "name": "National Taiwan Museum",
+          "description": "Museum with adult and kid friendly exhibitions",
+          "url": "/national-taiwan-museum",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.515034,
+          "lat": 25.042754
+        },
+        {
+          "name": "National Theatre",
+          "description": "Theatre and dance performances",
+          "url": "/national-concert-hall-and-theatre",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5181775,
+          "lat": 25.0352143
+        },
+        {
+          "name": "National Concert Hall",
+          "description": "Live classical, jazz, opera and choirs",
+          "url": "/national-concert-hall-and-theatre",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5192564,
+          "lat": 25.0370403
+        },
+        {
+          "name": "SPOT - Taipei Film House",
+          "description": "Independent cinema",
+          "url": "/the-spot-cinemas",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5221609,
+          "lat": 25.053279
+        },
+        {
+          "name": "SPOT Huashan cinema",
+          "description": "Independent cinema",
+          "url": "/the-spot-cinemas",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5291591,
+          "lat": 25.0451887
+        },
+        {
+          "name": "Eslite Art House Cinema",
+          "description": "Independent cinema",
+          "url": "/eslite-art-house-cinema",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5606868,
+          "lat": 25.0447282
+        },
+        {
+          "name": "Taiwan Traditional Theatre Center",
+          "description": "Traditional Taiwanese Theatre",
+          "url": "/taiwan-traditional-theatre-centre",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5190879,
+          "lat": 25.1023329
+        },
+        {
+          "name": "Cloud Gate Theater",
+          "description": "Dance and theatre, and the home to Cloud Gate dance group",
+          "url": "/cloud-gate-theatre",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.429323,
+          "lat": 25.180166
+        },
+        {
+          "name": "Eslite Performance Hall",
+          "description": "Live classical and jazz performances",
+          "url": "/eslite-performance-hall",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5614574,
+          "lat": 25.044545
+        },
+        {
+          "name": "Legacy Taipei",
+          "description": "Music venue with both local and international artists",
+          "url": "/legacy-taipei",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5294624,
+          "lat": 25.0450297
+        },
+        {
+          "name": "The Wall - Live Music",
+          "description": "Underground live music venue",
+          "url": "/the-wall",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5366968,
+          "lat": 25.0108117
+        },
+        {
+          "name": "Revolver",
+          "description": "Alternative live music venue",
+          "url": "/revolver",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5174093,
+          "lat": 25.034273
+        },
+        {
+          "name": "Sappho Live Jazz",
+          "description": "Live jazz, funk and blues venue",
+          "url": "/sappho-live-jazz",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5521986,
+          "lat": 25.0343361
+        },
+        {
+          "name": "Taipei Arena",
+          "description": "Large indoor sport, music and theatre value",
+          "url": "/taipei-arena",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5497414,
+          "lat": 25.0513848
+        },
+        {
+          "name": "Museum of Contemporary Art",
+          "description": "Art with a focus on multimedia",
+          "url": "/museum-of-contemporary-art",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5189745,
+          "lat": 25.0507246
+        },
+        {
+          "name": "Taipei Fine Arts Museum",
+          "description": "Three floors with permanent and temporary art exhibitions",
+          "url": "/fine-arts-museum",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.52407,
+          "lat": 25.072225
+        },
+        {
+          "name": "Treasure Hill",
+          "description": "Artists village with exhibitions",
+          "url": "/treasure-hill",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5322536,
+          "lat": 25.0107323
+        },
+        {
+          "name": "National Taiwan Science Education Center",
+          "description": "Great for younger children",
+          "url": "/national-taiwan-science-education-center",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5164742,
+          "lat": 25.0962609
+        },
+        {
+          "name": "Taipei Children's Amusement Park",
+          "description": "Small amusement park",
+          "url": "/taipei-childrens-amusement-park",
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.514951,
+          "lat": 25.0972351
+        }
+      ]
+    }
+  ]
+}

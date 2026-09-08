@@ -1,0 +1,386 @@
+{
+  "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
+  "name": "Taipei Sightseeing Bus Route",
+  "embed": "https://www.google.com/maps/d/embed?mid=18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
+  "usedOn": [
+    "taipei-sightseeing-bus"
+  ],
+  "fetchedAt": "2026-09-08T06:37:29.407Z",
+  "counts": {
+    "layers": 2,
+    "places": 40,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "BLUE",
+      "places": [
+        {
+          "name": "①TAIPEI MAIN STATION(Starting station)",
+          "description": "Please get on the bus at the starting station. Take the South Exit of Taipei Station and go straight until the M4 exit of MRT Station will see the Taipei Sightseeing Bus Bus Stop, the red and blue lines. ★Municipal MRT station: MRT Taipei Station M4 exit ★ Nearby sightseeing spots: Taipei Underground Street, Taipei National Father's Historical Site, Taipei Futai Street, and Taipei City North Gate.",
+          "url": null,
+          "colour": "#DB4436",
+          "type": "point",
+          "lng": 121.5172333,
+          "lat": 25.0464474
+        },
+        {
+          "name": "②MRT Beimen Station(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "Take exit 2 out of MRT Beimen Station. ★The nearest station: MRT Beimen Station ★Sightseeing Information: Beimen",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.510406,
+          "lat": 25.0492086
+        },
+        {
+          "name": "③Yanping Station 1 (Nanjing)(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "★Sightseeing Information：Dadaocheng Wharf、Dihua Street -Lunar New Year Shopping Area",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.511306,
+          "lat": 25.053787
+        },
+        {
+          "name": "④Traffic Circle (Button St.)(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "★Sightseeing Information：Yongle Fabric Market (former Yongle Market)",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5133476,
+          "lat": 25.0539454
+        },
+        {
+          "name": "⑤Taipei Circle (Nanjing)(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "★Sightseeing Information：Ningxia Road Night Market",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5157342,
+          "lat": 25.0536298
+        },
+        {
+          "name": "⑥MRT Zhongshan Station(Zhiren High School)(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "★Sightseeing Information：MRT Zhongshan Station Walking Area、SPOT-Taipei Film House",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5195662,
+          "lat": 25.0527276
+        },
+        {
+          "name": "⑦THE AMBASSADOR HOTEL(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "Bus stop is in the front of First Commercial Bank where is next to Taipei Ambassador Hotel ★The Nearest Station:MRT Shuanglian ★Sightseeing Information：SPOT-Taipei、Ningxia Night Market、Shin Kong Mitsukoshi department store、Museum of Contemporary Art,etc",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.522973,
+          "lat": 25.05626
+        },
+        {
+          "name": "⑧TATUNG COMPANY(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "The bus stop is in front of ASOS(shoes store) ★The Nearest Station:MRT Minquan West Road Station ★Sightseeing Information：Shuang Cheng Street Night Market",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.522483,
+          "lat": 25.064394
+        },
+        {
+          "name": "⑨TAIPEI FINE ART MUSEUM(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "The bus stop is in front of EcoARK (Taioei EXPO park) Electric Bulletin Board will show you the information about how many minutes the bus will come. ★Sightseeing Information：Taipei Fine Arts Museum,TaipeiStoryHouse ,Taioei EXPO park",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.52411,
+          "lat": 25.072291
+        },
+        {
+          "name": "⑩Grand Hotel Taipei(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "Location：Grand Hotel Front Door. This hotel is Taipei very first five stars hotel build in 1973 it’s one of the must visit. Many Taiwan movies and drama were filmed there in the 70’s-80’s era The view from the hotel is very nice too can see Taipei 101 Grand Hotel Taipei is located on a hill overlooking Taipei. Its traditional Chinese architecture style makes you feel you are going back to Chinese history.\"",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.526137,
+          "lat": 25.078304
+        },
+        {
+          "name": "⑪MING CHUAN UNIVERSITY(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "Location:Stop at the entrance of Zhongshan North Road, Mingchuan University ★The Nearest Station:MRT Jiantan Station Electronic Bulletin Board will show you the information about how many minutes the bus will come. ★Sightseeing Information：Cixian Temple、Shilin Night Market、Martyrs' Shrine、National Taiwan Science Education Center,Taipei Astronomical Museum,Taipei Children's Amusement Park,etc\"",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.526753,
+          "lat": 25.08713
+        },
+        {
+          "name": "⑫SHILIN OFFICIAL RESIDENCE(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "⑧SHILIN OFFICIAL RESIDENCE(TOWARD NATIONAL PALACE MUSEUM) Go to the rear of Lee Ko Yung Memorial Library until Zhongzheng Road Turn right and walk a little bit then you will see the bus stop. Electric Bulletin Board will show you the information about how many minutes the bus will come. ★Sightseeing Information：Main Building of Chiang Kai-Shek Shilin Residence,Shihlin Residence Park",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.53153,
+          "lat": 25.096342
+        },
+        {
+          "name": "⑬NATIONAL PALACE MUSEUM(TOWARD　TAIPEI MAIN STATION)",
+          "description": "The bus stop located on the B1 floor of the National Palace Museum Exhibition Area I (Main Building) ★Sightseeing Information：National Palace Museum、Shung Ye Museum of Formosan Aborigines",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5491858,
+          "lat": 25.1019706
+        },
+        {
+          "name": "⑫SHILIN OFFICIAL RESIDENCE(TOWARD NATIONAL PALACE MUSEUM)",
+          "description": "Go to the rear of Lee Ko Yung Memorial Library until Zhongzheng Road Turn right and walk a little bit then you will see the bus stop. Electric Bulletin Board will show you the information about how many minutes the bus will come. ★Sightseeing Information：Main Building of Chiang Kai-Shek Shilin Residence,Shihlin Residence Park",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.531532,
+          "lat": 25.096539
+        },
+        {
+          "name": "⑪MRT JIANTAN STATION-SHILIN NIGHT MARKET(TOWARD TAIPEI MAIN STATION)",
+          "description": "Location:Go out through Exit1, then you will see the bus stop.(Zhongshan North Road) Electric Bulletin Board will show you the information about how many minutes the bus will come. ★The Nearest Station:MRT Jiantan Station ★Sightseeing Information：Cixian Temple、Shilin Night Market、Martyrs' Shrine、National Taiwan Science Education Center,Taipei Astronomical Museum,Taipei Children's Amusement Park,etc\"",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.525345,
+          "lat": 25.085423
+        },
+        {
+          "name": "⑩Grand Hotel Taipei(TOWARD TAIPEI MAIN STATION)",
+          "description": "Location：Grand Hotel Front Door Electronic Bulletin Board will show you the information . This hotel is Taipei very first five stars hotel build in 1973 it’s one of the must visit. Many Taiwan movies and drama were filmed there in the 70’s-80’s era The view from the hotel is very nice too can see Taipei 101 Grand Hotel Taipei is located on a hill overlooking Taipei. Its traditional Chinese architecture style makes you feel you are going back to Chinese history.\"",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.526237,
+          "lat": 25.078191
+        },
+        {
+          "name": "⑨TAIPEI FINE ART MUSEUM(TOWARD TAIPEI MAIN STATION)",
+          "description": "The bus stop is in front of EcoARK (Taioei EXPO park) Electric Bulletin Board will show you the information about how many minutes the bus will come. ★Sightseeing Information：Taipei Fine Arts Museum,TaipeiStoryHouse ,Taioei EXPO park",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.523218,
+          "lat": 25.070432
+        },
+        {
+          "name": "⑧TATUNG COMPANY(TOWARD TAIPEI MAIN STATION)",
+          "description": "The bus stop is between Tatung Company and Mr. Brown Café(Zhongshan Store 3) Electric Bulletin Board will show you the information about how many minutes the bus will come. ★The Nearest Station:MRT Minquan West Road Station ★Sightseeing Information：Shuang Cheng Street Night Market",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.522128,
+          "lat": 25.064204
+        },
+        {
+          "name": "⑦THE AMBASSADOR HOTEL(TOWARD TAIPEI MAIN STATION)",
+          "description": "The bus stop is in front of Settour Company(Zhongshan Beimen branch). Electric Bulletin Board will show you the information about how many minutes the bus will come. ★The Nearest Station:MRT Shuanglian ★Sightseeing Information：SPOT-Taipei、Ningxia Night Market、Shin Kong Mitsukoshi department store、Museum of Contemporary Art,etc",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.52262,
+          "lat": 25.056544
+        },
+        {
+          "name": "①TAIPEI MAIN STATION(DESTINATION)",
+          "description": "This the final destination. This stop is only for getting of the bus. Please get on the bus at the starting station.",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.517748,
+          "lat": 25.046354
+        }
+      ]
+    },
+    {
+      "name": "RED",
+      "places": [
+        {
+          "name": "①TAIPEI MAIN STATION(DESTINATION)",
+          "description": "Please get on the bus at the starting station. Take the South Exit of Taipei Station and go straight until the M4 exit of MRT Station will see the Taipei Sightseeing Bus Bus Stop, the red and blue lines. ★Municipal MRT station: MRT Taipei Station M4 exit ★ Nearby sightseeing spots: Taipei Underground Street, Taipei National Father's Historical Site, Taipei Futai Street, and Taipei City North Gate.",
+          "url": null,
+          "colour": "#DB4436",
+          "type": "point",
+          "lng": 121.5172246,
+          "lat": 25.0464189
+        },
+        {
+          "name": "②MRT XIMEN STATION",
+          "description": "After going out through exit 6, turn around and go straight. On the way to the crossroads of PARTYWORLD Karaoke Bar ,there is an open top bus stop. ★The nearest station: MRT Ximen Station ★Sightseeing Information: Ximen Shopping Area, Ximen Red House, Presidential Palace, Taipei Guest House etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.508285,
+          "lat": 25.042337
+        },
+        {
+          "name": "③Xiaonanmen(Toward Lungshan Temple)",
+          "description": "Location：Bus stop at No.200, Sec.1, Chunghua Road. Sightseeing Information: Armed Forces Museum、Nishi Honganji Square\"",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5067823,
+          "lat": 25.0380472
+        },
+        {
+          "name": "④Lungshan Temple",
+          "description": "Location：Bus stop front of Exit 3 of MRT Longshan temple Sightseeing Information: The historic Bopiliao area , Huaxi Street Tourist Night Market, Guangzhou Street Tourist Night Market",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.500146,
+          "lat": 25.035409
+        },
+        {
+          "name": "⑤Xiaonanmen(Toward CHIANG KAI-SHEK MEMORIAL HALL)",
+          "description": "Location：Bus stop at No.87, Sec.1, Chunghua Road. Sightseeing Information: Armed Forces Museum、Nishi Honganji Square\"",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.507437,
+          "lat": 25.038486
+        },
+        {
+          "name": "⑥CHIANG KAI-SHEK MEMORIAL HALL",
+          "description": "Please exit through the main entrance of Chiang Kai-shek Memorial Hall(Gate of Great Loyalty.) then make a left turn and go straight about 250m, the bus stop will be between the roads. Electric Bulletin Board will show you the information about how many minutes the bus will come. ★The nearest station: MRT Chiang Kai-shek Memorial Hall ★Sightseeing Information: Chiang Kai-shek Memorial Hall, National Theater & Concert Hall etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.520687,
+          "lat": 25.037236
+        },
+        {
+          "name": "⑦XINYI&YONG KONG INTERSECTION",
+          "description": "Take the South exit 1 out of the Taipei Main Station and go straight on until you reach the first crossroads. You will see the bus stop over there. Electric Bulletin Board will show you the information about how many minutes the bus will come. ★The nearest station: MRT Dongmen Station ★Sightseeing Information: Yongkang Street, Din Tai Fung(Xinyi branch) etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.529732,
+          "lat": 25.033651
+        },
+        {
+          "name": "⑧MRT DAAN PARK STATION",
+          "description": "Take exit 4 out of MRT Daan Park Station. The bus stop will be in the front of the crossroads. Open top bus will stop at the side of Daan Park. Electric Bulletin Board will show you the information about how many minutes the bus will come. ★The nearest station: MRT Daan Park Station ★Sightseeing Information: Daan Park,Jianguo Holiday Jade Market, The Artist Market etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.535696,
+          "lat": 25.033453
+        },
+        {
+          "name": "⑨MRT Daan Station (Xinyi)",
+          "description": "Bus lane stop at Fuxing South Road, Section 3, Xinyi Road ★The nearest station: MRT Daan Park Station",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.543266,
+          "lat": 25.033292
+        },
+        {
+          "name": "⑩Xinyi Dunhua Road Station",
+          "description": "Bus stop at the intersection of Dunhua South Road, Section 4, Xinyi Road",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5481545,
+          "lat": 25.0332917
+        },
+        {
+          "name": "⑪XINYI&TONGHUA INTERSECTION",
+          "description": "After going out through exit4 of MRT Xinyi Anhe Stationssroads. Open top bus will stop at the side of Tonghua Street Electric Bulletin Board will show in how many minutes the bus will come. ★The nearest station: MRT Xinyi Anhe Station ★Sightseeing Information：Tonghua Street, Linjiang Street Night Market etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.554126,
+          "lat": 25.033083
+        },
+        {
+          "name": "⑫TAIPEI 101",
+          "description": "Go out from the exit of Songzhi Rd. Walk across the street then turn left,you will find the bus stop over there. ★The nearest station: MRT Taipei 101 / World Trade Center Station ★Sightseeing Information: Taipei 101 Shopping Mall, 101 Observatory, World Trade Center etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.56551,
+          "lat": 25.03467
+        },
+        {
+          "name": "⑬SONSHOU ROAD ENTRANCE (VIESHOW CINEMAS)",
+          "description": "The bus stop is in front of Taipei Xinyi VIE SHOW Cinema ★Sightseeing Information: Taipei 101 Shopping Mall, Taipei 101 Observatory,VIESHOW cinema,Shin Kong Mitsukoshi Department etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.567236,
+          "lat": 25.035747
+        },
+        {
+          "name": "⑭MRT TAIPEI CITY HALL STATION",
+          "description": "Bus stop is 80 meters behind Exit 4 of MRT Taipei City Hall Station. Electric Bulletin Board will show in how many minutes the bus will arrive. ★The nearest MRT station: Taipei City Hall Station ★Sightseeing Information: Breeze XIN YI, Hankyu Uni-President Mall, Shin Kong Mitsukoshi Department Store, the Eslite Xin Yi, cinemas etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5664852,
+          "lat": 25.0412378
+        },
+        {
+          "name": "⑮MRT SUN YAT-SEN MEMORIAL HALL STATION",
+          "description": "Bus stop is 120 meters behind Exit 5 of MRT Sun Yat-Sen Memorial Hall Station. Electric Bulletin Board will show in how many minutes the bus will arrive. ★The nearest MRT station: MRT Sun Yat-Sen Memorial Hall Station ★Sightseeing Information: Sun Yat-Sen Memorial Hall, Songshan Cultural Park etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.558914,
+          "lat": 25.041428
+        },
+        {
+          "name": "⑯MRT ZHONGXIAO DUNHUA STATION",
+          "description": "Bus stop is behind Exit 7 of MRT Zhongxiao Dunhua Station. ★The nearest MRT station: MRTZhongxiao Dunhua Station ★Sightseeing Information: Mingyao Department Store, the Eslite Dunnan etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.550114,
+          "lat": 25.041626
+        },
+        {
+          "name": "⑰DINHAO MARKET",
+          "description": "Bus stop is behind Exit 14 of the underground shopping street between MRT Zhongxiao Dunhua Station and MRT Zhongxioa Fuxing Station. Electric Bulletin Board will show in how many minutes the bus will arrive. ★The nearest MRT station: MRT Zhongxiao Fuxing Station ★Sightseeing Information: East District underground shopping street.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.546761,
+          "lat": 25.041678
+        },
+        {
+          "name": "⑱MRT ZHONGXIAO FUXING STATION",
+          "description": "Bus stop is in front of Exit 1 of MRT Zhongxiao Fuxing Station. ★The nearest MRT station: MRT Zhongxiao Fuxing Station ★Sightseeing Information: Sogo Department Store.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.542869,
+          "lat": 25.041754
+        },
+        {
+          "name": "⑲HUASHAN 1914 CREATIVE PARK",
+          "description": "★The nearest MRT station: MRT Shandao Temple Station ★Sightseeing Information: Huashan 1914 Cultural Park, Guanghua Digital Plaza Computer Market etc.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.527542,
+          "lat": 25.043906
+        },
+        {
+          "name": "①TAIPEI MAIN STATION(DESTINATION)",
+          "description": "This the final destination. This stop is only for getting of the bus. Please get on the bus at the starting station.",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.51778,
+          "lat": 25.046419
+        }
+      ]
+    }
+  ]
+}

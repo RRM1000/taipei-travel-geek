@@ -1,0 +1,294 @@
+{
+  "mid": "1KmXoi6moJ5U94pyfKe0ujZbFjqH9lZ9K",
+  "name": "Tamsui",
+  "embed": "https://www.google.com/maps/d/embed?mid=1KmXoi6moJ5U94pyfKe0ujZbFjqH9lZ9K",
+  "usedOn": [
+    "tamsui"
+  ],
+  "fetchedAt": "2026-09-08T06:37:35.047Z",
+  "counts": {
+    "layers": 1,
+    "places": 25,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Fort San Domingo",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4331728,
+          "lat": 25.1752389
+        },
+        {
+          "name": "Oxford College",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.434485,
+          "lat": 25.17602
+        },
+        {
+          "name": "Tamsui Customs Officers' Residence",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4362745,
+          "lat": 25.1741951
+        },
+        {
+          "name": "Reverend Mackay’s Residence",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4352102,
+          "lat": 25.1746868
+        },
+        {
+          "name": "The House of Maidens",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4349188,
+          "lat": 25.1749944
+        },
+        {
+          "name": "Former British Consulate Residence in Tamsui",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.433484,
+          "lat": 25.175298
+        },
+        {
+          "name": "校史館",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4355962,
+          "lat": 25.175367
+        },
+        {
+          "name": "LA VILLA DANSHUI",
+          "description": "",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.431332,
+          "lat": 25.174821
+        },
+        {
+          "name": "Monini",
+          "description": "",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.4341301,
+          "lat": 25.1739914
+        },
+        {
+          "name": "Ferry to Bali & Fisherman's Wharf",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4381074,
+          "lat": 25.1705445
+        },
+        {
+          "name": "Water Front Restaurant",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.4365727,
+          "lat": 25.1719988
+        },
+        {
+          "name": "Danshui Old Street",
+          "description": "Riverside Walk",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "line",
+          "path": [
+            [
+              121.445693,
+              25.1667657
+            ],
+            [
+              121.4422383,
+              25.168902
+            ],
+            [
+              121.4390626,
+              25.169873
+            ],
+            [
+              121.4353504,
+              25.1726306
+            ],
+            [
+              121.4356293,
+              25.1732327
+            ],
+            [
+              121.4350714,
+              25.1735628
+            ],
+            [
+              121.4346852,
+              25.1732327
+            ],
+            [
+              121.4324965,
+              25.1743396
+            ]
+          ]
+        },
+        {
+          "name": "Market Street",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "line",
+          "path": [
+            [
+              121.4440086,
+              25.1683485
+            ],
+            [
+              121.4423456,
+              25.1695623
+            ]
+          ]
+        },
+        {
+          "name": "Cloud Gate Theater",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.429323,
+          "lat": 25.180166
+        },
+        {
+          "name": "Fisherman's Wharf",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4108448,
+          "lat": 25.1831101
+        },
+        {
+          "name": "Bali Old Street",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.4347089,
+          "lat": 25.1584429
+        },
+        {
+          "name": "Shihsanhang Museum of Archaeology",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4048561,
+          "lat": 25.1568739
+        },
+        {
+          "name": "Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.443208,
+          "lat": 25.1689739
+        },
+        {
+          "name": "Britshake",
+          "description": "",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.4382444,
+          "lat": 25.1716316
+        },
+        {
+          "name": "Between Tea House",
+          "description": "",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.4361107,
+          "lat": 25.1730442
+        },
+        {
+          "name": "Wuji Tianyuan Temple",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.4846772,
+          "lat": 25.186565
+        },
+        {
+          "name": "Tamsui Fuyou Temple",
+          "description": "",
+          "url": null,
+          "colour": "#AFB42B",
+          "type": "point",
+          "lng": 121.4399358,
+          "lat": 25.1702989
+        },
+        {
+          "name": "Love Lane",
+          "description": "",
+          "url": null,
+          "colour": "#01579B",
+          "type": "line",
+          "path": [
+            [
+              121.4401413,
+              25.1707774
+            ],
+            [
+              121.440482,
+              25.1710141
+            ]
+          ]
+        },
+        {
+          "name": "Grandma's Iron Egg",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.4392318,
+          "lat": 25.1703572
+        },
+        {
+          "name": "Shalun Beach",
+          "description": "",
+          "url": null,
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.4158302,
+          "lat": 25.1885759
+        }
+      ]
+    }
+  ]
+}

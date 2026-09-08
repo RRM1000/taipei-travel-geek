@@ -1,0 +1,75 @@
+{
+  "mid": "1IVJmaeWdGmkE2EHuAwrGdgV53b24Aypv",
+  "name": "Best Music Venues in Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1IVJmaeWdGmkE2EHuAwrGdgV53b24Aypv",
+  "usedOn": [
+    "best-places-for-live-music-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:39.139Z",
+  "counts": {
+    "layers": 1,
+    "places": 6,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Music Venues",
+      "places": [
+        {
+          "name": "THE WALL MUSIC",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5368091,
+          "lat": 25.0107691
+        },
+        {
+          "name": "Revolver",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5174093,
+          "lat": 25.034273
+        },
+        {
+          "name": "雅痞Art Reading Cafe (雅痞書店)",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5428367,
+          "lat": 25.0432407
+        },
+        {
+          "name": "Legacy Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5294624,
+          "lat": 25.0450297
+        },
+        {
+          "name": "Sappho Live Jazz",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5520891,
+          "lat": 25.0343708
+        },
+        {
+          "name": "National Concert Hall",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5192564,
+          "lat": 25.0370403
+        }
+      ]
+    }
+  ]
+}

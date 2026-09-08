@@ -1,0 +1,48 @@
+{
+  "mid": "1X3twx2z6wbjfNvNoqYXZpGLeq-jllh8e",
+  "name": "Best Craft Beer in Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1X3twx2z6wbjfNvNoqYXZpGLeq-jllh8e",
+  "usedOn": [
+    "best-places-to-drink-craft-beer-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:05.632Z",
+  "counts": {
+    "layers": 1,
+    "places": 3,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Taihu Craft Beer Tasting Room",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5451259,
+          "lat": 25.041094
+        },
+        {
+          "name": "23 Public",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5318212,
+          "lat": 25.0214847
+        },
+        {
+          "name": "掌門精釀啤酒Tap Bistro Zhangmen - 微風松高店",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.56729,
+          "lat": 25.0387076
+        }
+      ]
+    }
+  ]
+}

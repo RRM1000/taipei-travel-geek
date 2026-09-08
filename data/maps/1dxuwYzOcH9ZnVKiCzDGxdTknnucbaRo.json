@@ -1,0 +1,93 @@
+{
+  "mid": "1dxuwYzOcH9ZnVKiCzDGxdTknnucbaRo",
+  "name": "Best Shopping Malls in Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1dxuwYzOcH9ZnVKiCzDGxdTknnucbaRo",
+  "usedOn": [
+    "best-shopping-malls-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:37.570Z",
+  "counts": {
+    "layers": 1,
+    "places": 8,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Syntrend",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5313187,
+          "lat": 25.0454978
+        },
+        {
+          "name": "Mega City",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4669394,
+          "lat": 25.0132107
+        },
+        {
+          "name": "Taipei 101 Shopping center",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5647186,
+          "lat": 25.0338014
+        },
+        {
+          "name": "Breeze Nan Shan",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5661203,
+          "lat": 25.0343525
+        },
+        {
+          "name": "Miramar",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5574584,
+          "lat": 25.0834232
+        },
+        {
+          "name": "Far Eastern SOGO Taipei Zhongxiao Store",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5447188,
+          "lat": 25.0421562
+        },
+        {
+          "name": "Far Eastern SOGO Taipei Fuxing Store",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.542942,
+          "lat": 25.0411353
+        },
+        {
+          "name": "京站時尚廣場",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5171935,
+          "lat": 25.049308
+        }
+      ]
+    }
+  ]
+}

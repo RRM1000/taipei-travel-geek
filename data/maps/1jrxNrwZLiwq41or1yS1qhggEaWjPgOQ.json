@@ -1,0 +1,75 @@
+{
+  "mid": "1jrxNrwZLiwq41or1yS1qhggEaWjPgOQ",
+  "name": "Best Wanhua Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=1jrxNrwZLiwq41or1yS1qhggEaWjPgOQ",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:10.495Z",
+  "counts": {
+    "layers": 1,
+    "places": 6,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Hotel PaPa Whale",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5058059,
+          "lat": 25.046758
+        },
+        {
+          "name": "Energy Inn",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5044795,
+          "lat": 25.0435219
+        },
+        {
+          "name": "Meander Taipei Hostel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5024958,
+          "lat": 25.0438561
+        },
+        {
+          "name": "Cho Hotel 1",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5047744,
+          "lat": 25.0418973
+        },
+        {
+          "name": "Cho Hotel 3",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5046471,
+          "lat": 25.0426126
+        },
+        {
+          "name": "Dan Hostel Taipei 台北丹居青旅",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5066425,
+          "lat": 25.0413648
+        }
+      ]
+    }
+  ]
+}

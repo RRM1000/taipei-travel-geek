@@ -1,0 +1,39 @@
+{
+  "mid": "180W21XXncUobmCIwracQF5a9t3sbK1c",
+  "name": "Beitou Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=180W21XXncUobmCIwracQF5a9t3sbK1c",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:12.084Z",
+  "counts": {
+    "layers": 1,
+    "places": 2,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Grand View Resort Beitou Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.51499,
+          "lat": 25.1377927
+        },
+        {
+          "name": "Spring City Resort",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.513561,
+          "lat": 25.137598
+        }
+      ]
+    }
+  ]
+}

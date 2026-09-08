@@ -1,0 +1,93 @@
+{
+  "mid": "1WlPV7i46p5OIgy6LJ7bs8TPmxn_tDzJL",
+  "name": "Chunghwa Telecom",
+  "embed": "https://www.google.com/maps/d/embed?mid=1WlPV7i46p5OIgy6LJ7bs8TPmxn_tDzJL",
+  "usedOn": [
+    "taiwan-sim-cards"
+  ],
+  "fetchedAt": "2026-09-08T06:37:04.001Z",
+  "counts": {
+    "layers": 1,
+    "places": 8,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Chunghwa Telecom",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.231976,
+          "lat": 25.077012
+        },
+        {
+          "name": "中華電信 桃園機場服務中心(第一航廈入境)",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.2342653,
+          "lat": 25.0796174
+        },
+        {
+          "name": "Chunghwa Telecom Songshna Airport Service Center",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5514627,
+          "lat": 25.0636787
+        },
+        {
+          "name": "Chunghwa Telecom Changchun Service Center",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5243814,
+          "lat": 25.0550977
+        },
+        {
+          "name": "Chunghwa Telecom Da’An Service Center",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5468525,
+          "lat": 25.0335555
+        },
+        {
+          "name": "中華電信 淡水服務中心",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.4377357,
+          "lat": 25.1717209
+        },
+        {
+          "name": "Chunghwa Telecom Taipei East District Service Center",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5679096,
+          "lat": 25.0336296
+        },
+        {
+          "name": "Chunghwa Telecom",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5670989,
+          "lat": 25.0356356
+        }
+      ]
+    }
+  ]
+}

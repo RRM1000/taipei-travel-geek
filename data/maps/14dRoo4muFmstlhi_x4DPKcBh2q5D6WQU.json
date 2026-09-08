@@ -1,0 +1,111 @@
+{
+  "mid": "14dRoo4muFmstlhi_x4DPKcBh2q5D6WQU",
+  "name": "Cool Convenience Stores",
+  "embed": "https://www.google.com/maps/d/embed?mid=14dRoo4muFmstlhi_x4DPKcBh2q5D6WQU",
+  "usedOn": [
+    "taipei-convenience-stores"
+  ],
+  "fetchedAt": "2026-09-08T06:37:41.619Z",
+  "counts": {
+    "layers": 1,
+    "places": 10,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Locations",
+      "places": [
+        {
+          "name": "7-Eleven X",
+          "description": "",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5665836,
+          "lat": 25.0470199
+        },
+        {
+          "name": "7-Eleven X",
+          "description": "",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5648673,
+          "lat": 25.0423911
+        },
+        {
+          "name": "7-Eleven Dominoes",
+          "description": "",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5659519,
+          "lat": 25.0429861
+        },
+        {
+          "name": "Family Mart (Daan)",
+          "description": "",
+          "url": null,
+          "colour": "#FF5252",
+          "type": "point",
+          "lng": 121.5497423,
+          "lat": 25.0369716
+        },
+        {
+          "name": "Family Mart (Songshan)",
+          "description": "",
+          "url": null,
+          "colour": "#FF5252",
+          "type": "point",
+          "lng": 121.546011,
+          "lat": 25.0520714
+        },
+        {
+          "name": "7-Eleven (Ximen)",
+          "description": "",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5039141,
+          "lat": 25.045334
+        },
+        {
+          "name": "7-Eleven (Hello Kitty)",
+          "description": "",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5050558,
+          "lat": 25.0461633
+        },
+        {
+          "name": "7-11 (Lay's)",
+          "description": "",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.5047557,
+          "lat": 25.0451029
+        },
+        {
+          "name": "7-Eleven (OPEN! Family Theme)",
+          "description": "",
+          "url": null,
+          "colour": "#558B2F",
+          "type": "point",
+          "lng": 121.50644,
+          "lat": 25.044045
+        },
+        {
+          "name": "7-Eleven (STARLUX)",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5493628,
+          "lat": 25.0540532
+        }
+      ]
+    }
+  ]
+}

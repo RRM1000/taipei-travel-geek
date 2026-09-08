@@ -1,0 +1,67 @@
+{
+  "mid": "1YfgO1Wzn2N19QIVqrGDYrApWz7k9mk8",
+  "name": "Ningxia Night Market",
+  "embed": "https://www.google.com/maps/d/embed?mid=1YfgO1Wzn2N19QIVqrGDYrApWz7k9mk8",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets",
+    "ningxia-night-market"
+  ],
+  "fetchedAt": "2026-09-08T06:37:17.855Z",
+  "counts": {
+    "layers": 1,
+    "places": 5,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Fang Chia Shredded Chicken on the Rice",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5154654,
+          "lat": 25.0563091
+        },
+        {
+          "name": "Liu Yu Zi",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5153256,
+          "lat": 25.0560045
+        },
+        {
+          "name": "Rong's Pork Liver",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5155708,
+          "lat": 25.056914
+        },
+        {
+          "name": "Yuan Huan Pien Oyster Egg Omelette",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.515281,
+          "lat": 25.0564052
+        },
+        {
+          "name": "Shaved Peanut Ice Cream",
+          "description": "",
+          "url": null,
+          "colour": "#000000",
+          "type": "point",
+          "lng": 121.5151526,
+          "lat": 25.0559176
+        }
+      ]
+    }
+  ]
+}

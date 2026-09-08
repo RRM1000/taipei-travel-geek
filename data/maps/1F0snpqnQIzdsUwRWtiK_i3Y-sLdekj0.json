@@ -1,0 +1,66 @@
+{
+  "mid": "1F0snpqnQIzdsUwRWtiK_i3Y-sLdekj0",
+  "name": "Best Songshan Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=1F0snpqnQIzdsUwRWtiK_i3Y-sLdekj0",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:11.299Z",
+  "counts": {
+    "layers": 1,
+    "places": 5,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Mandarin Oriental, Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5481485,
+          "lat": 25.0557416
+        },
+        {
+          "name": "Eslite Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5620195,
+          "lat": 25.0445778
+        },
+        {
+          "name": "The Tango Taipei Fuxing",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5442844,
+          "lat": 25.0536901
+        },
+        {
+          "name": "arTree Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.552773,
+          "lat": 25.0478562
+        },
+        {
+          "name": "Capella Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.549923,
+          "lat": 25.0532393
+        }
+      ]
+    }
+  ]
+}

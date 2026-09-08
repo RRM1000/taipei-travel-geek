@@ -1,0 +1,93 @@
+{
+  "mid": "1pexQbmbfxeVUi7X1gM8_jwVZpJFO5jY",
+  "name": "Taipei Local Restaurants",
+  "embed": "https://www.google.com/maps/d/embed?mid=1pexQbmbfxeVUi7X1gM8_jwVZpJFO5jY",
+  "usedOn": [
+    "best-famous-restaurants"
+  ],
+  "fetchedAt": "2026-09-08T06:37:25.384Z",
+  "counts": {
+    "layers": 1,
+    "places": 8,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Yong He Soy Milk King",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5433359,
+          "lat": 25.0297337
+        },
+        {
+          "name": "Yongkang Beef Noodles",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5281058,
+          "lat": 25.0329391
+        },
+        {
+          "name": "Fuhang Soy Milk",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5247397,
+          "lat": 25.0442451
+        },
+        {
+          "name": "Jin Feng Braised Pork Rice",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5184989,
+          "lat": 25.0320264
+        },
+        {
+          "name": "Ay-Chung Flour-Rice Noodle",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5077098,
+          "lat": 25.0432921
+        },
+        {
+          "name": "Tian Jin Onion Pancake",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5297056,
+          "lat": 25.0326689
+        },
+        {
+          "name": "Eastern Ice Store",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5528288,
+          "lat": 25.039509
+        },
+        {
+          "name": "Lan Jia Traditional Taiwanese Snack",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5325808,
+          "lat": 25.0157411
+        }
+      ]
+    }
+  ]
+}

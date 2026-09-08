@@ -1,0 +1,323 @@
+{
+  "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
+  "name": "Shilin Night Market",
+  "embed": "https://www.google.com/maps/d/embed?mid=1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
+  "usedOn": [
+    "shilin-night-market"
+  ],
+  "fetchedAt": "2026-09-08T06:37:43.218Z",
+  "counts": {
+    "layers": 1,
+    "places": 22,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Prince Cheese Potato",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5249934,
+          "lat": 25.0862424
+        },
+        {
+          "name": "Fried Chicken Steak",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5239742,
+          "lat": 25.0881567
+        },
+        {
+          "name": "Craft Young",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5240964,
+          "lat": 25.088414
+        },
+        {
+          "name": "Funky Fresh",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.524152,
+          "lat": 25.088717
+        },
+        {
+          "name": "Modern Toilet Theme Restaurant",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5268333,
+          "lat": 25.0895891
+        },
+        {
+          "name": "YEBO HOME",
+          "description": "Bubble Waffles",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5258281,
+          "lat": 25.0891607
+        },
+        {
+          "name": "大頭龍蚵仔煎",
+          "description": "Try the very popular oyster omelette dish, found in the food hall underneath the market",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5242683,
+          "lat": 25.0879133
+        },
+        {
+          "name": "Covered market",
+          "description": "Contains many shops, and is here you'll find most of the games",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "polygon",
+          "path": [
+            [
+              121.5244542,
+              25.0892494
+            ],
+            [
+              121.5244127,
+              25.0891522
+            ],
+            [
+              121.5243604,
+              25.0891704
+            ],
+            [
+              121.5241914,
+              25.0886979
+            ],
+            [
+              121.524245,
+              25.0886809
+            ],
+            [
+              121.5240358,
+              25.0880445
+            ],
+            [
+              121.5240975,
+              25.0880299
+            ],
+            [
+              121.5240814,
+              25.0879692
+            ],
+            [
+              121.5241122,
+              25.087957
+            ],
+            [
+              121.5241055,
+              25.0879364
+            ],
+            [
+              121.5241726,
+              25.0879194
+            ],
+            [
+              121.5241404,
+              25.0878222
+            ],
+            [
+              121.5242423,
+              25.0877931
+            ],
+            [
+              121.5242531,
+              25.0878259
+            ],
+            [
+              121.5242759,
+              25.087821
+            ],
+            [
+              121.5244046,
+              25.0881975
+            ],
+            [
+              121.5244408,
+              25.0881866
+            ],
+            [
+              121.5247385,
+              25.0890647
+            ],
+            [
+              121.5246715,
+              25.0890805
+            ],
+            [
+              121.5247037,
+              25.0891813
+            ],
+            [
+              121.5244542,
+              25.0892494
+            ]
+          ]
+        },
+        {
+          "name": "Narrow busy street",
+          "description": "Some very good food stands here",
+          "url": null,
+          "colour": "#E65100",
+          "type": "polygon",
+          "path": [
+            [
+              121.5252101,
+              25.08928
+            ],
+            [
+              121.5233433,
+              25.089829
+            ],
+            [
+              121.5233218,
+              25.0897513
+            ],
+            [
+              121.5251887,
+              25.089212
+            ],
+            [
+              121.5252101,
+              25.08928
+            ]
+          ]
+        },
+        {
+          "name": "Deep Fried Hot Dogs",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5229721,
+          "lat": 25.0898119
+        },
+        {
+          "name": "Shrimp Fishing",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.5242178,
+          "lat": 25.0877107
+        },
+        {
+          "name": "Hometown Barbecue Chicken",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5248913,
+          "lat": 25.0862726
+        },
+        {
+          "name": "Xin Fa Ting Shaved Ice",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5257416,
+          "lat": 25.0884129
+        },
+        {
+          "name": "Shaved Ice and Condensed Milk Desserts",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.524288,
+          "lat": 25.090438
+        },
+        {
+          "name": "Clams cooked in wine",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5245752,
+          "lat": 25.0894718
+        },
+        {
+          "name": "Roasted Conch",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5247288,
+          "lat": 25.0865635
+        },
+        {
+          "name": "Cannabis Shop",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5265848,
+          "lat": 25.0892129
+        },
+        {
+          "name": "Hai Yu Pork Ribs",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.52537,
+          "lat": 25.08976
+        },
+        {
+          "name": "Chung Chia Sheng Jian Bao",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.52635,
+          "lat": 25.089474
+        },
+        {
+          "name": "Good Friend Cold Noodles",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.52554,
+          "lat": 25.08912
+        },
+        {
+          "name": "Pin Taiwanese Sausage with Sticky Rice",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.52464,
+          "lat": 25.089434
+        },
+        {
+          "name": "A Hui Vermicelli",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.52463,
+          "lat": 25.089432
+        }
+      ]
+    }
+  ]
+}

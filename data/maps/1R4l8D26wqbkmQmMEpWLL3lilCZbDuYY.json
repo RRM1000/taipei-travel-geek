@@ -1,0 +1,48 @@
+{
+  "mid": "1R4l8D26wqbkmQmMEpWLL3lilCZbDuYY",
+  "name": "Gongguan Night Market",
+  "embed": "https://www.google.com/maps/d/embed?mid=1R4l8D26wqbkmQmMEpWLL3lilCZbDuYY",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets"
+  ],
+  "fetchedAt": "2026-09-08T06:37:19.430Z",
+  "counts": {
+    "layers": 1,
+    "places": 3,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Hsiung Chi Scallion Pancake",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5353398,
+          "lat": 25.0134436
+        },
+        {
+          "name": "Lan Chia Guabao",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5325808,
+          "lat": 25.0157411
+        },
+        {
+          "name": "Ho’s Sweet Potato Balls",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.535433847315,
+          "lat": 25.0126510942177
+        }
+      ]
+    }
+  ]
+}

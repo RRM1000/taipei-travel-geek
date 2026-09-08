@@ -1,0 +1,120 @@
+{
+  "mid": "1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk",
+  "name": "Best Cafes to Work",
+  "embed": "https://www.google.com/maps/d/embed?mid=1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk",
+  "usedOn": [
+    "best-cafes-to-work"
+  ],
+  "fetchedAt": "2026-09-08T06:37:27.754Z",
+  "counts": {
+    "layers": 1,
+    "places": 11,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "羊毛與花 ‧ 永康 youmoutoohana Coffee",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.529969,
+          "lat": 25.030696
+        },
+        {
+          "name": "YABOO Cafe",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5305962,
+          "lat": 25.030426
+        },
+        {
+          "name": "Café Costumice",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5525128,
+          "lat": 25.043755
+        },
+        {
+          "name": "Cho café",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.504794,
+          "lat": 25.04201
+        },
+        {
+          "name": "Louisa Coffee Daan Forest Park",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.5347485,
+          "lat": 25.0332951
+        },
+        {
+          "name": "LOUISA COFFEE Shilin Zhongzheng Shop",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.5237686,
+          "lat": 25.0946598
+        },
+        {
+          "name": "CAMPUS CAFE",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "point",
+          "lng": 121.5662262,
+          "lat": 25.0811501
+        },
+        {
+          "name": "Campus Cafe",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "point",
+          "lng": 121.5148008,
+          "lat": 25.0444911
+        },
+        {
+          "name": "Campus Cafe",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "point",
+          "lng": 121.5148008,
+          "lat": 25.0444911
+        },
+        {
+          "name": "CAMPUS CAFE Guangfu Branch",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "point",
+          "lng": 121.5564583,
+          "lat": 25.0400965
+        },
+        {
+          "name": "Campus Cafe",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "point",
+          "lng": 121.5624172,
+          "lat": 25.0504398
+        }
+      ]
+    }
+  ]
+}

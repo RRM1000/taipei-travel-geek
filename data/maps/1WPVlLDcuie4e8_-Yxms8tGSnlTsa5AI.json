@@ -1,0 +1,48 @@
+{
+  "mid": "1WPVlLDcuie4e8_-Yxms8tGSnlTsa5AI",
+  "name": "Yansan Night Market Michelin",
+  "embed": "https://www.google.com/maps/d/embed?mid=1WPVlLDcuie4e8_-Yxms8tGSnlTsa5AI",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets"
+  ],
+  "fetchedAt": "2026-09-08T06:37:18.649Z",
+  "counts": {
+    "layers": 1,
+    "places": 3,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Cabbage Rice and Pork Rib Soup",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5112805,
+          "lat": 25.0638473
+        },
+        {
+          "name": "Da-Qiao-Tou Tube Rice Pudding",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5112314,
+          "lat": 25.0648975
+        },
+        {
+          "name": "Shih Chia Big Rice Ball",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.510965,
+          "lat": 25.0651567
+        }
+      ]
+    }
+  ]
+}

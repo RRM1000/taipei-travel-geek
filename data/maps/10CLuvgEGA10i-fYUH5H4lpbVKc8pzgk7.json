@@ -1,0 +1,156 @@
+{
+  "mid": "10CLuvgEGA10i-fYUH5H4lpbVKc8pzgk7",
+  "name": "Taipei Sports Centres",
+  "embed": "https://www.google.com/maps/d/embed?mid=10CLuvgEGA10i-fYUH5H4lpbVKc8pzgk7",
+  "usedOn": [
+    "sports-centre-gym"
+  ],
+  "fetchedAt": "2026-09-08T06:37:32.552Z",
+  "counts": {
+    "layers": 1,
+    "places": 15,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Sports Centres",
+      "places": [
+        {
+          "name": "Daan Sports Center",
+          "description": "https://dasc.cyc.org.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.545757,
+          "lat": 25.020739
+        },
+        {
+          "name": "Yonghe Sport Centre",
+          "description": "https://yhcsc.cyc.org.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5245373,
+          "lat": 25.0034552
+        },
+        {
+          "name": "Beitou Sports Center",
+          "description": "http://www.btsport.org.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.509768,
+          "lat": 25.1164729
+        },
+        {
+          "name": "Wanhua Sports Center",
+          "description": "http://whsc.com.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.506621,
+          "lat": 25.0474122
+        },
+        {
+          "name": "Xinyi Sports Center",
+          "description": "https://xysc.cyc.org.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5667731,
+          "lat": 25.0318502
+        },
+        {
+          "name": "Songshan Sports Center",
+          "description": "http://sssc.com.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5504444,
+          "lat": 25.0484786
+        },
+        {
+          "name": "Neihu Sports Center",
+          "description": "https://nhsc.cyc.org.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5752042,
+          "lat": 25.0781161
+        },
+        {
+          "name": "Shihlin Sport Center",
+          "description": "http://www.slsc-taipei.org/index.aspx",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5215411,
+          "lat": 25.0893594
+        },
+        {
+          "name": "Nangang Sports Center",
+          "description": "https://sports.tms.gov.tw/venues/?G=3",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5818398,
+          "lat": 25.0489379
+        },
+        {
+          "name": "Datong Sports Center",
+          "description": "http://www.dtsc-wdyg.com.tw/web/index/index.jsp",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5163216,
+          "lat": 25.0652685
+        },
+        {
+          "name": "Zhongzheng Sports Center",
+          "description": "http://www.tpejjsports.com.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.519432,
+          "lat": 25.038214
+        },
+        {
+          "name": "Wenshan Sports Center",
+          "description": "https://wssc.cyc.org.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.559673,
+          "lat": 24.9970166
+        },
+        {
+          "name": "Zhongshan Sports Center",
+          "description": "https://cssc.cyc.org.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.5214752,
+          "lat": 25.0548619
+        },
+        {
+          "name": "Sanchong Sports Center",
+          "description": "http://www.scsports.com.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.488243,
+          "lat": 25.0546119
+        },
+        {
+          "name": "Tamsui Sports Center",
+          "description": "http://www.tssc.tw/",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.4428707,
+          "lat": 25.1873051
+        }
+      ]
+    }
+  ]
+}

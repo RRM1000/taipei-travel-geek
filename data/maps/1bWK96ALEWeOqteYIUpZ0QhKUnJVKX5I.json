@@ -1,0 +1,67 @@
+{
+  "mid": "1bWK96ALEWeOqteYIUpZ0QhKUnJVKX5I",
+  "name": "Raohe Night Market",
+  "embed": "https://www.google.com/maps/d/embed?mid=1bWK96ALEWeOqteYIUpZ0QhKUnJVKX5I",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets",
+    "raohe-night-market-foody-heaven"
+  ],
+  "fetchedAt": "2026-09-08T06:37:14.607Z",
+  "counts": {
+    "layers": 1,
+    "places": 5,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "A Kuo Lu Wei",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5775106,
+          "lat": 25.0507327
+        },
+        {
+          "name": "Chen Tung Pork Ribs Medicinal Herbs Soup",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5758237,
+          "lat": 25.050618
+        },
+        {
+          "name": "Fuzhou Pepper Buns",
+          "description": "",
+          "url": null,
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5775409,
+          "lat": 25.051007
+        },
+        {
+          "name": "Hongshao Beef Noodle Restaurant",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5730383,
+          "lat": 25.0503137
+        },
+        {
+          "name": "Mochi Baby",
+          "description": "",
+          "url": null,
+          "colour": "#000000",
+          "type": "point",
+          "lng": 121.5741938,
+          "lat": 25.0505444
+        }
+      ]
+    }
+  ]
+}

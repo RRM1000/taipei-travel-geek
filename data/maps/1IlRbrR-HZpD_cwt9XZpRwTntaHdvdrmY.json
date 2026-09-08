@@ -1,0 +1,129 @@
+{
+  "mid": "1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY",
+  "name": "Best Brunches in Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY",
+  "usedOn": [
+    "best-brunch-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:23.485Z",
+  "counts": {
+    "layers": 1,
+    "places": 12,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Locations",
+      "places": [
+        {
+          "name": "Kuang's Bistro",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.4621868,
+          "lat": 25.017336
+        },
+        {
+          "name": "Sugar Pea Cafe",
+          "description": "",
+          "url": null,
+          "colour": "#FBC02D",
+          "type": "point",
+          "lng": 121.5535786,
+          "lat": 25.0361614
+        },
+        {
+          "name": "Tamed Fox (Daan)",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5501139,
+          "lat": 25.0339984
+        },
+        {
+          "name": "The Antipodean Specialty Coffee",
+          "description": "",
+          "url": null,
+          "colour": "#006064",
+          "type": "point",
+          "lng": 121.577807,
+          "lat": 25.082664
+        },
+        {
+          "name": "The Diner (Daan)",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.539609,
+          "lat": 25.026605
+        },
+        {
+          "name": "The Diner (Nangang)",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.6158468,
+          "lat": 25.0588048
+        },
+        {
+          "name": "The Diner (Xinyi)",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.566135,
+          "lat": 25.035147
+        },
+        {
+          "name": "FuMu - Come to Mama",
+          "description": "",
+          "url": null,
+          "colour": "#4E342E",
+          "type": "point",
+          "lng": 121.5436896,
+          "lat": 25.0561427
+        },
+        {
+          "name": "The Antipodean Fujin",
+          "description": "",
+          "url": null,
+          "colour": "#006064",
+          "type": "point",
+          "lng": 121.5567471,
+          "lat": 25.0590499
+        },
+        {
+          "name": "Tamed Fox (Xinyi)",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5695371,
+          "lat": 25.0371047
+        },
+        {
+          "name": "ACME｜Cafe Bar & Restaurant",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5242938,
+          "lat": 25.0853775
+        },
+        {
+          "name": "桔梗JIEGENGE",
+          "description": "",
+          "url": null,
+          "colour": "#1A237E",
+          "type": "point",
+          "lng": 121.540663,
+          "lat": 25.0330315
+        }
+      ]
+    }
+  ]
+}

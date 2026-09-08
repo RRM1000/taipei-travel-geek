@@ -1,0 +1,93 @@
+{
+  "mid": "1CKQGjDHlCcX8I8TN1oxy21xUQ2PsFb0",
+  "name": "Vegetarian/Vegan Restaurants",
+  "embed": "https://www.google.com/maps/d/embed?mid=1CKQGjDHlCcX8I8TN1oxy21xUQ2PsFb0",
+  "usedOn": [
+    "best-vegetarian-restaurants-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:26.166Z",
+  "counts": {
+    "layers": 1,
+    "places": 8,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "BaganHoodshushicanjiuguan-Shizhengfu Station",
+          "description": "",
+          "url": null,
+          "colour": "#097138",
+          "type": "point",
+          "lng": 121.5634869,
+          "lat": 25.0443206
+        },
+        {
+          "name": "Miacucina Tianmu",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5234383,
+          "lat": 25.1045611
+        },
+        {
+          "name": "MiaCucina",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5671821,
+          "lat": 25.0800715
+        },
+        {
+          "name": "Miacucina信義店",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5672692,
+          "lat": 25.0361121
+        },
+        {
+          "name": "Miacucina (My kitchen) Nanxi",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5211048,
+          "lat": 25.0523038
+        },
+        {
+          "name": "Miacucina Fuxing Restaurant",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5448136,
+          "lat": 25.0437711
+        },
+        {
+          "name": "Plants",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5442241,
+          "lat": 25.0367176
+        },
+        {
+          "name": "MissGreen",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5505307,
+          "lat": 25.0308767
+        }
+      ]
+    }
+  ]
+}

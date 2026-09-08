@@ -1,0 +1,75 @@
+{
+  "mid": "1VJjTMTkzrPBy0MGBO2RWzLO_RlpfTsA",
+  "name": "Cheap Breakfasts Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1VJjTMTkzrPBy0MGBO2RWzLO_RlpfTsA",
+  "usedOn": [
+    "cheap-breakfast-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:28.539Z",
+  "counts": {
+    "layers": 1,
+    "places": 6,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Golden Flower Grilled Toast",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.506525,
+          "lat": 25.0416688
+        },
+        {
+          "name": "Yong He Soy Milk King",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5433359,
+          "lat": 25.0297337
+        },
+        {
+          "name": "FuMu",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5436896,
+          "lat": 25.0561427
+        },
+        {
+          "name": "Fuhang Soy Milk",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5247397,
+          "lat": 25.0442451
+        },
+        {
+          "name": "Tian Jin Onion Pancake",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5297056,
+          "lat": 25.0326689
+        },
+        {
+          "name": "Lin's Chinese Pizza",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5258449,
+          "lat": 25.0948378
+        }
+      ]
+    }
+  ]
+}

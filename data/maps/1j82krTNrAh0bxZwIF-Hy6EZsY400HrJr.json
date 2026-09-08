@@ -1,0 +1,864 @@
+{
+  "mid": "1j82krTNrAh0bxZwIF-Hy6EZsY400HrJr",
+  "name": "Xinyi Shopping Malls",
+  "embed": "https://www.google.com/maps/d/embed?mid=1j82krTNrAh0bxZwIF-Hy6EZsY400HrJr",
+  "usedOn": [
+    "xinyi-shopping-district"
+  ],
+  "fetchedAt": "2026-09-08T06:37:35.835Z",
+  "counts": {
+    "layers": 1,
+    "places": 35,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Breeze Center (Songgao)",
+          "description": "",
+          "url": null,
+          "colour": "#7CB342",
+          "type": "polygon",
+          "path": [
+            [
+              121.5671664,
+              25.0389344
+            ],
+            [
+              121.5671342,
+              25.0375395
+            ],
+            [
+              121.5675526,
+              25.0375346
+            ],
+            [
+              121.5675848,
+              25.0389247
+            ],
+            [
+              121.5671664,
+              25.0389344
+            ]
+          ]
+        },
+        {
+          "name": "Eslite",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "polygon",
+          "path": [
+            [
+              121.5648562,
+              25.0400234
+            ],
+            [
+              121.5648455,
+              25.039377
+            ],
+            [
+              121.5659559,
+              25.0393576
+            ],
+            [
+              121.5659506,
+              25.0400137
+            ],
+            [
+              121.5648562,
+              25.0400234
+            ]
+          ]
+        },
+        {
+          "name": "Breeze Center (Celine)",
+          "description": "",
+          "url": null,
+          "colour": "#7CB342",
+          "type": "polygon",
+          "path": [
+            [
+              121.566408,
+              25.0409056
+            ],
+            [
+              121.5663999,
+              25.0401619
+            ],
+            [
+              121.5673441,
+              25.0401547
+            ],
+            [
+              121.5673548,
+              25.0408983
+            ],
+            [
+              121.566408,
+              25.0409056
+            ]
+          ]
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A9)",
+          "description": "",
+          "url": null,
+          "colour": "#A1C2FA",
+          "type": "polygon",
+          "path": [
+            [
+              121.565868,
+              25.0369597
+            ],
+            [
+              121.5658466,
+              25.0369621
+            ],
+            [
+              121.5658385,
+              25.0360556
+            ],
+            [
+              121.5662918,
+              25.0360532
+            ],
+            [
+              121.5663026,
+              25.0369572
+            ],
+            [
+              121.565868,
+              25.0369597
+            ]
+          ]
+        },
+        {
+          "name": "Taipei 101 Mall",
+          "description": "High-end mall within Taipei 101",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5644438,
+          "lat": 25.0338976
+        },
+        {
+          "name": "Breeze Center",
+          "description": "New mall with shops and cafes you won't find anywherre else",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5666003,
+          "lat": 25.034442
+        },
+        {
+          "name": "ATT For Fun and Vieshow",
+          "description": "Complex with restaurants, shops, food mall and cinemas",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5665681,
+          "lat": 25.0352975
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A11)",
+          "description": "Large Japanese mall with many brands",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.567008,
+          "lat": 25.0366584
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A9)",
+          "description": "Large Japanese mall with many brands",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5660317,
+          "lat": 25.0365758
+        },
+        {
+          "name": "Shin Kong Mitsukoshi",
+          "description": "Large Japanese mall with many brands",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5665896,
+          "lat": 25.0397495
+        },
+        {
+          "name": "Dream Plaza",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5653551,
+          "lat": 25.0397578
+        },
+        {
+          "name": "Breeze Center (Celine)",
+          "description": "Multi-floor mall with each floor dedicated to certain types of products",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5668464,
+          "lat": 25.0405743
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A8)",
+          "description": "Large Japanese mall with many brands",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5667912,
+          "lat": 25.0382705
+        },
+        {
+          "name": "Breeze Center",
+          "description": "Shops including H&M and restaurants",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5673169,
+          "lat": 25.0382608
+        },
+        {
+          "name": "Flagship Apple Store",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5678962,
+          "lat": 25.0359895
+        },
+        {
+          "name": "Vie Show Cinemas",
+          "description": "",
+          "url": null,
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5672545,
+          "lat": 25.03558
+        },
+        {
+          "name": "i-Ride Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5660588,
+          "lat": 25.0345156
+        },
+        {
+          "name": "VR+ Room",
+          "description": "",
+          "url": null,
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5673154,
+          "lat": 25.0348969
+        },
+        {
+          "name": "Bellavita",
+          "description": "",
+          "url": null,
+          "colour": "#FFFF8D",
+          "type": "polygon",
+          "path": [
+            [
+              121.5672457,
+              25.0399742
+            ],
+            [
+              121.5672082,
+              25.0394445
+            ],
+            [
+              121.5673154,
+              25.0393424
+            ],
+            [
+              121.5680986,
+              25.0393327
+            ],
+            [
+              121.568222,
+              25.0394445
+            ],
+            [
+              121.5682328,
+              25.0399645
+            ],
+            [
+              121.5672457,
+              25.0399742
+            ]
+          ]
+        },
+        {
+          "name": "BELLAVITA",
+          "description": "High-end mall with almost exclusively designer brands, and a great food hall",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5677521,
+          "lat": 25.0396576
+        },
+        {
+          "name": "Neo 19",
+          "description": "Small mall with mainly restaurants",
+          "url": null,
+          "colour": "#EDA29B",
+          "type": "polygon",
+          "path": [
+            [
+              121.5676684,
+              25.0355581
+            ],
+            [
+              121.5676684,
+              25.035247
+            ],
+            [
+              121.5678507,
+              25.035247
+            ],
+            [
+              121.5678561,
+              25.0351936
+            ],
+            [
+              121.5681297,
+              25.0351936
+            ],
+            [
+              121.5681297,
+              25.0355824
+            ],
+            [
+              121.5680117,
+              25.0355824
+            ],
+            [
+              121.5680117,
+              25.0356553
+            ],
+            [
+              121.5679419,
+              25.0356553
+            ],
+            [
+              121.5676684,
+              25.0355581
+            ]
+          ]
+        },
+        {
+          "name": "Neo 19",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5679115,
+          "lat": 25.0355537
+        },
+        {
+          "name": "Taipei 101 Mall",
+          "description": "",
+          "url": null,
+          "colour": "#EDA29B",
+          "type": "polygon",
+          "path": [
+            [
+              121.5638509,
+              25.0345755
+            ],
+            [
+              121.5638294,
+              25.0332826
+            ],
+            [
+              121.5650579,
+              25.0332729
+            ],
+            [
+              121.5650686,
+              25.0345657
+            ],
+            [
+              121.5638509,
+              25.0345755
+            ]
+          ]
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A4)",
+          "description": "",
+          "url": null,
+          "colour": "#A1C2FA",
+          "type": "polygon",
+          "path": [
+            [
+              121.5662754,
+              25.0400009
+            ],
+            [
+              121.5662593,
+              25.0396559
+            ],
+            [
+              121.5662003,
+              25.0396559
+            ],
+            [
+              121.5662003,
+              25.0394469
+            ],
+            [
+              121.5662834,
+              25.0394469
+            ],
+            [
+              121.5662834,
+              25.0393764
+            ],
+            [
+              121.5670586,
+              25.039374
+            ],
+            [
+              121.5670639,
+              25.0399985
+            ],
+            [
+              121.5662754,
+              25.0400009
+            ]
+          ]
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A8)",
+          "description": "",
+          "url": null,
+          "colour": "#A1C2FA",
+          "type": "polygon",
+          "path": [
+            [
+              121.5665651,
+              25.0388349
+            ],
+            [
+              121.5665517,
+              25.0376611
+            ],
+            [
+              121.5669942,
+              25.0376611
+            ],
+            [
+              121.5670291,
+              25.0376927
+            ],
+            [
+              121.5670479,
+              25.0388324
+            ],
+            [
+              121.5665651,
+              25.0388349
+            ]
+          ]
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A9)",
+          "description": "",
+          "url": null,
+          "colour": "#A1C2FA",
+          "type": "polygon",
+          "path": [
+            [
+              121.5665901,
+              25.0372043
+            ],
+            [
+              121.566574,
+              25.0360718
+            ],
+            [
+              121.566633,
+              25.0360718
+            ],
+            [
+              121.5666357,
+              25.0360329
+            ],
+            [
+              121.5668235,
+              25.0360329
+            ],
+            [
+              121.5668235,
+              25.0360669
+            ],
+            [
+              121.5668717,
+              25.0360669
+            ],
+            [
+              121.5668717,
+              25.0361447
+            ],
+            [
+              121.5669093,
+              25.0361423
+            ],
+            [
+              121.5669334,
+              25.0372018
+            ],
+            [
+              121.5665901,
+              25.0372043
+            ]
+          ]
+        },
+        {
+          "name": "ATT For Fun & Vieshow",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "polygon",
+          "path": [
+            [
+              121.5658639,
+              25.0356902
+            ],
+            [
+              121.5658612,
+              25.0356319
+            ],
+            [
+              121.5657378,
+              25.0356319
+            ],
+            [
+              121.5657351,
+              25.0349393
+            ],
+            [
+              121.5658384,
+              25.0349393
+            ],
+            [
+              121.5658384,
+              25.0349101
+            ],
+            [
+              121.5659698,
+              25.0349089
+            ],
+            [
+              121.5659698,
+              25.0349296
+            ],
+            [
+              121.5660919,
+              25.0349296
+            ],
+            [
+              121.5660932,
+              25.0350231
+            ],
+            [
+              121.5661482,
+              25.0350219
+            ],
+            [
+              121.5661589,
+              25.0356234
+            ],
+            [
+              121.5661106,
+              25.0356246
+            ],
+            [
+              121.5661106,
+              25.0356878
+            ],
+            [
+              121.5658639,
+              25.0356902
+            ]
+          ]
+        },
+        {
+          "name": "ATT For Fun & Vieshow",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "polygon",
+          "path": [
+            [
+              121.5666717,
+              25.0357038
+            ],
+            [
+              121.5666704,
+              25.0356783
+            ],
+            [
+              121.5664504,
+              25.0356783
+            ],
+            [
+              121.566433,
+              25.034999
+            ],
+            [
+              121.5666301,
+              25.0349978
+            ],
+            [
+              121.5666315,
+              25.0349079
+            ],
+            [
+              121.5668058,
+              25.0349055
+            ],
+            [
+              121.5668206,
+              25.035716
+            ],
+            [
+              121.5666972,
+              25.035716
+            ],
+            [
+              121.5666717,
+              25.0357038
+            ]
+          ]
+        },
+        {
+          "name": "ATT For Fun & Vieshow",
+          "description": "",
+          "url": null,
+          "colour": "#FFD600",
+          "type": "polygon",
+          "path": [
+            [
+              121.5670888,
+              25.035626
+            ],
+            [
+              121.5670888,
+              25.0354972
+            ],
+            [
+              121.5670244,
+              25.0354972
+            ],
+            [
+              121.567011,
+              25.0348823
+            ],
+            [
+              121.567479,
+              25.0348787
+            ],
+            [
+              121.5674911,
+              25.0356235
+            ],
+            [
+              121.5670888,
+              25.035626
+            ]
+          ]
+        },
+        {
+          "name": "Breeze Center (Nanshan)",
+          "description": "",
+          "url": null,
+          "colour": "#7CB342",
+          "type": "polygon",
+          "path": [
+            [
+              121.5659253,
+              25.0347336
+            ],
+            [
+              121.5659039,
+              25.0340483
+            ],
+            [
+              121.5673952,
+              25.0340288
+            ],
+            [
+              121.5674086,
+              25.034719
+            ],
+            [
+              121.5659253,
+              25.0347336
+            ]
+          ]
+        },
+        {
+          "name": "Shin Kong Mitsukoshi (A11)",
+          "description": "",
+          "url": null,
+          "colour": "#A1C2FA",
+          "type": "polygon",
+          "path": [
+            [
+              121.5671725,
+              25.0372877
+            ],
+            [
+              121.5670197,
+              25.0371686
+            ],
+            [
+              121.5670089,
+              25.0360167
+            ],
+            [
+              121.5672047,
+              25.0360167
+            ],
+            [
+              121.5672047,
+              25.0359657
+            ],
+            [
+              121.5672825,
+              25.0359657
+            ],
+            [
+              121.5672825,
+              25.0360143
+            ],
+            [
+              121.5674971,
+              25.0360143
+            ],
+            [
+              121.5675105,
+              25.0372877
+            ],
+            [
+              121.5671725,
+              25.0372877
+            ]
+          ]
+        },
+        {
+          "name": "Uni-UStyle Taipei Store",
+          "description": "A good mixture of shops and restaurants Outdoor area on 2F",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5656316,
+          "lat": 25.0405641
+        },
+        {
+          "name": "Uni-UStyle",
+          "description": "A good mixture of shops and restaurants Outdoor area on 2F",
+          "url": null,
+          "colour": "#CE93D8",
+          "type": "polygon",
+          "path": [
+            [
+              121.5645738,
+              25.0404306
+            ],
+            [
+              121.5651799,
+              25.040416
+            ],
+            [
+              121.5651826,
+              25.0403771
+            ],
+            [
+              121.5658827,
+              25.0403674
+            ],
+            [
+              121.565888,
+              25.040987
+            ],
+            [
+              121.5648044,
+              25.0409943
+            ],
+            [
+              121.5647991,
+              25.0408971
+            ],
+            [
+              121.5646086,
+              25.0408388
+            ],
+            [
+              121.5644691,
+              25.0407222
+            ],
+            [
+              121.5644718,
+              25.0405132
+            ],
+            [
+              121.5645738,
+              25.0404306
+            ]
+          ]
+        },
+        {
+          "name": "遠百信義A13",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.567979,
+          "lat": 25.0370372
+        },
+        {
+          "name": "Shin Kong A13",
+          "description": "",
+          "url": null,
+          "colour": "#A1C2FA",
+          "type": "polygon",
+          "path": [
+            [
+              121.5676136,
+              25.0374212
+            ],
+            [
+              121.5676029,
+              25.0362255
+            ],
+            [
+              121.5682198,
+              25.0362158
+            ],
+            [
+              121.568252,
+              25.037426
+            ],
+            [
+              121.5676136,
+              25.0374212
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

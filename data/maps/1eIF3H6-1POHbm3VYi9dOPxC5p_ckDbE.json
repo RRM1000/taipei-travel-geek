@@ -1,0 +1,67 @@
+{
+  "mid": "1eIF3H6-1POHbm3VYi9dOPxC5p_ckDbE",
+  "name": "Linjiang Street Night Market",
+  "embed": "https://www.google.com/maps/d/embed?mid=1eIF3H6-1POHbm3VYi9dOPxC5p_ckDbE",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets",
+    "tonghua-night-market"
+  ],
+  "fetchedAt": "2026-09-08T06:37:15.397Z",
+  "counts": {
+    "layers": 1,
+    "places": 5,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Liang Chi Lu Wei",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5550613,
+          "lat": 25.0293813
+        },
+        {
+          "name": "Lo Chi Hsiao Chao",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.555426,
+          "lat": 25.03028
+        },
+        {
+          "name": "Tien Hsiang Stinky Tofu",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.556695084659,
+          "lat": 25.0307193361153
+        },
+        {
+          "name": "Yu Pin Yuan Iced and Hot Tangyuan",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5554005,
+          "lat": 25.030232
+        },
+        {
+          "name": "Golden Fried Chicken",
+          "description": "",
+          "url": null,
+          "colour": "#000000",
+          "type": "point",
+          "lng": 121.5553811,
+          "lat": 25.0301842
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "mid": "1e6ZUVDGBqHHrfM2Ngfnz0xzpK-a8Qho",
+  "name": "Best Places to keep Kids Amused",
+  "embed": "https://www.google.com/maps/d/embed?mid=1e6ZUVDGBqHHrfM2Ngfnz0xzpK-a8Qho",
+  "usedOn": [
+    "best-places-to-keep-kids-amused"
+  ],
+  "fetchedAt": "2026-09-08T06:37:33.440Z",
+  "counts": {
+    "layers": 1,
+    "places": 13,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Taipei Astronomical Museum",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5183633,
+          "lat": 25.0958186
+        },
+        {
+          "name": "Taipei Zoo",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5809857,
+          "lat": 24.9985635
+        },
+        {
+          "name": "National Taiwan Museum",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5151192,
+          "lat": 25.0427872
+        },
+        {
+          "name": "MAJI Square",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5221519,
+          "lat": 25.0697435
+        },
+        {
+          "name": "Miramar",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5574584,
+          "lat": 25.0834232
+        },
+        {
+          "name": "Miniatures Museum of Taiwan",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5360582,
+          "lat": 25.0504253
+        },
+        {
+          "name": "Modern Toilet Theme Restaurant",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5268197,
+          "lat": 25.0895914
+        },
+        {
+          "name": "i-Ride TAIPEI",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.567424,
+          "lat": 25.0344052
+        },
+        {
+          "name": "Shilin Night Market",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5242024,
+          "lat": 25.0879869
+        },
+        {
+          "name": "Taipei Children's Amusement Park",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.514951,
+          "lat": 25.0972351
+        },
+        {
+          "name": "National Taiwan Science Education Center",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5164742,
+          "lat": 25.0962609
+        },
+        {
+          "name": "Yu Kids Island Kids Playground",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5668013,
+          "lat": 25.0388349
+        },
+        {
+          "name": "Wooderful Life",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5291336,
+          "lat": 25.0445721
+        }
+      ]
+    }
+  ]
+}

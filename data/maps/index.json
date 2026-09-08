@@ -1,0 +1,587 @@
+{
+  "generatedAt": "2026-09-08T06:37:45.517Z",
+  "maps": [
+    {
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "name": "Taipei Traveller",
+      "usedOn": [
+        "maps"
+      ],
+      "places": 186,
+      "linked": 177,
+      "layers": 5
+    },
+    {
+      "mid": "18qV_UZfVPHqqSsCNrSN2TTfepiSqjuET",
+      "name": "Taipei Sightseeing Bus Route",
+      "usedOn": [
+        "taipei-sightseeing-bus"
+      ],
+      "places": 40,
+      "linked": 0,
+      "layers": 2
+    },
+    {
+      "mid": "1j82krTNrAh0bxZwIF-Hy6EZsY400HrJr",
+      "name": "Xinyi Shopping Malls",
+      "usedOn": [
+        "xinyi-shopping-district"
+      ],
+      "places": 35,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
+      "name": "Datong Walk",
+      "usedOn": [
+        "datong-walking-route"
+      ],
+      "places": 29,
+      "linked": 0,
+      "layers": 3
+    },
+    {
+      "mid": "1jugziH46_tbI8FXV4qH_4CDWjTmGaI9O",
+      "name": "Tourist Shuttle Bus Routes",
+      "usedOn": [
+        "taiwan-tourist-shuttle-bus"
+      ],
+      "places": 29,
+      "linked": 0,
+      "layers": 7
+    },
+    {
+      "mid": "1KmXoi6moJ5U94pyfKe0ujZbFjqH9lZ9K",
+      "name": "Tamsui",
+      "usedOn": [
+        "tamsui"
+      ],
+      "places": 25,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
+      "name": "Zhongzheng Walk",
+      "usedOn": [
+        "zhongzheng-walking-route"
+      ],
+      "places": 24,
+      "linked": 0,
+      "layers": 2
+    },
+    {
+      "mid": "1TGC6ktRtntbdSkHxP1SqK6F0PjlvQ1JI",
+      "name": "Shilin Night Market",
+      "usedOn": [
+        "shilin-night-market"
+      ],
+      "places": 22,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
+      "name": "Gongguan Walking Route",
+      "usedOn": [
+        "gongguan-walking-route"
+      ],
+      "places": 18,
+      "linked": 0,
+      "layers": 2
+    },
+    {
+      "mid": "10CLuvgEGA10i-fYUH5H4lpbVKc8pzgk7",
+      "name": "Taipei Sports Centres",
+      "usedOn": [
+        "sports-centre-gym"
+      ],
+      "places": 15,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1q4a7zbY3UFIM00aTygpXzjaLzk8rrao0",
+      "name": "Best Taipei Cinemas",
+      "usedOn": [
+        "best-cinemas-in-taipei"
+      ],
+      "places": 14,
+      "linked": 12,
+      "layers": 1
+    },
+    {
+      "mid": "1JuDWfr2yts1Wca1kmU0OYI7n0-PgMItt",
+      "name": "Ximending Street Art",
+      "usedOn": [
+        "ximending"
+      ],
+      "places": 14,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1iqUw8ZlUJlIu3wueTxPXZ4CTgEDHrsY",
+      "name": "Best Salads in Taipei",
+      "usedOn": [
+        "best-salads-in-taipei"
+      ],
+      "places": 13,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1ANY9nbLlrCbHN5uo5UMJQR2DCvRHF_EZ",
+      "name": "Best Areas to Walk in Taipei",
+      "usedOn": [
+        "best-areas-for-walking"
+      ],
+      "places": 13,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1e6ZUVDGBqHHrfM2Ngfnz0xzpK-a8Qho",
+      "name": "Best Places to keep Kids Amused",
+      "usedOn": [
+        "best-places-to-keep-kids-amused"
+      ],
+      "places": 13,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1GUxk2x9mObka8wPS-bneD1uygGuGJVEi",
+      "name": "Taipei 101 NYE Fireworks - Best Locations",
+      "usedOn": [
+        "taipei-101-fireworks-new-years-eve"
+      ],
+      "places": 12,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1IlRbrR-HZpD_cwt9XZpRwTntaHdvdrmY",
+      "name": "Best Brunches in Taipei",
+      "usedOn": [
+        "best-brunch-in-taipei"
+      ],
+      "places": 12,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1SKTRpmkNtx6L-uePbLJxFuXOt0wR2-Sh",
+      "name": "Where to Shop in Taipei",
+      "usedOn": [
+        "where-to-shop-in-taipei"
+      ],
+      "places": 12,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1AmROqVqlBufN153Jf_ME0clo-p4tgkFW",
+      "name": "Daan Walk",
+      "usedOn": [
+        "daan-walking-route"
+      ],
+      "places": 12,
+      "linked": 0,
+      "layers": 2
+    },
+    {
+      "mid": "1-HgKhJhqrr29wjTA46IJ5-kx8b_LoGk",
+      "name": "Best Cafes to Work",
+      "usedOn": [
+        "best-cafes-to-work"
+      ],
+      "places": 11,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "14dRoo4muFmstlhi_x4DPKcBh2q5D6WQU",
+      "name": "Cool Convenience Stores",
+      "usedOn": [
+        "taipei-convenience-stores"
+      ],
+      "places": 10,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1HQF8GWP_yR6KEodOuISBRf4DVFxgUBSB",
+      "name": "Best Places to see Art in Taipei",
+      "usedOn": [
+        "best-places-to-see-art-in-taipei"
+      ],
+      "places": 9,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1wTVO7wprGD_2TkxKbv5futceOGJhw9wW",
+      "name": "Din Tai Fung - Taipei Locations",
+      "usedOn": [
+        "din-tai-fung"
+      ],
+      "places": 9,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1WlPV7i46p5OIgy6LJ7bs8TPmxn_tDzJL",
+      "name": "Chunghwa Telecom",
+      "usedOn": [
+        "taiwan-sim-cards"
+      ],
+      "places": 8,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1zSK7pdaa0F4ihFyNBnR2f2LLaxADOCg",
+      "name": "Night Market Locations",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "places": 8,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1pexQbmbfxeVUi7X1gM8_jwVZpJFO5jY",
+      "name": "Taipei Local Restaurants",
+      "usedOn": [
+        "best-famous-restaurants"
+      ],
+      "places": 8,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1CKQGjDHlCcX8I8TN1oxy21xUQ2PsFb0",
+      "name": "Vegetarian/Vegan Restaurants",
+      "usedOn": [
+        "best-vegetarian-restaurants-in-taipei"
+      ],
+      "places": 8,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1qCTtLg8MhEpacAUjm2tEK9JmS6Qp6ZQq",
+      "name": "Outdoor Drinking Areas",
+      "usedOn": [
+        "best-outdoor-drinking"
+      ],
+      "places": 8,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1dxuwYzOcH9ZnVKiCzDGxdTknnucbaRo",
+      "name": "Best Shopping Malls in Taipei",
+      "usedOn": [
+        "best-shopping-malls-in-taipei"
+      ],
+      "places": 8,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1eZIoMiqUs1mUewsJ9x2ZncrPaRnb4UTz",
+      "name": "Best Bars in Taipei",
+      "usedOn": [
+        "best-bars-in-taipei"
+      ],
+      "places": 7,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1XSUQNCdkE0bIBCPEdATZ8M2b_05oEI4",
+      "name": "Best Zhongzheng Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 7,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1Qf26AeJpZUD8do8PdZ15eJGReKX6nT2w",
+      "name": "Songshan/Xinyi Walking Route",
+      "usedOn": [
+        "songshan-xinyi-walking-tour"
+      ],
+      "places": 7,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1Z2lrB1sYhfmYkftXSCzEhyjEQEVSlZc",
+      "name": "Best Daan Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 6,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1jrxNrwZLiwq41or1yS1qhggEaWjPgOQ",
+      "name": "Best Wanhua Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 6,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1VJjTMTkzrPBy0MGBO2RWzLO_RlpfTsA",
+      "name": "Cheap Breakfasts Taipei",
+      "usedOn": [
+        "cheap-breakfast-taipei"
+      ],
+      "places": 6,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1IVJmaeWdGmkE2EHuAwrGdgV53b24Aypv",
+      "name": "Best Music Venues in Taipei",
+      "usedOn": [
+        "best-places-for-live-music-in-taipei"
+      ],
+      "places": 6,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1F0snpqnQIzdsUwRWtiK_i3Y-sLdekj0",
+      "name": "Best Songshan Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 5,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1bWK96ALEWeOqteYIUpZ0QhKUnJVKX5I",
+      "name": "Raohe Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets",
+        "raohe-night-market-foody-heaven"
+      ],
+      "places": 5,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1eIF3H6-1POHbm3VYi9dOPxC5p_ckDbE",
+      "name": "Linjiang Street Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets",
+        "tonghua-night-market"
+      ],
+      "places": 5,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1udTSilmMxZJqXLtZDNuwyerXL03i9p8",
+      "name": "Shilin Night Market Michelin",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "places": 5,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1YfgO1Wzn2N19QIVqrGDYrApWz7k9mk8",
+      "name": "Ningxia Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets",
+        "ningxia-night-market"
+      ],
+      "places": 5,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1kak9h_BaoBk5EYPr2UFvyG8f-iGAx-Y",
+      "name": "Best Xinyi Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 4,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1t8f-RwJabGRD52HtFpITkYXcUNZ2-c8",
+      "name": "Best Zhongshan Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 4,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "18w3BADsJvP9j9ZSjeFxxGavD4p_TMg0",
+      "name": "Best Other Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 4,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1aoH6xxH-tthLKafMeO4uxlHo43JTRCY",
+      "name": "Nanjichang Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "places": 4,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "17EySLgMzIpgfCZlqCTuXegvhAvveGXdo",
+      "name": "National Taiwan Museum",
+      "usedOn": [
+        "national-taiwan-museum"
+      ],
+      "places": 4,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1X3twx2z6wbjfNvNoqYXZpGLeq-jllh8e",
+      "name": "Best Craft Beer in Taipei",
+      "usedOn": [
+        "best-places-to-drink-craft-beer-taipei"
+      ],
+      "places": 3,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1WPVlLDcuie4e8_-Yxms8tGSnlTsa5AI",
+      "name": "Yansan Night Market Michelin",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "places": 3,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1R4l8D26wqbkmQmMEpWLL3lilCZbDuYY",
+      "name": "Gongguan Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "places": 3,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "180W21XXncUobmCIwracQF5a9t3sbK1c",
+      "name": "Beitou Hotels",
+      "usedOn": [
+        "best-areas-and-hotels-to-stay"
+      ],
+      "places": 2,
+      "linked": 0,
+      "layers": 1
+    },
+    {
+      "mid": "1UKpoyUqqa685uQpV7J-D81Po5JEx8Rg",
+      "name": "Huaxi Street Night Market",
+      "usedOn": [
+        "michelin-food-stands-at-night-markets"
+      ],
+      "places": 1,
+      "linked": 0,
+      "layers": 1
+    }
+  ],
+  "deadLinks": [
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Tamsui District",
+      "url": "/danshui"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Daan Forest Park",
+      "url": "/da-an-forest-park"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Thermal Valley",
+      "url": "/thermal-valley"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Taipei Botanical Garden",
+      "url": "/taipei-botanical-gardens"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "A Train Leads The Way To Jazz",
+      "url": "/a-train-leads-the-way-to-jazz"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Indulge Experimental Bistro",
+      "url": "/indulge-experimental-bistro"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "B Line by A train",
+      "url": "/b-line-by-a-train"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "C Park by A Train",
+      "url": "/c-park-by-a-train"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "Beitou Hot Spring Museum",
+      "url": "/beitou-hot-spring-museum"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "National Theatre",
+      "url": "/national-concert-hall-and-theatre"
+    },
+    {
+      "map": "Taipei Traveller",
+      "mid": "1TjzucINSYmq-Zgpt_Pt31nICorLQBoTr",
+      "place": "National Concert Hall",
+      "url": "/national-concert-hall-and-theatre"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,66 @@
+{
+  "mid": "1udTSilmMxZJqXLtZDNuwyerXL03i9p8",
+  "name": "Shilin Night Market Michelin",
+  "embed": "https://www.google.com/maps/d/embed?mid=1udTSilmMxZJqXLtZDNuwyerXL03i9p8",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets"
+  ],
+  "fetchedAt": "2026-09-08T06:37:17.066Z",
+  "counts": {
+    "layers": 1,
+    "places": 5,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Chung Chia Sheng Jian Bao",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5263484,
+          "lat": 25.0894415
+        },
+        {
+          "name": "Good Friend Cold Noodles",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5255367,
+          "lat": 25.0890906
+        },
+        {
+          "name": "Hai Yu Pork Ribs",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5252989,
+          "lat": 25.0896619
+        },
+        {
+          "name": "Prince Cheese Potato",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5250034,
+          "lat": 25.0863052
+        },
+        {
+          "name": "A Hui Vermicelli",
+          "description": "",
+          "url": null,
+          "colour": "#000000",
+          "type": "point",
+          "lng": 121.5249323,
+          "lat": 25.0894468
+        }
+      ]
+    }
+  ]
+}

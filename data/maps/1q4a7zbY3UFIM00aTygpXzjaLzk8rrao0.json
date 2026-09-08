@@ -1,0 +1,147 @@
+{
+  "mid": "1q4a7zbY3UFIM00aTygpXzjaLzk8rrao0",
+  "name": "Best Taipei Cinemas",
+  "embed": "https://www.google.com/maps/d/embed?mid=1q4a7zbY3UFIM00aTygpXzjaLzk8rrao0",
+  "usedOn": [
+    "best-cinemas-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:22.678Z",
+  "counts": {
+    "layers": 1,
+    "places": 14,
+    "linked": 12
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Vie Show - Xinyi",
+          "description": "17 screens Includes 4DX seating and National Theatre Live screenings",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5672599,
+          "lat": 25.0355849
+        },
+        {
+          "name": "Vieshow - Banciao",
+          "description": "10 screens Includes IMAX screen",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.4671538,
+          "lat": 25.0140657
+        },
+        {
+          "name": "Ambassador - Ximen",
+          "description": "3 screens Includes XL screen with DBox seating and Dolby Atmos",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5046461,
+          "lat": 25.0429801
+        },
+        {
+          "name": "Ambassador - Zhongshan",
+          "description": "15 screens Shows independent and world cinema",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5342509,
+          "lat": 25.0546998
+        },
+        {
+          "name": "in89 - Ximen",
+          "description": "8 screens Main screen has deluxe seats and Dolby Atmos. 3 screens have double seating for couples",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.503975,
+          "lat": 25.045479
+        },
+        {
+          "name": "Miramar - Neihu",
+          "description": "13 screens Includes IMAX screen",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5575147,
+          "lat": 25.0832173
+        },
+        {
+          "name": "Miramar - Royal Studios",
+          "description": "2 screens Deluxe fully reclining seats with in-cinema bistro service",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.554224,
+          "lat": 25.084794
+        },
+        {
+          "name": "Showtime - Zhongshan",
+          "description": "14 screens Including Lux auditorium",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5256013,
+          "lat": 25.0542103
+        },
+        {
+          "name": "The Spot - Huashan",
+          "description": "2 screens Independent cinema showing world and independent films",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5221609,
+          "lat": 25.053279
+        },
+        {
+          "name": "The Spot - Zhongshan",
+          "description": "2 screens Independent cinema showing world and independent films",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5221609,
+          "lat": 25.053279
+        },
+        {
+          "name": "Eslite Art House - Songshan",
+          "description": "3 screens Independent cinema showing world and independent films",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5606868,
+          "lat": 25.0447282
+        },
+        {
+          "name": "Vie Show Muvie - Xinyi",
+          "description": "8 screens. Titan is extra large screen and Mucrown is lux screen",
+          "url": "/best-cinemas-in-taipei",
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5679503,
+          "lat": 25.0368737
+        },
+        {
+          "name": "台北西門威秀影城",
+          "description": "",
+          "url": null,
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.5071127,
+          "lat": 25.0438973
+        },
+        {
+          "name": "U2 MTV",
+          "description": "",
+          "url": null,
+          "colour": "#F9A825",
+          "type": "point",
+          "lng": 121.505886,
+          "lat": 25.043508
+        }
+      ]
+    }
+  ]
+}

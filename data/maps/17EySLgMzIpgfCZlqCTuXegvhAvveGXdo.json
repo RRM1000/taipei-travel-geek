@@ -1,0 +1,57 @@
+{
+  "mid": "17EySLgMzIpgfCZlqCTuXegvhAvveGXdo",
+  "name": "National Taiwan Museum",
+  "embed": "https://www.google.com/maps/d/embed?mid=17EySLgMzIpgfCZlqCTuXegvhAvveGXdo",
+  "usedOn": [
+    "national-taiwan-museum"
+  ],
+  "fetchedAt": "2026-09-08T06:37:38.338Z",
+  "counts": {
+    "layers": 1,
+    "places": 4,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "National Taiwan Museum",
+      "places": [
+        {
+          "name": "National Taiwan Museum",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.515034,
+          "lat": 25.042754
+        },
+        {
+          "name": "Land Bank Exhibition Hall of National Taiwan Museum",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5143628,
+          "lat": 25.0435644
+        },
+        {
+          "name": "國立臺灣博物館蒸氣火車頭",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.514426,
+          "lat": 25.043255
+        },
+        {
+          "name": "National Taiwan Museum Nanmen Park",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5159586,
+          "lat": 25.0331972
+        }
+      ]
+    }
+  ]
+}

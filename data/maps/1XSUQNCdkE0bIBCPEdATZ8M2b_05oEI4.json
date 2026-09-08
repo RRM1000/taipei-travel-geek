@@ -1,0 +1,84 @@
+{
+  "mid": "1XSUQNCdkE0bIBCPEdATZ8M2b_05oEI4",
+  "name": "Best Zhongzheng Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=1XSUQNCdkE0bIBCPEdATZ8M2b_05oEI4",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:07.244Z",
+  "counts": {
+    "layers": 1,
+    "places": 7,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Roaders Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5103465,
+          "lat": 25.0450445
+        },
+        {
+          "name": "CityInn Hotel Taipei Station Branch II",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5166054,
+          "lat": 25.0510831
+        },
+        {
+          "name": "CityInn Hotel Taipei Station Branch III",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5167032,
+          "lat": 25.051078
+        },
+        {
+          "name": "CityInn Hotel Taipei Station One",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5143012,
+          "lat": 25.0462145
+        },
+        {
+          "name": "Taiwan Youth Hostel & Capsule Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5177535,
+          "lat": 25.0450428
+        },
+        {
+          "name": "Star Hostel Taipei Main Station",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5155797,
+          "lat": 25.0500815
+        },
+        {
+          "name": "Gloria Residence",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5257651,
+          "lat": 25.0572196
+        }
+      ]
+    }
+  ]
+}

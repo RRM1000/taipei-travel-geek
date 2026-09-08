@@ -1,0 +1,138 @@
+{
+  "mid": "1iqUw8ZlUJlIu3wueTxPXZ4CTgEDHrsY",
+  "name": "Best Salads in Taipei",
+  "embed": "https://www.google.com/maps/d/embed?mid=1iqUw8ZlUJlIu3wueTxPXZ4CTgEDHrsY",
+  "usedOn": [
+    "best-salads-in-taipei"
+  ],
+  "fetchedAt": "2026-09-08T06:37:21.868Z",
+  "counts": {
+    "layers": 1,
+    "places": 13,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Miacucina信義店",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5672692,
+          "lat": 25.0361121
+        },
+        {
+          "name": "Miacucina Fuxing Restaurant",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5448136,
+          "lat": 25.0437711
+        },
+        {
+          "name": "Miacucina (My kitchen) Nanxi",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5211048,
+          "lat": 25.0523038
+        },
+        {
+          "name": "Miacucina Tianmu",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5234383,
+          "lat": 25.1045611
+        },
+        {
+          "name": "MiaCucina",
+          "description": "",
+          "url": null,
+          "colour": "#A52714",
+          "type": "point",
+          "lng": 121.5671821,
+          "lat": 25.0800715
+        },
+        {
+          "name": "TGI FRIDAYS 星期五美式餐廳 松高餐廳",
+          "description": "",
+          "url": null,
+          "colour": "#3949AB",
+          "type": "point",
+          "lng": 121.5673139,
+          "lat": 25.0381554
+        },
+        {
+          "name": "gonnaEAT 仁愛店",
+          "description": "",
+          "url": null,
+          "colour": "#097138",
+          "type": "point",
+          "lng": 121.5498394,
+          "lat": 25.0382251
+        },
+        {
+          "name": "gonnaEAT 京站店",
+          "description": "",
+          "url": null,
+          "colour": "#097138",
+          "type": "point",
+          "lng": 121.5172486,
+          "lat": 25.0492915
+        },
+        {
+          "name": "gonnaEAT 仁愛店",
+          "description": "",
+          "url": null,
+          "colour": "#097138",
+          "type": "point",
+          "lng": 121.5498394,
+          "lat": 25.0382251
+        },
+        {
+          "name": "gonnaExpress",
+          "description": "",
+          "url": null,
+          "colour": "#097138",
+          "type": "point",
+          "lng": 121.5446558,
+          "lat": 25.0419311
+        },
+        {
+          "name": "Hungry Pans",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.5183285,
+          "lat": 25.0310734
+        },
+        {
+          "name": "Hungry Pans 夯堡 北醫店",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.565176,
+          "lat": 25.0276462
+        },
+        {
+          "name": "Hungry Pans 夯堡 公館店",
+          "description": "",
+          "url": null,
+          "colour": "#E65100",
+          "type": "point",
+          "lng": 121.5318496,
+          "lat": 25.0148943
+        }
+      ]
+    }
+  ]
+}

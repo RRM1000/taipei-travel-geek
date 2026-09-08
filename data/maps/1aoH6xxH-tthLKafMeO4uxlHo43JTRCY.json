@@ -1,0 +1,57 @@
+{
+  "mid": "1aoH6xxH-tthLKafMeO4uxlHo43JTRCY",
+  "name": "Nanjichang Night Market",
+  "embed": "https://www.google.com/maps/d/embed?mid=1aoH6xxH-tthLKafMeO4uxlHo43JTRCY",
+  "usedOn": [
+    "michelin-food-stands-at-night-markets"
+  ],
+  "fetchedAt": "2026-09-08T06:37:16.277Z",
+  "counts": {
+    "layers": 1,
+    "places": 4,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "A Nan Sesame Oil Chicken",
+          "description": "",
+          "url": null,
+          "colour": "#0288D1",
+          "type": "point",
+          "lng": 121.5066339,
+          "lat": 25.028881
+        },
+        {
+          "name": "Stinky Tofu Boss",
+          "description": "",
+          "url": null,
+          "colour": "#0F9D58",
+          "type": "point",
+          "lng": 121.5061458,
+          "lat": 25.0281283
+        },
+        {
+          "name": "Sung Ching Taiwanese Burrito",
+          "description": "",
+          "url": null,
+          "colour": "#C2185B",
+          "type": "point",
+          "lng": 121.5067236,
+          "lat": 25.0287579
+        },
+        {
+          "name": "Unnamed Clay Oven Roll",
+          "description": "",
+          "url": null,
+          "colour": "#F57C00",
+          "type": "point",
+          "lng": 121.5058034,
+          "lat": 25.028579
+        }
+      ]
+    }
+  ]
+}

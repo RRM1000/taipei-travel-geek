@@ -1,0 +1,129 @@
+{
+  "mid": "1GUxk2x9mObka8wPS-bneD1uygGuGJVEi",
+  "name": "Taipei 101 NYE Fireworks - Best Locations",
+  "embed": "https://www.google.com/maps/d/embed?mid=1GUxk2x9mObka8wPS-bneD1uygGuGJVEi",
+  "usedOn": [
+    "taipei-101-fireworks-new-years-eve"
+  ],
+  "fetchedAt": "2026-09-08T06:37:06.416Z",
+  "counts": {
+    "layers": 1,
+    "places": 12,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Taipei 101",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5648831,
+          "lat": 25.0336752
+        },
+        {
+          "name": "Taipei City Hall",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5643485,
+          "lat": 25.0381727
+        },
+        {
+          "name": "Sun Yat-Sen Memorial Hall",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5602452,
+          "lat": 25.0400306
+        },
+        {
+          "name": "Songren Road",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5684645,
+          "lat": 25.036519
+        },
+        {
+          "name": "Xinyi Shopping District",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5654162,
+          "lat": 25.036599
+        },
+        {
+          "name": "South of Taipei 101",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.564609,
+          "lat": 25.032445
+        },
+        {
+          "name": "FRANK Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5659297,
+          "lat": 25.0353052
+        },
+        {
+          "name": "Zhangman Tap Bistro",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5672964,
+          "lat": 25.0377137
+        },
+        {
+          "name": "WOOBAR",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5656888,
+          "lat": 25.0405898
+        },
+        {
+          "name": "Xiangshan (Elephant Mountain)",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5740113,
+          "lat": 25.0269931
+        },
+        {
+          "name": "Tiger Mountain",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5835546,
+          "lat": 25.0313542
+        },
+        {
+          "name": "Grand Hyatt Taipei Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#673AB7",
+          "type": "point",
+          "lng": 121.5634,
+          "lat": 25.035194
+        }
+      ]
+    }
+  ]
+}

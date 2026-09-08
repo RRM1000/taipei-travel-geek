@@ -1,0 +1,75 @@
+{
+  "mid": "1Z2lrB1sYhfmYkftXSCzEhyjEQEVSlZc",
+  "name": "Best Daan Hotels",
+  "embed": "https://www.google.com/maps/d/embed?mid=1Z2lrB1sYhfmYkftXSCzEhyjEQEVSlZc",
+  "usedOn": [
+    "best-areas-and-hotels-to-stay"
+  ],
+  "fetchedAt": "2026-09-08T06:37:08.813Z",
+  "counts": {
+    "layers": 1,
+    "places": 6,
+    "linked": 0
+  },
+  "layers": [
+    {
+      "name": "Untitled layer",
+      "places": [
+        {
+          "name": "Éclat Hotel Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.54837,
+          "lat": 25.033727
+        },
+        {
+          "name": "Kimpton Da An Hotel",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5454408,
+          "lat": 25.0404274
+        },
+        {
+          "name": "MADISON TAIPEI",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5492702,
+          "lat": 25.0339887
+        },
+        {
+          "name": "chez nous Hotel 司旅",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5418351,
+          "lat": 25.0360889
+        },
+        {
+          "name": "Star Hostel Taipei East 合星青年旅館",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5497331,
+          "lat": 25.0420371
+        },
+        {
+          "name": "Shangri-La Far Eastern, Taipei",
+          "description": "",
+          "url": null,
+          "colour": "#9C27B0",
+          "type": "point",
+          "lng": 121.5496248,
+          "lat": 25.0267382
+        }
+      ]
+    }
+  ]
+}
