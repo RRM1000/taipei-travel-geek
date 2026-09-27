@@ -41,10 +41,8 @@ import {
   insertNearbyGuides,
   nonEditorialSlugs,
   posts,
-  renderHotelDealsWidget,
   renderNearbyGuidesSection,
   renderRecommendedReadingSection,
-  shouldShowHotelDealsWidget,
 } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
@@ -233,14 +231,18 @@ export default async function ArticlePage({ params }: PageProperties) {
     ? withNearbyGuides
     : withNearbyGuides + renderRecommendedReadingSection(getRelatedPosts(post, 3));
 
-  // Auto-append a small hotel deals widget after Recommended Reading on every
-  // eligible post, so it isn't limited to a single hand-placed page.
-  // Tag monetised outbound links last, so the auto-appended widgets and inline
-  // CTAs are covered as well as links written into the post body.
+  // The auto-appended hotel deals widget (renderHotelDealsWidget) used to go
+  // here, after Recommended Reading on every eligible post. Klook's own
+  // numbers for September 2026: 6,206 impressions, 7 clicks, no bookings - a
+  // generic deals box at the very bottom of the page, where nobody is choosing
+  // a hotel. Product widgets placed where the reader is deciding convert
+  // instead (the zoo ticket widget: 8 clicks, 7 bookings), so the space is
+  // left to those. renderHotelDealsWidget stays in lib/content.ts in case a
+  // specific page wants it by hand.
+  // Tag monetised outbound links last, so inline CTAs are covered as well as
+  // links written into the post body.
   const finalContent = fillQueueMarker(enhanceContentImages(enhanceAffiliateLinks(enhanceMobileKlookWidget(
-    shouldShowHotelDealsWidget(post)
-      ? withRecommendedReading + renderHotelDealsWidget()
-      : withRecommendedReading
+    withRecommendedReading
   ))));
 
   const readingTime = calculateReadingTime(post.content);
