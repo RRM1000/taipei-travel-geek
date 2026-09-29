@@ -9,11 +9,11 @@ type PageProperties = { params: Promise<{ category: string }> };
  * Categories retired for having one or two members - a single-post archive is
  * a thin page competing with the post it lists. Their URLs are kept alive as
  * permanent redirects to the nearest surviving category rather than 404ing,
- * since they may hold indexed links.
+ * since they may hold indexed links. Hotels was retired here too, and came
+ * back in September 2026 once the area hotel guides gave it four posts.
  */
 const retiredCategoryRedirects: Record<string, string> = {
-  hotels: "areas",
-  hostels: "areas",
+  hostels: "hotels",
   "memorial-halls": "buildings",
   amusements: "visit",
 };

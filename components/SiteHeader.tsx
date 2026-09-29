@@ -71,7 +71,7 @@ const exploreLinks = [
   { label: "Bars", href: "/category/bars", desc: "Craft beer, cocktails & pubs" },
   { label: "Cafes", href: "/category/cafes", desc: "Coffee, tea & laptop spots" },
   { label: "Markets", href: "/category/markets", desc: "Night and day markets" },
-  { label: "Shop", href: "/category/shop", desc: "Souvenirs, malls & gifts" },
+  { label: "Hotels", href: "/category/hotels", desc: "Where to stay, area by area" },
   { label: "Parks", href: "/category/parks", desc: "Green space & riverside" },
   { label: "Culture", href: "/category/culture", desc: "Temples & local traditions" },
   { label: "Events", href: "/category/events", desc: "Festivals and what's on" },
