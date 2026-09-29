@@ -1025,5 +1025,1259 @@
         "caption": "The shared kitchen has a fridge, microwave and window counter"
       }
     ]
+  },
+  "hotels-in-zhongshan": {
+    "okura-prestige-taipei": [
+      {
+        "file": "okura-prestige-taipei-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Twin room with padded headboard and glass-walled bathroom at The Okura Prestige Taipei",
+        "caption": "A twin room with a glass-walled bathroom"
+      },
+      {
+        "file": "okura-prestige-taipei-2.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Rooftop swimming pool lit at night with city skyline at The Okura Prestige Taipei",
+        "caption": "The rooftop pool at night"
+      }
+    ],
+    "regent-taipei": [
+      {
+        "file": "regent-taipei-1.jpg",
+        "width": 1600,
+        "height": 785,
+        "alt": "Guest room with king bed, sitting area and window view of city and mountains at Regent Taipei",
+        "caption": "A guest room with a sitting area by the window and mountain views"
+      },
+      {
+        "file": "regent-taipei-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Marble bathroom with bathtub and lit vanity mirror at Regent Taipei",
+        "caption": "Marble bathroom with a separate bathtub and vanity"
+      }
+    ],
+    "gloria-residence-taipei": [
+      {
+        "file": "gloria-residence-taipei-3b.jpg",
+        "source": "gloria-residence-taipei-3.jpg",
+        "width": 1280,
+        "height": 853,
+        "alt": "Apartment at Gloria Residence Taipei with a living and work area, a bedroom through a sliding door, a fridge and a glass-walled bathroom",
+        "caption": "An apartment with separate living area, bedroom and fridge"
+      },
+      {
+        "file": "gloria-residence-taipei-2.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Indoor lap pool at Gloria Residence Taipei with loungers and windows onto a garden",
+        "caption": "The indoor pool, looking onto the garden"
+      }
+    ],
+    "tango-hotel-taipei-changan": [
+      {
+        "file": "tango-hotel-taipei-changan-1.jpg",
+        "width": 750,
+        "height": 500,
+        "alt": "Guest room with double bed, gold headboard panel and red sofa at The Tango Hotel Taipei Chang'an",
+        "caption": "A guest room with a double bed and a red sofa"
+      },
+      {
+        "file": "tango-hotel-taipei-changan-2.jpg",
+        "width": 750,
+        "height": 500,
+        "alt": "Bathtub beside a window looking onto a terrace garden at The Tango Hotel Taipei Chang'an",
+        "caption": "A bathtub overlooking a private terrace garden"
+      }
+    ],
+    "goldinn-hotel-taipei": [
+      {
+        "file": "goldinn-hotel-taipei-1.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Twin room at Goldinn Hotel Taipei with two single beds, a brick feature wall and a window counter with bar stools",
+        "caption": "A twin room with a brick feature wall"
+      },
+      {
+        "file": "goldinn-hotel-taipei-2.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Bathroom at Goldinn Hotel Taipei with a bathtub, shower curtain and dark brick-pattern tiles",
+        "caption": "The bathroom, with a bath and shower"
+      }
+    ],
+    "amba-zhongshan": [
+      {
+        "file": "amba-zhongshan-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Double room at amba Taipei Zhongshan with a king bed, plywood headboard, wooden desk and glass doors to a balcony",
+        "caption": "A double room with a small balcony"
+      }
+    ],
+    "doubletree-taipei-zhongshan": [
+      {
+        "file": "doubletree-taipei-zhongshan-1.jpg",
+        "width": 1200,
+        "height": 800,
+        "alt": "King room at DoubleTree by Hilton Taipei Zhongshan with a large bed, wooden floor, daybed sofa and round desk by the window",
+        "caption": "A king room with a daybed by the window"
+      },
+      {
+        "file": "doubletree-taipei-zhongshan-3.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Gym at DoubleTree by Hilton Taipei Zhongshan with treadmills and cross trainers facing tree-lined street windows",
+        "caption": "The gym, with treadmills along the windows"
+      }
+    ],
+    "hotel-fun-linsen": [
+      {
+        "file": "hotel-fun-linsen-1.jpg",
+        "width": 1200,
+        "height": 801,
+        "alt": "Twin room at Hotel Fun Linsen with two single beds, bookshelf-print wallpaper and a large window",
+        "caption": "A twin room with bookshelf wallpaper"
+      }
+    ],
+    "humble-boutique-hotel-taipei": [
+      {
+        "file": "humble-boutique-hotel-taipei-1.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Guest room at Humble Boutique Hotel Taipei with a king bed, bench, three red abstract prints and a wall-mounted TV",
+        "caption": "A king room with abstract art on the wall"
+      },
+      {
+        "file": "humble-boutique-hotel-taipei-3.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Bathroom at Humble Boutique Hotel Taipei with a terrazzo-tiled bathtub beside a floor-to-ceiling window over a busy street",
+        "caption": "A bathtub beside a full-height window over the street"
+      }
+    ],
+    "just-sleep-zhongshan": [
+      {
+        "file": "just-sleep-zhongshan-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Double room at Just Sleep Taipei Zhongshan with a large bed, wood panelling, two desks and a wide window",
+        "caption": "A double room with two work desks"
+      }
+    ],
+    "parkview-taipei": [
+      {
+        "file": "parkview-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "King room at Parkview Hotel Taipei with a large bed, orange armchair by a city-view window and a glass-walled bathroom",
+        "caption": "A king room with a glass-walled bathroom"
+      },
+      {
+        "file": "parkview-taipei-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathroom at Parkview Hotel Taipei with a backlit mirror, walk-in shower and bathtub under a window",
+        "caption": "The bathroom, with a shower and a tub by the window"
+      }
+    ],
+    "taipei-discover-hostel": [
+      {
+        "file": "taipei-discover-hostel-1.jpg",
+        "width": 1024,
+        "height": 684,
+        "alt": "Enclosed pod bed at Taipei Discover Hostel with a single mattress, reading lights, power sockets and a mirrored shelf",
+        "caption": "A dorm pod with its own light, sockets and shelf"
+      },
+      {
+        "file": "taipei-discover-hostel-3.jpg",
+        "width": 1024,
+        "height": 576,
+        "alt": "Rooftop terrace at Taipei Discover Hostel with white plastic chairs, tables and potted plants overlooking city buildings",
+        "caption": "The rooftop terrace"
+      }
+    ],
+    "tango-hotel-taipei-nanxi": [
+      {
+        "file": "tango-hotel-taipei-nanxi-1.jpg",
+        "width": 1600,
+        "height": 1077,
+        "alt": "Guest room at Tango Hotel Taipei Nanxi with a double bed, armchair, desk and a glass-doored marble bathroom",
+        "caption": "A double room with a marble bathroom behind glass doors"
+      },
+      {
+        "file": "tango-hotel-taipei-nanxi-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Whirlpool bathtub with lit jets in a marble bathroom at Tango Hotel Taipei Nanxi",
+        "caption": "A whirlpool bath in the room"
+      }
+    ],
+    "via-hotel-loft-taipei": [
+      {
+        "file": "via-hotel-loft-taipei-1.jpg",
+        "width": 1366,
+        "height": 768,
+        "alt": "Room at Via Hotel Loft Taipei with two double beds, a wood-effect feature wall and a cage pendant lamp",
+        "caption": "A room with two double beds"
+      },
+      {
+        "file": "via-hotel-loft-taipei-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Guest lounge at Via Hotel Loft Taipei with a long steel table, snack counter, coffee machine and drinks fridge",
+        "caption": "The guest lounge, with snacks and a coffee machine"
+      }
+    ]
+  },
+  "beitou-hot-spring-hotels": {
+    "grand-view-resort-beitou": [
+      {
+        "file": "grand-view-resort-beitou-1.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Room at Grand View Resort Beitou with a large bed and a furnished terrace overlooking green hills",
+        "caption": "A room opening onto a furnished terrace facing the hills."
+      },
+      {
+        "file": "grand-view-resort-beitou-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "In-room stone soaking tubs at Grand View Resort Beitou beside a window overlooking the hills",
+        "caption": "Stone soaking tubs beside a window with hillside views."
+      }
+    ],
+    "spring-city-resort-beitou": [
+      {
+        "file": "spring-city-resort-beitou-1.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Twin room with armchairs by the window at Spring City Resort in Beitou",
+        "caption": "A twin room with a seating area by the window"
+      },
+      {
+        "file": "spring-city-resort-beitou-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Stone soaking tub with running water spout and basin at Spring City Resort in Beitou",
+        "caption": "A stone-lined soaking tub in a bathroom"
+      }
+    ],
+    "villa-32-beitou": [
+      {
+        "file": "villa-32-beitou-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Private open-air wooden soaking tub in a bamboo-planted courtyard at Villa 32 in Beitou",
+        "caption": "A private open-air tub set in its own courtyard garden"
+      },
+      {
+        "file": "villa-32-beitou-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Japanese-style tatami suite with futon beds and a low dining table at Villa 32 in Beitou",
+        "caption": "A tatami suite with futon bedding and a low table, opening onto a small garden"
+      }
+    ],
+    "radium-kagaya-beitou": [
+      {
+        "file": "radium-kagaya-beitou-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Cloudy hot spring bath with stone stools behind bamboo screens at Radium Kagaya in Beitou",
+        "caption": "An open-air bath with milky water, stone stools and bamboo screening"
+      },
+      {
+        "file": "radium-kagaya-beitou-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Twin guest room with wood-panelled Japanese styling at Radium Kagaya in Beitou",
+        "caption": "A twin room with Japanese-style wood panelling and a small sitting area"
+      }
+    ],
+    "gaia-hotel-beitou": [
+      {
+        "file": "gaia-hotel-beitou-3.jpg",
+        "width": 1600,
+        "height": 1024,
+        "alt": "In-room stone soaking tub beside a window overlooking green hills at Gaia Hotel in Beitou",
+        "caption": "A bathroom with a stone soaking tub by a window looking out over wooded hills"
+      },
+      {
+        "file": "gaia-hotel-beitou-1.jpg",
+        "width": 1600,
+        "height": 1018,
+        "alt": "Spacious guest room with floor-to-ceiling windows facing forested hills at Gaia Hotel in Beitou",
+        "caption": "A large room with floor-to-ceiling windows facing the forested hillside"
+      }
+    ],
+    "wellspring-by-silks-beitou": [
+      {
+        "file": "wellspring-by-silks-beitou-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Granite in-room soaking tub by a window onto bamboo at Wellspring by Silks in Beitou",
+        "caption": "A granite soaking tub beside a window onto bamboo"
+      },
+      {
+        "file": "wellspring-by-silks-beitou-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Twin room with two double beds and a seating area at Wellspring by Silks in Beitou",
+        "caption": "A room with two double beds, a table and armchairs, and a hill view"
+      }
+    ],
+    "hotel-royal-beitou": [
+      {
+        "file": "hotel-royal-beitou-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Twin stone soaking tubs in a slate-tiled bathroom with a city view at Hotel Royal Beitou",
+        "caption": "Two stone soaking tubs in a slate bathroom with a view over the town"
+      },
+      {
+        "file": "hotel-royal-beitou-1.jpg",
+        "width": 1600,
+        "height": 1002,
+        "alt": "Modern guest room with a wood-panelled wall and king bed at Hotel Royal Beitou",
+        "caption": "A modern room with a curved wood-panelled wall and king bed"
+      }
+    ],
+    "asia-pacific-hotel-beitou": [
+      {
+        "file": "asia-pacific-hotel-beitou-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Guest room with wood panelling and a sliding lattice screen at Asia Pacific Hotel Beitou",
+        "caption": "A wood-panelled room with a sliding lattice screen and yukata laid out on the bed"
+      },
+      {
+        "file": "asia-pacific-hotel-beitou-2.jpg",
+        "width": 1200,
+        "height": 801,
+        "alt": "Semi-open-air public bath under a slatted roof at Asia Pacific Hotel Beitou",
+        "caption": "A shared bath under a slatted roof, with a sauna alongside"
+      }
+    ],
+    "beitou-hot-spring-resort": [
+      {
+        "file": "beitou-hot-spring-resort-2.jpg",
+        "width": 1478,
+        "height": 1108,
+        "alt": "Private stone soaking tub with a lounger in a bath room at Beitou Hot Spring Resort",
+        "caption": "A private bath room with a stone soaking tub and a lounger"
+      },
+      {
+        "file": "beitou-hot-spring-resort-1.jpg",
+        "width": 1600,
+        "height": 1101,
+        "alt": "Double room with a glass-walled bathroom at Beitou Hot Spring Resort",
+        "caption": "A double room with a glass-walled bathroom behind the bed"
+      }
+    ],
+    "water-house-beitou": [
+      {
+        "file": "water-house-beitou-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "In-room stone soaking tub beside a window overlooking Beitou Park at Water House",
+        "caption": "A stone soaking tub by a corner window looking over the park"
+      },
+      {
+        "file": "water-house-beitou-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Minimalist guest room with a low bed and glass-enclosed bath at Water House in Beitou",
+        "caption": "A minimalist room with a low bed and a glass-enclosed bath area"
+      }
+    ],
+    "sweetme-hot-spring-resort-beitou": [
+      {
+        "file": "sweetme-hot-spring-resort-beitou-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Twin room with a raised tatami seating area at Sweetme Hot Spring Resort in Beitou",
+        "caption": "A twin room with a raised tatami area by the window"
+      }
+    ],
+    "phoenix-pavilion-beitou": [
+      {
+        "file": "phoenix-pavilion-beitou-2.jpg",
+        "width": 1024,
+        "height": 683,
+        "alt": "Private tiled soaking tub filled with milky hot spring water at Phoenix Pavilion in Beitou",
+        "caption": "A private tiled tub filled with milky white hot spring water"
+      },
+      {
+        "file": "phoenix-pavilion-beitou-1.jpg",
+        "width": 1600,
+        "height": 1075,
+        "alt": "Guest room with a double bed and tatami area at Phoenix Pavilion in Beitou",
+        "caption": "A room with a double bed, a tatami area and lattice windows"
+      }
+    ],
+    "golden-hot-spring-hotel-beitou": [
+      {
+        "file": "golden-hot-spring-hotel-beitou-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "In-room wooden barrel tub and tiled soaking tub by a window at Golden Hot Spring Hotel in Beitou",
+        "caption": "A bathroom with a wooden barrel tub and a tiled soaking tub"
+      },
+      {
+        "file": "golden-hot-spring-hotel-beitou-1.jpg",
+        "width": 1600,
+        "height": 829,
+        "alt": "Boldly decorated guest room with damask wallpaper and a tufted headboard at Golden Hot Spring Hotel in Beitou",
+        "caption": "A boldly decorated room with damask wallpaper and a glass-walled bathroom"
+      }
+    ],
+    "chyuan-du-spring-resort-beitou": [
+      {
+        "file": "chyuan-du-spring-resort-beitou-2.jpg",
+        "width": 1104,
+        "height": 650,
+        "alt": "Jacuzzi-style tub with coloured lighting and a window into the bedroom at Chyuan Du Spring Resort in Beitou",
+        "caption": "A jacuzzi-style tub with coloured lighting and a window through to the bedroom"
+      },
+      {
+        "file": "chyuan-du-spring-resort-beitou-1.jpg",
+        "width": 1182,
+        "height": 675,
+        "alt": "Large guest room with a king bed and two sofas at Chyuan Du Spring Resort in Beitou",
+        "caption": "A large room with a king bed and a sofa seating area"
+      }
+    ]
+  },
+  "hotels-near-taoyuan-airport": {
+    "alfar-hotel-taoyuan": [
+      {
+        "file": "alfar-hotel-taoyuan-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Double room at Alfar Hotel Taoyuan with a white-made bed, blue feature wall and a glass-walled bathroom with bathtub",
+        "caption": "A double room with a glass-walled bathroom and bathtub"
+      }
+    ],
+    "backpackers-hostel-taoyuan-airport": [
+      {
+        "file": "backpackers-hostel-taoyuan-airport-1.jpg",
+        "width": 1600,
+        "height": 1063,
+        "alt": "Private double room at Backpackers Hostel Taoyuan Airport with yellow and grey striped walls and bedside lamps",
+        "caption": "A private double room with bold striped walls"
+      }
+    ],
+    "bluewater-hotel-taoyuan": [],
+    "cho-stay-taoyuan-airport": [
+      {
+        "file": "cho-stay-taoyuan-airport-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Wood-panelled capsule pods at CHO Stay Taoyuan Airport, with ladders to the upper berths and a lit lower pod",
+        "caption": "Upper and lower capsule pods with ladders to the top berths"
+      },
+      {
+        "file": "cho-stay-taoyuan-airport-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Shared washroom at CHO Stay Taoyuan Airport with twin basins, oval mirrors, hairdryers and a planted shelf above",
+        "caption": "The shared washroom, with twin basins and hairdryers"
+      }
+    ],
+    "city-suites-taoyuan-gateway": [
+      {
+        "file": "city-suites-taoyuan-gateway-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Twin room at City Suites Taoyuan Gateway with two double beds, a long desk and a wall-mounted TV",
+        "caption": "A room with two double beds and a long desk"
+      }
+    ],
+    "cozzi-blu-taoyuan": [
+      {
+        "file": "cozzi-blu-taoyuan-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Family room at Cozzi Blu Taoyuan with three beds in a row, whale artwork and a long desk",
+        "caption": "A family room with three beds in a row"
+      },
+      {
+        "file": "cozzi-blu-taoyuan-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathroom at Cozzi Blu Taoyuan with a freestanding bathtub, glass shower and a window over the city",
+        "caption": "A bathroom with a freestanding bath and walk-in shower"
+      }
+    ],
+    "cp-hotel-taoyuan": [
+      {
+        "file": "cp-hotel-taoyuan-1.jpg",
+        "width": 1200,
+        "height": 792,
+        "alt": "Room at CP Hotel Taoyuan with a large bed, desk and a glass-walled bathroom with a freestanding tub by the window",
+        "caption": "A room with a glass-walled bathroom and freestanding bath"
+      }
+    ],
+    "fullon-hotel-a8": [
+      {
+        "file": "fullon-hotel-a8-1.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Guest room at Fullon Hotel A8 with a tufted headboard, king bed, sofa and floor-to-ceiling windows",
+        "caption": "A king room with a sofa and floor-to-ceiling windows"
+      },
+      {
+        "file": "fullon-hotel-a8-2.jpg",
+        "width": 1600,
+        "height": 1080,
+        "alt": "Bathroom at Fullon Hotel A8 with a bathtub, glass shower, long vanity and heated-seat toilet",
+        "caption": "A bathroom with separate bathtub and shower"
+      }
+    ],
+    "holiday-inn-taoyuan-airport": [
+      {
+        "file": "holiday-inn-taoyuan-airport-1.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Guest room at Holiday Inn Taoyuan Airport with a king bed, sofa, small dining table and wide window",
+        "caption": "A king room with a sofa and table by the window"
+      },
+      {
+        "file": "holiday-inn-taoyuan-airport-2.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Bathroom at Holiday Inn Taoyuan Airport with a glass-fronted shower, bathtub and wide basin",
+        "caption": "A bathroom with a shower and bathtub"
+      }
+    ],
+    "hyatt-regency-taoyuan-airport": [
+      {
+        "file": "hyatt-regency-taoyuan-airport-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Suite at Hyatt Regency Taoyuan International Airport with a sitting area, desk facing the runway view and bedroom beyond",
+        "caption": "A suite with airport views from the desk and a separate bedroom"
+      }
+    ],
+    "lutel-hotel-taoyuan": [
+      {
+        "file": "lutel-hotel-taoyuan-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Double room at Lutel Hotel Taoyuan with a white-made bed, bedside cubby and a long wooden desk",
+        "caption": "A compact double room with a long desk"
+      }
+    ],
+    "sheraton-taoyuan": [
+      {
+        "file": "sheraton-taoyuan-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Guest room at Sheraton Taoyuan Hotel with a king bed, TV and a desk built into the back of the headboard",
+        "caption": "A king room with a desk built into the headboard"
+      },
+      {
+        "file": "sheraton-taoyuan-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Indoor jacuzzi pool under a glass dome at Sheraton Taoyuan Hotel",
+        "caption": "The spa pool under a glass dome"
+      }
+    ]
+  },
+  "aparthotels-serviced-apartments-taipei": {
+    "aj-residence-taipei": [
+      {
+        "file": "aj-residence-taipei-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bedroom at AJ Residence Taipei with a king-size bed, writing desk and tiled floor",
+        "caption": "King bedroom with a work desk and floor-to-ceiling curtains"
+      }
+    ],
+    "ch-service-apartment-taipei": [
+      {
+        "file": "ch-service-apartment-taipei-1.jpg",
+        "width": 1600,
+        "height": 1065,
+        "alt": "Studio at CH Service Apartment Taipei with a double bed, sofa, coffee table and desk",
+        "caption": "Studio with a double bed, sofa and desk under one roof"
+      }
+    ],
+    "everstar-hotel-taipei": [
+      {
+        "file": "everstar-hotel-taipei-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Kitchenette at Everstar Hotel Taipei with green cabinets, sink, single induction hob and extractor hood, bedroom beyond",
+        "caption": "Kitchenette with a sink, induction hob and extractor hood"
+      },
+      {
+        "file": "everstar-hotel-taipei-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bedroom at Everstar Hotel Taipei with a double bed, bedside table and green desk",
+        "caption": "Double bedroom with a desk by the window"
+      }
+    ],
+    "gloria-residence-taipei": [
+      {
+        "file": "gloria-residence-taipei-3.jpg",
+        "width": 1174,
+        "height": 800,
+        "alt": "Kitchen at Gloria Residence Taipei with a fridge-freezer, three-ring hob, built-in microwave, sink and extractor hood",
+        "caption": "Full kitchen with a hob, microwave and fridge-freezer"
+      },
+      {
+        "file": "gloria-residence-taipei-3b.jpg",
+        "width": 1280,
+        "height": 853,
+        "alt": "Apartment at Gloria Residence Taipei showing a dining desk, TV wall, bedroom, fridge and glass-walled bathroom",
+        "caption": "Wood-panelled apartment with separate bedroom and fridge"
+      }
+    ],
+    "hanns-house-taipei": [
+      {
+        "file": "hanns-house-taipei-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Open-plan apartment at Hanns House Taipei with a kitchen counter and kettle, dining table, sofa and bedroom behind sliding doors",
+        "caption": "Open-plan living area with a kitchen counter, dining table and separate bedroom"
+      },
+      {
+        "file": "hanns-house-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Bedroom at Hanns House Taipei with a raised window seat and tea table, with Taipei 101 visible outside",
+        "caption": "Bedroom with a window seat and a view towards Taipei 101"
+      }
+    ],
+    "jolley-hotel-taipei": [
+      {
+        "file": "jolley-hotel-taipei-2.jpg",
+        "width": 1388,
+        "height": 925,
+        "alt": "Studio at Jolley Hotel Taipei with a sofa, coffee table, kitchenette with fridge and microwave, desk and bed",
+        "caption": "Studio with a sofa, desk and kitchenette with fridge and microwave"
+      },
+      {
+        "file": "jolley-hotel-taipei-1.jpg",
+        "width": 1024,
+        "height": 768,
+        "alt": "Large studio at Jolley Hotel Taipei with two beds, sofa, TV unit and kitchenette with sink and fridge",
+        "caption": "Twin studio with a sofa and kitchenette at the far end"
+      }
+    ],
+    "leofoo-residences-taipei": [
+      {
+        "file": "leofoo-residences-taipei-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Living room at Leofoo Residences Taipei with a sofa, armchair, coffee table and TV wall, bedroom to the side",
+        "caption": "Separate living room with a sofa and TV, bedroom next door"
+      },
+      {
+        "file": "leofoo-residences-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Bedroom at Leofoo Residences Taipei with a king-size bed, desk and sliding doors to a balcony",
+        "caption": "King bedroom with a desk and balcony"
+      }
+    ],
+    "park259-jean-residence": [
+      {
+        "file": "park259-jean-residence-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Studio at Park259 Jean Residence with a kitchenette, coffee machine, round dining table and double bed",
+        "caption": "Studio with a kitchenette, coffee machine and dining table"
+      },
+      {
+        "file": "park259-jean-residence-2.jpg",
+        "width": 1600,
+        "height": 1084,
+        "alt": "Bathroom at Park259 Jean Residence with a washing machine under the basin and a bathtub",
+        "caption": "Bathroom with its own washing machine and a bathtub"
+      }
+    ],
+    "redin-residences-taipei": [
+      {
+        "file": "redin-residences-taipei-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Living room at Redin Residences Taipei with a sofa, coffee table, wall of kitchen cabinets, wine fridge and fridge-freezer",
+        "caption": "Living room with a wall of kitchen cabinets and a wine fridge"
+      },
+      {
+        "file": "redin-residences-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Bedroom at Redin Residences Taipei with a wood-panelled wall, pendant lights and a double bed",
+        "caption": "Bedroom with a wood-panelled wall and pendant lights"
+      }
+    ],
+    "the-corner-house-taipei": [
+      {
+        "file": "the-corner-house-taipei-3.jpg",
+        "width": 1200,
+        "height": 800,
+        "alt": "Living room at The Corner House Taipei with a sofa, coffee table, desk and kitchenette with microwave and sink",
+        "caption": "Living room with a kitchenette, microwave and desk"
+      },
+      {
+        "file": "the-corner-house-taipei-2.jpg",
+        "width": 1600,
+        "height": 1064,
+        "alt": "Studio at The Corner House Taipei with a desk, TV, sofa and double bed",
+        "caption": "Studio with a desk, sofa and double bed"
+      }
+    ],
+    "tianmu-star-urban-living": [
+      {
+        "file": "tianmu-star-urban-living-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Living room at Tianmu Star Urban Living with two sofas, a glass coffee table and a TV",
+        "caption": "Living room with two sofas and a TV"
+      },
+      {
+        "file": "tianmu-star-urban-living-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Bedroom at Tianmu Star Urban Living with a double bed, wooden desk and large window",
+        "caption": "Double bedroom with a desk and large window"
+      }
+    ],
+    "urban-abode-taipei": [
+      {
+        "file": "urban-abode-taipei-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Living room at Urban Abode Taipei with a sofa, hanging rattan chair and a wide city and mountain view",
+        "caption": "Living room with a hanging chair and a wide city view"
+      },
+      {
+        "file": "urban-abode-taipei-3.jpg",
+        "width": 1600,
+        "height": 901,
+        "alt": "Bathroom at Urban Abode Taipei with a freestanding bathtub beside a large window overlooking the city",
+        "caption": "Freestanding bathtub beside a window over the city"
+      }
+    ]
+  },
+  "best-hostels-in-taipei": {
+    "beimen-wow-poshtel": [
+      {
+        "file": "beimen-wow-poshtel-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Guest kitchen at Beimen WOW Poshtel with white cabinets, induction hobs, hanging pans and a turquoise wooden counter under exposed ducts",
+        "caption": "The shared guest kitchen, with hobs, an oven and a microwave"
+      }
+    ],
+    "corner-hostel-cafe": [
+      {
+        "file": "corner-hostel-cafe-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Dorm at Corner Hostel & Cafe with rows of wooden-framed bunk pods, beige privacy curtains and ladders",
+        "caption": "Curtained bunk pods, each with a reading light and hangers"
+      },
+      {
+        "file": "corner-hostel-cafe-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Ground-floor cafe at Corner Hostel & Cafe with wooden tables, green stools and big street-facing windows",
+        "caption": "The ground-floor cafe, with big windows onto the street"
+      }
+    ],
+    "dan-hostel-taipei": [
+      {
+        "file": "dan-hostel-3.jpg",
+        "width": 1280,
+        "height": 853,
+        "alt": "Dorm room at Dan Hostel Taipei with black-framed bunk beds, blue privacy curtains and folded white bedding",
+        "caption": "Bunk beds with privacy curtains in a dorm room"
+      },
+      {
+        "file": "dan-hostel-taipei-1.jpg",
+        "width": 1024,
+        "height": 683,
+        "alt": "Bunk beds with privacy curtains and reading lights in a dorm at Dan Hostel",
+        "caption": "Dorm bunks with privacy curtains and individual reading lights."
+      }
+    ],
+    "dongmen-3-hostel": [
+      {
+        "file": "dongmen-3-hostel-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Wood-panelled sleeping capsule at Dongmen 3 Hostel with a single mattress, reading light, small desk and a window onto the street",
+        "caption": "A wood-lined capsule with a desk, reading light and street-facing window"
+      }
+    ],
+    "formosa-101-hostel": [
+      {
+        "file": "formosa-101-hostel-1.jpg",
+        "width": 1600,
+        "height": 910,
+        "alt": "Room with two floor-level beds, floral bedding and a raised window nook with a chess board at Formosa 101 Hostel",
+        "caption": "A private room with two beds and a raised window nook"
+      }
+    ],
+    "hotel-fun-linsen": [
+      {
+        "file": "hotel-fun-linsen-1.jpg",
+        "width": 1200,
+        "height": 801,
+        "alt": "Twin room at Hotel Fun Linsen with two single beds, bookshelf-print wallpaper and a large window",
+        "caption": "A twin room with bookshelf wallpaper"
+      }
+    ],
+    "meander-1948": [
+      {
+        "file": "meander-1948-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Room with bunk-style pod beds and a long desk at Meander 1948",
+        "caption": "A room with two bunk-style pod beds, a long desk and a sofa"
+      },
+      {
+        "file": "meander-1948-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Private double room with desk and washbasin at Meander 1948",
+        "caption": "A compact private double room with its own desk and basin"
+      }
+    ],
+    "meander-taipei-hostel": [
+      {
+        "file": "meander-taipei-hostel-3.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Four-bed dorm with wooden bunk pods and ladders at Meander Taipei Hostel",
+        "caption": "A four-bed dorm with wooden bunk pods and reading lights"
+      },
+      {
+        "file": "meander-taipei-hostel-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Private double room with freestanding bathtub by the window at Meander Taipei Hostel",
+        "caption": "A private double room with a freestanding bath"
+      }
+    ],
+    "nk-hostel": [
+      {
+        "file": "nk-hostel-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Private double room at NK Hostel with a low platform bed, sofa, coffee table and curtained window nook",
+        "caption": "A private double room with a sofa and platform bed"
+      },
+      {
+        "file": "nk-hostel-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Shared kitchen and dining area at NK Hostel with a long wooden table, cross-back chairs, pendant lamps and a breakfast counter",
+        "caption": "The shared kitchen and dining room, with a long communal table"
+      }
+    ],
+    "oani": [
+      {
+        "file": "oani-3.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Dorm room at oani Hotel Taipei with wood-panelled bunk pods, privacy curtains and a window onto the street",
+        "caption": "Curtained bunk pods in a dorm room"
+      },
+      {
+        "file": "oani-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Twin room at oani Hotel Taipei with two white beds, a kettle and cups on a green counter, and a tall window looking down on a Ximending street",
+        "caption": "A twin room with a floor-to-ceiling window over the street"
+      }
+    ],
+    "old-door-hostel-bar": [
+      {
+        "file": "old-door-hostel-bar-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Ground-floor bar and lounge at Old Door Hostel & Bar with a tiled bar counter, whisky shelves, a barrel table and vintage armchairs",
+        "caption": "The ground-floor bar and lounge, with vintage armchairs"
+      }
+    ],
+    "on-my-way-taipei-hostel": [
+      {
+        "file": "on-my-way-taipei-hostel-1.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Dorm at On My Way Taipei Hostel with rows of wooden bunk beds, mauve privacy curtains and ladders either side of a central aisle",
+        "caption": "A dorm with curtained wooden bunks either side of the aisle"
+      },
+      {
+        "file": "on-my-way-taipei-hostel-2.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Common room at On My Way Taipei Hostel with floor cushions, beanbags, a TV, board games and a wall of guest postcards",
+        "caption": "The common room, with beanbags, board games and a TV"
+      }
+    ],
+    "owlstay-flip-flop-hostel-garden": [
+      {
+        "file": "owlstay-flip-flop-hostel-garden-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Communal lounge with floor cushions and woven mats at Flip Flop Hostel Garden",
+        "caption": "A shoes-off communal lounge with floor cushions and bookshelves"
+      },
+      {
+        "file": "owlstay-flip-flop-hostel-garden-2.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Open-air courtyard surrounded by curved balconies at Flip Flop Hostel Garden",
+        "caption": "The open-air courtyard, ringed by curved balconies"
+      }
+    ],
+    "star-hostel": [
+      {
+        "file": "star-hostel-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Compact private double room with desk and window at Star Hostel",
+        "caption": "A compact private double room with a desk"
+      },
+      {
+        "file": "star-hostel-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Communal dining area with wooden tables and bench seating by the windows at Star Hostel",
+        "caption": "The communal dining area with window-side bench seating"
+      }
+    ],
+    "star-hostel-taipei-east": [
+      {
+        "file": "star-hostel-taipei-east-1.jpg",
+        "width": 1600,
+        "height": 1065,
+        "alt": "Dorm at Star Hostel Taipei East with pine-panelled bunks, black metal ladder, bunk lights and a desk by the window",
+        "caption": "Pine-panelled bunks, each with its own light and sockets"
+      },
+      {
+        "file": "star-hostel-taipei-east-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Lounge at Star Hostel Taipei East with a long low wooden table, floor chairs, pendant lamps and a wall of wooden bookshelves",
+        "caption": "The lounge, with floor seating and a wall of bookshelves"
+      }
+    ],
+    "taipei-discover-hostel": [
+      {
+        "file": "taipei-discover-hostel-1.jpg",
+        "width": 1024,
+        "height": 684,
+        "alt": "Enclosed pod bed at Taipei Discover Hostel with a single mattress, reading lights, power sockets and a mirrored shelf",
+        "caption": "A dorm pod with its own light, sockets and shelf"
+      },
+      {
+        "file": "taipei-discover-hostel-3.jpg",
+        "width": 1024,
+        "height": 576,
+        "alt": "Rooftop terrace at Taipei Discover Hostel with white plastic chairs, tables and potted plants overlooking city buildings",
+        "caption": "The rooftop terrace"
+      }
+    ],
+    "taiwan-youth-hostel-capsule-hotel": [
+      {
+        "file": "taiwan-youth-hostel-capsule-hotel-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Two lit sleeping capsules with mattresses, shelves and ladders at Taiwan Youth Hostel & Capsule Hotel",
+        "caption": "Sleeping capsules, each with a shelf, lamp and sockets"
+      },
+      {
+        "file": "taiwan-youth-hostel-capsule-hotel-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Communal lounge with sofas, armchairs and computers at Taiwan Youth Hostel & Capsule Hotel",
+        "caption": "The communal lounge with sofas and shared computers"
+      }
+    ],
+    "we-come-hostel": [
+      {
+        "file": "we-come-hostel-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Dorm at We Come Hostel with black-framed bunks, lettered beds, brown privacy curtains and a green ceiling",
+        "caption": "A dorm with curtained bunks and a reading light at each bed"
+      },
+      {
+        "file": "we-come-hostel-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Private double room at We Come Hostel with a wood headboard, basin and glass-walled shower room",
+        "caption": "A private double with its own basin and shower room"
+      }
+    ],
+    "wondertime-hankou-ladies-hostel": [
+      {
+        "file": "wondertime-hankou-ladies-hostel-3.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Lounge at Wondertime Hankou Ladies Hostel with white arches, bouclé chairs, round tables, banquette seating and a small kitchen",
+        "caption": "The arched lounge, with a small kitchen behind"
+      },
+      {
+        "file": "wondertime-hankou-ladies-hostel-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Compact private double room at Wondertime Hankou Ladies Hostel with a backlit arch above the bed, a desk and a mirror",
+        "caption": "A compact private double with a desk and mirror"
+      }
+    ],
+    "wondertime-kaifeng-ladies-hostel": [
+      {
+        "file": "wondertime-kaifeng-ladies-hostel-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Lounge at Wondertime Kaifeng Ladies Hostel with a curved cream sofa, dining tables, woven wall decorations and dried flowers",
+        "caption": "The lounge, with a curved sofa and dining tables"
+      }
+    ],
+    "work-inn-101": [
+      {
+        "file": "work-inn-101-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Dorm with wooden bunk beds, reading lights and a safe at Work Inn 101",
+        "caption": "A dorm with numbered bunks, each with its own reading light"
+      },
+      {
+        "file": "work-inn-101-3.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Shared guest kitchen with microwave, toaster oven, fridge and window counter seating at Work Inn 101",
+        "caption": "The shared kitchen has a fridge, microwave and window counter"
+      }
+    ]
+  },
+  "hotels-in-daan": {
+    "chez-nous-hotel-taipei": [
+      {
+        "file": "chez-nous-hotel-taipei-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Double room at Chez Nous Hotel with a king-size bed and an exercise bike by the window",
+        "caption": "A double room with an exercise bike by the window."
+      },
+      {
+        "file": "chez-nous-hotel-taipei-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Dark-tiled bathroom at Chez Nous Hotel with a marble-topped vanity, washbasin and glass-walled shower",
+        "caption": "Dark-tiled bathroom with a glass-walled shower"
+      }
+    ],
+    "dandy-hotel-daan-park": [
+      {
+        "file": "dandy-hotel-daan-park-1.jpg",
+        "width": 1509,
+        "height": 1200,
+        "alt": "Double room at Dandy Hotel Daan Park with a wood-panelled headboard, globe wall lights and a desk by the window",
+        "caption": "A double room with a timber headboard and window desk"
+      },
+      {
+        "file": "dandy-hotel-daan-park-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathroom at Dandy Hotel Daan Park with a bathtub and shower behind glass doors, toilet and washbasin",
+        "caption": "Bathroom with a separate bathtub and shower behind glass"
+      }
+    ],
+    "dongmen-3-hostel": [
+      {
+        "file": "dongmen-3-hostel-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Wood-panelled sleeping capsule at Dongmen 3 Hostel with a single mattress, reading light, small desk and a window onto the street",
+        "caption": "A wood-lined capsule with a desk, reading light and street-facing window"
+      },
+      {
+        "file": "dongmen-3-hostel-1b.jpg",
+        "source": "dongmen-3-hostel-1.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Two-tier numbered capsules at Dongmen 3 Hostel with metal ladders, roll-down blinds and white bedding",
+        "caption": "Stacked capsules with ladders and roll-down blinds"
+      }
+    ],
+    "eastin-taipei-hotel": [
+      {
+        "file": "eastin-taipei-hotel-3.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Corner room at Eastin Taipei Hotel with a king-size bed and floor-to-ceiling windows looking towards Taipei 101",
+        "caption": "A corner room with floor-to-ceiling windows and Taipei 101 in view"
+      },
+      {
+        "file": "eastin-taipei-hotel-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathtub beside a picture window at Eastin Taipei Hotel with a view across the city to Taipei 101",
+        "caption": "A bathtub set against a window facing Taipei 101"
+      }
+    ],
+    "episode-daan-taipei": [
+      {
+        "file": "episode-daan-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Guest room at Episode Daan Taipei with a double bed, faux-fur throw, pendant light and a small table by sheer-curtained windows",
+        "caption": "A guest room with a pendant light and a window table"
+      },
+      {
+        "file": "episode-daan-taipei-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Dark-tiled open vanity at Episode Daan Taipei with twin vessel basins, brass taps and globe wall lights",
+        "caption": "The dark-tiled vanity area with twin basins"
+      }
+    ],
+    "green-world-zhongxiao": [
+      {
+        "file": "green-world-zhongxiao-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Twin room at Green World Zhongxiao with two single beds, an illustrated feature wall, desk and a wide window",
+        "caption": "A twin room with an illustrated feature wall and desk"
+      }
+    ],
+    "hotel-eclat-taipei": [
+      {
+        "file": "hotel-eclat-taipei-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Lobby at Hotel Eclat Taipei with a large pink and purple glass chandelier, a gilded sculpture and other artworks",
+        "caption": "The lobby, with a glass chandelier and sculptures from the art collection"
+      }
+    ],
+    "hotel-proverbs-taipei": [
+      {
+        "file": "hotel-proverbs-taipei-1.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Guest room at Hotel Proverbs Taipei with walnut-panelled walls, a crystal chandelier, king-size bed and oval coffee table",
+        "caption": "A walnut-panelled guest room with a crystal chandelier"
+      },
+      {
+        "file": "hotel-proverbs-taipei-2.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Marble-floored bathroom at Hotel Proverbs Taipei with a freestanding bathtub, period-style basin and curtains opening onto the bedroom",
+        "caption": "Marble bathroom with a freestanding tub, open to the bedroom"
+      }
+    ],
+    "kimpton-da-an-hotel": [
+      {
+        "file": "kimpton-da-an-hotel-1.jpg",
+        "width": 1600,
+        "height": 1023,
+        "alt": "Guest room with a double bed, oak-panelled walls and sheer curtains at Kimpton Da An Hotel",
+        "caption": "A guest room with oak panelling, a built-in desk and floor-to-ceiling curtains"
+      },
+      {
+        "file": "kimpton-da-an-hotel-3.jpg",
+        "width": 1600,
+        "height": 1059,
+        "alt": "Grey terrazzo bathroom with sunken bathtub, vessel basin and glass shower at Kimpton Da An Hotel",
+        "caption": "Terrazzo bathroom with a built-in bath and walk-in shower"
+      }
+    ],
+    "madison-taipei": [
+      {
+        "file": "madison-taipei-1.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Deluxe room at Madison Taipei with a king-size bed, timber headboard, metallic wall art and a window onto trees",
+        "caption": "A king room with a timber headboard and a window onto trees"
+      }
+    ],
+    "mgh-mitsui-garden-taipei-zhongxiao": [
+      {
+        "file": "mgh-mitsui-garden-taipei-zhongxiao-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Suite bathroom at MGH Mitsui Garden Hotel Taipei Zhongxiao with a freestanding bathtub, double vanity and floor-to-ceiling windows over the city at dusk",
+        "caption": "A suite bathroom with a freestanding tub and city views"
+      },
+      {
+        "file": "mgh-mitsui-garden-taipei-zhongxiao-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Japanese-style indoor public bath at MGH Mitsui Garden Hotel Taipei Zhongxiao with a long soaking pool beside tall windows",
+        "caption": "The indoor public bath, with a long soaking pool by the windows"
+      }
+    ],
+    "park-taipei-hotel": [
+      {
+        "file": "park-taipei-hotel-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Twin room at Park Taipei Hotel with two beds, a desk and a balcony window framing Taipei 101",
+        "caption": "A twin room with Taipei 101 framed in the balcony window"
+      }
+    ],
+    "shangri-la-far-eastern-taipei": [
+      {
+        "file": "shangri-la-far-eastern-taipei-1.jpg",
+        "width": 1600,
+        "height": 783,
+        "alt": "Twin room with sofa and window desk looking out to hills at Shangri-La Far Eastern Taipei",
+        "caption": "A twin room with a sofa and a desk facing the window"
+      },
+      {
+        "file": "shangri-la-far-eastern-taipei-2.jpg",
+        "width": 1200,
+        "height": 1200,
+        "alt": "Rooftop pool with loungers and city views at Shangri-La Far Eastern Taipei",
+        "caption": "The rooftop pool, with city views through the openings"
+      }
+    ],
+    "star-hostel-taipei-east": [
+      {
+        "file": "star-hostel-taipei-east-1.jpg",
+        "width": 1600,
+        "height": 1065,
+        "alt": "Dorm at Star Hostel Taipei East with pine-panelled bunks, black metal ladder, bunk lights and a desk by the window",
+        "caption": "Pine-panelled bunks, each with its own light and sockets"
+      },
+      {
+        "file": "star-hostel-taipei-east-1b.jpg",
+        "source": "star-hostel-taipei-east-1.jpg",
+        "width": 1600,
+        "height": 1065,
+        "alt": "Private double room at Star Hostel Taipei East with a pine headboard and a sliding door onto a wooden balcony",
+        "caption": "A private double room opening onto a balcony"
+      }
+    ],
+    "taipei-fullerton-south": [
+      {
+        "file": "taipei-fullerton-south-1.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Guest room at Taipei Fullerton Hotel South with a king-size bed, armchair and footstool, and the bathroom door open",
+        "caption": "A king room with an armchair and an en-suite shower"
+      },
+      {
+        "file": "taipei-fullerton-south-2.jpg",
+        "width": 980,
+        "height": 649,
+        "alt": "Marble-tiled bathroom at Taipei Fullerton Hotel South with a bathtub, separate toilet and long vanity",
+        "caption": "Marble bathroom with a bathtub and long vanity"
+      }
+    ]
   }
 }
