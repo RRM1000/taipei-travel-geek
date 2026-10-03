@@ -2279,5 +2279,411 @@
         "caption": "Marble bathroom with a bathtub and long vanity"
       }
     ]
+  },
+  "taipei-101-view-hotels-new-years-eve": {
+    "grand-hyatt-taipei": [
+      {
+        "file": "grand-hyatt-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Twin room at Grand Hyatt Taipei with a window seat and a view of Taipei 101 at dusk",
+        "caption": "A twin room with a window seat looking out to Taipei 101."
+      },
+      {
+        "file": "grand-hyatt-taipei-3.jpg",
+        "width": 1600,
+        "height": 899,
+        "alt": "Outdoor swimming pool at Grand Hyatt Taipei surrounded by palms and sun loungers",
+        "caption": "The outdoor pool, set among palms and loungers."
+      }
+    ],
+    "w-taipei": [
+      {
+        "file": "w-taipei-1.jpg",
+        "width": 1440,
+        "height": 810,
+        "alt": "Guest room with king bed, window seat and floor-to-ceiling city view at W Taipei",
+        "caption": "A guest room with a window seat and floor-to-ceiling windows"
+      },
+      {
+        "file": "w-taipei-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathtub by the window with Taipei 101 in view at W Taipei",
+        "caption": "A bathroom with a bath facing Taipei 101"
+      }
+    ],
+    "le-meridien-taipei": [
+      {
+        "file": "le-meridien-taipei-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Suite at Le Méridien Taipei with a sofa, arc floor lamp and wall-mounted TV in the living area and a white double bed visible through the doorway",
+        "caption": "A suite at Le Méridien Taipei, with a separate living area and bedroom"
+      },
+      {
+        "file": "le-meridien-taipei-3.jpg",
+        "width": 1024,
+        "height": 683,
+        "alt": "Indoor lap pool at Le Méridien Taipei with lane ropes, blue mosaic tiles, skylight and sun loungers along one side",
+        "caption": "The indoor lap pool at Le Méridien Taipei"
+      }
+    ],
+    "humble-house-taipei": [
+      {
+        "file": "humble-house-taipei-1.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Twin room at Humble House Taipei with a desk by the window and a night view of Taipei 101",
+        "caption": "A twin room with a window view of Taipei 101."
+      },
+      {
+        "file": "humble-house-taipei-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathroom at Humble House Taipei with a backlit mirror, washbasin and glass shower",
+        "caption": "Bathroom with a backlit mirror and glass shower."
+      }
+    ],
+    "hanns-house-taipei": [
+      {
+        "file": "hanns-house-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Guest room at Hanns House Taipei with a double bed, raised window seat with low table and floor cushions, and floor-to-ceiling windows looking towards Taipei 101",
+        "caption": "A corner room at Hanns House, with a raised tea nook and Taipei 101 in view"
+      },
+      {
+        "file": "hanns-house-taipei-3.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Marble bathroom at Hanns House Taipei with a glass-walled shower, separate bathtub behind glass and a dark stone vanity with a large mirror",
+        "caption": "A bathroom at Hanns House, with a separate shower and bathtub"
+      }
+    ],
+    "eslite-hotel-taipei": [
+      {
+        "file": "eslite-hotel-taipei-1.jpg",
+        "width": 1600,
+        "height": 911,
+        "alt": "Room at Eslite Hotel with a king-size bed and a balcony looking towards Taipei 101",
+        "caption": "A king room with a balcony and a view towards Taipei 101."
+      },
+      {
+        "file": "eslite-hotel-taipei-3.jpg",
+        "width": 1200,
+        "height": 628,
+        "alt": "Library-style lounge at Eslite Hotel with floor-to-ceiling bookshelves and leather armchairs",
+        "caption": "The library lounge, lined with floor-to-ceiling bookshelves."
+      }
+    ],
+    "shangri-la-far-eastern-taipei": [
+      {
+        "file": "shangri-la-far-eastern-taipei-1.jpg",
+        "width": 1600,
+        "height": 783,
+        "alt": "Twin room with sofa and window desk looking out to hills at Shangri-La Far Eastern Taipei",
+        "caption": "A twin room with a sofa and a desk facing the window"
+      },
+      {
+        "file": "shangri-la-far-eastern-taipei-2.jpg",
+        "width": 1200,
+        "height": 1200,
+        "alt": "Rooftop pool with loungers and city views at Shangri-La Far Eastern Taipei",
+        "caption": "The rooftop pool, with city views through the openings"
+      }
+    ],
+    "park-taipei-hotel": [
+      {
+        "file": "park-taipei-hotel-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Twin room at Park Taipei Hotel with two beds, a desk and a balcony window framing Taipei 101",
+        "caption": "A twin room with Taipei 101 framed in the balcony window"
+      }
+    ],
+    "eastin-taipei-hotel": [
+      {
+        "file": "eastin-taipei-hotel-3.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Corner room at Eastin Taipei Hotel with a king-size bed and floor-to-ceiling windows looking towards Taipei 101",
+        "caption": "A corner room with floor-to-ceiling windows and Taipei 101 in view"
+      },
+      {
+        "file": "eastin-taipei-hotel-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathtub beside a picture window at Eastin Taipei Hotel with a view across the city to Taipei 101",
+        "caption": "A bathtub set against a window facing Taipei 101"
+      }
+    ],
+    "the-grand-hotel-taipei": [
+      {
+        "file": "the-grand-hotel-taipei-1.jpg",
+        "width": 1600,
+        "height": 829,
+        "alt": "Twin room with plum-blossom mural and balcony overlooking green hills at The Grand Hotel Taipei",
+        "caption": "A twin room with a balcony looking out over wooded hills"
+      },
+      {
+        "file": "the-grand-hotel-taipei-2.jpg",
+        "width": 1600,
+        "height": 1021,
+        "alt": "Outdoor swimming pool at dusk with the red palace-style hotel building behind at The Grand Hotel Taipei",
+        "caption": "The outdoor pool at dusk, with the hotel's main building behind"
+      }
+    ],
+    "members-hotel-taipei-101": [
+      {
+        "file": "members-hotel-taipei-101-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Room with two double beds, grey headboards and abstract artwork at Members Hotel Taipei 101",
+        "caption": "A room with two double beds, a clothes rail and an armchair"
+      },
+      {
+        "file": "members-hotel-taipei-101-2.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Dining table with four chairs, wall-mounted TV and open wardrobe in a room at Members Hotel Taipei 101",
+        "caption": "The same room type has a round table for four and a private bathroom"
+      }
+    ],
+    "check-inn-taipei-xinyi": [
+      {
+        "file": "check-inn-taipei-xinyi-1.jpg",
+        "width": 1593,
+        "height": 1200,
+        "alt": "Twin room with floor-to-ceiling windows overlooking Xinyi office towers at Check Inn Taipei Xinyi",
+        "caption": "A twin room with full-height windows and a desk"
+      },
+      {
+        "file": "check-inn-taipei-xinyi-3.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Glass-walled shower and bowl sink separated from the bed by a curtain at Check Inn Taipei Xinyi",
+        "caption": "The glass-walled bathroom is screened from the bed by a curtain"
+      }
+    ]
+  },
+  "taipei-hotels-with-pools": {
+    "shangri-la-far-eastern-taipei": [
+      {
+        "file": "shangri-la-far-eastern-taipei-2.jpg",
+        "width": 1200,
+        "height": 1200,
+        "alt": "Rooftop pool with loungers and city views at Shangri-La Far Eastern Taipei",
+        "caption": "The rooftop pool, with city views through the openings"
+      },
+      {
+        "file": "shangri-la-far-eastern-taipei-1.jpg",
+        "width": 1600,
+        "height": 783,
+        "alt": "Twin room with sofa and window desk looking out to hills at Shangri-La Far Eastern Taipei",
+        "caption": "A twin room with a sofa and a desk facing the window"
+      }
+    ],
+    "okura-prestige-taipei": [
+      {
+        "file": "okura-prestige-taipei-2.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Rooftop swimming pool lit at night with city skyline at The Okura Prestige Taipei",
+        "caption": "The rooftop pool at night"
+      },
+      {
+        "file": "okura-prestige-taipei-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Twin room with padded headboard and glass-walled bathroom at The Okura Prestige Taipei",
+        "caption": "A twin room with a glass-walled bathroom"
+      }
+    ],
+    "capella-taipei": [
+      {
+        "file": "capella-taipei-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Outdoor lap pool at Capella Taipei lined with sun loungers and red parasols",
+        "caption": "The outdoor pool terrace, lined with loungers and parasols."
+      },
+      {
+        "file": "capella-taipei-1.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Guest room at Capella Taipei with a double bed, sofa by the window and a minibar cabinet",
+        "caption": "A guest room with a window-side sofa and high-floor city views."
+      }
+    ],
+    "humble-house-taipei": [
+      {
+        "file": "humble-house-taipei-1.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Twin room at Humble House Taipei with a desk by the window and a night view of Taipei 101",
+        "caption": "A twin room with a window view of Taipei 101."
+      },
+      {
+        "file": "humble-house-taipei-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathroom at Humble House Taipei with a backlit mirror, washbasin and glass shower",
+        "caption": "Bathroom with a backlit mirror and glass shower."
+      }
+    ],
+    "w-taipei": [
+      {
+        "file": "w-taipei-1.jpg",
+        "width": 1440,
+        "height": 810,
+        "alt": "Guest room with king bed, window seat and floor-to-ceiling city view at W Taipei",
+        "caption": "A guest room with a window seat and floor-to-ceiling windows"
+      },
+      {
+        "file": "w-taipei-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathtub by the window with Taipei 101 in view at W Taipei",
+        "caption": "A bathroom with a bath facing Taipei 101"
+      }
+    ],
+    "regent-taipei": [
+      {
+        "file": "regent-taipei-1.jpg",
+        "width": 1600,
+        "height": 785,
+        "alt": "Guest room with king bed, sitting area and window view of city and mountains at Regent Taipei",
+        "caption": "A guest room with a sitting area by the window and mountain views"
+      },
+      {
+        "file": "regent-taipei-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Marble bathroom with bathtub and lit vanity mirror at Regent Taipei",
+        "caption": "Marble bathroom with a separate bathtub and vanity"
+      }
+    ],
+    "le-meridien-taipei": [
+      {
+        "file": "le-meridien-taipei-3.jpg",
+        "width": 1024,
+        "height": 683,
+        "alt": "Indoor lap pool at Le Méridien Taipei with lane ropes, blue mosaic tiles, skylight and sun loungers along one side",
+        "caption": "The indoor lap pool at Le Méridien Taipei"
+      },
+      {
+        "file": "le-meridien-taipei-1.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Suite at Le Méridien Taipei with a sofa, arc floor lamp and wall-mounted TV in the living area and a white double bed visible through the doorway",
+        "caption": "A suite at Le Méridien Taipei, with a separate living area and bedroom"
+      }
+    ],
+    "gloria-residence-taipei": [
+      {
+        "file": "gloria-residence-taipei-2.jpg",
+        "width": 1600,
+        "height": 1068,
+        "alt": "Indoor lap pool at Gloria Residence with floor-to-ceiling windows onto a garden",
+        "caption": "The indoor pool, with windows onto the garden."
+      },
+      {
+        "file": "gloria-residence-taipei-3.jpg",
+        "width": 1174,
+        "height": 800,
+        "alt": "Kitchen at Gloria Residence with an induction hob, sink, microwave and fridge",
+        "caption": "A fitted kitchen with hob, microwave and fridge."
+      }
+    ],
+    "grand-hyatt-taipei": [
+      {
+        "file": "grand-hyatt-taipei-3.jpg",
+        "width": 1600,
+        "height": 899,
+        "alt": "Outdoor swimming pool at Grand Hyatt Taipei surrounded by palms and sun loungers",
+        "caption": "The outdoor pool, set among palms and loungers."
+      },
+      {
+        "file": "grand-hyatt-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Twin room at Grand Hyatt Taipei with a window seat and a view of Taipei 101 at dusk",
+        "caption": "A twin room with a window seat looking out to Taipei 101."
+      }
+    ],
+    "mandarin-oriental-taipei": [
+      {
+        "file": "mandarin-oriental-taipei-2.jpg",
+        "width": 700,
+        "height": 467,
+        "alt": "Outdoor mosaic-tiled pool with sun loungers at dusk at Mandarin Oriental Taipei",
+        "caption": "The outdoor pool and sun terrace at dusk"
+      },
+      {
+        "file": "mandarin-oriental-taipei-3.jpg",
+        "width": 700,
+        "height": 467,
+        "alt": "Marble bathroom with round bathtub looking through to the bedroom at Mandarin Oriental Taipei",
+        "caption": "Marble bathroom with a round tub, opening onto the bedroom"
+      }
+    ],
+    "parkview-taipei": [
+      {
+        "file": "parkview-taipei-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "King room at Parkview Hotel Taipei with a large bed, orange armchair by a city-view window and a glass-walled bathroom",
+        "caption": "A king room with a glass-walled bathroom"
+      },
+      {
+        "file": "parkview-taipei-2.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Bathroom at Parkview Hotel Taipei with a backlit mirror, walk-in shower and bathtub under a window",
+        "caption": "The bathroom, with a shower and a tub by the window"
+      }
+    ],
+    "the-grand-hotel-taipei": [
+      {
+        "file": "the-grand-hotel-taipei-2.jpg",
+        "width": 1600,
+        "height": 1021,
+        "alt": "Outdoor swimming pool at dusk with the red palace-style hotel building behind at The Grand Hotel Taipei",
+        "caption": "The outdoor pool at dusk, with the hotel's main building behind"
+      },
+      {
+        "file": "the-grand-hotel-taipei-1.jpg",
+        "width": 1600,
+        "height": 829,
+        "alt": "Twin room with plum-blossom mural and balcony overlooking green hills at The Grand Hotel Taipei",
+        "caption": "A twin room with a balcony looking out over wooded hills"
+      }
+    ],
+    "asia-pacific-hotel-beitou": [
+      {
+        "file": "asia-pacific-hotel-beitou-1.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Guest room with wood panelling and a sliding lattice screen at Asia Pacific Hotel Beitou",
+        "caption": "A wood-panelled room with a sliding lattice screen and yukata laid out on the bed"
+      }
+    ],
+    "spring-city-resort-beitou": [
+      {
+        "file": "spring-city-resort-beitou-1.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Twin room with armchairs by the window at Spring City Resort in Beitou",
+        "caption": "A twin room with a seating area by the window"
+      },
+      {
+        "file": "spring-city-resort-beitou-3.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Stone soaking tub with running water spout and basin at Spring City Resort in Beitou",
+        "caption": "A stone-lined soaking tub in a bathroom"
+      }
+    ]
   }
 }
