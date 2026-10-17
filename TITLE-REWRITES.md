@@ -43,3 +43,41 @@ Target 60 characters or fewer. `in:` = inbound internal links.
 These exceed 60 only because of the "(Permanently Closed)" suffix, which is
 useful to a searcher and sits after the venue name. All have zero inbound
 links, so truncation costs nothing.
+## Search Console quick wins (October 2026)
+
+**Applied.** Pages with page-one impressions but a click-through rate under 1% in the
+28 Sep 2026 pull (29 Aug – 25 Sep), plus Taipei Zoo for "taipei zoo opening hours". Most never said "Taipei" or the word people search
+with (menu, hours, map). Script: `scripts/rewrite-quick-win-titles.cjs`. Recheck these
+rows in the first pull after mid-November.
+
+| impr | CTR | pos | slug | old title | new title | new description |
+|---|---|---|---|---|---|---|
+| 31,279 | 1.23% | 2.7 | mrt | Taipei MRT Guide: Fares, Lines & How to Ride | Taipei MRT Map & Guide (2026): Fares, Hours & Lines | yes |
+| 14,014 | 0.01% | 8.2 | best-salads-in-taipei | Where to Get Your Salad Fix in Taipei | Best Salads in Taipei: 4 Places for a Fresh Salad | yes |
+| 8,153 | 0.45% | 11.3 | taiwan-high-speed-rail-hsr-discounts-klook | Full Guide & Deals for Taiwan High Speed Rail (THSR) | Taiwan High Speed Rail (THSR): Tickets, Prices & Deals | yes |
+| 7,310 | 0.07% | 9.1 | best-cafes-to-work | Cafes Ideal for Taking Your Laptop | Best Cafes to Work From in Taipei: WiFi, Plugs & Seats | yes |
+| 6,136 | 0.08% | 9.4 | cheap-breakfast-taipei | Cheap & Awesome Breakfast Places to Start Your Day | Best Cheap Breakfast in Taipei: 6 Places to Start the Day | yes |
+| 5,707 | 1.16% | 7.3 | taipei-zoo | Taipei Zoo: Tickets, Pandas & How to Plan Your Visit (2026) | Taipei Zoo: Opening Hours, Tickets & Pandas (2026) | yes |
+| 5,360 | 0.17% | 5.8 | fumu-come-to-mama | FuMu - Amazing Authentic English Breakfasts | FuMu Taipei: Full English Breakfast by Day, Bar by Night | yes |
+| 5,177 | 0.04% | 7.5 | chinitas-cubano | Hearty Cuban Sandwiches at Chinita's Cubano | Chinita's Cubano: Taipei's Authentic Cuban Sandwich | yes |
+| 4,252 | 0.02% | 7.9 | taipei-souvlaki | Great Greek Pita Gyros at Taipei Souvlaki | Taipei Souvlaki: Greek Pita Gyros & Souvlaki in Dunhua |  |
+| 4,026 | 0.05% | 9.6 | best-indian-restaurants | Great Indian Restaurants in Taipei | Best Indian Restaurants in Taipei: 6 Worth Trying |  |
+| 3,217 | 0.00% | 9.5 | thai-elephant | Cheap but Tasty Thai Food at Thai Elephant | Thai Elephant, Taipei: Cheap Thai Food Near City Hall |  |
+| 3,210 | 0.47% | 7.7 | taipei-laundrettes | How to use Self-Service Launderettes in Taipei | Taipei Laundromats & Launderettes: How to Use Them | yes |
+| 3,149 | 0.92% | 8 | yong-he-soy-milk-king | How & What to Order at Yong He Soy Milk King | Yong He Soy Milk King: 24-Hour Breakfast & What to Order | yes |
+| 2,833 | 0.46% | 8.7 | maji-square | Eat, Drink and be Merry in Maji Square | Maji Square, Taipei: Bars, Food Stalls & Live Music | yes |
+| 2,783 | 0.65% | 6.4 | maps | Taipei Map | Taipei Map: Every Sight, Area & Route on One Map | yes |
+| 2,689 | 0.19% | 8.5 | where-to-have-lunch | Some Different Options For a Tasty Lunchtime Meal | Where to Eat Lunch in Taipei: Food Courts to Buffets | yes |
+| 2,590 | 0.15% | 7.3 | expo-farmers-market | Home Grown Produce at Expo Farmer's Market | Expo Farmers Market, Taipei: Hours & What to Buy | yes |
+| 2,396 | 1.00% | 8.6 | fuhang-soy-milk | Fuhang Soy Milk - Taipei's Most Popular Breakfast | Fuhang Soy Milk: Menu, Queue Times & When to Go | yes |
+| 2,051 | 0.15% | 8.7 | healthy-restaurants-that-taste-great | Healthy Restaurants That Don't Compromise on Taste | Healthy Restaurants in Taipei That Still Taste Great | yes |
+| 1,807 | 1.60% | 10.1 | xinyi-shopping-district | Xinyi Shopping District, Taipei: All 13 Malls Compared | (kept) | yes |
+| 1,671 | 0.48% | 8.4 | yong-kang-beef-noodles | Yong Kang Beef Noodles - Still the Best in Taipei? | Yong Kang Beef Noodles: Menu, Queues & Is It the Best? |  |
+| 1,281 | 0.31% | 8.9 | ay-chung-flour-rice-noodles | Find the Surprise in Ay Chung Flour Rice Noodles | Ay Chung Flour Rice Noodles, Ximending: Price & Queue | yes |
+| 1,211 | 0.25% | 9.6 | best-supermarkets-and-delis-with-western-produce | Supermarkets & Delis with Great Western Produce | Western Supermarkets & Delis in Taipei: Where to Shop | yes |
+| 1,130 | 0.09% | 6.7 | cheap-coffee | The Best Places for a Cheap but Tasty Coffee | Cheap Coffee in Taipei: Louisa, 7-Eleven & More | yes |
+| 1,044 | 0.10% | 7.2 | texas-roadhouse | Juicy Steaks at Texas Roadhouse | Texas Roadhouse Taipei: Branches, Steaks & Is It Good? |  |
+| 980 | 0.20% | 11.2 | best-places-to-drink-craft-beer-taipei | The Best Places to Enjoy a Fine Craft Beer | Best Craft Beer Bars in Taipei: Taprooms & Tap Lists |  |
+| 642 | 0.62% | 7.7 | jin-feng-braised-pork-rice | How and What to Order at Jin Feng Braised Pork Rice | Jin Feng Braised Pork Rice: Menu, Prices & Queue |  |
+| 38 | 0.00% | 8.9 | cronutt | Cronutt - A Donut or a Croissant? (Permanently Closed) | (kept) | yes |
+| 31 | 3.23% | 7.7 | about-taipei-traveller | About | (kept) | yes |

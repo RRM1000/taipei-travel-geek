@@ -24,12 +24,15 @@
 // two to three days, so the window ends three days ago for both sources -
 // otherwise GA4 would have days GSC does not and the two would disagree.
 //
-// WHAT IT CANNOT SEE. This site fires no custom GA events yet - only the
-// built-in page_view - so there are no affiliate-placement or site-search
-// breakdowns here, unlike the London version. Add gtag events first and the
-// breakdown code can come back with them. Klook and GetYourGuide widget
-// clicks are cross-origin iframes and stay in those partner dashboards
-// regardless.
+// AFFILIATE CLICKS. Since October 2026 app/layout.tsx sends an
+// affiliate_click event for every click on a Klook, Booking, Wise (etc.)
+// link, and the pull counts them per page. That needs only the built-in
+// pagePath dimension. Breaking them down by partner, placement or hotel needs
+// those event parameters registered as custom dimensions in GA4 first.
+//
+// WHAT IT CANNOT SEE. Klook and GetYourGuide widget clicks are cross-origin
+// iframes and stay in those partner dashboards regardless, and there are no
+// site-search events yet.
 
 import { google } from "googleapis";
 import fs from "node:fs";
@@ -221,7 +224,25 @@ async function pullGa4(auth, property) {
     eventRows.map((r) => [r.eventName, { count: r.eventCount, users: r.totalUsers }]),
   );
 
-  return { property, pages: Object.values(pages), events };
+  // Affiliate clicks per page, current window. Empty until the
+  // affiliate_click event (app/layout.tsx) has been live for a while.
+  const clickRows = await runReport(data, property, {
+    dateRanges: [twoWindows[0]],
+    dimensions: [{ name: "pagePath" }],
+    metrics: [{ name: "eventCount" }, { name: "totalUsers" }],
+    dimensionFilter: { filter: { fieldName: "eventName", stringFilter: { value: "affiliate_click" } } },
+    limit: 500,
+  });
+  const clicksByPath = {};
+  for (const r of clickRows) {
+    const p = canonicalPath(r.pagePath);
+    const slot = (clicksByPath[p] ??= { path: p, clicks: 0, users: 0 });
+    slot.clicks += r.eventCount;
+    slot.users += r.totalUsers;
+  }
+  const affiliateClicks = Object.values(clicksByPath).sort((a, b) => b.clicks - a.clicks);
+
+  return { property, pages: Object.values(pages), events, affiliateClicks };
 }
 
 // -------------------------------------------------- Search Console -------
@@ -393,6 +414,13 @@ function printSummary(out) {
     console.log(`  ${k.padEnd(18)} ${n(v.count).padStart(9)}  (${n(v.users)} users)`);
   }
 
+  if (ga4.affiliateClicks?.length) {
+    console.log("\nAffiliate clicks by page:");
+    for (const p of ga4.affiliateClicks.slice(0, 10)) {
+      console.log(`  ${n(p.clicks).padStart(7)}  ${p.path}  (${n(p.users)} users)`);
+    }
+  }
+
   console.log("\nMost read:");
   for (const p of r.topPages.slice(0, 8)) {
     console.log(`  ${n(p.views).padStart(7)}  ${p.path}  (${p.engagedSecondsPerSession}s engaged/session)`);
@@ -489,6 +517,7 @@ async function main() {
     ga4: {
       property: ga4.property,
       events: ga4.events,
+      affiliateClicks: ga4.affiliateClicks,
       pages: top(ga4.pages, (p) => p.current?.views ?? 0, 300),
     },
     gsc: {

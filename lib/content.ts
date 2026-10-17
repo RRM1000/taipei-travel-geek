@@ -1,5 +1,6 @@
 import importedPosts from "@/content/posts.json";
 import importedCategories from "@/content/categories.json";
+import { AFFILIATE_HOSTS } from "@/lib/affiliates";
 
 export type TaxonomyTerm = { name: string; slug: string };
 
@@ -965,8 +966,6 @@ export function enhanceContentImages(content: string): string {
   });
 }
 
-/** Hosts we earn commission from. Links to these must carry rel="sponsored". */
-const AFFILIATE_HOSTS = ["klook.com", "kkday.com", "wise.com", "agoda.com", "booking.com", "trip.com", "getyourguide.com"];
 
 export function hasAffiliateLinks(content: string): boolean {
   return AFFILIATE_HOSTS.some((host) => content.includes(`//${host}`) || content.includes(`//www.${host}`));

@@ -28,7 +28,7 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
   ],
   Drink: [
     { slug: "best-bars-in-taipei", title: "The Best Expat Bars in Taipei", image: "/media/2019/06/On-Tap-2-1024x692.jpg", excerpt: "Happy hour times included." },
-    { slug: "best-cafes-to-work", title: "Cafes Ideal for Taking Your Laptop", image: "/media/2019/12/Out-of-Office-1024x658.jpg", excerpt: "WiFi, plugs and seating, rated." },
+    { slug: "best-cafes-to-work", title: "Best Cafes to Work From in Taipei", image: "/media/2019/12/Out-of-Office-1024x658.jpg", excerpt: "WiFi, plugs and seating, rated." },
     { slug: "best-cocktail-bars-in-taipei", title: "Taipei's Best Cocktail Bars", image: "/media/2026/08/Cocktail-Bar-Bartender-Pouring-6-1024x1365.jpg", excerpt: "Asia's 50 Best winners, speakeasies and rooftops." },
     { slug: "ximen-outdoor-drinking", title: "Ximending Outdoor Drinking Area", image: "/media/2020/01/Ximending-Outdoor-Drinking-3-1024x716.jpg", excerpt: "The largest and best area in Taipei for drinking outside." },
   ],
@@ -40,8 +40,8 @@ const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
   ],
   Transport: [
     { slug: "taipei-public-transport", title: "Taipei Transport Guide: Airports, Passes & Getting Around", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg", excerpt: "MRT, buses, YouBikes and everything between." },
-    { slug: "taiwan-high-speed-rail-hsr-discounts-klook", title: "Full Guide & Deals for Taiwan High Speed Rail (THSR)", image: "/media/2019/08/HSR-Taiwan-14-1024x718.jpg", excerpt: "Travel to other parts of Taiwan in no time." },
-    { slug: "mrt", title: "Taipei MRT Guide: Fares, Lines & How to Ride", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
+    { slug: "taiwan-high-speed-rail-hsr-discounts-klook", title: "Taiwan High Speed Rail: Tickets & Deals", image: "/media/2019/08/HSR-Taiwan-14-1024x718.jpg", excerpt: "Travel to other parts of Taiwan in no time." },
+    { slug: "mrt", title: "Taipei MRT Map & Guide", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
     { slug: "taiwan-easycard", title: "Taiwan EasyCard: How to Buy, Top Up & Use It", image: "/media/2019/04/easy-card.jpg", excerpt: "The single most useful card you'll own here." },
   ],
   TopPicks: [

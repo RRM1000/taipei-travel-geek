@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { AFFILIATE_HOSTS } from "@/lib/affiliates";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.taipeitravelgeek.com"),
@@ -50,6 +51,58 @@ const GA_MEASUREMENT_ID = "G-79MKLEGNPH";
  */
 const analyticsEnabled = process.env.NODE_ENV === "production";
 
+/**
+ * Sends an affiliate_click event to GA4 for every click on a link to a host
+ * we earn commission from, so the analytics pull can show which pages and
+ * placements make money rather than only which ones get read. One delegated
+ * listener covers links in post bodies, inline CTAs and the sidebar, including
+ * ones added after hydration. auxclick catches middle-click "open in new tab".
+ *
+ * Parameters: partner (klook, booking...), placement (where on the page),
+ * hotel (the data-hotel id on hotel guide links), link_text and link_url. To
+ * report on partner, placement or hotel in GA4, register each as an
+ * event-scoped custom dimension under Admin > Custom definitions.
+ *
+ * Klook's iframe widgets are cross-origin, so clicks inside them never reach
+ * this page; those stay in Klook's own dashboard.
+ */
+const affiliateClickScript = `(function () {
+  var hosts = ${JSON.stringify(AFFILIATE_HOSTS)};
+  function partnerFor(hostname) {
+    var host = hostname.replace(/^www\\./, "");
+    for (var i = 0; i < hosts.length; i++) {
+      var h = hosts[i];
+      if (host === h || host.slice(-h.length - 1) === "." + h) return h.split(".")[0];
+    }
+    return null;
+  }
+  function placementFor(a) {
+    if (a.closest(".article-sidebar, .sidebar-section")) return "sidebar";
+    if (a.closest(".article-inline-cta")) return "inline_cta";
+    if (a.closest(".quick-verdict")) return "quick_verdict";
+    if (a.closest("table")) return "table";
+    if (a.closest("h2, h3, h4")) return "heading";
+    if (a.closest(".article-content")) return "body";
+    return "other";
+  }
+  function track(e) {
+    if (e.type === "auxclick" && e.button !== 1) return;
+    var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+    if (!a || typeof gtag !== "function") return;
+    var partner = partnerFor(a.hostname || "");
+    if (!partner) return;
+    gtag("event", "affiliate_click", {
+      partner: partner,
+      placement: placementFor(a),
+      hotel: a.getAttribute("data-hotel") || "(none)",
+      link_text: (a.textContent || "").trim().slice(0, 100),
+      link_url: a.href.slice(0, 500)
+    });
+  }
+  document.addEventListener("click", track, true);
+  document.addEventListener("auxclick", track, true);
+})();`;
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
@@ -72,6 +125,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GA_MEASUREMENT_ID}');`}
+            </Script>
+            <Script id="affiliate-click-tracking" strategy="afterInteractive">
+              {affiliateClickScript}
             </Script>
           </>
         )}
