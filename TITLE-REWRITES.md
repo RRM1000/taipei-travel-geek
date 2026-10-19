@@ -81,3 +81,8 @@ rows in the first pull after mid-November.
 | 642 | 0.62% | 7.7 | jin-feng-braised-pork-rice | How and What to Order at Jin Feng Braised Pork Rice | Jin Feng Braised Pork Rice: Menu, Prices & Queue |  |
 | 38 | 0.00% | 8.9 | cronutt | Cronutt - A Donut or a Croissant? (Permanently Closed) | (kept) | yes |
 | 31 | 3.23% | 7.7 | about-taipei-traveller | About | (kept) | yes |
+
+**Superseded 19 Oct 2026:** `cheap-coffee` and `best-indian-restaurants` were retitled again when the
+lists were rewritten (`scripts/refresh-old-lists.mjs`): "Cheap Coffee in Taipei (2026): 7-Eleven,
+Louisa & More" and "Best Indian Restaurants in Taipei (2026): 8 Worth Trying". The excerpts of all five
+refreshed lists changed with them.
