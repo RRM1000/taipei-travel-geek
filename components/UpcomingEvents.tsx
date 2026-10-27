@@ -110,7 +110,7 @@ export function UpcomingEvents() {
           <h2>Upcoming Taipei Events</h2>
         </div>
         <a href="/taipei-annual-events">
-          Full 2026 calendar <span aria-hidden="true">→</span>
+          Full events calendar <span aria-hidden="true">→</span>
         </a>
       </div>
 

@@ -8,6 +8,13 @@
   "url": "/xinbeitou"
  },
  {
+  "name": "Standard Chartered Taipei Charity Marathon",
+  "start": "2026-01-11",
+  "end": "2026-01-11",
+  "when": "11 January 2026",
+  "blurb": "Charity road race through the city streets."
+ },
+ {
   "name": "Pingjing Street 42 Cherry Blossoms",
   "start": "2026-01-20",
   "end": "2026-02-15",
@@ -38,6 +45,13 @@
   "blurb": "Illuminated pink cherry trees along the Neihu River trail, open into the evening."
  },
  {
+  "name": "Taipei International Book Exhibition",
+  "start": "2026-02-03",
+  "end": "2026-02-08",
+  "when": "3–8 February 2026",
+  "blurb": "Major international publishing fair at the Taipei World Trade Center."
+ },
+ {
   "name": "Yangmingshan Flower Festival",
   "start": "2026-02-15",
   "end": "2026-03-15",
@@ -59,18 +73,18 @@
   "blurb": "Thousands of glowing sky lanterns released over Pingxi."
  },
  {
-  "name": "Taipei Lantern Festival",
-  "start": "2026-02-21",
-  "end": "2026-03-08",
-  "when": "Late February to 8 March 2026",
-  "blurb": "Giant themed lanterns and light installations around Ximending and the North Gate."
- },
- {
   "name": "Taiwan Lantern Festival",
   "start": "2026-02-21",
   "end": "2026-03-08",
   "when": "Late February to 8 March 2026 (main day 3 March)",
   "blurb": "The nationwide Lantern Festival peak, on the 15th day of the first lunar month."
+ },
+ {
+  "name": "Taipei Lantern Festival",
+  "start": "2026-02-25",
+  "end": "2026-03-15",
+  "when": "25 February – 15 March 2026",
+  "blurb": "Giant themed lanterns and light installations around Ximending and the North Gate."
  },
  {
   "name": "CPBL Baseball Season",
@@ -88,18 +102,11 @@
   "blurb": "The city flower celebrated with concerts and markets around Daan Forest Park and NTU."
  },
  {
-  "name": "Taipei International Book Exhibition",
-  "start": "2026-03-03",
-  "end": "2026-03-08",
-  "when": "Early March 2026",
-  "blurb": "Major international publishing fair at the Taipei World Trade Center."
- },
- {
-  "name": "Taiwan LPGA Championship",
+  "name": "Taiwan Foxconn Ladies Golf Tournament",
   "start": "2026-03-12",
   "end": "2026-03-15",
   "when": "12–15 March 2026",
-  "blurb": "One of the best women's golf events in the world, about 90 minutes from Taipei.",
+  "blurb": "A JLPGA Tour event with a US$2 million purse, at Orient Golf & Country Club in Taoyuan.",
   "url": "/taiwan-lpga-golf-championship"
  },
  {
@@ -165,8 +172,8 @@
  {
   "name": "COMPUTEX Taipei",
   "start": "2026-06-02",
-  "end": "2026-06-06",
-  "when": "Early June 2026",
+  "end": "2026-06-05",
+  "when": "2–5 June 2026",
   "blurb": "One of the world's leading technology and hardware expos, at Nangang."
  },
  {
@@ -217,8 +224,8 @@
  {
   "name": "Ghost Month",
   "start": "2026-08-13",
-  "end": "2026-09-11",
-  "when": "13 August – 11 September 2026 (main day 27 August)",
+  "end": "2026-09-10",
+  "when": "13 August – 10 September 2026 (main day 27 August)",
   "blurb": "Month-long folk festival of temple offerings and spirit rituals."
  },
  {
@@ -389,13 +396,6 @@
   "blurb": "A 12-hour all-night arts festival, 6pm to 6am, across one chosen district."
  },
  {
-  "name": "Standard Chartered Taipei Marathon",
-  "start": "2026-11-08",
-  "end": "2026-11-08",
-  "when": "8 November 2026",
-  "blurb": "Charity road race through the city streets."
- },
- {
   "name": "Christmasland in New Taipei City",
   "start": "2026-11-13",
   "end": "2027-01-03",
@@ -452,6 +452,461 @@
   "end": "2026-12-31",
   "when": "31 December 2026",
   "blurb": "The countdown concert at City Hall and midnight fireworks off the tower itself.",
-  "url": "/taipei-101"
+  "url": "/taipei-101-fireworks-new-years-eve"
+ },
+ {
+  "name": "Beitou & Wulai Winter Hot Spring Season",
+  "start": "2027-01-01",
+  "end": "2027-01-31",
+  "when": "All January 2027",
+  "blurb": "Peak season for the sulphur and sodium bicarbonate baths.",
+  "url": "/xinbeitou"
+ },
+ {
+  "name": "Standard Chartered Taipei Charity Marathon",
+  "start": "2027-01-10",
+  "end": "2027-01-10",
+  "when": "10 January 2027",
+  "blurb": "Charity road race through the city streets, with full, half, 12km and 3km courses."
+ },
+ {
+  "name": "Pingjing Street 42 Cherry Blossoms",
+  "start": "2027-01-20",
+  "end": "2027-02-15",
+  "when": "Usually late January to mid-February (2027 bloom TBC)",
+  "blurb": "The earliest cherry blossom bloom in the Taipei area, up on Yangmingshan."
+ },
+ {
+  "name": "Taipei Game Show",
+  "start": "2027-01-21",
+  "end": "2027-01-24",
+  "when": "21–24 January 2027",
+  "blurb": "One of Asia's biggest video game expos, with new releases to play and an indie zone, at Nangang."
+ },
+ {
+  "name": "Taipei Lunar New Year Festival",
+  "start": "2027-01-21",
+  "end": "2027-02-04",
+  "when": "Late January to early February 2027 (dates TBC)",
+  "blurb": "Festive market of snacks, dried fruit, teas and red decorations along historic Dihua Street.",
+  "url": "/dihua-street-dadaocheng-guide"
+ },
+ {
+  "name": "Taipei International Book Exhibition",
+  "start": "2027-01-25",
+  "end": "2027-02-28",
+  "when": "Late January or February 2027 (dates TBC)",
+  "blurb": "Major international publishing fair at the Taipei World Trade Center."
+ },
+ {
+  "name": "Tianyuan Temple Tri-Colour Cherry Blossoms",
+  "start": "2027-01-25",
+  "end": "2027-02-14",
+  "when": "Usually late January to mid-February (2027 dates TBC)",
+  "blurb": "Hundreds of cherry trees behind Wuji Tianyuan Temple, lit in the evenings.",
+  "url": "/tamsui"
+ },
+ {
+  "name": "LOHAS Park Night Cherry Blossom Festival",
+  "start": "2027-02-01",
+  "end": "2027-02-28",
+  "when": "Usually February (2027 dates TBC)",
+  "blurb": "Illuminated pink cherry trees along the Neihu River trail, open into the evening."
+ },
+ {
+  "name": "Lunar New Year (Year of the Goat)",
+  "start": "2027-02-04",
+  "end": "2027-02-10",
+  "when": "6 February 2027 (holiday 4–10 Feb)",
+  "blurb": "Taiwan's biggest annual holiday — family reunions, temple offerings and quiet streets."
+ },
+ {
+  "name": "Taipei Lantern Festival",
+  "start": "2027-02-13",
+  "end": "2027-03-07",
+  "when": "Mid-February to early March 2027 (dates TBC)",
+  "blurb": "Giant themed lanterns and light installations around Ximending and the North Gate."
+ },
+ {
+  "name": "Yangmingshan Flower Festival",
+  "start": "2027-02-15",
+  "end": "2027-03-15",
+  "when": "Usually mid-February to mid-March (2027 dates TBC)",
+  "blurb": "Cherry blossoms, azaleas and camellias across Yangmingshan National Park."
+ },
+ {
+  "name": "Pingxi Sky Lantern Festival",
+  "start": "2027-02-17",
+  "end": "2027-02-21",
+  "when": "Around the Lantern Festival, 20 February 2027 (release dates TBC)",
+  "blurb": "Thousands of glowing sky lanterns released over Pingxi."
+ },
+ {
+  "name": "Taiwan Lantern Festival",
+  "start": "2027-02-20",
+  "end": "2027-03-07",
+  "when": "20 February – 7 March 2027 (provisional)",
+  "blurb": "The nationwide lantern show, in Miaoli County for 2027, around the high-speed rail station."
+ },
+ {
+  "name": "CPBL Baseball Season",
+  "start": "2027-03-01",
+  "end": "2027-09-30",
+  "when": "March to late September 2027 (schedule TBC)",
+  "blurb": "Taiwan's professional baseball league, at grounds across the city and in Taoyuan.",
+  "url": "/lamigos-at-taoyuan-baseball-stadium"
+ },
+ {
+  "name": "Taipei Azalea Festival",
+  "start": "2027-03-01",
+  "end": "2027-03-31",
+  "when": "Usually March (2027 dates TBC)",
+  "blurb": "The city flower celebrated with concerts and markets around Daan Forest Park and NTU."
+ },
+ {
+  "name": "Taiwan Foxconn Ladies Golf Tournament",
+  "start": "2027-03-11",
+  "end": "2027-03-14",
+  "when": "Mid-March in 2026 (2027 dates TBC)",
+  "blurb": "A JLPGA Tour event with a US$2 million purse in 2026, at Orient Golf & Country Club in Taoyuan.",
+  "url": "/taiwan-lpga-golf-championship"
+ },
+ {
+  "name": "Tianyuan Temple Yoshino Cherry Blossoms",
+  "start": "2027-03-15",
+  "end": "2027-04-15",
+  "when": "Usually mid-March to mid-April (2027 bloom TBC)",
+  "blurb": "The later, second bloom, with Yoshino cherries ringing the round Tiantan hall.",
+  "url": "/tamsui"
+ },
+ {
+  "name": "Zhuzihu Calla Lily Festival",
+  "start": "2027-03-15",
+  "end": "2027-04-30",
+  "when": "Usually mid-March to late April (2027 dates TBC)",
+  "blurb": "Fields of white calla lilies in the volcanic bowl of Zhuzihu, with hand-picking."
+ },
+ {
+  "name": "Dalongdong Baoan Temple Cultural Festival",
+  "start": "2027-03-20",
+  "end": "2027-04-30",
+  "when": "Usually late March to April (2027 dates TBC)",
+  "blurb": "Temple rituals, folk opera and lion dances at one of Taipei's finest temples.",
+  "url": "/dalongdong-baoan-temple-and-gardens"
+ },
+ {
+  "name": "Qingming Festival",
+  "start": "2027-04-03",
+  "end": "2027-04-06",
+  "when": "5 April 2027 (holiday 3–6 April)",
+  "blurb": "Tomb Sweeping Day — a spring public holiday of family outings and hikes."
+ },
+ {
+  "name": "Baosheng Emperor Cultural Festival",
+  "start": "2027-04-10",
+  "end": "2027-05-09",
+  "when": "Around the Baosheng Emperor's birthday, 21 April 2027 (programme TBC)",
+  "blurb": "Temple procession, fire-walking and performing arts at Dalongdong Baoan Temple.",
+  "url": "/dalongdong-baoan-temple-and-gardens"
+ },
+ {
+  "name": "Wulai & Muzha Firefly Festival",
+  "start": "2027-04-15",
+  "end": "2027-05-31",
+  "when": "Usually mid-April to May (2027 dates TBC)",
+  "blurb": "Guided evening walks to see thousands of fireflies along mountain trails."
+ },
+ {
+  "name": "Zhuzihu Hydrangea Festival",
+  "start": "2027-05-01",
+  "end": "2027-06-30",
+  "when": "Usually May to June (2027 dates TBC)",
+  "blurb": "Blue, purple and pink hydrangeas across Yangmingshan's mountain terraces."
+ },
+ {
+  "name": "COMPUTEX Taipei",
+  "start": "2027-06-01",
+  "end": "2027-06-04",
+  "when": "1–4 June 2027",
+  "blurb": "One of the world's leading technology and hardware expos, at Nangang."
+ },
+ {
+  "name": "Mango Season",
+  "start": "2027-06-01",
+  "end": "2027-08-31",
+  "when": "June to August 2027",
+  "blurb": "Peak Irwin mango harvest — piled onto shaved ice all over Yongkang Street.",
+  "url": "/yongkang-street"
+ },
+ {
+  "name": "Dragon Boat Festival",
+  "start": "2027-06-09",
+  "end": "2027-06-09",
+  "when": "9 June 2027",
+  "blurb": "International dragon boat races on the Keelung River at Dajia Riverside Park."
+ },
+ {
+  "name": "Taipei Film Festival",
+  "start": "2027-06-25",
+  "end": "2027-07-15",
+  "when": "Usually late June to mid-July (2027 dates TBC)",
+  "blurb": "The city's main summer film festival, strong on independent and Taiwanese cinema."
+ },
+ {
+  "name": "Summer Water Park Season",
+  "start": "2027-07-01",
+  "end": "2027-08-31",
+  "when": "July to August 2027",
+  "blurb": "Water slides and splash pools at Taipei Water Park in Gongguan.",
+  "url": "/see-the-drinking-water-museum-at-taipei-water-park"
+ },
+ {
+  "name": "Dadaocheng Summer Festival",
+  "start": "2027-07-15",
+  "end": "2027-08-31",
+  "when": "Usually mid-July to late August (2027 dates TBC)",
+  "blurb": "Wednesday-night fireworks over the Tamsui River, food trucks and live music.",
+  "url": "/dihua-street-dadaocheng-guide"
+ },
+ {
+  "name": "New Taipei River & Ocean Music Festival",
+  "start": "2027-08-01",
+  "end": "2027-08-16",
+  "when": "Usually early to mid-August (2027 dates TBC)",
+  "blurb": "Free outdoor indie, reggae and beach concerts at Tamsui Fisherman's Wharf.",
+  "url": "/tamsui"
+ },
+ {
+  "name": "Taipei Burger Carnival",
+  "start": "2027-08-01",
+  "end": "2027-08-31",
+  "when": "Usually August (2027 dates TBC)",
+  "blurb": "City-wide burger festival, with participating restaurants competing for the title."
+ },
+ {
+  "name": "Ghost Month",
+  "start": "2027-08-02",
+  "end": "2027-08-31",
+  "when": "2–31 August 2027 (main day 16 August)",
+  "blurb": "Month-long folk festival of temple offerings and spirit rituals."
+ },
+ {
+  "name": "Qixi Festival",
+  "start": "2027-08-08",
+  "end": "2027-08-08",
+  "when": "8 August 2027",
+  "blurb": "Chinese Valentine's Day — evening celebrations and romantic events."
+ },
+ {
+  "name": "Creative Expo Taiwan",
+  "start": "2027-08-14",
+  "end": "2027-08-31",
+  "when": "Usually mid to late August (2027 dates TBC)",
+  "blurb": "Taiwan's premier design, illustration and character IP exhibition, at Nangang."
+ },
+ {
+  "name": "NTCH Summer Jazz Outdoor Party",
+  "start": "2027-08-14",
+  "end": "2027-08-14",
+  "when": "Usually a Saturday in mid-August (2027 date TBC)",
+  "blurb": "Free open-air jazz on the plaza at the National Theater & Concert Hall."
+ },
+ {
+  "name": "Trendy Taipei",
+  "start": "2027-08-21",
+  "end": "2027-09-05",
+  "when": "Usually late August to early September (2027 dates TBC)",
+  "blurb": "City-wide shopping and design event, with pop-ups and promotions across the city."
+ },
+ {
+  "name": "Taipei Fringe Festival",
+  "start": "2027-08-22",
+  "end": "2027-09-30",
+  "when": "Usually late August to September (2027 dates TBC)",
+  "blurb": "Indie theatre, music, dance and comedy in non-traditional venues across the city."
+ },
+ {
+  "name": "Taipei Children's Arts Festival",
+  "start": "2027-08-23",
+  "end": "2027-09-05",
+  "when": "Usually late August to early September (2027 dates TBC)",
+  "blurb": "Theatre, puppetry and workshops aimed squarely at families, much of it free."
+ },
+ {
+  "name": "Herbal Party",
+  "start": "2027-08-28",
+  "end": "2027-08-29",
+  "when": "Usually late August (2027 dates TBC)",
+  "blurb": "Herbal medicine, tea and craft market through the old streets of Dadaocheng.",
+  "url": "/dihua-street-dadaocheng-guide"
+ },
+ {
+  "name": "Jam Jam Asia Music Festival",
+  "start": "2027-08-28",
+  "end": "2027-08-29",
+  "when": "Usually late August (2027 dates TBC)",
+  "blurb": "Asian pop, indie and electronic acts from across the region, at Taipei Music Center."
+ },
+ {
+  "name": "Taipei Night Market Festival",
+  "start": "2027-09-01",
+  "end": "2027-10-31",
+  "when": "Usually September to October (2027 dates TBC)",
+  "blurb": "City-wide street food celebration with voting and vouchers across the big markets.",
+  "url": "/shilin-night-market"
+ },
+ {
+  "name": "Taipei Arts Festival",
+  "start": "2027-09-10",
+  "end": "2027-09-26",
+  "when": "Usually September (2027 dates TBC)",
+  "blurb": "The city's flagship contemporary performing arts festival, theatre to dance."
+ },
+ {
+  "name": "Mid-Autumn Moon Festival",
+  "start": "2027-09-15",
+  "end": "2027-09-15",
+  "when": "15 September 2027 (a Wednesday, so no long weekend)",
+  "blurb": "Street barbecues, mooncakes and pomelos — one of the year's big holidays."
+ },
+ {
+  "name": "Confucius Birthday & Teachers' Day",
+  "start": "2027-09-28",
+  "end": "2027-09-28",
+  "when": "28 September 2027",
+  "blurb": "A 6am dawn ceremony with eight-row dance at the Taipei Confucius Temple.",
+  "url": "/confucius-temple"
+ },
+ {
+  "name": "Taipei Autumn Running Season",
+  "start": "2027-10-01",
+  "end": "2027-10-31",
+  "when": "Usually October (2027 races TBC)",
+  "blurb": "Trail and road races in quick succession, including the Northernmost Point Trail, Maokong Night Trail and Pocari Sweat Run."
+ },
+ {
+  "name": "Taipei International Beef Noodle Festival",
+  "start": "2027-10-08",
+  "end": "2027-10-10",
+  "when": "Usually early to mid-October (2027 dates TBC)",
+  "blurb": "Chefs compete for the city's best braised beef noodles, with public tasting stalls."
+ },
+ {
+  "name": "Double Tenth National Day",
+  "start": "2027-10-10",
+  "end": "2027-10-10",
+  "when": "10 October 2027 (holiday 9–11 October)",
+  "blurb": "Flag ceremony, performances and parades at the Presidential Office Building.",
+  "url": "/presidential-office-building"
+ },
+ {
+  "name": "Art Taipei",
+  "start": "2027-10-22",
+  "end": "2027-10-25",
+  "when": "Usually late October (2027 dates TBC)",
+  "blurb": "Asia's premier international art fair, at the World Trade Center."
+ },
+ {
+  "name": "Taipei Jazz Festival",
+  "start": "2027-10-22",
+  "end": "2027-10-24",
+  "when": "Usually late October (2027 dates TBC)",
+  "blurb": "Free open-air jazz on the main stage at Daan Forest Park.",
+  "url": "/taipei-jazz-festival"
+ },
+ {
+  "name": "Taipei Hakka Yimin Festival",
+  "start": "2027-10-23",
+  "end": "2027-10-25",
+  "when": "Usually late October (2027 dates TBC)",
+  "blurb": "Hakka culture, food and the striking neon-lit sacrificial pig parade."
+ },
+ {
+  "name": "Taipei Hot Spring Season",
+  "start": "2027-10-25",
+  "end": "2027-11-07",
+  "when": "Usually late October to early November (2027 dates TBC)",
+  "blurb": "Beitou's bath culture celebrated with Mikoshi shrine parades and pass discounts.",
+  "url": "/xinbeitou"
+ },
+ {
+  "name": "Taiwan LGBT+ Pride Parade",
+  "start": "2027-10-30",
+  "end": "2027-10-30",
+  "when": "Usually the last Saturday of October: 30 October 2027 (TBC)",
+  "blurb": "The largest Pride celebration in Asia, marching through the city to Ximending."
+ },
+ {
+  "name": "Golden Horse Film Festival & Awards",
+  "start": "2027-11-04",
+  "end": "2027-11-21",
+  "when": "Usually November, awards late in the month (2027 dates TBC)",
+  "blurb": "Asia's most prestigious Chinese-language film festival."
+ },
+ {
+  "name": "Nuit Blanche Taipei",
+  "start": "2027-11-06",
+  "end": "2027-11-07",
+  "when": "Early November in 2026 (2027 date TBC)",
+  "blurb": "A 12-hour all-night arts festival, 6pm to 6am, across one chosen district."
+ },
+ {
+  "name": "WBSC Premier12 (Taipei rounds)",
+  "start": "2027-11-08",
+  "end": "2027-11-15",
+  "when": "8–15 November 2027",
+  "blurb": "Taiwan defend their 2024 title at home, with the opening and second rounds at the Taipei Dome."
+ },
+ {
+  "name": "Christmasland in New Taipei City",
+  "start": "2027-11-12",
+  "end": "2028-01-02",
+  "when": "Usually mid-November to early January (2027 dates TBC)",
+  "blurb": "Enormous 3D projection show and holiday markets at Banqiao Station Plaza."
+ },
+ {
+  "name": "Taipei Wine & Spirits Festival",
+  "start": "2027-11-12",
+  "end": "2027-11-15",
+  "when": "Usually mid-November (2027 dates TBC)",
+  "blurb": "Taiwan's largest drinks expo — wine, craft beer and sake tastings at Nangang."
+ },
+ {
+  "name": "Ultra Taiwan",
+  "start": "2027-11-13",
+  "end": "2027-11-14",
+  "when": "Mid-November in 2026 (2027 dates TBC)",
+  "blurb": "Huge international EDM festival at Dajia Riverside Park."
+ },
+ {
+  "name": "Shilin Residence Chrysanthemum Show",
+  "start": "2027-11-26",
+  "end": "2027-12-12",
+  "when": "Usually late November to mid-December (2027 dates TBC)",
+  "blurb": "Floral topiary and outdoor music at the Chiang Kai-shek Shilin Residence.",
+  "url": "/chiang-kai-shek-shilin-residence"
+ },
+ {
+  "name": "Taipei Illustration Fair",
+  "start": "2027-12-10",
+  "end": "2027-12-12",
+  "when": "Usually mid-December (2027 dates TBC)",
+  "blurb": "Independent prints and zines at Songshan Cultural and Creative Park.",
+  "url": "/songshan-cultural-and-creative-park"
+ },
+ {
+  "name": "Taipei Marathon",
+  "start": "2027-12-19",
+  "end": "2027-12-19",
+  "when": "Usually the third Sunday of December: 19 December 2027 (TBC)",
+  "blurb": "Taiwan's flagship international marathon."
+ },
+ {
+  "name": "Taipei 101 New Year's Eve Fireworks",
+  "start": "2027-12-31",
+  "end": "2027-12-31",
+  "when": "31 December 2027 (a public holiday this year)",
+  "blurb": "The countdown concert at City Hall and midnight fireworks off the tower itself.",
+  "url": "/taipei-101-fireworks-new-years-eve"
  }
 ]
