@@ -35,7 +35,7 @@
         },
         {
           "number": 4,
-          "name": "Yongkang Street",
+          "name": "Dongmen Market and Yongkang Street",
           "url": "/yongkang-street",
           "lat": 25.034439,
           "lng": 121.526648,
@@ -51,7 +51,7 @@
         },
         {
           "number": 6,
-          "name": "Chiang Kai-shek Memorial Hall MRT",
+          "name": "Chiang Kai-shek Memorial Hall MRT (exit 2)",
           "lat": 25.032741,
           "lng": 121.518382,
           "legMetres": 1648
