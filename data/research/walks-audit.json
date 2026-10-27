@@ -1,0 +1,1270 @@
+{
+  "daan-walking-route": {
+    "title": "Daan Walking Route",
+    "mid": "1AmROqVqlBufN153Jf_ME0clo-p4tgkFW",
+    "words": 464,
+    "modified": "2026-09-30 12:00:00",
+    "stops": [
+      {
+        "order": 1,
+        "letter": "A",
+        "name": "Jianguo Flower Market (north entrance)",
+        "pin": "Jian Guo Weekend Flower Market",
+        "pinNamed": true,
+        "waypoint": "No. 65, Section 3, Ren'ai Road, Da’an District, Taipei City, Taiwan 106",
+        "onRoute": true,
+        "lat": 25.038275,
+        "lng": 121.537869,
+        "slug": "jianguo-flower-market",
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 9,
+        "distToLineM": 1
+      },
+      {
+        "order": 2,
+        "letter": "B",
+        "name": "Artists Corner market",
+        "pin": "Jian Guo Weekend Artist's Corner",
+        "pinNamed": true,
+        "waypoint": "Jian Guo Weekend Artist's Corner",
+        "onRoute": true,
+        "lat": 25.033414,
+        "lng": 121.537817,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 12,
+        "distToLineM": 1
+      },
+      {
+        "order": 3,
+        "letter": "C",
+        "name": "Daan Forest Park",
+        "pin": "Daan Forest Park",
+        "pinNamed": true,
+        "waypoint": "Daan Forest Park",
+        "onRoute": true,
+        "lat": 25.032428,
+        "lng": 121.534912,
+        "slug": "daan-forest-park",
+        "mapLinkSlug": "daan-forest-park",
+        "closed": null,
+        "pinToWaypointM": 1,
+        "distToLineM": 0
+      },
+      {
+        "order": 4,
+        "letter": "D",
+        "name": "Yongkang Street",
+        "pin": "Dongmen Market",
+        "pinNamed": true,
+        "waypoint": "Dongmen Market",
+        "onRoute": true,
+        "lat": 25.034439,
+        "lng": 121.526648,
+        "slug": "yongkang-street",
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 13,
+        "note": "Text stop is Yongkang Street but the pin/waypoint is \"Dongmen Market\" (~501 m NW of the Yongkang Street pin on the site-wide map, 25.0307657,121.5295298).",
+        "distToLineM": 0
+      },
+      {
+        "order": 5,
+        "letter": "E",
+        "name": "Chiang Kai-shek Memorial Hall",
+        "pin": "National Chiang Kai-shek Memorial Hall",
+        "pinNamed": true,
+        "waypoint": "National Chiang Kai-shek Memorial Hall",
+        "onRoute": true,
+        "lat": 25.034777,
+        "lng": 121.521518,
+        "slug": "chiang-kai-shek-memorial-hall",
+        "mapLinkSlug": "chiang-kai-shek-memorial-hall",
+        "closed": null,
+        "pinToWaypointM": 32,
+        "distToLineM": 0
+      },
+      {
+        "order": 6,
+        "letter": "F",
+        "name": "Chiang Kai-shek Memorial Hall MRT station",
+        "pin": "100, Taiwan, Taipei City, Zhongzheng District, 台9線31號",
+        "pinNamed": false,
+        "waypoint": "100, Taiwan, Taipei City, Zhongzheng District, 台9線31號",
+        "onRoute": true,
+        "lat": 25.032741,
+        "lng": 121.518382,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "note": "Waypoint is a reverse-geocoded address, not a named pin.",
+        "distToLineM": 0
+      }
+    ],
+    "legsKm": [
+      0.541,
+      0.313,
+      0.862,
+      0.518,
+      0.389
+    ],
+    "distanceKm": 2.62,
+    "minutes": 45,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.038275,121.537869&destination=25.032741,121.518382&waypoints=25.033414,121.537817%7C25.032428,121.534912%7C25.034439,121.526648%7C25.034777,121.521518&travelmode=walking",
+    "waypointCount": 4,
+    "lineKm": 6.02,
+    "lineCount": 1,
+    "lineMinutes": 80,
+    "optional": [
+      {
+        "name": "Louisa cafe (Daan Park)",
+        "slug": "louisa",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Original Din Tai Fung",
+        "slug": "din-tai-fung",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Tian Jin Onion Pancake",
+        "slug": "tian-jin-onion-pancake",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Toasteria",
+        "slug": "toasteria",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Yaboo Cafe",
+        "slug": "yaboo-cafe",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Smoothie House",
+        "slug": null,
+        "pageExists": null,
+        "closed": null
+      },
+      {
+        "name": "Jin Feng Braised Pork Rice (optional extra)",
+        "slug": "jin-feng-braised-pork-rice",
+        "pageExists": true,
+        "closed": null
+      }
+    ],
+    "layers": [
+      {
+        "name": "Untitled layer",
+        "points": 5,
+        "lines": 0,
+        "polygons": 0
+      },
+      {
+        "name": "Directions from No. 65, Section 3, Ren'ai Road, Da’an District, Taipei City, Taiwan 106 to 100, Taiwan, Taipei City, Zhongzheng District, 台9線31號",
+        "points": 6,
+        "lines": 1,
+        "polygons": 0
+      }
+    ],
+    "issues": [
+      "Stop D: text says Yongkang Street, map pin/waypoint is \"Dongmen Market\" (~501 m from the Yongkang Street pin on the site-wide map at 25.0307657,121.5295298). Decide which to show; the text's food stops (Din Tai Fung, Toasteria, Yaboo) are on Yongkang St.",
+      "Every named stop is pinned twice (Untitled layer + Directions layer, 1-32 m apart) - dedupe; prefer the Directions-layer copy, which the line passes through.",
+      "Start (A) and finish (F) waypoints are addresses (\"No. 65, Section 3, Ren'ai Road...\" / \"...台9線31號\"), not names.",
+      "Jianguo Flower Market and Artist's Corner pins are unlinked in links.json; the text links /jianguo-flower-market.",
+      "Optional food stops (Louisa, Din Tai Fung, Tian Jin Onion Pancake, Toasteria, Yaboo Cafe, Smoothie House, Jin Feng) have no pins. \"Smoothie House\" has no page.",
+      "Drawn line is 6.0 km vs 2.6 km straight-line - the directions line covers more ground than the stop-to-stop hops (e.g. routing along the market and through the park); text \"4-6 hours\" is dwell time, not walking time."
+    ],
+    "estimateNote": "distanceKm = sum of straight-line (haversine) legs between stops; minutes = distanceKm x 1.3 detour / 4.5 km/h. lineKm = length of the drawn My Maps line(s) (Google directions geometry). All are ESTIMATES and exclude time at stops.",
+    "mapsUrlNote": "4 waypoints - within the 9-waypoint limit. Google documents only 3 waypoints in mobile browsers, so on phones extra stops may be dropped; if that matters, split into legs of origin + 3 waypoints + destination, each leg starting at the previous leg's destination."
+  },
+  "zhongzheng-walking-route": {
+    "title": "Zhongzheng Walking Route",
+    "mid": "1d5RuUPsOM6MPTU13ODnRiMq3d6X6q4C0",
+    "words": 510,
+    "modified": "2026-08-17 02:30:00",
+    "stops": [
+      {
+        "order": 1,
+        "letter": "A",
+        "name": "Chiang Kai-Shek Memorial Hall Station (exit 5)",
+        "pin": "100, Taiwan, Taipei City, Zhongzheng District, Section 1, Roosevelt Rd, 8之1號之 Chiang Kai-Shek Memorial Hall Station",
+        "pinNamed": false,
+        "waypoint": "100, Taiwan, Taipei City, Zhongzheng District, Section 1, Roosevelt Rd, 8之1號之 Chiang Kai-Shek Memorial Hall Station",
+        "onRoute": true,
+        "lat": 25.03267,
+        "lng": 121.518192,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 0
+      },
+      {
+        "order": 2,
+        "letter": "A",
+        "name": "Chiang Kai-Shek Memorial Hall / Liberty Square",
+        "pin": "National Chiang Kai-shek Memorial Hall",
+        "pinNamed": true,
+        "waypoint": null,
+        "onRoute": false,
+        "lat": 25.034612,
+        "lng": 121.521781,
+        "slug": "chiang-kai-shek-memorial-hall",
+        "mapLinkSlug": "chiang-kai-shek-memorial-hall",
+        "closed": null,
+        "note": "The main sight of stop A is pinned only on the Attractions layer; it is not a waypoint, though the drawn line passes within ~32 m of it between the station and the East Gate.",
+        "distToLineM": 32
+      },
+      {
+        "order": 3,
+        "letter": "B",
+        "name": "East Gate",
+        "pin": "The East Gate",
+        "pinNamed": true,
+        "waypoint": "The East Gate",
+        "onRoute": true,
+        "lat": 25.039056,
+        "lng": 121.518125,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 47,
+        "distToLineM": 1
+      },
+      {
+        "order": 4,
+        "letter": "C",
+        "name": "National Taiwan University Hospital",
+        "pin": "National Taiwan University Hospital",
+        "pinNamed": true,
+        "waypoint": "National Taiwan University Hospital",
+        "onRoute": true,
+        "lat": 25.040751,
+        "lng": 121.518707,
+        "slug": null,
+        "mapLinkSlug": "national-taiwan-university",
+        "closed": null,
+        "pinToWaypointM": 28,
+        "note": "links.json links this pin to /national-taiwan-university (the campus page, 2.5 km away) - a wrong link; the hospital has no page.",
+        "distToLineM": 0
+      },
+      {
+        "order": 5,
+        "letter": "D",
+        "name": "Taipei Guest House (optional, if open)",
+        "pin": "Taipei Guest House",
+        "pinNamed": true,
+        "waypoint": "Taipei Guest House",
+        "onRoute": true,
+        "lat": 25.040953,
+        "lng": 121.516983,
+        "slug": "taipei-guest-house",
+        "mapLinkSlug": "taipei-guest-house",
+        "closed": null,
+        "pinToWaypointM": 92,
+        "distToLineM": 0
+      },
+      {
+        "order": 6,
+        "letter": "E",
+        "name": "Ministry of Foreign Affairs",
+        "pin": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+        "pinNamed": true,
+        "waypoint": "Ministry of Foreign Affairs, Republic of China (Taiwan)",
+        "onRoute": true,
+        "lat": 25.03849,
+        "lng": 121.516148,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 26,
+        "distToLineM": 0
+      },
+      {
+        "order": 7,
+        "letter": "E",
+        "name": "Jieshou Park / Presidential Office Building",
+        "pin": "Presidential Office Building",
+        "pinNamed": true,
+        "waypoint": null,
+        "onRoute": false,
+        "lat": 25.040083,
+        "lng": 121.511955,
+        "slug": "presidential-office-building",
+        "mapLinkSlug": "presidential-office-building",
+        "closed": null,
+        "note": "Named in stop E text; pinned on the Attractions layer only, not a route waypoint.",
+        "distToLineM": 97
+      },
+      {
+        "order": 8,
+        "letter": "F",
+        "name": "Taiwan Provincial City God Temple",
+        "pin": "Taiwan Provincial City God Temple",
+        "pinNamed": true,
+        "waypoint": "Taiwan Provincial City God Temple",
+        "onRoute": true,
+        "lat": 25.044043,
+        "lng": 121.512709,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 10,
+        "distToLineM": 0
+      },
+      {
+        "order": 9,
+        "letter": "G",
+        "name": "Land Bank Exhibition Hall (National Taiwan Museum)",
+        "pin": "Land Bank Exhibition Hall of National Taiwan Museum, Xiangyang Road, Zhongzheng District, Taipei City",
+        "pinNamed": false,
+        "waypoint": "Land Bank Exhibition Hall of National Taiwan Museum, Xiangyang Road, Zhongzheng District, Taipei City",
+        "onRoute": true,
+        "lat": 25.043475,
+        "lng": 121.514359,
+        "slug": "national-taiwan-museum",
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 1
+      },
+      {
+        "order": 10,
+        "letter": "H",
+        "name": "National Taiwan Museum",
+        "pin": "National Taiwan Museum",
+        "pinNamed": true,
+        "waypoint": "National Taiwan Museum",
+        "onRoute": true,
+        "lat": 25.043015,
+        "lng": 121.515018,
+        "slug": "national-taiwan-museum",
+        "mapLinkSlug": "national-taiwan-museum",
+        "closed": null,
+        "pinToWaypointM": 29,
+        "distToLineM": 1
+      },
+      {
+        "order": 11,
+        "letter": "I",
+        "name": "228 Peace Memorial Park",
+        "pin": "2/28 Peace Park",
+        "pinNamed": true,
+        "waypoint": "2/28 Peace Park",
+        "onRoute": true,
+        "lat": 25.04189,
+        "lng": 121.514996,
+        "slug": "peace-park",
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 7,
+        "note": "Pin \"2/28 Peace Park\" is not linked in links.json for this map (the site-wide map links the same name to /peace-park).",
+        "distToLineM": 0
+      }
+    ],
+    "legsKm": [
+      0.421,
+      0.616,
+      0.197,
+      0.175,
+      0.287,
+      0.458,
+      0.447,
+      0.178,
+      0.084,
+      0.125
+    ],
+    "distanceKm": 2.99,
+    "minutes": 52,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.032670,121.518192&destination=25.041890,121.514996&waypoints=25.034612,121.521781%7C25.039056,121.518125%7C25.040751,121.518707%7C25.040953,121.516983%7C25.038490,121.516148%7C25.040083,121.511955%7C25.044043,121.512709%7C25.043475,121.514359%7C25.043015,121.515018&travelmode=walking",
+    "waypointCount": 9,
+    "lineKm": 5.08,
+    "lineCount": 1,
+    "lineMinutes": 68,
+    "optional": [
+      {
+        "name": "Chun Shui Tang",
+        "slug": "chun-shui-tang",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "228 Museum",
+        "slug": "peace-park",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Jin Feng Braised Pork Rice",
+        "slug": "jin-feng-braised-pork-rice",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "NTU Hospital MRT (finish)",
+        "slug": null,
+        "pageExists": null,
+        "closed": null
+      }
+    ],
+    "layers": [
+      {
+        "name": "Attractions",
+        "points": 14,
+        "lines": 0,
+        "polygons": 0
+      },
+      {
+        "name": "Walking Directions",
+        "points": 9,
+        "lines": 1,
+        "polygons": 0
+      }
+    ],
+    "issues": [
+      "Stop A's main sight, Chiang Kai-shek Memorial Hall, is not a route waypoint: the line starts at CKS Memorial Hall MRT and goes straight to the East Gate (hall pin ~370 m from the station, 32 m from the nearest line point only where it passes Liberty Square).",
+      "Presidential Office Building (named in stop E) is on the Attractions layer only, ~97 m off the drawn line.",
+      "NTU Hospital pin is linked in links.json to /national-taiwan-university (the campus page) - wrong link; the hospital has no page.",
+      "2/28 Peace Park pin is unlinked on this map (text links /peace-park).",
+      "Pins not in the text: National Concert Hall, Liberty Square Arch, \"國家兩廳院\" (Chinese-only name; part of the Liberty Square complex the text calls \"performance halls\"), Chun Shui Tang and Jin Feng (text optional/after-walk).",
+      "Duplicates: East Gate (47 m apart), NTU Hospital, Taipei Guest House (92 m apart), MOFA, City God Temple, National Taiwan Museum, 2/28 Peace Park appear on both layers.",
+      "Text is stale: \"due to the COVID-19 pandemic, visits to both these buildings have temporarily been suspended\" (Presidential Office / Guest House); the Presidential Office page now gives normal opening hours.",
+      "Finish (NTU Hospital MRT) has no pin. 11 stops = exactly 9 waypoints, the Maps URL limit."
+    ],
+    "estimateNote": "distanceKm = sum of straight-line (haversine) legs between stops; minutes = distanceKm x 1.3 detour / 4.5 km/h. lineKm = length of the drawn My Maps line(s) (Google directions geometry). All are ESTIMATES and exclude time at stops.",
+    "mapsUrlNote": "9 waypoints - within the 9-waypoint limit. Google documents only 3 waypoints in mobile browsers, so on phones extra stops may be dropped; if that matters, split into legs of origin + 3 waypoints + destination, each leg starting at the previous leg's destination."
+  },
+  "gongguan-walking-route": {
+    "title": "Gongguan Walking Route",
+    "mid": "13MSBymYL_OYhuNh0zzW_O66BMchnp8k",
+    "words": 581,
+    "modified": "2023-03-26 15:09:42",
+    "stops": [
+      {
+        "order": 1,
+        "letter": "A",
+        "name": "Technology Building MRT Station",
+        "pin": "No. 214, Section 2, Fuxing S Rd, Da’an District, Taipei City, Taiwan 106",
+        "pinNamed": false,
+        "waypoint": "No. 214, Section 2, Fuxing S Rd, Da’an District, Taipei City, Taiwan 106",
+        "onRoute": true,
+        "lat": 25.026154,
+        "lng": 121.543333,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 1
+      },
+      {
+        "order": 2,
+        "letter": "B",
+        "name": "NTU campus - Drunken Moon Lake",
+        "pin": "Unnamed Road, Da’an District, Taipei City, Taiwan 106",
+        "pinNamed": false,
+        "waypoint": "Unnamed Road, Da’an District, Taipei City, Taiwan 106",
+        "onRoute": true,
+        "lat": 25.020376,
+        "lng": 121.537312,
+        "slug": "national-taiwan-university",
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 0
+      },
+      {
+        "order": 3,
+        "letter": "C",
+        "name": "NTU main campus buildings / Fu Bell",
+        "pin": "No. 1號, Section 4, Roosevelt Rd, Da’an District, Taipei City, Taiwan 106",
+        "pinNamed": false,
+        "waypoint": "No. 1號, Section 4, Roosevelt Rd, Da’an District, Taipei City, Taiwan 106",
+        "onRoute": true,
+        "lat": 25.017312,
+        "lng": 121.536761,
+        "slug": "national-taiwan-university",
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 0
+      },
+      {
+        "order": 4,
+        "letter": "D",
+        "name": "NTU Memorial Park",
+        "pin": "No. 1號, Section 4, Roosevelt Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "pinNamed": false,
+        "waypoint": "No. 1號, Section 4, Roosevelt Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "onRoute": true,
+        "lat": 25.01639,
+        "lng": 121.533511,
+        "slug": "national-taiwan-university",
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 0
+      },
+      {
+        "order": 5,
+        "letter": "E",
+        "name": "Gongguan (lunch)",
+        "pin": "No. 14, Alley 8, Ln. 316, Section 3, Roosevelt Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "pinNamed": false,
+        "waypoint": "No. 14, Alley 8, Ln. 316, Section 3, Roosevelt Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "onRoute": true,
+        "lat": 25.015338,
+        "lng": 121.532607,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "note": "Lunch pins YU POKÉ, Madame Jill's, Lan Jia sit within ~60 m of this waypoint.",
+        "distToLineM": 8
+      },
+      {
+        "order": 6,
+        "letter": "F",
+        "name": "Taipei Water Park - Drinking Water Museum",
+        "pin": "Museum of Drinking Water",
+        "pinNamed": true,
+        "waypoint": "100, Taiwan, Taipei City, Zhongzheng District, 台北市中正區",
+        "onRoute": true,
+        "lat": 25.013337,
+        "lng": 121.530348,
+        "slug": "see-the-drinking-water-museum-at-taipei-water-park",
+        "mapLinkSlug": "see-the-drinking-water-museum-at-taipei-water-park",
+        "closed": null,
+        "pinToWaypointM": 96,
+        "distToLineM": 0
+      },
+      {
+        "order": 7,
+        "letter": "G",
+        "name": "Water Park paths / reservoir viewpoint",
+        "pin": "No. 6-3, Alley 37, Lane 230, Section 3, Tingzhou Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "pinNamed": false,
+        "waypoint": "No. 6-3, Alley 37, Lane 230, Section 3, Tingzhou Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "onRoute": true,
+        "lat": 25.011877,
+        "lng": 121.532397,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "note": "Text says do NOT follow the Google route from G to H - walk directly; the drawn line here is a road detour.",
+        "distToLineM": 0
+      },
+      {
+        "order": 8,
+        "letter": "H",
+        "name": "Treasure Hill Art Village",
+        "pin": "Treasure Hill Artist Village",
+        "pinNamed": true,
+        "waypoint": "No. 4-6, Alley 37, Lane 230, Section 3, Tingzhou Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "onRoute": true,
+        "lat": 25.010818,
+        "lng": 121.532534,
+        "slug": "treasure-hill",
+        "mapLinkSlug": "treasure-hill",
+        "closed": null,
+        "pinToWaypointM": 29,
+        "distToLineM": 0
+      },
+      {
+        "order": 9,
+        "letter": "I",
+        "name": "Gongguan Night Market",
+        "pin": "No. 4, Alley 2, Lane 78, Section 4, Luosifu Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "pinNamed": false,
+        "waypoint": "No. 4, Alley 2, Lane 78, Section 4, Luosifu Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "onRoute": true,
+        "lat": 25.013674,
+        "lng": 121.534599,
+        "slug": "gongguan-night-market",
+        "mapLinkSlug": null,
+        "closed": null,
+        "masterPin": {
+          "name": "Gongguan Night Market",
+          "lat": 25.013787,
+          "lng": 121.534786,
+          "offsetM": 23
+        },
+        "note": "Text does not link /gongguan-night-market (page exists; slug taken from the site-wide map pin 20 m away).",
+        "distToLineM": 0
+      }
+    ],
+    "legsKm": [
+      0.884,
+      0.345,
+      0.343,
+      0.148,
+      0.318,
+      0.263,
+      0.119,
+      0.38
+    ],
+    "distanceKm": 2.8,
+    "minutes": 49,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.026154,121.543333&destination=25.013674,121.534599&waypoints=25.020376,121.537312%7C25.017312,121.536761%7C25.016390,121.533511%7C25.015338,121.532607%7C25.013337,121.530348%7C25.011877,121.532397%7C25.010818,121.532534&travelmode=walking",
+    "waypointCount": 7,
+    "lineKm": 7.03,
+    "lineCount": 1,
+    "lineMinutes": 94,
+    "optional": [
+      {
+        "name": "Yong He Soy Milk King (breakfast)",
+        "slug": "yong-he-soy-milk-king",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "The Diner (breakfast)",
+        "slug": "the-diner",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Lan Jia Traditional Taiwanese Snack",
+        "slug": "lan-jia-traditional-taiwanese-snack",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Michelin stands",
+        "slug": "michelin-food-stands-at-night-markets",
+        "pageExists": true,
+        "closed": null
+      }
+    ],
+    "layers": [
+      {
+        "name": "Untitled layer",
+        "points": 8,
+        "lines": 0,
+        "polygons": 0
+      },
+      {
+        "name": "Directions from No. 214, Section 2, Fuxing S Rd, Da’an District, Taipei City, Taiwan 106 to No. 4, Alley 2, Lane 78, Section 4, Luosifu Rd, Zhongzheng District, Taipei City, Taiwan 100",
+        "points": 9,
+        "lines": 1,
+        "polygons": 0
+      }
+    ],
+    "issues": [
+      "All 9 route waypoints are street addresses; only F (Museum of Drinking Water) and H (Treasure Hill Artist Village) have a named pin to match (96 m and 29 m away). B, C, D (NTU campus points) and G have no named pin - matched by order only.",
+      "Stop I (Gongguan Night Market) has no pin on this map and the text does not link /gongguan-night-market (page exists; site-wide map pin 23 m from the waypoint).",
+      "Text says not to follow the Google route from G to H (walk directly) - the drawn line there is a road detour; the line (7.0 km) overstates the walk.",
+      "Pins not in the text: YU POKÉ, Madame Jill's Vietnamese Cuisine, El Sabroso Mexican Food (the text says \"I've marked a few on the map\"); Madame Jill's and El Sabroso have no pages. Lan Jia pin named \"Lan Jia Gua Bao...\" sits in the lunch cluster though the text mentions it at stop I.",
+      "Breakfast pins (Yong He Soy Milk King, The Diner) are off-route options before A.",
+      "Post last modified 2023-03-26 - oldest of the walks."
+    ],
+    "estimateNote": "distanceKm = sum of straight-line (haversine) legs between stops; minutes = distanceKm x 1.3 detour / 4.5 km/h. lineKm = length of the drawn My Maps line(s) (Google directions geometry). All are ESTIMATES and exclude time at stops.",
+    "mapsUrlNote": "7 waypoints - within the 9-waypoint limit. Google documents only 3 waypoints in mobile browsers, so on phones extra stops may be dropped; if that matters, split into legs of origin + 3 waypoints + destination, each leg starting at the previous leg's destination."
+  },
+  "datong-walking-route": {
+    "title": "Datong Walking Route",
+    "mid": "1d2NXfrxGHCP_xKV9kB6suSL8LwRKyi0i",
+    "words": 591,
+    "modified": "2026-08-05 15:00:00",
+    "stops": [
+      {
+        "order": 1,
+        "letter": "A",
+        "name": "Yuanshan MRT (exit 1)",
+        "pin": "Yuanshan Station, No. 9之1號, Jiuquan Street, Datong District, Taipei City, Taiwan 103",
+        "pinNamed": false,
+        "waypoint": "Yuanshan Station, No. 9之1號, Jiuquan Street, Datong District, Taipei City, Taiwan 103",
+        "onRoute": true,
+        "lat": 25.071395,
+        "lng": 121.519987,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 1
+      },
+      {
+        "order": 2,
+        "letter": "B",
+        "name": "Expo Farmer's Market",
+        "pin": "Taipei Expo Farmer's Market",
+        "pinNamed": true,
+        "waypoint": "No. 1號, Yumen Street, Zhongshan District, Taipei City, Taiwan 10491",
+        "onRoute": true,
+        "lat": 25.070654,
+        "lng": 121.521264,
+        "slug": "expo-farmers-market",
+        "mapLinkSlug": "expo-farmers-market",
+        "closed": null,
+        "pinToWaypointM": 0,
+        "distToLineM": 1
+      },
+      {
+        "order": 3,
+        "letter": "C",
+        "name": "Taipei Story House",
+        "pin": "Taipei Story House",
+        "pinNamed": true,
+        "waypoint": "Taipei Story House",
+        "onRoute": true,
+        "lat": 25.073201,
+        "lng": 121.524738,
+        "slug": "taipei-story-house",
+        "mapLinkSlug": "taipei-story-house",
+        "closed": null,
+        "pinToWaypointM": 17,
+        "distToLineM": 0
+      },
+      {
+        "order": 4,
+        "letter": "D",
+        "name": "Fine Arts Museum",
+        "pin": "Taipei Fine Arts Museum",
+        "pinNamed": true,
+        "waypoint": "Taipei Fine Arts Museum",
+        "onRoute": true,
+        "lat": 25.072679,
+        "lng": 121.525133,
+        "slug": "fine-arts-museum",
+        "mapLinkSlug": "fine-arts-museum",
+        "closed": null,
+        "pinToWaypointM": 44,
+        "distToLineM": 0
+      },
+      {
+        "order": 5,
+        "letter": "E",
+        "name": "Indigenous Cultural Centre",
+        "pin": "Indigenous Cultural Centre",
+        "pinNamed": true,
+        "waypoint": "Indigenous Cultural Centre",
+        "onRoute": true,
+        "lat": 25.070767,
+        "lng": 121.524513,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 1,
+        "distToLineM": 0
+      },
+      {
+        "order": 6,
+        "letter": "",
+        "name": "Xinsheng Park - Rose Garden",
+        "pin": "Taipei Rose Garden",
+        "pinNamed": true,
+        "waypoint": null,
+        "onRoute": false,
+        "lat": 25.070452,
+        "lng": 121.528808,
+        "slug": "xinsheng-park",
+        "mapLinkSlug": null,
+        "closed": null,
+        "note": "Unlettered in the text and not a route waypoint; Attractions-layer pin only.",
+        "distToLineM": 15
+      },
+      {
+        "order": 7,
+        "letter": "F",
+        "name": "Lin An Tai Ancestral House",
+        "pin": "Lin An Tai Ancestral House",
+        "pinNamed": true,
+        "waypoint": "Lin An Tai Ancestral House",
+        "onRoute": true,
+        "lat": 25.071724,
+        "lng": 121.530292,
+        "slug": "lin-an-tai-ancestral-house",
+        "mapLinkSlug": "lin-an-tai-ancestral-house",
+        "closed": null,
+        "pinToWaypointM": 7,
+        "distToLineM": 0
+      },
+      {
+        "order": 8,
+        "letter": "G",
+        "name": "Taipei Collective Botanical Garden",
+        "pin": "Taipei Collective Botanical Garden",
+        "pinNamed": true,
+        "waypoint": "Taipei Collective Botanical Garden",
+        "onRoute": true,
+        "lat": 25.071441,
+        "lng": 121.531682,
+        "slug": "collective-botanical-garden",
+        "mapLinkSlug": "collective-botanical-garden",
+        "closed": null,
+        "pinToWaypointM": 10,
+        "distToLineM": 0
+      },
+      {
+        "order": 9,
+        "letter": "H",
+        "name": "The maze (Xinsheng Park)",
+        "pin": "Garden Maze",
+        "pinNamed": true,
+        "waypoint": "Garden Maze",
+        "onRoute": true,
+        "lat": 25.069545,
+        "lng": 121.529982,
+        "slug": "xinsheng-park",
+        "mapLinkSlug": null,
+        "closed": null,
+        "pinToWaypointM": 16,
+        "distToLineM": 1
+      }
+    ],
+    "legsKm": [
+      0.153,
+      0.45,
+      0.07,
+      0.222,
+      0.434,
+      0.206,
+      0.143,
+      0.272
+    ],
+    "distanceKm": 1.95,
+    "minutes": 34,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.071395,121.519987&destination=25.069545,121.529982&waypoints=25.070654,121.521264%7C25.073201,121.524738%7C25.072679,121.525133%7C25.070767,121.524513%7C25.070452,121.528808%7C25.071724,121.530292%7C25.071441,121.531682&travelmode=walking",
+    "waypointCount": 7,
+    "lineKm": 3.07,
+    "lineCount": 1,
+    "lineMinutes": 41,
+    "optional": [
+      {
+        "name": "MAJI Square",
+        "slug": "maji-square",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "Grand Hotel (view only)",
+        "slug": "the-grand-hotel",
+        "pageExists": true,
+        "closed": null
+      }
+    ],
+    "layers": [
+      {
+        "name": "Attractions",
+        "points": 13,
+        "lines": 0,
+        "polygons": 0
+      },
+      {
+        "name": "West Walk - Temples and Night Market",
+        "points": 8,
+        "lines": 1,
+        "polygons": 0
+      },
+      {
+        "name": "East Walk - Parks, Museum and Ancestral Houses",
+        "points": 6,
+        "lines": 1,
+        "polygons": 0
+      }
+    ],
+    "variantLabel": "East Route (the text's \"East Route\"; map layer is named \"West Walk - Temples and Night Market\")",
+    "variants": {
+      "west": {
+        "stops": [
+          {
+            "order": 1,
+            "letter": "A",
+            "name": "Yuanshan MRT",
+            "pin": "Yuanshan Station, No. 9之1號, Jiuquan Street, Datong District, Taipei City, Taiwan 103",
+            "pinNamed": false,
+            "waypoint": "Yuanshan Station, No. 9之1號, Jiuquan Street, Datong District, Taipei City, Taiwan 103",
+            "onRoute": true,
+            "lat": 25.071456,
+            "lng": 121.519997,
+            "slug": null,
+            "mapLinkSlug": null,
+            "closed": null,
+            "distToLineM": 1
+          },
+          {
+            "order": 2,
+            "letter": "B-D",
+            "name": "Baoan Temple garden",
+            "pin": "Baoan Temple Garden",
+            "pinNamed": true,
+            "waypoint": "103, Taiwan, Taipei City, Datong District, Dalong Street, 275號號",
+            "onRoute": true,
+            "lat": 25.072753,
+            "lng": 121.515871,
+            "slug": "dalongdong-baoan-temple-and-gardens",
+            "mapLinkSlug": null,
+            "closed": null,
+            "pinToWaypointM": 12,
+            "note": "Waypoint is an address (\"Dalong Street 275\"); matched by position to the \"Baoan Temple Garden\" pin 12 m away.",
+            "distToLineM": 0
+          },
+          {
+            "order": 3,
+            "letter": "B-D",
+            "name": "Baoan Temple",
+            "pin": "Dalongdong Baoan Temple",
+            "pinNamed": true,
+            "waypoint": "Dalongdong Baoan Temple",
+            "onRoute": true,
+            "lat": 25.073222,
+            "lng": 121.515592,
+            "slug": "dalongdong-baoan-temple-and-gardens",
+            "mapLinkSlug": "dalongdong-baoan-temple-and-gardens",
+            "closed": null,
+            "pinToWaypointM": 6,
+            "distToLineM": 0
+          },
+          {
+            "order": 4,
+            "letter": "B-D",
+            "name": "Confucius Temple",
+            "pin": "Taipei Confucius Temple",
+            "pinNamed": true,
+            "waypoint": "No. 70, Hami Street, Datong District, Taipei City, Taiwan 103",
+            "onRoute": true,
+            "lat": 25.073177,
+            "lng": 121.516306,
+            "slug": "confucius-temple",
+            "mapLinkSlug": "confucius-temple",
+            "closed": null,
+            "pinToWaypointM": 39,
+            "note": "Waypoint is an address (\"Hami Street 70\"); matched by position to the Confucius Temple pin ~40 m away.",
+            "distToLineM": 1
+          },
+          {
+            "order": 5,
+            "letter": "E",
+            "name": "Dalong Street Night Market",
+            "pin": "Dalong Street Night Market",
+            "pinNamed": true,
+            "waypoint": "No. 257, Dalong Street, Datong District, Taipei City, Taiwan 103",
+            "onRoute": true,
+            "lat": 25.071499,
+            "lng": 121.515999,
+            "slug": null,
+            "mapLinkSlug": null,
+            "closed": null,
+            "pinToWaypointM": 11,
+            "distToLineM": 0
+          },
+          {
+            "order": 6,
+            "letter": "F",
+            "name": "Yuanshan MRT",
+            "pin": "Yuanshan Station, No. 9之1號, Jiuquan Street, Datong District, Taipei City, Taiwan 103",
+            "pinNamed": false,
+            "waypoint": "Yuanshan Station, No. 9之1號, Jiuquan Street, Datong District, Taipei City, Taiwan 103",
+            "onRoute": true,
+            "lat": 25.071456,
+            "lng": 121.519997,
+            "slug": null,
+            "mapLinkSlug": null,
+            "closed": null,
+            "distToLineM": 1
+          }
+        ],
+        "legsKm": [
+          0.44,
+          0.059,
+          0.072,
+          0.189,
+          0.403
+        ],
+        "distanceKm": 1.16,
+        "minutes": 20,
+        "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.071456,121.519997&destination=25.071456,121.519997&waypoints=25.072753,121.515871%7C25.073222,121.515592%7C25.073177,121.516306%7C25.071499,121.515999&travelmode=walking",
+        "waypointCount": 4,
+        "lineKm": 1.58,
+        "lineCount": 1,
+        "lineMinutes": 21,
+        "label": "West Route - temples and night market (map layer named \"East Walk - Parks, Museum and Ancestral Houses\")"
+      }
+    },
+    "issues": [
+      "MAP LAYER NAMES ARE SWAPPED: the layer named \"West Walk - Temples and Night Market\" holds the East Route (Expo, Story House, Fine Arts, Indigenous Centre, Lin An Tai, Botanical Garden, Maze); the layer named \"East Walk - Parks, Museum and Ancestral Houses\" holds the temples loop. The page's map-places block prints these wrong headings.",
+      "Text contradicts itself: intro says \"The East route is best taken during the evening\"; the West Route section says it is the one best taken in the evening (after 18:00).",
+      "Two separate walks from Yuanshan MRT, so modelled as the East Route (top-level stops) plus variants.west. The West Route is a loop (origin = destination = Yuanshan).",
+      "West Route letters [B][C][D] are \"visit as you wish\"; map order is Baoan Temple Garden -> Baoan Temple -> Confucius Temple; two of those waypoints are addresses (Dalong St 275, Hami St 70) matched by position to named pins 12 m and 39 m away.",
+      "Xinsheng Park / Rose Garden (unlettered in text, links /xinsheng-park) is not a route waypoint; Attractions-layer pin \"Taipei Rose Garden\" only. MAJI Square (optional) likewise.",
+      "No pages for Indigenous Cultural Centre or Dalong Street Night Market; Garden Maze / Rose Garden / Baoan Garden / Dalong St NM pins are unlinked in links.json. Grand Hotel (text) has no pin.",
+      "Every attraction is pinned twice (Attractions layer + route layer, 0-44 m apart)."
+    ],
+    "estimateNote": "distanceKm = sum of straight-line (haversine) legs between stops; minutes = distanceKm x 1.3 detour / 4.5 km/h. lineKm = length of the drawn My Maps line(s) (Google directions geometry). All are ESTIMATES and exclude time at stops.",
+    "mapsUrlNote": "7 waypoints - within the 9-waypoint limit. Google documents only 3 waypoints in mobile browsers, so on phones extra stops may be dropped; if that matters, split into legs of origin + 3 waypoints + destination, each leg starting at the previous leg's destination."
+  },
+  "songshan-xinyi-walking-tour": {
+    "title": "Songshan/Xinyi Walking Route",
+    "mid": "1Qf26AeJpZUD8do8PdZ15eJGReKX6nT2w",
+    "words": 511,
+    "modified": "2026-09-30 12:00:00",
+    "stops": [
+      {
+        "order": 1,
+        "letter": "A",
+        "name": "Sun Yat-sen Memorial Hall MRT (exit 3) / Zhongshan Park",
+        "pin": "Sun Yat-Sen Memorial Hall Station, No. 400, Section 4, Zhongxiao East Road, Xinyi District, Taipei City, Taiwan 11072",
+        "pinNamed": false,
+        "waypoint": "Sun Yat-Sen Memorial Hall Station, No. 400, Section 4, Zhongxiao East Road, Xinyi District, Taipei City, Taiwan 11072",
+        "onRoute": true,
+        "lat": 25.041448,
+        "lng": 121.557526,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 0
+      },
+      {
+        "order": 2,
+        "letter": "B",
+        "name": "Sun Yat-sen Memorial Hall",
+        "pin": "No. 505, Section 4, Ren'ai Road, Xinyi District, Taipei City, Taiwan 110",
+        "pinNamed": false,
+        "waypoint": "No. 505, Section 4, Ren'ai Road, Xinyi District, Taipei City, Taiwan 110",
+        "onRoute": true,
+        "lat": 25.039515,
+        "lng": 121.560208,
+        "slug": "sun-yat-sen-memorial-hall",
+        "mapLinkSlug": null,
+        "closed": "temporarily-closed",
+        "masterPin": {
+          "name": "National Dr. Sun Yat-Sen Memorial Hall",
+          "lat": 25.040031,
+          "lng": 121.560245,
+          "offsetM": 57
+        },
+        "distToLineM": 1
+      },
+      {
+        "order": 3,
+        "letter": "C",
+        "name": "Songshan Cultural and Creative Park",
+        "pin": "No. 88號, Yanchang Road, Xinyi District, Taipei City, Taiwan 110",
+        "pinNamed": false,
+        "waypoint": "No. 88號, Yanchang Road, Xinyi District, Taipei City, Taiwan 110",
+        "onRoute": true,
+        "lat": 25.044508,
+        "lng": 121.561624,
+        "slug": "songshan-cultural-and-creative-park",
+        "mapLinkSlug": null,
+        "closed": null,
+        "masterPin": {
+          "name": "Songshan Cultural and Creative Park No 1. Warehouse",
+          "lat": 25.0444,
+          "lng": 121.55951,
+          "offsetM": 213
+        },
+        "distToLineM": 0
+      },
+      {
+        "order": 4,
+        "letter": "D",
+        "name": "Xinyi Shopping District",
+        "pin": "No. 6821, Xingya Road, Xinyi District, Taipei City, Taiwan 110",
+        "pinNamed": false,
+        "waypoint": "No. 6821, Xingya Road, Xinyi District, Taipei City, Taiwan 110",
+        "onRoute": true,
+        "lat": 25.040089,
+        "lng": 121.567126,
+        "slug": "xinyi-shopping-district",
+        "mapLinkSlug": null,
+        "closed": null,
+        "distToLineM": 0
+      },
+      {
+        "order": 5,
+        "letter": "E",
+        "name": "Breeze Nan Shan mall (text: \"Breeze Nanshi\")",
+        "pin": "No. 12, Songshou Road, Xinyi District, Taipei City, Taiwan 110",
+        "pinNamed": false,
+        "waypoint": "No. 12, Songshou Road, Xinyi District, Taipei City, Taiwan 110",
+        "onRoute": true,
+        "lat": 25.034844,
+        "lng": 121.566206,
+        "slug": null,
+        "mapLinkSlug": null,
+        "closed": null,
+        "note": "Waypoint geocodes to No. 12 Songshou Rd (the ATT 4 FUN address, just north of Breeze Nan Shan). No page for Breeze Nan Shan.",
+        "distToLineM": 1
+      },
+      {
+        "order": 6,
+        "letter": "F",
+        "name": "Taipei 101",
+        "pin": "No. 8, Songzhi Road, Xinyi District, Taipei City, Taiwan 110",
+        "pinNamed": false,
+        "waypoint": "No. 8, Songzhi Road, Xinyi District, Taipei City, Taiwan 110",
+        "onRoute": true,
+        "lat": 25.03445,
+        "lng": 121.564471,
+        "slug": "taipei-101",
+        "mapLinkSlug": null,
+        "closed": null,
+        "masterPin": {
+          "name": "Taipei 101",
+          "lat": 25.033964,
+          "lng": 121.564472,
+          "offsetM": 54
+        },
+        "distToLineM": 0
+      }
+    ],
+    "legsKm": [
+      0.345,
+      0.573,
+      0.741,
+      0.591,
+      0.18
+    ],
+    "distanceKm": 2.43,
+    "minutes": 42,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&origin=25.041448,121.557526&destination=25.034450,121.564471&waypoints=25.039515,121.560208%7C25.044508,121.561624%7C25.040089,121.567126%7C25.034844,121.566206&travelmode=walking",
+    "waypointCount": 4,
+    "lineKm": 4.24,
+    "lineCount": 1,
+    "lineMinutes": 57,
+    "optional": [
+      {
+        "name": "i-Ride Taipei",
+        "slug": "i-ride-taipei",
+        "pageExists": true,
+        "closed": null
+      },
+      {
+        "name": "ATT 4 FUN",
+        "slug": null,
+        "pageExists": null,
+        "closed": null
+      },
+      {
+        "name": "Eslite Spectrum",
+        "slug": null,
+        "pageExists": null,
+        "closed": null
+      }
+    ],
+    "layers": [
+      {
+        "name": "Walking Route",
+        "points": 6,
+        "lines": 1,
+        "polygons": 0
+      }
+    ],
+    "issues": [
+      "SITE-MARKED CLOSURE: stop B Sun Yat-sen Memorial Hall - its page is titled \"Closed Until Late 2026\" with a Temporary Closure Notice (main hall, galleries closed; changing of the guard suspended; gardens open). The walk text still tells readers to watch the changing of the guard and visit the exhibition rooms.",
+      "The map has no named pins at all - only 6 address waypoints on one layer; links.json has no links for it. Stop names/slugs come from the text; coordinates checked against the site-wide map (Sun Yat-sen Hall 57 m, Taipei 101 54 m, Songshan Park No.1 Warehouse 213 m from the waypoints).",
+      "Stop E text says \"Breeze Nanshi Mall\" (should be Breeze Nan Shan); the waypoint geocodes to No. 12 Songshou Rd (ATT 4 FUN). No page for Breeze Nan Shan. Typo \"Songhsan\" in intro.",
+      "The page's map-places block lists raw addresses as \"Every place on this map\"."
+    ],
+    "estimateNote": "distanceKm = sum of straight-line (haversine) legs between stops; minutes = distanceKm x 1.3 detour / 4.5 km/h. lineKm = length of the drawn My Maps line(s) (Google directions geometry). All are ESTIMATES and exclude time at stops.",
+    "mapsUrlNote": "4 waypoints - within the 9-waypoint limit. Google documents only 3 waypoints in mobile browsers, so on phones extra stops may be dropped; if that matters, split into legs of origin + 3 waypoints + destination, each leg starting at the previous leg's destination."
+  },
+  "best-areas-for-walking": {
+    "title": "If You Don't Fancy Hiking, Try These Walking Areas Instead",
+    "mid": "1ANY9nbLlrCbHN5uo5UMJQR2DCvRHF_EZ",
+    "words": 532,
+    "modified": "2023-04-15 09:20:02",
+    "kind": "area-list",
+    "stops": [
+      {
+        "order": 1,
+        "name": "National Taiwan University",
+        "pin": "National Taiwan University",
+        "lat": 25.01734,
+        "lng": 121.539752,
+        "slug": "national-taiwan-university",
+        "mapLinkSlug": "national-taiwan-university",
+        "closed": null
+      },
+      {
+        "order": 2,
+        "name": "Treasure Hill",
+        "pin": "Treasure Hill",
+        "lat": 25.010732,
+        "lng": 121.532254,
+        "slug": "treasure-hill",
+        "mapLinkSlug": "treasure-hill",
+        "closed": null
+      },
+      {
+        "order": 3,
+        "name": "Water Park",
+        "pin": "Taipei Water Park",
+        "lat": 25.013284,
+        "lng": 121.530321,
+        "slug": "see-the-drinking-water-museum-at-taipei-water-park",
+        "mapLinkSlug": "see-the-drinking-water-museum-at-taipei-water-park",
+        "closed": null
+      },
+      {
+        "order": 4,
+        "name": "Danshui (Tamsui)",
+        "pin": "Danshui",
+        "lat": 25.171142,
+        "lng": 121.438616,
+        "slug": "best-day-trips-from-taipei",
+        "mapLinkSlug": null,
+        "closed": null,
+        "note": "Text links /best-day-trips-from-taipei; the Tamsui page is /tamsui. Pin unlinked in links.json."
+      },
+      {
+        "order": 5,
+        "name": "Daan Forest Park",
+        "pin": "Daan Forest Park",
+        "lat": 25.032435,
+        "lng": 121.534905,
+        "slug": "daan-forest-park",
+        "mapLinkSlug": "daan-forest-park",
+        "closed": null
+      },
+      {
+        "order": 6,
+        "name": "Xinyi Shopping District",
+        "pin": "Xinyi Shopping District",
+        "lat": 25.037247,
+        "lng": 121.566985,
+        "slug": "xinyi-shopping-district",
+        "mapLinkSlug": "xinyi-shopping-district",
+        "closed": null
+      },
+      {
+        "order": 7,
+        "name": "Xinbeitou",
+        "pin": "Xinbeitou",
+        "lat": 25.136305,
+        "lng": 121.506283,
+        "slug": "xinbeitou",
+        "mapLinkSlug": "xinbeitou",
+        "closed": null
+      }
+    ],
+    "legsKm": [
+      1.054,
+      0.344,
+      19.834,
+      18.218,
+      3.276,
+      12.597
+    ],
+    "distanceKm": 55.32,
+    "minutes": null,
+    "mapsUrl": null,
+    "polygons": [
+      "Xinyi Shopping District",
+      "Daan Forest Park",
+      "Treasure Hill + Water Park",
+      "Xinbeitou",
+      "Danshui",
+      "NTU"
+    ],
+    "issues": [
+      "NOT A WALK: an area list (NTU, Treasure Hill + Water Park, Danshui, Daan Forest Park, Xinyi, Xinbeitou) spanning ~55 km; map is 7 area pins + 6 polygons, no line. Do not render as a route or give a Maps walking link; render pins/polygons only.",
+      "Danshui links to /best-day-trips-from-taipei rather than /tamsui; Danshui pin is unlinked.",
+      "Treasure Hill and Water Park are two pins for one text section.",
+      "Last modified 2023-04-15."
+    ],
+    "estimateNote": "Not a walk; legsKm shown only to illustrate spread.",
+    "mapsUrlNote": null
+  }
+}
