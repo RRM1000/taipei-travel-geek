@@ -23,7 +23,8 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
     shortcut: "/favicon.ico",
-    apple: "/icon-192.png",
+    // Home-screen icon: red mark on the header navy (scripts/build-icons.mjs).
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
   openGraph: {
     type: "website",
