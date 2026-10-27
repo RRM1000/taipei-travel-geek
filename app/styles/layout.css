@@ -9,7 +9,7 @@
  */
 
 :root {
-  --header-h: 64px;
+  --header-h: 76px;
   /* Where sticky things pin. Follows the header: when it slides away
      (html.header-hidden, set by SiteHeader) the side column moves up too. */
   --sticky-gap: 24px;
@@ -54,8 +54,10 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
   box-sizing: border-box;
 }
 
-.site-header .brand { flex: none; gap: 10px; font-size: 21px; letter-spacing: -0.01em; }
-.site-header .brand img { width: 38px; height: 38px; background: none; }
+/* Scales with the screen so the bigger lockup never pushes the menus into the
+   search box: 25px text and a 50px mark from about 1430px wide. */
+.site-header .brand { flex: none; gap: 12px; font-size: clamp(19px, 1.75vw, 25px); letter-spacing: -0.01em; }
+.site-header .brand img { width: clamp(38px, 3.5vw, 50px); height: clamp(38px, 3.5vw, 50px); background: none; }
 .site-header .brand-text { gap: 6px; white-space: nowrap; }
 .site-header .brand-navy { color: #fff; }
 .site-header .brand-red { color: var(--red); }
@@ -141,8 +143,8 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 }
 @media (max-width: 1060px) {
   .header-bar { gap: 14px; }
-  .site-header .brand { gap: 8px; font-size: 18px; }
-  .site-header .brand img { width: 32px; height: 32px; }
+  .site-header .brand { gap: 8px; font-size: clamp(16px, 1.7vw, 18px); }
+  .site-header .brand img { width: 34px; height: 34px; }
   .site-header .desktop-nav { font-size: 12px; letter-spacing: .3px; }
   .site-header .nav-links-wrap { gap: 0; }
   .site-header .nav-links-wrap > a,
@@ -153,6 +155,9 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
   .site-header .desktop-nav,
   .header-tools { display: none; }
   .site-header .mobile-menu { display: block; margin-left: auto; }
+  /* Only the burger shares the bar now, so the lockup can grow again. */
+  .site-header .brand { gap: 10px; font-size: 22px; }
+  .site-header .brand img { width: 44px; height: 44px; }
   .site-header .mobile-menu > summary {
     position: relative;
     z-index: 62;
@@ -207,14 +212,14 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
   .mobile-menu-section a:hover { color: #ffaaa4; }
 }
 @media (max-width: 620px) {
-  :root { --header-h: 60px; }
+  :root { --header-h: 66px; }
 }
 /* The mobile logo fix (quick wins) at 320-430px: the wordmark shrinks and
    never runs under the menu button. */
 @media (max-width: 480px) {
   .header-bar { gap: 12px; }
-  .site-header .brand { min-width: 0; gap: 8px; font-size: 18px; }
-  .site-header .brand img { width: 32px; height: 32px; }
+  .site-header .brand { min-width: 0; gap: 9px; font-size: 20px; }
+  .site-header .brand img { width: 40px; height: 40px; }
   .site-header .brand-text { gap: 5px; }
 }
 @media (max-width: 340px) {
@@ -247,7 +252,7 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 }
 
 /* Home hero: same cap. */
-.hero { min-height: clamp(460px, 48vw, 600px); }
+.hero { min-height: clamp(480px, 52vw, 680px); }
 .hero-content { padding: clamp(48px, 6vw, 72px) 0; }
 .hero h1 { font-size: clamp(48px, 6.4vw, 88px); line-height: .95; }
 .hero-copy { margin: 22px 0 28px; font-size: clamp(18px, 1.6vw, 21px); }
@@ -578,10 +583,10 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 
 /* Header tidy (October 2026): weather out of the bar (it now lives in the
    Plan Your Trip menu and under the homepage hero as "Taipei right now"),
-   a proper one-line search box from 1200px, and a warm dropdown panel that
+   a proper one-line search box from 1380px (below that the bigger logo needs the room), and a warm dropdown panel that
    matches the paper background instead of stark white. */
 .site-header .header-weather { display: none !important; }
-@media (min-width: 1200px) {
+@media (min-width: 1380px) {
   .site-header .header-search .search-trigger { width: 280px; padding: 0 3px 0 18px; justify-content: space-between; border-radius: 999px; }
   .site-header .header-search .search-placeholder-text { display: inline; overflow: hidden; color: rgba(255, 255, 255, .72); font-size: 14px; white-space: nowrap; text-overflow: ellipsis; }
 }
