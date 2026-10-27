@@ -144,7 +144,7 @@ export function SiteHeader() {
     };
     const handlePointerDown = (event: PointerEvent) => {
       const target = event.target as Element;
-      if (!target.closest(".desktop-nav")) setActiveMenu(null);
+      if (!target.closest(".desktop-nav, .mega-menu-panel")) setActiveMenu(null);
       if (!target.closest(".mobile-menu")) closeMobileMenus();
     };
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -161,6 +161,52 @@ export function SiteHeader() {
     };
   }, []);
 
+  // The bar slides away while the reader scrolls down and comes back as soon
+  // as they scroll up, as on City Break Geek. The state lives on <html>
+  // (header-hidden) so the sticky sidebar can move up with it - see
+  // --sticky-top in app/styles/layout.css. It never hides while a mega menu,
+  // the mobile menu or search is open, or within its own height of the top.
+  const headerRef = useRef<HTMLElement>(null);
+  const menuOpenRef = useRef(false);
+
+  useEffect(() => {
+    menuOpenRef.current = activeMenu !== null;
+    if (activeMenu) document.documentElement.classList.remove("header-hidden");
+  }, [activeMenu]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    let lastY = window.scrollY;
+
+    // Runs straight from the scroll event: it only compares two numbers and
+    // flips a class, so there is nothing worth deferring to a frame.
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY;
+      const header = headerRef.current;
+      const height = header?.offsetHeight ?? 64;
+      const busy =
+        menuOpenRef.current ||
+        !!header?.querySelector(".mobile-menu[open]") ||
+        !!document.querySelector(".search-overlay");
+
+      if (busy || y <= height) {
+        root.classList.remove("header-hidden");
+        lastY = y;
+        return;
+      }
+      if (Math.abs(delta) < 8) return;
+      root.classList.toggle("header-hidden", delta > 0);
+      lastY = y;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      root.classList.remove("header-hidden");
+    };
+  }, []);
+
   const triggerProps = (key: MenuKey) => ({
     onMouseEnter: () => openMenuOnHover(key),
     onMouseLeave: scheduleClose,
@@ -170,16 +216,33 @@ export function SiteHeader() {
   });
 
   return (
-    <header className="site-header">
-      <div className="header-brand-row">
+    <header className="site-header" ref={headerRef}>
+      {/* One navy bar: logo, menus, search and the Plan pill. The mega-menu
+          panel is positioned against the whole header, not the nav, so it
+          still spans the full width. */}
+      <div className="header-bar">
         <a className="brand" href="/" aria-label="Taipei Travel Geek home">
-          <img src="/images/ttg-mark.png" alt="Taipei Travel Geek Logo" />
+          <img src="/images/ttg-mark-transparent.png" alt="" width={40} height={40} />
           <span className="brand-text">
             <b className="brand-navy">TAIPEI</b> <b className="brand-red">TRAVEL</b> <b className="brand-navy">GEEK</b>
           </span>
         </a>
-        <div className="header-weather"><WeatherStrip /></div>
-        <div className="header-search"><SiteSearch /></div>
+        <nav className="desktop-nav" aria-label="Main navigation" onMouseLeave={scheduleClose}>
+          <div className="nav-links-wrap">
+            {primaryNavigation.map((item) => (
+              <a key={item} href={`/category/${item.toLowerCase()}`} {...triggerProps(item)}>{item} <span className="nav-caret" aria-hidden="true" /></a>
+            ))}
+            <a href="/tag/top-pick" {...triggerProps("TopPicks")}>Top Picks <span className="nav-caret" aria-hidden="true" /></a>
+            <a href="/tag/lists" {...triggerProps("Lists")}>Lists <span className="nav-caret" aria-hidden="true" /></a>
+            <button type="button" {...triggerProps("Explore")}>Explore <span className="nav-caret" aria-hidden="true" /></button>
+            <button type="button" {...triggerProps("Information")}>Info <span className="nav-caret" aria-hidden="true" /></button>
+          </div>
+        </nav>
+        <div className="header-tools">
+          <div className="header-weather"><WeatherStrip /></div>
+          <div className="header-search"><SiteSearch /></div>
+          <a className="nav-cta" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
+        </div>
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
           <nav aria-label="Mobile navigation">
@@ -194,77 +257,64 @@ export function SiteHeader() {
           </nav>
         </details>
       </div>
-      <nav className="desktop-nav" aria-label="Main navigation" onMouseLeave={scheduleClose}>
-        <div className="nav-links-wrap">
-          {primaryNavigation.map((item) => (
-            <a key={item} href={`/category/${item.toLowerCase()}`} {...triggerProps(item)}>{item} <span className="nav-caret" aria-hidden="true" /></a>
-          ))}
-          <a href="/tag/top-pick" {...triggerProps("TopPicks")}>Top Picks <span className="nav-caret" aria-hidden="true" /></a>
-          <a href="/tag/lists" {...triggerProps("Lists")}>Lists <span className="nav-caret" aria-hidden="true" /></a>
-          <button type="button" {...triggerProps("Explore")}>Explore <span className="nav-caret" aria-hidden="true" /></button>
-          <button type="button" {...triggerProps("Information")}>Information <span className="nav-caret" aria-hidden="true" /></button>
-        </div>
-        <a className="nav-cta" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
-
-        <div
-          className={`mega-menu-panel${activeMenu ? " is-open" : ""}`}
-          onMouseEnter={clearCloseTimer}
-          onMouseLeave={scheduleClose}
-        >
-          <div className="mega-menu-inner">
-            {(["Eat", "Drink", "Visit", "Transport", "TopPicks", "Lists"] as PrimaryKey[]).map((key) => (
-              <div key={key} className="mega-menu-content" hidden={activeMenu !== key}>
-                <div className="mega-menu-header">
-                  <p className="mega-menu-blurb">{megaMenuMeta[key].blurb}</p>
-                  <a className="mega-menu-viewall" href={megaMenuMeta[key].viewAllHref}>{megaMenuMeta[key].viewAllLabel} <span aria-hidden="true">→</span></a>
-                </div>
-                <div className="mega-menu-cards">
-                  {megaMenuCards[key].map((card) => (
-                    <a key={card.slug} className="mega-menu-card" href={`/${card.slug}`}>
-                      <span className="mega-menu-card-image"><img src={card.image} alt="" loading="lazy" /></span>
-                      <span className="mega-menu-card-title">{card.title}</span>
-                      <span className="mega-menu-card-excerpt">{card.excerpt}</span>
-                    </a>
-                  ))}
-                </div>
+      <div
+        className={`mega-menu-panel${activeMenu ? " is-open" : ""}`}
+        onMouseEnter={clearCloseTimer}
+        onMouseLeave={scheduleClose}
+      >
+        <div className="mega-menu-inner">
+          {(["Eat", "Drink", "Visit", "Transport", "TopPicks", "Lists"] as PrimaryKey[]).map((key) => (
+            <div key={key} className="mega-menu-content" hidden={activeMenu !== key}>
+              <div className="mega-menu-header">
+                <p className="mega-menu-blurb">{megaMenuMeta[key].blurb}</p>
+                <a className="mega-menu-viewall" href={megaMenuMeta[key].viewAllHref}>{megaMenuMeta[key].viewAllLabel} <span aria-hidden="true">→</span></a>
               </div>
-            ))}
-
-            <div className="mega-menu-content" hidden={activeMenu !== "Explore"}>
-              <div className="mega-menu-links-layout">
-                <div className="mega-menu-link-grid">
-                  {exploreLinks.map((item) => (
-                    <a key={item.label} className="mega-menu-link-card" href={item.href}>
-                      <span className="mega-menu-link-title">{item.label}</span>
-                      <span className="mega-menu-link-desc">{item.desc}</span>
-                    </a>
-                  ))}
-                </div>
-                <a className="mega-menu-promo" href={explorePromo.href}>
-                  <span className="mega-menu-promo-image"><img src={explorePromo.image} alt="" loading="lazy" /></span>
-                  <span className="mega-menu-promo-title">{explorePromo.title}</span>
-                  <span className="mega-menu-promo-desc">{explorePromo.desc}</span>
-                </a>
+              <div className="mega-menu-cards">
+                {megaMenuCards[key].map((card) => (
+                  <a key={card.slug} className="mega-menu-card" href={`/${card.slug}`}>
+                    <span className="mega-menu-card-image"><img src={card.image} alt="" loading="lazy" /></span>
+                    <span className="mega-menu-card-title">{card.title}</span>
+                    <span className="mega-menu-card-excerpt">{card.excerpt}</span>
+                  </a>
+                ))}
               </div>
             </div>
+          ))}
 
-            <div className="mega-menu-content" hidden={activeMenu !== "Information"}>
-              <div className="mega-menu-links-layout">
-                <div className="mega-menu-link-list">
-                  {informationLinks.map((item) => (
-                    <a key={item.href} href={item.href}>{item.label}</a>
-                  ))}
-                </div>
-                <a className="mega-menu-promo" href={informationPromo.href}>
-                  <span className="mega-menu-promo-image"><img src={informationPromo.image} alt="" loading="lazy" /></span>
-                  <span className="mega-menu-promo-title">{informationPromo.title}</span>
-                  <span className="mega-menu-promo-desc">{informationPromo.desc}</span>
-                </a>
+          <div className="mega-menu-content" hidden={activeMenu !== "Explore"}>
+            <div className="mega-menu-links-layout">
+              <div className="mega-menu-link-grid">
+                {exploreLinks.map((item) => (
+                  <a key={item.label} className="mega-menu-link-card" href={item.href}>
+                    <span className="mega-menu-link-title">{item.label}</span>
+                    <span className="mega-menu-link-desc">{item.desc}</span>
+                  </a>
+                ))}
               </div>
+              <a className="mega-menu-promo" href={explorePromo.href}>
+                <span className="mega-menu-promo-image"><img src={explorePromo.image} alt="" loading="lazy" /></span>
+                <span className="mega-menu-promo-title">{explorePromo.title}</span>
+                <span className="mega-menu-promo-desc">{explorePromo.desc}</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="mega-menu-content" hidden={activeMenu !== "Information"}>
+            <div className="mega-menu-links-layout">
+              <div className="mega-menu-link-list">
+                {informationLinks.map((item) => (
+                  <a key={item.href} href={item.href}>{item.label}</a>
+                ))}
+              </div>
+              <a className="mega-menu-promo" href={informationPromo.href}>
+                <span className="mega-menu-promo-image"><img src={informationPromo.image} alt="" loading="lazy" /></span>
+                <span className="mega-menu-promo-title">{informationPromo.title}</span>
+                <span className="mega-menu-promo-desc">{informationPromo.desc}</span>
+              </a>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }

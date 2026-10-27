@@ -8,12 +8,13 @@ type KlookSidebarWidgetProps = {
 };
 
 /**
- * The left rail only shows above 1200px (see .article-left-sidebar in
- * globals.css). Below that it is display:none, but a widget rendered there
- * still loaded its Klook iframe on every phone, so the widget is only
- * rendered at all when the rail is actually on screen.
+ * The right sidebar's booking card only shows in the two-column layout, above
+ * 52rem (see app/styles/layout.css). Below that the sidebar card is hidden and
+ * the in-article copy (.mobile-booking-card, placed by app/[slug]/page.tsx)
+ * takes over, so the widget is only rendered at all when the column is
+ * actually on screen - otherwise both iframes would load on a phone.
  */
-const RAIL_QUERY = "(min-width: 1201px)";
+const RAIL_QUERY = "(min-width: 52.0625rem)";
 
 /**
  * Klook's iframe-init script replaces this widget's children (an <ins>
@@ -36,7 +37,7 @@ const RAIL_QUERY = "(min-width: 1201px)";
  */
 export function KlookSidebarWidget({ amount }: KlookSidebarWidgetProps) {
   const [showRail, setShowRail] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const query = window.matchMedia(RAIL_QUERY);
@@ -53,8 +54,7 @@ export function KlookSidebarWidget({ amount }: KlookSidebarWidgetProps) {
   if (!showRail) return null;
 
   return (
-    <section className="sidebar-section sidebar-klook" ref={ref}>
-      <p className="sidebar-kicker">Klook deals</p>
+    <div className="sidebar-klook" ref={ref}>
       <ins
         className="klk-aff-widget"
         data-adid="1371607"
@@ -70,6 +70,6 @@ export function KlookSidebarWidget({ amount }: KlookSidebarWidgetProps) {
       >
         <a href="//www.klook.com/">Klook.com</a>
       </ins>
-    </section>
+    </div>
   );
 }

@@ -1,0 +1,422 @@
+/* ==========================================================================
+   Components: cards, buttons and callouts.
+   Imported after globals.css (app/layout.tsx), so at equal specificity these
+   rules win on source order. Every value comes from the tokens in
+   globals.css :root (--space-*, --radius-*, --shadow-*, --fs-*, colours).
+   See data/research/visual-polish-vs-city-break-geek.md items 6, 11 and 16.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   Card (components/Card.tsx)
+   One card for every guide listing: homepage rows, carousels, first timers
+   and category archives. A 3:2 photo (TTG's photos average 1.52:1, so it
+   crops almost nothing), red eyebrow, serif title, optional excerpt/footer.
+   -------------------------------------------------------------------------- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  color: var(--ink);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line);
+  box-shadow: var(--shadow-2);
+}
+/* The title link is stretched over the card, so the ring goes on the card. */
+.card:has(.card-link:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.card .card-link:focus-visible { outline: none; }
+
+.card-media {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--surface-strong);
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.card:hover .card-media img { transform: scale(1.035); }
+
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+.card-eyebrow {
+  margin: 0;
+  color: var(--red-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.card-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+}
+.card-link { color: inherit; transition: color .18s ease; }
+.card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.card:hover .card-link { color: var(--red-text); }
+.card-excerpt {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+.card-meta { color: var(--muted); font-size: var(--fs-label); }
+.card-more {
+  color: var(--red-text);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+.card-more span { display: inline-block; transition: transform .2s ease; }
+.card:hover .card-more span { transform: translateX(3px); }
+
+/* List / compact variant: a 3:2 thumbnail beside the copy. */
+.card--list {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  align-items: stretch;
+}
+.card--list .card-media { aspect-ratio: auto; min-height: 6rem; }
+.card--list .card-body {
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-5);
+}
+.card--list .card-title { font-size: 1.125rem; line-height: 1.25; }
+
+/* Card in a horizontally scrolling rail (the two homepage carousels). */
+.card--rail {
+  flex: 0 0 min(20rem, 78vw);
+  scroll-snap-align: start;
+}
+
+/* Grids. 3 / 2 / 1 columns; list cards run 2 / 1. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6) var(--space-5);
+}
+.card-grid--list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--space-5);
+}
+@media (max-width: 960px) {
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .card-grid, .card-grid--list { grid-template-columns: 1fr; gap: var(--space-4); }
+  .card-body { padding: var(--space-4); }
+  .card--list { grid-template-columns: 7rem minmax(0, 1fr); }
+  .card--list .card-body { padding: var(--space-3) var(--space-4); }
+  .card--list .card-title { font-size: var(--fs-body); }
+}
+
+/* The carousels' tracks: room for the hover lift and shadow. */
+.carousel-track, .latest-carousel-track {
+  gap: var(--space-5);
+  padding-block: var(--space-2) var(--space-4);
+}
+/* Snap to the padded edge, not the container edge: without this the browser
+   scrolls the first card flush against the screen edge on load. Values match
+   each track's padding-inline. */
+.carousel-track { scroll-padding-inline: clamp(16px, 4vw, 32px); }
+.latest-carousel-track { scroll-padding-inline: max(24px, calc((100% - 1560px) / 2)); }
+
+/* Recommended reading (built in lib/content.ts as .recommended-card, so it is
+   styled here to match .card--list rather than given new markup). */
+.recommended-reading {
+  padding: var(--space-6);
+  border-top: 0;
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+}
+.recommended-reading-heading > span {
+  color: var(--red-text);
+  font: 800 var(--fs-label)/1 var(--font-sans);
+  letter-spacing: .08em;
+}
+.recommended-reading-grid { gap: var(--space-4); }
+/* Stacked like .card: the reading column is too narrow for two side-by-side
+   thumbnail rows. */
+.article-content .recommended-card {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 0;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  box-shadow: var(--shadow-1);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.article-content .recommended-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line);
+  box-shadow: var(--shadow-2);
+}
+.article-content .recommended-card > img,
+.article-content .recommended-card-placeholder {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: cover;
+}
+.recommended-card-placeholder { background: var(--surface-strong); }
+.article-content .recommended-card-body { justify-content: flex-start; gap: var(--space-2); padding: var(--space-4) var(--space-6) var(--space-5) var(--space-4); }
+.recommended-card-label {
+  margin-bottom: 0;
+  color: var(--red-text);
+  font: 800 var(--fs-label)/1.3 var(--font-sans);
+  letter-spacing: .08em;
+}
+.article-content .recommended-card strong {
+  color: var(--ink);
+  font: 600 1.125rem/1.25 var(--font-serif);
+}
+.article-content .recommended-card:hover strong { color: var(--red-text); }
+.recommended-card-arrow {
+  right: var(--space-4);
+  bottom: var(--space-3);
+  color: var(--red-text);
+  font: 700 var(--fs-body)/1 var(--font-sans);
+  transition: transform .2s ease;
+}
+.article-content .recommended-card:hover .recommended-card-arrow { transform: translateX(3px); }
+@media (max-width: 620px) {
+  .recommended-reading { padding: var(--space-5) var(--space-4); }
+  /* One column on phones: back to a thumbnail row so two cards are not a
+     full screen of photo. */
+  .article-content .recommended-card { grid-template-columns: 7rem minmax(0, 1fr); grid-template-rows: auto; }
+  .article-content .recommended-card > img,
+  .article-content .recommended-card-placeholder { height: 100%; min-height: 6rem; aspect-ratio: auto; }
+  .article-content .recommended-card-body { justify-content: center; padding: var(--space-3) var(--space-6) var(--space-3) var(--space-4); }
+  .article-content .recommended-card strong { font-size: var(--fs-body); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover, .article-content .recommended-card:hover { transform: none; }
+  .card:hover .card-media img { transform: none; }
+}
+
+
+/* --------------------------------------------------------------------------
+   Buttons
+   .btn: the one pill (--red-text fill, white label, 5.58:1).
+   .btn--secondary: outline on paper. .btn--sm: compact (sidebar, per-hotel).
+   The affiliate CTAs are written into post HTML by lib/content.ts and the
+   posts themselves, so they get the same styles through their existing
+   selectors rather than new classes; hrefs and tracking classes untouched.
+   .button is the old name, kept as an alias (HomeHero uses it).
+   -------------------------------------------------------------------------- */
+.btn,
+.button,
+.article-content .article-klook-cta a,
+.article-content .article-wise-cta a,
+.sidebar-wise-card a,
+.article-content a.hotel-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.875rem;
+  padding: var(--space-3) var(--space-5);
+  border: 1.5px solid var(--red-text);
+  border-radius: var(--radius-pill);
+  background: var(--red-text);
+  box-shadow: none;
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: .01em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover,
+.button:hover,
+.article-content .article-klook-cta a:hover,
+.article-content .article-wise-cta a:hover,
+.sidebar-wise-card a:hover,
+.article-content a.hotel-cta-button:hover {
+  border-color: var(--red-text-hover);
+  background: var(--red-text-hover);
+  box-shadow: var(--shadow-2);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+.btn:active, .button:active { transform: none; box-shadow: none; }
+
+/* Larger default for standalone page CTAs (hero, 404). */
+.btn, .button { font-size: 1rem; padding-inline: var(--space-6); }
+
+.btn--secondary,
+.btn--secondary:hover {
+  background: transparent;
+  color: var(--ink);
+}
+.btn--secondary { border-color: var(--line); }
+.btn--secondary:hover { border-color: var(--ink); background: var(--white); }
+
+/* Compact pills: one per hotel (up to 20 a page) and the sidebar card. */
+.sidebar-wise-card a,
+.article-content a.hotel-cta-button {
+  min-height: 2.5rem;
+  padding: var(--space-2) var(--space-4);
+}
+
+/* Same keyboard ring as everything else (the hotel pill had its own ink one). */
+.article-content a.hotel-cta-button:focus-visible,
+.article-content .article-klook-cta a:focus-visible,
+.article-content .article-wise-cta a:focus-visible,
+.sidebar-wise-card a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Trailing arrow in place of the outbound-link box icon. Repeats the [href]
+   filters so it outweighs the marker rule in globals.css. */
+.article-content :is(.article-klook-cta, .article-wise-cta) a[href^="http"]:not([href*="taipeitravelgeek.com"])::after {
+  content: "\2192";
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  background: none;
+  -webkit-mask: none;
+  mask: none;
+  transition: transform .18s ease;
+}
+.article-content :is(.article-klook-cta, .article-wise-cta) a:hover::after { transform: translateX(2px); }
+.article-content .article-klook-cta span,
+.article-content .article-wise-cta span { font-size: inherit; }
+
+.article-content .article-klook-cta,
+.article-content .article-wise-cta { margin: var(--space-6) 0; }
+.article-content .article-klook-cta.is-pair { gap: var(--space-3); }
+
+@media (max-width: 620px) {
+  /* Full width on phones: a bigger target, and long labels wrap cleanly. */
+  .article-content .article-klook-cta a,
+  .article-content .article-wise-cta a { width: 100%; }
+}
+
+
+/* --------------------------------------------------------------------------
+   Callouts
+   Quick Verdict, blockquote tips and Perfect For share one shape: a warm
+   surface, a 4px red left rule, square left / rounded right corners, and
+   the same padding. No outer border, no shadow, no cool grey.
+   -------------------------------------------------------------------------- */
+.article-content blockquote,
+.article-content .quick-verdict,
+.article-content .perfect-for {
+  padding: var(--space-5) var(--space-6);
+  border: 0;
+  border-left: 4px solid var(--red);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--surface-strong);
+  box-shadow: none;
+}
+.article-content blockquote,
+.article-content .quick-verdict { margin: var(--space-7) 0; }
+
+.article-content blockquote { color: var(--ink-body); }
+.article-content blockquote p,
+.article-content .quick-verdict li { font-size: var(--fs-body); }
+.article-content blockquote p + p { margin-top: var(--space-3); }
+.article-content blockquote p > a:only-child { font-size: var(--fs-body); }
+.article-content blockquote p > a:only-child::after { color: var(--red-text); }
+/* Link-only blockquotes: a quiet hover, no lift. */
+.article-content blockquote:has(p > a:only-child):hover {
+  transform: none;
+  box-shadow: none;
+  border-left-color: var(--red-text);
+}
+
+.article-content .quick-verdict-title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-h3);
+}
+.article-content .quick-verdict ul { gap: var(--space-3); }
+.article-content .quick-verdict li::before { top: .65em; background: var(--red-text); }
+
+.article-content .perfect-for {
+  gap: var(--space-2) var(--space-4);
+  margin: var(--space-2) 0 var(--space-6);
+}
+.article-content .perfect-for-label {
+  color: var(--red-text);
+  font-size: var(--fs-label);
+  letter-spacing: .08em;
+}
+.article-content ul.perfect-for-tags { gap: var(--space-2); }
+.article-content ul.perfect-for-tags li {
+  padding: var(--space-1) var(--space-3);
+  border-color: var(--line-soft);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-small);
+}
+
+@media (max-width: 620px) {
+  .article-content blockquote,
+  .article-content .quick-verdict,
+  .article-content .perfect-for { padding: var(--space-4) var(--space-5); }
+}
+
+/* Affiliate disclosure: one muted line, no box. */
+.affiliate-disclosure {
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: .8125rem;
+  line-height: 1.5;
+}

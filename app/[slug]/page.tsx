@@ -2,29 +2,29 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { LeftSidebar } from "@/components/LeftSidebar";
 import { RightSidebar } from "@/components/RightSidebar";
+import { RelatedGuides } from "@/components/RelatedGuides";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { AuthorBio } from "@/components/AuthorBio";
-import { PostFooterNav } from "@/components/PostFooterNav";
 import { SunsetTimes } from "@/components/SunsetTimes";
 import { DinTaiFungQueue } from "@/components/DinTaiFungQueue";
 import { NextTrainBoards } from "@/components/NextTrain";
 import { DiagramLightbox } from "@/components/DiagramLightbox";
 import { WalkRouteMap } from "@/components/WalkRouteMap";
 import { getWalk, insertWalkRoute } from "@/lib/walks";
+import heroImageSizes from "@/lib/hero-images.json";
 import {
   calculateReadingTime,
   enhanceAffiliateLinks,
   enhanceChoiceGuideImages,
   enhanceContentHeadings,
   enhanceContentImages,
+  enhanceResponsiveImages,
   enhanceHotelCtaButtons,
   enhanceInlineAffiliateCTAs,
   enhanceLazyKlookWidgets,
-  enhanceMobileKlookWidget,
   enhancePerfectForSection,
   enhanceProsCons,
   enhanceRecommendedReading,
@@ -39,13 +39,12 @@ import {
   getRelatedPosts,
   hasAffiliateLinks,
   isGenuinelyReviewed,
-  hasManualRecommendedReading,
   fillQueueMarker,
   insertNearbyGuides,
   nonEditorialSlugs,
   posts,
+  type ContentPost,
   renderNearbyGuidesSection,
-  renderRecommendedReadingSection,
   showsGenericUnit,
 } from "@/lib/content";
 
@@ -115,6 +114,105 @@ const legacySlugRedirects: Record<string, string> = {
 const retiredToArchive: Record<string, string> = {
   "taipei-suggested-routes": "/category/routes",
 };
+
+type HeroImage = { src: string; width?: number; height?: number };
+
+const heroSizes = heroImageSizes as Record<string, { src: string; width: number; height: number }>;
+
+/**
+ * The file to show as a full-width hero. posts.json points at WordPress's
+ * 1024px copy, which looks soft stretched across a wide screen; where a
+ * larger copy of the same photo exists, lib/hero-images.json (built by
+ * scripts/generate-hero-images.mjs) names it, with its real size. Anything
+ * not in the file keeps its own src and reads its size off the filename.
+ */
+function heroImageFor(src: string): HeroImage {
+  const known = heroSizes[src];
+  if (known) return known;
+  const sized = /-(\d{2,5})x(\d{2,5})\.\w+$/.exec(src.split("?")[0]);
+  return sized ? { src, width: Number(sized[1]), height: Number(sized[2]) } : { src };
+}
+
+/** The 2019 Google-Maps-style route screenshots, with lettered A-E pins. */
+const LEGACY_ROUTE_IMAGE = /(route|map|zhongzheng-district)[^/]*$/i;
+
+function isWalkPost(post: ContentPost) {
+  return /-(walking-route|walk|walking-tour)$/.test(post.slug) || post.content.includes("data-walk-route");
+}
+
+/**
+ * Walk posts must not lead with the legacy route screenshot: its lettered
+ * A-E pins contradict the numbered stops on the live map below. Those posts
+ * lead with the first real photo in the post instead (and with no image at
+ * all if there isn't one). Walks whose featured image is already a photo
+ * keep it.
+ */
+function heroSourceFor(post: ContentPost): string | null {
+  const featured = post.featuredImage || null;
+  if (!featured || !isWalkPost(post) || !LEGACY_ROUTE_IMAGE.test(featured)) return featured;
+  const photos = [...post.content.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["']/gi)].map((m) => m[1]);
+  return photos.find((src) => !LEGACY_ROUTE_IMAGE.test(src) && !/\.png$/i.test(src)) ?? null;
+}
+
+/**
+ * The compact booking card readers see on a phone. In the one-column layout
+ * the sidebar's "Book in Taipei" card is hidden (it would land at the foot of
+ * the page), so the same unit goes into the article itself, where it is seen:
+ * straight after the Quick Verdict, or after the first two paragraphs when a
+ * post has none. Hidden above 52rem, where the sidebar card shows instead, so
+ * the hidden copy never intersects and never loads its iframe (it is marked
+ * lazy by enhanceLazyKlookWidgets like every other body widget).
+ *
+ * This replaces enhanceMobileKlookWidget's "in-post-klook" copy of the same
+ * widget (1371607), so there is only ever one per page. data-placement feeds
+ * the affiliate_click tracker in app/layout.tsx.
+ */
+const MOBILE_BOOKING_CARD =
+  `<aside class="mobile-booking-card" data-placement="mobile-inline" aria-label="Book in Taipei">` +
+  `<p class="booking-card-kicker">Book in Taipei</p>` +
+  `<ins class="klk-aff-widget" data-adid="1371607" data-lang="" data-currency="" data-cardh="126" data-padding="92" data-lgh="470" data-edgevalue="655" data-amount="2" data-prod="static_widget"><a href="//www.klook.com/">Klook.com</a></ins>` +
+  `<a class="booking-card-link" href="https://www.klook.com/en-GB/search/result/?query=Taipei&amp;aid=8733" target="_blank" rel="sponsored noopener noreferrer">Browse Taipei tours on Klook <span aria-hidden="true">→</span></a>` +
+  `</aside>`;
+
+/** Index just after the div that opens at `start`, counting nested divs. */
+function endOfDiv(html: string, start: number): number {
+  const tag = /<(\/?)div\b[^>]*>/gi;
+  tag.lastIndex = start;
+  let depth = 0;
+  for (let m = tag.exec(html); m; m = tag.exec(html)) {
+    depth += m[1] ? -1 : 1;
+    if (depth === 0) return m.index + m[0].length;
+  }
+  return -1;
+}
+
+function insertMobileBookingCard(html: string, show: boolean): string {
+  if (!show) return html;
+
+  const verdict = html.search(/<div\b[^>]*class=["'][^"']*\bquick-verdict\b/i);
+  if (verdict !== -1) {
+    const end = endOfDiv(html, verdict);
+    if (end !== -1) return html.slice(0, end) + MOBILE_BOOKING_CARD + html.slice(end);
+  }
+
+  // After the second paragraph at the top level of the body - not one inside
+  // a box, list or figure.
+  const blockTag = /<(\/?)(div|figure|ul|ol|table|section|blockquote|aside|details|nav)\b[^>]*>|<\/p>/gi;
+  let depth = 0;
+  let paragraphs = 0;
+  for (let m = blockTag.exec(html); m; m = blockTag.exec(html)) {
+    if (m[0].toLowerCase() === "</p>") {
+      if (depth === 0 && ++paragraphs === 2) {
+        const at = m.index + m[0].length;
+        return html.slice(0, at) + MOBILE_BOOKING_CARD + html.slice(at);
+      }
+    } else {
+      depth = Math.max(0, depth + (m[1] ? -1 : 1));
+    }
+  }
+  const firstH2 = html.search(/<h2\b/i);
+  return firstH2 === -1 ? html + MOBILE_BOOKING_CARD : html.slice(0, firstH2) + MOBILE_BOOKING_CARD + html.slice(firstH2);
+}
 
 function withoutDuplicateLeadImage(content: string, image: string | null, isPage: boolean) {
   if (!image || isPage) return content;
@@ -198,7 +296,8 @@ export default async function ArticlePage({ params }: PageProperties) {
   const post = getPost(slug);
   if (!post) notFound();
 
-  const heroImage = post.featuredImage || null;
+  const heroImage = heroSourceFor(post);
+  const hero = heroImage ? heroImageFor(heroImage) : null;
   const isPage = post.type === "page";
   const rawContent = enhanceThreeImageGalleries(
     enhanceTables(
@@ -212,7 +311,7 @@ export default async function ArticlePage({ params }: PageProperties) {
             ),
             post.slug
           ),
-          heroImage
+          post.featuredImage || null
         )
       )
     )
@@ -227,12 +326,16 @@ export default async function ArticlePage({ params }: PageProperties) {
   // placed before Recommended Reading is appended, so it lands above it.
   const withNearbyGuides = insertNearbyGuides(enhancedContent, renderNearbyGuidesSection(post));
 
-  // If this post doesn't already hand-author a "Recommended Reading:" block,
-  // auto-append one based on shared categories/tags - replicates the old
-  // WordPress related-posts widget without needing per-post curation.
-  const withRecommendedReading = (nonEditorialSlugs.has(post.slug) || hasManualRecommendedReading(post.content))
-    ? withNearbyGuides
-    : withNearbyGuides + renderRecommendedReadingSection(getRelatedPosts(post, 3));
+  // Related guides used to be auto-appended to the body here as a
+  // "Recommended reading" box. They now render as the full-width band after
+  // the article on every screen size (RelatedGuides), so they aren't
+  // repeated. Guides a post already links to by hand are skipped there.
+  const related = nonEditorialSlugs.has(post.slug)
+    ? []
+    : getRelatedPosts(post, 12)
+        .filter((candidate) => !post.content.includes(`href="/${candidate.slug}"`))
+        .slice(0, 3);
+  const showKlookDeals = showsGenericUnit(post.slug, "klookDeals");
 
   // The auto-appended hotel deals widget (renderHotelDealsWidget, since deleted) used to go
   // here, after Recommended Reading on every eligible post. Klook's own
@@ -249,10 +352,10 @@ export default async function ArticlePage({ params }: PageProperties) {
   // they get the same rel/target treatment as every other affiliate link, and
   // the Klook widgets are marked lazy last, once every widget is in place.
   const walk = getWalk(post.slug);
-  const finalContent = insertWalkRoute(fillQueueMarker(enhanceContentImages(enhanceLazyKlookWidgets(enhanceAffiliateLinks(enhanceHotelCtaButtons(enhanceMobileKlookWidget(
-    withRecommendedReading,
-    post.slug
-  )))))), walk);
+  const finalContent = insertWalkRoute(fillQueueMarker(enhanceResponsiveImages(enhanceContentImages(enhanceLazyKlookWidgets(enhanceAffiliateLinks(enhanceHotelCtaButtons(insertMobileBookingCard(
+    withNearbyGuides,
+    showKlookDeals
+  ))))))), walk);
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];
@@ -286,9 +389,19 @@ export default async function ArticlePage({ params }: PageProperties) {
       <SiteHeader />
 
       <main>
-        <section className={`article-hero${heroImage ? " article-hero-with-image" : ""}`}>
-          {heroImage && <img className="article-hero-image" src={heroImage} alt={post.title} />}
-          {heroImage && <div className="article-hero-scrim" />}
+        <section className={`article-hero${hero ? " article-hero-with-image" : ""}`}>
+          {hero && (
+            <img
+              className="article-hero-image"
+              src={hero.src}
+              alt={post.title}
+              width={hero.width}
+              height={hero.height}
+              fetchPriority="high"
+              decoding="async"
+            />
+          )}
+          {hero && <div className="article-hero-scrim" />}
           <div className="wrap article-hero-content">
             <Breadcrumbs items={breadcrumbItems} />
             <div className="article-heading-meta">
@@ -308,8 +421,7 @@ export default async function ArticlePage({ params }: PageProperties) {
           </div>
         </section>
 
-        <div className="wrap article-3col-layout">
-          <LeftSidebar categories={post.categories} showKlookDeals={showsGenericUnit(post.slug, "klookDeals")} />
+        <div className="wrap article-grid">
           <div className="article-main-column">
             {post.tags.length > 0 && (
               <div className="article-tags" aria-label="Tags for this article">
@@ -338,10 +450,14 @@ export default async function ArticlePage({ params }: PageProperties) {
             {finalContent.includes("article-diagram") && <DiagramLightbox />}
             {walk && finalContent.includes("data-walk-map") && <WalkRouteMap walk={walk} />}
             <AuthorBio />
-            <PostFooterNav categories={post.categories} />
           </div>
-          <RightSidebar headings={headings} categories={post.categories} />
+          <RightSidebar
+            headings={headings}
+            showKlookDeals={showKlookDeals}
+            showWise={showsGenericUnit(post.slug, "wise")}
+          />
         </div>
+        <RelatedGuides related={related} />
         <KlookAffiliate />
       </main>
       <SiteFooter />

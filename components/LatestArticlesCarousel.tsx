@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { Card } from "@/components/Card";
 
 export type CarouselItem = {
   slug: string;
@@ -39,19 +40,15 @@ export function LatestArticlesCarousel({ items }: { items: CarouselItem[] }) {
       </div>
       <div className="latest-carousel-track wrap" ref={track}>
         {items.map((post) => (
-          <a className="latest-carousel-card" href={`/${post.slug}`} key={post.slug}>
-            <div className="latest-card-bg-wrap">
-              <img src={post.featuredImage || "/images/taipei-skyline.webp"} alt="" />
-            </div>
-            <div className="latest-card-overlay" />
-            <div className="latest-card-content">
-              <p className="latest-card-category">{post.category}</p>
-              <h3>{post.title}</h3>
-              <span className="latest-card-cta">
-                Read Article <span aria-hidden="true">→</span>
-              </span>
-            </div>
-          </a>
+          <Card
+            key={post.slug}
+            className="card--rail"
+            href={`/${post.slug}`}
+            title={post.title}
+            image={post.featuredImage}
+            eyebrow={post.category}
+            more="Read article"
+          />
         ))}
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -15,8 +16,8 @@ export default function NotFound() {
           The page or guide you were looking for doesn’t exist or has moved. Explore our main travel sections below to get back on track.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
-          <a className="button" href="/">Back to Home Page →</a>
-          <a className="button" style={{ background: "var(--navy)" }} href="/taipei-guide">Taipei Guide →</a>
+          <Link className="btn" href="/">Back to Home Page →</Link>
+          <Link className="btn btn--secondary" href="/taipei-guide">Taipei Guide →</Link>
         </div>
       </main>
       <SiteFooter />

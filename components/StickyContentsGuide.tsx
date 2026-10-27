@@ -18,8 +18,9 @@ export function RightSidebarContentsWidget({ headings }: ContentsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Collapse by default on mobile screens (< 880px)
-    if (window.innerWidth < 880) {
+    // Collapse by default in the one-column layout (52rem and below, see
+    // app/styles/layout.css), where the card sits above the article.
+    if (window.matchMedia("(max-width: 52rem)").matches) {
       setIsOpen(false);
     } else {
       setIsOpen(true);
@@ -38,8 +39,7 @@ export function RightSidebarContentsWidget({ headings }: ContentsProps) {
           }
         }
       },
-      { rootMargin: "-145px 0px -70% 0px", threshold: 0.1 }
-
+      { rootMargin: "-90px 0px -70% 0px", threshold: 0.1 }
     );
 
     headings.forEach((h) => {

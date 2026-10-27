@@ -1,92 +1,55 @@
-import Link from "next/link";
-import { getCategoriesWithCounts, getTagsWithCounts, type TaxonomyTerm } from "@/lib/content";
 import { RightSidebarContentsWidget, type HeadingItem } from "@/components/StickyContentsGuide";
+import { KlookSidebarWidget } from "@/components/KlookSidebarWidget";
 
 type RightSidebarProps = {
   headings: HeadingItem[];
-  categories: TaxonomyTerm[];
+  /** Off for pages that opt out of "klookDeals" in GENERIC_UNIT_OPT_OUTS (lib/content.ts). */
+  showKlookDeals?: boolean;
+  /** Off for pages that opt out of "wise" in GENERIC_UNIT_OPT_OUTS. */
+  showWise?: boolean;
 };
 
-const usefulLinks = [
-  { href: "/taipei-essentials-guide", label: "First time in Taipei" },
-  { href: "/one-day-itineraries", label: "One-day itineraries" },
-  { href: "/taiwan-easycard", label: "Getting around with EasyCard" },
-  { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
-];
+const KLOOK_SEARCH_URL = "https://www.klook.com/en-GB/search/result/?query=Taipei&aid=8733";
+const WISE_URL = "https://wise.com/invite/ecac/robertrichardm17";
 
-// Both lists are derived from the content rather than hand-written, so nothing
-// can silently go missing. This section previously listed five categories out
-// of twenty, omitting Restaurants and Buildings - the second and fourth
-// largest on the site.
-const categoryPills = getCategoriesWithCounts();
-const tagIndex = getTagsWithCounts(3);
+/**
+ * The article's one side column, as on City Break Geek: the contents card,
+ * and under it one compact "Book in Taipei" card. The whole column pins
+ * below the header (--sticky-top in app/styles/layout.css).
+ *
+ * This replaces the old left rail of five Klook deal tiles and the long tail
+ * of sidebar sections (write for us, useful guides, categories, tags), which
+ * now sit in the band after the article (RelatedGuides). The booking card is
+ * desktop only: on a phone the same Klook unit is placed in the article,
+ * after the Quick Verdict (see insertMobileBookingCard in app/[slug]/page.tsx).
+ */
+export function RightSidebar({ headings, showKlookDeals = true, showWise = true }: RightSidebarProps) {
+  const showBooking = showKlookDeals || showWise;
 
-export function RightSidebar({ headings }: RightSidebarProps) {
   return (
-    <aside className="article-right-sidebar" aria-label="Article navigation and topics">
+    <aside className="article-right-sidebar" aria-label="Article contents and booking">
       <RightSidebarContentsWidget headings={headings} />
 
-      <section className="sidebar-section sidebar-contribute-card">
-        <p className="sidebar-kicker">WRITE FOR US</p>
-        <p className="contribute-title">
-          Love exploring the restaurant and bar scene in Taipei? We’d love your help writing articles for our blog!
-        </p>
-        <p className="contribute-action">
-          Please <a href="mailto:taipeitravelgeek@gmail.com" className="contribute-email-link">contact me</a>.
-        </p>
-      </section>
-
-      {/* Useful Guides (Desktop Sidebar) */}
-      <section className="sidebar-section sidebar-useful desktop-sidebar-useful">
-        <h3 className="sidebar-kicker">USEFUL GUIDES</h3>
-        <ul className="sidebar-useful-list">
-          {usefulLinks.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href}>
-                <span>{item.label}</span>
-                <span className="sidebar-arrow" aria-hidden="true">→</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Explore More (Desktop Sidebar) */}
-      <section className="sidebar-section sidebar-topics desktop-sidebar-topics">
-        <h3 className="sidebar-kicker">EXPLORE MORE</h3>
-        <div className="sidebar-pill-wrap">
-          {categoryPills.map((entry) => (
-            <Link
-              key={entry.term.slug}
-              href={`/category/${entry.term.slug}`}
-              className="sidebar-pill"
-              aria-label={`${entry.term.name}, ${entry.count} guides`}
-            >
-              {entry.term.name}
-              <span className="sidebar-pill-count" aria-hidden="true">{entry.count}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Browse by tag. Last in the sidebar deliberately - it's the deepest
-          level of browsing, and only reached by readers who scroll for it. */}
-      <section className="sidebar-section sidebar-tags desktop-sidebar-tags">
-        <h3 className="sidebar-kicker">BROWSE BY TAG</h3>
-        <div className="sidebar-tag-wrap">
-          {tagIndex.map((entry) => (
-            <Link
-              key={entry.term.slug}
-              href={`/tag/${entry.term.slug}`}
-              className="sidebar-tag"
-              aria-label={`${entry.term.name}, ${entry.count} guides`}
-            >
-              {entry.term.name}
-              <span className="sidebar-tag-count" aria-hidden="true">{entry.count}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {showBooking && (
+        <section className="sidebar-section sidebar-booking-card" aria-label="Book in Taipei">
+          <p className="booking-card-kicker">{showKlookDeals ? "Book in Taipei" : "Money tip"}</p>
+          {showKlookDeals && (
+            <>
+              <KlookSidebarWidget amount="3" />
+              <a className="booking-card-link" href={KLOOK_SEARCH_URL} target="_blank" rel="sponsored noopener noreferrer">
+                Browse Taipei tours on Klook <span aria-hidden="true">→</span>
+              </a>
+            </>
+          )}
+          {showWise && (
+            <p className="booking-card-wise">
+              {showKlookDeals && <><strong>Money tip:</strong>{" "}</>}
+              <a href={WISE_URL} target="_blank" rel="sponsored noopener noreferrer">Wise</a> gives
+              you the real exchange rate and a card that works at Taiwan ATMs.
+            </p>
+          )}
+        </section>
+      )}
     </aside>
   );
 }

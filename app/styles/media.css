@@ -1,0 +1,156 @@
+/* Article images: single photos, photo rows (galleries) and captions.
+
+   The markup comes from lib/content.ts: enhanceThreeImageGalleries rebuilds
+   every legacy WordPress gallery (ul.blocks-gallery-item, nested figures,
+   columns-N, the inline-styled hotel grids) as .photo-row, and
+   normaliseImageFigures strips inline styles off single wp-block-image
+   figures. Modelled on City Break Geek's .photo-row: one radius on the image,
+   no frame around it, and a small muted caption directly underneath. */
+
+/* ---------- Single images ---------- */
+
+/* Image figures lose the white card, border and shadow that globals.css puts
+   on every figure: the image already has its own radius, so the old frame
+   drew a second, larger rounded box around it. Embeds, tables and diagrams
+   keep the globals.css treatment. */
+.article-content figure.wp-block-image,
+.article-content .wp-block-image > figure,
+.article-content figure:not(.article-diagram):not(.photo-row__item):has(> img),
+.article-content figure:not(.article-diagram):not(.photo-row__item):has(> a > img) {
+  margin: var(--space-6) 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.article-content div.wp-block-image {
+  margin: var(--space-6) 0;
+}
+
+.article-content div.wp-block-image > figure {
+  margin: 0;
+}
+
+.article-content figure.wp-block-image img,
+.article-content .wp-block-image > figure img,
+.article-content figure:not(.article-diagram):not(.photo-row__item) > img,
+.article-content figure:not(.article-diagram):not(.photo-row__item) > a > img {
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.article-content figure.wp-block-image > a,
+.article-content .wp-block-image > figure > a {
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* ---------- Captions ---------- */
+
+/* One caption style for photos: small, muted, left-aligned under the image,
+   no box. (globals.css still styles captions under embeds and tables.) */
+.article-content .wp-block-image figcaption,
+.article-content .photo-row figcaption {
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-style: normal;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.article-content .photo-row figcaption {
+  font-size: 0.8125rem;
+}
+
+/* ---------- Photo rows ---------- */
+
+.article-content .photo-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-6) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-content .photo-row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.article-content .photo-row__item {
+  margin: 0;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.article-content .photo-row__item > a {
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.article-content .photo-row__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+}
+
+/* Maps, charts and plans: letterboxed rather than cropped. */
+.article-content .photo-row__item--contain img {
+  object-fit: contain;
+  background: var(--surface);
+  outline: 1px solid var(--line-soft);
+  outline-offset: -1px;
+}
+
+.article-content .photo-row__item > a:hover img {
+  opacity: 0.92;
+}
+
+/* Phones: a swipeable strip. Each photo takes most of the width, so the next
+   one peeks in from the right and says "there is more"; scroll-snap lands on
+   whole photos. The strip scrolls inside itself, so the page never does. */
+@media (max-width: 640px) {
+  .article-content .photo-row,
+  .article-content .photo-row--3 {
+    display: flex;
+    gap: var(--space-3);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .article-content .photo-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .article-content .photo-row__item {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+}
+
+
+/* Rows made only of portrait photos: 4:5, so a drink or a doorway is not
+   cropped to its middle third. */
+.article-content .photo-row--portrait .photo-row__item img {
+  aspect-ratio: 4 / 5;
+}

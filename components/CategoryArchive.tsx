@@ -3,6 +3,7 @@ import { ARCHIVE_PAGE_SIZE, displayDate, generateBreadcrumbSchema, getPostsByCat
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Card } from "@/components/Card";
 
 const pageSize = ARCHIVE_PAGE_SIZE;
 
@@ -20,23 +21,25 @@ export function categoryPageCount(category: TaxonomyTerm) {
   return Math.max(1, Math.ceil(getPostsByCategory(category.slug).length / pageSize));
 }
 
-function ArticleCard({ article }: { article: ContentPost }) {
+function ArticleCard({ article, categorySlug, eager }: { article: ContentPost; categorySlug: string; eager: boolean }) {
   // A 2019 publish date made rewritten guides look abandoned. Show the review
   // date where there genuinely was one.
   const shown = displayDate(article);
+  // Every card on /category/visit saying "Visit" is noise, so the eyebrow
+  // names the post's other category where it has one.
+  const eyebrow = (article.categories.find((term) => term.slug !== categorySlug) || article.categories[0])?.name;
   return (
-    <article className="archive-card">
-      <a className="archive-card-image" href={`/${article.slug}`}>
-        <img src={article.featuredImage || "/images/taipei-skyline.webp"} alt={article.title} />
-        {article.categories[0] && <span>{article.categories[0].name}</span>}
-      </a>
-      <div className="archive-card-copy">
-        <p>{shown.label ? `${shown.label} ${shown.date}` : shown.date}</p>
-        <h2><a href={`/${article.slug}`}>{article.title}</a></h2>
-        {article.excerpt && <p className="archive-card-excerpt">{article.excerpt}</p>}
-        <a className="text-link" href={`/${article.slug}`}>Read guide <span aria-hidden="true">→</span></a>
-      </div>
-    </article>
+    <Card
+      href={`/${article.slug}`}
+      title={article.title}
+      image={article.featuredImage}
+      eyebrow={eyebrow}
+      excerpt={article.excerpt}
+      meta={shown.label ? `${shown.label} ${shown.date}` : shown.date}
+      more="Read guide"
+      headingLevel="h2"
+      eager={eager}
+    />
   );
 }
 
@@ -85,8 +88,10 @@ export function CategoryArchive({
           <p>{description || "Local recommendations, practical tips and places worth your time in Taipei."}</p>
         </section>
 
-        <section className="wrap archive-grid" aria-label={`${category.name} guides`}>
-          {pageArticles.map((article) => <ArticleCard article={article} key={article.id} />)}
+        <section className="wrap archive-grid card-grid" aria-label={`${category.name} guides`}>
+          {pageArticles.map((article, index) => (
+            <ArticleCard article={article} categorySlug={category.slug} eager={index < 3} key={article.id} />
+          ))}
         </section>
 
         {totalPages > 1 && (

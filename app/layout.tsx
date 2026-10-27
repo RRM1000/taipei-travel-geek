@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import "./styles/components.css";
+import "./styles/layout.css";
+import "./styles/media.css";
 import { AFFILIATE_HOSTS } from "@/lib/affiliates";
 
 export const metadata: Metadata = {

@@ -1,6 +1,7 @@
 import importedPosts from "@/content/posts.json";
 import importedCategories from "@/content/categories.json";
 import { AFFILIATE_HOSTS } from "@/lib/affiliates";
+import mediaManifest from "@/lib/media-manifest.json";
 
 export type TaxonomyTerm = { name: string; slug: string };
 
@@ -1034,157 +1035,276 @@ export function enhanceAffiliateLinks(content: string): string {
   });
 }
 
-// Name is legacy - this now handles every WordPress gallery size, not just
-// three-image ones. Galleries of 5+ images used to fall through untouched,
-// leaving the raw <ul class="wp-block-gallery columns-3"> markup in the page.
-// That collided with two things: Tailwind ships a real `columns-3` utility
-// (CSS multi-column layout), which scattered the images into a newspaper-style
-// flow instead of a grid, and the site's generic `.article-content ul` rule
-// puts a red bullet marker on every <li>, since nothing told it these <li>s
-// were gallery items rather than a normal bullet list. Routing every gallery
-// through this same custom-markup path (as 2/3/4-image galleries already were)
-// sidesteps both issues at once - see national-taiwan-university and friends.
+/**
+ * Every WordPress gallery becomes one "photo row" (the City Break Geek
+ * `.photo-row` pattern; styles in app/styles/media.css).
+ *
+ * The content carries four generations of gallery markup, and each used to
+ * render differently:
+ *   - `<ul class="wp-block-gallery columns-N is-cropped">` with
+ *     `<li class="blocks-gallery-item"><figure><img>` items (2018-19 posts)
+ *   - `<figure class="wp-block-gallery has-nested-images columns-N">` with a
+ *     nested `<figure class="wp-block-image">` per photo (2020 on)
+ *   - the same without has-nested-images, and `aligncenter` variants
+ *   - `<div class="wp-block-gallery columns-2" style="display:grid...">`, the
+ *     hotel photo pairs written by scripts/add-*photos*.mjs, which carry
+ *     inline grid, 260px-height and caption styles on every element
+ * The raw `ul` form also collided with Tailwind's real `columns-3` utility and
+ * with the red bullets on `.article-content ul`, which is why every gallery is
+ * rebuilt here rather than styled in place.
+ *
+ * The rebuild keeps what matters - src, alt, width/height, the link around the
+ * image (most link to the full-size file, some to a related guide) and the
+ * caption - and drops the rest: inline styles, wp-image classes, the data-id/
+ * data-link attachment ids, and the figure-inside-figure framing.
+ *
+ * Name is legacy (it once only handled three-image galleries). It now runs on
+ * every gallery, whatever the image count.
+ */
+type GalleryItem = { img: string; link: string; caption: string };
+
+const GALLERY_OPEN = /<(figure|ul|div)\b[^>]*class=["'][^"']*\bwp-block-gallery\b[^"']*["'][^>]*>/i;
+
+// Maps, plans and charts are cropped by object-fit: cover, which slices off
+// titles and axis labels; they are letterboxed instead.
+const UNCROPPABLE = /map|kiln|rainfall|temperature|chart|graph|plan\b|timetable|menu/i;
+
+function attr(tag: string, name: string): string | null {
+  const m = tag.match(new RegExp(`\\s${name}=(["'])([\\s\\S]*?)\\1`, "i"));
+  return m ? m[2] : null;
+}
+
+function stripStyles(html: string): string {
+  return html.replace(/\s+style=(["'])[\s\S]*?\1/gi, "");
+}
+
+/** Finds the end of the element opened at `start`, counting nested tags of the same name. */
+function elementEnd(html: string, start: number, tagName: string): number {
+  const tags = new RegExp(`<(/?)${tagName}\\b[^>]*>`, "gi");
+  tags.lastIndex = start;
+  let depth = 0;
+  let m: RegExpExecArray | null;
+  while ((m = tags.exec(html))) {
+    depth += m[1] ? -1 : 1;
+    if (depth === 0) return m.index + m[0].length;
+  }
+  return -1;
+}
+
+function galleryItems(inner: string): GalleryItem[] {
+  const imgs = [...inner.matchAll(/<img\b[^>]*>/gi)];
+  return imgs.map((m, i) => {
+    const start = m.index ?? 0;
+    const end = start + m[0].length;
+    const prevEnd = i > 0 ? (imgs[i - 1].index ?? 0) + imgs[i - 1][0].length : 0;
+    const nextStart = i + 1 < imgs.length ? imgs[i + 1].index ?? inner.length : inner.length;
+
+    // The link is the last <a> opened before this image and not yet closed.
+    const before = inner.slice(prevEnd, start);
+    const opens = [...before.matchAll(/<a\b[^>]*>/gi)];
+    const lastOpen = opens.at(-1);
+    const link = lastOpen && !/<\/a>/i.test(before.slice((lastOpen.index ?? 0) + lastOpen[0].length))
+      ? lastOpen[0]
+      : "";
+
+    const after = inner.slice(end, nextStart);
+    const caption = after.match(/<figcaption\b[^>]*>([\s\S]*?)<\/figcaption>/i)?.[1]?.trim() ?? "";
+
+    return { img: m[0], link, caption };
+  });
+}
+
+function photoRowImage(img: string, sizes: string): string {
+  const src = attr(img, "src") ?? "";
+  const alt = attr(img, "alt") ?? "";
+  const width = attr(img, "width");
+  const height = attr(img, "height");
+  const dims = width && height ? ` width="${width}" height="${height}"` : "";
+  return `<img src="${src}" alt="${alt}"${dims} sizes="${sizes}" loading="lazy" decoding="async"/>`;
+}
+
+function photoRowFigure(item: GalleryItem, className: string, sizes: string): string {
+  const src = attr(item.img, "src") ?? "";
+  const alt = attr(item.img, "alt") ?? "";
+  const contain = UNCROPPABLE.test(src) || UNCROPPABLE.test(alt);
+  const cls = contain ? `${className} ${className}--contain` : className;
+  let body = photoRowImage(item.img, sizes);
+  if (item.link) {
+    const href = attr(item.link, "href");
+    // Keep the link's own attributes (target, rel, data-*), minus any inline style.
+    body = href ? `${stripStyles(item.link)}${body}</a>` : body;
+  }
+  const caption = item.caption ? `<figcaption>${stripStyles(item.caption)}</figcaption>` : "";
+  return `<figure class="${cls}">${body}${caption}</figure>`;
+}
+
+// Column count on desktop: pairs side by side, four as 2x2, three and five-
+// plus three across. Phones get a swipeable strip instead (see media.css).
+function photoRowColumns(count: number): number {
+  if (count === 2 || count === 4) return 2;
+  return 3;
+}
+
+const PHOTO_ROW_SIZES: Record<number, string> = {
+  2: "(max-width: 640px) 82vw, 360px",
+  3: "(max-width: 640px) 82vw, 240px",
+};
+const SINGLE_IMAGE_SIZES = "(max-width: 760px) calc(100vw - 32px), 720px";
+
+// Photo pairs written in 2026 as a bare inline-flex div of images (bubble tea,
+// cocktail bars, Yangmingshan) are galleries in all but name.
+const INLINE_FLEX_IMAGE_ROW = /<div style="display:\s*flex[^"]*">((?:\s*(?:<a\b[^>]*>)?\s*<img\b[^>]*>\s*(?:<\/a>)?)+\s*)<\/div>/gi;
+
+function isPortrait(img: string): boolean {
+  const width = Number(attr(img, "width"));
+  const height = Number(attr(img, "height"));
+  return width > 0 && height > width;
+}
+
 export function enhanceThreeImageGalleries(content: string): string {
-  let result = content;
-  let searchIdx = 0;
+  let result = content.replace(INLINE_FLEX_IMAGE_ROW, (_whole, inner: string) => `<div class="wp-block-gallery">${inner}</div>`);
+  let searchFrom = 0;
 
   while (true) {
-    const match = result.slice(searchIdx).match(/<(figure|ul)\b[^>]*class=["'][^"']*wp-block-gallery[^"']/i);
-    if (!match) {
-      break;
-    }
+    const rest = result.slice(searchFrom);
+    const open = rest.match(GALLERY_OPEN);
+    if (!open || open.index === undefined) break;
 
-    const matchedTag = match[1]; // "figure" or "ul"
-    const startOffset = searchIdx + match.index!;
-    
-    // Find the end of the opening tag >
-    let afterOpenTagIdx = startOffset + match[0].length;
-    while (afterOpenTagIdx < result.length && result[afterOpenTagIdx - 1] !== '>') {
-      afterOpenTagIdx++;
-    }
-
-    let depth = 1;
-    let endIdx = afterOpenTagIdx;
-    const openTagPattern = new RegExp(`<${matchedTag}\\b`, 'i');
-    const closeTagPattern = new RegExp(`</${matchedTag}>`, 'i');
-
-    while (depth > 0 && endIdx < result.length) {
-      const remaining = result.slice(endIdx);
-      const nextOpen = remaining.match(openTagPattern);
-      const nextClose = remaining.match(closeTagPattern);
-
-      const openIdx = nextOpen && nextOpen.index !== undefined ? nextOpen.index : -1;
-      const closeIdx = nextClose && nextClose.index !== undefined ? nextClose.index : -1;
-
-      if (closeIdx === -1) {
-        break;
-      }
-
-      if (openIdx !== -1 && openIdx < closeIdx) {
-        depth++;
-        endIdx += openIdx + nextOpen[0].length;
-      } else {
-        depth--;
-        endIdx += closeIdx + nextClose[0].length;
-      }
-    }
-
-    if (depth > 0) {
-      searchIdx = afterOpenTagIdx;
+    const start = searchFrom + open.index;
+    const end = elementEnd(result, start, open[1]);
+    if (end === -1) {
+      searchFrom = start + open[0].length;
       continue;
     }
 
-    const fullBlock = result.substring(startOffset, endIdx);
-    const innerHtml = result.substring(afterOpenTagIdx, endIdx - `</${matchedTag}>`.length);
+    const items = galleryItems(result.slice(start + open[0].length, end));
+    let replacement = "";
 
-    const imgRegex = /<img\b[^>]+>/gi;
-    const imgs = innerHtml.match(imgRegex);
-
-    // A gallery can arrive here with fewer images than it was written with,
-    // because withoutDuplicateLeadImage removes whichever figure duplicates the
-    // hero image before this runs. Left alone, a two-image gallery reduced to
-    // one rendered as a half-empty row with a hole where the hero used to be
-    // (9 posts), and a one-image gallery reduced to none rendered as an empty
-    // bordered box (2 posts). Unwrap those rather than leaving the wrapper.
-    if (!imgs || imgs.length === 0) {
-      result = result.slice(0, startOffset) + result.slice(endIdx);
-      searchIdx = startOffset;
-      continue;
+    // A gallery can arrive with fewer images than it was written with, because
+    // withoutDuplicateLeadImage removes whichever figure duplicates the hero
+    // before this runs. None left: drop the empty wrapper. One left: render it
+    // as an ordinary single image rather than a half-empty row.
+    if (items.length === 1) {
+      replacement = photoRowFigure(items[0], "wp-block-image", SINGLE_IMAGE_SIZES);
+    } else if (items.length > 1) {
+      const columns = photoRowColumns(items.length);
+      const figures = items.map((item) => photoRowFigure(item, "photo-row__item", PHOTO_ROW_SIZES[columns])).join("");
+      // A row of portrait shots (drinks, signs, temple doors) keeps a 4:5
+      // frame; cropping those to 3:2 would leave only their middle third.
+      const portrait = items.every((item) => isPortrait(item.img)) ? " photo-row--portrait" : "";
+      replacement = `<div class="photo-row photo-row--${columns}${portrait}" data-count="${items.length}">${figures}</div>`;
     }
 
-    if (imgs.length === 1) {
-      const single = `<figure class="wp-block-image">${imgs[0]}</figure>`;
-      result = result.slice(0, startOffset) + single + result.slice(endIdx);
-      searchIdx = startOffset + single.length;
-      continue;
-    }
-
-    if (imgs.length >= 2) {
-      const imgCount = imgs.length;
-      // 4-and-up galleries render as a CSS grid (maxItemWidth 100% fills the
-      // grid cell); 2 and 3 render as a non-wrapping flex row instead.
-      const isGrid = imgCount >= 4;
-      const maxItemWidth = isGrid ? "100%" : (imgCount === 3 ? "32%" : "48%");
-      const aspect = imgCount === 3 ? "1" : "4/3";
-
-      const items = imgs.map(imgHtml => {
-        const srcMatch = imgHtml.match(/src=["']([^"']+)["']/i);
-        const altMatch = imgHtml.match(/alt=["']([^"']*)["']/i);
-        const classMatch = imgHtml.match(/class=["']([^"']+)["']/i);
-
-        const src = srcMatch ? srcMatch[1] : "";
-        const alt = altMatch ? altMatch[1] : "";
-        const cls = classMatch ? classMatch[1] : "";
-
-        // Check if this image has an associated link inside the gallery block
-        const escapedImgHtml = imgHtml.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        const aWrapRegex = new RegExp(`<a\\b([^>]*?)>\\s*${escapedImgHtml}\\s*<\\/a>|<a\\b([^>]*?)>\\s*<figure[^>]*>\\s*${escapedImgHtml}\\s*<\\/figure>\\s*<\\/a>`, "i");
-        const aMatch = innerHtml.match(aWrapRegex);
-
-        let wrapperStart = "";
-        let wrapperEnd = "";
-        if (aMatch) {
-          const aAttrs = aMatch[1] || aMatch[2] || "";
-          wrapperStart = `<a ${aAttrs} style="display: block; width: 100%; text-align: center;">`;
-          wrapperEnd = `</a>`;
-        }
-
-        // Avoid cropping maps, plans, or chart/graph images - a hard aspect-ratio
-        // crop clips titles and axis labels that sit close to the image edges.
-        const isMap =
-          src.toLowerCase().includes("map") ||
-          alt.toLowerCase().includes("map") ||
-          src.toLowerCase().includes("kiln") ||
-          /rainfall|temperature|chart|graph/i.test(src) ||
-          /rainfall|temperature|chart|graph/i.test(alt);
-        const fitMode = isMap ? "contain" : "cover";
-        const bgStyle = isMap ? "background-color: #fafafa; border: 1px solid #eee;" : "";
-
-        const imgStyle = `width: 100%; height: auto; aspect-ratio: ${aspect}; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: block; object-fit: ${fitMode}; ${bgStyle} margin: 0 auto;`;
-
-        return `<div style="flex: 1; max-width: ${maxItemWidth}; min-width: 0; display: flex; justify-content: center; align-items: center;">${wrapperStart}<img src="${src}" alt="${alt}" class="${cls}" style="${imgStyle}" loading="lazy" />${wrapperEnd}</div>`;
-      }).join("");
-
-      let replacedBlock = "";
-      if (isGrid) {
-        // 4 images reads best as 2x2; 5+ (WordPress originally tagged these
-        // "columns-3") wraps into a 3-wide grid instead of a fixed 2x2 that
-        // would leave an oddly proportioned last row.
-        const gridColumns = imgCount === 4 ? 2 : 3;
-        replacedBlock = `<div class="custom-grid-gallery" style="display: grid; grid-template-columns: repeat(${gridColumns}, 1fr); gap: 16px; margin: 2em auto; width: 100%; box-sizing: border-box;">${items}</div>`;
-      } else {
-        const gap = imgCount === 3 ? "12px" : "16px";
-        replacedBlock = `<div class="custom-multi-image-gallery" style="display: flex; gap: ${gap}; justify-content: center; align-items: center; margin: 2em auto; width: 100%; flex-wrap: nowrap; box-sizing: border-box;">${items}</div>`;
-      }
-      
-      result = result.substring(0, startOffset) + replacedBlock + result.substring(endIdx);
-      searchIdx = startOffset + replacedBlock.length;
-    } else {
-      searchIdx = endIdx;
-    }
+    result = result.slice(0, start) + replacement + result.slice(end);
+    searchFrom = start + replacement.length;
   }
 
-  return result;
+  return normaliseImageFigures(result);
+}
+
+/**
+ * Single-image figures: strip the inline styles the older posts and import
+ * scripts left on the figure, image and caption, so media.css styles them all
+ * the same way (one radius, no frame, a small muted caption underneath).
+ */
+export function normaliseImageFigures(content: string): string {
+  return content.replace(
+    /<(figure|div)\b([^>]*class=["'][^"']*\bwp-block-image\b[^"']*["'][^>]*)>([\s\S]*?)<\/\1>/gi,
+    (whole, tag: string, attrs: string, inner: string) => {
+      // Only plain image figures; anything holding a table, iframe or list is left alone.
+      if (/<(table|iframe|ul|ol|div)\b/i.test(inner) || !/<img\b/i.test(inner)) return whole;
+      return `<${tag}${stripStyles(attrs)}>${inner.replace(/<(img|figure|figcaption|a)\b([^>]*)>/gi, (t, name: string, a: string) => `<${name}${stripStyles(a)}>`)}</${tag}>`;
+    }
+  );
+}
+
+/**
+ * Responsive images for the article body.
+ *
+ * lib/media-manifest.json (built by scripts/build-media-manifest.mjs, because
+ * the Worker cannot read public/ at request time) lists the sizes of each
+ * /media image that exist on disk. From it this pass:
+ *   - adds srcset when a picture exists in more than one size with the same
+ *     aspect ratio (most of the library holds only the one 1024px copy
+ *     WordPress embedded, so most images get no srcset, which is correct)
+ *   - adds sizes, by context: a photo-row sets its own, recommended-reading
+ *     cards are small, everything else is the reading column
+ *   - fills in width/height where they are missing, from the filename's
+ *     "-WIDTHxHEIGHT" suffix or the measured original, so lazy images reserve
+ *     their space and do not shift the page as they load
+ * The hero is not part of the body HTML and is not touched.
+ */
+type MediaRow = [suffix: string, width: number, height: number, kb: number];
+const MEDIA_MANIFEST = mediaManifest as unknown as Record<string, MediaRow[]>;
+const MEDIA_FILE = /^(\/media\/.*?)(-(\d+)x(\d+))?\.(jpe?g|png|webp|gif)$/i;
+const CARD_SIZES = "(max-width: 640px) 90vw, 300px";
+// Larger copies than this are left out of srcset: a few originals are heavy
+// PNGs or barely-compressed camera JPEGs, and sharper is not worth 1 MB.
+const MAX_CANDIDATE_KB = 700;
+
+type MediaInfo = { width: number; height: number; srcset: string };
+const mediaInfoCache = new Map<string, MediaInfo | null>();
+
+function mediaInfo(src: string): MediaInfo | null {
+  const cached = mediaInfoCache.get(src);
+  if (cached !== undefined) return cached;
+
+  let info: MediaInfo | null = null;
+  const m = MEDIA_FILE.exec(src);
+  if (m) {
+    const stem = m[1];
+    const suffix = src.slice(stem.length);
+    const rows = MEDIA_MANIFEST[stem] ?? [];
+    const own = rows.find((row) => row[0] === suffix);
+    const width = m[3] ? Number(m[3]) : own?.[1] ?? 0;
+    const height = m[4] ? Number(m[4]) : own?.[2] ?? 0;
+    let srcset = "";
+    if (width && height && own && !/[\s,]/.test(src)) {
+      const ratio = width / height;
+      const seen = new Set<number>();
+      const candidates = rows
+        .filter((row) => row[1] >= 300 && Math.abs(row[1] / row[2] - ratio) / ratio < 0.02)
+        .filter((row) => row[0] === suffix || row[3] <= MAX_CANDIDATE_KB)
+        .filter((row) => !seen.has(row[1]) && seen.add(row[1]));
+      if (candidates.length > 1) srcset = candidates.map((row) => `${stem}${row[0]} ${row[1]}w`).join(", ");
+    }
+    if (width && height) info = { width, height, srcset };
+  }
+
+  mediaInfoCache.set(src, info);
+  return info;
+}
+
+export function enhanceResponsiveImages(content: string): string {
+  return content.replace(/<img\b[^>]*>/gi, (tag, offset: number) => {
+    const src = attr(tag, "src");
+    if (!src || !src.startsWith("/media/")) return tag;
+    const info = mediaInfo(src);
+    if (!info) return tag;
+
+    const add: string[] = [];
+    const width = attr(tag, "width");
+    const height = attr(tag, "height");
+    if (!width && !height) {
+      add.push(`width="${info.width}"`, `height="${info.height}"`);
+    } else if (width && !height && Number(width)) {
+      add.push(`height="${Math.round((Number(width) * info.height) / info.width)}"`);
+    } else if (!width && height && Number(height)) {
+      add.push(`width="${Math.round((Number(height) * info.width) / info.height)}"`);
+    }
+
+    if (info.srcset && !/\ssrcset=/i.test(tag)) {
+      add.push(`srcset="${info.srcset}"`);
+      if (!/\ssizes=/i.test(tag)) {
+        const before = content.slice(Math.max(0, offset - 400), offset);
+        const inCard = /<a class="recommended-card"[^>]*>\s*$/.test(before);
+        add.push(`sizes="${inCard ? CARD_SIZES : SINGLE_IMAGE_SIZES}"`);
+      }
+    }
+
+    if (!add.length) return tag;
+    return tag.replace(/\s*\/?>$/, ` ${add.join(" ")}$&`);
+  });
 }
 
 /**

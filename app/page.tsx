@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Card } from "@/components/Card";
 import { GuideCarousel } from "@/components/GuideCarousel";
 import { HomeHero, type HeroSlide } from "@/components/HomeHero";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -168,16 +169,15 @@ export default function Home() {
             </div>
             <a href="/category/visit">Explore all guides <span aria-hidden="true">→</span></a>
           </div>
-          <div className="more-guides-grid">
+          <div className="card-grid">
             {sightsGuides.map((guide) => (
-              <article className="more-guide-card" key={guide.slug}>
-                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.webp"} alt="" /></a>
-                <div className="more-guide-copy">
-                  <p>{guide.categories[0]?.name || "Taipei guide"}</p>
-                  <h3><a href={`/${guide.slug}`}>{guide.title}</a></h3>
-                </div>
-                <a className="more-guide-arrow" href={`/${guide.slug}`} aria-label={`Read ${guide.title}`}>&rarr;</a>
-              </article>
+              <Card
+                key={guide.slug}
+                href={`/${guide.slug}`}
+                title={guide.title}
+                image={guide.featuredImage}
+                eyebrow={guide.categories[0]?.name || "Taipei guide"}
+              />
             ))}
           </div>
         </section>
@@ -194,21 +194,16 @@ export default function Home() {
             </div>
             <a href="/taipei-guide">View the full guide <span aria-hidden="true">→</span></a>
           </div>
-          <div className="first-timers-grid">
+          <div className="card-grid">
             {firstTimerGuides.map((guide) => (
-              <a className="first-timer-card" href={`/${guide.slug}`} key={guide.slug}>
-                <div className="first-timer-image-wrap">
-                  <img src={guide.featuredImage || "/images/taipei-skyline.webp"} alt="" />
-                </div>
-                <div className="first-timer-body">
-                  <span className="first-timer-tag">{guide.categories[0]?.name || "Taipei Guide"}</span>
-                  <h3>{guide.title}</h3>
-                  <div className="first-timer-footer">
-                    <span>Read Starter Guide</span>
-                    <span className="first-timer-arrow">→</span>
-                  </div>
-                </div>
-              </a>
+              <Card
+                key={guide.slug}
+                href={`/${guide.slug}`}
+                title={guide.title}
+                image={guide.featuredImage}
+                eyebrow={guide.categories[0]?.name || "Taipei guide"}
+                more="Read starter guide"
+              />
             ))}
           </div>
         </section>
@@ -223,16 +218,16 @@ export default function Home() {
             </div>
             <a href="/category/eat">Explore all guides <span aria-hidden="true">&rarr;</span></a>
           </div>
-          <div className="more-guides-grid">
+          <div className="card-grid card-grid--list">
             {moreGuides.map((guide) => (
-              <article className="more-guide-card" key={guide.slug}>
-                <a className="more-guide-image" href={`/${guide.slug}`}><img src={guide.featuredImage || "/images/taipei-skyline.webp"} alt="" /></a>
-                <div className="more-guide-copy">
-                  <p>{guide.categories[0]?.name || "Taipei guide"}</p>
-                  <h3><a href={`/${guide.slug}`}>{guide.title}</a></h3>
-                </div>
-                <a className="more-guide-arrow" href={`/${guide.slug}`} aria-label={`Read ${guide.title}`}>&rarr;</a>
-              </article>
+              <Card
+                key={guide.slug}
+                variant="list"
+                href={`/${guide.slug}`}
+                title={guide.title}
+                image={guide.featuredImage}
+                eyebrow={guide.categories[0]?.name || "Taipei guide"}
+              />
             ))}
           </div>
         </section>
