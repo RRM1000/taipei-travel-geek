@@ -1,4 +1,5 @@
 import { GuideCarousel } from "@/components/GuideCarousel";
+import { HomeHero, type HeroSlide } from "@/components/HomeHero";
 import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -63,22 +64,84 @@ const latestArticles = posts
     category: p.categories[0]?.name || "Taipei Guide",
   }));
 
+// The hero cross-fades through a few guides, each with its own photo, line and
+// button, so the front page shows what the site covers rather than one view
+// of the skyline. Photos are the site's own, at least 1600px wide.
+const heroSlides: HeroSlide[] = [
+  {
+    label: "Taipei",
+    image: "/images/taipei-skyline.webp",
+    alt: "Taipei skyline with Taipei 101 at dusk",
+    eyebrow: "An independent guide to Taiwan’s capital",
+    title: <>See Taipei<br />like you live here.</>,
+    text: "Straightforward guides to the food, places and neighbourhoods that make this city unforgettable.",
+    cta: { href: "/taipei-guide", label: "Start with the Taipei guide" },
+  },
+  {
+    label: "Night markets",
+    image: "/media/2019/08/Shilin-Night-Market.jpg",
+    alt: "",
+    position: "60% 40%",
+    eyebrow: "Eat",
+    title: "Taipei's night markets.",
+    text: "From Shilin's maze of stalls to Raohe's Michelin-listed snacks, the markets worth an evening.",
+    cta: { href: "/best-markets-in-taipei", label: "Pick a market" },
+  },
+  {
+    label: "Chiang Kai-shek Memorial Hall",
+    image: "/media/2019/08/Chiang-Kai-Shek-8.jpg",
+    alt: "",
+    position: "50% 30%",
+    eyebrow: "Visit",
+    title: "Chiang Kai-shek Memorial Hall.",
+    text: "When to catch the changing of the guard, and what else to see around Liberty Square.",
+    cta: { href: "/chiang-kai-shek-memorial-hall", label: "Plan your visit" },
+  },
+  {
+    label: "Xinyi malls",
+    image: "/media/2023/02/Xinyi-Shopping-District-2-edited.jpg",
+    alt: "",
+    eyebrow: "Shop",
+    title: "The malls of Xinyi.",
+    text: "The shopping district around Taipei 101, linked by walkways, and which malls are worth your time.",
+    cta: { href: "/xinyi-shopping-district", label: "Compare the malls" },
+  },
+  {
+    label: "Dihua Street",
+    image: "/media/2026/08/dihua/20200116_152209.webp",
+    alt: "",
+    eyebrow: "Explore",
+    title: "Dihua Street and Dadaocheng.",
+    text: "Tea merchants, fabric markets and some of the oldest shopfronts in the city, close to the river.",
+    cta: { href: "/dihua-street-dadaocheng-guide", label: "Walk the old streets" },
+  },
+  {
+    label: "Beitou hot springs",
+    image: "/media/2023/02/Xinbeitou-1-edited-scaled.jpg",
+    alt: "",
+    eyebrow: "Relax",
+    title: "Hot springs in Beitou.",
+    text: "Public baths, private rooms and hot spring hotels, a short MRT ride from the city centre.",
+    cta: { href: "/taipei-hot-springs", label: "Find a hot spring" },
+  },
+  {
+    label: "Din Tai Fung",
+    image: "/media/2019/04/din-tai-fung.jpg",
+    alt: "",
+    eyebrow: "Eat",
+    title: "Din Tai Fung, without the queue.",
+    text: "Queue times for every Taipei branch, what to order, and when to go.",
+    cta: { href: "/din-tai-fung", label: "Beat the queue" },
+  },
+];
+
 export default function Home() {
   return (
     <>
       <SiteHeader />
 
       <main>
-        <section className="hero">
-          <img src="/images/taipei-skyline.webp" alt="Taipei skyline with Taipei 101 at dusk" fetchPriority="high" />
-          <div className="hero-shade" />
-          <div className="hero-content">
-            <p className="eyebrow light">An independent guide to Taiwan’s capital</p>
-            <h1>See Taipei<br />like you live here.</h1>
-            <p className="hero-copy">Straightforward guides to the food, places and neighbourhoods that make this city unforgettable.</p>
-            <a className="button" href="/taipei-guide">Start with the Taipei guide <span aria-hidden="true">→</span></a>
-          </div>
-        </section>
+        <HomeHero slides={heroSlides} />
 
         <section className="sights-guides wrap">
           <div className="section-heading">

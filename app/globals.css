@@ -299,6 +299,37 @@ img { display: block; max-width: 100%; }
 
 .hero { min-height: 680px; position: relative; display: grid; place-items: stretch; overflow: hidden; background: #15324a; }
 .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.035); }
+/* Home hero carousel (components/HomeHero.tsx), as on London Travel Geek: each
+   photo fades in and slowly zooms, its text changes with it, and a bar of one
+   segment per slide fills along the bottom. */
+.hero-bg { position: absolute; inset: 0; }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
+.hero-slide.is-active { opacity: 1; }
+.hero-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.035); }
+.hero-slide.is-active img, .hero-slide.was-active img { animation: hero-zoom calc(var(--hero-show, 7000ms) + 1500ms) linear forwards; }
+@keyframes hero-zoom { from { transform: scale(1.035); } to { transform: scale(1.1); } }
+.hero-carousel .hero-content { display: grid; gap: 40px; }
+/* Every slide's text sits in the same grid cell, so the hero is as tall as the
+   longest one and nothing jumps when the text changes. */
+.hero-stack { display: grid; }
+.hero-copy-block { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility 0s linear .6s; }
+.hero-copy-block.is-active { opacity: 1; visibility: visible; transition: opacity .8s ease .4s, visibility 0s; }
+.hero .hero-title { max-width: 720px; margin: 0; font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.025em; font-size: clamp(48px, 6.4vw, 86px); line-height: .95; color: white; }
+.hero-steps { display: grid; grid-template-columns: repeat(var(--steps), minmax(0, 1fr)); gap: 6px; max-width: 720px; margin: 0; padding: 0; list-style: none; }
+.hero-step { position: relative; display: block; width: 100%; height: 22px; padding: 0; border: 0; background: none; cursor: pointer; }
+.hero-step::before, .hero-fill { content: ""; position: absolute; left: 0; top: 50%; height: 3px; margin-top: -1.5px; border-radius: 2px; }
+.hero-step::before { right: 0; background: rgba(255,255,255,.3); }
+.hero-step:hover::before { background: rgba(255,255,255,.55); }
+.hero-fill { width: 0; background: white; }
+.hero-step.is-done .hero-fill { width: 100%; }
+.hero-step.is-active .hero-fill { animation: hero-fill var(--hero-show, 7000ms) linear forwards; }
+.hero-step:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+@keyframes hero-fill { from { width: 0; } to { width: 100%; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide, .hero-copy-block, .hero-copy-block.is-active { transition: none; }
+  .hero-slide.is-active img, .hero-slide.was-active img { animation: none; }
+  .hero-step.is-active .hero-fill { animation: none; width: 100%; }
+}
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,15,23,.86) 0%, rgba(7,15,23,.60) 43%, rgba(7,15,23,.06) 78%); }
 .hero-content { position: relative; z-index: 1; align-self: center; width: min(1180px, calc(100% - 48px)); margin-inline: auto; padding: 90px 0; color: white; }
 .eyebrow { margin: 0 0 18px; color: var(--red-dark); font-size: 12px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; }
@@ -2014,6 +2045,7 @@ footer { padding: 68px 0 26px; background: #0d0e0d; color: white; }
   .hero-shade { background: linear-gradient(90deg, rgba(7,15,23,.85), rgba(7,15,23,.42)); }
   .hero-content { padding: 65px 0; }
   .hero h1 { font-size: 57px; }
+  .hero .hero-title { font-size: 46px; }
   .hero-copy { font-size: 18px; }
   .intro { padding-block: 75px 55px; }
   .intro h2, .section-heading h2 { font-size: 43px; }
