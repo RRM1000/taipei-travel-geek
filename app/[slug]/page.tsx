@@ -13,6 +13,8 @@ import { SunsetTimes } from "@/components/SunsetTimes";
 import { DinTaiFungQueue } from "@/components/DinTaiFungQueue";
 import { NextTrainBoards } from "@/components/NextTrain";
 import { DiagramLightbox } from "@/components/DiagramLightbox";
+import { WalkRouteMap } from "@/components/WalkRouteMap";
+import { getWalk, insertWalkRoute } from "@/lib/walks";
 import {
   calculateReadingTime,
   enhanceAffiliateLinks,
@@ -241,9 +243,12 @@ export default async function ArticlePage({ params }: PageProperties) {
   // specific page wants it by hand.
   // Tag monetised outbound links last, so inline CTAs are covered as well as
   // links written into the post body.
-  const finalContent = fillQueueMarker(enhanceContentImages(enhanceAffiliateLinks(enhanceMobileKlookWidget(
+  // Walk posts carry a marker where the route map goes; it is filled last so
+  // none of the table/link enhancers above restyle the walk block.
+  const walk = getWalk(post.slug);
+  const finalContent = insertWalkRoute(fillQueueMarker(enhanceContentImages(enhanceAffiliateLinks(enhanceMobileKlookWidget(
     withRecommendedReading
-  ))));
+  )))), walk);
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];
@@ -327,6 +332,7 @@ export default async function ArticlePage({ params }: PageProperties) {
             {finalContent.includes("data-dtf-queue") && <DinTaiFungQueue />}
             {finalContent.includes("data-next-train") && <NextTrainBoards />}
             {finalContent.includes("article-diagram") && <DiagramLightbox />}
+            {walk && finalContent.includes("data-walk-map") && <WalkRouteMap walk={walk} />}
             <AuthorBio />
             <PostFooterNav categories={post.categories} />
           </div>

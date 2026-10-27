@@ -3028,3 +3028,155 @@ a.dtf-queue-branch:hover { border-bottom-color: currentColor; }
 .twicon-red-house::before { content: "\a019"; }
 .twicon-fort-san-domingo::before { content: "\a017"; }
 .twicon-beitou-museum::before { content: "\a028"; }
+
+/* ==========================================================================
+   Walking routes (lib/walks.ts, components/WalkRouteMap.tsx)
+   The walk posts' route block, matching London Travel Geek's walks: a
+   street map in a card with numbered pins joined by the route, a key, an
+   "Open in Google Maps" line, and a numbered stop table. London's colours
+   are swapped for this site's tokens - the route is --red-dark, a second
+   route (Datong) --navy.
+   ========================================================================== */
+.article-content .walk-route { margin: 24px 0 36px; }
+
+.article-content .walk-map-shell {
+  margin: 0 0 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+.article-content .walk-map-shell summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.article-content .walk-map-shell summary small {
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.article-content .walk-map {
+  width: 100%;
+  min-height: 32rem;
+  background: var(--surface-alt);
+  font-size: 14px;
+  /* Leaflet's panes are z-index 200-700 and the sticky site header is 50. A
+     positioned element with z-index 0 is a stacking context that keeps every
+     Leaflet layer inside it, so pins and popups scroll under the header
+     rather than over it. */
+  position: relative;
+  z-index: 0;
+}
+.article-content .walk-map > p { margin: 0; padding: 32px; text-align: center; color: var(--muted); }
+.article-content .walk-map img { max-width: none; max-height: none; margin: 0; border-radius: 0; box-shadow: none; }
+
+.article-content .walk-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 14px 18px 16px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.article-content .walk-map-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.article-content .walk-map-noscript { margin: 0; padding: 0 18px 16px; font-size: 14px; }
+
+/* Round numbered pins: the walking order reads straight off the map. Also
+   used for the key and the stop table. */
+.walk-marker-wrap { border: 0; background: transparent; }
+.walk-marker {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: var(--red-dark);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+}
+.walk-marker--second { background: var(--navy); }
+/* The table numbers are links to the step-by-step, so beat the article link colour. */
+.article-content a.walk-marker,
+.article-content a.walk-marker:hover { color: var(--white); text-decoration: none; }
+/* Pins that are not numbered stops are hollow, so it is obvious they sit off
+   the route rather than on it. */
+.walk-marker--alt {
+  width: 22px;
+  height: 22px;
+  background: var(--white);
+  border-color: var(--red-dark);
+  color: var(--red-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.walk-map-legend .walk-marker,
+.walk-stops .walk-marker { width: 24px; height: 24px; font-size: 12px; box-shadow: none; }
+.walk-map-legend .walk-marker--alt { width: 20px; height: 20px; }
+
+.walk-map-popup { display: grid; gap: 5px; min-width: 190px; font-family: var(--font-sans); line-height: 1.35; }
+.walk-map-popup strong { font-family: var(--font-serif); font-size: 16px; color: var(--ink); }
+.walk-map-popup > span { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--muted); }
+.walk-map .walk-map-popup a { font-size: 13px; font-weight: 700; color: var(--red-dark); }
+
+.article-content .walk-route-open { margin: 0 0 14px; }
+.article-content .walk-route-open a { color: var(--red-dark); }
+
+/* The stop table: the site's table look, but with no minimum width - three
+   short columns fit a phone without scrolling sideways. */
+.article-content .walk-stops-wrap { margin: 18px 0 0; overflow-x: auto; }
+.article-content .walk-stops { min-width: 0; }
+.article-content .walk-stops th:first-child,
+.article-content .walk-stops td:first-child { width: 56px; text-align: center; }
+.article-content .walk-stops td { vertical-align: middle; }
+.article-content .walk-stops td:last-child { white-space: nowrap; color: var(--muted); }
+.article-content .walk-stops a:not(.walk-marker) { font-weight: 700; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.article-content .walk-stops-extras td { font-size: 13px; }
+.article-content .walk-stops-extras td:last-child { white-space: normal; }
+
+/* Stop numbers in the step-by-step text, matching the pins. */
+.article-content .walk-stop {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  margin-right: 2px;
+  border-radius: 12px;
+  background: var(--red-dark);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1;
+  vertical-align: 1px;
+  scroll-margin-top: 140px;
+}
+.article-content .walk-stop--second { background: var(--navy); }
+
+@media (max-width: 640px) {
+  .article-content .walk-map-shell summary { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .article-content .walk-map-shell summary small { text-align: left; }
+  .article-content .walk-map { min-height: 25rem; }
+  .article-content .walk-stops td:last-child { white-space: normal; }
+}
