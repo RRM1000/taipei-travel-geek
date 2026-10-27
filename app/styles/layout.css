@@ -570,3 +570,30 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
   .site-header .nav-links-wrap > a,
   .site-header .nav-links-wrap > button { padding: 0 10px; }
 }
+
+
+/* Header tidy (October 2026): weather out of the bar (it now lives in the
+   Plan Your Trip menu and under the homepage hero as "Taipei right now"),
+   a proper one-line search box from 1200px, and a warm dropdown panel that
+   matches the paper background instead of stark white. */
+.site-header .header-weather { display: none !important; }
+@media (min-width: 1200px) {
+  .site-header .header-search .search-trigger { width: 280px; padding: 0 3px 0 18px; justify-content: space-between; border-radius: 999px; }
+  .site-header .header-search .search-placeholder-text { display: inline; overflow: hidden; color: rgba(255, 255, 255, .72); font-size: 14px; white-space: nowrap; text-overflow: ellipsis; }
+}
+
+.site-header .mega-menu-panel {
+  background: var(--paper);
+  border-bottom: 0;
+  border-radius: 0 0 var(--radius-lg, 20px) var(--radius-lg, 20px);
+  box-shadow: 0 18px 40px rgba(19, 34, 48, .16);
+}
+.site-header .mega-menu-header { border-bottom-color: var(--line); }
+.mega-menu-quick-links a { padding: 6px 0; color: var(--ink-body); font-size: 14px; }
+.mega-menu-side .taipei-now { margin: 18px 0 0 28px; }
+
+/* "Taipei right now": temperature, conditions and local time. */
+.taipei-now { margin: 0; color: var(--muted); font: 500 14px/1.4 var(--font-sans); }
+.taipei-now-label { display: block; margin-bottom: 4px; color: var(--red-text); font-size: var(--fs-label, .75rem); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.home-now { padding-block: 18px 0; }
+.home-now .taipei-now-label { display: inline; margin: 0 10px 0 0; }

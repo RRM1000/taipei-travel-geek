@@ -25,8 +25,28 @@ function describeWeatherCode(code: number): { label: string; emoji: string } {
   return { label: "", emoji: "🌡️" };
 }
 
-export function WeatherStrip() {
+/** Taipei's local time, e.g. "3:40 pm". */
+function taipeiTime(): string {
+  return new Intl.DateTimeFormat("en-GB", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Taipei" }).format(new Date());
+}
+
+/**
+ * "22°C in Taipei right now - Partly Cloudy". With `withTime` it becomes the
+ * quieter "Taipei right now" line used in the Plan Your Trip menu and under
+ * the homepage hero: temperature, conditions and local time. It left the
+ * header bar in October 2026 to declutter it.
+ */
+export function WeatherStrip({ withTime = false }: { withTime?: boolean }) {
   const [weather, setWeather] = useState<WeatherState>(null);
+  const [time, setTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!withTime) return;
+    const tick = () => setTime(taipeiTime());
+    tick();
+    const id = setInterval(tick, 60_000);
+    return () => clearInterval(id);
+  }, [withTime]);
 
   useEffect(() => {
     let cancelled = false;
@@ -76,6 +96,16 @@ export function WeatherStrip() {
   }, []);
 
   if (!weather) return null;
+
+  if (withTime) {
+    return (
+      <p className="taipei-now">
+        <span className="taipei-now-label">Taipei right now</span>
+        <span aria-hidden="true">{weather.emoji}</span> {weather.tempC}°C{weather.label ? `, ${weather.label.toLowerCase()}` : ""}
+        {time ? ` · ${time} local time` : ""}
+      </p>
+    );
+  }
 
   return (
     <p className="header-weather-strip">

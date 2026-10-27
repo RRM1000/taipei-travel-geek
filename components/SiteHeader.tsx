@@ -273,7 +273,6 @@ export function SiteHeader() {
           </div>
         </nav>
         <div className="header-tools">
-          <div className="header-weather"><WeatherStrip /></div>
           <div className="header-search"><SiteSearch /></div>
         </div>
         <details className="mobile-menu">
@@ -314,11 +313,14 @@ export function SiteHeader() {
                     </a>
                   ))}
                 </div>
-                <ul className="mega-menu-quick-links">
-                  {menu.links.map((link) => (
-                    <li key={link.href}><a href={link.href}>{link.label}</a></li>
-                  ))}
-                </ul>
+                <div className="mega-menu-side">
+                  <ul className="mega-menu-quick-links">
+                    {menu.links.map((link) => (
+                      <li key={link.href}><a href={link.href}>{link.label}</a></li>
+                    ))}
+                  </ul>
+                  {menu.key === "Plan" && <WeatherStrip withTime />}
+                </div>
               </div>
             </div>
           ))}

@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LatestArticlesCarousel } from "@/components/LatestArticlesCarousel";
 import { UpcomingEvents } from "@/components/UpcomingEvents";
+import { WeatherStrip } from "@/components/WeatherStrip";
 import { posts } from "@/lib/content";
 
 // Replaces the old "category-strip" (Eat/Visit/Areas/Culture tiles). Those
@@ -160,6 +161,7 @@ export default function Home() {
 
       <main>
         <HomeHero slides={heroSlides} />
+        <div className="home-now wrap"><WeatherStrip withTime /></div>
 
         <section className="sights-guides wrap">
           <div className="section-heading">
