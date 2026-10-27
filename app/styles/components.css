@@ -24,7 +24,12 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-1);
   color: var(--ink);
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  /* One timing for the lift and the photo zoom, so they move together (the
+     lift used to finish in .22s while the photo was still zooming for .4s).
+     isolation keeps the rounded corners clipping the photo while it scales. */
+  --card-ease: .32s cubic-bezier(.2, .7, .2, 1);
+  isolation: isolate;
+  transition: transform var(--card-ease), box-shadow var(--card-ease), border-color var(--card-ease);
 }
 .card:hover {
   transform: translateY(-3px);
@@ -47,7 +52,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s ease;
+  transition: transform var(--card-ease);
+  will-change: transform;
 }
 .card:hover .card-media img { transform: scale(1.035); }
 
