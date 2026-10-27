@@ -790,14 +790,30 @@ export type HeadingItem = {
   level: number;
 };
 
+// The named entities the WordPress-era content actually uses, plus numeric
+// ones. Without &ndash; and friends the contents list showed headings like
+// "Zhongzheng (Taipei Main Station) &ndash; Best for a First Trip".
+const NAMED_ENTITIES: Record<string, string> = {
+  amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ",
+  ndash: "–", mdash: "—", hellip: "…",
+  lsquo: "‘", rsquo: "’", ldquo: "“", rdquo: "”",
+};
+
 function decodeHtmlEntities(text: string): string {
   return text
-    .replace(/&amp;/gi, "&")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#039;/gi, "'")
-    .replace(/&nbsp;/gi, " ");
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex: string) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec: string) => String.fromCodePoint(parseInt(dec, 10)))
+    .replace(/&([a-z]+);/gi, (match, name: string) => NAMED_ENTITIES[name.toLowerCase()] ?? match);
+}
+
+/** [start, end) offsets of each "Every place on this map" block, whose h3s stay out of the contents. */
+function mapPlacesRanges(content: string): [number, number][] {
+  const ranges: [number, number][] = [];
+  for (const m of content.matchAll(/<div\b[^>]*class=["'][^"']*\bmap-places\b[^"']*["'][^>]*>/gi)) {
+    const end = content.indexOf("</div>", m.index);
+    ranges.push([m.index, end < 0 ? content.length : end]);
+  }
+  return ranges;
 }
 
 export function enhanceContentHeadings(content: string): {
@@ -831,10 +847,12 @@ export function enhanceContentHeadings(content: string): {
     return unique;
   };
 
-  const enhancedContent = cleanContent.replace(/<h([23])\b([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, levelStr, attrs, innerHtml) => {
+  const skip = mapPlacesRanges(cleanContent);
+  const enhancedContent = cleanContent.replace(/<h([23])\b([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, levelStr, attrs, innerHtml, offset: number) => {
     const level = parseInt(levelStr, 10);
     const plainText = decodeHtmlEntities(innerHtml.replace(/<[^>]*>/g, "").trim());
     if (!plainText) return match;
+    if (skip.some(([start, end]) => offset > start && offset < end)) return match;
 
     const idMatch = attrs.match(/id=["']([^"']+)["']/i);
     let id = idMatch ? idMatch[1] : "";
@@ -862,9 +880,43 @@ export function enhanceContentHeadings(content: string): {
   return { enhancedContent, headings };
 }
 
+/**
+ * Wrap every table for horizontal scrolling, and mark narrow ones (three
+ * columns or fewer, with a header row) to stack into cards on phones, as City
+ * Break Geek does: each cell gets a data-label from its column header, which
+ * the mobile CSS shows in front of the value. The header row is the <thead>,
+ * or else a first row that is all <th> or all bold <td> - the WordPress
+ * tables mostly use the latter.
+ */
+const STACK_MAX_COLUMNS = 3;
+
 export function enhanceTables(content: string): string {
-  return content.replace(/<table\b([\s\S]*?)<\/table>/gi, (match) => {
-    return `<div class="table-responsive">${match}</div>`;
+  return content.replace(/<table\b([^>]*)>([\s\S]*?)<\/table>/gi, (match, attrs: string, inner: string) => {
+    const rows = [...inner.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+    const cellsOf = (row: string) => [...row.matchAll(/<t([hd])\b[^>]*>([\s\S]*?)<\/t\1>/gi)];
+    const first = rows[0] ? cellsOf(rows[0][1]) : [];
+    const isHeader =
+      first.length > 1 &&
+      first.every(([, kind, html]) => kind.toLowerCase() === "h" || /^\s*<strong>[\s\S]*<\/strong>\s*$/i.test(html));
+    if (!isHeader || first.length > STACK_MAX_COLUMNS || /colspan|rowspan/i.test(inner)) {
+      return `<div class="table-responsive">${match}</div>`;
+    }
+
+    const labels = first.map(([, , html]) => decodeHtmlEntities(html.replace(/<[^>]*>/g, "").trim()).replace(/"/g, "&quot;"));
+    let rowIndex = 0;
+    const labelled = inner.replace(/<tr\b([^>]*)>([\s\S]*?)<\/tr>/gi, (rowMatch, rowAttrs: string, rowInner: string) => {
+      if (rowIndex++ === 0) return `<tr${rowAttrs} class="table-stack-head">${rowInner}</tr>`;
+      let col = 0;
+      const cells = rowInner.replace(/<td\b([^>]*)>/gi, (_cell, cellAttrs: string) => {
+        const label = labels[col++];
+        return label ? `<td${cellAttrs} data-label="${label}">` : `<td${cellAttrs}>`;
+      });
+      return `<tr${rowAttrs}>${cells}</tr>`;
+    });
+    const classed = /class=["']/i.test(attrs)
+      ? attrs.replace(/class=(["'])/i, "class=$1table--stack ")
+      : `${attrs} class="table--stack"`;
+    return `<div class="table-responsive"><table${classed}>${labelled}</table></div>`;
   });
 }
 
