@@ -58,7 +58,9 @@ const analyticsEnabled = process.env.NODE_ENV === "production";
  * listener covers links in post bodies, inline CTAs and the sidebar, including
  * ones added after hydration. auxclick catches middle-click "open in new tab".
  *
- * Parameters: partner (klook, booking...), placement (where on the page),
+ * Parameters: partner (klook, booking...), placement (where on the page;
+ * an explicit data-placement on the link or a parent wins, e.g. the hotel
+ * guides' "hotel-button"),
  * hotel (the data-hotel id on hotel guide links), link_text and link_url. To
  * report on partner, placement or hotel in GA4, register each as an
  * event-scoped custom dimension under Admin > Custom definitions.
@@ -77,6 +79,8 @@ const affiliateClickScript = `(function () {
     return null;
   }
   function placementFor(a) {
+    var tagged = a.closest("[data-placement]");
+    if (tagged) return tagged.getAttribute("data-placement");
     if (a.closest(".article-sidebar, .sidebar-section")) return "sidebar";
     if (a.closest(".article-inline-cta")) return "inline_cta";
     if (a.closest(".quick-verdict")) return "quick_verdict";

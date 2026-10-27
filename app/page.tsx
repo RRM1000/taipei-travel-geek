@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { GuideCarousel } from "@/components/GuideCarousel";
 import { HomeHero, type HeroSlide } from "@/components/HomeHero";
-import { KlookAffiliate } from "@/components/KlookAffiliate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LatestArticlesCarousel } from "@/components/LatestArticlesCarousel";
@@ -53,6 +53,23 @@ const moreGuideSlugs = [
   "addiction-aquatic-development",
 ];
 const moreGuides = moreGuideSlugs.map((slug) => posts.find((post) => post.slug === slug)).filter((post) => post !== undefined);
+
+// Plain links to the hotel guides, in place of the Klook "deals_widget" that
+// sat here. That widget was the same generic 5-hotel box that was taken off
+// the posts for converting nothing (6,206 impressions, 0 bookings), and it was
+// the heaviest thing on the homepage: an iframe 1,776px tall pulling in
+// Klook's app bundle, trackers and full-size hotel photos. Every hotel guide
+// now has a "Check prices" button under each hotel, which is the better route
+// to a booking. best-areas-and-hotels-to-stay is left out because First
+// Timers already features it, and nothing appears twice on the homepage.
+const hotelGuideLinks = [
+  { href: "/taipei-101-view-hotels-new-years-eve", label: "New Year's Eve view rooms" },
+  { href: "/hotels-near-taipei-main-station", label: "Near Taipei Main Station" },
+  { href: "/hotels-near-ximending", label: "Near Ximending" },
+  { href: "/hotels-near-taipei-101", label: "Near Taipei 101" },
+  { href: "/beitou-hot-spring-hotels", label: "Beitou hot spring hotels" },
+  { href: "/best-hostels-in-taipei", label: "Hostels" },
+];
 
 const latestArticles = posts
   .filter((p) => p.type === "post" || !p.type)
@@ -220,36 +237,24 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="hotel-deals wrap">
+        <section className="hotel-guides wrap" aria-labelledby="hotel-guides-heading">
           <div className="section-heading">
             <div>
               <p className="eyebrow">Where to stay</p>
-              <h2>Taipei hotel deals</h2>
+              <h2 id="hotel-guides-heading">Taipei hotel guides</h2>
             </div>
-            <a href="/best-areas-and-hotels-to-stay">Read the full hotel guide <span aria-hidden="true">&rarr;</span></a>
+            <Link href="/category/hotels">All hotel guides <span aria-hidden="true">&rarr;</span></Link>
           </div>
-          <div className="hotel-deals-widget">
-            <ins
-              className="klk-aff-widget"
-              data-aid="8733"
-              data-city_id="19"
-              data-country_id="1014"
-              data-tag_id="0"
-              data-currency=""
-              data-lang=""
-              data-label1=""
-              data-label2=""
-              data-label3=""
-              data-prod="deals_widget"
-              data-total="5"
-            >
-              <a href="//www.klook.com/">Klook.com</a>
-            </ins>
+          <div className="sidebar-tags hotel-guide-links">
+            <div className="sidebar-tag-wrap">
+              {hotelGuideLinks.map((link) => (
+                <a key={link.href} href={link.href}>{link.label}</a>
+              ))}
+            </div>
           </div>
         </section>
       </main>
 
-      <KlookAffiliate />
       <SiteFooter />
     </>
   );

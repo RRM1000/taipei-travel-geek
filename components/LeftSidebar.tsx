@@ -4,15 +4,14 @@ import { KlookSidebarWidget } from "@/components/KlookSidebarWidget";
 
 type LeftSidebarProps = {
   categories: TaxonomyTerm[];
+  /** Off for pages that opt out of "klookDeals" in GENERIC_UNIT_OPT_OUTS (lib/content.ts). */
+  showKlookDeals?: boolean;
 };
 
-export function LeftSidebar({ categories }: LeftSidebarProps) {
+export function LeftSidebar({ categories, showKlookDeals = true }: LeftSidebarProps) {
   return (
     <aside className="article-left-sidebar" aria-label="Klook travel deals">
-      <section className="sidebar-section sidebar-klook">
-        <p className="sidebar-kicker">Klook deals</p>
-        <KlookSidebarWidget amount="5" />
-      </section>
+      {showKlookDeals && <KlookSidebarWidget amount="5" />}
 
       <WiseAffiliate />
 

@@ -21,8 +21,9 @@ import {
   enhanceChoiceGuideImages,
   enhanceContentHeadings,
   enhanceContentImages,
+  enhanceHotelCtaButtons,
   enhanceInlineAffiliateCTAs,
-  enhanceKlookDealsWidget,
+  enhanceLazyKlookWidgets,
   enhanceMobileKlookWidget,
   enhancePerfectForSection,
   enhanceProsCons,
@@ -45,6 +46,7 @@ import {
   posts,
   renderNearbyGuidesSection,
   renderRecommendedReadingSection,
+  showsGenericUnit,
 } from "@/lib/content";
 
 type PageProperties = { params: Promise<{ slug: string }> };
@@ -198,20 +200,19 @@ export default async function ArticlePage({ params }: PageProperties) {
 
   const heroImage = post.featuredImage || null;
   const isPage = post.type === "page";
-  const rawContent = enhanceKlookDealsWidget(
-    enhanceThreeImageGalleries(
-      enhanceTables(
-        enhanceYoutubeEmbeds(
-          enhanceRecommendedReading(
-            enhanceInlineAffiliateCTAs(
-              enhanceVenueFacts(
-                enhanceProsCons(
-                  enhancePerfectForSection(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug))
-                )
+  const rawContent = enhanceThreeImageGalleries(
+    enhanceTables(
+      enhanceYoutubeEmbeds(
+        enhanceRecommendedReading(
+          enhanceInlineAffiliateCTAs(
+            enhanceVenueFacts(
+              enhanceProsCons(
+                enhancePerfectForSection(enhanceChoiceGuideImages(withoutDuplicateLeadImage(post.content, heroImage, isPage), post.slug))
               )
             ),
-            heroImage
-          )
+            post.slug
+          ),
+          heroImage
         )
       )
     )
@@ -233,22 +234,25 @@ export default async function ArticlePage({ params }: PageProperties) {
     ? withNearbyGuides
     : withNearbyGuides + renderRecommendedReadingSection(getRelatedPosts(post, 3));
 
-  // The auto-appended hotel deals widget (renderHotelDealsWidget) used to go
+  // The auto-appended hotel deals widget (renderHotelDealsWidget, since deleted) used to go
   // here, after Recommended Reading on every eligible post. Klook's own
   // numbers for September 2026: 6,206 impressions, 7 clicks, no bookings - a
   // generic deals box at the very bottom of the page, where nobody is choosing
   // a hotel. Product widgets placed where the reader is deciding convert
   // instead (the zoo ticket widget: 8 clicks, 7 bookings), so the space is
-  // left to those. renderHotelDealsWidget stays in lib/content.ts in case a
-  // specific page wants it by hand.
+  // left to those.
   // Tag monetised outbound links last, so inline CTAs are covered as well as
   // links written into the post body.
   // Walk posts carry a marker where the route map goes; it is filled last so
   // none of the table/link enhancers above restyle the walk block.
+  // The hotel "Check prices" buttons go in before enhanceAffiliateLinks, so
+  // they get the same rel/target treatment as every other affiliate link, and
+  // the Klook widgets are marked lazy last, once every widget is in place.
   const walk = getWalk(post.slug);
-  const finalContent = insertWalkRoute(fillQueueMarker(enhanceContentImages(enhanceAffiliateLinks(enhanceMobileKlookWidget(
-    withRecommendedReading
-  )))), walk);
+  const finalContent = insertWalkRoute(fillQueueMarker(enhanceContentImages(enhanceLazyKlookWidgets(enhanceAffiliateLinks(enhanceHotelCtaButtons(enhanceMobileKlookWidget(
+    withRecommendedReading,
+    post.slug
+  )))))), walk);
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];
@@ -305,7 +309,7 @@ export default async function ArticlePage({ params }: PageProperties) {
         </section>
 
         <div className="wrap article-3col-layout">
-          <LeftSidebar categories={post.categories} />
+          <LeftSidebar categories={post.categories} showKlookDeals={showsGenericUnit(post.slug, "klookDeals")} />
           <div className="article-main-column">
             {post.tags.length > 0 && (
               <div className="article-tags" aria-label="Tags for this article">

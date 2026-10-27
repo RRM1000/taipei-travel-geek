@@ -521,27 +521,6 @@ export function renderRecommendedReadingSection(related: ContentPost[], heading 
 }
 
 /**
- * Slugs that shouldn't get the end-of-post hotel deals widget: the same
- * non-editorial utility pages excluded from Recommended Reading.
- *
- * best-areas-and-hotels-to-stay used to be excluded here because it carried a
- * hand-placed widget near the top of the article. Those hand-placed widgets
- * have been removed - they interrupted the read, and two posts ended up
- * showing the widget twice - so every eligible post now gets exactly one, at
- * the end.
- */
-const hotelWidgetExcludedSlugs = new Set([...nonEditorialSlugs]);
-
-export function shouldShowHotelDealsWidget(post: ContentPost): boolean {
-  return !hotelWidgetExcludedSlugs.has(post.slug);
-}
-
-/** Auto-appended at the end of every eligible post, right after Recommended Reading. */
-export function renderHotelDealsWidget(): string {
-  return `<section class="end-of-post-hotel-deals"><div class="recommended-reading-heading"><span>Ready to book?</span><h2>Great Taipei hotel deals right now</h2></div><div class="hotel-deals-widget"><ins class="klk-aff-widget" data-aid="8733" data-city_id="19" data-country_id="1014" data-tag_id="0" data-currency="" data-lang="" data-label1="" data-label2="" data-label3="" data-prod="deals_widget" data-total="2"><a href="//www.klook.com/">Klook.com</a></ins></div></section>`;
-}
-
-/**
  * Ranking for category and tag archives.
  *
  * These pages used to inherit the global sort, which is purely newest-published
@@ -1208,9 +1187,67 @@ export function enhanceThreeImageGalleries(content: string): string {
   return result;
 }
 
+/**
+ * Per-page opt-outs for the generic, auto-inserted affiliate units.
+ *
+ * Every article gets these by default:
+ *   - "klookSearch": the inline "Browse Taipei Tours & Activities on Klook"
+ *     button (INLINE_KLOOK_CTA, a klook.com search link)
+ *   - "klookDeals": the 5-card Klook "deals" widget, adid 1371607 - the
+ *     left-rail copy on desktop (LeftSidebar) and the in-post copy on mobile
+ *     (enhanceMobileKlookWidget). One key turns off both.
+ *   - "wise": the inline "Get the Real Exchange Rate with Wise" button
+ *     (INLINE_WISE_CTA)
+ *
+ * A page listed here does NOT get the units named against it. Use it for
+ * pages that sell their own specific product, so the reader isn't shown a
+ * generic zoo ticket or a Klook search box 600px below the eSIM, airport
+ * train or hotel they came for. A page not listed keeps all three, so this
+ * is the one place to change when a page gains (or loses) its own product.
+ *
+ * The automatic skips still apply on top of this: no Klook search button
+ * where the post hand-places an `article-klook-cta`, and no Wise button where
+ * the post already links to wise.com.
+ */
+export type GenericUnit = "klookSearch" | "klookDeals" | "wise";
 
+const HOTEL_GUIDE_OPT_OUTS: GenericUnit[] = ["klookSearch", "klookDeals"];
+const PRODUCT_PAGE_OPT_OUTS: GenericUnit[] = ["klookSearch", "klookDeals"];
 
+const GENERIC_UNIT_OPT_OUTS: Record<string, readonly GenericUnit[]> = {
+  // Hotel guides: the product is the hotel, with a "Check prices" button
+  // under each one (enhanceHotelCtaButtons).
+  "best-areas-and-hotels-to-stay": HOTEL_GUIDE_OPT_OUTS,
+  "hotels-near-taipei-main-station": HOTEL_GUIDE_OPT_OUTS,
+  "hotels-near-ximending": HOTEL_GUIDE_OPT_OUTS,
+  "hotels-near-taipei-101": HOTEL_GUIDE_OPT_OUTS,
+  "beitou-hot-spring-hotels": HOTEL_GUIDE_OPT_OUTS,
+  "hotels-in-zhongshan": HOTEL_GUIDE_OPT_OUTS,
+  "hotels-near-taoyuan-airport": HOTEL_GUIDE_OPT_OUTS,
+  "hotels-in-daan": HOTEL_GUIDE_OPT_OUTS,
+  "aparthotels-serviced-apartments-taipei": HOTEL_GUIDE_OPT_OUTS,
+  "best-hostels-in-taipei": HOTEL_GUIDE_OPT_OUTS,
+  "taipei-101-view-hotels-new-years-eve": HOTEL_GUIDE_OPT_OUTS,
+  "taipei-hotels-with-pools": HOTEL_GUIDE_OPT_OUTS,
+  // Product pages with their own hand-placed Klook product widgets. The Wise
+  // button stays on the SIM page, where it fits the arrival checklist.
+  "taiwan-sim-cards": PRODUCT_PAGE_OPT_OUTS,
+  "taoyuan-airport-mrt": PRODUCT_PAGE_OPT_OUTS,
+  "taiwan-high-speed-rail-hsr-discounts-klook": PRODUCT_PAGE_OPT_OUTS,
+  "taipei-fun-pass": PRODUCT_PAGE_OPT_OUTS,
+  "taipei-zoo": PRODUCT_PAGE_OPT_OUTS,
+  "maokong-gondola": PRODUCT_PAGE_OPT_OUTS,
+  "taipei-101": PRODUCT_PAGE_OPT_OUTS,
+  "jiufen": PRODUCT_PAGE_OPT_OUTS,
+  "best-day-trips-from-taipei": PRODUCT_PAGE_OPT_OUTS,
+  "the-best-guided-tours-in-taipei": PRODUCT_PAGE_OPT_OUTS,
+  "taipei-sightseeing-bus": PRODUCT_PAGE_OPT_OUTS,
+  "taipei-public-transport": PRODUCT_PAGE_OPT_OUTS,
+};
 
+export function showsGenericUnit(slug: string, unit: GenericUnit): boolean {
+  return !GENERIC_UNIT_OPT_OUTS[slug]?.includes(unit);
+}
 
 const INLINE_KLOOK_CTA = `<div class="article-inline-cta article-klook-cta" data-auto-cta="klook"><a href="https://www.klook.com/en-GB/search/result/?query=Taipei&amp;aid=8733" target="_blank" rel="sponsored noopener noreferrer">Browse Taipei Tours &amp; Activities on Klook</a></div>`;
 
@@ -1222,22 +1259,23 @@ const INLINE_WISE_CTA = `<div class="article-inline-cta article-wise-cta" data-a
  * (LeftSidebar) collapse to the very bottom of the page on mobile, where
  * almost nobody scrolls to see them. Skips a provider if that post already
  * has a hand-placed CTA for it, so pages like taiwan-easycard or
- * taiwan-sim-cards don't end up with a duplicate.
+ * taiwan-sim-cards don't end up with a duplicate, or if the page opts out of
+ * it in GENERIC_UNIT_OPT_OUTS.
  */
-export function enhanceInlineAffiliateCTAs(content: string): string {
-  const hasKlookCta = /article-klook-cta/i.test(content);
-  const hasWiseCta = /wise\.com/i.test(content);
-  if (hasKlookCta && hasWiseCta) return content;
+export function enhanceInlineAffiliateCTAs(content: string, slug: string): string {
+  const skipKlook = /article-klook-cta/i.test(content) || !showsGenericUnit(slug, "klookSearch");
+  const skipWise = /wise\.com/i.test(content) || !showsGenericUnit(slug, "wise");
+  if (skipKlook && skipWise) return content;
 
   const h2Positions = [...content.matchAll(/<h2\b[^>]*>/gi)].map((match) => match.index!);
 
   const insertions: { index: number; html: string }[] = [];
 
-  if (!hasKlookCta && h2Positions.length >= 2) {
+  if (!skipKlook && h2Positions.length >= 2) {
     insertions.push({ index: h2Positions[1], html: INLINE_KLOOK_CTA });
   }
 
-  if (!hasWiseCta && h2Positions.length >= 4) {
+  if (!skipWise && h2Positions.length >= 4) {
     const targetIdx = Math.min(h2Positions.length - 1, Math.floor(h2Positions.length * 0.65));
     insertions.push({ index: h2Positions[targetIdx], html: INLINE_WISE_CTA });
   }
@@ -1260,15 +1298,16 @@ export function enhanceInlineAffiliateCTAs(content: string): string {
  * it. Stacking it above the article instead just pushed the actual writing
  * ~2,000px down the page. Dropping it at a section break puts it where someone
  * is already reading, and the wrapper is display:none on desktop so the
- * sidebar copy remains the only one shown there.
+ * sidebar copy remains the only one shown there. (Being lazy - see
+ * enhanceLazyKlookWidgets - the hidden desktop copy never loads its iframe.)
  *
  * Placed at a later heading than enhanceInlineAffiliateCTAs uses (h2 index 1)
  * so the two don't land on top of each other.
  */
 const IN_POST_KLOOK_WIDGET = `<div class="in-post-klook" aria-label="Klook travel deals"><p class="sidebar-kicker">Klook deals</p><ins class="klk-aff-widget" data-adid="1371607" data-lang="" data-currency="" data-cardh="126" data-padding="92" data-lgh="470" data-edgevalue="655" data-amount="3" data-prod="static_widget"><a href="//www.klook.com/">Klook.com</a></ins></div>`;
 
-export function enhanceMobileKlookWidget(content: string): string {
-  if (content.includes("in-post-klook")) return content;
+export function enhanceMobileKlookWidget(content: string, slug: string): string {
+  if (content.includes("in-post-klook") || !showsGenericUnit(slug, "klookDeals")) return content;
 
   const h2Positions = [...content.matchAll(/<h2\b[^>]*>/gi)].map((match) => match.index!);
   if (h2Positions.length < 3) return content;
@@ -1278,58 +1317,50 @@ export function enhanceMobileKlookWidget(content: string): string {
   return content.slice(0, target) + IN_POST_KLOOK_WIDGET + content.slice(target);
 }
 
-export function enhanceKlookDealsWidget(content: string): string {
-  const placeholder = /\[KlookDealsWidget\]/g;
-  if (!placeholder.test(content)) return content;
-
-  const widgetHtml = `<div class="klook-deals-widget-grid">
-  <!-- Deal 1: Taipei 101 -->
-  <div class="klook-deal-card">
-    <div class="klook-deal-image-wrapper">
-      <img src="/media/2019/04/Taipei101.jpg" alt="Taipei 101 Observatory Ticket" loading="lazy" />
-    </div>
-    <div class="klook-deal-info">
-      <h4 class="klook-deal-title">Taipei 101 Observatory Ticket</h4>
-      <div class="klook-deal-meta">
-        <span class="klook-deal-rating">4.8/5 (20,000+ reviews)</span>
-        <span class="klook-deal-price">From NT$ 600</span>
-      </div>
-      <a href="https://www.klook.com/en-US/activity/1659-taipei-101-taipei/?aid=8733" target="_blank" rel="noopener noreferrer" class="klook-deal-button">Book on Klook</a>
-    </div>
-  </div>
-  <!-- Deal 2: Taipei Metro Day Pass -->
-  <div class="klook-deal-card">
-    <div class="klook-deal-image-wrapper">
-      <img src="/media/2026/08/klook-taipei-mrt-pass.png" alt="Taipei Metro Day Pass & EasyCard" loading="lazy" />
-    </div>
-    <div class="klook-deal-info">
-      <h4 class="klook-deal-title">Taipei Metro Day Pass & EasyCard</h4>
-      <div class="klook-deal-meta">
-        <span class="klook-deal-rating">4.7/5 (10,000+ reviews)</span>
-        <span class="klook-deal-price">From NT$ 190</span>
-      </div>
-      <a href="https://www.klook.com/en-US/activity/91567-taipei-metro-day-pass/?aid=8733" target="_blank" rel="noopener noreferrer" class="klook-deal-button">Book on Klook</a>
-    </div>
-  </div>
-  <!-- Deal 3: National Palace Museum -->
-  <div class="klook-deal-card">
-    <div class="klook-deal-image-wrapper">
-      <img src="/media/2019/07/National-Palace-Museum-8-1024x694.jpg" alt="National Palace Museum Ticket" loading="lazy" />
-    </div>
-    <div class="klook-deal-info">
-      <h4 class="klook-deal-title">National Palace Museum Ticket</h4>
-      <div class="klook-deal-meta">
-        <span class="klook-deal-rating">4.6/5 (5,000+ reviews)</span>
-        <span class="klook-deal-price">From NT$ 350</span>
-      </div>
-      <a href="https://www.klook.com/en-US/activity/10136-national-palace-museum-ticket-package-taipei/?aid=8733" target="_blank" rel="noopener noreferrer" class="klook-deal-button">Book on Klook</a>
-    </div>
-  </div>
-</div>`;
-
-  return content.replace(placeholder, widgetHtml);
+/**
+ * Hold every Klook iframe widget in the body back until it nears the screen.
+ *
+ * Klook's iframe-init script renders every `ins.klk-aff-widget` on the page
+ * the moment it runs, including ones far down the page and ones hidden by
+ * CSS (the mobile in-post copy on desktop). It skips any element that already
+ * carries `data-rendered`, so marking them `data-rendered="lazy"` here keeps
+ * them inert; KlookAffiliate.tsx removes the mark when the element comes
+ * within reach of the viewport and runs the script again. Hidden widgets
+ * never intersect, so they never load. Without JavaScript the widget's
+ * fallback "Klook.com" link still shows, as before.
+ */
+export function enhanceLazyKlookWidgets(content: string): string {
+  return content.replace(/<ins\b([^>]*\bclass="[^"]*\bklk-aff-widget\b[^"]*"[^>]*)>/gi, (whole, attrs: string) =>
+    /\bdata-rendered=/i.test(attrs) ? whole : `<ins${attrs} data-rendered="lazy">`
+  );
 }
 
+/**
+ * A "Check prices & availability" button under each hotel in the hotel
+ * guides.
+ *
+ * Each hotel is an <h3> holding an <a data-hotel="key" href="...">, followed
+ * by its description paragraph. The hotel name was the only link, which reads
+ * as a heading rather than something to click. The button goes after that
+ * first paragraph, with the same href and data-hotel key, so a future
+ * re-pointing of the hotel links (Agoda) by data-hotel covers it too.
+ * Hotels with no booking link (<h3><span data-hotel>) are skipped.
+ *
+ * data-placement="hotel-button" is read by the affiliate_click tracker in
+ * app/layout.tsx, so these clicks are reported separately from the name links.
+ */
+export function enhanceHotelCtaButtons(content: string): string {
+  if (!content.includes("data-hotel=")) return content;
+  return content.replace(
+    /(<h3\b[^>]*>\s*<a\b([^>]*)>[\s\S]*?<\/h3>\s*<p\b[^>]*>[\s\S]*?<\/p>)/gi,
+    (whole, _block, anchorAttrs: string) => {
+      const hotel = anchorAttrs.match(/\bdata-hotel="([^"]+)"/i)?.[1];
+      const href = anchorAttrs.match(/\bhref="(https?:\/\/[^"]+)"/i)?.[1];
+      if (!hotel || !href) return whole;
+      return `${whole}\n<p class="hotel-cta"><a class="hotel-cta-button" href="${href}" data-hotel="${hotel}" data-placement="hotel-button" target="_blank" rel="sponsored noopener noreferrer">Check prices &amp; availability</a></p>`;
+    }
+  );
+}
 
 export function calculateReadingTime(content: string): number {
 
