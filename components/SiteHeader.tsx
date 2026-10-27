@@ -5,94 +5,132 @@ import { SiteSearch } from "@/components/SiteSearch";
 import { WeatherStrip } from "@/components/WeatherStrip";
 
 type MegaCard = { slug: string; title: string; image: string; excerpt: string };
-type PrimaryKey = "Eat" | "Drink" | "Visit" | "Transport" | "TopPicks" | "Lists";
-type MenuKey = PrimaryKey | "Explore" | "Information";
+type MenuLink = { href: string; label: string };
+type MenuKey = "EatDrink" | "ThingsToDo" | "Stay" | "BestOf" | "Plan";
 
-const primaryNavigation: PrimaryKey[] = ["Eat", "Drink", "Visit", "Transport"];
-
-const megaMenuMeta: Record<PrimaryKey, { blurb: string; label: string; viewAllHref: string; viewAllLabel: string }> = {
-  Eat: { blurb: "Night markets, local favourites and the city's best tables.", label: "Eat", viewAllHref: "/category/eat", viewAllLabel: "View all Eat guides" },
-  Drink: { blurb: "Coffee, cocktails and the best rooftop views.", label: "Drink", viewAllHref: "/category/drink", viewAllLabel: "View all Drink guides" },
-  Visit: { blurb: "Sights, day trips and neighbourhoods worth your time.", label: "Visit", viewAllHref: "/category/visit", viewAllLabel: "View all Visit guides" },
-  Transport: { blurb: "Everything you need to get around with confidence.", label: "Transport", viewAllHref: "/category/transport", viewAllLabel: "View all Transport guides" },
-  TopPicks: { blurb: "Our personal favourites - the guides we send friends to first.", label: "Top Picks", viewAllHref: "/tag/top-pick", viewAllLabel: "View every Top Pick" },
-  Lists: { blurb: "Every ‘best of’ round-up on the site, all in one place.", label: "Lists", viewAllHref: "/tag/lists", viewAllLabel: "View every Best of Taipei list" },
-};
-
-const megaMenuCards: Record<PrimaryKey, MegaCard[]> = {
-  Eat: [
-    { slug: "michelin-food-stands-at-night-markets", title: "Every Michelin Food Stand at Every Night Market", image: "/media/2022/12/Raohe-Night-Market-6-edited.jpg", excerpt: "Every Bib Gourmand stall, mapped by market." },
-    { slug: "best-famous-restaurants", title: "Famous Local Restaurants Worth Queuing For", image: "/media/2019/08/Jin-Feng-Braised-Pork-Rice-12-1024x768.jpg", excerpt: "The best-known local spots, and when to beat the queue." },
-    { slug: "best-brunch-in-taipei", title: "The 8 Hippest Brunch Places in Taipei", image: "/media/2019/05/The-Antipodean-Specialty-Coffee-6-e1569909545917-1024x724.jpg", excerpt: "Where Taipei goes for a lazy weekend brunch." },
-    { slug: "din-tai-fung", title: "How to Avoid the Queues at Din Tai Fung", image: "/media/2019/10/Din-Tai-Fung-7-1024x712.jpg", excerpt: "The world-famous xiaolongbao, without the wait." },
-  ],
-  Drink: [
-    { slug: "best-bars-in-taipei", title: "The Best Expat Bars in Taipei", image: "/media/2019/06/On-Tap-2-1024x692.jpg", excerpt: "Happy hour times included." },
-    { slug: "best-cafes-to-work", title: "Best Cafes to Work From in Taipei", image: "/media/2019/12/Out-of-Office-1024x658.jpg", excerpt: "WiFi, plugs and seating, rated." },
-    { slug: "best-cocktail-bars-in-taipei", title: "Taipei's Best Cocktail Bars", image: "/media/2026/08/Cocktail-Bar-Bartender-Pouring-6-1024x1365.jpg", excerpt: "Asia's 50 Best winners, speakeasies and rooftops." },
-    { slug: "ximen-outdoor-drinking", title: "Ximending Outdoor Drinking Area", image: "/media/2020/01/Ximending-Outdoor-Drinking-3-1024x716.jpg", excerpt: "The largest and best area in Taipei for drinking outside." },
-  ],
-  Visit: [
-    { slug: "best-districts-and-areas", title: "A Guide to Every District in Taipei", image: "/media/2023/01/Taipei-1024x678.jpg", excerpt: "All 12 districts, and where to base yourself." },
-    { slug: "best-day-trips-from-taipei", title: "The Best Day (and Half Day) Trips from Taipei", image: "/media/2022/11/Jiufen2-1024x691.jpg", excerpt: "Jiufen, Shifen and the rest of the North Coast." },
-    { slug: "one-day-itineraries", title: "24 Hours in Taipei: Itineraries", image: "/media/2019/12/Chiang-Kai-Shek-Memorial-Hall-Flag-Ceremony3-1024x699.jpg", excerpt: "The best of Taipei, planned out for you." },
-    { slug: "huashan-1914-creative-park", title: "Huashan 1914 Creative Park", image: "/media/2019/07/Huashan-1914-Creative-Park-18-e1562031248271-1024x768.jpg", excerpt: "Converted warehouses full of galleries, shops and cafes." },
-  ],
-  Transport: [
-    { slug: "taipei-public-transport", title: "Taipei Transport Guide: Airports, Passes & Getting Around", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg", excerpt: "MRT, buses, YouBikes and everything between." },
-    { slug: "taiwan-high-speed-rail-hsr-discounts-klook", title: "Taiwan High Speed Rail: Tickets & Deals", image: "/media/2019/08/HSR-Taiwan-14-1024x718.jpg", excerpt: "Travel to other parts of Taiwan in no time." },
-    { slug: "mrt", title: "Taipei MRT Map & Guide", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
-    { slug: "taiwan-easycard", title: "Taiwan EasyCard: How to Buy, Top Up & Use It", image: "/media/2019/04/easy-card.jpg", excerpt: "The single most useful card you'll own here." },
-  ],
-  TopPicks: [
-    { slug: "national-palace-museum", title: "National Palace Museum", image: "/media/2019/07/National-Palace-Museum-8-1024x694.jpg", excerpt: "The world's largest collection of Chinese artefacts." },
-    { slug: "chiang-kai-shek-memorial-hall", title: "Chiang Kai-Shek Memorial Hall", image: "/media/2019/08/Chiang-Kai-Shek-7-1024x700.jpg", excerpt: "One of Taipei's most iconic landmarks." },
-    { slug: "taipei-101", title: "Taipei 101 - Cheap Tickets & Best Times to Visit", image: "/media/2020/12/Taipei-101-Fireworks-Mountain-1-1024x619.jpg", excerpt: "How to skip the queue and the crowds." },
-    { slug: "ximending", title: "30 Best Things to Do in Ximending", image: "/media/2019/05/Ximen-10-1024x738.jpg", excerpt: "Taipei's pedestrian-only youth culture hub." },
-  ],
-  Lists: [
-    { slug: "best-museums-in-taipei", title: "The Best Museums in Taipei", image: "/media/2019/07/Miniatures-Museum-of-Taiwan-13-1024x725.jpg", excerpt: "From the Palace Museum to the new railway museum." },
-    { slug: "best-markets-in-taipei", title: "The Best Night and Day Markets", image: "/media/2019/08/Shilin-Night-Market-1024x725.jpg", excerpt: "Where Taipei eats after dark, and shops in the morning." },
-    { slug: "quirky-cool-fun-things", title: "15 Quirky, Cool or Fun Things to Try", image: "/media/2023/04/Lin-Family-Mansion-9-edited-scaled.jpg", excerpt: "Unusual things worth making time for." },
-    { slug: "where-to-go-when-raining", title: "Where to Go When the Rain is Pouring", image: "/media/2019/10/Xinyi-Shopping-District-3-1024x684.jpg", excerpt: "Indoor escapes for Taipei's wettest days." },
-  ],
-};
-
-// Every category with a meaningful number of guides behind it. Eat, Drink,
-// Visit and Transport are already in the main nav, so they are deliberately
-// absent here; the small tails (Music Venues, Routes, Cinema, Stalls,
-// Festivals, Dessert Shops) are reachable from the tag list in the sidebar.
-// Nine, in a three-column grid: three tidy rows. Every category is still
-// reachable from the sidebar's Explore More pills, which lists all twenty, so
-// what gets left out here is only left out of the menu. Descriptions are kept
-// short because the cards are a third of the panel wide, not a half.
-const exploreLinks = [
-  { label: "Restaurants", href: "/category/restaurants", desc: "Sit-down meals worth booking" },
-  { label: "Bars", href: "/category/bars", desc: "Craft beer, cocktails & pubs" },
-  { label: "Cafes", href: "/category/cafes", desc: "Coffee, tea & laptop spots" },
-  { label: "Markets", href: "/category/markets", desc: "Night and day markets" },
-  { label: "Hotels", href: "/category/hotels", desc: "Where to stay, area by area" },
-  { label: "Parks", href: "/category/parks", desc: "Green space & riverside" },
-  { label: "Culture", href: "/category/culture", desc: "Temples & local traditions" },
-  { label: "Events", href: "/category/events", desc: "Festivals and what's on" },
-  { label: "Areas", href: "/category/areas", desc: "Every guide by district" },
+/**
+ * Five menus, each opening one panel: four picture cards plus a column of
+ * quick links. This replaced eight menus (Eat, Drink, Visit, Transport, Top
+ * Picks, Lists, Explore, Info), a labelled search box and a "Plan your trip"
+ * button in October 2026 - the bar had become too busy. Eat and Drink merged;
+ * Visit and Explore became Things to Do; Top Picks and Lists became Best Of;
+ * Transport, Info and the Plan button became Plan Your Trip; and the hotel
+ * guides, the site's best earners, got a menu of their own.
+ */
+const menus: { key: MenuKey; label: string; href: string; blurb: string; viewAllHref: string; viewAllLabel: string; cards: MegaCard[]; links: MenuLink[] }[] = [
+  {
+    key: "EatDrink",
+    label: "Eat & Drink",
+    href: "/category/eat",
+    blurb: "Night markets, local favourites, coffee and cocktails.",
+    viewAllHref: "/category/eat",
+    viewAllLabel: "All food guides",
+    cards: [
+      { slug: "michelin-food-stands-at-night-markets", title: "Every Michelin Food Stand at Every Night Market", image: "/media/2022/12/Raohe-Night-Market-6-edited.jpg", excerpt: "Every Bib Gourmand stall, mapped by market." },
+      { slug: "best-famous-restaurants", title: "Famous Local Restaurants Worth Queuing For", image: "/media/2019/08/Jin-Feng-Braised-Pork-Rice-12-1024x768.jpg", excerpt: "The best-known local spots, and when to beat the queue." },
+      { slug: "best-cocktail-bars-in-taipei", title: "Taipei's Best Cocktail Bars", image: "/media/2026/08/Cocktail-Bar-Bartender-Pouring-6-1024x1365.jpg", excerpt: "Asia's 50 Best winners, speakeasies and rooftops." },
+      { slug: "din-tai-fung", title: "How to Avoid the Queues at Din Tai Fung", image: "/media/2019/10/Din-Tai-Fung-7-1024x712.jpg", excerpt: "The world-famous xiaolongbao, without the wait." },
+    ],
+    links: [
+      { href: "/category/restaurants", label: "Restaurants" },
+      { href: "/category/markets", label: "Night & day markets" },
+      { href: "/category/cafes", label: "Cafes" },
+      { href: "/category/bars", label: "Bars" },
+      { href: "/category/drink", label: "All drink guides" },
+      { href: "/best-brunch-in-taipei", label: "Brunch" },
+    ],
+  },
+  {
+    key: "ThingsToDo",
+    label: "Things to Do",
+    href: "/category/visit",
+    blurb: "Sights, day trips, walks and neighbourhoods worth your time.",
+    viewAllHref: "/category/visit",
+    viewAllLabel: "All things to do",
+    cards: [
+      { slug: "taipei-101", title: "Taipei 101: Tickets & Best Times to Visit", image: "/media/2020/12/Taipei-101-Fireworks-Mountain-1-1024x619.jpg", excerpt: "How to skip the queue and the crowds." },
+      { slug: "best-day-trips-from-taipei", title: "The Best Day Trips from Taipei", image: "/media/2022/11/Jiufen2-1024x691.jpg", excerpt: "Jiufen, Shifen and the rest of the North Coast." },
+      { slug: "best-districts-and-areas", title: "A Guide to Every District in Taipei", image: "/media/2023/01/Taipei-1024x678.jpg", excerpt: "All 12 districts, and what each is like." },
+      { slug: "one-day-itineraries", title: "24 Hours in Taipei: Itineraries", image: "/media/2019/12/Chiang-Kai-Shek-Memorial-Hall-Flag-Ceremony3-1024x699.jpg", excerpt: "The best of Taipei, planned out for you." },
+    ],
+    links: [
+      { href: "/category/routes", label: "Self-guided walks" },
+      { href: "/category/areas", label: "Areas" },
+      { href: "/category/culture", label: "Temples & culture" },
+      { href: "/category/parks", label: "Parks" },
+      { href: "/category/events", label: "Events & festivals" },
+      { href: "/category/shop", label: "Shopping" },
+    ],
+  },
+  {
+    key: "Stay",
+    label: "Where to Stay",
+    href: "/best-areas-and-hotels-to-stay",
+    blurb: "The best areas to stay, and hand-picked hotels in each.",
+    viewAllHref: "/category/hotels",
+    viewAllLabel: "All hotel guides",
+    cards: [
+      { slug: "best-areas-and-hotels-to-stay", title: "Where to Stay in Taipei: Best Areas & Hotels", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Which district suits you, with hotels at every price." },
+      { slug: "hotels-near-ximending", title: "Hotels Near Ximending", image: "/media/2019/05/Ximen-10-1024x738.jpg", excerpt: "Lively, central and good value." },
+      { slug: "hotels-near-taipei-101", title: "Hotels Near Taipei 101", image: "/media/2020/12/Taipei-101-Fireworks-Mountain-1-1024x619.jpg", excerpt: "Xinyi's best, from hostels to five stars." },
+      { slug: "beitou-hot-spring-hotels", title: "Beitou Hot Spring Hotels", image: "/media/2019/09/Thermal-Valley-Beitou-6-1024x768.jpg", excerpt: "Rooms with their own hot spring bath." },
+    ],
+    links: [
+      { href: "/hotels-near-taipei-main-station", label: "Near Taipei Main Station" },
+      { href: "/hotels-in-zhongshan", label: "Zhongshan" },
+      { href: "/hotels-in-daan", label: "Daan" },
+      { href: "/best-hostels-in-taipei", label: "Hostels" },
+      { href: "/aparthotels-serviced-apartments-taipei", label: "Serviced apartments" },
+      { href: "/taipei-hotels-with-pools", label: "Hotels with a pool" },
+      { href: "/hotels-near-taoyuan-airport", label: "Near Taoyuan Airport" },
+    ],
+  },
+  {
+    key: "BestOf",
+    label: "Best Of",
+    href: "/tag/lists",
+    blurb: "Our favourite places, and every 'best of' list on the site.",
+    viewAllHref: "/tag/lists",
+    viewAllLabel: "Every best-of list",
+    cards: [
+      { slug: "national-palace-museum", title: "National Palace Museum", image: "/media/2019/07/National-Palace-Museum-8-1024x694.jpg", excerpt: "The world's largest collection of Chinese artefacts." },
+      { slug: "best-markets-in-taipei", title: "The Best Night and Day Markets", image: "/media/2019/08/Shilin-Night-Market-1024x725.jpg", excerpt: "Where Taipei eats after dark, and shops in the morning." },
+      { slug: "best-museums-in-taipei", title: "The Best Museums in Taipei", image: "/media/2019/07/Miniatures-Museum-of-Taiwan-13-1024x725.jpg", excerpt: "From the Palace Museum to the new railway museum." },
+      { slug: "quirky-cool-fun-things", title: "15 Quirky, Cool or Fun Things to Try", image: "/media/2023/04/Lin-Family-Mansion-9-edited-scaled.jpg", excerpt: "Unusual things worth making time for." },
+    ],
+    links: [
+      { href: "/tag/top-pick", label: "Our top picks" },
+      { href: "/tag/lists", label: "All best-of lists" },
+      { href: "/where-to-go-when-raining", label: "Rainy-day ideas" },
+      { href: "/best-places-to-keep-kids-amused", label: "With kids" },
+      { href: "/taipei-on-a-budget", label: "On a budget" },
+    ],
+  },
+  {
+    key: "Plan",
+    label: "Plan Your Trip",
+    href: "/taipei-guide",
+    blurb: "Getting there, getting around, and everything to sort before you go.",
+    viewAllHref: "/taipei-guide",
+    viewAllLabel: "Start with the Taipei guide",
+    cards: [
+      { slug: "taipei-guide", title: "The Taipei Guide: Everything to Know", image: "/media/2023/01/Taipei-1024x678.jpg", excerpt: "New here? Start with the essentials." },
+      { slug: "taoyuan-airport-mrt", title: "Taoyuan Airport MRT", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg", excerpt: "Airport to the city in 35 minutes." },
+      { slug: "mrt", title: "Taipei MRT Map & Guide", image: "/media/2019/05/Taipei-Main-1024x717.jpg", excerpt: "Taiwan's fast, spotless underground network." },
+      { slug: "taiwan-easycard", title: "Taiwan EasyCard", image: "/media/2019/04/easy-card.jpg", excerpt: "The single most useful card you'll own here." },
+    ],
+    links: [
+      { href: "/taipei-public-transport", label: "Getting around" },
+      { href: "/taiwan-sim-cards", label: "SIM cards & eSIMs" },
+      { href: "/taipei-money-guide", label: "Money & costs" },
+      { href: "/taiwan-visa-entry-requirements", label: "Visa & entry" },
+      { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
+      { href: "/taiwan-high-speed-rail-hsr-discounts-klook", label: "High speed rail" },
+      { href: "/taiwan-tourist-tax-refund", label: "Tax refund" },
+      { href: "/maps", label: "Maps" },
+    ],
+  },
 ];
-
-const informationLinks = [
-  { href: "/taiwan-easycard", label: "EasyCard" },
-  { href: "/taiwan-sim-cards", label: "Taiwan SIM cards" },
-  { href: "/taipei-money-guide", label: "Money & costs" },
-  { href: "/taipei-fun-pass", label: "Taipei Fun Pass" },
-  { href: "/taiwan-visa-entry-requirements", label: "Visa & entry requirements" },
-  { href: "/taiwan-tourist-tax-refund", label: "Tourist tax refund" },
-  { href: "/sports-centre-gym", label: "Sports centre gyms" },
-  { href: "/taipei-laundrettes", label: "Launderettes" },
-  { href: "/maps", label: "Map" },
-  { href: "/taipei-suggested-routes", label: "Routes" },
-];
-
-const explorePromo = { title: "Lists", desc: "Every ‘best of’ list on the site, gathered in one place.", image: "/images/taipei-skyline.webp", href: "/tag/lists" };
-const informationPromo = { title: "The Taipei Guide", desc: "New here? Start with the essentials before anything else.", image: "/media/2023/01/Taipei-1024x678.jpg", href: "/taipei-guide" };
 
 export function SiteHeader() {
   const [activeMenu, setActiveMenu] = useState<MenuKey | null>(null);
@@ -217,7 +255,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header" ref={headerRef}>
-      {/* One navy bar: logo, menus, search and the Plan pill. The mega-menu
+      {/* One navy bar: logo, five menus and a search icon. The mega-menu
           panel is positioned against the whole header, not the nav, so it
           still spans the full width. */}
       <div className="header-bar">
@@ -229,31 +267,28 @@ export function SiteHeader() {
         </a>
         <nav className="desktop-nav" aria-label="Main navigation" onMouseLeave={scheduleClose}>
           <div className="nav-links-wrap">
-            {primaryNavigation.map((item) => (
-              <a key={item} href={`/category/${item.toLowerCase()}`} {...triggerProps(item)}>{item} <span className="nav-caret" aria-hidden="true" /></a>
+            {menus.map((menu) => (
+              <a key={menu.key} href={menu.href} {...triggerProps(menu.key)}>{menu.label} <span className="nav-caret" aria-hidden="true" /></a>
             ))}
-            <a href="/tag/top-pick" {...triggerProps("TopPicks")}>Top Picks <span className="nav-caret" aria-hidden="true" /></a>
-            <a href="/tag/lists" {...triggerProps("Lists")}>Lists <span className="nav-caret" aria-hidden="true" /></a>
-            <button type="button" {...triggerProps("Explore")}>Explore <span className="nav-caret" aria-hidden="true" /></button>
-            <button type="button" {...triggerProps("Information")}>Info <span className="nav-caret" aria-hidden="true" /></button>
           </div>
         </nav>
         <div className="header-tools">
           <div className="header-weather"><WeatherStrip /></div>
           <div className="header-search"><SiteSearch /></div>
-          <a className="nav-cta" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
         </div>
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
           <nav aria-label="Mobile navigation">
             <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p><WeatherStrip /></div>
             <div className="mobile-menu-utility"><SiteSearch /></div>
-            <a className="mobile-plan-link" href="/taipei-guide">Plan your trip <span aria-hidden="true">→</span></a>
-            {primaryNavigation.map((item) => <a key={item} href={`/category/${item.toLowerCase()}`}>{item}<span aria-hidden="true">→</span></a>)}
-            <a href="/tag/top-pick">Top Picks<span aria-hidden="true">→</span></a>
-            <a href="/tag/lists">Lists<span aria-hidden="true">→</span></a>
-            <details className="mobile-explore-menu"><summary>Explore <span aria-hidden="true"></span></summary>{exploreLinks.map((item) => <a key={item.label} href={item.href}>{item.label}</a>)}</details>
-            <details className="mobile-information-menu"><summary>Information <span aria-hidden="true"></span></summary>{informationLinks.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</details>
+            {menus.map((menu) => (
+              <details key={menu.key} className="mobile-menu-section">
+                <summary>{menu.label} <span aria-hidden="true"></span></summary>
+                <a href={menu.viewAllHref}>{menu.viewAllLabel}</a>
+                {menu.cards.map((card) => <a key={card.slug} href={`/${card.slug}`}>{card.title}</a>)}
+                {menu.links.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
+              </details>
+            ))}
           </nav>
         </details>
       </div>
@@ -263,56 +298,30 @@ export function SiteHeader() {
         onMouseLeave={scheduleClose}
       >
         <div className="mega-menu-inner">
-          {(["Eat", "Drink", "Visit", "Transport", "TopPicks", "Lists"] as PrimaryKey[]).map((key) => (
-            <div key={key} className="mega-menu-content" hidden={activeMenu !== key}>
+          {menus.map((menu) => (
+            <div key={menu.key} className="mega-menu-content" hidden={activeMenu !== menu.key}>
               <div className="mega-menu-header">
-                <p className="mega-menu-blurb">{megaMenuMeta[key].blurb}</p>
-                <a className="mega-menu-viewall" href={megaMenuMeta[key].viewAllHref}>{megaMenuMeta[key].viewAllLabel} <span aria-hidden="true">→</span></a>
+                <p className="mega-menu-blurb">{menu.blurb}</p>
+                <a className="mega-menu-viewall" href={menu.viewAllHref}>{menu.viewAllLabel} <span aria-hidden="true">→</span></a>
               </div>
-              <div className="mega-menu-cards">
-                {megaMenuCards[key].map((card) => (
-                  <a key={card.slug} className="mega-menu-card" href={`/${card.slug}`}>
-                    <span className="mega-menu-card-image"><img src={card.image} alt="" loading="lazy" /></span>
-                    <span className="mega-menu-card-title">{card.title}</span>
-                    <span className="mega-menu-card-excerpt">{card.excerpt}</span>
-                  </a>
-                ))}
+              <div className="mega-menu-split">
+                <div className="mega-menu-cards">
+                  {menu.cards.map((card) => (
+                    <a key={card.slug} className="mega-menu-card" href={`/${card.slug}`}>
+                      <span className="mega-menu-card-image"><img src={card.image} alt="" loading="lazy" /></span>
+                      <span className="mega-menu-card-title">{card.title}</span>
+                      <span className="mega-menu-card-excerpt">{card.excerpt}</span>
+                    </a>
+                  ))}
+                </div>
+                <ul className="mega-menu-quick-links">
+                  {menu.links.map((link) => (
+                    <li key={link.href}><a href={link.href}>{link.label}</a></li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
-
-          <div className="mega-menu-content" hidden={activeMenu !== "Explore"}>
-            <div className="mega-menu-links-layout">
-              <div className="mega-menu-link-grid">
-                {exploreLinks.map((item) => (
-                  <a key={item.label} className="mega-menu-link-card" href={item.href}>
-                    <span className="mega-menu-link-title">{item.label}</span>
-                    <span className="mega-menu-link-desc">{item.desc}</span>
-                  </a>
-                ))}
-              </div>
-              <a className="mega-menu-promo" href={explorePromo.href}>
-                <span className="mega-menu-promo-image"><img src={explorePromo.image} alt="" loading="lazy" /></span>
-                <span className="mega-menu-promo-title">{explorePromo.title}</span>
-                <span className="mega-menu-promo-desc">{explorePromo.desc}</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="mega-menu-content" hidden={activeMenu !== "Information"}>
-            <div className="mega-menu-links-layout">
-              <div className="mega-menu-link-list">
-                {informationLinks.map((item) => (
-                  <a key={item.href} href={item.href}>{item.label}</a>
-                ))}
-              </div>
-              <a className="mega-menu-promo" href={informationPromo.href}>
-                <span className="mega-menu-promo-image"><img src={informationPromo.image} alt="" loading="lazy" /></span>
-                <span className="mega-menu-promo-title">{informationPromo.title}</span>
-                <span className="mega-menu-promo-desc">{informationPromo.desc}</span>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </header>

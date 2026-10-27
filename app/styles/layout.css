@@ -124,27 +124,8 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 .site-header .header-search .search-icon-btn { width: 38px; height: 38px; background: none; box-shadow: none; }
 .site-header .header-search .search-trigger:hover .search-icon-btn { transform: none; box-shadow: none; }
 
-.header-tools .nav-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: var(--red-text);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-  transition: background .18s ease, transform .18s ease;
-}
-.header-tools .nav-cta:hover { background: var(--red-text-hover); transform: translateY(-1px); }
 
-@media (min-width: 1440px) {
-  .site-header .header-search .search-trigger { width: 210px; padding: 0 3px 0 16px; justify-content: space-between; }
-  .site-header .header-search .search-placeholder-text { display: inline; color: rgba(255, 255, 255, .7); font-size: 13px; }
-}
-@media (min-width: 1560px) {
+@media (min-width: 1280px) {
   .site-header .header-weather { display: flex; }
 }
 
@@ -155,7 +136,6 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 /* The eight menus get tighter in two steps, then give way to the menu
    button at 900px. */
 @media (max-width: 1180px) {
-  .header-tools .nav-cta { display: none; }
   .site-header .nav-links-wrap > a,
   .site-header .nav-links-wrap > button { padding: 0 9px; }
 }
@@ -219,15 +199,12 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
   .mobile-menu .search-placeholder-text { color: rgba(255, 255, 255, .75); }
   .mobile-menu nav > a { display: flex; align-items: center; justify-content: space-between; min-height: 60px; border-bottom: 1px solid rgba(255, 255, 255, .18); color: #fff; font: 28px/1 var(--font-serif); letter-spacing: -0.02em; }
   .mobile-menu nav > a > span { color: #ffaaa4; font: 22px/1 var(--font-sans); }
-  .mobile-menu .mobile-plan-link { justify-content: center; gap: 10px; min-height: 52px; margin: 4px 0 16px; border: 0; border-radius: 999px; padding: 0 20px; background: var(--red-text); font: 700 15px/1 var(--font-sans); letter-spacing: 0; }
-  .mobile-menu .mobile-plan-link > span { color: #fff; font-size: 17px; }
-  .mobile-menu .mobile-plan-link:hover { background: var(--red-text-hover); }
-  .mobile-information-menu, .mobile-explore-menu { border-bottom: 1px solid rgba(255, 255, 255, .18); }
-  .mobile-information-menu summary, .mobile-explore-menu summary { display: flex; align-items: center; justify-content: space-between; min-height: 60px; cursor: pointer; color: #fff; font: 28px/1 var(--font-serif); letter-spacing: -0.02em; list-style: none; }
-  .mobile-information-menu summary > span, .mobile-explore-menu summary > span { width: 10px; height: 10px; margin-right: 7px; border-right: 2px solid #ffaaa4; border-bottom: 2px solid #ffaaa4; transform: rotate(45deg); transition: transform .2s ease; }
-  .mobile-information-menu[open] summary > span, .mobile-explore-menu[open] summary > span { transform: rotate(225deg); }
-  .mobile-information-menu a, .mobile-explore-menu a { display: block; padding: 12px 0 12px 14px; border-top: 1px solid rgba(255, 255, 255, .1); color: rgba(255, 255, 255, .8); font-size: 15px; font-weight: 700; }
-  .mobile-information-menu a:hover, .mobile-explore-menu a:hover { color: #ffaaa4; }
+  .mobile-menu-section { border-bottom: 1px solid rgba(255, 255, 255, .18); }
+  .mobile-menu-section summary { display: flex; align-items: center; justify-content: space-between; min-height: 60px; cursor: pointer; color: #fff; font: 28px/1 var(--font-serif); letter-spacing: -0.02em; list-style: none; }
+  .mobile-menu-section summary > span { width: 10px; height: 10px; margin-right: 7px; border-right: 2px solid #ffaaa4; border-bottom: 2px solid #ffaaa4; transform: rotate(45deg); transition: transform .2s ease; }
+  .mobile-menu-section[open] summary > span { transform: rotate(225deg); }
+  .mobile-menu-section a { display: block; padding: 12px 0 12px 14px; border-top: 1px solid rgba(255, 255, 255, .1); color: rgba(255, 255, 255, .8); font-size: 15px; font-weight: 700; }
+  .mobile-menu-section a:hover { color: #ffaaa4; }
 }
 @media (max-width: 620px) {
   :root { --header-h: 60px; }
@@ -570,3 +547,26 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
    items on a phone instead of breaking "Travel guide" over two lines. */
 .article-heading-meta { flex-wrap: wrap; row-gap: 6px; }
 .article-heading-meta > * { white-space: nowrap; }
+
+
+/* Five menus (October 2026): calmer sentence-case labels, and each panel is
+   four picture cards plus a column of quick links. */
+.site-header .desktop-nav { font-size: 15px; letter-spacing: 0; text-transform: none; }
+.site-header .nav-links-wrap > a,
+.site-header .nav-links-wrap > button { padding: 0 14px; font-weight: 600; color: rgba(255, 255, 255, .92); }
+.site-header .nav-links-wrap > a::after,
+.site-header .nav-links-wrap > button::after { left: 14px; right: 14px; }
+.mega-menu-viewall { text-transform: none; letter-spacing: 0; font-weight: 700; }
+.mega-menu-split { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 32px; align-items: start; }
+.mega-menu-quick-links { margin: 0; padding: 0 0 0 28px; border-left: 1px solid var(--line-soft); list-style: none; }
+.mega-menu-quick-links li + li { margin-top: 2px; }
+.mega-menu-quick-links a { display: block; padding: 7px 0; color: var(--ink); font-size: 15px; font-weight: 600; transition: color .15s ease; }
+.mega-menu-quick-links a:hover { color: var(--red-text); }
+@media (max-width: 1180px) {
+  .mega-menu-split { grid-template-columns: minmax(0, 1fr) 190px; gap: 24px; }
+}
+@media (max-width: 1060px) {
+  .site-header .desktop-nav { font-size: 14px; }
+  .site-header .nav-links-wrap > a,
+  .site-header .nav-links-wrap > button { padding: 0 10px; }
+}
