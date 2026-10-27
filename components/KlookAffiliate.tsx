@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
 
@@ -40,7 +40,7 @@ function release(widget: Element) {
 
 /**
  * Watch every lazy Klook widget under `root` (data-rendered="lazy", set by
- * enhanceLazyKlookWidgets in lib/content.ts, or by KlookSidebarWidget) and
+ * enhanceLazyKlookWidgets in lib/content.ts) and
  * load each one only when it comes near the viewport. A widget hidden with
  * display:none never intersects, so it never loads. Safe to call repeatedly:
  * observing an element twice is a no-op.

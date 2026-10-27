@@ -1,5 +1,4 @@
 import { RightSidebarContentsWidget, type HeadingItem } from "@/components/StickyContentsGuide";
-import { KlookSidebarWidget } from "@/components/KlookSidebarWidget";
 
 type RightSidebarProps = {
   headings: HeadingItem[];
@@ -10,18 +9,19 @@ type RightSidebarProps = {
 };
 
 const KLOOK_SEARCH_URL = "https://www.klook.com/en-GB/search/result/?query=Taipei&aid=8733";
+const KLOOK_HOTELS_URL = "https://www.klook.com/en-GB/destination/c19-taipei/3-hotel/?aid=8733";
 const WISE_URL = "https://wise.com/invite/ecac/robertrichardm17";
 
 /**
  * The article's one side column, as on City Break Geek: the contents card,
- * and under it one compact "Book in Taipei" card. The whole column pins
- * below the header (--sticky-top in app/styles/layout.css).
+ * and under it one compact "Book your trip" card of plain links (tours,
+ * hotels, our where-to-stay guide). The whole column pins below the header
+ * (--sticky-top in app/styles/layout.css).
  *
- * This replaces the old left rail of five Klook deal tiles and the long tail
- * of sidebar sections (write for us, useful guides, categories, tags), which
- * now sit in the band after the article (RelatedGuides). The booking card is
- * desktop only: on a phone the same Klook unit is placed in the article,
- * after the Quick Verdict (see insertMobileBookingCard in app/[slug]/page.tsx).
+ * The Klook deals widget that used to sit here now goes inside the article
+ * instead, mid-post on desktop and after the Quick Verdict on a phone (see
+ * insertDesktopBookingCard and insertMobileBookingCard in
+ * app/[slug]/page.tsx), so the two never sit side by side.
  */
 export function RightSidebar({ headings, showKlookDeals = true, showWise = true }: RightSidebarProps) {
   const showBooking = showKlookDeals || showWise;
@@ -31,15 +31,29 @@ export function RightSidebar({ headings, showKlookDeals = true, showWise = true 
       <RightSidebarContentsWidget headings={headings} />
 
       {showBooking && (
-        <section className="sidebar-section sidebar-booking-card" aria-label="Book in Taipei">
-          <p className="booking-card-kicker">{showKlookDeals ? "Book in Taipei" : "Money tip"}</p>
+        <section className="sidebar-section sidebar-booking-card" data-placement="sidebar" aria-label="Book your trip">
+          <p className="booking-card-kicker">{showKlookDeals ? "Book your trip" : "Money tip"}</p>
           {showKlookDeals && (
-            <>
-              <KlookSidebarWidget amount="3" />
-              <a className="booking-card-link" href={KLOOK_SEARCH_URL} target="_blank" rel="sponsored noopener noreferrer">
-                Browse Taipei tours on Klook <span aria-hidden="true">→</span>
-              </a>
-            </>
+            <ul className="booking-card-list">
+              <li>
+                <a href={KLOOK_SEARCH_URL} target="_blank" rel="sponsored noopener noreferrer">
+                  <span className="booking-card-name">Taipei tours &amp; tickets</span>
+                  <span className="booking-card-note">Taipei 101, day trips and food tours on Klook</span>
+                </a>
+              </li>
+              <li>
+                <a href={KLOOK_HOTELS_URL} target="_blank" rel="sponsored noopener noreferrer">
+                  <span className="booking-card-name">Hotels in Taipei</span>
+                  <span className="booking-card-note">Compare prices on Klook</span>
+                </a>
+              </li>
+              <li>
+                <a href="/best-areas-and-hotels-to-stay">
+                  <span className="booking-card-name">Where to stay</span>
+                  <span className="booking-card-note">Our guide to the best areas and hotels</span>
+                </a>
+              </li>
+            </ul>
           )}
           {showWise && (
             <p className="booking-card-wise">

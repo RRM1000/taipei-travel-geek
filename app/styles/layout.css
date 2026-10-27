@@ -360,6 +360,15 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 .article-content .mobile-booking-card a.booking-card-link:hover { color: #fff; text-decoration-color: #ffaaa4; }
 /* The outbound-link icon the body adds to sponsored links is dark; not on navy. */
 .article-content .mobile-booking-card a.booking-card-link::after { display: none; }
+/* The sidebar's plain booking links (RightSidebar). */
+.booking-card-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.booking-card-list li { padding-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.booking-card-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+.booking-card-list a { display: grid; gap: 2px; color: #fff; text-decoration: none; }
+.booking-card-name { font-size: 15px; font-weight: 700; line-height: 1.3; }
+.booking-card-name::after { content: " →"; color: #ffaaa4; }
+.booking-card-note { color: rgba(255, 255, 255, .72); font-size: 13px; line-height: 1.4; }
+.booking-card-list a:hover .booking-card-name { color: #ffaaa4; }
 .booking-card-wise {
   margin: 0;
   padding-top: 12px;
@@ -373,6 +382,8 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 .booking-card-wise a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 
 .article-content .mobile-booking-card { display: none; margin: 28px 0; }
+/* Desktop's mid-article copy (page.tsx insertDesktopBookingCard). */
+.article-content .mobile-booking-card.desktop-inline { display: grid; margin: 36px 0; }
 
 /* One column at 52rem and below, as on City Break Geek. The contents card
    (collapsed) leads; the sidebar's booking card hides and the in-article
@@ -387,6 +398,7 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
   .article-grid .sidebar-booking-card { display: none; }
   .article-grid .sidebar-toc-container { max-height: 60vh; }
   .article-content .mobile-booking-card { display: grid; }
+  .article-content .mobile-booking-card.desktop-inline { display: none; }
 }
 
 /* ------------------------------------------------------------------ */
@@ -599,7 +611,12 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 }
 .site-header .mega-menu-header { border-bottom-color: var(--line); }
 .mega-menu-quick-links a { padding: 6px 0; color: var(--ink-body); font-size: 14px; }
-.mega-menu-side .taipei-now { margin: 18px 0 0 28px; }
+/* Every menu's content sits in the same grid cell, the closed ones kept in
+   layout but invisible (and inert, set by SiteHeader), so the panel is always
+   as tall as the tallest menu and doesn't change height between them. */
+.mega-menu-inner { display: grid; }
+.mega-menu-content { grid-area: 1 / 1; }
+.mega-menu-content:not(.is-active) { visibility: hidden; }
 
 /* "Taipei right now": temperature, conditions and local time. */
 .taipei-now { margin: 0; color: var(--muted); font: 500 14px/1.4 var(--font-sans); }

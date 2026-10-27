@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { SiteSearch } from "@/components/SiteSearch";
-import { WeatherStrip } from "@/components/WeatherStrip";
 
 type MegaCard = { slug: string; title: string; image: string; excerpt: string };
 type MenuLink = { href: string; label: string };
@@ -278,7 +277,7 @@ export function SiteHeader() {
         <details className="mobile-menu">
           <summary aria-label="Open navigation"><span className="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary>
           <nav aria-label="Mobile navigation">
-            <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p><WeatherStrip /></div>
+            <div className="mobile-menu-heading"><span>Explore Taipei</span><p>Independent guides for a more curious visit.</p></div>
             <div className="mobile-menu-utility"><SiteSearch /></div>
             {menus.map((menu) => (
               <details key={menu.key} className="mobile-menu-section">
@@ -298,7 +297,12 @@ export function SiteHeader() {
       >
         <div className="mega-menu-inner">
           {menus.map((menu) => (
-            <div key={menu.key} className="mega-menu-content" hidden={activeMenu !== menu.key}>
+            <div
+              key={menu.key}
+              className={`mega-menu-content${activeMenu === menu.key ? " is-active" : ""}`}
+              aria-hidden={activeMenu !== menu.key}
+              inert={activeMenu !== menu.key}
+            >
               <div className="mega-menu-header">
                 <p className="mega-menu-blurb">{menu.blurb}</p>
                 <a className="mega-menu-viewall" href={menu.viewAllHref}>{menu.viewAllLabel} <span aria-hidden="true">→</span></a>
@@ -319,7 +323,6 @@ export function SiteHeader() {
                       <li key={link.href}><a href={link.href}>{link.label}</a></li>
                     ))}
                   </ul>
-                  {menu.key === "Plan" && <WeatherStrip withTime />}
                 </div>
               </div>
             </div>

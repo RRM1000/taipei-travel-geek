@@ -214,6 +214,32 @@ function insertMobileBookingCard(html: string, show: boolean): string {
   return firstH2 === -1 ? html + MOBILE_BOOKING_CARD : html.slice(0, firstH2) + MOBILE_BOOKING_CARD + html.slice(firstH2);
 }
 
+/**
+ * The same card for desktop readers, in the body as well as the sidebar: by
+ * mid-article the sidebar card has scrolled away. It goes before the h2
+ * nearest the middle of the post (never the first or the FAQ), and only on
+ * posts with at least three h2s and no Klook widget of their own. Hidden at
+ * 52rem and below, where the phone copy after the Quick Verdict shows instead,
+ * so it never loads its iframe there.
+ */
+const DESKTOP_BOOKING_CARD = MOBILE_BOOKING_CARD
+  .replace('class="mobile-booking-card"', 'class="mobile-booking-card desktop-inline"')
+  .replace('data-placement="mobile-inline"', 'data-placement="desktop-inline"')
+  // Wider than Klook's 655px switch-over, the widget lays its deals out side
+  // by side in one row; three fill the article column.
+  .replace('data-amount="2"', 'data-amount="3"');
+
+function insertDesktopBookingCard(html: string, show: boolean): string {
+  if (!show || /klk-aff-widget/i.test(html)) return html;
+  const h2s = [...html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)]
+    .slice(1)
+    .filter((m) => !/question|faq/i.test(m[1]));
+  if (h2s.length < 2) return html;
+  const middle = html.length / 2;
+  const at = h2s.reduce((best, m) => (Math.abs(m.index! - middle) < Math.abs(best - middle) ? m.index! : best), h2s[0].index!);
+  return html.slice(0, at) + DESKTOP_BOOKING_CARD + html.slice(at);
+}
+
 function withoutDuplicateLeadImage(content: string, image: string | null, isPage: boolean) {
   if (!image || isPage) return content;
 
@@ -353,7 +379,7 @@ export default async function ArticlePage({ params }: PageProperties) {
   // the Klook widgets are marked lazy last, once every widget is in place.
   const walk = getWalk(post.slug);
   const finalContent = insertWalkRoute(fillQueueMarker(enhanceResponsiveImages(enhanceContentImages(enhanceLazyKlookWidgets(enhanceAffiliateLinks(enhanceHotelCtaButtons(insertMobileBookingCard(
-    withNearbyGuides,
+    insertDesktopBookingCard(withNearbyGuides, showKlookDeals),
     showKlookDeals
   ))))))), walk);
 
