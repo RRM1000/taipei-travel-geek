@@ -1,8 +1,9 @@
 // Walking routes: the numbered route map, "Open in Google Maps" link and stop
 // table on each walk post, in the style of London Travel Geek's walks.
 //
-// The data is built from the My Maps exports by scripts/build-walks.mjs - one
-// file per walk in data/walks/. A post opts in with a marker where its map
+// The data is built by scripts/build-walks.mjs - one file per walk in
+// data/walks/, from the My Maps exports or, for newer walks, the hand-written
+// stops in data/walks-input/. A post opts in with a marker where its map
 // goes:
 //
 //   <div data-walk-route="daan-walking-route"></div>
@@ -13,9 +14,12 @@
 // then draws the street map into the frame on the client.
 
 import daan from "@/data/walks/daan-walking-route.json";
+import dadaocheng from "@/data/walks/dadaocheng-dihua-street-walk.json";
 import datong from "@/data/walks/datong-walking-route.json";
 import gongguan from "@/data/walks/gongguan-walking-route.json";
 import songshanXinyi from "@/data/walks/songshan-xinyi-walking-tour.json";
+import wanhua from "@/data/walks/wanhua-heritage-walk.json";
+import xinbeitou from "@/data/walks/xinbeitou-hot-springs-walk.json";
 import zhongzheng from "@/data/walks/zhongzheng-walking-route.json";
 
 export type WalkStop = {
@@ -52,7 +56,7 @@ export type Walk = {
 };
 
 // JSON imports type paths as number[][], not pairs - the build script guarantees the shape.
-const walks = [daan, datong, gongguan, songshanXinyi, zhongzheng] as unknown as Walk[];
+const walks = [daan, dadaocheng, datong, gongguan, songshanXinyi, wanhua, xinbeitou, zhongzheng] as unknown as Walk[];
 const walksBySlug = new Map(walks.map((walk) => [walk.slug, walk]));
 
 export const walkCount = walks.length;

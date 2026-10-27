@@ -1,0 +1,19 @@
+{
+  "slug": "xinbeitou-hot-springs-walk",
+  "title": "the Xinbeitou hot springs walk from Xinbeitou MRT to Thermal Valley",
+  "duration": "2 to 3 hours",
+  "stops": [
+    { "name": "Xinbeitou MRT", "url": "/mrt", "lat": 25.136964, "lng": 121.503169 },
+    { "name": "Beitou Park", "url": "/xinbeitou", "lat": 25.136700, "lng": 121.504900 },
+    { "name": "Beitou Hot Spring Museum", "url": "/xinbeitou#hot-spring-museum", "lat": 25.136579, "lng": 121.507190 },
+    { "name": "Beitou Library", "url": "/xinbeitou", "lat": 25.136423, "lng": 121.506246 },
+    { "name": "Thermal Valley", "url": "/xinbeitou#thermal-valley", "lat": 25.138037, "lng": 121.511872 }
+  ],
+  "extras": [
+    { "name": "Ketagalan Culture Center", "lat": 25.137121, "lng": 121.505831 },
+    { "name": "Longnaitang", "url": "/taipei-hot-springs#public-baths", "lat": 25.136393, "lng": 121.507989 },
+    { "name": "Millennium Hot Spring (closed for rebuilding)", "url": "/taipei-hot-springs#public-baths", "lat": 25.136864, "lng": 121.508332 },
+    { "name": "Plum Garden", "lat": 25.136933, "lng": 121.508762 },
+    { "name": "Puji Temple", "lat": 25.135931, "lng": 121.511186 }
+  ]
+}

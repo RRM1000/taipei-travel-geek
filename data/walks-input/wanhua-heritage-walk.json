@@ -1,0 +1,21 @@
+{
+  "slug": "wanhua-heritage-walk",
+  "title": "the Wanhua heritage walk from Ximen to Longshan Temple",
+  "duration": "3 to 4 hours",
+  "stops": [
+    { "name": "Ximen MRT (exit 1)", "lat": 25.042100, "lng": 121.507620 },
+    { "name": "The Red House", "url": "/the-red-house-ximending", "lat": 25.042138, "lng": 121.506282 },
+    { "name": "Lane 50 food alley", "url": "/ximending#Lane-50", "lat": 25.044119, "lng": 121.506868 },
+    { "name": "Bopiliao Historical Block", "url": "/bopiliao-historical-block", "lat": 25.036846, "lng": 121.502268 },
+    { "name": "Longshan Temple", "url": "/longshan-temple", "lat": 25.036782, "lng": 121.499911 },
+    { "name": "Huaxi Street Night Market", "url": "/huaxi-street-night-market", "lat": 25.036720, "lng": 121.498280 }
+  ],
+  "extras": [
+    { "name": "Ay Chung Flour Rice Noodles", "url": "/ay-chung-flour-rice-noodles", "lat": 25.043318, "lng": 121.507686 },
+    { "name": "Modern Toilet (Lane 50, Xining South Road)", "url": "/modern-toilet", "lat": 25.044451, "lng": 121.505756 },
+    { "name": "Yi Jia Zi", "url": "/michelin-bib-gourmand-taiwanese-small-eats-taipei", "lat": 25.040378, "lng": 121.502190 },
+    { "name": "Herb Lane (Xichang Street)", "lat": 25.036953, "lng": 121.500438 },
+    { "name": "Yuan Fang Guabao", "lat": 25.039192, "lng": 121.498560 },
+    { "name": "Longshan Temple MRT (exit 1)", "lat": 25.035481, "lng": 121.499652 }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "dadaocheng-dihua-street-walk",
+  "title": "the Dadaocheng and Dihua Street walk from North Gate to Ningxia Night Market",
+  "duration": "3 to 4 hours",
+  "stops": [
+    { "name": "North Gate (Cheng'en Gate)", "url": "/ximending#Zhongshan-Hall", "lat": 25.047729, "lng": 121.511224 },
+    { "name": "Yongle Market", "url": "/dihua-street-dadaocheng-guide#yongle-fabric-market", "lat": 25.054869, "lng": 121.510551 },
+    { "name": "Xiahai City God Temple", "url": "/dihua-street-dadaocheng-guide#city-god-temple", "lat": 25.055626, "lng": 121.510210 },
+    { "name": "Dihua Street at Guisui Street", "url": "/dihua-street-dadaocheng-guide", "lat": 25.058208, "lng": 121.509692 },
+    { "name": "Dadaocheng Wharf (PIER5 container market)", "url": "/dihua-street-dadaocheng-guide#dadaocheng-wharf", "lat": 25.056257, "lng": 121.507427 },
+    { "name": "Ningxia Night Market", "url": "/ningxia-night-market", "lat": 25.056188, "lng": 121.515222 }
+  ],
+  "extras": [
+    { "name": "Railway Department Park (National Taiwan Museum)", "lat": 25.049205, "lng": 121.511093 }
+  ]
+}

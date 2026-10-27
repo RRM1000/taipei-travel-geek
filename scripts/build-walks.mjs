@@ -1,7 +1,9 @@
 // Build the walking-route data behind the numbered route maps on the walk posts.
 //
-//   node scripts/build-walks.mjs            write data/walks/<slug>.json
-//   node scripts/build-walks.mjs --report   print stops, legs and distances only
+//   node scripts/build-walks.mjs                 write data/walks/<slug>.json
+//   node scripts/build-walks.mjs --report        print stops, legs and distances only
+//   node scripts/build-walks.mjs --fetch-paths   also (re)fetch walking paths for
+//                                                the hand-written walks (see below)
 //
 // WHY. The walks used to embed a Google My Maps iframe: Google's map, Google's
 // pins, lettered A-I by the directions tool, and nothing on it a crawler could
@@ -22,13 +24,27 @@
 //
 // Distances are measured along the directions line, so they follow the
 // streets rather than the crow. They are an estimate - the pages say "about".
+//
+// HAND-WRITTEN WALKS. Walks added after the My Maps era (Wanhua, Dadaocheng,
+// Xinbeitou) have no export. Their stops - names, site pages and coordinates
+// checked against OpenStreetMap - live in data/walks-input/<slug>.json, and
+// they come out in exactly the same data/walks format. The line between stops
+// is a real walking path from the OSRM foot profile on routing.openstreetmap.de
+// (OpenStreetMap data), fetched one leg at a time with --fetch-paths and cached
+// in data/walks-input/paths/<slug>.json, so normal builds never touch the
+// network. Without a cached path, a leg is drawn as a straight line between
+// its stops, as London Travel Geek does.
 
 import fs from "node:fs";
 import path from "node:path";
 
 const MAPS_DIR = path.resolve("data/maps");
+const HAND_DIR = path.resolve("data/walks-input");
+const PATHS_DIR = path.join(HAND_DIR, "paths");
 const OUT_DIR = path.resolve("data/walks");
 const report = process.argv.includes("--report");
+const fetchPaths = process.argv.includes("--fetch-paths");
+const FOOT_ROUTER = "https://routing.openstreetmap.de/routed-foot/route/v1/foot";
 
 /**
  * One entry per walk post. `layer` picks the directions layer in the export by
@@ -310,6 +326,84 @@ for (const walk of WALKS) {
     }
   }
   for (const extra of extras) console.log(`     +  ${extra.name}`);
+}
+
+// ------------------------------------------------------ hand-written walks ---
+/** One leg's walking path from the foot router, as [lat, lng] pairs. */
+async function fetchLeg(from, to) {
+  const url = `${FOOT_ROUTER}/${from[1]},${from[0]};${to[1]},${to[0]}?overview=full&geometries=geojson`;
+  const res = await fetch(url, { headers: { "User-Agent": "taipeitravelgeek.com walk builder" } });
+  if (!res.ok) throw new Error(`foot router ${res.status} for ${url}`);
+  const body = await res.json();
+  if (body.code !== "Ok" || !body.routes?.length) throw new Error(`foot router: ${body.code} for ${url}`);
+  // Start and end on the stops themselves rather than the nearest snapped road.
+  return [from, ...body.routes[0].geometry.coordinates.map(([lng, lat]) => [round(lat, 5), round(lng, 5)]), to];
+}
+
+const handFiles = fs.existsSync(HAND_DIR) ? fs.readdirSync(HAND_DIR).filter((f) => f.endsWith(".json")).sort() : [];
+
+for (const file of handFiles) {
+  const walk = JSON.parse(fs.readFileSync(path.join(HAND_DIR, file), "utf8"));
+  if (`${walk.slug}.json` !== file) throw new Error(`${file}: slug is ${walk.slug}`);
+  if (walk.stops.length < 2 || walk.stops.length > 11) throw new Error(`${walk.slug}: ${walk.stops.length} stops`);
+  const points = walk.stops.map((s) => {
+    if (typeof s.lat !== "number" || typeof s.lng !== "number") throw new Error(`${walk.slug}: ${s.name} has no coordinates`);
+    return [round(s.lat), round(s.lng)];
+  });
+
+  const cacheFile = path.join(PATHS_DIR, `${walk.slug}.json`);
+  let legs = null;
+  if (fetchPaths) {
+    legs = [];
+    for (let i = 1; i < points.length; i++) {
+      legs.push(await fetchLeg(points[i - 1], points[i]));
+      await new Promise((r) => setTimeout(r, 1100)); // the public router allows about one request a second
+    }
+    fs.mkdirSync(PATHS_DIR, { recursive: true });
+    fs.writeFileSync(cacheFile, JSON.stringify({ stops: points, router: FOOT_ROUTER, fetchedAt: new Date().toISOString(), legs }) + "\n");
+  } else if (fs.existsSync(cacheFile)) {
+    const cached = JSON.parse(fs.readFileSync(cacheFile, "utf8"));
+    // A cached path only counts if the stops haven't moved since it was fetched.
+    if (JSON.stringify(cached.stops) === JSON.stringify(points)) legs = cached.legs;
+    else console.warn(`${walk.slug}: stops changed since the paths were fetched - drawing straight lines; rerun with --fetch-paths`);
+  }
+  const routed = Boolean(legs);
+  legs ??= points.slice(1).map((p, i) => [points[i], p]);
+
+  const legMetres = legs.map((leg) => leg.slice(1).reduce((sum, p, i) => sum + metres(leg[i], p), 0));
+  const pathLatLng = legs.flatMap((leg, i) => (i === 0 ? leg : leg.slice(1)));
+
+  const data = {
+    slug: walk.slug,
+    title: walk.title,
+    ...(walk.duration ? { duration: walk.duration } : {}),
+    source: { input: `data/walks-input/${file}`, path: routed ? "OSRM foot profile, routing.openstreetmap.de (OpenStreetMap)" : "straight lines between stops" },
+    routes: [
+      {
+        id: "route",
+        distanceMetres: Math.round(legMetres.reduce((a, b) => a + b, 0)),
+        stops: walk.stops.map((stop, i) => ({
+          number: i + 1,
+          name: stop.name,
+          ...(stop.url ? { url: stop.url } : {}),
+          lat: points[i][0],
+          lng: points[i][1],
+          ...(i > 0 ? { legMetres: Math.round(legMetres[i - 1]) } : {}),
+        })),
+        path: pathLatLng,
+      },
+    ],
+    extras: (walk.extras ?? []).map((e) => ({ name: e.name, ...(e.url ? { url: e.url } : {}), lat: round(e.lat), lng: round(e.lng) })),
+  };
+  built.push(data);
+
+  const route = data.routes[0];
+  console.log(`\n${walk.slug} (hand-written, ${routed ? "walking paths" : "straight lines"})`);
+  console.log(`  route: ${route.stops.length} stops, ${(route.distanceMetres / 1000).toFixed(2)} km, ${route.path.length} path points`);
+  for (const stop of route.stops) {
+    console.log(`    ${String(stop.number).padStart(2)}. ${stop.name.padEnd(40)} ${stop.legMetres == null ? "" : `+${stop.legMetres} m`}`);
+  }
+  for (const extra of data.extras) console.log(`     +  ${extra.name}`);
 }
 
 if (!report) {
