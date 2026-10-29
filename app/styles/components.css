@@ -450,6 +450,28 @@
   .kkday-cards-3 iframe { height: 1247px; }
   .kkday-cards-6 iframe { height: 1132px; }
 }
+/* Three cards in a row, scaled down, where the column is too narrow for
+   KKday's own row layout (720px) but wide enough to read the result: the
+   iframe is laid out at 720px and shrunk to fit. On phones they stack. */
+@container (min-width: 560px) and (max-width: 719px) {
+  .kkday-cards-3 { overflow: hidden; }
+  .kkday-cards-3 iframe {
+    width: 720px;
+    height: 484px;
+    /* centred: the 720px box hangs equally over both sides, then shrinks
+       towards its middle */
+    margin-left: calc((100% - 720px) / 2);
+    transform-origin: top center;
+    transform: scale(.77);
+    margin-bottom: calc(484px * -.23);
+  }
+}
+@container (min-width: 640px) and (max-width: 719px) {
+  .kkday-cards-3 iframe {
+    transform: scale(.88);
+    margin-bottom: calc(484px * -.12);
+  }
+}
 @container (max-width: 495px) {
   .kkday-cards-4 iframe { height: 1604px; }
   .kkday-cards-6 iframe { height: 2318px; }
