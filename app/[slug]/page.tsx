@@ -25,6 +25,7 @@ import {
   enhanceHotelCtaButtons,
   enhanceInlineAffiliateCTAs,
   enhanceLazyKlookWidgets,
+  enhanceKkday,
   enhancePerfectForSection,
   enhanceProsCons,
   enhanceRecommendedReading,
@@ -378,10 +379,10 @@ export default async function ArticlePage({ params }: PageProperties) {
   // they get the same rel/target treatment as every other affiliate link, and
   // the Klook widgets are marked lazy last, once every widget is in place.
   const walk = getWalk(post.slug);
-  const finalContent = insertWalkRoute(fillQueueMarker(enhanceResponsiveImages(enhanceContentImages(enhanceLazyKlookWidgets(enhanceAffiliateLinks(enhanceHotelCtaButtons(insertMobileBookingCard(
+  const finalContent = insertWalkRoute(fillQueueMarker(enhanceResponsiveImages(enhanceContentImages(enhanceLazyKlookWidgets(enhanceKkday(enhanceAffiliateLinks(enhanceHotelCtaButtons(insertMobileBookingCard(
     insertDesktopBookingCard(withNearbyGuides, showKlookDeals),
     showKlookDeals
-  ))))))), walk);
+  ))), post.slug))))), walk);
 
   const readingTime = calculateReadingTime(post.content);
   const primaryCategory = post.categories[0];

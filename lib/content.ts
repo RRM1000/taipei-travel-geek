@@ -1455,6 +1455,55 @@ export function enhanceLazyKlookWidgets(content: string): string {
   );
 }
 
+/** Taipei Travel Geek's KKday website id (CID). 14223 is suspended: never use it. */
+export const KKDAY_CID = "27732";
+
+/**
+ * KKday text links and product cards.
+ *
+ * Links: every kkday.com link gets cid=27732, ud1=<page slug> and, unless the
+ * post sets one, ud2=inline, so KKday's reports show the page and the spot on
+ * it. ud3-ud5 are KKday's own source tags that its link generator copies from
+ * whatever page the link was made on; they are dropped.
+ *
+ * Cards: KKday's snippet is `<ins class="kkday-product-media" data-oid=".."
+ * data-amount="3">` plus a loader script that swaps it for an iframe on page
+ * load, however far down the page. We write that iframe here instead, with
+ * loading="lazy", so no KKday script runs and the cards load only near the
+ * screen. The heights follow KKday's loader (484px, taller when the cards
+ * stack on narrow screens; see .kkday-cards in app/styles/components.css).
+ * The card set (products, currency, website) lives at KKday under its oid.
+ */
+export function enhanceKkday(content: string, slug: string): string {
+  const withLinks = content.replace(/href="(https:\/\/(?:www\.)?kkday\.com\/[^"]*)"/gi, (whole, href: string) => {
+    let url: URL;
+    try {
+      url = new URL(href.replace(/&amp;/g, "&"));
+    } catch {
+      return whole;
+    }
+    for (const key of ["ud3", "ud4", "ud5"]) url.searchParams.delete(key);
+    url.searchParams.set("cid", KKDAY_CID);
+    url.searchParams.set("ud1", slug);
+    if (!url.searchParams.get("ud2")) url.searchParams.set("ud2", "inline");
+    return `href="${url.toString().replace(/&/g, "&amp;")}"`;
+  });
+
+  // KKday's loader script is never needed: the iframe is written below.
+  const withoutLoader = withLinks.replace(/<script\b[^>]*kkpartners\.kkday\.com\/iframe\.init[^>]*>\s*<\/script>/gi, "");
+
+  return withoutLoader.replace(
+    /<ins\b[^>]*\bclass="[^"]*\bkkday-product-media\b[^"]*"[^>]*>\s*<\/ins>/gi,
+    (whole) => {
+      const oid = whole.match(/data-oid="(\d+)"/i)?.[1];
+      if (!oid) return "";
+      const amount = whole.match(/data-amount="(\d+)"/i)?.[1] ?? "3";
+      const refer = encodeURIComponent(`https://www.taipeitravelgeek.com/${slug}/`);
+      return `<div class="kkday-cards kkday-cards-${amount}"><iframe src="https://kkpartners.kkday.com/product-media?oid=${oid}&amp;refer=${refer}" title="Tours and tickets on KKday" loading="lazy" scrolling="no" frameborder="0"></iframe></div>`;
+    }
+  );
+}
+
 /**
  * A "Check prices & availability" button under each hotel in the hotel
  * guides.
