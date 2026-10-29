@@ -428,8 +428,11 @@
 }
 
 /* KKday product cards (enhanceKkday in lib/content.ts). Heights follow
-   KKday's own loader: one row of cards at 484px, taller once they stack. */
+   KKday's own loader, which sizes by the iframe's width, not the screen's:
+   one row of cards at 484px, taller once they stack. Hence container
+   queries on the wrapper. */
 .kkday-cards {
+  container-type: inline-size;
   margin: 1.5rem 0;
 }
 .kkday-cards iframe {
@@ -440,14 +443,14 @@
   overflow: hidden;
 }
 .kkday-cards-6 iframe { height: 808px; }
-@media (max-width: 959px) {
+@container (max-width: 959px) {
   .kkday-cards-4 iframe { height: 808px; }
 }
-@media (max-width: 719px) {
+@container (max-width: 719px) {
   .kkday-cards-3 iframe { height: 1247px; }
   .kkday-cards-6 iframe { height: 1132px; }
 }
-@media (max-width: 495px) {
+@container (max-width: 495px) {
   .kkday-cards-4 iframe { height: 1604px; }
   .kkday-cards-6 iframe { height: 2318px; }
 }
