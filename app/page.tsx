@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Card } from "@/components/Card";
-import { GuideCarousel } from "@/components/GuideCarousel";
+import { GuideCarousel, type GuideSlide } from "@/components/GuideCarousel";
 import { HomeHero, type HeroSlide } from "@/components/HomeHero";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -8,6 +8,7 @@ import { LatestArticlesCarousel } from "@/components/LatestArticlesCarousel";
 import { UpcomingEvents } from "@/components/UpcomingEvents";
 import { WeatherStrip } from "@/components/WeatherStrip";
 import { posts } from "@/lib/content";
+import { cardSrcSet } from "@/lib/responsive-images";
 
 // Replaces the old "category-strip" (Eat/Visit/Areas/Culture tiles). Those
 // four cards were a pure link menu - no titles, no images of actual guides -
@@ -80,12 +81,23 @@ const latestArticles = posts
     slug: p.slug,
     title: p.title,
     featuredImage: p.featuredImage,
+    imageSrcSet: cardSrcSet(p.featuredImage),
     category: p.categories[0]?.name || "Taipei Guide",
   }));
 
 // The hero cross-fades through a few guides, each with its own photo, line and
 // button, so the front page shows what the site covers rather than one view
 // of the skyline. Photos are the site's own, at least 1600px wide.
+// "Before you go" rail. Kept here rather than in GuideCarousel (a client
+// component) so each photo's srcset can be worked out on the server.
+const guideSlides: GuideSlide[] = [
+  { category: "Sightseeing", title: "Is the Taipei Fun Pass worth it?", href: "/taipei-fun-pass", image: "/media/2019/12/taiwan-fun-pass.jpg" },
+  { category: "Transport", title: "Your first purchase: the EasyCard", href: "/taiwan-easycard", image: "/media/2019/04/easy-card.jpg" },
+  { category: "Connectivity", title: "Which Taiwan SIM card should you get?", href: "/taiwan-sim-cards", image: "/media/2019/08/SIM-Cards-Taiwan-3-1024x654.jpg" },
+  { category: "Transport", title: "Getting around Taipei, every option explained", href: "/taipei-public-transport", image: "/media/2019/08/Taipei-Airport-Express-2-1024x688.jpg" },
+  { category: "Money", title: "What will Taipei actually cost?", href: "/taipei-money-guide", image: "/media/2026/08/nt100-note-sun-yat-sen-memorial-hall-1024x768.jpg" },
+].map((slide) => ({ ...slide, imageSrcSet: cardSrcSet(slide.image) }));
+
 const heroSlides: HeroSlide[] = [
   {
     label: "Taipei",
@@ -178,6 +190,7 @@ export default function Home() {
                 href={`/${guide.slug}`}
                 title={guide.title}
                 image={guide.featuredImage}
+                imageSrcSet={cardSrcSet(guide.featuredImage)}
                 eyebrow={guide.categories[0]?.name || "Taipei guide"}
               />
             ))}
@@ -203,6 +216,7 @@ export default function Home() {
                 href={`/${guide.slug}`}
                 title={guide.title}
                 image={guide.featuredImage}
+                imageSrcSet={cardSrcSet(guide.featuredImage)}
                 eyebrow={guide.categories[0]?.name || "Taipei guide"}
                 more="Read starter guide"
               />
@@ -210,7 +224,7 @@ export default function Home() {
           </div>
         </section>
 
-        <GuideCarousel />
+        <GuideCarousel slides={guideSlides} />
 
         <section className="more-guides wrap">
           <div className="section-heading">
@@ -228,6 +242,7 @@ export default function Home() {
                 href={`/${guide.slug}`}
                 title={guide.title}
                 image={guide.featuredImage}
+                imageSrcSet={cardSrcSet(guide.featuredImage)}
                 eyebrow={guide.categories[0]?.name || "Taipei guide"}
               />
             ))}

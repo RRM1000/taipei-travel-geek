@@ -7,6 +7,8 @@ export type CarouselItem = {
   slug: string;
   title: string;
   featuredImage?: string | null;
+  /** Worked out on the server (lib/responsive-images.ts). */
+  imageSrcSet?: string;
   category: string;
 };
 
@@ -46,6 +48,7 @@ export function LatestArticlesCarousel({ items }: { items: CarouselItem[] }) {
             href={`/${post.slug}`}
             title={post.title}
             image={post.featuredImage}
+            imageSrcSet={post.imageSrcSet}
             eyebrow={post.category}
             more="Read article"
           />

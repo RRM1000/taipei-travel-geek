@@ -1,4 +1,5 @@
 import { Card } from "@/components/Card";
+import { cardSrcSet } from "@/lib/responsive-images";
 import { getCategoriesWithCounts, getTagsWithCounts, type ContentPost } from "@/lib/content";
 
 type RelatedGuidesProps = {
@@ -41,6 +42,7 @@ export function RelatedGuides({ related }: RelatedGuidesProps) {
                   href={`/${post.slug}`}
                   title={post.title}
                   image={post.featuredImage}
+                  imageSrcSet={cardSrcSet(post.featuredImage)}
                   eyebrow={post.categories[0]?.name}
                   excerpt={post.excerpt}
                   more="Read guide"

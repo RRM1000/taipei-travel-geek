@@ -2,6 +2,7 @@ import importedPosts from "@/content/posts.json";
 import importedCategories from "@/content/categories.json";
 import { AFFILIATE_HOSTS } from "@/lib/affiliates";
 import mediaManifest from "@/lib/media-manifest.json";
+import { responsiveSrcSet } from "@/lib/responsive-images";
 
 export type TaxonomyTerm = { name: string; slug: string };
 
@@ -1224,9 +1225,10 @@ export function normaliseImageFigures(content: string): string {
  * lib/media-manifest.json (built by scripts/build-media-manifest.mjs, because
  * the Worker cannot read public/ at request time) lists the sizes of each
  * /media image that exist on disk. From it this pass:
- *   - adds srcset when a picture exists in more than one size with the same
- *     aspect ratio (most of the library holds only the one 1024px copy
- *     WordPress embedded, so most images get no srcset, which is correct)
+ *   - adds srcset: the 400w/800w WebP copies in public/sized/ where they
+ *     exist (lib/responsive-images.ts, built by
+ *     scripts/build-image-variants.mjs), otherwise any other WordPress sizes
+ *     of the picture with the same aspect ratio
  *   - adds sizes, by context: a photo-row sets its own, recommended-reading
  *     cards are small, everything else is the reading column
  *   - fills in width/height where they are missing, from the filename's
@@ -1258,8 +1260,8 @@ function mediaInfo(src: string): MediaInfo | null {
     const own = rows.find((row) => row[0] === suffix);
     const width = m[3] ? Number(m[3]) : own?.[1] ?? 0;
     const height = m[4] ? Number(m[4]) : own?.[2] ?? 0;
-    let srcset = "";
-    if (width && height && own && !/[\s,]/.test(src)) {
+    let srcset = (width && height && responsiveSrcSet(src, width, height)) || "";
+    if (!srcset && width && height && own && !/[\s,]/.test(src)) {
       const ratio = width / height;
       const seen = new Set<number>();
       const candidates = rows

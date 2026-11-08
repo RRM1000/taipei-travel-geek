@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card } from "@/components/Card";
+import { cardSrcSet } from "@/lib/responsive-images";
 
 const pageSize = ARCHIVE_PAGE_SIZE;
 
@@ -33,6 +34,7 @@ function ArticleCard({ article, categorySlug, eager }: { article: ContentPost; c
       href={`/${article.slug}`}
       title={article.title}
       image={article.featuredImage}
+      imageSrcSet={cardSrcSet(article.featuredImage)}
       eyebrow={eyebrow}
       excerpt={article.excerpt}
       meta={shown.label ? `${shown.label} ${shown.date}` : shown.date}

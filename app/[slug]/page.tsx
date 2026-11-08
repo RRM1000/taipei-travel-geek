@@ -15,6 +15,7 @@ import { DiagramLightbox } from "@/components/DiagramLightbox";
 import { WalkRouteMap } from "@/components/WalkRouteMap";
 import { getWalk, insertWalkRoute } from "@/lib/walks";
 import heroImageSizes from "@/lib/hero-images.json";
+import { IMAGE_SIZES, responsiveSrcSet } from "@/lib/responsive-images";
 import {
   calculateReadingTime,
   enhanceAffiliateLinks,
@@ -325,6 +326,7 @@ export default async function ArticlePage({ params }: PageProperties) {
 
   const heroImage = heroSourceFor(post);
   const hero = heroImage ? heroImageFor(heroImage) : null;
+  const heroSrcSet = hero ? responsiveSrcSet(hero.src, hero.width, hero.height) : undefined;
   const isPage = post.type === "page";
   const rawContent = enhanceThreeImageGalleries(
     enhanceTables(
@@ -421,6 +423,8 @@ export default async function ArticlePage({ params }: PageProperties) {
             <img
               className="article-hero-image"
               src={hero.src}
+              srcSet={heroSrcSet}
+              sizes={heroSrcSet ? IMAGE_SIZES.hero : undefined}
               alt={post.title}
               width={hero.width}
               height={hero.height}
