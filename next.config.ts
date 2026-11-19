@@ -23,6 +23,13 @@ const nextConfig: NextConfig = {
   // URL rather than let indexed links and backlinks 404.
   async redirects() {
     return [
+      // Journey by Mediavine keeps the full ads.txt current at its own
+      // address (the ID is the one in the Journey tag in app/layout.tsx).
+      {
+        source: "/ads.txt",
+        destination: "https://adstxt.journeymv.com/sites/befe1e9e-43fc-4b40-b611-9d7c139224cb/ads.txt",
+        permanent: true,
+      },
       {
         source: "/nice-convenience-stores",
         destination: "/taipei-convenience-stores#Themed",
