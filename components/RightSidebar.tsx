@@ -15,8 +15,9 @@ const WISE_URL = "https://wise.com/invite/ecac/robertrichardm17";
 /**
  * The article's one side column, as on City Break Geek: the contents card,
  * and under it one compact "Book your trip" card of plain links (tours,
- * hotels, our where-to-stay guide). The whole column pins below the header
- * (--sticky-top in app/styles/layout.css).
+ * hotels, our where-to-stay guide). The column does not pin: Mediavine puts
+ * its own sticky ad unit at the foot of it and asked for nothing else in the
+ * sidebar to be sticky (app/styles/layout.css).
  *
  * The Klook deals widget that used to sit here now goes inside the article
  * instead, mid-post on desktop and after the Quick Verdict on a phone (see

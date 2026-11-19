@@ -276,27 +276,20 @@ html.header-hidden .site-header { transform: translateY(-100%); box-shadow: none
 }
 .article-grid .article-main-column { min-width: 0; max-width: none; width: 100%; margin: 0; }
 
+/* Not sticky: Mediavine (Journey) asked for nothing in the sidebar to pin, so
+   its own sticky ad unit can. The column stretches the full height of the
+   article so that unit, added at its foot, has the length of the post to
+   travel. Same change as London Travel Geek. */
 .article-grid .article-right-sidebar {
-  position: sticky;
-  top: var(--sticky-top);
-  align-self: start;
+  position: static;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   gap: 20px;
   min-width: 0;
   transform: none;
-  transition: top .28s var(--chrome-ease);
 }
-@media (prefers-reduced-motion: reduce) {
-  .article-grid .article-right-sidebar { transition: none; }
-}
-/* The contents list scrolls inside its own card; the booking card below it
-   keeps its height, so the column fits the screen. 450px is the booking card
-   (Klook widget, link and money tip). */
-.article-grid .sidebar-toc-container { max-height: clamp(160px, calc(100dvh - var(--header-h) - 600px), 420px); }
-.article-grid .article-right-sidebar:not(:has(.sidebar-booking-card)) .sidebar-toc-container {
-  max-height: calc(100dvh - var(--header-h) - 160px);
-}
+.article-grid .sidebar-toc-container { max-height: 420px; }
 
 .article-content h2[id],
 .article-content h3[id],

@@ -124,6 +124,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         {analyticsEnabled && (
           <>
+            {/* Journey by Mediavine ad tag, exactly as supplied by Mediavine. */}
+            <script
+              type="text/javascript"
+              async
+              data-noptimize="1"
+              data-cfasync="false"
+              src="//scripts.scriptwrapper.com/tags/befe1e9e-43fc-4b40-b611-9d7c139224cb.js"
+            />
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
               strategy="afterInteractive"
